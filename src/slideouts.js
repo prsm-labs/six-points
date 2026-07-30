@@ -1,5 +1,4 @@
-// Single global listener pattern -- replicates Going Yard's AtBatSlideIn/PitcherSlideIn
-// mechanism exactly (PROMPT_SixPoints_PlayerTeamSlideouts.md §2/§8). There is ONE mounted
+// Single global listener pattern (PROMPT_SixPoints_PlayerTeamSlideouts.md §2/§8). There is ONE mounted
 // PlayerSlideout and ONE TeamSlideout near the app root; any tab opens either by calling these
 // functions, no prop-drilling and no per-tab slideout instances.
 let PLAYER_SLIDE_LISTENER = null

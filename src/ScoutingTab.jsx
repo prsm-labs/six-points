@@ -3,21 +3,12 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import GameLogTable from './GameLogTable.jsx'
 import { openTeamSlide } from './slideouts.js'
 
-// The original ask (per PROMPT-response doc §6) named "ScoutingTab" -- confirmed dead in Going
-// Yard's real current source (deleted as orphaned legacy code), replaced by BvPTab, a genuine
-// batter-vs-pitcher arsenal/handedness matchup tool. Read BvPTab directly before building this:
-// it's deeply Statcast-specific (pitch mix %, barrel% vs a pitch type, chase rate) with no real
-// football equivalent -- there's no per-play "arsenal" concept for a defense.
+// A standalone "player vs this specific opponent" lookup -- the same vs-opponent logic the
+// Player Slideout already has, but searchable for ANY player/opponent pair, not just today's
+// real matchups. Reuses GameLogTable, doesn't duplicate it.
 //
-// What DOES transfer, per the response doc's own recommendation: a standalone version of the
-// "player vs this specific opponent" lookup the Player Slideout already has, but searchable for
-// ANY player/opponent pair -- not just today's real matchups, the way BvPTab lets you pick any
-// pitcher/batter pair. Reuses GameLogTable, doesn't duplicate it.
-//
-// Coverage-scheme matchup (the closer analogue to "pitch mix") is NOT built here -- it's the
-// same open data-source gap PairsPage already discloses (no route-tree/coverage-scheme data
-// source identified yet). Building it here would just be the same unsolved problem in a second
-// place instead of one.
+// A true coverage-scheme matchup tool is NOT built here -- that's the same open data-source gap
+// PairsPage already discloses (no route-tree/coverage-scheme data source identified yet).
 
 const TEAMS = [
   'ARI', 'ATL', 'BAL', 'BUF', 'CAR', 'CHI', 'CIN', 'CLE', 'DAL', 'DEN', 'DET', 'GB', 'HOU', 'IND',
@@ -77,8 +68,7 @@ export default function ScoutingTab() {
     <div>
       <p className="meta-line">
         Pick any player and any opponent to see their real history against that specific team this
-        season -- not limited to this week's real matchups, the same way Going Yard's BvP tool
-        lets you pick any pitcher/batter pair
+        season -- not limited to this week's real matchups
       </p>
 
       <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 16 }}>

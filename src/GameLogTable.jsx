@@ -1,5 +1,5 @@
-// Shared per-game box-score table -- used by PlayerSlideout's recent-game-log and BvP sections,
-// and by ScoutingTab's standalone any-player/any-opponent lookup (reused, not duplicated).
+// Shared per-game box-score table -- used by PlayerSlideout's recent-game-log and vs-opponent
+// sections, and by ScoutingTab's standalone any-player/any-opponent lookup (reused, not duplicated).
 export default function GameLogTable({ games }) {
   const recent = games.slice(-5).reverse()
   return (

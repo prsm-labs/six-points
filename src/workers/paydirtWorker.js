@@ -1,5 +1,5 @@
-// Paydirt Lab Monte Carlo -- mirrors Going Yard's Barrel Lab shape (10,000 simulated
-// touch-sequences per player), adapted per concept doc §4. Runs off the main thread since
+// Paydirt Lab Monte Carlo -- 10,000 simulated touch-sequences per player, per concept doc §4.
+// Runs off the main thread since
 // 10,000 sims x ~500 players would jank the UI otherwise.
 //
 // Model: touches this game ~ Poisson(touches_per_game). TD probability per touch is the

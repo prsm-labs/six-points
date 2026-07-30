@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 .app {
   max-width: 960px;
   margin: 0 auto;
@@ -487,26 +489,34 @@ th.sortable:hover {
 .ticker-wrap {
   display: flex;
   align-items: center;
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   border-radius: 8px;
   margin-bottom: 16px;
   cursor: pointer;
   overflow: hidden;
-  background: var(--bg);
+  background: #04140b;
+  font-family: 'Share Tech Mono', 'Consolas', monospace;
 }
 
 .ticker-label {
   flex-shrink: 0;
   padding: 8px 12px;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 0.8rem;
+  letter-spacing: 1px;
   color: var(--accent);
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--accent);
+  text-shadow: 0 0 6px rgba(47, 174, 92, 0.6);
 }
 
+/* width: max-content is required here -- without it this div (a block-level flex
+   container) stretches to fill its parent's visible width instead of sizing to its
+   real content, so the two concatenated copies of the list never actually overflow
+   and the translateX loop has nothing to scroll. */
 .ticker-track {
   display: flex;
   align-items: center;
+  width: max-content;
   white-space: nowrap;
   animation: ticker-scroll linear infinite;
   padding: 8px 0;
@@ -515,13 +525,18 @@ th.sortable:hover {
 .ticker-item {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 6px;
-  padding: 0 10px;
-  font-size: 0.82rem;
+  padding: 0 14px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: #8fe8ac;
+  text-shadow: 0 0 5px rgba(47, 174, 92, 0.5);
 }
 
 .ticker-sep {
-  color: var(--border);
+  color: var(--accent);
+  opacity: 0.5;
 }
 
 @keyframes ticker-scroll {

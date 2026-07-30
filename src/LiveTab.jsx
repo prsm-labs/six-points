@@ -3,11 +3,9 @@ import LiveThemes from './LiveThemes.jsx'
 import BoxScoreTab from './BoxScoreTab.jsx'
 import InactivesTab from './InactivesTab.jsx'
 
-// Mirrors Going Yard's real LiveTab() sub-nav shape (Gameday/Bat Tracking/Live Sim/Live
-// Games/Lineups/Themes/Ball Carry/xHR Conversion) -- scoped down to what's actually realistic
-// for football per the response doc §7: Themes (clustering, already built), Box Scores (the
-// real achievable core of Gameday), Inactives (the real equivalent of Lineups). Live Sim
-// (bigger lift, lower priority) and Bat Tracking (no NFL equivalent at all) are not built.
+// Live sub-nav: Themes (gap-based scoring-play clustering), Box Scores (real ESPN team + player
+// box scores), Inactives (the weekly injury report). Live Sim was scoped out as a bigger lift,
+// lower priority than the rest of this batch.
 export default function LiveTab() {
   const [sub, setSub] = useState('themes')
 

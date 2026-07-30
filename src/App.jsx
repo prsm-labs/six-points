@@ -353,7 +353,7 @@ export default function App() {
         <button className={tab === 'scouting' ? 'active' : ''} onClick={() => setTab('scouting')}>
           Scouting
         </button>
-        {/* Odds Calculator intentionally hidden from nav -- Going Yard surfaces this via a
+        {/* Odds Calculator intentionally hidden from nav -- meant to be surfaced via a
             button/modal, not a dedicated tab. Component kept intact in OddsCalculator.jsx for
             that later. */}
       </nav>

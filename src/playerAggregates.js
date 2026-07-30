@@ -36,8 +36,8 @@ export function aggregateGames(games) {
   }
 }
 
-// "Starter" is a display/filter label only -- like Going Yard's SP/RP (gs > 0), it never feeds
-// any score/grade formula, just helps a viewer separate the every-week players from committee/
+// "Starter" is a display/filter label only -- it never feeds any score/grade formula, just helps
+// a viewer separate the every-week players from committee/
 // backup roles when scanning a leaderboard.
 export function roleLabel(position, agg) {
   if (position === 'QB') return agg.pass_att / (agg.games || 1) >= 10 ? 'Starter' : 'Reserve'

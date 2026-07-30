@@ -4,9 +4,9 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import L7Chart, { defaultCategory } from './L7Chart.jsx'
 import GameLogTable from './GameLogTable.jsx'
 
-// Mirrors AtBatSlideIn's section order exactly (spec §3): header, season stat line, matchup
-// context, L7 chart, recent game log, BvP/H2H. Pick button and HRDotTimeline are explicitly
-// skipped per spec §3/§8 -- no picks system exists yet, and the dot timeline is optional.
+// Section order per spec §3: header, season stat line, matchup context, L7 chart, recent game
+// log, vs-opponent history. A picks button and dot timeline are explicitly skipped per spec
+// §3/§8 -- no picks system exists yet, and the dot timeline is optional.
 
 function seasonTotals(games, position) {
   const sum = (key) => games.reduce((a, g) => a + (g[key] || 0), 0)
@@ -64,7 +64,7 @@ export default function PlayerSlideout() {
     })
   }, [player?.player_id])
 
-  const bvp = useMemo(() => {
+  const vsOpponent = useMemo(() => {
     if (!gameLog || !player?.opponent) return []
     return gameLog.filter((g) => g.opponent === player.opponent)
   }, [gameLog, player])
@@ -152,17 +152,17 @@ export default function PlayerSlideout() {
               {player.opponent && (
                 <div className="slideout-section">
                   <h3>Vs. {player.opponent} (season)</h3>
-                  {bvp.length === 0 ? (
+                  {vsOpponent.length === 0 ? (
                     <p className="empty-state">No games played against {player.opponent} yet this season.</p>
                   ) : (
                     <>
-                      {bvp.length <= 2 && (
+                      {vsOpponent.length <= 2 && (
                         <p className="meta-line small">
-                          Only {bvp.length} game{bvp.length > 1 ? 's' : ''} of history against this
+                          Only {vsOpponent.length} game{vsOpponent.length > 1 ? 's' : ''} of history against this
                           specific opponent -- treat this as a curiosity, not a signal.
                         </p>
                       )}
-                      <GameLogTable games={bvp} />
+                      <GameLogTable games={vsOpponent} />
                     </>
                   )}
                 </div>

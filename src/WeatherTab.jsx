@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 
 // Real weather via /api/weather.js (WeatherAPI.com, server-side key). Unlike the ESPN proxies
 // (scoreboard.js/summary.js), there is NO client-side direct-fetch fallback here -- WeatherAPI
-// requires a real secret key, and Going Yard's own api/weather.js hardcoding it in source is a
-// pattern deliberately not repeated. That means local `vite dev` (no Vercel functions running)
+// requires a real secret key, so it's deliberately never hardcoded in source. That means local
+// `vite dev` (no Vercel functions running)
 // can't exercise this tab end-to-end -- only `vercel dev` or the real deployment can. The API
 // logic itself was verified directly with curl/Node against the real WeatherAPI response shape
 // before this component was written.

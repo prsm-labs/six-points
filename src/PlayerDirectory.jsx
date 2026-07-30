@@ -20,6 +20,10 @@ export function PlayerDirectoryProvider({ children }) {
   )
 }
 
+export function usePlayerDirectory() {
+  return useContext(PlayerDirectoryContext)
+}
+
 function initials(name) {
   if (!name) return '?'
   return name

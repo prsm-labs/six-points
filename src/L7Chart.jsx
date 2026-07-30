@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-// Mirrors Going Yard's Last7HRChart mechanic exactly (PROMPT_SixPoints_PlayerTeamSlideouts.md
-// §4): pill-toggle row switches the active stat category, 7 bars scaled to that category's
+// Per PROMPT_SixPoints_PlayerTeamSlideouts.md §4: pill-toggle row switches the active stat
+// category, 7 bars scaled to that category's
 // 7-game max, hit/miss coloring (not just bar height) so the "did this clear the bar" read is
 // immediate. Colors are the app's own accent/muted tokens (validated via the dataviz skill's
 // contrast check: >=6:1 dark, >=4.2:1 light against surface) -- not a fresh categorical pair,

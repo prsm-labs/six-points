@@ -5,8 +5,7 @@ import { useWeekTDs } from './useWeekTDs.js'
 // TD Tracker is its own page, not a rename/extension of Live Themes -- Live Themes' job is
 // clustering ("are TDs happening close together"), this page's job is a plain chronological
 // list of every real TD for a selected week, with real box-score detail. Both share the same
-// underlying ESPN scoring-play feed, same relationship Going Yard has between HRTrackerTab and
-// LiveThemesTab.
+// underlying ESPN scoring-play feed.
 //
 // Known simplification: ESPN's play-by-play text has no player ID, only a display name, so
 // there's no reliable crosswalk to our gsis_id-keyed player directory here -- scorer names are

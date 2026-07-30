@@ -4,16 +4,15 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { buildLeaderboard } from './playerAggregates.js'
 
-// Going Yard's BatterLeaderboard/PitcherLeaderboard work as ONE big stat table because every
-// batter shares the same stat shape. Football doesn't have that luxury (a QB's stat line shares
-// almost nothing with a WR's -- same reason the Player Slideout's season stat line branches by
-// position instead of being universal, see PROMPT_SixPoints_PlayerTeamSlideouts.md §5). This
-// leaderboard uses a position-agnostic common column set (Games/Yards/TDs) for browsing and
-// ranking across everyone at once; the position-specific deep stat line is one click away via
-// the Player Slideout every row already opens into.
+// A QB's stat line shares almost nothing with a WR's, so a single universal stat table isn't
+// possible the way it would be for a position with one shared shape (same reason the Player
+// Slideout's season stat line branches by position instead of being universal -- see
+// PROMPT_SixPoints_PlayerTeamSlideouts.md §5). This leaderboard uses a position-agnostic common
+// column set (Games/Yards/TDs) for browsing and ranking across everyone at once; the
+// position-specific deep stat line is one click away via the Player Slideout every row opens.
 //
-// Role classification (Starter/Committee/Reserve) is display/filter-only, same as Going Yard's
-// SP/RP (gs > 0) -- it never feeds any score/grade formula.
+// Role classification (Starter/Committee/Reserve) is display/filter-only -- it never feeds any
+// score/grade formula.
 
 const WINDOWS = [
   { key: 3, label: 'L3' },
@@ -103,8 +102,8 @@ function LeaderboardView({ gameLogs, directory }) {
 
       <p className="meta-line">
         {sorted.length} players &middot; window: {window === 'season' ? 'full season' : `last ${window} games`} &middot;
-        role is a display label only (touches/targets-per-game threshold), same as Going Yard's SP/RP -- it never
-        feeds Zone Score or any other formula
+        role is a display label only (touches/targets-per-game threshold) -- it never feeds Zone
+        Score or any other formula
       </p>
 
       <div className="table-wrap">

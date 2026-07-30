@@ -1,10 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { openTeamSlide } from './slideouts.js'
 
-// NFL's real pre-game equivalent of Going Yard's LineupsView ("lineup confirmed"/"projected")
-// is the inactives report -- released ~90 min before kickoff, resolving on its own clock the
-// same way MLB lineups do. Per the response doc §7: "a genuinely direct, valuable, and fully
-// portable concept -- build this with real priority."
+// NFL's real pre-game lineup-confirmation equivalent is the inactives report -- released ~90
+// min before kickoff, resolving on its own clock.
 //
 // Uses the same real weekly injury report (Out/Doubtful/Questionable) already powering Green
 // Light Score's injury gate in matchup_engine.py -- Out/Doubtful here is the closest real signal

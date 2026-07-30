@@ -1,5 +1,5 @@
-// CORS proxy for ESPN's public hidden scoreboard API -- mirrors going-yard/api/boxscore.js's
-// role for MLB Stats API. Verified live 2026-07-29: espn returns real events/scores/status for
+// CORS proxy for ESPN's public hidden scoreboard API. Verified live 2026-07-29: espn returns
+// real events/scores/status for
 // both live games (once the season starts) and past dates via ?dates=YYYYMMDD.
 export default async function handler(req, res) {
   const { dates } = req.query

@@ -1,7 +1,5 @@
-// Real weather via WeatherAPI.com (same provider Going Yard uses -- see
-// mlb_project/going-yard/api/weather.js). WEATHER_API_KEY must be set as a Vercel project env
-// var (Settings -> Environment Variables), never committed -- unlike Going Yard's own
-// api/weather.js, which hardcodes the key directly in source; that's not repeated here.
+// Real weather via WeatherAPI.com. WEATHER_API_KEY must be set as a Vercel project env
+// var (Settings -> Environment Variables), never committed or hardcoded in source.
 //
 // Free-tier limitation (verified live 2026-07-30): WeatherAPI's forecast endpoint only covers
 // ~3 days ahead. It cannot retroactively forecast a past date, so for the 2025 backtest season

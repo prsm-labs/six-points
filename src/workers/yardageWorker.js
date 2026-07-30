@@ -1,5 +1,5 @@
-// Yardage Lab Monte Carlo -- mirrors Going Yard's On Base tab (concept doc §5): a cumulative,
-// lower-bar stat that doesn't need one big play, just volume x decent efficiency.
+// Yardage Lab Monte Carlo (concept doc §5): a cumulative, lower-bar stat that doesn't need one
+// big play, just volume x decent efficiency.
 //
 // Model: touches this game ~ Poisson(touches_per_game). Yards-per-touch modeled as Exponential
 // with mean = player's real trailing ypt (captures football's fat-tailed big-play skew better

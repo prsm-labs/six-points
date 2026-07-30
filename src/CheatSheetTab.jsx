@@ -3,8 +3,8 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { usePaydirtSims, useYardageSims } from './useLabSims.js'
 
-// Mirrors CheatSheetTab's real shape (Going Yard): a small number of top-5-style ranked lists,
-// each answering one narrow question fast -- opinionated, not exhaustive. Deliberately NOT a
+// A small number of top-5-style ranked lists, each answering one narrow question fast --
+// opinionated, not exhaustive. Deliberately NOT a
 // sortable table -- that's what All Matchups/Paydirt Lab/Yardage Lab are for. Every section here
 // reuses data/scores already computed elsewhere (Paydirt/Yardage Lab's own sims, All Matchups'
 // usage_sig, team_stats.json's defense ranks) rather than recomputing anything new.
