@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { isTouchdown } from './scoringPlays.js'
 
 // No live games exist right now -- the 2026 season doesn't start until 2026-09-09 (concept
 // doc's own §9 caveat). This tab has two modes: "Live" (polls /api/scoreboard + /api/summary,
@@ -16,26 +17,13 @@ function parseClockToElapsed(period, clockDisplay) {
   return (period - 1) * 900 + (900 - remaining)
 }
 
-function isTouchdown(text) {
-  // ESPN's scoringPlays text doesn't always say "touchdown" literally -- defensive/special
-  // teams scores read like "45 Yd Interception Return" or "80 Yd Fumble Return", not "TD".
-  // Verified against a real game (2025 season finale): the interception-return score in that
-  // game's feed was missed by an earlier version of this regex that only checked for
-  // "touchdown"/"pass from"/"TD".
-  return (
-    /touchdown|pass from|\bTD\b|interception return|fumble return|punt return|kickoff return/i.test(
-      text
-    ) && !/field goal/i.test(text)
-  )
-}
-
 function clusterPlays(plays) {
   const sorted = plays
     .map((p) => ({
       ...p,
       elapsed: parseClockToElapsed(p.period?.number || 1, p.clock?.displayValue),
       text: p.text || '',
-      isTd: isTouchdown(p.text || ''),
+      isTd: isTouchdown(p),
     }))
     .sort((a, b) => a.elapsed - b.elapsed)
 
@@ -109,7 +97,7 @@ export default function LiveThemes() {
       }
       const play = allPlays[i]
       setRevealed((prev) => [...prev, play])
-      if (isTouchdown(play.text || '')) {
+      if (isTouchdown(play)) {
         const msg = `Breakout Alert: ${play.text}`
         setNotifLog((prev) => [...prev, msg])
         notify('Six Points -- Breakout Alert', play.text)

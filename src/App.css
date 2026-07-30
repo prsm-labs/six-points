@@ -431,3 +431,147 @@ th.sortable:hover {
 .external-link:hover {
   text-decoration: underline;
 }
+
+.weather-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.weather-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.weather-current {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.weather-temp {
+  font-size: 1.8rem;
+  font-weight: 800;
+  min-width: 56px;
+}
+
+.weather-forecast-strip {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.weather-forecast-day {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.weather-flag {
+  display: inline-block;
+  background: #1f7a3d33;
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.ticker-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.ticker-label {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: var(--accent);
+  border-right: 1px solid var(--border);
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll linear infinite;
+  padding: 8px 0;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  font-size: 0.82rem;
+}
+
+.ticker-sep {
+  color: var(--border);
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.cheat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cheat-section {
+  flex: 1 1 280px;
+  min-width: 260px;
+}
+
+.cheat-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  font-size: 0.95rem;
+}
+
+.cheat-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+}
+
+.cheat-rank {
+  font-weight: 800;
+  color: var(--muted);
+  min-width: 16px;
+}
+
+.cheat-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.cheat-stat {
+  text-align: right;
+  flex-shrink: 0;
+}

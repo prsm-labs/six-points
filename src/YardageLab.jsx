@@ -1,71 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
-
-function percentile(values, p) {
-  const sorted = values.slice().sort((a, b) => a - b)
-  const idx = Math.floor(p * (sorted.length - 1))
-  return sorted[idx]
-}
+import { useYardageSims, thresholdFor } from './useLabSims.js'
 
 export default function YardageLab() {
-  const [rows, setRows] = useState(null)
-  const [error, setError] = useState(null)
-  const [status, setStatus] = useState('loading')
-  const workerRef = useRef(null)
-
-  useEffect(() => {
-    fetch('/data/all_matchups_latest.json')
-      .then((r) => {
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
-        return r.json()
-      })
-      .then((data) => {
-        const players = data.matchups.filter((p) => p.touches_per_game > 0)
-        const avgTouches = players.reduce((a, p) => a + p.touches_per_game, 0) / (players.length || 1)
-        const avgYpt = players.reduce((a, p) => a + p.ypt, 0) / (players.length || 1)
-
-        setStatus('simulating')
-        const worker = new Worker(new URL('./workers/yardageWorker.js', import.meta.url), {
-          type: 'module',
-        })
-        workerRef.current = worker
-        worker.onmessage = (e) => {
-          const simMap = Object.fromEntries(e.data.map((r) => [r.player_id, r.sim_yard_pct]))
-          const merged = players.map((p) => {
-            const onFieldScore = Math.max(
-              0,
-              Math.min(99, 50 + (p.touches_per_game - avgTouches) * 3 + (p.ypt - avgYpt) * 2)
-            )
-            // Simple point estimate (touches x yards-per-touch) -- not the same thing as
-            // SimYard%, which is a probability of clearing a threshold. This is "what to
-            // actually expect," the sim is "how likely is a specific bar to be cleared."
-            const estYards = Math.round(p.touches_per_game * p.ypt * 10) / 10
-            return {
-              ...p,
-              sim_yard_pct: simMap[p.player_id] ?? 0,
-              on_field_score: onFieldScore,
-              est_yards: estYards,
-            }
-          })
-
-          const onFieldCut = percentile(merged.map((p) => p.on_field_score), 0.75)
-          const simCut = percentile(merged.map((p) => p.sim_yard_pct), 0.75)
-          merged.forEach((p) => {
-            p.yardage_signal = p.on_field_score >= onFieldCut && p.opp_def_rank_pct >= 60 && p.sim_yard_pct >= simCut
-          })
-          merged.sort((a, b) => b.sim_yard_pct - a.sim_yard_pct)
-          setRows(merged)
-          setStatus('done')
-          worker.terminate()
-        }
-        worker.postMessage({ players })
-      })
-      .catch((e) => setError(e.message))
-
-    return () => workerRef.current?.terminate()
-  }, [])
+  const { rows, error, status } = useYardageSims()
 
   if (error) {
     return (
@@ -84,12 +23,6 @@ export default function YardageLab() {
   }
 
   return <YardageTable rows={rows} />
-}
-
-function thresholdFor(position) {
-  if (position === 'QB') return 225
-  if (position === 'RB') return 60
-  return 75
 }
 
 function YardageTable({ rows }) {

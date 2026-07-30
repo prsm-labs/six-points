@@ -3,7 +3,13 @@ import './App.css'
 import PaydirtLab from './PaydirtLab.jsx'
 import YardageLab from './YardageLab.jsx'
 import PairsPage from './PairsPage.jsx'
-import LiveThemes from './LiveThemes.jsx'
+import LiveTab from './LiveTab.jsx'
+import WeatherTab from './WeatherTab.jsx'
+import TDTracker from './TDTracker.jsx'
+import TDMarquee from './TDMarquee.jsx'
+import SplitsTab from './SplitsTab.jsx'
+import CheatSheetTab from './CheatSheetTab.jsx'
+import ScoutingTab from './ScoutingTab.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import PlayerSlideout from './PlayerSlideout.jsx'
@@ -312,6 +318,7 @@ export default function App() {
         </div>
         <p className="tagline">NFL touchdown intelligence, weekly cadence, real backtests only.</p>
       </header>
+      <TDMarquee onClick={() => setTab('tdtracker')} />
       <nav className="tabs">
         <button className={tab === 'matchups' ? 'active' : ''} onClick={() => setTab('matchups')}>
           All Matchups
@@ -323,13 +330,28 @@ export default function App() {
           Yardage Lab
         </button>
         <button className={tab === 'live' ? 'active' : ''} onClick={() => setTab('live')}>
-          Live Themes
+          Live
+        </button>
+        <button className={tab === 'tdtracker' ? 'active' : ''} onClick={() => setTab('tdtracker')}>
+          TD Tracker
         </button>
         <button className={tab === 'track' ? 'active' : ''} onClick={() => setTab('track')}>
           Track Record
         </button>
         <button className={tab === 'pairs' ? 'active' : ''} onClick={() => setTab('pairs')}>
           Pairs
+        </button>
+        <button className={tab === 'weather' ? 'active' : ''} onClick={() => setTab('weather')}>
+          Weather
+        </button>
+        <button className={tab === 'splits' ? 'active' : ''} onClick={() => setTab('splits')}>
+          Splits
+        </button>
+        <button className={tab === 'cheatsheet' ? 'active' : ''} onClick={() => setTab('cheatsheet')}>
+          Cheat Sheets
+        </button>
+        <button className={tab === 'scouting' ? 'active' : ''} onClick={() => setTab('scouting')}>
+          Scouting
         </button>
         {/* Odds Calculator intentionally hidden from nav -- Going Yard surfaces this via a
             button/modal, not a dedicated tab. Component kept intact in OddsCalculator.jsx for
@@ -339,9 +361,14 @@ export default function App() {
         {tab === 'matchups' && <AllMatchups />}
         {tab === 'paydirt' && <PaydirtLab />}
         {tab === 'yardage' && <YardageLab />}
-        {tab === 'live' && <LiveThemes />}
+        {tab === 'live' && <LiveTab />}
+        {tab === 'tdtracker' && <TDTracker />}
         {tab === 'track' && <TrackRecord />}
         {tab === 'pairs' && <PairsPage />}
+        {tab === 'weather' && <WeatherTab />}
+        {tab === 'splits' && <SplitsTab />}
+        {tab === 'cheatsheet' && <CheatSheetTab />}
+        {tab === 'scouting' && <ScoutingTab />}
       </main>
       <PlayerSlideout />
       <TeamSlideout />

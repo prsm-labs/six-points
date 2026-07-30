@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { subscribePlayerSlide, closePlayerSlide, openTeamSlide } from './slideouts.js'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import L7Chart, { defaultCategory } from './L7Chart.jsx'
+import GameLogTable from './GameLogTable.jsx'
 
 // Mirrors AtBatSlideIn's section order exactly (spec §3): header, season stat line, matchup
 // context, L7 chart, recent game log, BvP/H2H. Pick button and HRDotTimeline are explicitly
@@ -42,38 +43,6 @@ function seasonTotals(games, position) {
     { label: 'Rec TD', value: sum('rec_td') },
     { label: 'Yds/Catch', value: receptions ? (recYards / receptions).toFixed(1) : '0.0' },
   ]
-}
-
-function GameLogTable({ games }) {
-  const recent = games.slice(-5).reverse()
-  return (
-    <div className="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Wk</th>
-            <th>Opp</th>
-            <th>Pass</th>
-            <th>Rush</th>
-            <th>Rec</th>
-            <th>TD</th>
-          </tr>
-        </thead>
-        <tbody>
-          {recent.map((g, i) => (
-            <tr key={i}>
-              <td>{g.week}</td>
-              <td>{g.home_or_away}{g.opponent}</td>
-              <td>{g.pass_att ? `${g.pass_cmp}/${g.pass_att}, ${g.pass_yards}yd` : '-'}</td>
-              <td>{g.rush_att ? `${g.rush_att} car, ${g.rush_yards}yd` : '-'}</td>
-              <td>{g.targets ? `${g.receptions}/${g.targets}, ${g.rec_yards}yd` : '-'}</td>
-              <td>{g.any_td || 0}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  )
 }
 
 export default function PlayerSlideout() {
