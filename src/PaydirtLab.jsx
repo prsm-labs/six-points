@@ -127,7 +127,11 @@ function PaydirtTable({ rows }) {
                     {p.team}
                   </button>
                 </td>
-                <td>{p.opponent}</td>
+                <td>
+                  <button className="team-link" onClick={() => openTeamSlide({ team: p.opponent, context: 'defense' })}>
+                    {p.opponent}
+                  </button>
+                </td>
                 <td>
                   <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />

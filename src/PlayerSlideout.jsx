@@ -120,6 +120,11 @@ export default function PlayerSlideout() {
                 {player.team}
               </button>
             </div>
+            {directoryEntry?.stats_url && (
+              <a href={directoryEntry.stats_url} target="_blank" rel="noopener noreferrer" className="external-link">
+                View on ESPN &rarr;
+              </a>
+            )}
           </div>
           <button className="slideout-close" onClick={closePlayerSlide} aria-label="Close">
             &times;

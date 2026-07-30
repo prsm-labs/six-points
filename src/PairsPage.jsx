@@ -90,7 +90,11 @@ function PairsTable({ pairs }) {
                     {p.team}
                   </button>
                 </td>
-                <td>{p.opponent}</td>
+                <td>
+                  <button className="team-link" onClick={() => openTeamSlide({ team: p.opponent, context: 'defense' })}>
+                    {p.opponent}
+                  </button>
+                </td>
                 <td>
                   <div className="player-cell" onClick={() => openPlayerSlide(p.playerA)}>
                     <PlayerAvatar playerId={p.playerA.player_id} name={p.playerA.player_name} />

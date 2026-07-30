@@ -419,3 +419,15 @@ th.sortable:hover {
   font-size: 0.62rem;
   color: var(--muted);
 }
+
+.external-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.external-link:hover {
+  text-decoration: underline;
+}

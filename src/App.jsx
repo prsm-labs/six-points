@@ -104,7 +104,11 @@ function AllMatchupsTable({ data }) {
                     {m.team}
                   </button>
                 </td>
-                <td>{m.opponent}</td>
+                <td>
+                  <button className="team-link" onClick={() => openTeamSlide({ team: m.opponent, context: 'defense' })}>
+                    {m.opponent}
+                  </button>
+                </td>
                 <td>{m.position}</td>
                 <td>{Number(m.usage_sig).toFixed(1)}</td>
                 <td>{Number(m.gtd).toFixed(1)}</td>
@@ -277,7 +281,11 @@ function WeekDrillDown({ rows }) {
                 </div>
               </td>
               <td>{r.position}</td>
-              <td>{r.opponent}</td>
+              <td>
+                <button className="team-link" onClick={() => openTeamSlide({ team: r.opponent, context: 'defense' })}>
+                  {r.opponent}
+                </button>
+              </td>
               <td className="zone-score">{Number(r.zone_score).toFixed(1)}</td>
               <td>
                 <span className={tierClass(r.predicted_tier)}>{r.predicted_tier}</span>
