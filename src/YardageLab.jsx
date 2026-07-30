@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
+import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 
 function percentile(values, p) {
   const sorted = values.slice().sort((a, b) => a - b)
@@ -125,10 +126,14 @@ function YardageTable({ rows }) {
           <tbody>
             {sorted.map((p, i) => (
               <tr key={i}>
-                <td>{p.team}</td>
+                <td>
+                  <button className="team-link" onClick={() => openTeamSlide({ team: p.team })}>
+                    {p.team}
+                  </button>
+                </td>
                 <td>{p.opponent}</td>
                 <td>
-                  <div className="player-cell">
+                  <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />
                     {p.player_name}
                   </div>

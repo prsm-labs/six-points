@@ -238,4 +238,184 @@ th.sortable:hover {
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
+}
+
+.player-cell:hover,
+.team-link:hover {
+  text-decoration: underline;
+}
+
+.team-link {
+  cursor: pointer;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+}
+
+/* Slideout panel shell -- shared by PlayerSlideout and TeamSlideout, per
+   PROMPT_SixPoints_PlayerTeamSlideouts.md §2: fixed right-side panel, backdrop click-to-close,
+   sticky header pinned while the body scrolls. */
+.slideout-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+.slideout-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(420px, 100vw);
+  height: 100vh;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  z-index: 901;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.slideout-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.slideout-header .avatar {
+  width: 44px;
+  height: 44px;
+}
+
+.slideout-header-info {
+  flex: 1;
+}
+
+.slideout-header-info h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.slideout-header-info .sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.slideout-close {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.slideout-body {
+  padding: 16px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.slideout-section h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+}
+
+.stat-tile {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.stat-tile .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.stat-tile .label {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+/* L7 chart */
+.l7-pills {
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.l7-hit-rate {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.hit-rate-good { color: var(--accent); }
+.hit-rate-mid { color: #6fbf73; }
+.hit-rate-low { color: var(--muted); }
+
+.l7-bars {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.l7-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+}
+
+.l7-bar-track {
+  height: 90px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.l7-bar {
+  width: 60%;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.15s ease;
+}
+
+.l7-bar-hit { background: var(--accent); }
+.l7-bar-miss { background: var(--muted); opacity: 0.5; }
+
+.l7-bar-value {
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.l7-bar-label {
+  font-size: 0.68rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.l7-bar-sub {
+  font-size: 0.62rem;
+  color: var(--muted);
 }

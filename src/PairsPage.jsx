@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
+import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 
 function buildPairs(matchups) {
   // Concept doc §8: stack two players exploiting the SAME scheme weakness, not just shared
@@ -84,17 +85,21 @@ function PairsTable({ pairs }) {
           <tbody>
             {sorted.map((p, i) => (
               <tr key={i}>
-                <td>{p.team}</td>
+                <td>
+                  <button className="team-link" onClick={() => openTeamSlide({ team: p.team })}>
+                    {p.team}
+                  </button>
+                </td>
                 <td>{p.opponent}</td>
                 <td>
-                  <div className="player-cell">
+                  <div className="player-cell" onClick={() => openPlayerSlide(p.playerA)}>
                     <PlayerAvatar playerId={p.playerA.player_id} name={p.playerA.player_name} />
                     {p.playerA.player_name} ({p.playerA.position}) &middot;{' '}
                     {p.playerA.zone_score.toFixed(1)}
                   </div>
                 </td>
                 <td>
-                  <div className="player-cell">
+                  <div className="player-cell" onClick={() => openPlayerSlide(p.playerB)}>
                     <PlayerAvatar playerId={p.playerB.player_id} name={p.playerB.player_name} />
                     {p.playerB.player_name} ({p.playerB.position}) &middot;{' '}
                     {p.playerB.zone_score.toFixed(1)}

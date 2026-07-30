@@ -20,7 +20,8 @@
       "td_rate_per_touch": 0.045454545454545456,
       "ypt": 4.2272727272727275,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0569
+      "opp_td_rate_allowed": 0.0569,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -40,7 +41,8 @@
       "td_rate_per_touch": 0.05223880597014925,
       "ypt": 4.619402985074627,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0572
+      "opp_td_rate_allowed": 0.0572,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -60,7 +62,8 @@
       "td_rate_per_touch": 0.13333333333333333,
       "ypt": 10.933333333333334,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -80,7 +83,8 @@
       "td_rate_per_touch": 0.25,
       "ypt": 7.0,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -100,7 +104,8 @@
       "td_rate_per_touch": 0.05405405405405406,
       "ypt": 5.22972972972973,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -120,7 +125,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.0,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -140,7 +146,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.888888888888889,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -160,7 +167,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0429
+      "opp_td_rate_allowed": 0.0429,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -180,7 +188,8 @@
       "td_rate_per_touch": 0.03571428571428571,
       "ypt": 5.25,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0459
+      "opp_td_rate_allowed": 0.0459,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -200,7 +209,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.625,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -220,7 +230,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -240,7 +251,8 @@
       "td_rate_per_touch": 0.22727272727272727,
       "ypt": 7.318181818181818,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -260,7 +272,8 @@
       "td_rate_per_touch": 0.12280701754385964,
       "ypt": 6.921052631578948,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -280,7 +293,8 @@
       "td_rate_per_touch": 0.054945054945054944,
       "ypt": 5.291208791208791,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0328
+      "opp_td_rate_allowed": 0.0328,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -300,7 +314,8 @@
       "td_rate_per_touch": 0.06790123456790123,
       "ypt": 7.246913580246914,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -320,7 +335,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.4,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -340,7 +356,8 @@
       "td_rate_per_touch": 0.045454545454545456,
       "ypt": 4.795454545454546,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0405
+      "opp_td_rate_allowed": 0.0405,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -360,7 +377,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 10.166666666666666,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -380,7 +398,8 @@
       "td_rate_per_touch": 0.050505050505050504,
       "ypt": 4.515151515151516,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0405
+      "opp_td_rate_allowed": 0.0405,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -400,7 +419,8 @@
       "td_rate_per_touch": 0.04,
       "ypt": 3.2,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0409
+      "opp_td_rate_allowed": 0.0409,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -420,7 +440,8 @@
       "td_rate_per_touch": 0.04878048780487805,
       "ypt": 3.2439024390243905,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0192
+      "opp_td_rate_allowed": 0.0192,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -440,7 +461,8 @@
       "td_rate_per_touch": 0.06593406593406594,
       "ypt": 7.384615384615385,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -460,7 +482,8 @@
       "td_rate_per_touch": 0.021739130434782608,
       "ypt": 4.369565217391305,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0409
+      "opp_td_rate_allowed": 0.0409,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -480,7 +503,8 @@
       "td_rate_per_touch": 0.04,
       "ypt": 4.821176470588235,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0226
+      "opp_td_rate_allowed": 0.0226,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -500,7 +524,8 @@
       "td_rate_per_touch": 0.054313099041533544,
       "ypt": 5.50479233226837,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -520,7 +545,8 @@
       "td_rate_per_touch": 0.06666666666666667,
       "ypt": 6.333333333333333,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -540,7 +566,8 @@
       "td_rate_per_touch": 0.03571428571428571,
       "ypt": 4.0,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -560,7 +587,8 @@
       "td_rate_per_touch": 0.015228426395939087,
       "ypt": 4.411167512690355,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0572
+      "opp_td_rate_allowed": 0.0572,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -580,7 +608,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.166666666666667,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0569
+      "opp_td_rate_allowed": 0.0569,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -600,7 +629,8 @@
       "td_rate_per_touch": 0.02710843373493976,
       "ypt": 4.2620481927710845,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -620,7 +650,8 @@
       "td_rate_per_touch": 0.25,
       "ypt": 10.75,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -640,7 +671,8 @@
       "td_rate_per_touch": 0.061224489795918366,
       "ypt": 9.979591836734693,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -660,7 +692,8 @@
       "td_rate_per_touch": 0.043859649122807015,
       "ypt": 3.763157894736842,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0192
+      "opp_td_rate_allowed": 0.0192,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -680,7 +713,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.977777777777778,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0192
+      "opp_td_rate_allowed": 0.0192,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -700,7 +734,8 @@
       "td_rate_per_touch": 0.029490616621983913,
       "ypt": 6.050938337801608,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0253
+      "opp_td_rate_allowed": 0.0253,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -720,7 +755,8 @@
       "td_rate_per_touch": 0.023952095808383235,
       "ypt": 4.844311377245509,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.0424
+      "opp_td_rate_allowed": 0.0424,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -740,7 +776,8 @@
       "td_rate_per_touch": 0.16666666666666666,
       "ypt": 4.5,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -760,7 +797,8 @@
       "td_rate_per_touch": 0.033003300330033,
       "ypt": 4.458745874587459,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -780,7 +818,8 @@
       "td_rate_per_touch": 0.041666666666666664,
       "ypt": 3.6666666666666665,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.0316
+      "opp_td_rate_allowed": 0.0316,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -800,7 +839,8 @@
       "td_rate_per_touch": 0.05211726384364821,
       "ypt": 5.273615635179153,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.024
+      "opp_td_rate_allowed": 0.024,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -820,7 +860,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.142857142857143,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -840,7 +881,8 @@
       "td_rate_per_touch": 0.017241379310344827,
       "ypt": 6.724137931034483,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -860,7 +902,8 @@
       "td_rate_per_touch": 0.026217228464419477,
       "ypt": 3.745318352059925,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0409
+      "opp_td_rate_allowed": 0.0409,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -880,7 +923,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.0,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -900,7 +944,8 @@
       "td_rate_per_touch": 0.05851063829787234,
       "ypt": 4.1436170212765955,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.0316
+      "opp_td_rate_allowed": 0.0316,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -920,7 +965,8 @@
       "td_rate_per_touch": 0.08333333333333333,
       "ypt": 14.416666666666666,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -940,7 +986,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.5,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -960,7 +1007,8 @@
       "td_rate_per_touch": 0.14285714285714285,
       "ypt": 12.547619047619047,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -980,7 +1028,8 @@
       "td_rate_per_touch": 0.050359712230215826,
       "ypt": 4.356115107913669,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0267
+      "opp_td_rate_allowed": 0.0267,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -1000,7 +1049,8 @@
       "td_rate_per_touch": 0.02631578947368421,
       "ypt": 4.078947368421052,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0255
+      "opp_td_rate_allowed": 0.0255,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -1020,7 +1070,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.857142857142857,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0405
+      "opp_td_rate_allowed": 0.0405,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -1040,7 +1091,8 @@
       "td_rate_per_touch": 1.0,
       "ypt": 6.0,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -1060,7 +1112,8 @@
       "td_rate_per_touch": 0.16666666666666666,
       "ypt": 7.972222222222222,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -1080,7 +1133,8 @@
       "td_rate_per_touch": 0.0446927374301676,
       "ypt": 4.776536312849162,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -1100,7 +1154,8 @@
       "td_rate_per_touch": 0.025179856115107913,
       "ypt": 4.830935251798561,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0429
+      "opp_td_rate_allowed": 0.0429,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -1120,7 +1175,8 @@
       "td_rate_per_touch": 0.5,
       "ypt": 20.0,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -1140,7 +1196,8 @@
       "td_rate_per_touch": 0.06875,
       "ypt": 8.0125,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -1160,7 +1217,8 @@
       "td_rate_per_touch": 0.23076923076923078,
       "ypt": 8.5,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -1180,7 +1238,8 @@
       "td_rate_per_touch": 0.034482758620689655,
       "ypt": 9.137931034482758,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -1200,7 +1259,8 @@
       "td_rate_per_touch": 0.25,
       "ypt": 8.5,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -1220,7 +1280,8 @@
       "td_rate_per_touch": 0.1111111111111111,
       "ypt": 5.617283950617284,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -1240,7 +1301,8 @@
       "td_rate_per_touch": 0.13043478260869565,
       "ypt": 7.956521739130435,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -1260,7 +1322,8 @@
       "td_rate_per_touch": 0.041666666666666664,
       "ypt": 3.4166666666666665,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -1280,7 +1343,8 @@
       "td_rate_per_touch": 0.023952095808383235,
       "ypt": 4.293413173652695,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0429
+      "opp_td_rate_allowed": 0.0429,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -1300,7 +1364,8 @@
       "td_rate_per_touch": 0.013888888888888888,
       "ypt": 3.9097222222222223,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0469
+      "opp_td_rate_allowed": 0.0469,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -1320,7 +1385,8 @@
       "td_rate_per_touch": 0.3333333333333333,
       "ypt": 5.333333333333333,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -1340,7 +1406,8 @@
       "td_rate_per_touch": 0.07547169811320754,
       "ypt": 8.150943396226415,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -1360,7 +1427,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.3125,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -1380,7 +1448,8 @@
       "td_rate_per_touch": 0.03571428571428571,
       "ypt": 7.928571428571429,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -1400,7 +1469,8 @@
       "td_rate_per_touch": 0.09523809523809523,
       "ypt": 7.904761904761905,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -1420,7 +1490,8 @@
       "td_rate_per_touch": 0.03225806451612903,
       "ypt": 9.580645161290322,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -1440,7 +1511,8 @@
       "td_rate_per_touch": 0.040345821325648415,
       "ypt": 5.46685878962536,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0403
+      "opp_td_rate_allowed": 0.0403,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -1460,7 +1532,8 @@
       "td_rate_per_touch": 0.07692307692307693,
       "ypt": 6.338461538461538,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -1480,7 +1553,8 @@
       "td_rate_per_touch": 0.034482758620689655,
       "ypt": 5.9655172413793105,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -1500,7 +1574,8 @@
       "td_rate_per_touch": 0.022222222222222223,
       "ypt": 4.261111111111111,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0475
+      "opp_td_rate_allowed": 0.0475,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -1520,7 +1595,8 @@
       "td_rate_per_touch": 0.07865168539325842,
       "ypt": 7.685393258426966,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -1540,7 +1616,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.0434782608695654,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0459
+      "opp_td_rate_allowed": 0.0459,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -1560,7 +1637,8 @@
       "td_rate_per_touch": 0.025906735751295335,
       "ypt": 4.766839378238342,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.0388
+      "opp_td_rate_allowed": 0.0388,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -1580,7 +1658,8 @@
       "td_rate_per_touch": 0.057971014492753624,
       "ypt": 3.1884057971014492,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.029
+      "opp_td_rate_allowed": 0.029,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -1600,7 +1679,8 @@
       "td_rate_per_touch": 0.07142857142857142,
       "ypt": 7.059523809523809,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -1620,7 +1700,8 @@
       "td_rate_per_touch": 0.11764705882352941,
       "ypt": 5.0,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -1640,7 +1721,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.0,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0409
+      "opp_td_rate_allowed": 0.0409,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -1660,7 +1742,8 @@
       "td_rate_per_touch": 0.04452054794520548,
       "ypt": 4.972602739726027,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0444
+      "opp_td_rate_allowed": 0.0444,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -1680,7 +1763,8 @@
       "td_rate_per_touch": 0.03861003861003861,
       "ypt": 5.1312741312741315,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.0388
+      "opp_td_rate_allowed": 0.0388,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -1700,7 +1784,8 @@
       "td_rate_per_touch": 0.03375527426160337,
       "ypt": 5.029535864978903,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0405
+      "opp_td_rate_allowed": 0.0405,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -1720,7 +1805,8 @@
       "td_rate_per_touch": 0.05714285714285714,
       "ypt": 7.742857142857143,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -1740,7 +1826,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.571428571428571,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -1760,7 +1847,8 @@
       "td_rate_per_touch": 0.08602150537634409,
       "ypt": 3.849462365591398,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0475
+      "opp_td_rate_allowed": 0.0475,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -1780,7 +1868,8 @@
       "td_rate_per_touch": 0.03827751196172249,
       "ypt": 5.162679425837321,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -1800,7 +1889,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.416666666666666,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -1820,7 +1910,8 @@
       "td_rate_per_touch": 0.06930693069306931,
       "ypt": 8.534653465346535,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -1840,7 +1931,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.066666666666666,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -1860,7 +1952,8 @@
       "td_rate_per_touch": 0.05,
       "ypt": 7.275,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -1880,7 +1973,8 @@
       "td_rate_per_touch": 0.04377104377104377,
       "ypt": 4.582491582491582,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -1900,7 +1994,8 @@
       "td_rate_per_touch": 0.05,
       "ypt": 7.325,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -1920,7 +2015,8 @@
       "td_rate_per_touch": 0.14285714285714285,
       "ypt": 6.071428571428571,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -1940,7 +2036,8 @@
       "td_rate_per_touch": 0.1111111111111111,
       "ypt": 8.866666666666667,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -1960,7 +2057,8 @@
       "td_rate_per_touch": 0.03389830508474576,
       "ypt": 4.711864406779661,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -1980,7 +2078,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 13.636363636363637,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -2000,7 +2099,8 @@
       "td_rate_per_touch": 0.022727272727272728,
       "ypt": 7.886363636363637,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -2020,7 +2120,8 @@
       "td_rate_per_touch": 0.25,
       "ypt": 22.5,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -2040,7 +2141,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.5,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -2060,7 +2162,8 @@
       "td_rate_per_touch": 0.07142857142857142,
       "ypt": 3.2857142857142856,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -2080,7 +2183,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.166666666666667,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -2100,7 +2204,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.5479452054794525,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -2120,7 +2225,8 @@
       "td_rate_per_touch": 0.07,
       "ypt": 10.47,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -2140,7 +2246,8 @@
       "td_rate_per_touch": 0.029411764705882353,
       "ypt": 8.323529411764707,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -2160,7 +2267,8 @@
       "td_rate_per_touch": 0.03783783783783784,
       "ypt": 5.129729729729729,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0405
+      "opp_td_rate_allowed": 0.0405,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -2180,7 +2288,8 @@
       "td_rate_per_touch": 0.07042253521126761,
       "ypt": 8.859154929577464,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -2200,7 +2309,8 @@
       "td_rate_per_touch": 0.01818181818181818,
       "ypt": 9.2,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -2220,7 +2330,8 @@
       "td_rate_per_touch": 0.017341040462427744,
       "ypt": 4.317919075144508,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0317
+      "opp_td_rate_allowed": 0.0317,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -2240,7 +2351,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.277777777777778,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -2260,7 +2372,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.0,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -2280,7 +2393,8 @@
       "td_rate_per_touch": 0.1,
       "ypt": 5.525,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -2300,7 +2414,8 @@
       "td_rate_per_touch": 0.2,
       "ypt": 19.0,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -2320,7 +2435,8 @@
       "td_rate_per_touch": 0.06172839506172839,
       "ypt": 10.771604938271604,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -2340,7 +2456,8 @@
       "td_rate_per_touch": 0.041666666666666664,
       "ypt": 10.333333333333334,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -2360,7 +2477,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.0,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0403
+      "opp_td_rate_allowed": 0.0403,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -2380,7 +2498,8 @@
       "td_rate_per_touch": 0.032362459546925564,
       "ypt": 3.970873786407767,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0349
+      "opp_td_rate_allowed": 0.0349,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -2400,7 +2519,8 @@
       "td_rate_per_touch": 0.12244897959183673,
       "ypt": 7.591836734693878,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -2420,7 +2540,8 @@
       "td_rate_per_touch": 0.10869565217391304,
       "ypt": 6.369565217391305,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -2440,7 +2561,8 @@
       "td_rate_per_touch": 0.017857142857142856,
       "ypt": 4.642857142857143,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -2460,7 +2582,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.0,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -2480,7 +2603,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 9.5,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -2500,7 +2624,8 @@
       "td_rate_per_touch": 0.031007751937984496,
       "ypt": 4.3565891472868215,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0572
+      "opp_td_rate_allowed": 0.0572,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -2520,7 +2645,8 @@
       "td_rate_per_touch": 0.0375,
       "ypt": 4.99375,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -2540,7 +2666,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -2560,7 +2687,8 @@
       "td_rate_per_touch": 0.125,
       "ypt": 5.169642857142857,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -2580,7 +2708,8 @@
       "td_rate_per_touch": 0.042105263157894736,
       "ypt": 8.0,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -2600,7 +2729,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.2,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -2620,7 +2750,8 @@
       "td_rate_per_touch": 0.037037037037037035,
       "ypt": 9.037037037037036,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -2640,7 +2771,8 @@
       "td_rate_per_touch": 0.1111111111111111,
       "ypt": 4.320987654320987,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -2660,7 +2792,8 @@
       "td_rate_per_touch": 0.03125,
       "ypt": 4.5625,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.029
+      "opp_td_rate_allowed": 0.029,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -2680,7 +2813,8 @@
       "td_rate_per_touch": 0.022222222222222223,
       "ypt": 6.0,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -2700,7 +2834,8 @@
       "td_rate_per_touch": 0.032520325203252036,
       "ypt": 9.227642276422765,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -2720,7 +2855,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.8571428571428571,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -2740,7 +2876,8 @@
       "td_rate_per_touch": 0.06451612903225806,
       "ypt": 3.903225806451613,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -2760,7 +2897,8 @@
       "td_rate_per_touch": 0.07017543859649122,
       "ypt": 6.421052631578948,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -2780,7 +2918,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.857142857142857,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -2800,7 +2939,8 @@
       "td_rate_per_touch": 0.02564102564102564,
       "ypt": 9.188034188034187,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -2820,7 +2960,8 @@
       "td_rate_per_touch": 0.023121387283236993,
       "ypt": 4.445086705202312,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0293
+      "opp_td_rate_allowed": 0.0293,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -2840,7 +2981,8 @@
       "td_rate_per_touch": 0.056910569105691054,
       "ypt": 8.24390243902439,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -2860,7 +3002,8 @@
       "td_rate_per_touch": 0.058823529411764705,
       "ypt": 6.764705882352941,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -2880,7 +3023,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.590909090909092,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -2900,7 +3044,8 @@
       "td_rate_per_touch": 0.06666666666666667,
       "ypt": 5.822222222222222,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.024
+      "opp_td_rate_allowed": 0.024,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -2920,7 +3065,8 @@
       "td_rate_per_touch": 0.08,
       "ypt": 10.32,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -2940,7 +3086,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.5,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -2960,7 +3107,8 @@
       "td_rate_per_touch": 0.06666666666666667,
       "ypt": 10.533333333333333,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -2980,7 +3128,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.3636363636363638,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.037
+      "opp_td_rate_allowed": 0.037,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -3000,7 +3149,8 @@
       "td_rate_per_touch": 0.04,
       "ypt": 4.13,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -3020,7 +3170,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.142857142857143,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0409
+      "opp_td_rate_allowed": 0.0409,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -3040,7 +3191,8 @@
       "td_rate_per_touch": 0.05785123966942149,
       "ypt": 8.289256198347108,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -3060,7 +3212,8 @@
       "td_rate_per_touch": 0.06134969325153374,
       "ypt": 10.552147239263803,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -3080,7 +3233,8 @@
       "td_rate_per_touch": 0.03278688524590164,
       "ypt": 10.62295081967213,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -3100,7 +3254,8 @@
       "td_rate_per_touch": 0.07142857142857142,
       "ypt": 7.357142857142857,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -3120,7 +3275,8 @@
       "td_rate_per_touch": 0.02857142857142857,
       "ypt": 4.828571428571428,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -3140,7 +3296,8 @@
       "td_rate_per_touch": 0.05405405405405406,
       "ypt": 6.675675675675675,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -3160,7 +3317,8 @@
       "td_rate_per_touch": 0.14285714285714285,
       "ypt": 7.285714285714286,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -3180,7 +3338,8 @@
       "td_rate_per_touch": 0.05042016806722689,
       "ypt": 7.621848739495798,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -3200,7 +3359,8 @@
       "td_rate_per_touch": 0.05263157894736842,
       "ypt": 7.526315789473684,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -3220,7 +3380,8 @@
       "td_rate_per_touch": 0.03636363636363636,
       "ypt": 8.690909090909091,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -3240,7 +3401,8 @@
       "td_rate_per_touch": 0.05,
       "ypt": 7.533333333333333,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -3260,7 +3422,8 @@
       "td_rate_per_touch": 0.023668639053254437,
       "ypt": 4.431952662721893,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0475
+      "opp_td_rate_allowed": 0.0475,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -3280,7 +3443,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -3300,7 +3464,8 @@
       "td_rate_per_touch": 0.09333333333333334,
       "ypt": 6.92,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -3320,7 +3485,8 @@
       "td_rate_per_touch": 0.0761904761904762,
       "ypt": 4.0095238095238095,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -3340,7 +3506,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.75,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.037
+      "opp_td_rate_allowed": 0.037,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -3360,7 +3527,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 16.0,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -3380,7 +3548,8 @@
       "td_rate_per_touch": 0.08536585365853659,
       "ypt": 8.682926829268293,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -3400,7 +3569,8 @@
       "td_rate_per_touch": 0.05063291139240506,
       "ypt": 5.886075949367089,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -3420,7 +3590,8 @@
       "td_rate_per_touch": 0.038461538461538464,
       "ypt": 4.173076923076923,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -3440,7 +3611,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.625,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -3460,7 +3632,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.1521739130434785,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -3480,7 +3653,8 @@
       "td_rate_per_touch": 0.04918032786885246,
       "ypt": 5.590163934426229,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -3500,7 +3674,8 @@
       "td_rate_per_touch": 0.039473684210526314,
       "ypt": 5.342105263157895,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -3520,7 +3695,8 @@
       "td_rate_per_touch": 0.0392156862745098,
       "ypt": 6.9411764705882355,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -3540,7 +3716,8 @@
       "td_rate_per_touch": 0.05263157894736842,
       "ypt": 9.18421052631579,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -3560,7 +3737,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -3580,7 +3758,8 @@
       "td_rate_per_touch": 0.02,
       "ypt": 5.85,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -3600,7 +3779,8 @@
       "td_rate_per_touch": 0.031446540880503145,
       "ypt": 4.635220125786163,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0293
+      "opp_td_rate_allowed": 0.0293,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -3620,7 +3800,8 @@
       "td_rate_per_touch": 0.034482758620689655,
       "ypt": 8.827586206896552,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -3640,7 +3821,8 @@
       "td_rate_per_touch": 0.018796992481203006,
       "ypt": 4.597744360902255,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -3660,7 +3842,8 @@
       "td_rate_per_touch": 0.030303030303030304,
       "ypt": 3.9393939393939394,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0293
+      "opp_td_rate_allowed": 0.0293,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -3680,7 +3863,8 @@
       "td_rate_per_touch": 0.07692307692307693,
       "ypt": 3.6923076923076925,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -3700,7 +3884,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.911764705882353,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -3720,7 +3905,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.5,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -3740,7 +3926,8 @@
       "td_rate_per_touch": 0.3333333333333333,
       "ypt": 15.0,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -3760,7 +3947,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.285714285714286,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -3780,7 +3968,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.5,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -3800,7 +3989,8 @@
       "td_rate_per_touch": 0.03571428571428571,
       "ypt": 5.857142857142857,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0459
+      "opp_td_rate_allowed": 0.0459,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -3820,7 +4010,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.363636363636363,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -3840,7 +4031,8 @@
       "td_rate_per_touch": 0.047619047619047616,
       "ypt": 3.3333333333333335,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -3860,7 +4052,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.133333333333334,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -3880,7 +4073,8 @@
       "td_rate_per_touch": 0.030303030303030304,
       "ypt": 5.909090909090909,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0255
+      "opp_td_rate_allowed": 0.0255,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -3900,7 +4094,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 9.0,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -3920,7 +4115,8 @@
       "td_rate_per_touch": 0.014492753623188406,
       "ypt": 5.826086956521739,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.024
+      "opp_td_rate_allowed": 0.024,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -3940,7 +4136,8 @@
       "td_rate_per_touch": 0.08333333333333333,
       "ypt": 4.833333333333333,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -3960,7 +4157,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 13.5,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -3980,7 +4178,8 @@
       "td_rate_per_touch": 0.037037037037037035,
       "ypt": 5.296296296296297,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -4000,7 +4199,8 @@
       "td_rate_per_touch": 0.05,
       "ypt": 5.566666666666666,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -4020,7 +4220,8 @@
       "td_rate_per_touch": 0.16666666666666666,
       "ypt": 11.5,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -4040,7 +4241,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.777777777777778,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0293
+      "opp_td_rate_allowed": 0.0293,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -4060,7 +4262,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.0,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -4080,7 +4283,8 @@
       "td_rate_per_touch": 0.037267080745341616,
       "ypt": 4.440993788819876,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0317
+      "opp_td_rate_allowed": 0.0317,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -4100,7 +4304,8 @@
       "td_rate_per_touch": 0.04938271604938271,
       "ypt": 5.111111111111111,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -4120,7 +4325,8 @@
       "td_rate_per_touch": 0.0429042904290429,
       "ypt": 4.415841584158416,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0459
+      "opp_td_rate_allowed": 0.0459,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -4140,7 +4346,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 15.0,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -4160,7 +4367,8 @@
       "td_rate_per_touch": 0.16666666666666666,
       "ypt": 10.38888888888889,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -4180,7 +4388,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.0,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -4200,7 +4409,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.0,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0192
+      "opp_td_rate_allowed": 0.0192,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -4220,7 +4430,8 @@
       "td_rate_per_touch": 0.0228310502283105,
       "ypt": 3.9406392694063928,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.037
+      "opp_td_rate_allowed": 0.037,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -4240,7 +4451,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.3,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0328
+      "opp_td_rate_allowed": 0.0328,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -4260,7 +4472,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.888888888888889,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -4280,7 +4493,8 @@
       "td_rate_per_touch": 0.0625,
       "ypt": 8.229166666666666,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -4300,7 +4514,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.153846153846154,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -4320,7 +4535,8 @@
       "td_rate_per_touch": 0.046511627906976744,
       "ypt": 3.5813953488372094,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -4340,7 +4556,8 @@
       "td_rate_per_touch": 0.1111111111111111,
       "ypt": 4.333333333333333,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -4360,7 +4577,8 @@
       "td_rate_per_touch": 0.0547945205479452,
       "ypt": 6.931506849315069,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -4380,7 +4598,8 @@
       "td_rate_per_touch": 0.0784313725490196,
       "ypt": 5.862745098039215,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -4400,7 +4619,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 11.2,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -4420,7 +4640,8 @@
       "td_rate_per_touch": 0.0603448275862069,
       "ypt": 8.008620689655173,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -4440,7 +4661,8 @@
       "td_rate_per_touch": 0.10714285714285714,
       "ypt": 10.964285714285714,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -4460,7 +4682,8 @@
       "td_rate_per_touch": 0.02702702702702703,
       "ypt": 7.54054054054054,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -4480,7 +4703,8 @@
       "td_rate_per_touch": 0.029411764705882353,
       "ypt": 5.588235294117647,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -4500,7 +4724,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.434782608695652,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -4520,7 +4745,8 @@
       "td_rate_per_touch": 0.02109704641350211,
       "ypt": 4.962025316455696,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.0316
+      "opp_td_rate_allowed": 0.0316,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -4540,7 +4766,8 @@
       "td_rate_per_touch": 0.10638297872340426,
       "ypt": 11.127659574468085,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -4560,7 +4787,8 @@
       "td_rate_per_touch": 0.09090909090909091,
       "ypt": 5.590909090909091,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -4580,7 +4808,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.476190476190476,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -4600,7 +4829,8 @@
       "td_rate_per_touch": 0.09090909090909091,
       "ypt": 4.909090909090909,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -4620,7 +4850,8 @@
       "td_rate_per_touch": 0.06451612903225806,
       "ypt": 4.639784946236559,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.0424
+      "opp_td_rate_allowed": 0.0424,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -4640,7 +4871,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.5,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -4660,7 +4892,8 @@
       "td_rate_per_touch": 0.04411764705882353,
       "ypt": 5.514705882352941,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0403
+      "opp_td_rate_allowed": 0.0403,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -4680,7 +4913,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.6363636363636362,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0328
+      "opp_td_rate_allowed": 0.0328,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -4700,7 +4934,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.0,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -4720,7 +4955,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.296296296296296,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -4740,7 +4976,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.8125,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -4760,7 +4997,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.7272727272727275,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -4780,7 +5018,8 @@
       "td_rate_per_touch": 0.022727272727272728,
       "ypt": 8.318181818181818,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -4800,7 +5039,8 @@
       "td_rate_per_touch": 0.029411764705882353,
       "ypt": 8.088235294117647,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -4820,7 +5060,8 @@
       "td_rate_per_touch": 0.03773584905660377,
       "ypt": 9.018867924528301,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -4840,7 +5081,8 @@
       "td_rate_per_touch": 0.07216494845360824,
       "ypt": 7.577319587628866,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -4860,7 +5102,8 @@
       "td_rate_per_touch": 0.007874015748031496,
       "ypt": 4.417322834645669,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0192
+      "opp_td_rate_allowed": 0.0192,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -4880,7 +5123,8 @@
       "td_rate_per_touch": 0.08333333333333333,
       "ypt": 6.958333333333333,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -4900,7 +5144,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.1666666666666665,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -4920,7 +5165,8 @@
       "td_rate_per_touch": 0.04081632653061224,
       "ypt": 7.051020408163265,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -4940,7 +5186,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.5,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -4960,7 +5207,8 @@
       "td_rate_per_touch": 0.3333333333333333,
       "ypt": 2.0,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -4980,7 +5228,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.5,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -5000,7 +5249,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.6666666666666667,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0569
+      "opp_td_rate_allowed": 0.0569,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -5020,7 +5270,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.029411764705882,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -5040,7 +5291,8 @@
       "td_rate_per_touch": 0.05405405405405406,
       "ypt": 8.243243243243244,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -5060,7 +5312,8 @@
       "td_rate_per_touch": 0.06666666666666667,
       "ypt": 6.483333333333333,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -5080,7 +5333,8 @@
       "td_rate_per_touch": 0.08163265306122448,
       "ypt": 8.877551020408163,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -5100,7 +5354,8 @@
       "td_rate_per_touch": 0.1111111111111111,
       "ypt": 9.46031746031746,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -5120,7 +5375,8 @@
       "td_rate_per_touch": 0.033707865168539325,
       "ypt": 7.629213483146067,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -5140,7 +5396,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 9.333333333333334,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -5160,7 +5417,8 @@
       "td_rate_per_touch": 0.25,
       "ypt": 11.25,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -5180,7 +5438,8 @@
       "td_rate_per_touch": 0.05333333333333334,
       "ypt": 3.94,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0253
+      "opp_td_rate_allowed": 0.0253,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -5200,7 +5459,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.85,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0293
+      "opp_td_rate_allowed": 0.0293,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -5220,7 +5480,8 @@
       "td_rate_per_touch": 0.09302325581395349,
       "ypt": 8.627906976744185,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -5240,7 +5501,8 @@
       "td_rate_per_touch": 0.05555555555555555,
       "ypt": 10.944444444444445,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -5260,7 +5522,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 9.833333333333334,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -5280,7 +5543,8 @@
       "td_rate_per_touch": 0.10344827586206896,
       "ypt": 7.011494252873563,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -5300,7 +5564,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 10.0,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -5320,7 +5585,8 @@
       "td_rate_per_touch": 0.06976744186046512,
       "ypt": 8.44186046511628,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -5340,7 +5606,8 @@
       "td_rate_per_touch": 0.045454545454545456,
       "ypt": 4.181818181818182,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -5360,7 +5627,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.75,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -5380,7 +5648,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.388888888888889,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0255
+      "opp_td_rate_allowed": 0.0255,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -5400,7 +5669,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.0,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -5420,7 +5690,8 @@
       "td_rate_per_touch": 0.045454545454545456,
       "ypt": 7.909090909090909,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -5440,7 +5711,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 16.0,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -5460,7 +5732,8 @@
       "td_rate_per_touch": 0.01639344262295082,
       "ypt": 5.836065573770492,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0192
+      "opp_td_rate_allowed": 0.0192,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -5480,7 +5753,8 @@
       "td_rate_per_touch": 0.030303030303030304,
       "ypt": 6.393939393939394,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -5500,7 +5774,8 @@
       "td_rate_per_touch": 0.041379310344827586,
       "ypt": 4.917241379310345,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0444
+      "opp_td_rate_allowed": 0.0444,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -5520,7 +5795,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.6,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -5540,7 +5816,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.25,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -5560,7 +5837,8 @@
       "td_rate_per_touch": 0.02912621359223301,
       "ypt": 6.834951456310679,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -5580,7 +5858,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 12.0,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -5600,7 +5879,8 @@
       "td_rate_per_touch": 0.04918032786885246,
       "ypt": 4.721311475409836,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -5620,7 +5900,8 @@
       "td_rate_per_touch": 0.04,
       "ypt": 9.4,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -5640,7 +5921,8 @@
       "td_rate_per_touch": 0.038461538461538464,
       "ypt": 6.884615384615385,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -5660,7 +5942,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.076923076923077,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -5680,7 +5963,8 @@
       "td_rate_per_touch": 0.04040404040404041,
       "ypt": 9.797979797979798,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -5700,7 +5984,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.285714285714286,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -5720,7 +6005,8 @@
       "td_rate_per_touch": 0.058823529411764705,
       "ypt": 9.196078431372548,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -5740,7 +6026,8 @@
       "td_rate_per_touch": 0.04807692307692308,
       "ypt": 8.096153846153847,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -5760,7 +6047,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 14.0,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -5780,7 +6068,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.5,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -5800,7 +6089,8 @@
       "td_rate_per_touch": 0.052083333333333336,
       "ypt": 7.427083333333333,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -5820,7 +6110,8 @@
       "td_rate_per_touch": 0.046875,
       "ypt": 7.3515625,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -5840,7 +6131,8 @@
       "td_rate_per_touch": 0.041666666666666664,
       "ypt": 9.0,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -5860,7 +6152,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.3684210526315788,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -5880,7 +6173,8 @@
       "td_rate_per_touch": 0.08108108108108109,
       "ypt": 11.837837837837839,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -5900,7 +6194,8 @@
       "td_rate_per_touch": 0.0058823529411764705,
       "ypt": 3.864705882352941,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0255
+      "opp_td_rate_allowed": 0.0255,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -5920,7 +6215,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.857142857142858,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -5940,7 +6236,8 @@
       "td_rate_per_touch": 0.030927835051546393,
       "ypt": 8.536082474226804,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -5960,7 +6257,8 @@
       "td_rate_per_touch": 0.07692307692307693,
       "ypt": 3.423076923076923,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -5980,7 +6278,8 @@
       "td_rate_per_touch": 0.03571428571428571,
       "ypt": 5.303571428571429,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -6000,7 +6299,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.5,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -6020,7 +6320,8 @@
       "td_rate_per_touch": 0.019230769230769232,
       "ypt": 4.288461538461538,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0255
+      "opp_td_rate_allowed": 0.0255,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -6040,7 +6341,8 @@
       "td_rate_per_touch": 0.10204081632653061,
       "ypt": 6.571428571428571,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -6060,7 +6362,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.181818181818182,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -6080,7 +6383,8 @@
       "td_rate_per_touch": 0.16666666666666666,
       "ypt": 6.166666666666667,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.0388
+      "opp_td_rate_allowed": 0.0388,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -6100,7 +6404,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.0,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -6120,7 +6425,8 @@
       "td_rate_per_touch": 0.015151515151515152,
       "ypt": 7.204545454545454,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -6140,7 +6446,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.7,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -6160,7 +6467,8 @@
       "td_rate_per_touch": 0.056910569105691054,
       "ypt": 9.21951219512195,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -6180,7 +6488,8 @@
       "td_rate_per_touch": 0.05194805194805195,
       "ypt": 11.311688311688311,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -6200,7 +6509,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.8,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -6220,7 +6530,8 @@
       "td_rate_per_touch": 0.043478260869565216,
       "ypt": 11.565217391304348,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -6240,7 +6551,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 25.0,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -6260,7 +6572,8 @@
       "td_rate_per_touch": 0.05732484076433121,
       "ypt": 7.388535031847134,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -6280,7 +6593,8 @@
       "td_rate_per_touch": 0.1875,
       "ypt": 12.8125,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -6300,7 +6614,8 @@
       "td_rate_per_touch": 0.04477611940298507,
       "ypt": 9.567164179104477,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -6320,7 +6635,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.6,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -6340,7 +6656,8 @@
       "td_rate_per_touch": 0.09375,
       "ypt": 6.5,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -6360,7 +6677,8 @@
       "td_rate_per_touch": 0.029411764705882353,
       "ypt": 6.029411764705882,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -6380,7 +6698,8 @@
       "td_rate_per_touch": 0.041666666666666664,
       "ypt": 6.604166666666667,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -6400,7 +6719,8 @@
       "td_rate_per_touch": 0.02702702702702703,
       "ypt": 4.0,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -6420,7 +6740,8 @@
       "td_rate_per_touch": 0.047058823529411764,
       "ypt": 5.894117647058824,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -6440,7 +6761,8 @@
       "td_rate_per_touch": 0.022222222222222223,
       "ypt": 6.2444444444444445,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -6460,7 +6782,8 @@
       "td_rate_per_touch": 0.044444444444444446,
       "ypt": 7.355555555555555,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -6480,7 +6803,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.5,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.0388
+      "opp_td_rate_allowed": 0.0388,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -6500,7 +6824,8 @@
       "td_rate_per_touch": 0.1111111111111111,
       "ypt": 8.555555555555555,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -6520,7 +6845,8 @@
       "td_rate_per_touch": 0.023809523809523808,
       "ypt": 5.928571428571429,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -6540,7 +6866,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.3333333333333333,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -6560,7 +6887,8 @@
       "td_rate_per_touch": 0.03225806451612903,
       "ypt": 4.483870967741935,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -6580,7 +6908,8 @@
       "td_rate_per_touch": 0.029411764705882353,
       "ypt": 7.411764705882353,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -6600,7 +6929,8 @@
       "td_rate_per_touch": 0.1111111111111111,
       "ypt": 9.0,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -6620,7 +6950,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.9655172413793105,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -6640,7 +6971,8 @@
       "td_rate_per_touch": 0.047619047619047616,
       "ypt": 1.5238095238095237,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -6660,7 +6992,8 @@
       "td_rate_per_touch": 0.1111111111111111,
       "ypt": 3.6444444444444444,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -6680,7 +7013,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.416666666666667,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -6700,7 +7034,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.681818181818182,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -6720,7 +7055,8 @@
       "td_rate_per_touch": 0.06,
       "ypt": 8.78,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -6740,7 +7076,8 @@
       "td_rate_per_touch": 0.031746031746031744,
       "ypt": 5.396825396825397,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -6760,7 +7097,8 @@
       "td_rate_per_touch": 0.03333333333333333,
       "ypt": 7.2,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -6780,7 +7118,8 @@
       "td_rate_per_touch": 0.01718213058419244,
       "ypt": 4.86254295532646,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0569
+      "opp_td_rate_allowed": 0.0569,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -6800,7 +7139,8 @@
       "td_rate_per_touch": 0.13636363636363635,
       "ypt": 9.409090909090908,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -6820,7 +7160,8 @@
       "td_rate_per_touch": 0.05128205128205128,
       "ypt": 5.17948717948718,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -6840,7 +7181,8 @@
       "td_rate_per_touch": 0.013333333333333334,
       "ypt": 5.44,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0405
+      "opp_td_rate_allowed": 0.0405,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -6860,7 +7202,8 @@
       "td_rate_per_touch": 0.03932584269662921,
       "ypt": 7.47191011235955,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -6880,7 +7223,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.0,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -6900,7 +7244,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 9.852941176470589,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -6920,7 +7265,8 @@
       "td_rate_per_touch": 0.05027932960893855,
       "ypt": 4.016759776536313,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0469
+      "opp_td_rate_allowed": 0.0469,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -6940,7 +7286,8 @@
       "td_rate_per_touch": 0.0196078431372549,
       "ypt": 6.882352941176471,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -6960,7 +7307,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.3,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -6980,7 +7328,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 10.363636363636363,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -7000,7 +7349,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 11.166666666666666,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -7020,7 +7370,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 12.285714285714286,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -7040,7 +7391,8 @@
       "td_rate_per_touch": 0.13333333333333333,
       "ypt": 9.466666666666667,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -7060,7 +7412,8 @@
       "td_rate_per_touch": 0.03715170278637771,
       "ypt": 5.6687306501547985,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.029
+      "opp_td_rate_allowed": 0.029,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -7080,7 +7433,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.5,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -7100,7 +7454,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.183673469387755,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -7120,7 +7475,8 @@
       "td_rate_per_touch": 0.1,
       "ypt": 6.0,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -7140,7 +7496,8 @@
       "td_rate_per_touch": 0.02857142857142857,
       "ypt": 4.257142857142857,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -7160,7 +7517,8 @@
       "td_rate_per_touch": 0.023255813953488372,
       "ypt": 7.72093023255814,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -7180,7 +7538,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.6521739130434785,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0429
+      "opp_td_rate_allowed": 0.0429,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -7200,7 +7559,8 @@
       "td_rate_per_touch": 0.07792207792207792,
       "ypt": 5.922077922077922,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -7220,7 +7580,8 @@
       "td_rate_per_touch": 0.06086956521739131,
       "ypt": 6.469565217391304,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -7240,7 +7601,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.5,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -7260,7 +7622,8 @@
       "td_rate_per_touch": 0.05555555555555555,
       "ypt": 3.888888888888889,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -7280,7 +7643,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.5,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -7300,7 +7664,8 @@
       "td_rate_per_touch": 0.046511627906976744,
       "ypt": 5.372093023255814,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -7320,7 +7685,8 @@
       "td_rate_per_touch": 0.07352941176470588,
       "ypt": 7.6911764705882355,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -7340,7 +7706,8 @@
       "td_rate_per_touch": 0.0392156862745098,
       "ypt": 3.4901960784313726,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -7360,7 +7727,8 @@
       "td_rate_per_touch": 0.044642857142857144,
       "ypt": 7.133928571428571,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -7380,7 +7748,8 @@
       "td_rate_per_touch": 0.14285714285714285,
       "ypt": 3.857142857142857,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -7400,7 +7769,8 @@
       "td_rate_per_touch": 0.030303030303030304,
       "ypt": 8.393939393939394,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -7420,7 +7790,8 @@
       "td_rate_per_touch": 0.05128205128205128,
       "ypt": 5.794871794871795,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -7440,7 +7811,8 @@
       "td_rate_per_touch": 0.023809523809523808,
       "ypt": 5.9523809523809526,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -7460,7 +7832,8 @@
       "td_rate_per_touch": 0.25,
       "ypt": 12.5,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -7480,7 +7853,8 @@
       "td_rate_per_touch": 0.05454545454545454,
       "ypt": 7.1,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -7500,7 +7874,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -1.0,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.059
+      "opp_td_rate_allowed": 0.059,
+      "script_component": 70.2
     },
     {
       "season": 2025,
@@ -7520,7 +7895,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.5,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -7540,7 +7916,8 @@
       "td_rate_per_touch": 0.05405405405405406,
       "ypt": 8.91891891891892,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -7560,7 +7937,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.45,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -7580,7 +7958,8 @@
       "td_rate_per_touch": 0.05714285714285714,
       "ypt": 5.142857142857143,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -7600,7 +7979,8 @@
       "td_rate_per_touch": 0.05660377358490566,
       "ypt": 7.443396226415095,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -7620,7 +8000,8 @@
       "td_rate_per_touch": 0.015384615384615385,
       "ypt": 2.6615384615384614,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -7640,7 +8021,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.535714285714286,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -7660,7 +8042,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.0,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -7680,7 +8063,8 @@
       "td_rate_per_touch": 0.0196078431372549,
       "ypt": 4.078431372549019,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0226
+      "opp_td_rate_allowed": 0.0226,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -7700,7 +8084,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 9.927272727272728,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -7720,7 +8105,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.76923076923077,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -7740,7 +8126,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.291666666666667,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -7760,7 +8147,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.658536585365854,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -7780,7 +8168,8 @@
       "td_rate_per_touch": 0.2,
       "ypt": 6.4,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -7800,7 +8189,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.129032258064516,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -7820,7 +8210,8 @@
       "td_rate_per_touch": 0.03669724770642202,
       "ypt": 6.798165137614679,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -7840,7 +8231,8 @@
       "td_rate_per_touch": 0.05714285714285714,
       "ypt": 8.028571428571428,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -7860,7 +8252,8 @@
       "td_rate_per_touch": 0.024193548387096774,
       "ypt": 4.42741935483871,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0267
+      "opp_td_rate_allowed": 0.0267,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -7880,7 +8273,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.25,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -7900,7 +8294,8 @@
       "td_rate_per_touch": 0.05357142857142857,
       "ypt": 9.375,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -7920,7 +8315,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.5,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -7940,7 +8336,8 @@
       "td_rate_per_touch": 0.075,
       "ypt": 7.075,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -7960,7 +8357,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.352941176470588,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -7980,7 +8378,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.181818181818182,
       "opp_def_rank_pct": 87.5,
-      "opp_td_rate_allowed": 0.0362
+      "opp_td_rate_allowed": 0.0362,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -8000,7 +8399,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.655172413793103,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -8020,7 +8420,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 11.5,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -8040,7 +8441,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.6,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -8060,7 +8462,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.454545454545454,
       "opp_def_rank_pct": 53.1,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -8080,7 +8483,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.5,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -8100,7 +8504,8 @@
       "td_rate_per_touch": 0.13414634146341464,
       "ypt": 7.2073170731707314,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -8120,7 +8525,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.111111111111111,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0444
+      "opp_td_rate_allowed": 0.0444,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -8140,7 +8546,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.454545454545454,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -8160,7 +8567,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.882352941176471,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8180,7 +8588,8 @@
       "td_rate_per_touch": 0.06666666666666667,
       "ypt": 4.8,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8200,7 +8609,8 @@
       "td_rate_per_touch": 0.058823529411764705,
       "ypt": 8.352941176470589,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8220,7 +8630,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.15,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -8240,7 +8651,8 @@
       "td_rate_per_touch": 0.06363636363636363,
       "ypt": 7.109090909090909,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -8260,7 +8672,8 @@
       "td_rate_per_touch": 0.043478260869565216,
       "ypt": 5.913043478260869,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -8280,7 +8693,8 @@
       "td_rate_per_touch": 0.125,
       "ypt": 5.625,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -8300,7 +8714,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.34375,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -8320,7 +8735,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.0,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -8340,7 +8756,8 @@
       "td_rate_per_touch": 0.0625,
       "ypt": 5.9375,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -8360,7 +8777,8 @@
       "td_rate_per_touch": 0.078125,
       "ypt": 7.84375,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -8380,7 +8798,8 @@
       "td_rate_per_touch": 0.05555555555555555,
       "ypt": 6.555555555555555,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -8400,7 +8819,8 @@
       "td_rate_per_touch": 0.034482758620689655,
       "ypt": 5.793103448275862,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -8420,7 +8840,8 @@
       "td_rate_per_touch": 0.0967741935483871,
       "ypt": 4.064516129032258,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8440,7 +8861,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.6,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -8460,7 +8882,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 10.0,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -8480,7 +8903,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.0,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -8500,7 +8924,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.23404255319149,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8520,7 +8945,8 @@
       "td_rate_per_touch": 0.09090909090909091,
       "ypt": 10.090909090909092,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -8540,7 +8966,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.3333333333333333,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -8560,7 +8987,8 @@
       "td_rate_per_touch": 0.08333333333333333,
       "ypt": 7.0,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -8580,7 +9008,8 @@
       "td_rate_per_touch": 0.058823529411764705,
       "ypt": 7.176470588235294,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -8600,7 +9029,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 10.596153846153847,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8620,7 +9050,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.8333333333333334,
       "opp_def_rank_pct": 96.9,
-      "opp_td_rate_allowed": 0.0593
+      "opp_td_rate_allowed": 0.0593,
+      "script_component": 31.2
     },
     {
       "season": 2025,
@@ -8640,7 +9071,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.9,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -8660,7 +9092,8 @@
       "td_rate_per_touch": 0.09090909090909091,
       "ypt": 4.181818181818182,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -8680,7 +9113,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -0.4,
       "opp_def_rank_pct": 81.2,
-      "opp_td_rate_allowed": 0.0491
+      "opp_td_rate_allowed": 0.0491,
+      "script_component": 53.2
     },
     {
       "season": 2025,
@@ -8700,7 +9134,8 @@
       "td_rate_per_touch": 0.05405405405405406,
       "ypt": 6.54954954954955,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -8720,7 +9155,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 11.5,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -8740,7 +9176,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 10.88888888888889,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8760,7 +9197,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.4,
       "opp_def_rank_pct": 68.8,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -8780,7 +9218,8 @@
       "td_rate_per_touch": 0.02564102564102564,
       "ypt": 7.846153846153846,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -8800,7 +9239,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.0,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -8820,7 +9260,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.75,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0475
+      "opp_td_rate_allowed": 0.0475,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -8840,7 +9281,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.3333333333333335,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -8860,7 +9302,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.6666666666666665,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -8880,7 +9323,8 @@
       "td_rate_per_touch": 0.030303030303030304,
       "ypt": 7.878787878787879,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8900,7 +9344,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.166666666666667,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -8920,7 +9365,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0192
+      "opp_td_rate_allowed": 0.0192,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -8940,7 +9386,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.387096774193548,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0267
+      "opp_td_rate_allowed": 0.0267,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -8960,7 +9407,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.272727272727273,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -8980,7 +9428,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.0,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -9000,7 +9449,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.0,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0475
+      "opp_td_rate_allowed": 0.0475,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -9020,7 +9470,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 9.7,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -9040,7 +9491,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.942857142857143,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.0424
+      "opp_td_rate_allowed": 0.0424,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -9060,7 +9512,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -0.07142857142857142,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -9080,7 +9533,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.333333333333333,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -9100,7 +9554,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.5,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0505
+      "opp_td_rate_allowed": 0.0505,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -9120,7 +9575,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.0,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0472
+      "opp_td_rate_allowed": 0.0472,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -9140,7 +9596,8 @@
       "td_rate_per_touch": 0.07547169811320754,
       "ypt": 7.735849056603773,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -9160,7 +9617,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.3333333333333333,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.045
+      "opp_td_rate_allowed": 0.045,
+      "script_component": 77.2
     },
     {
       "season": 2025,
@@ -9180,7 +9638,8 @@
       "td_rate_per_touch": 0.0196078431372549,
       "ypt": 4.745098039215686,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -9200,7 +9659,8 @@
       "td_rate_per_touch": 0.05,
       "ypt": 7.35,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -9220,7 +9680,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.6,
       "opp_def_rank_pct": 46.9,
-      "opp_td_rate_allowed": 0.0405
+      "opp_td_rate_allowed": 0.0405,
+      "script_component": 52.2
     },
     {
       "season": 2025,
@@ -9240,7 +9701,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.0401
+      "opp_td_rate_allowed": 0.0401,
+      "script_component": 88.2
     },
     {
       "season": 2025,
@@ -9260,7 +9722,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.0,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -9280,7 +9743,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.484848484848484,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -9300,7 +9764,8 @@
       "td_rate_per_touch": 0.015873015873015872,
       "ypt": 4.2063492063492065,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0469
+      "opp_td_rate_allowed": 0.0469,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -9320,7 +9785,8 @@
       "td_rate_per_touch": 0.058823529411764705,
       "ypt": 5.411764705882353,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.024
+      "opp_td_rate_allowed": 0.024,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -9340,7 +9806,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 9.5,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -9360,7 +9827,8 @@
       "td_rate_per_touch": 0.020833333333333332,
       "ypt": 3.8958333333333335,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0403
+      "opp_td_rate_allowed": 0.0403,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -9380,7 +9848,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.0,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -9400,7 +9869,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -0.8333333333333334,
       "opp_def_rank_pct": 75.0,
-      "opp_td_rate_allowed": 0.0504
+      "opp_td_rate_allowed": 0.0504,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -9420,7 +9890,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.714285714285714,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -9440,7 +9911,8 @@
       "td_rate_per_touch": 0.11428571428571428,
       "ypt": 4.9714285714285715,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -9460,7 +9932,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.0,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.0316
+      "opp_td_rate_allowed": 0.0316,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -9480,7 +9953,8 @@
       "td_rate_per_touch": 0.047619047619047616,
       "ypt": 4.380952380952381,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.037
+      "opp_td_rate_allowed": 0.037,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -9500,7 +9974,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.666666666666666,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -9520,7 +9995,8 @@
       "td_rate_per_touch": 0.06578947368421052,
       "ypt": 4.0394736842105265,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -9540,7 +10016,8 @@
       "td_rate_per_touch": 0.05128205128205128,
       "ypt": 8.756410256410257,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -9560,7 +10037,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.117647058823529,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0349
+      "opp_td_rate_allowed": 0.0349,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -9580,7 +10058,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.25,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -9600,7 +10079,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.3333333333333333,
       "opp_def_rank_pct": 65.6,
-      "opp_td_rate_allowed": 0.0372
+      "opp_td_rate_allowed": 0.0372,
+      "script_component": 41.2
     },
     {
       "season": 2025,
@@ -9620,7 +10100,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.0,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.035
+      "opp_td_rate_allowed": 0.035,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -9640,7 +10121,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.777777777777778,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -9660,7 +10142,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -0.6666666666666666,
       "opp_def_rank_pct": 90.6,
-      "opp_td_rate_allowed": 0.0515
+      "opp_td_rate_allowed": 0.0515,
+      "script_component": 28.2
     },
     {
       "season": 2025,
@@ -9680,7 +10163,8 @@
       "td_rate_per_touch": 0.03571428571428571,
       "ypt": 4.785714285714286,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0328
+      "opp_td_rate_allowed": 0.0328,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -9700,7 +10184,8 @@
       "td_rate_per_touch": 0.2222222222222222,
       "ypt": 7.277777777777778,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -9720,7 +10205,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.0,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -9740,7 +10226,8 @@
       "td_rate_per_touch": 0.027777777777777776,
       "ypt": 7.076388888888889,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -9760,7 +10247,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.571428571428571,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -9780,7 +10268,8 @@
       "td_rate_per_touch": 0.013888888888888888,
       "ypt": 5.888888888888889,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0569
+      "opp_td_rate_allowed": 0.0569,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -9800,7 +10289,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.666666666666667,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0253
+      "opp_td_rate_allowed": 0.0253,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -9820,7 +10310,8 @@
       "td_rate_per_touch": 0.015384615384615385,
       "ypt": 6.507692307692308,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -9840,7 +10331,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 7.03030303030303,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -9860,7 +10352,8 @@
       "td_rate_per_touch": 0.09090909090909091,
       "ypt": 4.363636363636363,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -9880,7 +10373,8 @@
       "td_rate_per_touch": 0.034482758620689655,
       "ypt": 7.568965517241379,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -9900,7 +10394,8 @@
       "td_rate_per_touch": 0.02857142857142857,
       "ypt": 4.457142857142857,
       "opp_def_rank_pct": 56.2,
-      "opp_td_rate_allowed": 0.0424
+      "opp_td_rate_allowed": 0.0424,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -9920,7 +10415,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.0,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.0316
+      "opp_td_rate_allowed": 0.0316,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -9940,7 +10436,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -2.0,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.0388
+      "opp_td_rate_allowed": 0.0388,
+      "script_component": 56.2
     },
     {
       "season": 2025,
@@ -9960,7 +10457,8 @@
       "td_rate_per_touch": 0.09090909090909091,
       "ypt": 0.6363636363636364,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -9980,7 +10478,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.2,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -10000,7 +10499,8 @@
       "td_rate_per_touch": 0.06666666666666667,
       "ypt": 6.733333333333333,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -10020,7 +10520,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.3333333333333335,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0353
+      "opp_td_rate_allowed": 0.0353,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -10040,7 +10541,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.428571428571429,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -10060,7 +10562,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.7058823529411766,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -10080,7 +10583,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -1.1666666666666667,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -10100,7 +10604,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.25,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -10120,7 +10625,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.0,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -10140,7 +10646,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 84.4,
-      "opp_td_rate_allowed": 0.0626
+      "opp_td_rate_allowed": 0.0626,
+      "script_component": 14.2
     },
     {
       "season": 2025,
@@ -10160,7 +10667,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.888888888888889,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -10180,7 +10688,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.1,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -10200,7 +10709,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.0,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -10220,7 +10730,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 16.0,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -10240,7 +10751,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.75,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -10260,7 +10772,8 @@
       "td_rate_per_touch": 0.05555555555555555,
       "ypt": 5.111111111111111,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -10280,7 +10793,8 @@
       "td_rate_per_touch": 0.11538461538461539,
       "ypt": 8.884615384615385,
       "opp_def_rank_pct": 78.1,
-      "opp_td_rate_allowed": 0.0485
+      "opp_td_rate_allowed": 0.0485,
+      "script_component": 30.2
     },
     {
       "season": 2025,
@@ -10300,7 +10814,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 43.8,
-      "opp_td_rate_allowed": 0.0316
+      "opp_td_rate_allowed": 0.0316,
+      "script_component": 50.2
     },
     {
       "season": 2025,
@@ -10320,7 +10835,8 @@
       "td_rate_per_touch": 0.03508771929824561,
       "ypt": 4.666666666666667,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0459
+      "opp_td_rate_allowed": 0.0459,
+      "script_component": 55.2
     },
     {
       "season": 2025,
@@ -10340,7 +10856,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.0,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -10360,7 +10877,8 @@
       "td_rate_per_touch": 0.013513513513513514,
       "ypt": 5.716216216216216,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -10380,7 +10898,8 @@
       "td_rate_per_touch": 0.043478260869565216,
       "ypt": 8.478260869565217,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -10400,7 +10919,8 @@
       "td_rate_per_touch": 0.04477611940298507,
       "ypt": 6.537313432835821,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -10420,7 +10940,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.0,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -10440,7 +10961,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.0,
       "opp_def_rank_pct": 40.6,
-      "opp_td_rate_allowed": 0.0484
+      "opp_td_rate_allowed": 0.0484,
+      "script_component": 38.2
     },
     {
       "season": 2025,
@@ -10460,7 +10982,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.3333333333333333,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -10480,7 +11003,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -0.7142857142857143,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -10500,7 +11024,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 4.977777777777778,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.037
+      "opp_td_rate_allowed": 0.037,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -10520,7 +11045,8 @@
       "td_rate_per_touch": 0.06756756756756757,
       "ypt": 7.135135135135135,
       "opp_def_rank_pct": 100.0,
-      "opp_td_rate_allowed": 0.0595
+      "opp_td_rate_allowed": 0.0595,
+      "script_component": 67.2
     },
     {
       "season": 2025,
@@ -10540,7 +11066,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.6666666666666665,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0293
+      "opp_td_rate_allowed": 0.0293,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -10560,7 +11087,8 @@
       "td_rate_per_touch": 0.03333333333333333,
       "ypt": 6.5,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -10580,7 +11108,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -10600,7 +11129,8 @@
       "td_rate_per_touch": 0.08333333333333333,
       "ypt": 6.104166666666667,
       "opp_def_rank_pct": 93.8,
-      "opp_td_rate_allowed": 0.0608
+      "opp_td_rate_allowed": 0.0608,
+      "script_component": 74.2
     },
     {
       "season": 2025,
@@ -10620,7 +11150,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.1666666666666667,
       "opp_def_rank_pct": 59.4,
-      "opp_td_rate_allowed": 0.0363
+      "opp_td_rate_allowed": 0.0363,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -10640,7 +11171,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.3333333333333335,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -10660,7 +11192,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.875,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0349
+      "opp_td_rate_allowed": 0.0349,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -10680,7 +11213,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 8.333333333333334,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -10700,7 +11234,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.6666666666666667,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -10720,7 +11255,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.0,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -10740,7 +11276,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.4545454545454546,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0349
+      "opp_td_rate_allowed": 0.0349,
+      "script_component": 40.2
     },
     {
       "season": 2025,
@@ -10760,7 +11297,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.0,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -10780,7 +11318,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.0,
       "opp_def_rank_pct": 3.1,
-      "opp_td_rate_allowed": 0.0294
+      "opp_td_rate_allowed": 0.0294,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -10800,7 +11339,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.0,
       "opp_def_rank_pct": 37.5,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -10820,7 +11360,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -1.0,
       "opp_def_rank_pct": 50.0,
-      "opp_td_rate_allowed": 0.0422
+      "opp_td_rate_allowed": 0.0422,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -10840,7 +11381,8 @@
       "td_rate_per_touch": 0.03636363636363636,
       "ypt": 6.490909090909091,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -10860,7 +11402,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.5,
       "opp_def_rank_pct": 34.4,
-      "opp_td_rate_allowed": 0.024
+      "opp_td_rate_allowed": 0.024,
+      "script_component": 34.2
     },
     {
       "season": 2025,
@@ -10880,7 +11423,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 5.25,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -10900,7 +11444,8 @@
       "td_rate_per_touch": 0.07142857142857142,
       "ypt": 1.4285714285714286,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -10920,7 +11465,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0328
+      "opp_td_rate_allowed": 0.0328,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -10940,7 +11486,8 @@
       "td_rate_per_touch": 0.022727272727272728,
       "ypt": 4.431818181818182,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0317
+      "opp_td_rate_allowed": 0.0317,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -10960,7 +11507,8 @@
       "td_rate_per_touch": 0.02112676056338028,
       "ypt": 4.035211267605634,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.037
+      "opp_td_rate_allowed": 0.037,
+      "script_component": 16.2
     },
     {
       "season": 2025,
@@ -10980,7 +11528,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.0,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -11000,7 +11549,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 71.9,
-      "opp_td_rate_allowed": 0.0525
+      "opp_td_rate_allowed": 0.0525,
+      "script_component": 21.2
     },
     {
       "season": 2025,
@@ -11020,7 +11570,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -0.25,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0293
+      "opp_td_rate_allowed": 0.0293,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -11040,7 +11591,8 @@
       "td_rate_per_touch": 0.0425531914893617,
       "ypt": 7.191489361702128,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -11060,7 +11612,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 6.0,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -11080,7 +11633,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -11100,7 +11654,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.0,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -11120,7 +11675,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -11140,7 +11696,8 @@
       "td_rate_per_touch": 0.011904761904761904,
       "ypt": 7.369047619047619,
       "opp_def_rank_pct": 62.5,
-      "opp_td_rate_allowed": 0.044
+      "opp_td_rate_allowed": 0.044,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -11160,7 +11717,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -1.0,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0293
+      "opp_td_rate_allowed": 0.0293,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -11180,7 +11738,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -11200,7 +11759,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -1.0,
       "opp_def_rank_pct": 6.2,
-      "opp_td_rate_allowed": 0.0322
+      "opp_td_rate_allowed": 0.0322,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -11220,7 +11780,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -0.5,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -11240,7 +11801,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.736842105263158,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -11260,7 +11822,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.4444444444444446,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0469
+      "opp_td_rate_allowed": 0.0469,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -11280,7 +11843,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.4285714285714284,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0317
+      "opp_td_rate_allowed": 0.0317,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -11300,7 +11864,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.1666666666666665,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0317
+      "opp_td_rate_allowed": 0.0317,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -11320,7 +11885,8 @@
       "td_rate_per_touch": 0.02,
       "ypt": 5.94,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0232
+      "opp_td_rate_allowed": 0.0232,
+      "script_component": 43.2
     },
     {
       "season": 2025,
@@ -11340,7 +11906,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.5,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     },
     {
       "season": 2025,
@@ -11360,7 +11927,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 3.75,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -11380,7 +11948,8 @@
       "td_rate_per_touch": 0.019230769230769232,
       "ypt": 6.730769230769231,
       "opp_def_rank_pct": 31.2,
-      "opp_td_rate_allowed": 0.0392
+      "opp_td_rate_allowed": 0.0392,
+      "script_component": 78.2
     },
     {
       "season": 2025,
@@ -11400,7 +11969,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.3333333333333333,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -11420,7 +11990,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 2.5,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -11440,7 +12011,8 @@
       "td_rate_per_touch": 0.015151515151515152,
       "ypt": 5.621212121212121,
       "opp_def_rank_pct": 15.6,
-      "opp_td_rate_allowed": 0.0374
+      "opp_td_rate_allowed": 0.0374,
+      "script_component": 64.2
     },
     {
       "season": 2025,
@@ -11460,7 +12032,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 18.8,
-      "opp_td_rate_allowed": 0.0469
+      "opp_td_rate_allowed": 0.0469,
+      "script_component": 26.2
     },
     {
       "season": 2025,
@@ -11480,7 +12053,8 @@
       "td_rate_per_touch": 0.047619047619047616,
       "ypt": 5.476190476190476,
       "opp_def_rank_pct": 25.0,
-      "opp_td_rate_allowed": 0.0312
+      "opp_td_rate_allowed": 0.0312,
+      "script_component": 60.2
     },
     {
       "season": 2025,
@@ -11500,7 +12074,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.5714285714285714,
       "opp_def_rank_pct": 21.9,
-      "opp_td_rate_allowed": 0.0436
+      "opp_td_rate_allowed": 0.0436,
+      "script_component": 10.2
     },
     {
       "season": 2025,
@@ -11520,7 +12095,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": -1.0,
       "opp_def_rank_pct": 28.1,
-      "opp_td_rate_allowed": 0.0307
+      "opp_td_rate_allowed": 0.0307,
+      "script_component": 6.2
     },
     {
       "season": 2025,
@@ -11540,7 +12116,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 1.6,
       "opp_def_rank_pct": 9.4,
-      "opp_td_rate_allowed": 0.0326
+      "opp_td_rate_allowed": 0.0326,
+      "script_component": 54.2
     },
     {
       "season": 2025,
@@ -11560,7 +12137,8 @@
       "td_rate_per_touch": 0.0,
       "ypt": 0.0,
       "opp_def_rank_pct": 12.5,
-      "opp_td_rate_allowed": 0.0442
+      "opp_td_rate_allowed": 0.0442,
+      "script_component": 36.2
     }
   ]
 }

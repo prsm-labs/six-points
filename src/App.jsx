@@ -6,6 +6,9 @@ import PairsPage from './PairsPage.jsx'
 import LiveThemes from './LiveThemes.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
+import PlayerSlideout from './PlayerSlideout.jsx'
+import TeamSlideout from './TeamSlideout.jsx'
+import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -91,12 +94,16 @@ function AllMatchupsTable({ data }) {
             {sorted.map((m, i) => (
               <tr key={i}>
                 <td>
-                  <div className="player-cell">
+                  <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
                     {m.player_name}
                   </div>
                 </td>
-                <td>{m.team}</td>
+                <td>
+                  <button className="team-link" onClick={() => openTeamSlide({ team: m.team })}>
+                    {m.team}
+                  </button>
+                </td>
                 <td>{m.opponent}</td>
                 <td>{m.position}</td>
                 <td>{Number(m.usage_sig).toFixed(1)}</td>
@@ -255,9 +262,16 @@ function WeekDrillDown({ rows }) {
         <tbody>
           {sorted.map((r, i) => (
             <tr key={i}>
-              <td>{r.team}</td>
               <td>
-                <div className="player-cell">
+                <button className="team-link" onClick={() => openTeamSlide({ team: r.team })}>
+                  {r.team}
+                </button>
+              </td>
+              <td>
+                <div
+                  className="player-cell"
+                  onClick={() => openPlayerSlide({ player_id: r.player_id, player_name: r.player_name, team: r.team, opponent: r.opponent, position: r.position })}
+                >
                   <PlayerAvatar playerId={r.player_id} name={r.player_name} />
                   {r.player_name}
                 </div>
@@ -321,6 +335,8 @@ export default function App() {
         {tab === 'track' && <TrackRecord />}
         {tab === 'pairs' && <PairsPage />}
       </main>
+      <PlayerSlideout />
+      <TeamSlideout />
     </div>
   )
 }

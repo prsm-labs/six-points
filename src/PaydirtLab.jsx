@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
+import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 
 function eligiblePlayers(matchups) {
   // Concept doc §7 item 3: TD opportunity is gated by role before the game starts, harder
@@ -121,10 +122,14 @@ function PaydirtTable({ rows }) {
           <tbody>
             {sorted.map((p, i) => (
               <tr key={i}>
-                <td>{p.team}</td>
+                <td>
+                  <button className="team-link" onClick={() => openTeamSlide({ team: p.team })}>
+                    {p.team}
+                  </button>
+                </td>
                 <td>{p.opponent}</td>
                 <td>
-                  <div className="player-cell">
+                  <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />
                     {p.player_name}
                   </div>
