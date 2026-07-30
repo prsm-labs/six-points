@@ -1,5 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
+import PaydirtLab from './PaydirtLab.jsx'
+import YardageLab from './YardageLab.jsx'
+import OddsCalculator from './OddsCalculator.jsx'
+import PairsPage from './PairsPage.jsx'
+import LiveThemes from './LiveThemes.jsx'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -184,11 +189,34 @@ export default function App() {
         <button className={tab === 'matchups' ? 'active' : ''} onClick={() => setTab('matchups')}>
           All Matchups
         </button>
+        <button className={tab === 'paydirt' ? 'active' : ''} onClick={() => setTab('paydirt')}>
+          Paydirt Lab
+        </button>
+        <button className={tab === 'yardage' ? 'active' : ''} onClick={() => setTab('yardage')}>
+          Yardage Lab
+        </button>
+        <button className={tab === 'live' ? 'active' : ''} onClick={() => setTab('live')}>
+          Live Themes
+        </button>
         <button className={tab === 'track' ? 'active' : ''} onClick={() => setTab('track')}>
           Track Record
         </button>
+        <button className={tab === 'pairs' ? 'active' : ''} onClick={() => setTab('pairs')}>
+          Pairs
+        </button>
+        <button className={tab === 'odds' ? 'active' : ''} onClick={() => setTab('odds')}>
+          Odds Calculator
+        </button>
       </nav>
-      <main>{tab === 'matchups' ? <AllMatchups /> : <TrackRecord />}</main>
+      <main>
+        {tab === 'matchups' && <AllMatchups />}
+        {tab === 'paydirt' && <PaydirtLab />}
+        {tab === 'yardage' && <YardageLab />}
+        {tab === 'live' && <LiveThemes />}
+        {tab === 'track' && <TrackRecord />}
+        {tab === 'pairs' && <PairsPage />}
+        {tab === 'odds' && <OddsCalculator />}
+      </main>
     </div>
   )
 }
