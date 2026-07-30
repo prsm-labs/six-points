@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { useSort, SortTh } from './useSort.jsx'
+import { PlayerAvatar } from './PlayerDirectory.jsx'
 
 function percentile(values, p) {
   const sorted = values.slice().sort((a, b) => a - b)
@@ -35,7 +37,16 @@ export default function YardageLab() {
               0,
               Math.min(99, 50 + (p.touches_per_game - avgTouches) * 3 + (p.ypt - avgYpt) * 2)
             )
-            return { ...p, sim_yard_pct: simMap[p.player_id] ?? 0, on_field_score: onFieldScore }
+            // Simple point estimate (touches x yards-per-touch) -- not the same thing as
+            // SimYard%, which is a probability of clearing a threshold. This is "what to
+            // actually expect," the sim is "how likely is a specific bar to be cleared."
+            const estYards = Math.round(p.touches_per_game * p.ypt * 10) / 10
+            return {
+              ...p,
+              sim_yard_pct: simMap[p.player_id] ?? 0,
+              on_field_score: onFieldScore,
+              est_yards: estYards,
+            }
           })
 
           const onFieldCut = percentile(merged.map((p) => p.on_field_score), 0.75)
@@ -71,41 +82,65 @@ export default function YardageLab() {
     )
   }
 
+  return <YardageTable rows={rows} />
+}
+
+function thresholdFor(position) {
+  if (position === 'QB') return 225
+  if (position === 'RB') return 60
+  return 75
+}
+
+function YardageTable({ rows }) {
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, 'sim_yard_pct', 'desc')
+  const thProps = { sortKey, sortDir, onSort: toggleSort }
+
   return (
     <div>
       <p className="meta-line">
         {rows.length} players simulated &middot; threshold is 60+ rush yds (RB), 75+ rec yds
         (WR/TE), 225+ pass yds (QB) &middot; Yardage Signal gate is empirical (top-quartile
-        OnFieldScore + SimYard%, MatchupScore &ge; 60)
+        OnFieldScore + SimYard%, MatchupScore &ge; 60) &middot; Est. Yards is a simple point
+        estimate (touches/game &times; yards/touch), SimYard% is the probability of actually
+        clearing that player's threshold &middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Team</th>
-              <th>Opp</th>
-              <th>Player</th>
-              <th>Pos</th>
-              <th>Touches/G</th>
-              <th>Yds/Touch</th>
-              <th>OnFieldScore</th>
-              <th>MatchupScore</th>
-              <th>SimYard%</th>
+              <SortTh label="Team" sortKeyName="team" {...thProps} />
+              <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
+              <SortTh label="Player" sortKeyName="player_name" {...thProps} />
+              <SortTh label="Pos" sortKeyName="position" {...thProps} />
+              <SortTh label="Touches/G" sortKeyName="touches_per_game" {...thProps} />
+              <SortTh label="Yds/Touch" sortKeyName="ypt" {...thProps} />
+              <SortTh label="Est. Yards" sortKeyName="est_yards" {...thProps} />
+              <SortTh label="Threshold" sortKeyName="position" {...thProps} />
+              <SortTh label="OnFieldScore" sortKeyName="on_field_score" {...thProps} />
+              <SortTh label="MatchupScore" sortKeyName="opp_def_rank_pct" {...thProps} />
+              <SortTh label="SimYard%" sortKeyName="sim_yard_pct" {...thProps} />
               <th>Signal</th>
             </tr>
           </thead>
           <tbody>
-            {rows.map((p, i) => (
+            {sorted.map((p, i) => (
               <tr key={i}>
                 <td>{p.team}</td>
                 <td>{p.opponent}</td>
-                <td>{p.player_name}</td>
+                <td>
+                  <div className="player-cell">
+                    <PlayerAvatar playerId={p.player_id} name={p.player_name} />
+                    {p.player_name}
+                  </div>
+                </td>
                 <td>{p.position}</td>
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.ypt).toFixed(1)}</td>
+                <td className="zone-score">{p.est_yards.toFixed(1)}</td>
+                <td>{thresholdFor(p.position)}+</td>
                 <td>{p.on_field_score.toFixed(1)}</td>
                 <td>{Number(p.opp_def_rank_pct).toFixed(1)}</td>
-                <td className="zone-score">{p.sim_yard_pct.toFixed(1)}%</td>
+                <td>{p.sim_yard_pct.toFixed(1)}%</td>
                 <td>{p.yardage_signal ? <span className="tier tier-lean">Yardage</span> : ''}</td>
               </tr>
             ))}

@@ -2,9 +2,10 @@ import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import PaydirtLab from './PaydirtLab.jsx'
 import YardageLab from './YardageLab.jsx'
-import OddsCalculator from './OddsCalculator.jsx'
 import PairsPage from './PairsPage.jsx'
 import LiveThemes from './LiveThemes.jsx'
+import { useSort, SortTh } from './useSort.jsx'
+import { PlayerAvatar } from './PlayerDirectory.jsx'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -54,31 +55,47 @@ function AllMatchups() {
       </p>
     )
   }
+  return <AllMatchupsTable data={data} />
+}
+
+function AllMatchupsTable({ data }) {
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(data?.matchups, 'zone_score', 'desc')
+
   if (!data) return <p className="empty-state">Loading...</p>
+
+  const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   return (
     <div>
       <p className="meta-line">
         Season {data.season}, Week {data.week} &middot; {data.matchups.length} matchups &middot; all
-        weights are v1 first-guesses, unvalidated beyond the Track Record backtest below
+        weights are v1 first-guesses, unvalidated beyond the Track Record backtest below &middot;
+        click a column header to sort
       </p>
       <div className="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Team</th>
-              <th>Opp</th>
-              <th>Pos</th>
-              <th>Usage Sig</th>
-              <th>gTD</th>
-              <th>Explosive</th>
-              <th>Green Light</th>
-              <th>Zone Score</th>
+              <SortTh label="Player" sortKeyName="player_name" {...thProps} />
+              <SortTh label="Team" sortKeyName="team" {...thProps} />
+              <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
+              <SortTh label="Pos" sortKeyName="position" {...thProps} />
+              <SortTh label="Usage Sig" sortKeyName="usage_sig" {...thProps} />
+              <SortTh label="gTD" sortKeyName="gtd" {...thProps} />
+              <SortTh label="Explosive" sortKeyName="explosive_score" {...thProps} />
+              <SortTh label="Green Light" sortKeyName="green_light" {...thProps} />
+              <SortTh label="Zone Score" sortKeyName="zone_score" {...thProps} />
             </tr>
           </thead>
           <tbody>
-            {data.matchups.map((m, i) => (
+            {sorted.map((m, i) => (
               <tr key={i}>
+                <td>
+                  <div className="player-cell">
+                    <PlayerAvatar playerId={m.player_id} name={m.player_name} />
+                    {m.player_name}
+                  </div>
+                </td>
                 <td>{m.team}</td>
                 <td>{m.opponent}</td>
                 <td>{m.position}</td>
@@ -129,6 +146,31 @@ function TrackRecord() {
       }))
   }, [rows])
 
+  const weekOptions = useMemo(() => {
+    if (!rows) return []
+    const seen = new Set()
+    const opts = []
+    for (const r of rows) {
+      const key = `${r.season}-${r.week}`
+      if (seen.has(key)) continue
+      seen.add(key)
+      opts.push({ key, season: r.season, week: Number(r.week) })
+    }
+    return opts.sort((a, b) => b.season - a.season || b.week - a.week)
+  }, [rows])
+
+  const [selectedWeek, setSelectedWeek] = useState('all')
+
+  const weekRows = useMemo(() => {
+    if (!rows || selectedWeek === 'all') return []
+    // parseCsv keeps every field as a string -- useSort's numeric branch only kicks in for
+    // non-strings, so zone_score/actual_tds need coercing here or they'd sort lexicographically
+    // ("9" > "10") instead of numerically.
+    return rows
+      .filter((r) => `${r.season}-${r.week}` === selectedWeek)
+      .map((r) => ({ ...r, zone_score: Number(r.zone_score), actual_tds: Number(r.actual_tds) }))
+  }, [rows, selectedWeek])
+
   if (error) {
     return (
       <p className="empty-state">
@@ -172,6 +214,66 @@ function TrackRecord() {
         Hit rate should climb monotonically Fade &rarr; Fringe &rarr; Lean &rarr; Lock. If it doesn't,
         the scoring weights need correcting -- that's what this tab is for.
       </p>
+
+      <div className="calc-block" style={{ marginTop: 24, marginBottom: 12 }}>
+        <label>
+          Browse a specific week's backfilled predictions
+          <select value={selectedWeek} onChange={(e) => setSelectedWeek(e.target.value)}>
+            <option value="all">Select a week...</option>
+            {weekOptions.map((w) => (
+              <option key={w.key} value={w.key}>
+                {w.season} &middot; Week {w.week}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      {selectedWeek !== 'all' && <WeekDrillDown rows={weekRows} />}
+    </div>
+  )
+}
+
+function WeekDrillDown({ rows }) {
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, 'zone_score', 'desc')
+  const thProps = { sortKey, sortDir, onSort: toggleSort }
+
+  return (
+    <div className="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <SortTh label="Team" sortKeyName="team" {...thProps} />
+            <SortTh label="Player" sortKeyName="player_name" {...thProps} />
+            <SortTh label="Pos" sortKeyName="position" {...thProps} />
+            <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
+            <SortTh label="Zone Score" sortKeyName="zone_score" {...thProps} />
+            <SortTh label="Predicted Tier" sortKeyName="predicted_tier" {...thProps} />
+            <SortTh label="Actual TDs" sortKeyName="actual_tds" {...thProps} />
+            <th>Hit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sorted.map((r, i) => (
+            <tr key={i}>
+              <td>{r.team}</td>
+              <td>
+                <div className="player-cell">
+                  <PlayerAvatar playerId={r.player_id} name={r.player_name} />
+                  {r.player_name}
+                </div>
+              </td>
+              <td>{r.position}</td>
+              <td>{r.opponent}</td>
+              <td className="zone-score">{Number(r.zone_score).toFixed(1)}</td>
+              <td>
+                <span className={tierClass(r.predicted_tier)}>{r.predicted_tier}</span>
+              </td>
+              <td>{r.actual_tds}</td>
+              <td>{r.hit === 'True' ? '✓' : ''}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -182,7 +284,10 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>Six Points</h1>
+        <div className="header-row">
+          <img src="/logo.jpeg" alt="Six Points" className="logo" />
+          <h1>Six Points</h1>
+        </div>
         <p className="tagline">NFL touchdown intelligence, weekly cadence, real backtests only.</p>
       </header>
       <nav className="tabs">
@@ -204,9 +309,9 @@ export default function App() {
         <button className={tab === 'pairs' ? 'active' : ''} onClick={() => setTab('pairs')}>
           Pairs
         </button>
-        <button className={tab === 'odds' ? 'active' : ''} onClick={() => setTab('odds')}>
-          Odds Calculator
-        </button>
+        {/* Odds Calculator intentionally hidden from nav -- Going Yard surfaces this via a
+            button/modal, not a dedicated tab. Component kept intact in OddsCalculator.jsx for
+            that later. */}
       </nav>
       <main>
         {tab === 'matchups' && <AllMatchups />}
@@ -215,7 +320,6 @@ export default function App() {
         {tab === 'live' && <LiveThemes />}
         {tab === 'track' && <TrackRecord />}
         {tab === 'pairs' && <PairsPage />}
-        {tab === 'odds' && <OddsCalculator />}
       </main>
     </div>
   )

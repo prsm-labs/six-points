@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
+import { useSort, SortTh } from './useSort.jsx'
+import { PlayerAvatar } from './PlayerDirectory.jsx'
 
 function eligiblePlayers(matchups) {
   // Concept doc §7 item 3: TD opportunity is gated by role before the game starts, harder
@@ -85,36 +87,48 @@ export default function PaydirtLab() {
     )
   }
 
+  return <PaydirtTable rows={rows} />
+}
+
+function PaydirtTable({ rows }) {
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, 'sim_td_pct', 'desc')
+  const thProps = { sortKey, sortDir, onSort: toggleSort }
+
   return (
     <div>
       <p className="meta-line">
         {rows.length} eligible players (top-2 red-zone touch option per team) &middot; SimTD% from
         10,000 simulated games each &middot; Paydirt Signal gate is empirical (top-quartile
         TrueTDScore + SimTD%, MatchupScore &ge; 60) since no absolute threshold has been validated
-        yet
+        yet &middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Team</th>
-              <th>Opp</th>
-              <th>Player</th>
-              <th>Pos</th>
-              <th>Touches/G</th>
-              <th>RZ Touches/G</th>
-              <th>TrueTDScore</th>
-              <th>MatchupScore</th>
-              <th>SimTD%</th>
+              <SortTh label="Team" sortKeyName="team" {...thProps} />
+              <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
+              <SortTh label="Player" sortKeyName="player_name" {...thProps} />
+              <SortTh label="Pos" sortKeyName="position" {...thProps} />
+              <SortTh label="Touches/G" sortKeyName="touches_per_game" {...thProps} />
+              <SortTh label="RZ Touches/G" sortKeyName="redzone_touches_per_game" {...thProps} />
+              <SortTh label="TrueTDScore" sortKeyName="gtd" {...thProps} />
+              <SortTh label="MatchupScore" sortKeyName="opp_def_rank_pct" {...thProps} />
+              <SortTh label="SimTD%" sortKeyName="sim_td_pct" {...thProps} />
               <th>Signal</th>
             </tr>
           </thead>
           <tbody>
-            {rows.map((p, i) => (
+            {sorted.map((p, i) => (
               <tr key={i}>
                 <td>{p.team}</td>
                 <td>{p.opponent}</td>
-                <td>{p.player_name}</td>
+                <td>
+                  <div className="player-cell">
+                    <PlayerAvatar playerId={p.player_id} name={p.player_name} />
+                    {p.player_name}
+                  </div>
+                </td>
                 <td>{p.position}</td>
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.redzone_touches_per_game).toFixed(1)}</td>

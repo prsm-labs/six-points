@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { useSort, SortTh } from './useSort.jsx'
+import { PlayerAvatar } from './PlayerDirectory.jsx'
 
 function buildPairs(matchups) {
   // Concept doc §8: stack two players exploiting the SAME scheme weakness, not just shared
@@ -54,36 +56,49 @@ export default function PairsPage() {
   }
   if (!pairs) return <p className="empty-state">Loading...</p>
 
+  return <PairsTable pairs={pairs} />
+}
+
+function PairsTable({ pairs }) {
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(pairs, 'combinedScore', 'desc')
+  const thProps = { sortKey, sortDir, onSort: toggleSort }
+
   return (
     <div>
       <p className="meta-line">
         Top {pairs.length} same-team pairs where both players individually clear a favorable-
         matchup bar (MatchupScore &ge; 60) against the same opponent -- both exploiting the same
-        defensive weakness that week, sorted by combined Zone Score
+        defensive weakness that week &middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>
           <thead>
             <tr>
-              <th>Team</th>
-              <th>Opp</th>
+              <SortTh label="Team" sortKeyName="team" {...thProps} />
+              <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
               <th>Player A</th>
               <th>Player B</th>
-              <th>Combined Zone Score</th>
+              <SortTh label="Combined Zone Score" sortKeyName="combinedScore" {...thProps} />
             </tr>
           </thead>
           <tbody>
-            {pairs.map((p, i) => (
+            {sorted.map((p, i) => (
               <tr key={i}>
                 <td>{p.team}</td>
                 <td>{p.opponent}</td>
                 <td>
-                  {p.playerA.player_name} ({p.playerA.position}) &middot;{' '}
-                  {p.playerA.zone_score.toFixed(1)}
+                  <div className="player-cell">
+                    <PlayerAvatar playerId={p.playerA.player_id} name={p.playerA.player_name} />
+                    {p.playerA.player_name} ({p.playerA.position}) &middot;{' '}
+                    {p.playerA.zone_score.toFixed(1)}
+                  </div>
                 </td>
                 <td>
-                  {p.playerB.player_name} ({p.playerB.position}) &middot;{' '}
-                  {p.playerB.zone_score.toFixed(1)}
+                  <div className="player-cell">
+                    <PlayerAvatar playerId={p.playerB.player_id} name={p.playerB.player_name} />
+                    {p.playerB.player_name} ({p.playerB.position}) &middot;{' '}
+                    {p.playerB.zone_score.toFixed(1)}
+                  </div>
                 </td>
                 <td className="zone-score">{p.combinedScore.toFixed(1)}</td>
               </tr>

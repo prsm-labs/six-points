@@ -4,6 +4,20 @@
   padding: 24px 20px 60px;
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-row img.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 header h1 {
   margin: 0;
   font-size: 1.8rem;
@@ -16,24 +30,28 @@ header h1 {
 
 .tabs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 4px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 16px;
+  scrollbar-width: thin;
 }
 
 .tabs button {
   background: none;
   border: none;
   color: var(--muted);
-  padding: 10px 4px;
+  padding: 10px 10px;
   font-size: 0.95rem;
   cursor: pointer;
   border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tabs button.active {
-  color: var(--fg);
+  color: var(--accent);
   border-bottom-color: var(--accent);
 }
 
@@ -79,6 +97,20 @@ th {
   background: var(--bg);
 }
 
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+th.sortable:hover {
+  color: var(--fg);
+}
+
+.sort-arrow {
+  color: var(--accent);
+  margin-left: 4px;
+}
+
 .zone-score {
   font-weight: 700;
   color: var(--accent);
@@ -92,9 +124,9 @@ th {
 }
 
 .tier-lock { background: #1f7a3d33; color: #2fae5c; }
-.tier-lean { background: #b8860b33; color: #d4a017; }
+.tier-lean { background: #2f6b3033; color: #6fbf73; }
 .tier-fringe { background: #6b6b6b33; color: #9aa0ab; }
-.tier-fade { background: #a3232333; color: #d95c5c; }
+.tier-fade { background: #1e3d2733; color: #4a7a58; }
 
 .sub-tabs {
   display: flex;
@@ -114,7 +146,7 @@ th {
 
 .sub-tabs button.active {
   background: var(--accent);
-  color: #fff;
+  color: var(--accent-fg);
 }
 
 .calc-block {
@@ -181,4 +213,29 @@ th {
   border-radius: 8px;
   padding: 10px 14px;
   font-size: 0.88rem;
+}
+
+.avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.avatar-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.player-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
