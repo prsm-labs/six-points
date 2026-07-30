@@ -151,6 +151,170 @@ function LeaderboardView({ gameLogs, directory }) {
   )
 }
 
+const DOWN_ORDER = ['1st', '2nd', '3rd', '4th']
+const DOWN_DIST_ORDER = [
+  '1st & Short', '1st & Medium', '1st & Long',
+  '2nd & Short', '2nd & Medium', '2nd & Long',
+  '3rd & Short', '3rd & Medium', '3rd & Long',
+  '4th & Short', '4th & Medium', '4th & Long',
+]
+const EMPTY_SPLIT = { plays: 0, yards: 0, tds: 0, conversions: 0 }
+
+function SplitTable({ title, note, rows }) {
+  const shown = rows.filter((r) => r.plays > 0)
+  if (shown.length === 0) return null
+  return (
+    <div style={{ marginTop: 10 }}>
+      {title && <div style={{ fontWeight: 700, fontSize: '0.82rem', marginBottom: 4 }}>{title}</div>}
+      {note && <p className="meta-line small" style={{ marginTop: 0 }}>{note}</p>}
+      <div className="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Plays</th>
+              <th>Yards</th>
+              <th>Yds/Play</th>
+              <th>TD</th>
+              <th>1st Downs</th>
+              <th>Conv%</th>
+            </tr>
+          </thead>
+          <tbody>
+            {shown.map((r, i) => (
+              <tr key={i}>
+                <td>{r.label}</td>
+                <td>{r.plays}</td>
+                <td>{r.yards}</td>
+                <td>{(r.yards / r.plays).toFixed(1)}</td>
+                <td>{r.tds}</td>
+                <td>{r.conversions}</td>
+                <td>{((r.conversions / r.plays) * 100).toFixed(0)}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+function SplitBlock({ title, block }) {
+  const homeAway = ['Home', 'Away'].map((k) => ({ label: k, ...(block.by_home_away[k] || EMPTY_SPLIT) }))
+  const dayNight = ['Day', 'Night'].map((k) => ({ label: k, ...(block.by_day_night[k] || EMPTY_SPLIT) }))
+  const downs = DOWN_ORDER.map((k) => ({ label: k, ...(block.by_down[k] || EMPTY_SPLIT) }))
+  const longRows = ['2nd & Long', '3rd & Long', '4th & Long'].map((k) => ({
+    label: k, ...(block.by_down_distance[k] || EMPTY_SPLIT),
+  }))
+  const allDownDistance = DOWN_DIST_ORDER
+    .filter((k) => block.by_down_distance[k])
+    .map((k) => ({ label: k, ...block.by_down_distance[k] }))
+
+  return (
+    <div style={{ marginTop: 18 }}>
+      <h4 style={{ margin: '0 0 4px' }}>{title}</h4>
+      <SplitTable title="Home vs Away" rows={homeAway} />
+      <SplitTable title="Day vs Night (scheduled kickoff before/after 4pm local)" rows={dayNight} />
+      <SplitTable title="By Down" rows={downs} />
+      <SplitTable
+        title="On Long-Yardage Downs (8+ yards to go)"
+        note="'1st & Long' is excluded here on purpose -- a normal 1st & 10 would trivially dominate every long-yardage row otherwise, since it also technically clears the 8+ threshold."
+        rows={longRows}
+      />
+      {allDownDistance.length > 0 && (
+        <details style={{ marginTop: 10 }}>
+          <summary style={{ cursor: 'pointer', fontSize: '0.82rem', fontWeight: 700 }}>
+            Show full down &amp; distance breakdown
+          </summary>
+          <SplitTable rows={allDownDistance} />
+        </details>
+      )}
+    </div>
+  )
+}
+
+function SituationalView({ directory }) {
+  const [splits, setSplits] = useState(null)
+  const [error, setError] = useState(null)
+  const [search, setSearch] = useState('')
+  const [selectedPlayerId, setSelectedPlayerId] = useState(null)
+
+  useEffect(() => {
+    fetch('/data/player_situational_splits.json')
+      .then((r) => {
+        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
+        return r.json()
+      })
+      .then(setSplits)
+      .catch((e) => setError(e.message))
+  }, [])
+
+  const matches = useMemo(() => {
+    if (!directory || !search.trim()) return []
+    const q = search.toLowerCase()
+    return Object.entries(directory).filter(([, p]) => p.name.toLowerCase().includes(q)).slice(0, 8)
+  }, [directory, search])
+
+  const selectedPlayer = selectedPlayerId ? directory[selectedPlayerId] : null
+  const playerSplits = selectedPlayerId ? splits?.[selectedPlayerId] : null
+
+  if (error) {
+    return (
+      <p className="empty-state">
+        No situational split data yet ({error}). Run{' '}
+        <code>python matchup_engine.py --season 2025 --backtest</code> from the project root first.
+      </p>
+    )
+  }
+  if (!splits) return <p className="empty-state">Loading...</p>
+
+  return (
+    <div>
+      <p className="meta-line">
+        Real per-play splits from ESPN/nflverse play-by-play -- home/away, day vs. night kickoff,
+        and down &amp; distance (including 3rd/4th &amp; long), not just a season total
+      </p>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 16 }}>
+        <label style={{ flex: 1, minWidth: 220, position: 'relative' }}>
+          Player
+          <input
+            value={selectedPlayer ? selectedPlayer.name : search}
+            onChange={(e) => {
+              setSearch(e.target.value)
+              setSelectedPlayerId(null)
+            }}
+            placeholder="Search player name..."
+          />
+          {matches.length > 0 && !selectedPlayerId && (
+            <div className="table-wrap" style={{ position: 'absolute', zIndex: 5, background: 'var(--bg)', width: '100%' }}>
+              {matches.map(([id, p]) => (
+                <div
+                  key={id}
+                  className="player-cell"
+                  style={{ padding: '6px 10px' }}
+                  onClick={() => {
+                    setSelectedPlayerId(id)
+                    setSearch('')
+                  }}
+                >
+                  <PlayerAvatar playerId={id} name={p.name} />
+                  {p.name} <span className="meta-line" style={{ margin: '0 0 0 6px' }}>{p.position}</span>
+                </div>
+              ))}
+            </div>
+          )}
+        </label>
+      </div>
+
+      {selectedPlayer && !playerSplits && (
+        <p className="empty-state">No situational split data for {selectedPlayer.name} yet.</p>
+      )}
+      {playerSplits?.touches && <SplitBlock title="Touches (rush attempts + targets)" block={playerSplits.touches} />}
+      {playerSplits?.passing && <SplitBlock title="Passing" block={playerSplits.passing} />}
+    </div>
+  )
+}
+
 function MomentumView({ gameLogs, directory }) {
   // "Who's scored in each of the last N games" -- a natural extension of the L7 Chart's own
   // "Any TD" category, aggregated across the whole league instead of one player at a time.
@@ -229,13 +393,16 @@ export default function SplitsTab() {
         <button className={view === 'leaderboard' ? 'active' : ''} onClick={() => setView('leaderboard')}>
           Leaderboard
         </button>
+        <button className={view === 'situational' ? 'active' : ''} onClick={() => setView('situational')}>
+          Situational
+        </button>
         <button className={view === 'momentum' ? 'active' : ''} onClick={() => setView('momentum')}>
           Momentum
         </button>
       </div>
-      {view === 'leaderboard'
-        ? <LeaderboardView gameLogs={gameLogs} directory={directory} />
-        : <MomentumView gameLogs={gameLogs} directory={directory} />}
+      {view === 'leaderboard' && <LeaderboardView gameLogs={gameLogs} directory={directory} />}
+      {view === 'situational' && <SituationalView directory={directory} />}
+      {view === 'momentum' && <MomentumView gameLogs={gameLogs} directory={directory} />}
     </div>
   )
 }

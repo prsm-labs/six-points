@@ -1,12 +1,12 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { resolveEventIds } from './espnGameResolver.js'
 import { openTeamSlide, openPlayerSlide } from './slideouts.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
 
-// Real box scores via ESPN's summary API: team stat lines (1st downs, total yards, turnovers,
-// time of possession) plus a full player/position breakdown for both teams -- passing, rushing,
-// receiving, defensive, interceptions, returns, kicking, punting -- whichever categories ESPN
-// actually reports athletes for in that game.
+// Real box scores via ESPN's summary API. The week's games are a lightweight, always-visible
+// list (scores already live in season_schedule.json, no ESPN call needed just to show them) --
+// selecting one resolves its real ESPN event id and fetches its full detail (team box score,
+// player/position box score, real play-by-play) on demand, not all 16 games at page load.
 
 const CATEGORY_LABELS = {
   passing: 'Passing',
@@ -21,17 +21,30 @@ const CATEGORY_LABELS = {
   punting: 'Punting',
 }
 
-async function fetchBoxscore(eventId) {
+async function fetchGameDetail(eventId) {
   const proxied = await fetch(`/api/summary?event=${eventId}&full=1`).catch(() => null)
   if (proxied && proxied.ok) {
     const data = await proxied.json()
-    if (data.boxscore) return data.boxscore
+    if (data.boxscore) return { boxscore: data.boxscore, drives: data.drives || [] }
   }
   const direct = await fetch(
     `https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${eventId}`
   )
   const data = await direct.json()
-  return data.boxscore
+  const drives = (data.drives?.previous || []).map((d) => ({
+    team: d.team?.abbreviation || '',
+    description: d.description || '',
+    result: d.result || '',
+    displayResult: d.displayResult || '',
+    isScore: !!d.isScore,
+    plays: (d.plays || []).map((p) => ({
+      text: p.text || '',
+      period: p.period?.number ?? null,
+      clock: p.clock?.displayValue || '',
+      scoringPlay: !!p.scoringPlay,
+    })),
+  }))
+  return { boxscore: data.boxscore, drives }
 }
 
 function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
@@ -120,21 +133,61 @@ function PlayerBoxTables({ boxscore, espnIdToPlayer, espnAbbrToNflverse }) {
   )
 }
 
-function BoxScoreCard({ game, boxscore, loading, espnIdToPlayer, espnAbbrToNflverse }) {
-  const [expanded, setExpanded] = useState(false)
-
-  if (loading) {
-    return (
-      <div className="weather-card">
-        <div className="weather-card-header">
-          <div><strong>{game.away_team}</strong> @ <strong>{game.home_team}</strong></div>
-        </div>
-        <p className="empty-state" style={{ margin: '10px 0 0' }}>Loading box score...</p>
-      </div>
-    )
+function PlayByPlay({ drives, espnAbbrToNflverse }) {
+  if (!drives || drives.length === 0) {
+    return <p className="empty-state" style={{ margin: '8px 0 0' }}>No play-by-play available for this game.</p>
   }
-  if (!boxscore) return null
 
+  return (
+    <div style={{ marginTop: 10 }}>
+      {drives.map((d, i) => {
+        const nflverseAbbr = espnAbbrToNflverse.get(d.team.toUpperCase()) || d.team
+        return (
+          <div
+            key={i}
+            style={{
+              marginBottom: 12,
+              paddingLeft: 10,
+              borderLeft: `3px solid ${d.isScore ? 'var(--accent)' : 'var(--border)'}`,
+            }}
+          >
+            <div style={{ fontWeight: 700, fontSize: '0.85rem' }}>
+              <button className="team-link" onClick={() => openTeamSlide({ team: nflverseAbbr })}>
+                {nflverseAbbr}
+              </button>{' '}
+              &middot; {d.displayResult}{' '}
+              <span className="meta-line" style={{ margin: 0 }}>({d.description})</span>
+            </div>
+            <div style={{ marginTop: 4 }}>
+              {d.plays.map((p, j) => (
+                <div
+                  key={j}
+                  className="meta-line"
+                  style={{
+                    margin: '2px 0',
+                    color: p.scoringPlay ? 'var(--accent)' : undefined,
+                    fontWeight: p.scoringPlay ? 700 : 400,
+                  }}
+                >
+                  Q{p.period} {p.clock} &mdash; {p.text}
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse }) {
+  const [showPlayers, setShowPlayers] = useState(false)
+  const [showPlays, setShowPlays] = useState(false)
+
+  if (loading) return <p className="empty-state" style={{ margin: '10px 0 0' }}>Loading box score...</p>
+  if (!detail?.boxscore) return <p className="empty-state" style={{ margin: '10px 0 0' }}>Box score not available yet for this game.</p>
+
+  const { boxscore, drives } = detail
   const [away, home] = boxscore.teams
   const statRows = away.statistics.map((s, i) => ({
     label: s.label,
@@ -143,14 +196,8 @@ function BoxScoreCard({ game, boxscore, loading, espnIdToPlayer, espnAbbrToNflve
   }))
 
   return (
-    <div className="weather-card">
-      <div className="weather-card-header">
-        <div>
-          <strong>{game.away_team}</strong> {game.away_score} @ <strong>{game.home_team}</strong> {game.home_score}
-        </div>
-        <div className="meta-line" style={{ margin: 0 }}>{game.gameday}</div>
-      </div>
-      <div className="table-wrap" style={{ marginTop: 10 }}>
+    <div style={{ marginTop: 10 }}>
+      <div className="table-wrap">
         <table>
           <thead>
             <tr>
@@ -179,17 +226,54 @@ function BoxScoreCard({ game, boxscore, loading, espnIdToPlayer, espnAbbrToNflve
         </table>
       </div>
 
-      {boxscore.players && (
-        <button
-          className="team-link"
-          style={{ marginTop: 10, fontSize: '0.82rem', fontWeight: 700 }}
-          onClick={() => setExpanded((e) => !e)}
-        >
-          {expanded ? 'Hide player box score ▲' : 'Show player box score ▼'}
+      <div style={{ display: 'flex', gap: 16, marginTop: 10 }}>
+        {boxscore.players && (
+          <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowPlayers((v) => !v)}>
+            {showPlayers ? 'Hide player box score ▲' : 'Show player box score ▼'}
+          </button>
+        )}
+        <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowPlays((v) => !v)}>
+          {showPlays ? 'Hide play-by-play ▲' : 'Show play-by-play ▼'}
         </button>
-      )}
-      {expanded && (
+      </div>
+
+      {showPlayers && (
         <PlayerBoxTables boxscore={boxscore} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} />
+      )}
+      {showPlays && <PlayByPlay drives={drives} espnAbbrToNflverse={espnAbbrToNflverse} />}
+    </div>
+  )
+}
+
+function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, espnAbbrToNflverse }) {
+  return (
+    <div className="weather-card">
+      <button
+        onClick={onSelect}
+        style={{
+          all: 'unset',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          width: '100%',
+          cursor: 'pointer',
+        }}
+      >
+        <div>
+          <strong>{game.away_team}</strong> {game.away_score} @ <strong>{game.home_team}</strong> {game.home_score}
+        </div>
+        <div className="meta-line" style={{ margin: 0 }}>
+          {game.gameday} {selected ? '▲' : '▼'}
+        </div>
+      </button>
+      {selected && (
+        <GameDetail
+          game={game}
+          detail={detail}
+          loading={loading}
+          espnIdToPlayer={espnIdToPlayer}
+          espnAbbrToNflverse={espnAbbrToNflverse}
+        />
       )}
     </div>
   )
@@ -199,7 +283,9 @@ export default function BoxScoreTab() {
   const [schedule, setSchedule] = useState(null)
   const [teamStats, setTeamStats] = useState(null)
   const [selectedWeek, setSelectedWeek] = useState(null)
-  const [boxscores, setBoxscores] = useState({})
+  const [selectedGameId, setSelectedGameId] = useState(null)
+  const [details, setDetails] = useState({})
+  const [loadingGameId, setLoadingGameId] = useState(null)
   const [error, setError] = useState(null)
   const directory = usePlayerDirectory()
 
@@ -244,27 +330,31 @@ export default function BoxScoreTab() {
     [schedule, selectedWeek]
   )
 
-  useEffect(() => {
-    if (!weekGames.length || !teamStats) return
-    setBoxscores({})
-    resolveEventIds(weekGames, teamStats).then(async (eventIds) => {
-      for (const g of weekGames) {
-        const eventId = eventIds[g.game_id]
-        if (!eventId) continue
-        try {
-          const box = await fetchBoxscore(eventId)
-          setBoxscores((prev) => ({ ...prev, [g.game_id]: box }))
-        } catch {
-          setBoxscores((prev) => ({ ...prev, [g.game_id]: null }))
-        }
-      }
-    })
-  }, [weekGames, teamStats])
-
   const weekOptions = useMemo(() => {
     if (!schedule) return []
     return [...new Set(schedule.games.map((g) => g.week))].sort((a, b) => b - a)
   }, [schedule])
+
+  async function handleSelect(game) {
+    if (selectedGameId === game.game_id) {
+      setSelectedGameId(null)
+      return
+    }
+    setSelectedGameId(game.game_id)
+    if (details[game.game_id] || !teamStats) return
+    setLoadingGameId(game.game_id)
+    try {
+      const eventIds = await resolveEventIds([game], teamStats)
+      const eventId = eventIds[game.game_id]
+      if (!eventId) throw new Error('no matching ESPN event found')
+      const detail = await fetchGameDetail(eventId)
+      setDetails((prev) => ({ ...prev, [game.game_id]: detail }))
+    } catch {
+      setDetails((prev) => ({ ...prev, [game.game_id]: null }))
+    } finally {
+      setLoadingGameId(null)
+    }
+  }
 
   if (error) {
     return (
@@ -281,7 +371,13 @@ export default function BoxScoreTab() {
       <div className="calc-block" style={{ marginBottom: 12 }}>
         <label>
           Week
-          <select value={selectedWeek || ''} onChange={(e) => setSelectedWeek(Number(e.target.value))}>
+          <select
+            value={selectedWeek || ''}
+            onChange={(e) => {
+              setSelectedWeek(Number(e.target.value))
+              setSelectedGameId(null)
+            }}
+          >
             {weekOptions.map((w) => (
               <option key={w} value={w}>Week {w}</option>
             ))}
@@ -289,16 +385,18 @@ export default function BoxScoreTab() {
         </label>
       </div>
       <p className="meta-line">
-        Real box scores via ESPN's summary API &middot; team stat line (1st downs, total yards,
-        passing/rushing splits, turnovers, time of possession) plus a full player/position
-        breakdown for both teams -- click "Show player box score" on any game
+        Click a game for its real box score (1st downs, total yards, passing/rushing splits,
+        turnovers, time of possession), a full player/position breakdown for both teams, and the
+        real play-by-play, all via ESPN's summary API
       </p>
       {weekGames.map((g) => (
-        <BoxScoreCard
+        <GameRow
           key={g.game_id}
           game={g}
-          boxscore={boxscores[g.game_id]}
-          loading={boxscores[g.game_id] === undefined}
+          selected={selectedGameId === g.game_id}
+          onSelect={() => handleSelect(g)}
+          detail={details[g.game_id]}
+          loading={loadingGameId === g.game_id}
           espnIdToPlayer={espnIdToPlayer}
           espnAbbrToNflverse={espnAbbrToNflverse}
         />

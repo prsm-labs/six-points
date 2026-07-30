@@ -22,7 +22,25 @@
     "pass_td_allowed": 31,
     "rush_yards_allowed_pg": 129.5,
     "rush_def_rank": 25,
-    "rush_td_allowed": 19
+    "rush_td_allowed": 19,
+    "defense_profile": {
+      "pass_plays_faced": 603,
+      "rush_plays_faced": 491,
+      "zone_rate": 0.719,
+      "man_rate": 0.28,
+      "blitz_rate": 0.275,
+      "blitz_rank": 16,
+      "pressure_rate": 0.247,
+      "pressure_rank": 29,
+      "explosive_pass_rate_allowed": 0.086,
+      "explosive_rush_rate_allowed": 0.057,
+      "explosive_rate_allowed": 0.073,
+      "explosive_rate_allowed_rank": 22,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "ATL": {
     "team_name": "Atlanta Falcons",
@@ -47,7 +65,26 @@
     "pass_td_allowed": 27,
     "rush_yards_allowed_pg": 126.8,
     "rush_def_rank": 24,
-    "rush_td_allowed": 12
+    "rush_td_allowed": 12,
+    "defense_profile": {
+      "pass_plays_faced": 591,
+      "rush_plays_faced": 466,
+      "zone_rate": 0.666,
+      "man_rate": 0.325,
+      "blitz_rate": 0.359,
+      "blitz_rank": 2,
+      "pressure_rate": 0.301,
+      "pressure_rank": 14,
+      "explosive_pass_rate_allowed": 0.083,
+      "explosive_rush_rate_allowed": 0.049,
+      "explosive_rate_allowed": 0.068,
+      "explosive_rate_allowed_rank": 18,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy"
+      ]
+    }
   },
   "BAL": {
     "team_name": "Baltimore Ravens",
@@ -72,7 +109,26 @@
     "pass_td_allowed": 23,
     "rush_yards_allowed_pg": 107.9,
     "rush_def_rank": 10,
-    "rush_td_allowed": 18
+    "rush_td_allowed": 18,
+    "defense_profile": {
+      "pass_plays_faced": 660,
+      "rush_plays_faced": 434,
+      "zone_rate": 0.671,
+      "man_rate": 0.321,
+      "blitz_rate": 0.241,
+      "blitz_rank": 22,
+      "pressure_rate": 0.274,
+      "pressure_rank": 23,
+      "explosive_pass_rate_allowed": 0.097,
+      "explosive_rush_rate_allowed": 0.051,
+      "explosive_rate_allowed": 0.079,
+      "explosive_rate_allowed_rank": 27,
+      "explosive_tier": "Explosive-Prone",
+      "style_tags": [
+        "Zone-heavy",
+        "Explosive-Prone"
+      ]
+    }
   },
   "BUF": {
     "team_name": "Buffalo Bills",
@@ -97,7 +153,25 @@
     "pass_td_allowed": 19,
     "rush_yards_allowed_pg": 136.5,
     "rush_def_rank": 28,
-    "rush_td_allowed": 24
+    "rush_td_allowed": 24,
+    "defense_profile": {
+      "pass_plays_faced": 505,
+      "rush_plays_faced": 451,
+      "zone_rate": 0.687,
+      "man_rate": 0.309,
+      "blitz_rate": 0.255,
+      "blitz_rank": 21,
+      "pressure_rate": 0.323,
+      "pressure_rank": 8,
+      "explosive_pass_rate_allowed": 0.075,
+      "explosive_rush_rate_allowed": 0.062,
+      "explosive_rate_allowed": 0.069,
+      "explosive_rate_allowed_rank": 19,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "CAR": {
     "team_name": "Carolina Panthers",
@@ -122,7 +196,25 @@
     "pass_td_allowed": 20,
     "rush_yards_allowed_pg": 124.4,
     "rush_def_rank": 20,
-    "rush_td_allowed": 20
+    "rush_td_allowed": 20,
+    "defense_profile": {
+      "pass_plays_faced": 537,
+      "rush_plays_faced": 479,
+      "zone_rate": 0.79,
+      "man_rate": 0.208,
+      "blitz_rate": 0.257,
+      "blitz_rank": 20,
+      "pressure_rate": 0.199,
+      "pressure_rank": 32,
+      "explosive_pass_rate_allowed": 0.078,
+      "explosive_rush_rate_allowed": 0.05,
+      "explosive_rate_allowed": 0.065,
+      "explosive_rate_allowed_rank": 17,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "CHI": {
     "team_name": "Chicago Bears",
@@ -147,7 +239,26 @@
     "pass_td_allowed": 32,
     "rush_yards_allowed_pg": 134.8,
     "rush_def_rank": 27,
-    "rush_td_allowed": 15
+    "rush_td_allowed": 15,
+    "defense_profile": {
+      "pass_plays_faced": 573,
+      "rush_plays_faced": 457,
+      "zone_rate": 0.575,
+      "man_rate": 0.421,
+      "blitz_rate": 0.279,
+      "blitz_rank": 14,
+      "pressure_rate": 0.271,
+      "pressure_rank": 25,
+      "explosive_pass_rate_allowed": 0.106,
+      "explosive_rush_rate_allowed": 0.059,
+      "explosive_rate_allowed": 0.085,
+      "explosive_rate_allowed_rank": 30,
+      "explosive_tier": "Explosive-Prone",
+      "style_tags": [
+        "Zone-heavy",
+        "Explosive-Prone"
+      ]
+    }
   },
   "CIN": {
     "team_name": "Cincinnati Bengals",
@@ -172,7 +283,27 @@
     "pass_td_allowed": 33,
     "rush_yards_allowed_pg": 148.1,
     "rush_def_rank": 32,
-    "rush_td_allowed": 18
+    "rush_td_allowed": 18,
+    "defense_profile": {
+      "pass_plays_faced": 572,
+      "rush_plays_faced": 480,
+      "zone_rate": 0.644,
+      "man_rate": 0.352,
+      "blitz_rate": 0.18,
+      "blitz_rank": 32,
+      "pressure_rate": 0.292,
+      "pressure_rank": 20,
+      "explosive_pass_rate_allowed": 0.105,
+      "explosive_rush_rate_allowed": 0.065,
+      "explosive_rate_allowed": 0.087,
+      "explosive_rate_allowed_rank": 31,
+      "explosive_tier": "Explosive-Prone",
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
+        "Explosive-Prone"
+      ]
+    }
   },
   "CLE": {
     "team_name": "Cleveland Browns",
@@ -197,7 +328,25 @@
     "pass_td_allowed": 25,
     "rush_yards_allowed_pg": 117.5,
     "rush_def_rank": 16,
-    "rush_td_allowed": 14
+    "rush_td_allowed": 14,
+    "defense_profile": {
+      "pass_plays_faced": 542,
+      "rush_plays_faced": 475,
+      "zone_rate": 0.585,
+      "man_rate": 0.411,
+      "blitz_rate": 0.282,
+      "blitz_rank": 12,
+      "pressure_rate": 0.341,
+      "pressure_rank": 1,
+      "explosive_pass_rate_allowed": 0.079,
+      "explosive_rush_rate_allowed": 0.046,
+      "explosive_rate_allowed": 0.064,
+      "explosive_rate_allowed_rank": 15,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "DAL": {
     "team_name": "Dallas Cowboys",
@@ -222,7 +371,26 @@
     "pass_td_allowed": 35,
     "rush_yards_allowed_pg": 126.6,
     "rush_def_rank": 23,
-    "rush_td_allowed": 24
+    "rush_td_allowed": 24,
+    "defense_profile": {
+      "pass_plays_faced": 595,
+      "rush_plays_faced": 453,
+      "zone_rate": 0.745,
+      "man_rate": 0.246,
+      "blitz_rate": 0.284,
+      "blitz_rank": 10,
+      "pressure_rate": 0.311,
+      "pressure_rank": 10,
+      "explosive_pass_rate_allowed": 0.097,
+      "explosive_rush_rate_allowed": 0.077,
+      "explosive_rate_allowed": 0.089,
+      "explosive_rate_allowed_rank": 32,
+      "explosive_tier": "Explosive-Prone",
+      "style_tags": [
+        "Zone-heavy",
+        "Explosive-Prone"
+      ]
+    }
   },
   "DEN": {
     "team_name": "Denver Broncos",
@@ -247,7 +415,26 @@
     "pass_td_allowed": 18,
     "rush_yards_allowed_pg": 91.2,
     "rush_def_rank": 2,
-    "rush_td_allowed": 11
+    "rush_td_allowed": 11,
+    "defense_profile": {
+      "pass_plays_faced": 663,
+      "rush_plays_faced": 400,
+      "zone_rate": 0.543,
+      "man_rate": 0.448,
+      "blitz_rate": 0.323,
+      "blitz_rank": 5,
+      "pressure_rate": 0.339,
+      "pressure_rank": 2,
+      "explosive_pass_rate_allowed": 0.06,
+      "explosive_rush_rate_allowed": 0.028,
+      "explosive_rate_allowed": 0.048,
+      "explosive_rate_allowed_rank": 1,
+      "explosive_tier": "Stingy",
+      "style_tags": [
+        "Blitz-heavy",
+        "Bend-Don't-Break"
+      ]
+    }
   },
   "DET": {
     "team_name": "Detroit Lions",
@@ -272,7 +459,25 @@
     "pass_td_allowed": 31,
     "rush_yards_allowed_pg": 115.6,
     "rush_def_rank": 14,
-    "rush_td_allowed": 16
+    "rush_td_allowed": 16,
+    "defense_profile": {
+      "pass_plays_faced": 609,
+      "rush_plays_faced": 448,
+      "zone_rate": 0.588,
+      "man_rate": 0.409,
+      "blitz_rate": 0.278,
+      "blitz_rank": 15,
+      "pressure_rate": 0.302,
+      "pressure_rank": 13,
+      "explosive_pass_rate_allowed": 0.095,
+      "explosive_rush_rate_allowed": 0.033,
+      "explosive_rate_allowed": 0.069,
+      "explosive_rate_allowed_rank": 20,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "GB": {
     "team_name": "Green Bay Packers",
@@ -297,7 +502,27 @@
     "pass_td_allowed": 24,
     "rush_yards_allowed_pg": 118.1,
     "rush_def_rank": 18,
-    "rush_td_allowed": 15
+    "rush_td_allowed": 15,
+    "defense_profile": {
+      "pass_plays_faced": 588,
+      "rush_plays_faced": 478,
+      "zone_rate": 0.802,
+      "man_rate": 0.194,
+      "blitz_rate": 0.202,
+      "blitz_rank": 28,
+      "pressure_rate": 0.303,
+      "pressure_rank": 12,
+      "explosive_pass_rate_allowed": 0.07,
+      "explosive_rush_rate_allowed": 0.029,
+      "explosive_rate_allowed": 0.052,
+      "explosive_rate_allowed_rank": 4,
+      "explosive_tier": "Stingy",
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
+        "Bend-Don't-Break"
+      ]
+    }
   },
   "HOU": {
     "team_name": "Houston Texans",
@@ -322,7 +547,25 @@
     "pass_td_allowed": 20,
     "rush_yards_allowed_pg": 94.1,
     "rush_def_rank": 4,
-    "rush_td_allowed": 13
+    "rush_td_allowed": 13,
+    "defense_profile": {
+      "pass_plays_faced": 590,
+      "rush_plays_faced": 400,
+      "zone_rate": 0.673,
+      "man_rate": 0.321,
+      "blitz_rate": 0.229,
+      "blitz_rank": 24,
+      "pressure_rate": 0.295,
+      "pressure_rank": 18,
+      "explosive_pass_rate_allowed": 0.08,
+      "explosive_rush_rate_allowed": 0.035,
+      "explosive_rate_allowed": 0.062,
+      "explosive_rate_allowed_rank": 12,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "IND": {
     "team_name": "Indianapolis Colts",
@@ -347,7 +590,25 @@
     "pass_td_allowed": 24,
     "rush_yards_allowed_pg": 102.4,
     "rush_def_rank": 7,
-    "rush_td_allowed": 16
+    "rush_td_allowed": 16,
+    "defense_profile": {
+      "pass_plays_faced": 669,
+      "rush_plays_faced": 448,
+      "zone_rate": 0.627,
+      "man_rate": 0.364,
+      "blitz_rate": 0.284,
+      "blitz_rank": 11,
+      "pressure_rate": 0.288,
+      "pressure_rank": 21,
+      "explosive_pass_rate_allowed": 0.085,
+      "explosive_rush_rate_allowed": 0.033,
+      "explosive_rate_allowed": 0.064,
+      "explosive_rate_allowed_rank": 16,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "JAX": {
     "team_name": "Jacksonville Jaguars",
@@ -372,7 +633,26 @@
     "pass_td_allowed": 25,
     "rush_yards_allowed_pg": 86.3,
     "rush_def_rank": 1,
-    "rush_td_allowed": 13
+    "rush_td_allowed": 13,
+    "defense_profile": {
+      "pass_plays_faced": 672,
+      "rush_plays_faced": 370,
+      "zone_rate": 0.759,
+      "man_rate": 0.24,
+      "blitz_rate": 0.265,
+      "blitz_rank": 18,
+      "pressure_rate": 0.266,
+      "pressure_rank": 26,
+      "explosive_pass_rate_allowed": 0.068,
+      "explosive_rush_rate_allowed": 0.027,
+      "explosive_rate_allowed": 0.054,
+      "explosive_rate_allowed_rank": 6,
+      "explosive_tier": "Stingy",
+      "style_tags": [
+        "Zone-heavy",
+        "Bend-Don't-Break"
+      ]
+    }
   },
   "KC": {
     "team_name": "Kansas City Chiefs",
@@ -397,7 +677,27 @@
     "pass_td_allowed": 18,
     "rush_yards_allowed_pg": 106.6,
     "rush_def_rank": 9,
-    "rush_td_allowed": 14
+    "rush_td_allowed": 14,
+    "defense_profile": {
+      "pass_plays_faced": 545,
+      "rush_plays_faced": 448,
+      "zone_rate": 0.629,
+      "man_rate": 0.367,
+      "blitz_rate": 0.35,
+      "blitz_rank": 3,
+      "pressure_rate": 0.33,
+      "pressure_rank": 6,
+      "explosive_pass_rate_allowed": 0.083,
+      "explosive_rush_rate_allowed": 0.031,
+      "explosive_rate_allowed": 0.059,
+      "explosive_rate_allowed_rank": 7,
+      "explosive_tier": "Stingy",
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy",
+        "Bend-Don't-Break"
+      ]
+    }
   },
   "LA": {
     "team_name": "Los Angeles Rams",
@@ -422,7 +722,26 @@
     "pass_td_allowed": 26,
     "rush_yards_allowed_pg": 111.3,
     "rush_def_rank": 12,
-    "rush_td_allowed": 8
+    "rush_td_allowed": 8,
+    "defense_profile": {
+      "pass_plays_faced": 640,
+      "rush_plays_faced": 437,
+      "zone_rate": 0.745,
+      "man_rate": 0.252,
+      "blitz_rate": 0.191,
+      "blitz_rank": 31,
+      "pressure_rate": 0.312,
+      "pressure_rank": 9,
+      "explosive_pass_rate_allowed": 0.083,
+      "explosive_rush_rate_allowed": 0.032,
+      "explosive_rate_allowed": 0.062,
+      "explosive_rate_allowed_rank": 14,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz"
+      ]
+    }
   },
   "LAC": {
     "team_name": "Los Angeles Chargers",
@@ -447,7 +766,27 @@
     "pass_td_allowed": 16,
     "rush_yards_allowed_pg": 106.1,
     "rush_def_rank": 8,
-    "rush_td_allowed": 16
+    "rush_td_allowed": 16,
+    "defense_profile": {
+      "pass_plays_faced": 552,
+      "rush_plays_faced": 417,
+      "zone_rate": 0.77,
+      "man_rate": 0.226,
+      "blitz_rate": 0.199,
+      "blitz_rank": 29,
+      "pressure_rate": 0.297,
+      "pressure_rank": 17,
+      "explosive_pass_rate_allowed": 0.067,
+      "explosive_rush_rate_allowed": 0.05,
+      "explosive_rate_allowed": 0.06,
+      "explosive_rate_allowed_rank": 8,
+      "explosive_tier": "Stingy",
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
+        "Bend-Don't-Break"
+      ]
+    }
   },
   "LV": {
     "team_name": "Las Vegas Raiders",
@@ -472,7 +811,27 @@
     "pass_td_allowed": 23,
     "rush_yards_allowed_pg": 118.1,
     "rush_def_rank": 17,
-    "rush_td_allowed": 22
+    "rush_td_allowed": 22,
+    "defense_profile": {
+      "pass_plays_faced": 565,
+      "rush_plays_faced": 512,
+      "zone_rate": 0.795,
+      "man_rate": 0.203,
+      "blitz_rate": 0.216,
+      "blitz_rank": 27,
+      "pressure_rate": 0.262,
+      "pressure_rank": 27,
+      "explosive_pass_rate_allowed": 0.065,
+      "explosive_rush_rate_allowed": 0.033,
+      "explosive_rate_allowed": 0.05,
+      "explosive_rate_allowed_rank": 3,
+      "explosive_tier": "Stingy",
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
+        "Bend-Don't-Break"
+      ]
+    }
   },
   "MIA": {
     "team_name": "Miami Dolphins",
@@ -497,7 +856,27 @@
     "pass_td_allowed": 29,
     "rush_yards_allowed_pg": 133.5,
     "rush_def_rank": 26,
-    "rush_td_allowed": 18
+    "rush_td_allowed": 18,
+    "defense_profile": {
+      "pass_plays_faced": 556,
+      "rush_plays_faced": 472,
+      "zone_rate": 0.724,
+      "man_rate": 0.272,
+      "blitz_rate": 0.322,
+      "blitz_rank": 6,
+      "pressure_rate": 0.255,
+      "pressure_rank": 28,
+      "explosive_pass_rate_allowed": 0.09,
+      "explosive_rush_rate_allowed": 0.066,
+      "explosive_rate_allowed": 0.079,
+      "explosive_rate_allowed_rank": 28,
+      "explosive_tier": "Explosive-Prone",
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy",
+        "Explosive-Prone"
+      ]
+    }
   },
   "MIN": {
     "team_name": "Minnesota Vikings",
@@ -522,7 +901,27 @@
     "pass_td_allowed": 15,
     "rush_yards_allowed_pg": 124.8,
     "rush_def_rank": 21,
-    "rush_td_allowed": 13
+    "rush_td_allowed": 13,
+    "defense_profile": {
+      "pass_plays_faced": 497,
+      "rush_plays_faced": 529,
+      "zone_rate": 0.81,
+      "man_rate": 0.185,
+      "blitz_rate": 0.461,
+      "blitz_rank": 1,
+      "pressure_rate": 0.334,
+      "pressure_rank": 5,
+      "explosive_pass_rate_allowed": 0.064,
+      "explosive_rush_rate_allowed": 0.04,
+      "explosive_rate_allowed": 0.052,
+      "explosive_rate_allowed_rank": 5,
+      "explosive_tier": "Stingy",
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy",
+        "Bend-Don't-Break"
+      ]
+    }
   },
   "NE": {
     "team_name": "New England Patriots",
@@ -547,7 +946,25 @@
     "pass_td_allowed": 25,
     "rush_yards_allowed_pg": 102.1,
     "rush_def_rank": 6,
-    "rush_td_allowed": 11
+    "rush_td_allowed": 11,
+    "defense_profile": {
+      "pass_plays_faced": 564,
+      "rush_plays_faced": 412,
+      "zone_rate": 0.683,
+      "man_rate": 0.314,
+      "blitz_rate": 0.282,
+      "blitz_rank": 13,
+      "pressure_rate": 0.271,
+      "pressure_rank": 24,
+      "explosive_pass_rate_allowed": 0.074,
+      "explosive_rush_rate_allowed": 0.041,
+      "explosive_rate_allowed": 0.06,
+      "explosive_rate_allowed_rank": 10,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "NO": {
     "team_name": "New Orleans Saints",
@@ -572,7 +989,25 @@
     "pass_td_allowed": 25,
     "rush_yards_allowed_pg": 122.1,
     "rush_def_rank": 19,
-    "rush_td_allowed": 12
+    "rush_td_allowed": 12,
+    "defense_profile": {
+      "pass_plays_faced": 536,
+      "rush_plays_faced": 519,
+      "zone_rate": 0.778,
+      "man_rate": 0.218,
+      "blitz_rate": 0.257,
+      "blitz_rank": 19,
+      "pressure_rate": 0.28,
+      "pressure_rank": 22,
+      "explosive_pass_rate_allowed": 0.082,
+      "explosive_rush_rate_allowed": 0.039,
+      "explosive_rate_allowed": 0.061,
+      "explosive_rate_allowed_rank": 11,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   },
   "NYG": {
     "team_name": "New York Giants",
@@ -597,7 +1032,27 @@
     "pass_td_allowed": 25,
     "rush_yards_allowed_pg": 146.8,
     "rush_def_rank": 31,
-    "rush_td_allowed": 21
+    "rush_td_allowed": 21,
+    "defense_profile": {
+      "pass_plays_faced": 592,
+      "rush_plays_faced": 466,
+      "zone_rate": 0.598,
+      "man_rate": 0.401,
+      "blitz_rate": 0.297,
+      "blitz_rank": 8,
+      "pressure_rate": 0.297,
+      "pressure_rank": 16,
+      "explosive_pass_rate_allowed": 0.083,
+      "explosive_rush_rate_allowed": 0.077,
+      "explosive_rate_allowed": 0.08,
+      "explosive_rate_allowed_rank": 29,
+      "explosive_tier": "Explosive-Prone",
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy",
+        "Explosive-Prone"
+      ]
+    }
   },
   "NYJ": {
     "team_name": "New York Jets",
@@ -622,7 +1077,26 @@
     "pass_td_allowed": 36,
     "rush_yards_allowed_pg": 140.9,
     "rush_def_rank": 29,
-    "rush_td_allowed": 20
+    "rush_td_allowed": 20,
+    "defense_profile": {
+      "pass_plays_faced": 543,
+      "rush_plays_faced": 539,
+      "zone_rate": 0.594,
+      "man_rate": 0.4,
+      "blitz_rate": 0.289,
+      "blitz_rank": 9,
+      "pressure_rate": 0.23,
+      "pressure_rank": 30,
+      "explosive_pass_rate_allowed": 0.105,
+      "explosive_rush_rate_allowed": 0.048,
+      "explosive_rate_allowed": 0.077,
+      "explosive_rate_allowed_rank": 25,
+      "explosive_tier": "Explosive-Prone",
+      "style_tags": [
+        "Zone-heavy",
+        "Explosive-Prone"
+      ]
+    }
   },
   "PHI": {
     "team_name": "Philadelphia Eagles",
@@ -647,7 +1121,26 @@
     "pass_td_allowed": 14,
     "rush_yards_allowed_pg": 125.1,
     "rush_def_rank": 22,
-    "rush_td_allowed": 20
+    "rush_td_allowed": 20,
+    "defense_profile": {
+      "pass_plays_faced": 588,
+      "rush_plays_faced": 495,
+      "zone_rate": 0.562,
+      "man_rate": 0.428,
+      "blitz_rate": 0.192,
+      "blitz_rank": 30,
+      "pressure_rate": 0.323,
+      "pressure_rank": 7,
+      "explosive_pass_rate_allowed": 0.078,
+      "explosive_rush_rate_allowed": 0.038,
+      "explosive_rate_allowed": 0.06,
+      "explosive_rate_allowed_rank": 9,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz"
+      ]
+    }
   },
   "PIT": {
     "team_name": "Pittsburgh Steelers",
@@ -672,7 +1165,26 @@
     "pass_td_allowed": 30,
     "rush_yards_allowed_pg": 114.2,
     "rush_def_rank": 13,
-    "rush_td_allowed": 10
+    "rush_td_allowed": 10,
+    "defense_profile": {
+      "pass_plays_faced": 666,
+      "rush_plays_faced": 453,
+      "zone_rate": 0.644,
+      "man_rate": 0.354,
+      "blitz_rate": 0.303,
+      "blitz_rank": 7,
+      "pressure_rate": 0.293,
+      "pressure_rank": 19,
+      "explosive_pass_rate_allowed": 0.08,
+      "explosive_rush_rate_allowed": 0.057,
+      "explosive_rate_allowed": 0.071,
+      "explosive_rate_allowed_rank": 21,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy"
+      ]
+    }
   },
   "SEA": {
     "team_name": "Seattle Seahawks",
@@ -697,7 +1209,27 @@
     "pass_td_allowed": 20,
     "rush_yards_allowed_pg": 92.4,
     "rush_def_rank": 3,
-    "rush_td_allowed": 9
+    "rush_td_allowed": 9,
+    "defense_profile": {
+      "pass_plays_faced": 651,
+      "rush_plays_faced": 419,
+      "zone_rate": 0.708,
+      "man_rate": 0.287,
+      "blitz_rate": 0.223,
+      "blitz_rank": 25,
+      "pressure_rate": 0.336,
+      "pressure_rank": 3,
+      "explosive_pass_rate_allowed": 0.068,
+      "explosive_rush_rate_allowed": 0.019,
+      "explosive_rate_allowed": 0.049,
+      "explosive_rate_allowed_rank": 2,
+      "explosive_tier": "Stingy",
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
+        "Bend-Don't-Break"
+      ]
+    }
   },
   "SF": {
     "team_name": "San Francisco 49ers",
@@ -722,7 +1254,26 @@
     "pass_td_allowed": 29,
     "rush_yards_allowed_pg": 108.6,
     "rush_def_rank": 11,
-    "rush_td_allowed": 13
+    "rush_td_allowed": 13,
+    "defense_profile": {
+      "pass_plays_faced": 607,
+      "rush_plays_faced": 427,
+      "zone_rate": 0.75,
+      "man_rate": 0.244,
+      "blitz_rate": 0.217,
+      "blitz_rank": 26,
+      "pressure_rate": 0.217,
+      "pressure_rank": 31,
+      "explosive_pass_rate_allowed": 0.074,
+      "explosive_rush_rate_allowed": 0.044,
+      "explosive_rate_allowed": 0.062,
+      "explosive_rate_allowed_rank": 13,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz"
+      ]
+    }
   },
   "TB": {
     "team_name": "Tampa Bay Buccaneers",
@@ -747,7 +1298,26 @@
     "pass_td_allowed": 30,
     "rush_yards_allowed_pg": 99.6,
     "rush_def_rank": 5,
-    "rush_td_allowed": 16
+    "rush_td_allowed": 16,
+    "defense_profile": {
+      "pass_plays_faced": 609,
+      "rush_plays_faced": 396,
+      "zone_rate": 0.703,
+      "man_rate": 0.292,
+      "blitz_rate": 0.34,
+      "blitz_rank": 4,
+      "pressure_rate": 0.335,
+      "pressure_rank": 4,
+      "explosive_pass_rate_allowed": 0.09,
+      "explosive_rush_rate_allowed": 0.048,
+      "explosive_rate_allowed": 0.074,
+      "explosive_rate_allowed_rank": 24,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy"
+      ]
+    }
   },
   "TEN": {
     "team_name": "Tennessee Titans",
@@ -772,7 +1342,26 @@
     "pass_td_allowed": 30,
     "rush_yards_allowed_pg": 116.0,
     "rush_def_rank": 15,
-    "rush_td_allowed": 21
+    "rush_td_allowed": 21,
+    "defense_profile": {
+      "pass_plays_faced": 558,
+      "rush_plays_faced": 455,
+      "zone_rate": 0.738,
+      "man_rate": 0.259,
+      "blitz_rate": 0.237,
+      "blitz_rank": 23,
+      "pressure_rate": 0.299,
+      "pressure_rank": 15,
+      "explosive_pass_rate_allowed": 0.104,
+      "explosive_rush_rate_allowed": 0.046,
+      "explosive_rate_allowed": 0.078,
+      "explosive_rate_allowed_rank": 26,
+      "explosive_tier": "Explosive-Prone",
+      "style_tags": [
+        "Zone-heavy",
+        "Explosive-Prone"
+      ]
+    }
   },
   "WAS": {
     "team_name": "Washington Commanders",
@@ -797,6 +1386,24 @@
     "pass_td_allowed": 33,
     "rush_yards_allowed_pg": 142.6,
     "rush_def_rank": 30,
-    "rush_td_allowed": 18
+    "rush_td_allowed": 18,
+    "defense_profile": {
+      "pass_plays_faced": 584,
+      "rush_plays_faced": 507,
+      "zone_rate": 0.684,
+      "man_rate": 0.305,
+      "blitz_rate": 0.267,
+      "blitz_rank": 17,
+      "pressure_rate": 0.31,
+      "pressure_rank": 11,
+      "explosive_pass_rate_allowed": 0.091,
+      "explosive_rush_rate_allowed": 0.053,
+      "explosive_rate_allowed": 0.073,
+      "explosive_rate_allowed_rank": 23,
+      "explosive_tier": "Average",
+      "style_tags": [
+        "Zone-heavy"
+      ]
+    }
   }
 }

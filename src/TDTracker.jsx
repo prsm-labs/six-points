@@ -1,29 +1,51 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { useWeekTDs } from './useWeekTDs.js'
+import { usePlayerDirectory } from './PlayerDirectory.jsx'
+import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 
 // TD Tracker is its own page, not a rename/extension of Live Themes -- Live Themes' job is
 // clustering ("are TDs happening close together"), this page's job is a plain chronological
 // list of every real TD for a selected week, with real box-score detail. Both share the same
 // underlying ESPN scoring-play feed.
 //
-// Known simplification: ESPN's play-by-play text has no player ID, only a display name, so
-// there's no reliable crosswalk to our gsis_id-keyed player directory here -- scorer names are
-// plain text, not clickable into the Player Slideout the way every other tab's player names are.
+// Known simplification: ESPN's scoring-play text has no player id, only a display name, so
+// scorer/passer names are crosswalked to our own player directory by exact name match (not id
+// match, unlike Box Score's athlete-id crosswalk) -- verified live against a real week's real
+// scorer names. A handful of names may not match (suffix formatting differences, or the player
+// is outside the app's scoped ~560-player directory, e.g. kickers/defense) -- those fall back to
+// plain text rather than a broken link.
 
-function TDRow({ td }) {
+function PlayerLink({ name, nameToPlayer, team }) {
+  if (!name) return '—'
+  const match = nameToPlayer.get(name.toLowerCase())
+  if (!match) return name
+  return (
+    <button
+      className="team-link"
+      onClick={() => openPlayerSlide({ player_id: match.playerId, player_name: match.name, team, position: match.position })}
+    >
+      {name}
+    </button>
+  )
+}
+
+function TDRow({ td, nameToPlayer, espnAbbrToNflverse }) {
+  const nflverseAbbr = espnAbbrToNflverse.get(td.teamAbbr.toUpperCase()) || td.teamAbbr
   return (
     <tr>
       <td>{td.game}</td>
       <td>Q{td.period} {td.clock}</td>
       <td>
-        {td.teamLogo && <img src={td.teamLogo} alt={td.teamAbbr} className="avatar" style={{ marginRight: 6 }} />}
-        {td.teamAbbr}
+        <button className="team-link" onClick={() => openTeamSlide({ team: nflverseAbbr })}>
+          {td.teamLogo && <img src={td.teamLogo} alt={td.teamAbbr} className="avatar" style={{ marginRight: 6 }} />}
+          {td.teamAbbr}
+        </button>
       </td>
-      <td>{td.scorerName}</td>
+      <td><PlayerLink name={td.scorerName} nameToPlayer={nameToPlayer} team={nflverseAbbr} /></td>
       <td>{td.tdTypeLabel}</td>
       <td>{td.yards != null ? `${td.yards} yd` : '—'}</td>
-      <td>{td.passerName || '—'}</td>
+      <td><PlayerLink name={td.passerName} nameToPlayer={nameToPlayer} team={nflverseAbbr} /></td>
       <td>{td.awayScore}-{td.homeScore}</td>
     </tr>
   )
@@ -34,6 +56,23 @@ export default function TDTracker() {
   const [teamStats, setTeamStats] = useState(null)
   const [selectedWeek, setSelectedWeek] = useState(null)
   const [error, setError] = useState(null)
+  const directory = usePlayerDirectory()
+
+  const nameToPlayer = useMemo(() => {
+    const map = new Map()
+    for (const [playerId, info] of Object.entries(directory)) {
+      map.set(info.name.toLowerCase(), { playerId, name: info.name, position: info.position })
+    }
+    return map
+  }, [directory])
+
+  const espnAbbrToNflverse = useMemo(() => {
+    const map = new Map()
+    for (const [abbr, info] of Object.entries(teamStats || {})) {
+      if (info.espn_abbr) map.set(info.espn_abbr.toUpperCase(), abbr)
+    }
+    return map
+  }, [teamStats])
 
   useEffect(() => {
     Promise.all([
@@ -111,9 +150,9 @@ export default function TDTracker() {
             </div>
           )}
           <p className="meta-line">
-            {tds.length} touchdowns, Week {selectedWeek} · click a column header to sort · scorer
-            names are plain text here (ESPN's play-by-play has no player ID to cross-reference
-            against our own player directory)
+            {tds.length} touchdowns, Week {selectedWeek} · click a column header to sort · team
+            and player names open their slideout where a match is found (a few scorers, mostly
+            defense/special teams, sit outside the app's player directory and stay plain text)
           </p>
           <div className="table-wrap">
             <table>
@@ -130,7 +169,9 @@ export default function TDTracker() {
                 </tr>
               </thead>
               <tbody>
-                {sorted.map((td, i) => <TDRow td={td} key={i} />)}
+                {sorted.map((td, i) => (
+                  <TDRow td={td} key={i} nameToPlayer={nameToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} />
+                ))}
               </tbody>
             </table>
           </div>

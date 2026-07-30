@@ -313,7 +313,7 @@ export default function App() {
     <div className="app">
       <header>
         <div className="header-row">
-          <img src="/logo.jpeg" alt="Six Points" className="logo" />
+          <img src="/logo.png" alt="Six Points" className="logo" />
           <h1>Six Points</h1>
         </div>
         <p className="tagline">NFL touchdown intelligence, weekly cadence, real backtests only.</p>
