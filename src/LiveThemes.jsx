@@ -55,6 +55,59 @@ async function fetchSummary(eventId) {
   return { scoringPlays: data.scoringPlays || [] }
 }
 
+// LIVE mode polling -- gated to only fetch play-by-play for games ESPN itself reports as
+// actually in progress (status.type.state === 'in', the standard pre/in/post convention ESPN
+// uses across every sport's API, confirmed live 2026-08-24 against a real completed game
+// returning state:"post"). Not yet verified against a real state:"in" response, since no live
+// 2026 game exists yet to check against -- same disclosed limitation as every other live feature
+// in this app; re-verify once Week 1 actually happens (2026-09-09).
+const LIVE_POLL_INTERVAL_MS = 30000
+
+async function fetchScoreboard() {
+  const proxied = await fetch('/api/scoreboard').catch(() => null)
+  if (proxied && proxied.ok) return proxied.json()
+  const direct = await fetch('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard')
+  return direct.json()
+}
+
+function isGameLive(event) {
+  return event.status?.type?.state === 'in'
+}
+
+function ThemeTable({ themes }) {
+  return (
+    <div className="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Theme</th>
+            <th>Plays</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {themes.map((theme, i) => (
+            <tr key={i}>
+              <td>
+                {theme.plays.length > 1 ? (
+                  <span className="tier tier-lock">Flurry x{theme.plays.length}</span>
+                ) : (
+                  <span className="tier tier-fringe">Isolated</span>
+                )}
+              </td>
+              <td>{theme.plays.map((p) => p.text).join(' | ')}</td>
+              <td>
+                {theme.plays[theme.plays.length - 1].awayScore} -{' '}
+                {theme.plays[theme.plays.length - 1].homeScore}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 function notify(title, body) {
   if (typeof Notification === 'undefined') return
   if (Notification.permission === 'granted') {
@@ -71,6 +124,15 @@ export default function LiveThemes() {
   const [error, setError] = useState(null)
   const [notifLog, setNotifLog] = useState([])
   const timerRef = useRef(null)
+
+  // Live mode: one or more real games can be in progress at once (a Sunday early slate), unlike
+  // Replay's single hardcoded game -- so live state is keyed per ESPN event id.
+  const [liveGames, setLiveGames] = useState([])
+  const [livePlaysByGame, setLivePlaysByGame] = useState({})
+  const [liveNotifLog, setLiveNotifLog] = useState([])
+  const [liveChecking, setLiveChecking] = useState(false)
+  const seenPlayIdsRef = useRef(new Set())
+  const liveTimerRef = useRef(null)
 
   useEffect(() => {
     setRevealed([])
@@ -107,7 +169,64 @@ export default function LiveThemes() {
     return () => clearInterval(timerRef.current)
   }, [allPlays, mode])
 
-  const themes = clusterPlays(mode === 'replay' ? revealed : allPlays || [])
+  useEffect(() => {
+    if (mode !== 'live') {
+      clearInterval(liveTimerRef.current)
+      return
+    }
+    seenPlayIdsRef.current = new Set()
+    setLiveGames([])
+    setLivePlaysByGame({})
+    setLiveNotifLog([])
+    setError(null)
+
+    async function poll() {
+      setLiveChecking(true)
+      try {
+        const scoreboard = await fetchScoreboard()
+        const events = (scoreboard.events || []).filter(isGameLive)
+        setLiveGames(
+          events.map((e) => {
+            const comp = e.competitions?.[0]
+            const home = comp?.competitors?.find((c) => c.homeAway === 'home')
+            const away = comp?.competitors?.find((c) => c.homeAway === 'away')
+            return {
+              id: e.id,
+              home: home?.team?.abbreviation,
+              away: away?.team?.abbreviation,
+              homeScore: home?.score,
+              awayScore: away?.score,
+            }
+          })
+        )
+
+        for (const event of events) {
+          const data = await fetchSummary(event.id)
+          const plays = data.scoringPlays || []
+          setLivePlaysByGame((prev) => ({ ...prev, [event.id]: plays }))
+          for (const play of plays) {
+            if (seenPlayIdsRef.current.has(play.id)) continue
+            seenPlayIdsRef.current.add(play.id)
+            if (isTouchdown(play)) {
+              const msg = `Breakout Alert: ${play.text}`
+              setLiveNotifLog((prev) => [...prev, msg])
+              notify('Six Points -- Breakout Alert', play.text)
+            }
+          }
+        }
+      } catch (e) {
+        setError(e.message)
+      } finally {
+        setLiveChecking(false)
+      }
+    }
+
+    poll()
+    liveTimerRef.current = setInterval(poll, LIVE_POLL_INTERVAL_MS)
+    return () => clearInterval(liveTimerRef.current)
+  }, [mode])
+
+  const replayThemes = clusterPlays(revealed)
 
   if (error) {
     return <p className="empty-state">Couldn't load scoring plays ({error}).</p>
@@ -120,7 +239,7 @@ export default function LiveThemes() {
           Replay (2025 season finale)
         </button>
         <button className={mode === 'live' ? 'active' : ''} onClick={() => setMode('live')}>
-          Live (no games in-season yet)
+          Live
         </button>
       </div>
 
@@ -134,43 +253,23 @@ export default function LiveThemes() {
         </p>
       )}
       {mode === 'live' && (
-        <p className="empty-state">
-          No live games right now -- 2026 season starts 2026-09-09. This mode polls
-          /api/scoreboard + /api/summary for today's real games once the season is underway.
+        <p className="meta-line">
+          Polls ESPN's real scoreboard every 30s for games it reports as in progress
+          (status.type.state === 'in'), then polls that game's real scoring plays -- fires a
+          Breakout Alert on any new touchdown since the last poll. Not yet checked against an
+          actual live game (none exist until 2026-09-09) -- same disclosed limitation as
+          everywhere else in this app touching live data.
+          {liveChecking && ' Checking now...'}
         </p>
+      )}
+
+      {mode === 'live' && liveGames.length === 0 && !liveChecking && (
+        <p className="empty-state">No games in progress right now.</p>
       )}
 
       {mode === 'replay' && (
         <>
-          <div className="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Theme</th>
-                  <th>Plays</th>
-                  <th>Score</th>
-                </tr>
-              </thead>
-              <tbody>
-                {themes.map((theme, i) => (
-                  <tr key={i}>
-                    <td>
-                      {theme.plays.length > 1 ? (
-                        <span className="tier tier-lock">Flurry x{theme.plays.length}</span>
-                      ) : (
-                        <span className="tier tier-fringe">Isolated</span>
-                      )}
-                    </td>
-                    <td>{theme.plays.map((p) => p.text).join(' | ')}</td>
-                    <td>
-                      {theme.plays[theme.plays.length - 1].awayScore} -{' '}
-                      {theme.plays[theme.plays.length - 1].homeScore}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ThemeTable themes={replayThemes} />
           {notifLog.length > 0 && (
             <>
               <p className="meta-line small">Notification log (this session):</p>
@@ -181,6 +280,25 @@ export default function LiveThemes() {
               </ul>
             </>
           )}
+        </>
+      )}
+
+      {mode === 'live' && liveGames.map((g) => (
+        <div key={g.id} style={{ marginBottom: 18 }}>
+          <h4 style={{ margin: '0 0 6px' }}>
+            {g.away} {g.awayScore} @ {g.home} {g.homeScore}
+          </h4>
+          <ThemeTable themes={clusterPlays(livePlaysByGame[g.id] || [])} />
+        </div>
+      ))}
+      {mode === 'live' && liveNotifLog.length > 0 && (
+        <>
+          <p className="meta-line small">Notification log (this session):</p>
+          <ul className="notif-log">
+            {liveNotifLog.map((n, i) => (
+              <li key={i}>{n}</li>
+            ))}
+          </ul>
         </>
       )}
     </div>

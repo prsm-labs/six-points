@@ -42,7 +42,7 @@ function YardageTable({ rows }) {
         <table>
           <thead>
             <tr>
-              <SortTh label="Team" sortKeyName="team" {...thProps} />
+              <SortTh label="Team" sortKeyName="team" className="sticky-col" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
               <SortTh label="Player" sortKeyName="player_name" {...thProps} />
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
@@ -59,7 +59,7 @@ function YardageTable({ rows }) {
           <tbody>
             {sorted.map((p, i) => (
               <tr key={i}>
-                <td>
+                <td className="sticky-col">
                   <button className="team-link" onClick={() => openTeamSlide({ team: p.team })}>
                     {p.team}
                   </button>

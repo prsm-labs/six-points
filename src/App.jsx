@@ -14,6 +14,7 @@ import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import PlayerSlideout from './PlayerSlideout.jsx'
 import TeamSlideout from './TeamSlideout.jsx'
+import OddsCalculator from './OddsCalculator.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 
 function parseCsv(text) {
@@ -308,6 +309,7 @@ function WeekDrillDown({ rows }) {
 
 export default function App() {
   const [tab, setTab] = useState('matchups')
+  const [showOddsCalc, setShowOddsCalc] = useState(false)
 
   return (
     <div className="app">
@@ -315,6 +317,14 @@ export default function App() {
         <div className="header-row">
           <img src="/logo.png" alt="Six Points" className="logo" />
           <h1>Six Points</h1>
+          <button
+            className="odds-calc-toggle"
+            onClick={() => setShowOddsCalc(true)}
+            title="Odds Calculator"
+            aria-label="Open Odds Calculator"
+          >
+            🧮
+          </button>
         </div>
         <p className="tagline">NFL touchdown intelligence, weekly cadence, real backtests only.</p>
       </header>
@@ -353,9 +363,9 @@ export default function App() {
         <button className={tab === 'scouting' ? 'active' : ''} onClick={() => setTab('scouting')}>
           Scouting
         </button>
-        {/* Odds Calculator intentionally hidden from nav -- meant to be surfaced via a
-            button/modal, not a dedicated tab. Component kept intact in OddsCalculator.jsx for
-            that later. */}
+        {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
+            as a slideout instead, matching how Going Yard itself surfaces its own odds
+            calculator (a button that opens a slideout, not a dedicated page). */}
       </nav>
       <main>
         {tab === 'matchups' && <AllMatchups />}
@@ -372,6 +382,25 @@ export default function App() {
       </main>
       <PlayerSlideout />
       <TeamSlideout />
+      {showOddsCalc && (
+        <>
+          <div className="slideout-backdrop" onClick={() => setShowOddsCalc(false)} />
+          <div className="slideout-panel">
+            <div className="slideout-header">
+              <div className="slideout-header-info">
+                <h2>🧮 Odds Calculator</h2>
+                <div className="sub">Sport-agnostic American-odds math -- Manual, Parlay, Round Robin</div>
+              </div>
+              <button className="slideout-close" onClick={() => setShowOddsCalc(false)} aria-label="Close">
+                &times;
+              </button>
+            </div>
+            <div className="slideout-body">
+              <OddsCalculator />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   )
 }

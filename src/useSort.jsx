@@ -32,10 +32,10 @@ export function useSort(data, defaultKey, defaultDir = 'desc') {
   return { sorted, sortKey, sortDir, toggleSort }
 }
 
-export function SortTh({ label, sortKeyName, sortKey, sortDir, onSort }) {
+export function SortTh({ label, sortKeyName, sortKey, sortDir, onSort, className }) {
   const active = sortKeyName === sortKey
   return (
-    <th className="sortable" onClick={() => onSort(sortKeyName)}>
+    <th className={className ? `sortable ${className}` : 'sortable'} onClick={() => onSort(sortKeyName)}>
       {label}
       {active && <span className="sort-arrow">{sortDir === 'asc' ? '▲' : '▼'}</span>}
     </th>

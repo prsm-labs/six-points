@@ -20,6 +20,22 @@
   flex-shrink: 0;
 }
 
+.odds-calc-toggle {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.odds-calc-toggle:hover {
+  border-color: var(--accent);
+}
+
 header h1 {
   margin: 0;
   font-size: 1.8rem;
@@ -97,6 +113,24 @@ th {
   position: sticky;
   top: 0;
   background: var(--bg);
+}
+
+/* Pins a table's leftmost identifying column (name/player) while the rest scroll horizontally
+   beneath it -- for any table with enough columns that it scrolls sideways (~12+). Add
+   className="sticky-col" to that column's <th> and every <td> in that column. z-index tiers:
+   the header+left-col corner (3) sits above a plain sticky header (implicit, via th's own
+   position:sticky) and above a plain sticky-col body cell (2), so the corner is never covered
+   by either axis scrolling past it. */
+th.sticky-col,
+td.sticky-col {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--bg);
+}
+
+th.sticky-col {
+  z-index: 3;
 }
 
 th.sortable {
