@@ -6,6 +6,7 @@ import PairsPage from './PairsPage.jsx'
 import LiveTab from './LiveTab.jsx'
 import WeatherTab from './WeatherTab.jsx'
 import TDTracker from './TDTracker.jsx'
+import FirstTDTab from './FirstTDTab.jsx'
 import TDMarquee from './TDMarquee.jsx'
 import SplitsTab from './SplitsTab.jsx'
 import CheatSheetTab from './CheatSheetTab.jsx'
@@ -458,6 +459,9 @@ export default function App() {
         <button className={tab === 'tdtracker' ? 'active' : ''} onClick={() => setTab('tdtracker')}>
           TD Tracker
         </button>
+        <button className={tab === 'firsttd' ? 'active' : ''} onClick={() => setTab('firsttd')}>
+          1st TD
+        </button>
         <button className={tab === 'track' ? 'active' : ''} onClick={() => setTab('track')}>
           Track Record
         </button>
@@ -489,6 +493,7 @@ export default function App() {
         {tab === 'yardage' && <YardageLab />}
         {tab === 'live' && <LiveTab />}
         {tab === 'tdtracker' && <TDTracker />}
+        {tab === 'firsttd' && <FirstTDTab />}
         {tab === 'track' && <TrackRecord />}
         {tab === 'pairs' && <PairsPage />}
         {tab === 'weather' && <WeatherTab />}
