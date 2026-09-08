@@ -10,6 +10,7 @@ import TDMarquee from './TDMarquee.jsx'
 import SplitsTab from './SplitsTab.jsx'
 import CheatSheetTab from './CheatSheetTab.jsx'
 import ScoutingTab from './ScoutingTab.jsx'
+import DepthChartTab from './DepthChartTab.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import PlayerSlideout from './PlayerSlideout.jsx'
@@ -41,6 +42,30 @@ function tierClass(tier) {
     default:
       return 'tier tier-fade'
   }
+}
+
+// Item 5, PROMPT_SixPoints_SeasonKickoff_Prep.md: the live site was confirmed serving a full
+// 2025 backtest with no on-screen indicator it wasn't current -- mounted in the header (visible
+// on every tab, not just All Matchups) so staleness is never silently invisible. Reads the real
+// `generated_at`/season/week matchup_engine.py now writes into all_matchups_latest.json itself.
+function DataFreshnessBanner() {
+  const [meta, setMeta] = useState(null)
+
+  useEffect(() => {
+    fetch('/data/all_matchups_latest.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => d && setMeta({ season: d.season, week: d.week, generatedAt: d.generated_at }))
+      .catch(() => {})
+  }, [])
+
+  if (!meta) return null
+  const generated = meta.generatedAt ? new Date(meta.generatedAt) : null
+  return (
+    <p className="data-freshness">
+      Data as of: {meta.season} Week {meta.week}
+      {generated && ` · generated ${generated.toLocaleString()}`}
+    </p>
+  )
 }
 
 function AllMatchups() {
@@ -327,6 +352,7 @@ export default function App() {
           </button>
         </div>
         <p className="tagline">NFL touchdown intelligence, weekly cadence, real backtests only.</p>
+        <DataFreshnessBanner />
       </header>
       <TDMarquee onClick={() => setTab('tdtracker')} />
       <nav className="tabs">
@@ -363,6 +389,9 @@ export default function App() {
         <button className={tab === 'scouting' ? 'active' : ''} onClick={() => setTab('scouting')}>
           Scouting
         </button>
+        <button className={tab === 'depthchart' ? 'active' : ''} onClick={() => setTab('depthchart')}>
+          Depth Charts
+        </button>
         {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
             as a slideout instead, matching how Going Yard itself surfaces its own odds
             calculator (a button that opens a slideout, not a dedicated page). */}
@@ -379,6 +408,7 @@ export default function App() {
         {tab === 'splits' && <SplitsTab />}
         {tab === 'cheatsheet' && <CheatSheetTab />}
         {tab === 'scouting' && <ScoutingTab />}
+        {tab === 'depthchart' && <DepthChartTab />}
       </main>
       <PlayerSlideout />
       <TeamSlideout />
