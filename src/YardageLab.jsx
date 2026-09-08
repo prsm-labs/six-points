@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
@@ -26,17 +27,52 @@ export default function YardageLab() {
 }
 
 function YardageTable({ rows }) {
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, 'sim_yard_pct', 'desc')
+  const [position, setPosition] = useState('all')
+  const [team, setTeam] = useState('all')
+  const [search, setSearch] = useState('')
+
+  const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
+  const filtered = useMemo(() => {
+    return rows
+      .filter((r) => position === 'all' || r.position === position)
+      .filter((r) => team === 'all' || r.team === team)
+      .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
+  }, [rows, position, team, search])
+
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'sim_yard_pct', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   return (
     <div>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
+          Position
+          <select value={position} onChange={(e) => setPosition(e.target.value)}>
+            <option value="all">All</option>
+            <option value="QB">QB</option>
+            <option value="RB">RB</option>
+            <option value="WR">WR</option>
+            <option value="TE">TE</option>
+          </select>
+        </label>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={team} onChange={(e) => setTeam(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+        <label style={{ flex: 1, minWidth: 160 }}>
+          Player
+          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
+        </label>
+      </div>
       <p className="meta-line">
-        {rows.length} players simulated &middot; threshold is 60+ rush yds (RB), 75+ rec yds
-        (WR/TE), 225+ pass yds (QB) &middot; Yardage Signal gate is empirical (top-quartile
-        OnFieldScore + SimYard%, MatchupScore &ge; 60) &middot; Est. Yards is a simple point
-        estimate (touches/game &times; yards/touch), SimYard% is the probability of actually
-        clearing that player's threshold &middot; click a column header to sort
+        {sorted.length} of {rows.length} players simulated &middot; threshold is 60+ rush yds
+        (RB), 75+ rec yds (WR/TE), 225+ pass yds (QB) &middot; Yardage Signal gate is empirical
+        (top-quartile OnFieldScore + SimYard%, MatchupScore &ge; 60) &middot; Est. Yards is a
+        simple point estimate (touches/game &times; yards/touch), SimYard% is the probability of
+        actually clearing that player's threshold &middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>

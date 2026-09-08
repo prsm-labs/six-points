@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 // Real weather via /api/weather.js (WeatherAPI.com, server-side key). Unlike the ESPN proxies
 // (scoreboard.js/summary.js), there is NO client-side direct-fetch fallback here -- WeatherAPI
@@ -133,14 +133,37 @@ export default function WeatherTab() {
   }
   if (!schedule) return <p className="empty-state">Loading...</p>
 
+  return <WeatherTabBody schedule={schedule} weatherByTeam={weatherByTeam} />
+}
+
+function WeatherTabBody({ schedule, weatherByTeam }) {
+  const [team, setTeam] = useState('all')
+  const teams = useMemo(
+    () => [...new Set(schedule.games.flatMap((g) => [g.home_team, g.away_team]))].sort(),
+    [schedule]
+  )
+  const filtered = useMemo(
+    () => schedule.games.filter((g) => team === 'all' || g.home_team === team || g.away_team === team),
+    [schedule, team]
+  )
+
   return (
     <div>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={team} onChange={(e) => setTeam(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+      </div>
       <p className="meta-line">
-        Season {schedule.season}, Week {schedule.week} · {schedule.games.length} games · real
-        current conditions per host city (WeatherAPI.com) — see note in source about why this
-        isn't a true forecast for past (2025 backtest) game dates
+        Season {schedule.season}, Week {schedule.week} · {filtered.length} of {schedule.games.length}{' '}
+        games · real current conditions per host city (WeatherAPI.com) — see note in source about
+        why this isn't a true forecast for past (2025 backtest) game dates
       </p>
-      {schedule.games.map((g) => (
+      {filtered.map((g) => (
         <GameWeatherCard
           key={g.game_id}
           game={g}

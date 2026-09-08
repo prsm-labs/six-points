@@ -94,7 +94,25 @@ function AllMatchups() {
 }
 
 function AllMatchupsTable({ data }) {
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(data?.matchups, 'zone_score', 'desc')
+  const [position, setPosition] = useState('all')
+  const [team, setTeam] = useState('all')
+  const [opponent, setOpponent] = useState('all')
+  const [search, setSearch] = useState('')
+
+  const teams = useMemo(
+    () => [...new Set((data?.matchups || []).map((m) => m.team))].filter(Boolean).sort(),
+    [data]
+  )
+  const filtered = useMemo(() => {
+    if (!data) return []
+    return data.matchups
+      .filter((m) => position === 'all' || m.position === position)
+      .filter((m) => team === 'all' || m.team === team)
+      .filter((m) => opponent === 'all' || m.opponent === opponent)
+      .filter((m) => !search || m.player_name.toLowerCase().includes(search.toLowerCase()))
+  }, [data, position, team, opponent, search])
+
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'zone_score', 'desc')
 
   if (!data) return <p className="empty-state">Loading...</p>
 
@@ -102,10 +120,40 @@ function AllMatchupsTable({ data }) {
 
   return (
     <div>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
+          Position
+          <select value={position} onChange={(e) => setPosition(e.target.value)}>
+            <option value="all">All</option>
+            <option value="QB">QB</option>
+            <option value="RB">RB</option>
+            <option value="WR">WR</option>
+            <option value="TE">TE</option>
+          </select>
+        </label>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={team} onChange={(e) => setTeam(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+        <label style={{ minWidth: 110 }}>
+          Opponent
+          <select value={opponent} onChange={(e) => setOpponent(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+        <label style={{ flex: 1, minWidth: 160 }}>
+          Player
+          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
+        </label>
+      </div>
       <p className="meta-line">
-        Season {data.season}, Week {data.week} &middot; {data.matchups.length} matchups &middot; all
-        weights are v1 first-guesses, unvalidated beyond the Track Record backtest below &middot;
-        click a column header to sort
+        Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length} matchups
+        &middot; all weights are v1 first-guesses, unvalidated beyond the Track Record backtest
+        below &middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>
@@ -277,11 +325,48 @@ function TrackRecord() {
 }
 
 function WeekDrillDown({ rows }) {
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, 'zone_score', 'desc')
+  const [position, setPosition] = useState('all')
+  const [team, setTeam] = useState('all')
+  const [search, setSearch] = useState('')
+
+  const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
+  const filtered = useMemo(() => {
+    return rows
+      .filter((r) => position === 'all' || r.position === position)
+      .filter((r) => team === 'all' || r.team === team)
+      .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
+  }, [rows, position, team, search])
+
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'zone_score', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   return (
-    <div className="table-wrap">
+    <div>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
+          Position
+          <select value={position} onChange={(e) => setPosition(e.target.value)}>
+            <option value="all">All</option>
+            <option value="QB">QB</option>
+            <option value="RB">RB</option>
+            <option value="WR">WR</option>
+            <option value="TE">TE</option>
+          </select>
+        </label>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={team} onChange={(e) => setTeam(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+        <label style={{ flex: 1, minWidth: 160 }}>
+          Player
+          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
+        </label>
+      </div>
+      <p className="meta-line">{sorted.length} of {rows.length} predictions this week</p>
+      <div className="table-wrap">
       <table>
         <thead>
           <tr>
@@ -328,9 +413,11 @@ function WeekDrillDown({ rows }) {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   )
 }
+
 
 export default function App() {
   const [tab, setTab] = useState('matchups')

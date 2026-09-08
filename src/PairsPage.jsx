@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
@@ -61,15 +61,39 @@ export default function PairsPage() {
 }
 
 function PairsTable({ pairs }) {
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(pairs, 'combinedScore', 'desc')
+  const [team, setTeam] = useState('all')
+  const [search, setSearch] = useState('')
+
+  const teams = useMemo(() => [...new Set(pairs.map((p) => p.team))].filter(Boolean).sort(), [pairs])
+  const filtered = useMemo(() => {
+    const q = search.toLowerCase()
+    return pairs
+      .filter((p) => team === 'all' || p.team === team)
+      .filter((p) => !q || p.playerA.player_name.toLowerCase().includes(q) || p.playerB.player_name.toLowerCase().includes(q))
+  }, [pairs, team, search])
+
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'combinedScore', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   return (
     <div>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={team} onChange={(e) => setTeam(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+        <label style={{ flex: 1, minWidth: 160 }}>
+          Player
+          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search either player..." />
+        </label>
+      </div>
       <p className="meta-line">
-        Top {pairs.length} same-team pairs where both players individually clear a favorable-
-        matchup bar (MatchupScore &ge; 60) against the same opponent -- both exploiting the same
-        defensive weakness that week &middot; click a column header to sort
+        {sorted.length} of top {pairs.length} same-team pairs where both players individually
+        clear a favorable-matchup bar (MatchupScore &ge; 60) against the same opponent -- both
+        exploiting the same defensive weakness that week &middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>

@@ -91,7 +91,22 @@ export default function TDTracker() {
   }, [])
 
   const { tds, error: tdError } = useWeekTDs(selectedWeek, schedule?.games, teamStats)
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(tds, 'gameday', 'desc')
+
+  const [team, setTeam] = useState('all')
+  const [search, setSearch] = useState('')
+
+  const tdsWithTeam = useMemo(
+    () => (tds || []).map((td) => ({ ...td, nflverseTeam: espnAbbrToNflverse.get(td.teamAbbr.toUpperCase()) || td.teamAbbr })),
+    [tds, espnAbbrToNflverse]
+  )
+  const teams = useMemo(() => [...new Set(tdsWithTeam.map((td) => td.nflverseTeam))].filter(Boolean).sort(), [tdsWithTeam])
+  const filtered = useMemo(() => {
+    return tdsWithTeam
+      .filter((td) => team === 'all' || td.nflverseTeam === team)
+      .filter((td) => !search || td.scorerName.toLowerCase().includes(search.toLowerCase()))
+  }, [tdsWithTeam, team, search])
+
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'gameday', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   const weekOptions = useMemo(() => {
@@ -119,14 +134,25 @@ export default function TDTracker() {
 
   return (
     <div>
-      <div className="calc-block" style={{ marginBottom: 12 }}>
-        <label>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
           Week
           <select value={selectedWeek || ''} onChange={(e) => setSelectedWeek(Number(e.target.value))}>
             {weekOptions.map((w) => (
               <option key={w} value={w}>Week {w}</option>
             ))}
           </select>
+        </label>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={team} onChange={(e) => setTeam(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+        <label style={{ flex: 1, minWidth: 160 }}>
+          Scorer
+          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search scorer name..." />
         </label>
       </div>
 
@@ -150,7 +176,7 @@ export default function TDTracker() {
             </div>
           )}
           <p className="meta-line">
-            {tds.length} touchdowns, Week {selectedWeek} · click a column header to sort · team
+            {sorted.length} of {tds.length} touchdowns, Week {selectedWeek} · click a column header to sort · team
             and player names open their slideout where a match is found (a few scorers, mostly
             defense/special teams, sit outside the app's player directory and stay plain text)
           </p>

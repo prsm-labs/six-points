@@ -325,9 +325,19 @@ export default function BoxScoreTab() {
     return map
   }, [teamStats])
 
+  const [teamFilter, setTeamFilter] = useState('all')
+
   const weekGames = useMemo(
     () => (schedule && selectedWeek ? schedule.games.filter((g) => g.week === selectedWeek) : []),
     [schedule, selectedWeek]
+  )
+  const filteredGames = useMemo(
+    () => weekGames.filter((g) => teamFilter === 'all' || g.home_team === teamFilter || g.away_team === teamFilter),
+    [weekGames, teamFilter]
+  )
+  const weekTeams = useMemo(
+    () => [...new Set(weekGames.flatMap((g) => [g.home_team, g.away_team]))].sort(),
+    [weekGames]
   )
 
   const weekOptions = useMemo(() => {
@@ -368,8 +378,8 @@ export default function BoxScoreTab() {
 
   return (
     <div>
-      <div className="calc-block" style={{ marginBottom: 12 }}>
-        <label>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
           Week
           <select
             value={selectedWeek || ''}
@@ -383,13 +393,21 @@ export default function BoxScoreTab() {
             ))}
           </select>
         </label>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={teamFilter} onChange={(e) => setTeamFilter(e.target.value)}>
+            <option value="all">All</option>
+            {weekTeams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
       </div>
       <p className="meta-line">
-        Click a game for its real box score (1st downs, total yards, passing/rushing splits,
-        turnovers, time of possession), a full player/position breakdown for both teams, and the
-        real play-by-play, all via ESPN's summary API
+        {filteredGames.length} of {weekGames.length} games &middot; click a game for its real box
+        score (1st downs, total yards, passing/rushing splits, turnovers, time of possession), a
+        full player/position breakdown for both teams, and the real play-by-play, all via ESPN's
+        summary API
       </p>
-      {weekGames.map((g) => (
+      {filteredGames.map((g) => (
         <GameRow
           key={g.game_id}
           game={g}

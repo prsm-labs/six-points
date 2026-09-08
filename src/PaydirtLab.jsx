@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
@@ -26,16 +27,51 @@ export default function PaydirtLab() {
 }
 
 function PaydirtTable({ rows }) {
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, 'sim_td_pct', 'desc')
+  const [position, setPosition] = useState('all')
+  const [team, setTeam] = useState('all')
+  const [search, setSearch] = useState('')
+
+  const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
+  const filtered = useMemo(() => {
+    return rows
+      .filter((r) => position === 'all' || r.position === position)
+      .filter((r) => team === 'all' || r.team === team)
+      .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
+  }, [rows, position, team, search])
+
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'sim_td_pct', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   return (
     <div>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
+          Position
+          <select value={position} onChange={(e) => setPosition(e.target.value)}>
+            <option value="all">All</option>
+            <option value="QB">QB</option>
+            <option value="RB">RB</option>
+            <option value="WR">WR</option>
+            <option value="TE">TE</option>
+          </select>
+        </label>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={team} onChange={(e) => setTeam(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+        <label style={{ flex: 1, minWidth: 160 }}>
+          Player
+          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
+        </label>
+      </div>
       <p className="meta-line">
-        {rows.length} eligible players (top-2 red-zone touch option per team) &middot; SimTD% from
-        10,000 simulated games each &middot; Paydirt Signal gate is empirical (top-quartile
-        TrueTDScore + SimTD%, MatchupScore &ge; 60) since no absolute threshold has been validated
-        yet &middot; click a column header to sort
+        {sorted.length} of {rows.length} eligible players (top-2 red-zone touch option per team)
+        &middot; SimTD% from 10,000 simulated games each &middot; Paydirt Signal gate is empirical
+        (top-quartile TrueTDScore + SimTD%, MatchupScore &ge; 60) since no absolute threshold has
+        been validated yet &middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>
