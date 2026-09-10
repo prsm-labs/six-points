@@ -55,7 +55,24 @@ export default async function handler(req, res) {
     const data = await espnRes.json()
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate')
-    const payload = { scoringPlays: data.scoringPlays || [], injuries: slimInjuries(data.injuries) }
+    // `status` (verified live 2026-09-09 against the real NE @ SEA week-1 game): the header's
+    // own competition status -- state is 'pre' / 'in' / 'post'. Box Scores needs it to know
+    // whether to keep polling a live game (it used to fetch a game's detail once and cache it
+    // forever, which silently froze a live box score at whatever quarter it was first opened in).
+    const headerComp = data.header?.competitions?.[0]
+    const gameStatus = headerComp?.status?.type
+    const scoreByHomeAway = {}
+    for (const c of headerComp?.competitors || []) {
+      if (c.homeAway) scoreByHomeAway[c.homeAway] = c.score
+    }
+    const payload = {
+      scoringPlays: data.scoringPlays || [],
+      injuries: slimInjuries(data.injuries),
+      status: gameStatus
+        ? { state: gameStatus.state || null, detail: gameStatus.detail || gameStatus.shortDetail || null, completed: !!gameStatus.completed }
+        : null,
+      score: (scoreByHomeAway.home != null || scoreByHomeAway.away != null) ? scoreByHomeAway : null,
+    }
     if (full) {
       payload.boxscore = data.boxscore || null
       payload.drives = slimDrives(data.drives)

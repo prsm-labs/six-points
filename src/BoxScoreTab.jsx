@@ -7,6 +7,14 @@ import { usePlayerDirectory } from './PlayerDirectory.jsx'
 // list (scores already live in season_schedule.json, no ESPN call needed just to show them) --
 // selecting one resolves its real ESPN event id and fetches its full detail (team box score,
 // player/position box score, real play-by-play) on demand, not all 16 games at page load.
+//
+// 2026-09-09: fixed a real bug found the first time this ran against a genuinely live game
+// (NE @ SEA week 1) -- a selected game's detail was fetched ONCE and cached forever, so a live
+// box score silently froze at whatever quarter it was first opened in. Now, while a selected
+// game's status.state is not 'post', its detail is re-fetched on an interval and an "updated at"
+// line is shown so any staleness is visible rather than silent.
+
+const LIVE_BOXSCORE_POLL_MS = 25000
 
 const CATEGORY_LABELS = {
   passing: 'Passing',
@@ -25,7 +33,7 @@ async function fetchGameDetail(eventId) {
   const proxied = await fetch(`/api/summary?event=${eventId}&full=1`).catch(() => null)
   if (proxied && proxied.ok) {
     const data = await proxied.json()
-    if (data.boxscore) return { boxscore: data.boxscore, drives: data.drives || [] }
+    if (data.boxscore) return { boxscore: data.boxscore, drives: data.drives || [], status: data.status || null, score: data.score || null, fetchedAt: Date.now() }
   }
   const direct = await fetch(
     `https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${eventId}`
@@ -44,7 +52,14 @@ async function fetchGameDetail(eventId) {
       scoringPlay: !!p.scoringPlay,
     })),
   }))
-  return { boxscore: data.boxscore, drives }
+  const headerComp = data.header?.competitions?.[0]
+  const st = headerComp?.status?.type
+  const status = st ? { state: st.state || null, detail: st.detail || st.shortDetail || null, completed: !!st.completed } : null
+  const score = {}
+  for (const c of headerComp?.competitors || []) {
+    if (c.homeAway) score[c.homeAway] = c.score
+  }
+  return { boxscore: data.boxscore, drives, status, score: Object.keys(score).length ? score : null, fetchedAt: Date.now() }
 }
 
 function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
@@ -194,9 +209,17 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse 
     away: s.displayValue,
     home: home.statistics[i]?.displayValue ?? '—',
   }))
+  const isLive = detail.status && detail.status.state !== 'post'
 
   return (
     <div style={{ marginTop: 10 }}>
+      {detail.status && (
+        <p className="meta-line small" style={{ marginTop: 0 }}>
+          {detail.status.detail || (isLive ? 'In progress' : 'Final')}
+          {isLive && ' · auto-updating every 25s'}
+          {detail.fetchedAt && ` · updated ${new Date(detail.fetchedAt).toLocaleTimeString()}`}
+        </p>
+      )}
       <div className="table-wrap">
         <table>
           <thead>
@@ -246,6 +269,15 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse 
 }
 
 function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, espnAbbrToNflverse }) {
+  // Prefer the live score off the fetched detail -- season_schedule.json's score is stale for a
+  // game that's still in progress (and absent entirely for one that hasn't kicked off).
+  const liveAway = detail?.score?.away
+  const liveHome = detail?.score?.home
+  const awayScore = liveAway != null ? liveAway : game.away_score
+  const homeScore = liveHome != null ? liveHome : game.home_score
+  const statusText =
+    detail?.status?.detail ||
+    (detail?.status && detail.status.state !== 'post' ? 'In progress' : game.gameday)
   return (
     <div className="weather-card">
       <button
@@ -260,10 +292,10 @@ function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, es
         }}
       >
         <div>
-          <strong>{game.away_team}</strong> {game.away_score} @ <strong>{game.home_team}</strong> {game.home_score}
+          <strong>{game.away_team}</strong> {awayScore} @ <strong>{game.home_team}</strong> {homeScore}
         </div>
         <div className="meta-line" style={{ margin: 0 }}>
-          {game.gameday} {selected ? '▲' : '▼'}
+          {statusText} {selected ? '▲' : '▼'}
         </div>
       </button>
       {selected && (
@@ -285,6 +317,7 @@ export default function BoxScoreTab() {
   const [selectedWeek, setSelectedWeek] = useState(null)
   const [selectedGameId, setSelectedGameId] = useState(null)
   const [details, setDetails] = useState({})
+  const [eventIdByGame, setEventIdByGame] = useState({})
   const [loadingGameId, setLoadingGameId] = useState(null)
   const [error, setError] = useState(null)
   const directory = usePlayerDirectory()
@@ -351,12 +384,19 @@ export default function BoxScoreTab() {
       return
     }
     setSelectedGameId(game.game_id)
-    if (details[game.game_id] || !teamStats) return
+    const cached = details[game.game_id]
+    // Re-fetch if we've never loaded this game OR if the cached copy is of a game that wasn't
+    // finished yet last time we looked (it may well be final -- or further along -- by now).
+    if ((cached && cached.status?.state === 'post') || !teamStats) return
     setLoadingGameId(game.game_id)
     try {
-      const eventIds = await resolveEventIds([game], teamStats)
-      const eventId = eventIds[game.game_id]
-      if (!eventId) throw new Error('no matching ESPN event found')
+      let eventId = eventIdByGame[game.game_id]
+      if (!eventId) {
+        const eventIds = await resolveEventIds([game], teamStats)
+        eventId = eventIds[game.game_id]
+        if (!eventId) throw new Error('no matching ESPN event found')
+        setEventIdByGame((prev) => ({ ...prev, [game.game_id]: eventId }))
+      }
       const detail = await fetchGameDetail(eventId)
       setDetails((prev) => ({ ...prev, [game.game_id]: detail }))
     } catch {
@@ -365,6 +405,24 @@ export default function BoxScoreTab() {
       setLoadingGameId(null)
     }
   }
+
+  // Keep the selected game's box score / play-by-play fresh while it's still in progress. Stops
+  // on its own once ESPN reports the game final (status.state === 'post').
+  const selectedStatusState = details[selectedGameId]?.status?.state
+  const selectedEventId = eventIdByGame[selectedGameId]
+  useEffect(() => {
+    if (!selectedGameId || !selectedEventId) return
+    if (selectedStatusState === 'post') return
+    const timer = setInterval(async () => {
+      try {
+        const detail = await fetchGameDetail(selectedEventId)
+        if (detail?.boxscore) setDetails((prev) => ({ ...prev, [selectedGameId]: detail }))
+      } catch {
+        // a single failed poll shouldn't blank an already-loaded box score
+      }
+    }, LIVE_BOXSCORE_POLL_MS)
+    return () => clearInterval(timer)
+  }, [selectedGameId, selectedEventId, selectedStatusState])
 
   if (error) {
     return (
