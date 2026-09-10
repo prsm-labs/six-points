@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { isTouchdown } from './scoringPlays.js'
+import FieldTracker from './FieldTracker.jsx'
 
 // No live games exist right now -- the 2026 season doesn't start until 2026-09-09 (concept
 // doc's own §9 caveat). This tab has two modes: "Live" (polls /api/scoreboard + /api/summary,
@@ -194,8 +195,13 @@ export default function LiveThemes() {
               id: e.id,
               home: home?.team?.abbreviation,
               away: away?.team?.abbreviation,
+              homeId: home?.team?.id,
+              awayId: away?.team?.id,
               homeScore: home?.score,
               awayScore: away?.score,
+              period: e.status?.period,
+              clockDisplay: e.status?.displayClock,
+              situation: comp?.situation || null,
             }
           })
         )
@@ -285,9 +291,7 @@ export default function LiveThemes() {
 
       {mode === 'live' && liveGames.map((g) => (
         <div key={g.id} style={{ marginBottom: 18 }}>
-          <h4 style={{ margin: '0 0 6px' }}>
-            {g.away} {g.awayScore} @ {g.home} {g.homeScore}
-          </h4>
+          <FieldTracker game={g} />
           <ThemeTable themes={clusterPlays(livePlaysByGame[g.id] || [])} />
         </div>
       ))}

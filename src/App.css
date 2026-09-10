@@ -630,3 +630,120 @@ th.sortable:hover {
   text-align: right;
   flex-shrink: 0;
 }
+
+/* Live field tracker -- deliberately no red anywhere (see FieldTracker.jsx's own comment):
+   endzones are neutral bg/border tones labeled by team text, not team-colored, matching this
+   app's "identity via text, never a competing hue" rule everywhere else. */
+.field-tracker {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.field-tracker-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.field-tracker-team-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.field-tracker-team {
+  font-weight: 700;
+  min-width: 44px;
+}
+
+.field-tracker-ball {
+  font-size: 0.85rem;
+}
+
+.field-tracker-score {
+  margin-left: auto;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.field-tracker-clock {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.field-tracker-situation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.field-tracker-downdistance {
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.field-track-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.field-endzone {
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.78rem;
+  background: var(--border);
+  color: var(--muted);
+}
+
+.field-track {
+  position: relative;
+  flex: 1;
+  min-height: 36px;
+  background: var(--bg);
+}
+
+.field-tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+}
+
+.field-firstdown-line {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
+.field-ball-marker {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.field-tracker-lastplay {
+  font-size: 0.85rem;
+  color: var(--fg);
+}
