@@ -3,6 +3,7 @@ import { useSort, SortTh } from './useSort.jsx'
 import { useWeekTDs } from './useWeekTDs.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
+import { formatETTime, etSlateDateStr } from './etTime.js'
 
 // TD Tracker is its own page, not a rename/extension of Live Themes -- Live Themes' job is
 // clustering ("are TDs happening close together"), this page's job is a plain chronological
@@ -15,6 +16,22 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 // scorer names. A handful of names may not match (suffix formatting differences, or the player
 // is outside the app's scoped ~560-player directory, e.g. kickers/defense) -- those fall back to
 // plain text rather than a broken link.
+//
+// Real chronological-ET ordering (PROMPT_SixPoints_GoingYardParity.md #5, mirroring Going
+// Yard's HR Tracker): default sort is now `wallclock` (a real per-play absolute timestamp,
+// api/summary.js joins it in from ESPN's drives data -- see scoringPlays.js's own comment) so
+// every game's TDs merge into one true chronological feed across simultaneous games, not grouped
+// by which game or sorted by calendar day alone. Same ET 4am-cutover slate-day convention as
+// Going Yard (etTime.js) -- a TD past midnight ET on a late Sunday/Monday night game still shows
+// as that night's slate, not the next calendar day.
+
+// Elapsed-seconds-since-kickoff fallback for ordering two TDs when a real wallclock isn't
+// available for one of them -- clock counts DOWN within a 15-minute quarter.
+function elapsedSeconds(td) {
+  const [mm, ss] = (td.clock || '0:00').split(':').map(Number)
+  const remaining = (mm || 0) * 60 + (ss || 0)
+  return ((td.period || 1) - 1) * 900 + (900 - remaining)
+}
 
 function PlayerLink({ name, nameToPlayer, team }) {
   if (!name) return '—'
@@ -34,8 +51,17 @@ function TDRow({ td, nameToPlayer, espnAbbrToNflverse }) {
   const nflverseAbbr = espnAbbrToNflverse.get(td.teamAbbr.toUpperCase()) || td.teamAbbr
   return (
     <tr>
-      <td>{td.game}</td>
-      <td>Q{td.period} {td.clock}</td>
+      <td className="sticky-col">
+        {td.isFirstTd && <span title="1st touchdown of the game" style={{ marginRight: 5 }}>🥇</span>}
+        {td.game}
+      </td>
+      <td>
+        {td.wallclock ? formatETTime(td.wallclock) : `Q${td.period} ${td.clock}`}
+        <div className="meta-line small" style={{ margin: 0 }}>
+          Q{td.period} {td.clock}
+          {td.wallclock && etSlateDateStr(td.wallclock) !== td.gameday && ' · past midnight ET, same slate'}
+        </div>
+      </td>
       <td>
         <button className="team-link" onClick={() => openTeamSlide({ team: nflverseAbbr })}>
           {td.teamLogo && <img src={td.teamLogo} alt={td.teamAbbr} className="avatar" style={{ marginRight: 6 }} />}
@@ -95,10 +121,26 @@ export default function TDTracker() {
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
 
-  const tdsWithTeam = useMemo(
-    () => (tds || []).map((td) => ({ ...td, nflverseTeam: espnAbbrToNflverse.get(td.teamAbbr.toUpperCase()) || td.teamAbbr })),
-    [tds, espnAbbrToNflverse]
-  )
+  const tdsWithTeam = useMemo(() => {
+    const withTeam = (tds || []).map((td) => ({ ...td, nflverseTeam: espnAbbrToNflverse.get(td.teamAbbr.toUpperCase()) || td.teamAbbr }))
+    // Real 1st-TD-of-the-game badge (requested directly) -- earliest real wallclock timestamp
+    // per gameId, falling back to elapsed game-clock (period + time remaining) for the rare row
+    // missing a real wallclock (drives data unavailable for that game).
+    const firstTdIdByGame = new Map()
+    for (const td of withTeam) {
+      const current = firstTdIdByGame.get(td.gameId)
+      if (!current) {
+        firstTdIdByGame.set(td.gameId, td)
+        continue
+      }
+      const earlier = td.wallclock && current.wallclock
+        ? td.wallclock < current.wallclock
+        : elapsedSeconds(td) < elapsedSeconds(current)
+      if (earlier) firstTdIdByGame.set(td.gameId, td)
+    }
+    const firstTdIds = new Set([...firstTdIdByGame.values()].map((td) => td.id))
+    return withTeam.map((td) => ({ ...td, isFirstTd: firstTdIds.has(td.id) }))
+  }, [tds, espnAbbrToNflverse])
   const teams = useMemo(() => [...new Set(tdsWithTeam.map((td) => td.nflverseTeam))].filter(Boolean).sort(), [tdsWithTeam])
   const filtered = useMemo(() => {
     return tdsWithTeam
@@ -106,7 +148,7 @@ export default function TDTracker() {
       .filter((td) => !search || td.scorerName.toLowerCase().includes(search.toLowerCase()))
   }, [tdsWithTeam, team, search])
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'gameday', 'desc')
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'wallclock', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   const weekOptions = useMemo(() => {
@@ -176,7 +218,9 @@ export default function TDTracker() {
             </div>
           )}
           <p className="meta-line">
-            {sorted.length} of {tds.length} touchdowns, Week {selectedWeek} · click a column header to sort · team
+            {sorted.length} of {tds.length} touchdowns, Week {selectedWeek} · sorted by real ET
+            time by default, merging every simultaneous game into one true chronological feed ·
+            🥇 marks the real 1st touchdown of that game · click a column header to sort · team
             and player names open their slideout where a match is found (a few scorers, mostly
             defense/special teams, sit outside the app's player directory and stay plain text)
           </p>
@@ -184,8 +228,8 @@ export default function TDTracker() {
             <table>
               <thead>
                 <tr>
-                  <th>Game</th>
-                  <th>Time</th>
+                  <th className="sticky-col">Game</th>
+                  <SortTh label="Time (ET)" sortKeyName="wallclock" {...thProps} />
                   <th>Team</th>
                   <SortTh label="Scorer" sortKeyName="scorerName" {...thProps} />
                   <th>Type</th>

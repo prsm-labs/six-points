@@ -30,6 +30,26 @@ function slimDrives(drives) {
   }))
 }
 
+// Real per-play wall-clock timestamp for TD Tracker's chronological-ET ordering
+// (PROMPT_SixPoints_GoingYardParity.md #5, mirroring Going Yard's HR Tracker). Verified live
+// 2026-09-14 against a real completed game (event 401872930, DAL @ NYG): ESPN's own
+// `scoringPlays[]` objects do NOT carry an absolute timestamp (only period + game-clock, both
+// relative to kickoff) -- but every scoring play's `id` has a matching play inside
+// `drives.previous[].plays[]` that DOES carry a real `wallclock` ISO timestamp (confirmed exact
+// id match on all 7 scoring plays of that game). Join them here, server-side, rather than
+// guessing a wall-clock from period/game-clock (games run long from real stoppages, so that
+// would only be an estimate) -- `data.drives` is already being fetched from ESPN on every
+// request regardless of the `full` flag, so this join costs nothing extra.
+function wallclockByPlayId(drives) {
+  const map = {}
+  for (const d of drives?.previous || []) {
+    for (const p of d.plays || []) {
+      if (p.id && p.wallclock) map[p.id] = p.wallclock
+    }
+  }
+  return map
+}
+
 function slimInjuries(injuries) {
   return (injuries || []).map((teamEntry) => ({
     team: teamEntry.team?.abbreviation || '',
@@ -65,8 +85,9 @@ export default async function handler(req, res) {
     for (const c of headerComp?.competitors || []) {
       if (c.homeAway) scoreByHomeAway[c.homeAway] = c.score
     }
+    const wallclockMap = wallclockByPlayId(data.drives)
     const payload = {
-      scoringPlays: data.scoringPlays || [],
+      scoringPlays: (data.scoringPlays || []).map((p) => ({ ...p, wallclock: wallclockMap[p.id] || null })),
       injuries: slimInjuries(data.injuries),
       status: gameStatus
         ? { state: gameStatus.state || null, detail: gameStatus.detail || gameStatus.shortDetail || null, completed: !!gameStatus.completed }

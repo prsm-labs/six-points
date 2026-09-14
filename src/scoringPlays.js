@@ -11,6 +11,14 @@
 //
 // `text` itself still has no separate structured scorer-name/yardage fields, so those are
 // parsed from it (format is consistently "{Name} {N} Yd {detail}").
+//
+// `wallclock`: a real absolute ISO timestamp for this exact play -- NOT a field ESPN puts on
+// scoringPlays objects themselves (verified live 2026-09-14: only period + game-clock, both
+// kickoff-relative). api/summary.js joins it in server-side from drives.previous[].plays[]
+// (same play id, confirmed exact match) before this ever sees the play; the direct-ESPN
+// fallback path (LiveThemes/useWeekTDs, when /api isn't available under plain `vite dev`) does
+// the same join itself since it skips the proxy. Powers TD Tracker's real chronological-ET feed
+// (GoingYardParity.md #5) -- absent (null) if drives data wasn't available to join against.
 
 export function isTouchdown(play) {
   return play.scoringType?.name === 'touchdown'
@@ -36,6 +44,7 @@ export function parseScoringPlay(play) {
     teamLogo: play.team?.logo || null,
     period: play.period?.number || null,
     clock: play.clock?.displayValue || '',
+    wallclock: play.wallclock || null,
     awayScore: play.awayScore,
     homeScore: play.homeScore,
   }

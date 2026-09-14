@@ -8,10 +8,10 @@ import { useWeekTDs } from './useWeekTDs.js'
 // App.css) -- so its text colors here are hardcoded to that dark panel, not the theme's
 // `--muted`/`meta-line` tokens, which would go dark-on-dark in light mode.
 //
-// Same honest caveat as everywhere else touching live data: there's no live 2026 game to tick
-// through right now, so this shows the most recently scored week's real TDs (2025 backtest) as
-// a demonstration of the real, working data path -- not a genuinely live-updating ticker until
-// the 2026 season starts.
+// Real 2026 season data since Week 1 (2026-09-09) -- shows the most recently scored week's real
+// TDs. Sorted chronologically by real ET wall-clock time (same join as TDTracker.jsx, see
+// scoringPlays.js/etTime.js) so the reel reads as one true timeline across every simultaneous
+// game, not grouped by game.
 
 const DIM = '#4f8f68'
 
@@ -42,7 +42,8 @@ export default function TDMarquee({ onClick }) {
     )
   }
 
-  const items = [...tds, ...tds]
+  const chronological = [...tds].sort((a, b) => (a.wallclock || '').localeCompare(b.wallclock || ''))
+  const items = [...chronological, ...chronological]
   const speed = Math.max(tds.length * 6, 30)
 
   return (

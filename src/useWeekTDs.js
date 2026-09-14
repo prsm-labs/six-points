@@ -8,11 +8,21 @@ import { parseScoringPlay } from './scoringPlays.js'
 async function fetchSummary(eventId) {
   const proxied = await fetch(`/api/summary?event=${eventId}`).catch(() => null)
   if (proxied && proxied.ok) return proxied.json()
+  // Direct-ESPN fallback (plain `vite dev`, no /api) -- same real wallclock join api/summary.js
+  // does server-side, done here client-side instead since the proxy is being skipped entirely.
   const direct = await fetch(
     `https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${eventId}`
   )
   const data = await direct.json()
-  return { scoringPlays: data.scoringPlays || [] }
+  const wallclockMap = {}
+  for (const d of data.drives?.previous || []) {
+    for (const p of d.plays || []) {
+      if (p.id && p.wallclock) wallclockMap[p.id] = p.wallclock
+    }
+  }
+  return {
+    scoringPlays: (data.scoringPlays || []).map((p) => ({ ...p, wallclock: wallclockMap[p.id] || null })),
+  }
 }
 
 export function useWeekTDs(week, games, teamStats) {
