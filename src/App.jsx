@@ -14,6 +14,7 @@ import ScoutingTab from './ScoutingTab.jsx'
 import DepthChartTab from './DepthChartTab.jsx'
 import NFLTab from './NFLTab.jsx'
 import RedZoneTab from './RedZoneTab.jsx'
+import PrimetimeSplitsTab from './PrimetimeSplitsTab.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import PlayerSlideout from './PlayerSlideout.jsx'
@@ -491,6 +492,9 @@ export default function App() {
         <button className={tab === 'redzone' ? 'active' : ''} onClick={() => setTab('redzone')}>
           Red Zone
         </button>
+        <button className={tab === 'primetime' ? 'active' : ''} onClick={() => setTab('primetime')}>
+          Primetime Splits
+        </button>
         {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
             as a slideout instead, matching how Going Yard itself surfaces its own odds
             calculator (a button that opens a slideout, not a dedicated page). */}
@@ -511,6 +515,7 @@ export default function App() {
         {tab === 'depthchart' && <DepthChartTab />}
         {tab === 'nfl' && <NFLTab />}
         {tab === 'redzone' && <RedZoneTab />}
+        {tab === 'primetime' && <PrimetimeSplitsTab />}
       </main>
       <PlayerSlideout />
       <TeamSlideout />
