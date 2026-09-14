@@ -74,7 +74,7 @@ function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
         <table>
           <thead>
             <tr>
-              <th>Player</th>
+              <th className="sticky-col">Player</th>
               {category.labels.map((l, i) => (
                 <th key={i}>{l}</th>
               ))}
@@ -85,7 +85,7 @@ function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
               const match = espnIdToPlayer.get(a.athlete?.id)
               return (
                 <tr key={i}>
-                  <td>
+                  <td className="sticky-col">
                     {match ? (
                       <button
                         className="team-link"
@@ -112,7 +112,7 @@ function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
             })}
             {category.totals && (
               <tr style={{ fontWeight: 700 }}>
-                <td>Total</td>
+                <td className="sticky-col">Total</td>
                 {category.totals.map((s, j) => (
                   <td key={j}>{s}</td>
                 ))}

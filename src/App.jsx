@@ -12,6 +12,8 @@ import SplitsTab from './SplitsTab.jsx'
 import CheatSheetTab from './CheatSheetTab.jsx'
 import ScoutingTab from './ScoutingTab.jsx'
 import DepthChartTab from './DepthChartTab.jsx'
+import NFLTab from './NFLTab.jsx'
+import RedZoneTab from './RedZoneTab.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import PlayerSlideout from './PlayerSlideout.jsx'
@@ -160,7 +162,7 @@ function AllMatchupsTable({ data }) {
         <table>
           <thead>
             <tr>
-              <SortTh label="Player" sortKeyName="player_name" {...thProps} />
+              <SortTh label="Player" sortKeyName="player_name" className="sticky-col" {...thProps} />
               <SortTh label="Team" sortKeyName="team" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
@@ -174,7 +176,7 @@ function AllMatchupsTable({ data }) {
           <tbody>
             {sorted.map((m, i) => (
               <tr key={i}>
-                <td>
+                <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
                     {m.player_name}
@@ -483,6 +485,12 @@ export default function App() {
         <button className={tab === 'depthchart' ? 'active' : ''} onClick={() => setTab('depthchart')}>
           Depth Charts
         </button>
+        <button className={tab === 'nfl' ? 'active' : ''} onClick={() => setTab('nfl')}>
+          NFL
+        </button>
+        <button className={tab === 'redzone' ? 'active' : ''} onClick={() => setTab('redzone')}>
+          Red Zone
+        </button>
         {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
             as a slideout instead, matching how Going Yard itself surfaces its own odds
             calculator (a button that opens a slideout, not a dedicated page). */}
@@ -501,6 +509,8 @@ export default function App() {
         {tab === 'cheatsheet' && <CheatSheetTab />}
         {tab === 'scouting' && <ScoutingTab />}
         {tab === 'depthchart' && <DepthChartTab />}
+        {tab === 'nfl' && <NFLTab />}
+        {tab === 'redzone' && <RedZoneTab />}
       </main>
       <PlayerSlideout />
       <TeamSlideout />

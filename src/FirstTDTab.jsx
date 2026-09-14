@@ -98,7 +98,7 @@ function PredictorTable() {
         <table>
           <thead>
             <tr>
-              <SortTh label="Player" sortKeyName="player_name" {...thProps} />
+              <SortTh label="Player" sortKeyName="player_name" className="sticky-col" {...thProps} />
               <SortTh label="Team" sortKeyName="team" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
@@ -110,7 +110,7 @@ function PredictorTable() {
           <tbody>
             {sorted.map((m, i) => (
               <tr key={i}>
-                <td>
+                <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
                     {m.player_name}
@@ -212,7 +212,7 @@ function TrackerTable() {
             <table>
               <thead>
                 <tr>
-                  <th>Game</th>
+                  <th className="sticky-col">Game</th>
                   <th>Time</th>
                   <th>1st Team TD</th>
                   <th>1st TD Scorer</th>
@@ -223,7 +223,7 @@ function TrackerTable() {
               <tbody>
                 {firstTds.map((td, i) => (
                   <tr key={i}>
-                    <td>{td.game}</td>
+                    <td className="sticky-col">{td.game}</td>
                     <td>Q{td.period} {td.clock}</td>
                     <td>
                       {td.teamLogo && <img src={td.teamLogo} alt={td.teamAbbr} className="avatar" style={{ marginRight: 6 }} />}

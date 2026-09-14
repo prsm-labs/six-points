@@ -110,7 +110,7 @@ function LeaderboardView({ gameLogs, directory }) {
         <table>
           <thead>
             <tr>
-              <th>Player</th>
+              <th className="sticky-col">Player</th>
               <SortTh label="Team" sortKeyName="team" {...thProps} />
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
               <th>Role</th>
@@ -125,7 +125,7 @@ function LeaderboardView({ gameLogs, directory }) {
           <tbody>
             {sorted.map((r, i) => (
               <tr key={i}>
-                <td>
+                <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide({ player_id: r.playerId, player_name: r.name, team: r.team, position: r.position })}>
                     <PlayerAvatar playerId={r.playerId} name={r.name} />
                     {r.name}
@@ -342,7 +342,7 @@ function MomentumView({ gameLogs, directory }) {
         <table>
           <thead>
             <tr>
-              <th>Player</th>
+              <th className="sticky-col">Player</th>
               <th>Team</th>
               <th>Pos</th>
               <th>TD Streak</th>
@@ -352,7 +352,7 @@ function MomentumView({ gameLogs, directory }) {
           <tbody>
             {onStreak.map((r, i) => (
               <tr key={i}>
-                <td>
+                <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide({ player_id: r.playerId, player_name: r.name, team: r.team, position: r.position })}>
                     <PlayerAvatar playerId={r.playerId} name={r.name} />
                     {r.name}
