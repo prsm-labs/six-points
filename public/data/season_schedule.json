@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "latest_week": 1,
-  "generated_at": "2026-09-08T15:33:20.247254+00:00",
+  "generated_at": "2026-09-14T15:08:56.273474+00:00",
   "games": [
     {
       "game_id": "2026_01_NE_SEA",
@@ -11,8 +11,8 @@
       "gameday": "2026-09-09",
       "gametime": "20:20",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 13,
+      "away_score": 10
     },
     {
       "game_id": "2026_01_SF_LA",
@@ -22,8 +22,8 @@
       "gameday": "2026-09-10",
       "gametime": "20:35",
       "roof": "dome",
-      "home_score": null,
-      "away_score": null
+      "home_score": 7,
+      "away_score": 27
     },
     {
       "game_id": "2026_01_CHI_CAR",
@@ -33,8 +33,8 @@
       "gameday": "2026-09-13",
       "gametime": "13:00",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 37,
+      "away_score": 59
     },
     {
       "game_id": "2026_01_TB_CIN",
@@ -44,8 +44,8 @@
       "gameday": "2026-09-13",
       "gametime": "13:00",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 33,
+      "away_score": 27
     },
     {
       "game_id": "2026_01_NO_DET",
@@ -55,8 +55,8 @@
       "gameday": "2026-09-13",
       "gametime": "13:00",
       "roof": "dome",
-      "home_score": null,
-      "away_score": null
+      "home_score": 31,
+      "away_score": 30
     },
     {
       "game_id": "2026_01_BUF_HOU",
@@ -65,9 +65,9 @@
       "away_team": "BUF",
       "gameday": "2026-09-13",
       "gametime": "13:00",
-      "roof": null,
-      "home_score": null,
-      "away_score": null
+      "roof": "closed",
+      "home_score": 31,
+      "away_score": 36
     },
     {
       "game_id": "2026_01_BAL_IND",
@@ -76,9 +76,9 @@
       "away_team": "BAL",
       "gameday": "2026-09-13",
       "gametime": "13:00",
-      "roof": null,
-      "home_score": null,
-      "away_score": null
+      "roof": "closed",
+      "home_score": 23,
+      "away_score": 41
     },
     {
       "game_id": "2026_01_CLE_JAX",
@@ -88,8 +88,8 @@
       "gameday": "2026-09-13",
       "gametime": "13:00",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 34,
+      "away_score": 10
     },
     {
       "game_id": "2026_01_ATL_PIT",
@@ -99,8 +99,8 @@
       "gameday": "2026-09-13",
       "gametime": "13:00",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 20,
+      "away_score": 13
     },
     {
       "game_id": "2026_01_NYJ_TEN",
@@ -110,8 +110,8 @@
       "gameday": "2026-09-13",
       "gametime": "13:00",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 10,
+      "away_score": 23
     },
     {
       "game_id": "2026_01_ARI_LAC",
@@ -121,8 +121,8 @@
       "gameday": "2026-09-13",
       "gametime": "16:25",
       "roof": "dome",
-      "home_score": null,
-      "away_score": null
+      "home_score": 14,
+      "away_score": 26
     },
     {
       "game_id": "2026_01_MIA_LV",
@@ -132,8 +132,8 @@
       "gameday": "2026-09-13",
       "gametime": "16:25",
       "roof": "dome",
-      "home_score": null,
-      "away_score": null
+      "home_score": 27,
+      "away_score": 13
     },
     {
       "game_id": "2026_01_GB_MIN",
@@ -143,8 +143,8 @@
       "gameday": "2026-09-13",
       "gametime": "16:25",
       "roof": "dome",
-      "home_score": null,
-      "away_score": null
+      "home_score": 39,
+      "away_score": 22
     },
     {
       "game_id": "2026_01_WAS_PHI",
@@ -154,8 +154,8 @@
       "gameday": "2026-09-13",
       "gametime": "16:25",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 24,
+      "away_score": 22
     },
     {
       "game_id": "2026_01_DAL_NYG",
@@ -165,8 +165,8 @@
       "gameday": "2026-09-13",
       "gametime": "20:20",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 28,
+      "away_score": 20
     },
     {
       "game_id": "2026_01_DEN_KC",
