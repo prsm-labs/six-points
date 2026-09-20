@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "latest_week": 1,
-  "generated_at": "2026-09-14T15:08:56.273474+00:00",
+  "latest_week": 2,
+  "generated_at": "2026-09-20T15:08:58.213128+00:00",
   "games": [
     {
       "game_id": "2026_01_NE_SEA",
@@ -176,8 +176,8 @@
       "gameday": "2026-09-14",
       "gametime": "20:15",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 31,
+      "away_score": 10
     },
     {
       "game_id": "2026_02_DET_BUF",
@@ -187,8 +187,8 @@
       "gameday": "2026-09-17",
       "gametime": "20:15",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 41,
+      "away_score": 31
     },
     {
       "game_id": "2026_02_CAR_ATL",

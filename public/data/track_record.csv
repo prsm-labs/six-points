@@ -8157,3 +8157,37 @@ season,week,team,player_id,player_name,position,opponent,zone_score,predicted_ti
 2026,1,ATL,00-0039917,Michael Penix Jr.,QB,PIT,8.0,Fade,0.0,False
 2026,1,ATL,00-0036212,Tua Tagovailoa,QB,PIT,7.3,Fade,0.0,False
 2026,1,JAX,00-0033319,Nick Mullens,QB,CLE,7.0,Fade,0.0,False
+2026,2,DET,00-0039139,Jahmyr Gibbs,RB,BUF,45.6,Lock,1.0,True
+2026,2,BUF,00-0037248,James Cook,RB,DET,34.2,Lock,1.0,True
+2026,2,DET,00-0037197,Isiah Pacheco,RB,BUF,33.5,Lock,0.0,False
+2026,2,DET,00-0037429,Raheem Blackshear,RB,BUF,31.3,Lock,0.0,False
+2026,2,BUF,00-0037261,Khalil Shakir,WR,DET,30.7,Lean,0.0,False
+2026,2,DET,00-0036963,Amon-Ra St. Brown,WR,BUF,29.5,Lean,2.0,True
+2026,2,DET,00-0041453,Luke Altmyer,QB,BUF,29.1,Lean,0.0,False
+2026,2,BUF,00-0034827,DJ Moore,WR,DET,27.4,Lean,0.0,False
+2026,2,BUF,00-0035500,Greg Dortch,WR,DET,27.0,Lean,0.0,False
+2026,2,BUF,00-0039901,Keon Coleman,WR,DET,26.8,Fringe,0.0,False
+2026,2,BUF,00-0036988,Josh Palmer,WR,DET,26.1,Fringe,1.0,True
+2026,2,BUF,00-0039471,Frank Gore Jr.,RB,DET,25.7,Fringe,0.0,False
+2026,2,BUF,00-0038933,Dalton Kincaid,TE,DET,24.9,Fringe,1.0,True
+2026,2,DET,00-0040669,Isaac TeSlaa,WR,BUF,24.7,Fringe,0.0,False
+2026,2,DET,00-0033106,Jared Goff,QB,BUF,24.2,Fringe,0.0,False
+2026,2,BUF,00-0034857,Josh Allen,QB,DET,23.7,Fringe,2.0,True
+2026,2,DET,00-0031237,Teddy Bridgewater,QB,BUF,23.0,Fringe,0.0,False
+2026,2,BUF,00-0035689,Dawson Knox,TE,DET,22.9,Fade,1.0,True
+2026,2,DET,00-0038896,Jacob Saylors,RB,BUF,22.7,Fade,0.0,False
+2026,2,DET,00-0037240,Jameson Williams,WR,BUF,22.5,Fade,0.0,False
+2026,2,DET,00-0039065,Sam LaPorta,TE,BUF,22.5,Fade,1.0,True
+2026,2,DET,00-0040390,Jackson Meeks,WR,BUF,22.5,Fade,0.0,False
+2026,2,DET,00-0039364,Sione Vaki,RB,BUF,22.3,Fade,0.0,False
+2026,2,DET,00-0033949,Joshua Dobbs,QB,BUF,21.8,Fade,0.0,False
+2026,2,BUF,00-0040194,Jackson Hawes,TE,DET,21.7,Fade,0.0,False
+2026,2,BUF,00-0035537,Ty Johnson,RB,DET,21.3,Fade,0.0,False
+2026,2,BUF,00-0039875,Ray Davis,RB,DET,21.2,Fade,0.0,False
+2026,2,DET,00-0037524,Tay Martin,WR,BUF,21.0,Fade,0.0,False
+2026,2,DET,00-0035544,Tom Kennedy,WR,BUF,19.5,Fade,0.0,False
+2026,2,DET,00-0034270,Tyler Conklin,TE,BUF,19.0,Fade,0.0,False
+2026,2,BUF,00-0035140,Mecole Hardman,WR,DET,18.8,Fade,0.0,False
+2026,2,DET,00-0036754,Brock Wright,TE,BUF,17.6,Fade,0.0,False
+2026,2,BUF,00-0036679,Shane Buechele,QB,DET,14.0,Fade,0.0,False
+2026,2,BUF,00-0034577,Kyle Allen,QB,DET,11.0,Fade,0.0,False
