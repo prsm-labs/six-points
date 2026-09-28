@@ -5,23 +5,69 @@ import { openTeamSlide } from './slideouts.js'
 import { useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 
-// A standalone "player vs this specific opponent" lookup -- the same vs-opponent logic the
-// Player Slideout already has, but searchable for ANY player/opponent pair, not just today's
-// real matchups. Reuses GameLogTable, doesn't duplicate it.
+// Player-vs-Defense matchup analysis. Originally built (2026-07-30) leading with literal
+// head-to-head history -- redesigned 2026-09-28 per direct user feedback: literal history is
+// "somewhat irrelevant if they've never faced them or if the defense changed," and a player/
+// opponent who've never met produced an empty page with nothing else to say. History is now a
+// secondary reference section; the lead is a real, computed Matchup Edge Score.
 //
-// Goes beyond the literal head-to-head history (which is often only 1-2 games, a real
-// small-sample problem already disclosed below) with real defense-style context: the opponent's
-// coverage/blitz/pressure tendencies and explosive-play rate allowed (matchup_engine.py's
-// build_defense_profile -- verified live against real pbp: defense_coverage_type is 99.5%
-// populated on real pass attempts), the player's own explosive-play rate for direct comparison
-// (same explosive thresholds -- rush >=15, pass >=20 -- as the defense side, so the two numbers
-// are actually comparable), and an aggregate of the player's games against every defense that
-// shares the opponent's explosive-rate-allowed tier, not just this one literal opponent.
+// Edge Score is NOT a port of anything -- it's this app's own disclosed blend of two already-
+// validated real signals, computed client-side from data both already exported for other tabs:
+// - Scheme Fit (matchup_engine.py's compute_player_scheme_splits, powers PlayerSlideout's own
+//   Scheme Fit section): the player's own real td_rate-based percentile (0-1) within their
+//   position, split by man coverage / zone coverage (receivers only) and blitz / no-blitz
+//   (every pass-play participant including QBs). Min 8-play real sample per split, or the split
+//   is simply absent -- no invented number fills the gap.
+// - Defense Profile (build_defense_profile): the opponent's own real zone_rate/man_rate/
+//   blitz_rate this season.
+// edgeScore = the player's percentile in each split, WEIGHTED by how often this specific real
+// opponent actually plays that style -- e.g. a player who's elite vs. man (pct 0.95) gets no
+// credit for it against a defense that plays 85% zone; a player who's merely average vs. zone
+// (pct 0.55) gets full weight if the opponent plays zone 85% of the time. This is a real,
+// disclosed "does this player's own demonstrated style-specific performance line up with what
+// THIS opponent actually does," not a prediction and not a port of Going Yard's Arsenal
+// Fit/Hand Match (that's pitcher-handedness-specific; football's real analogue -- coverage
+// scheme + pressure -- is architecturally different, so this is this app's own convention).
 //
-// A true coverage-scheme matchup tool (which defender covers which receiver) is NOT built here
-// -- that's a different, deeper data-source gap than defense-level scheme tendency (which this
-// tab does use): no per-route/per-receiver assignment data source has been identified, the same
-// limitation PairsPage already discloses.
+// Explicitly not built: a true coverage-scheme matchup (which defender covers which receiver)
+// -- no per-route/per-receiver assignment data source has been identified, same real gap
+// PairsPage already discloses. QBs get a blitz-only edge score (real, well-defined) -- man/zone
+// splits are receiving-only by definition, so there's no real per-QB coverage-type signal to
+// blend in without inventing one.
+
+const SPLIT_LABEL = { man: 'vs Man', zone: 'vs Zone', blitz: 'vs Blitz', no_blitz: 'vs No Blitz' }
+
+function edgeLabel(score) {
+  if (score == null) return null
+  if (score >= 70) return { text: 'Strong Edge', cls: 'tier-lock' }
+  if (score >= 58) return { text: 'Slight Edge', cls: 'tier-lean' }
+  if (score >= 42) return { text: 'Even Matchup', cls: 'tier-fringe' }
+  return { text: 'Tough Matchup', cls: 'tier-fade' }
+}
+
+// Returns { score (0-100), components: [{label, weight, pct}] } or null if neither real
+// component (coverage or blitz) has a qualifying sample for this player.
+function computeEdgeScore(position, splits, defenseProfile) {
+  if (!splits || !defenseProfile) return null
+  const components = []
+  if (position !== 'QB' && (splits.man || splits.zone)) {
+    const manPct = splits.man?.pct
+    const zonePct = splits.zone?.pct
+    if (manPct != null) components.push({ label: 'vs Man', weight: defenseProfile.man_rate, pct: manPct })
+    if (zonePct != null) components.push({ label: 'vs Zone', weight: defenseProfile.zone_rate, pct: zonePct })
+  }
+  if (splits.blitz || splits.no_blitz) {
+    const blitzPct = splits.blitz?.pct
+    const noBlitzPct = splits.no_blitz?.pct
+    if (blitzPct != null) components.push({ label: 'vs Blitz', weight: defenseProfile.blitz_rate, pct: blitzPct })
+    if (noBlitzPct != null) components.push({ label: 'vs No Blitz', weight: 1 - defenseProfile.blitz_rate, pct: noBlitzPct })
+  }
+  if (!components.length) return null
+  const totalWeight = components.reduce((a, c) => a + c.weight, 0)
+  if (totalWeight <= 0) return null
+  const score = components.reduce((a, c) => a + c.weight * c.pct, 0) / totalWeight
+  return { score: score * 100, components }
+}
 
 const TEAMS = [
   'ARI', 'ATL', 'BAL', 'BUF', 'CAR', 'CHI', 'CIN', 'CLE', 'DAL', 'DEN', 'DET', 'GB', 'HOU', 'IND',
@@ -82,11 +128,60 @@ function DefenseProfileCard({ team, profile }) {
   )
 }
 
+function EdgeScoreCard({ playerName, opponent, position, edge }) {
+  if (!edge) {
+    return (
+      <p className="empty-state">
+        Not enough real per-play sample (min 8 plays per split) for {playerName} yet to compute a
+        Matchup Edge Score.
+      </p>
+    )
+  }
+  const label = edgeLabel(edge.score)
+  return (
+    <div className="weather-card">
+      <div className="weather-card-header">
+        <div>
+          <strong>{playerName}</strong> vs <strong>{opponent}</strong> Matchup Edge
+        </div>
+        <span className={`tier ${label.cls}`}>{label.text}</span>
+      </div>
+      <p className="meta-line" style={{ margin: '4px 0 10px' }}>
+        Edge Score {edge.score.toFixed(0)}/100 -- {playerName}'s own real style-specific
+        percentile (min 8-play sample, graded within position), weighted by how often {opponent}
+        actually plays each style this season. Not a prediction -- a real "does this player's
+        demonstrated strength match what this opponent does" read.
+      </p>
+      <div className="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Style</th>
+              <th>{opponent}'s real usage</th>
+              <th>{playerName}'s real percentile</th>
+            </tr>
+          </thead>
+          <tbody>
+            {edge.components.map((c) => (
+              <tr key={c.label}>
+                <td>{c.label}</td>
+                <td>{pct(c.weight)}</td>
+                <td>{pct(c.pct)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
 export default function ScoutingTab() {
   const [gameLogs, setGameLogs] = useState(null)
   const [directory, setDirectory] = useState(null)
   const [teamStats, setTeamStats] = useState(null)
   const [situationalSplits, setSituationalSplits] = useState(null)
+  const [schemeSplits, setSchemeSplits] = useState(null)
   const [error, setError] = useState(null)
   const [search, setSearch] = useState('')
   const [selectedPlayerId, setSelectedPlayerId] = useState(null)
@@ -101,12 +196,14 @@ export default function ScoutingTab() {
       fetch('/data/players.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/team_stats.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/player_situational_splits.json').then((r) => (r.ok ? r.json() : {})),
+      fetch('/data/scheme_splits.json').then((r) => (r.ok ? r.json() : { splits: {} })),
     ])
-      .then(([logs, dir, stats, splits]) => {
+      .then(([logs, dir, stats, splits, scheme]) => {
         setGameLogs(logs)
         setDirectory(dir)
         setTeamStats(stats)
         setSituationalSplits(splits)
+        setSchemeSplits(scheme.splits || {})
       })
       .catch((e) => setError(e.message))
   }, [])
@@ -142,6 +239,11 @@ export default function ScoutingTab() {
   )
 
   const opponentProfile = opponent ? teamStats?.[opponent]?.defense_profile : null
+  const playerSchemeSplits = selectedPlayerId ? schemeSplits?.[selectedPlayerId] : null
+  const edge = useMemo(
+    () => computeEdgeScore(selectedPlayer?.position, playerSchemeSplits, opponentProfile),
+    [selectedPlayer, playerSchemeSplits, opponentProfile]
+  )
   const explosiveTouch = selectedPlayerId ? situationalSplits?.[selectedPlayerId]?.touches?.explosive : null
   const explosivePass = selectedPlayerId ? situationalSplits?.[selectedPlayerId]?.passing?.explosive : null
 
@@ -190,10 +292,12 @@ export default function ScoutingTab() {
     <div>
       <MatchupFilterNote message={selectedMatchup && `Opponent auto-set to ${opponent} from the global matchup selection (${selectedMatchup.away} @ ${selectedMatchup.home})`} />
       <p className="meta-line">
-        Pick any player and any opponent: real head-to-head history, the opponent's real defense
-        style (coverage mix, blitz/pressure rate, explosive-play rate allowed), the player's own
-        explosiveness, and how the player does against every defense of that same style, not just
-        today's real matchups
+        Pick any player and any opponent: a real computed Matchup Edge Score (the player's own
+        real style-specific performance weighted by what this opponent actually does), the
+        opponent's full real defense style (coverage mix, blitz/pressure rate, explosive-play
+        rate allowed), and the player's own explosiveness -- literal head-to-head history is
+        further down, clearly flagged when it's too small a sample to mean much (or nonexistent,
+        if these two haven't played yet or the defense has changed since they last did)
       </p>
 
       <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 16 }}>
@@ -235,6 +339,18 @@ export default function ScoutingTab() {
         </label>
       </div>
 
+      {selectedPlayer && opponent && (
+        <div className="slideout-section">
+          <EdgeScoreCard playerName={selectedPlayer.name} opponent={opponent} position={selectedPlayer.position} edge={edge} />
+        </div>
+      )}
+
+      {opponent && (
+        <div className="slideout-section">
+          <DefenseProfileCard team={opponent} profile={opponentProfile} />
+        </div>
+      )}
+
       {selectedPlayer && (explosiveTouch || explosivePass) && (
         <div className="slideout-section">
           <h3>Is {selectedPlayer.name} explosive?</h3>
@@ -275,23 +391,26 @@ export default function ScoutingTab() {
         </div>
       )}
 
-      {opponent && (
-        <div className="slideout-section">
-          <DefenseProfileCard team={opponent} profile={opponentProfile} />
-        </div>
-      )}
-
       {selectedPlayer && opponent && (
         <div className="slideout-section">
           <h3>
-            {selectedPlayer.name} vs{' '}
+            Reference: {selectedPlayer.name} vs{' '}
             <button className="team-link" onClick={() => openTeamSlide({ team: opponent, context: 'defense' })}>
               {opponent}
             </button>{' '}
-            (2025 season)
+            literal history (2025 season)
           </h3>
+          <p className="meta-line">
+            Secondary context, not the headline -- literal head-to-head is often irrelevant if
+            they've rarely met or the opponent's scheme has changed since. The Edge Score above,
+            built from real style-specific splits, is the primary matchup read on this page.
+          </p>
           {vsOpponent.length === 0 ? (
-            <p className="empty-state">No games played against {opponent} yet this season.</p>
+            <p className="empty-state">
+              No games played against {opponent} yet this season (or ever, or under this
+              opponent's current defensive staff) -- exactly the case this section can't speak to.
+              Rely on the Edge Score above instead.
+            </p>
           ) : (
             <>
               {vsOpponent.length <= 2 && (
