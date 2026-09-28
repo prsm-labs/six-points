@@ -1,6 +1,9 @@
+import { useMemo, useState } from 'react'
 import { useLiveUsage } from './useLiveUsage.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
 import { openPlayerSlide } from './slideouts.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // "Heating Up" / "On Fire" -- live high-usage/TD badges, requested directly against Going
 // Yard's own equivalent live signal badges. See useLiveUsage.js for the real data mechanics
@@ -80,11 +83,29 @@ export default function LiveUsageTab() {
     return <p className="empty-state">No games in progress right now -- Heating Up / On Fire only track real live games.</p>
   }
 
-  const onFire = [...players].filter((p) => p.isOnFire).sort((a, b) => b.totalTds - a.totalTds || b.touches - a.touches)
-  const heatingUp = [...players].filter((p) => p.isHeatingUp && !p.isOnFire).sort((a, b) => (b.touchesDelta || 0) - (a.touchesDelta || 0))
+  const teams = useMemo(() => [...new Set(players.map((p) => p.team))].filter(Boolean).sort(), [players])
+  const [team, setTeam] = useState('all')
+  const { selectedMatchup } = useMatchup()
+  const filtered = useMemo(() => {
+    if (selectedMatchup) return players.filter((p) => isInSelectedMatchup(selectedMatchup, p.team))
+    return team === 'all' ? players : players.filter((p) => p.team === team)
+  }, [players, team, selectedMatchup])
+
+  const onFire = [...filtered].filter((p) => p.isOnFire).sort((a, b) => b.totalTds - a.totalTds || b.touches - a.touches)
+  const heatingUp = [...filtered].filter((p) => p.isHeatingUp && !p.isOnFire).sort((a, b) => (b.touchesDelta || 0) - (a.touchesDelta || 0))
 
   return (
     <div>
+      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
+        <label style={{ minWidth: 110 }}>
+          Team
+          <select value={team} onChange={(e) => setTeam(e.target.value)}>
+            <option value="all">All</option>
+            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </label>
+      </div>
+      <MatchupFilterNote />
       <p className="meta-line">
         {liveGameCount} game{liveGameCount === 1 ? '' : 's'} live right now &middot; polls real ESPN
         box scores every 30s &middot; "On Fire" = high real usage this game (top ~35% by real

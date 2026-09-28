@@ -3,6 +3,8 @@ import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { buildLeaderboard } from './playerAggregates.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // A QB's stat line shares almost nothing with a WR's, so a single universal stat table isn't
 // possible the way it would be for a position with one shared shape (same reason the Player
@@ -53,11 +55,12 @@ function LeaderboardView({ gameLogs, directory }) {
 
   const rows = useMemo(() => buildLeaderboard(gameLogs, directory, window), [gameLogs, directory, window])
   const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
+  const { selectedMatchup } = useMatchup()
 
   const filtered = rows
     .filter((r) => r.games >= minGames)
     .filter((r) => position === 'all' || r.position === position)
-    .filter((r) => team === 'all' || r.team === team)
+    .filter((r) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, r.team) : (team === 'all' || r.team === team))
     .filter((r) => !search || r.name.toLowerCase().includes(search.toLowerCase()))
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'total_yards', 'desc')
@@ -99,6 +102,7 @@ function LeaderboardView({ gameLogs, directory }) {
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Player name..." />
         </label>
       </div>
+      <MatchupFilterNote />
 
       <p className="meta-line">
         {sorted.length} players &middot; window: {window === 'season' ? 'full season' : `last ${window} games`} &middot;

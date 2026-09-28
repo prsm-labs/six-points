@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
+import { useMatchup } from './MatchupContext.jsx'
 
 // Item 10, PROMPT_SixPoints_SeasonKickoff_Prep.md: a real depth-chart browse page, from
 // matchup_engine.py's new depth_charts.json (import_depth_charts(), previously pulled nowhere in
@@ -19,6 +20,14 @@ export default function DepthChartTab() {
   const [injuryReport, setInjuryReport] = useState(null)
   const [error, setError] = useState(null)
   const [team, setTeam] = useState(null)
+  const { selectedMatchup } = useMatchup()
+
+  // Depth Chart shows one team's roster at a time (no side-by-side layout here) -- a real global
+  // matchup selection auto-selects that game's HOME team as the closest real equivalent; the
+  // Team dropdown below still switches to the away side manually.
+  useEffect(() => {
+    if (selectedMatchup) setTeam(selectedMatchup.home)
+  }, [selectedMatchup])
 
   useEffect(() => {
     Promise.all([

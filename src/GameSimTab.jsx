@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
+import { useMatchup } from './MatchupContext.jsx'
 
 // Click-a-matchup simulated box score -- the real v1 from PROMPT_SixPoints_GameSimulation_
 // Scope.md, built after that doc's own recommended order: real team pace + real team TD-rate
@@ -24,6 +25,7 @@ export default function GameSimTab() {
   const [selectedGameId, setSelectedGameId] = useState(null)
   const [result, setResult] = useState(null)
   const [simRunning, setSimRunning] = useState(false)
+  const { selectedMatchup } = useMatchup()
 
   useEffect(() => {
     Promise.all([
@@ -90,6 +92,14 @@ export default function GameSimTab() {
     }
     worker.postMessage({ home, away, leagueYpc: simInputs.league_ypc })
   }
+
+  // A real global matchup selection auto-runs this game's sim, so switching tabs after picking
+  // a matchup elsewhere doesn't require re-selecting it here too.
+  useEffect(() => {
+    if (!selectedMatchup || games.length === 0) return
+    const match = games.find((g) => g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away)
+    if (match && match.game_id !== selectedGameId) runSim(match)
+  }, [selectedMatchup, games])
 
   function playerName(playerId) {
     return directory?.[playerId]?.name || playerId

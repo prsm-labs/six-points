@@ -191,6 +191,72 @@ th.sortable:hover {
   color: var(--accent-fg);
 }
 
+.matchup-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.matchup-selector-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.matchup-selector-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.matchup-pill {
+  background: var(--border);
+  border: none;
+  color: var(--fg);
+  padding: 4px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.matchup-pill.active {
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-weight: 700;
+}
+
+.matchup-pill-clear {
+  background: transparent;
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.matchup-pill-ball {
+  margin-right: 2px;
+}
+
+.matchup-pill-live {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.matchup-pill.active .matchup-pill-live {
+  color: var(--accent-fg);
+}
+
+.matchup-pill-final {
+  color: var(--muted);
+}
+
+.matchup-pill.active .matchup-pill-final {
+  color: var(--accent-fg);
+}
+
 .calc-block {
   display: flex;
   flex-direction: column;

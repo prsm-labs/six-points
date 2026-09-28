@@ -17,6 +17,9 @@ import RedZoneTab from './RedZoneTab.jsx'
 import PrimetimeSplitsTab from './PrimetimeSplitsTab.jsx'
 import KeyMatchupsTab from './KeyMatchupsTab.jsx'
 import GameSimTab from './GameSimTab.jsx'
+import MatchupSelector from './MatchupSelector.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import PlayerSlideout from './PlayerSlideout.jsx'
@@ -104,6 +107,7 @@ function AllMatchupsTable({ data }) {
   const [team, setTeam] = useState('all')
   const [opponent, setOpponent] = useState('all')
   const [search, setSearch] = useState('')
+  const { selectedMatchup } = useMatchup()
 
   const teams = useMemo(
     () => [...new Set((data?.matchups || []).map((m) => m.team))].filter(Boolean).sort(),
@@ -113,10 +117,10 @@ function AllMatchupsTable({ data }) {
     if (!data) return []
     return data.matchups
       .filter((m) => position === 'all' || m.position === position)
-      .filter((m) => team === 'all' || m.team === team)
+      .filter((m) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, m.team) : (team === 'all' || m.team === team))
       .filter((m) => opponent === 'all' || m.opponent === opponent)
       .filter((m) => !search || m.player_name.toLowerCase().includes(search.toLowerCase()))
-  }, [data, position, team, opponent, search])
+  }, [data, position, team, opponent, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'zone_score', 'desc')
 
@@ -156,6 +160,7 @@ function AllMatchupsTable({ data }) {
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
       </div>
+      <MatchupFilterNote />
       <p className="meta-line">
         Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length} matchups
         &middot; all weights are v1 first-guesses, unvalidated beyond the Track Record backtest
@@ -334,14 +339,15 @@ function WeekDrillDown({ rows }) {
   const [position, setPosition] = useState('all')
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
+  const { selectedMatchup } = useMatchup()
 
   const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
   const filtered = useMemo(() => {
     return rows
       .filter((r) => position === 'all' || r.position === position)
-      .filter((r) => team === 'all' || r.team === team)
+      .filter((r) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, r.team) : (team === 'all' || r.team === team))
       .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
-  }, [rows, position, team, search])
+  }, [rows, position, team, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'zone_score', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
@@ -371,6 +377,7 @@ function WeekDrillDown({ rows }) {
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
       </div>
+      <MatchupFilterNote />
       <p className="meta-line">{sorted.length} of {rows.length} predictions this week</p>
       <div className="table-wrap">
       <table>
@@ -448,6 +455,7 @@ export default function App() {
         <DataFreshnessBanner />
       </header>
       <TDMarquee onClick={() => setTab('tdtracker')} />
+      <MatchupSelector />
       <nav className="tabs">
         <button className={tab === 'matchups' ? 'active' : ''} onClick={() => setTab('matchups')}>
           All Matchups

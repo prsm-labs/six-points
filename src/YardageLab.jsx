@@ -3,6 +3,8 @@ import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useYardageSims, thresholdFor } from './useLabSims.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 export default function YardageLab() {
   const { rows, error, status } = useYardageSims()
@@ -30,14 +32,15 @@ function YardageTable({ rows }) {
   const [position, setPosition] = useState('all')
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
+  const { selectedMatchup } = useMatchup()
 
   const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
   const filtered = useMemo(() => {
     return rows
       .filter((r) => position === 'all' || r.position === position)
-      .filter((r) => team === 'all' || r.team === team)
+      .filter((r) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, r.team) : (team === 'all' || r.team === team))
       .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
-  }, [rows, position, team, search])
+  }, [rows, position, team, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'sim_yard_pct', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
@@ -67,6 +70,7 @@ function YardageTable({ rows }) {
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
       </div>
+      <MatchupFilterNote />
       <p className="meta-line">
         {sorted.length} of {rows.length} players simulated &middot; threshold is 60+ rush yds
         (RB), 75+ rec yds (WR/TE), 225+ pass yds (QB) &middot; Yardage Signal gate is empirical

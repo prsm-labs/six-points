@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // Real weather via /api/weather.js (WeatherAPI.com, server-side key). Unlike the ESPN proxies
 // (scoreboard.js/summary.js), there is NO client-side direct-fetch fallback here -- WeatherAPI
@@ -138,13 +140,17 @@ export default function WeatherTab() {
 
 function WeatherTabBody({ schedule, weatherByTeam }) {
   const [team, setTeam] = useState('all')
+  const { selectedMatchup } = useMatchup()
   const teams = useMemo(
     () => [...new Set(schedule.games.flatMap((g) => [g.home_team, g.away_team]))].sort(),
     [schedule]
   )
   const filtered = useMemo(
-    () => schedule.games.filter((g) => team === 'all' || g.home_team === team || g.away_team === team),
-    [schedule, team]
+    () => schedule.games.filter((g) => {
+      if (selectedMatchup) return g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away
+      return team === 'all' || g.home_team === team || g.away_team === team
+    }),
+    [schedule, team, selectedMatchup]
   )
 
   return (
@@ -158,6 +164,7 @@ function WeatherTabBody({ schedule, weatherByTeam }) {
           </select>
         </label>
       </div>
+      <MatchupFilterNote />
       <p className="meta-line">
         Season {schedule.season}, Week {schedule.week} · {filtered.length} of {schedule.games.length}{' '}
         games · real current conditions per host city (WeatherAPI.com) — see note in source about

@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { usePlayerDirectory, PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // Real per-player primetime vs. non-primetime splits -- a lookup/comparison tool, NOT a
 // predictor. Built after the "does usage shift away from stars in primetime" hypothesis was
@@ -133,12 +135,13 @@ export default function PrimetimeSplitsTab() {
   }, [gameLogs, directory, primetimeByTeamWeek])
 
   const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
+  const { selectedMatchup } = useMatchup()
   const filtered = useMemo(() => {
     return rows
       .filter((r) => position === 'all' || r.position === position)
-      .filter((r) => team === 'all' || r.team === team)
+      .filter((r) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, r.team) : (team === 'all' || r.team === team))
       .filter((r) => !search || r.name.toLowerCase().includes(search.toLowerCase()))
-  }, [rows, position, team, search])
+  }, [rows, position, team, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'ptTouchesPg', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
@@ -178,6 +181,7 @@ export default function PrimetimeSplitsTab() {
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
       </div>
+      <MatchupFilterNote />
       <p className="meta-line">
         {sorted.length} real players with at least 1 real primetime game (Thu/Sun/Mon/Sat kickoff
         at or after 7:30pm local) &middot; a lookup tool, not a predictor -- a full-season check

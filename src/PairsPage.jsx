@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 function buildPairs(matchups) {
   // Concept doc §8: stack two players exploiting the SAME scheme weakness, not just shared
@@ -63,14 +65,15 @@ export default function PairsPage() {
 function PairsTable({ pairs }) {
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
+  const { selectedMatchup } = useMatchup()
 
   const teams = useMemo(() => [...new Set(pairs.map((p) => p.team))].filter(Boolean).sort(), [pairs])
   const filtered = useMemo(() => {
     const q = search.toLowerCase()
     return pairs
-      .filter((p) => team === 'all' || p.team === team)
+      .filter((p) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, p.team) : (team === 'all' || p.team === team))
       .filter((p) => !q || p.playerA.player_name.toLowerCase().includes(q) || p.playerB.player_name.toLowerCase().includes(q))
-  }, [pairs, team, search])
+  }, [pairs, team, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'combinedScore', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
@@ -90,6 +93,7 @@ function PairsTable({ pairs }) {
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search either player..." />
         </label>
       </div>
+      <MatchupFilterNote />
       <p className="meta-line">
         {sorted.length} of top {pairs.length} same-team pairs where both players individually
         clear a favorable-matchup bar (MatchupScore &ge; 60) against the same opponent -- both

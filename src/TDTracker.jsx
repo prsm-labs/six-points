@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSort, SortTh } from './useSort.jsx'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { useWeekTDs } from './useWeekTDs.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
@@ -142,11 +144,12 @@ export default function TDTracker() {
     return withTeam.map((td) => ({ ...td, isFirstTd: firstTdIds.has(td.id) }))
   }, [tds, espnAbbrToNflverse])
   const teams = useMemo(() => [...new Set(tdsWithTeam.map((td) => td.nflverseTeam))].filter(Boolean).sort(), [tdsWithTeam])
+  const { selectedMatchup } = useMatchup()
   const filtered = useMemo(() => {
     return tdsWithTeam
-      .filter((td) => team === 'all' || td.nflverseTeam === team)
+      .filter((td) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, td.nflverseTeam) : (team === 'all' || td.nflverseTeam === team))
       .filter((td) => !search || td.scorerName.toLowerCase().includes(search.toLowerCase()))
-  }, [tdsWithTeam, team, search])
+  }, [tdsWithTeam, team, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'wallclock', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
@@ -217,6 +220,7 @@ export default function TDTracker() {
               )}
             </div>
           )}
+          <MatchupFilterNote />
           <p className="meta-line">
             {sorted.length} of {tds.length} touchdowns, Week {selectedWeek} · sorted by real ET
             time by default, merging every simultaneous game into one true chronological feed ·
