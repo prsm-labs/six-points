@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { usePaydirtSims, useYardageSims } from './useLabSims.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // A small number of top-5-style ranked lists, each answering one narrow question fast --
 // opinionated, not exhaustive. Deliberately NOT a
@@ -75,34 +77,40 @@ export default function CheatSheetTab() {
   const paydirt = usePaydirtSims()
   const yardage = useYardageSims()
   const { matchups, teamStats } = useDefenseStats()
+  const { selectedMatchup } = useMatchup()
 
   const tdCandidates = useMemo(() => {
     if (!paydirt.rows) return null
-    return [...paydirt.rows].sort((a, b) => b.sim_td_pct - a.sim_td_pct).slice(0, 5)
-  }, [paydirt.rows])
+    const pool = selectedMatchup ? paydirt.rows.filter((p) => isInSelectedMatchup(selectedMatchup, p.team)) : paydirt.rows
+    return [...pool].sort((a, b) => b.sim_td_pct - a.sim_td_pct).slice(0, 5)
+  }, [paydirt.rows, selectedMatchup])
 
   const yardageCandidates = useMemo(() => {
     if (!yardage.rows) return null
-    return [...yardage.rows].sort((a, b) => b.sim_yard_pct - a.sim_yard_pct).slice(0, 5)
-  }, [yardage.rows])
+    const pool = selectedMatchup ? yardage.rows.filter((p) => isInSelectedMatchup(selectedMatchup, p.team)) : yardage.rows
+    return [...pool].sort((a, b) => b.sim_yard_pct - a.sim_yard_pct).slice(0, 5)
+  }, [yardage.rows, selectedMatchup])
 
   const highFloor = useMemo(() => {
     if (!matchups) return null
-    return [...matchups.matchups].sort((a, b) => b.usage_sig - a.usage_sig).slice(0, 5)
-  }, [matchups])
+    const pool = selectedMatchup ? matchups.matchups.filter((m) => isInSelectedMatchup(selectedMatchup, m.team)) : matchups.matchups
+    return [...pool].sort((a, b) => b.usage_sig - a.usage_sig).slice(0, 5)
+  }, [matchups, selectedMatchup])
 
   const attackableDefenses = useMemo(() => {
     if (!matchups || !teamStats) return null
-    const opponents = [...new Set(matchups.matchups.map((m) => m.opponent))]
+    let opponents = [...new Set(matchups.matchups.map((m) => m.opponent))]
+    if (selectedMatchup) opponents = opponents.filter((abbr) => isInSelectedMatchup(selectedMatchup, abbr))
     return opponents
       .map((abbr) => ({ abbr, stats: teamStats[abbr] }))
       .filter((t) => t.stats)
       .sort((a, b) => (b.stats.def_yards_allowed_rank || 0) - (a.stats.def_yards_allowed_rank || 0))
       .slice(0, 5)
-  }, [matchups, teamStats])
+  }, [matchups, teamStats, selectedMatchup])
 
   return (
     <div>
+      <MatchupFilterNote />
       <p className="meta-line">
         Top 5 per category, this week only &middot; opinionated and fast, not exhaustive --
         for the full sortable data behind each one, see Paydirt Lab / Yardage Lab / All Matchups

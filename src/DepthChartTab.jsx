@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // Item 10, PROMPT_SixPoints_SeasonKickoff_Prep.md: a real depth-chart browse page, from
 // matchup_engine.py's new depth_charts.json (import_depth_charts(), previously pulled nowhere in
@@ -78,6 +79,7 @@ export default function DepthChartTab() {
 
   return (
     <div>
+      <MatchupFilterNote message={selectedMatchup && `Auto-selected ${team} from the global matchup selection (${selectedMatchup.away} @ ${selectedMatchup.home}) -- switch Team below for the other side`} />
       <p className="meta-line">
         Real 2026 depth chart (import_depth_charts()) &middot; skill positions (QB/RB/WR/TE) up
         top since those are what the rest of the app has real stats for &middot; a status badge

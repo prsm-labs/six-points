@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { openTeamSlide } from './slideouts.js'
+import { useMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // Item 9, PROMPT_SixPoints_SeasonKickoff_Prep.md: a real forward-looking "what's the full
 // schedule for week N" browse page -- BoxScoreTab is built around resolving a completed/
@@ -44,6 +46,7 @@ export default function ScheduleTab({ onViewBoxScore }) {
   const [error, setError] = useState(null)
   const [selectedWeek, setSelectedWeek] = useState(null)
   const [liveStatus, setLiveStatus] = useState({})
+  const { selectedMatchup } = useMatchup()
 
   useEffect(() => {
     fetch('/data/season_schedule.json')
@@ -127,6 +130,7 @@ export default function ScheduleTab({ onViewBoxScore }) {
         </label>
         <button className="team-link" onClick={() => setSelectedWeek((w) => Math.min(weekOptions[weekOptions.length - 1] || w, w + 1))}>Next &rarr;</button>
       </div>
+      <MatchupFilterNote message={selectedMatchup && `${selectedMatchup.away} @ ${selectedMatchup.home} highlighted below (global matchup selection)`} />
       <p className="meta-line">
         {weekGames.length} games, Week {selectedWeek}{isCurrentWeek ? ' -- the real current week, live status polled every 30s' : ''}
       </p>
@@ -146,9 +150,11 @@ export default function ScheduleTab({ onViewBoxScore }) {
               const liveState = liveStatus[g.game_id]
               const isLive = !isFinal && liveState === 'in'
               const clickable = isFinal || isLive
+              const isSelected = selectedMatchup && selectedMatchup.home === g.home_team && selectedMatchup.away === g.away_team
               return (
                 <tr
                   key={g.game_id}
+                  className={isSelected ? 'row-highlight' : undefined}
                   style={clickable ? { cursor: 'pointer' } : undefined}
                   onClick={clickable ? onViewBoxScore : undefined}
                 >

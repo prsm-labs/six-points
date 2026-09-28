@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import GameLogTable from './GameLogTable.jsx'
 import { openTeamSlide } from './slideouts.js'
+import { useMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // A standalone "player vs this specific opponent" lookup -- the same vs-opponent logic the
 // Player Slideout already has, but searchable for ANY player/opponent pair, not just today's
@@ -119,6 +121,21 @@ export default function ScoutingTab() {
 
   const selectedPlayer = selectedPlayerId ? directory?.[selectedPlayerId] : null
   const games = selectedPlayerId ? gameLogs?.[selectedPlayerId] || [] : []
+
+  // This tool is fundamentally single-player-vs-single-opponent, so "select both teams" can't
+  // mean the same "filter the whole table" thing it does elsewhere -- the closest real
+  // equivalent: auto-set Opponent to whichever of the two selected-matchup teams the current
+  // player DOESN'T play for (using their most recent real game log entry for team, since the
+  // player directory itself doesn't carry a team field), or to one side of the matchup if no
+  // player is picked yet.
+  const { selectedMatchup } = useMatchup()
+  useEffect(() => {
+    if (!selectedMatchup) return
+    const playerTeam = games.length ? games[games.length - 1].team : null
+    if (playerTeam === selectedMatchup.home) setOpponent(selectedMatchup.away)
+    else if (playerTeam === selectedMatchup.away) setOpponent(selectedMatchup.home)
+    else setOpponent(selectedMatchup.home)
+  }, [selectedMatchup, selectedPlayerId])
   const vsOpponent = useMemo(
     () => (opponent ? games.filter((g) => g.opponent === opponent) : []),
     [games, opponent]
@@ -171,6 +188,7 @@ export default function ScoutingTab() {
 
   return (
     <div>
+      <MatchupFilterNote message={selectedMatchup && `Opponent auto-set to ${opponent} from the global matchup selection (${selectedMatchup.away} @ ${selectedMatchup.home})`} />
       <p className="meta-line">
         Pick any player and any opponent: real head-to-head history, the opponent's real defense
         style (coverage mix, blitz/pressure rate, explosive-play rate allowed), the player's own

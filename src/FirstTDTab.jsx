@@ -3,6 +3,8 @@ import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useWeekTDs } from './useWeekTDs.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // First Touchdown -- the real NFL prop market (First TD Scorer / Team to Score First), not just
 // "anytime TD" (already Paydirt Lab's job). Two real, distinct halves:
@@ -42,13 +44,14 @@ function PredictorTable() {
     () => [...new Set((data?.matchups || []).map((m) => m.team))].filter(Boolean).sort(),
     [data]
   )
+  const { selectedMatchup } = useMatchup()
   const filtered = useMemo(() => {
     if (!data) return []
     return data.matchups
       .filter((m) => position === 'all' || m.position === position)
-      .filter((m) => team === 'all' || m.team === team)
+      .filter((m) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, m.team) : (team === 'all' || m.team === team))
       .filter((m) => !search || m.player_name.toLowerCase().includes(search.toLowerCase()))
-  }, [data, position, team, search])
+  }, [data, position, team, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'first_td_pct', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
@@ -88,6 +91,7 @@ function PredictorTable() {
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
       </div>
+      <MatchupFilterNote />
       <p className="meta-line">
         Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length}{' '}
         players &middot; First TD % = real team first-scoring rate &times; this player's own
@@ -160,6 +164,7 @@ function TrackerTable() {
   }, [])
 
   const { tds, error: tdError } = useWeekTDs(selectedWeek, schedule?.games, teamStats)
+  const { selectedMatchup } = useMatchup()
 
   const firstTds = useMemo(() => {
     if (!tds) return null
@@ -170,8 +175,11 @@ function TrackerTable() {
       seen.add(td.gameId)
       firsts.push(td)
     }
+    if (selectedMatchup) {
+      return firsts.filter((td) => td.game.includes(selectedMatchup.home) && td.game.includes(selectedMatchup.away))
+    }
     return firsts
-  }, [tds])
+  }, [tds, selectedMatchup])
 
   const weekOptions = useMemo(() => {
     if (!schedule) return []
@@ -198,6 +206,7 @@ function TrackerTable() {
           </select>
         </label>
       </div>
+      <MatchupFilterNote />
       {tdError && <p className="empty-state">Couldn't load scoring plays ({tdError}).</p>}
       {!firstTds ? (
         <p className="empty-state">Resolving real ESPN game data and loading scoring plays...</p>

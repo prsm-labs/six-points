@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { isTouchdown } from './scoringPlays.js'
 import FieldTracker from './FieldTracker.jsx'
+import { useMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // No live games exist right now -- the 2026 season doesn't start until 2026-09-09 (concept
 // doc's own §9 caveat). This tab has two modes: "Live" (polls /api/scoreboard + /api/summary,
@@ -133,6 +135,13 @@ export default function LiveThemes() {
   const [liveNotifLog, setLiveNotifLog] = useState([])
   const [liveChecking, setLiveChecking] = useState(false)
   const seenPlayIdsRef = useRef(new Set())
+  const { selectedMatchup } = useMatchup()
+  // Polling itself still tracks EVERY real live game regardless of selection (so switching back
+  // to "no selection" doesn't need a re-fetch) -- only the rendered list below narrows down.
+  const displayedLiveGames = useMemo(() => {
+    if (!selectedMatchup) return liveGames
+    return liveGames.filter((g) => g.home === selectedMatchup.home && g.away === selectedMatchup.away)
+  }, [liveGames, selectedMatchup])
   const liveTimerRef = useRef(null)
 
   useEffect(() => {
@@ -269,8 +278,11 @@ export default function LiveThemes() {
         </p>
       )}
 
-      {mode === 'live' && liveGames.length === 0 && !liveChecking && (
-        <p className="empty-state">No games in progress right now.</p>
+      {mode === 'live' && <MatchupFilterNote message={selectedMatchup && `Showing only ${selectedMatchup.away} @ ${selectedMatchup.home} (global matchup selection), if currently live`} />}
+      {mode === 'live' && displayedLiveGames.length === 0 && !liveChecking && (
+        <p className="empty-state">
+          {selectedMatchup ? 'That matchup is not currently in progress.' : 'No games in progress right now.'}
+        </p>
       )}
 
       {mode === 'replay' && (
@@ -289,7 +301,7 @@ export default function LiveThemes() {
         </>
       )}
 
-      {mode === 'live' && liveGames.map((g) => (
+      {mode === 'live' && displayedLiveGames.map((g) => (
         <div key={g.id} style={{ marginBottom: 18 }}>
           <FieldTracker game={g} />
           <ThemeTable themes={clusterPlays(livePlaysByGame[g.id] || [])} />

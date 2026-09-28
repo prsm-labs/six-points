@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { openTeamSlide } from './slideouts.js'
 import { useLiveInactives } from './useLiveInactives.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // NFL's real pre-game lineup-confirmation equivalent is the inactives report -- released ~90
 // min before kickoff, resolving on its own clock. Two views: the static Weekly Report (below,
@@ -30,6 +32,7 @@ function LiveConfirmationView() {
   }, [])
 
   const { rows, lastConfirmed, checking, error, gamesToday } = useLiveInactives(schedule, teamStats)
+  const { selectedMatchup } = useMatchup()
 
   if (!schedule || !teamStats) return <p className="empty-state">Loading...</p>
   if (error) return <p className="empty-state">Couldn't load live status ({error}).</p>
@@ -43,10 +46,14 @@ function LiveConfirmationView() {
     )
   }
 
-  const sorted = rows.slice().sort((a, b) => (STATUS_ORDER[a.status] ?? 9) - (STATUS_ORDER[b.status] ?? 9))
+  const sorted = rows
+    .filter((r) => !selectedMatchup || isInSelectedMatchup(selectedMatchup, r.team))
+    .slice()
+    .sort((a, b) => (STATUS_ORDER[a.status] ?? 9) - (STATUS_ORDER[b.status] ?? 9))
 
   return (
     <div>
+      <MatchupFilterNote />
       <p className="meta-line">
         {gamesToday} game{gamesToday > 1 ? 's' : ''} today &middot; polling ESPN's real live
         injury feed every 60s{checking ? ' -- checking now...' : ''}
@@ -118,7 +125,10 @@ function WeeklyReportView() {
   }, [report, selectedWeek])
 
   const teams = useMemo(() => [...new Set(weekRows.map((r) => r.team))].sort(), [weekRows])
-  const filtered = teamFilter === 'all' ? weekRows : weekRows.filter((r) => r.team === teamFilter)
+  const { selectedMatchup } = useMatchup()
+  const filtered = selectedMatchup
+    ? weekRows.filter((r) => isInSelectedMatchup(selectedMatchup, r.team))
+    : (teamFilter === 'all' ? weekRows : weekRows.filter((r) => r.team === teamFilter))
 
   const weekOptions = useMemo(() => {
     if (!report) return []
@@ -152,6 +162,7 @@ function WeeklyReportView() {
           </select>
         </label>
       </div>
+      <MatchupFilterNote />
       <p className="meta-line">
         {filtered.length} players on the Week {selectedWeek} injury report &middot; Out/Doubtful is
         the closest real signal to "will not play," Questionable is a real game-time decision --

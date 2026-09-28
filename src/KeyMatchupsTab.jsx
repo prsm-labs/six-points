@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
+import { useMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // "Key Matchups" -- requested directly against Going Yard's own feature of the same name. Real
 // finding before building anything (grepped Going Yard's actual live source, same standing rule
@@ -110,11 +112,14 @@ export default function KeyMatchupsTab() {
     return byTeam
   }, [data])
 
+  const { selectedMatchup } = useMatchup()
   const games = useMemo(() => {
     if (!schedule || !data) return []
     const week = data.week
-    return schedule.games.filter((g) => g.week === week)
-  }, [schedule, data])
+    const weekGames = schedule.games.filter((g) => g.week === week)
+    if (selectedMatchup) return weekGames.filter((g) => g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away)
+    return weekGames
+  }, [schedule, data, selectedMatchup])
 
   if (error) {
     return (
@@ -128,6 +133,7 @@ export default function KeyMatchupsTab() {
 
   return (
     <div>
+      <MatchupFilterNote />
       <p className="meta-line">
         Week {data.week} &middot; our own computed "which matchup looks most favorable on paper"
         cut -- top 3 per team by opponent defensive matchup (position-specific) weighted by real

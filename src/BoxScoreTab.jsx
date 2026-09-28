@@ -2,6 +2,8 @@ import { useMemo, useState, useEffect } from 'react'
 import { resolveEventIds } from './espnGameResolver.js'
 import { openTeamSlide, openPlayerSlide } from './slideouts.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
+import { useMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // Real box scores via ESPN's summary API. The week's games are a lightweight, always-visible
 // list (scores already live in season_schedule.json, no ESPN call needed just to show them) --
@@ -406,6 +408,15 @@ export default function BoxScoreTab() {
     }
   }
 
+  // A real global matchup selection auto-selects that specific game's box score, so switching to
+  // this tab after picking a matchup elsewhere doesn't require re-finding it in the week's list.
+  const { selectedMatchup } = useMatchup()
+  useEffect(() => {
+    if (!selectedMatchup || weekGames.length === 0) return
+    const match = weekGames.find((g) => g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away)
+    if (match && match.game_id !== selectedGameId) handleSelect(match)
+  }, [selectedMatchup, weekGames])
+
   // Keep the selected game's box score / play-by-play fresh while it's still in progress. Stops
   // on its own once ESPN reports the game final (status.state === 'post').
   const selectedStatusState = details[selectedGameId]?.status?.state
@@ -459,6 +470,7 @@ export default function BoxScoreTab() {
           </select>
         </label>
       </div>
+      <MatchupFilterNote message={selectedMatchup && `${selectedMatchup.away} @ ${selectedMatchup.home} auto-selected below (global matchup selection)`} />
       <p className="meta-line">
         {filteredGames.length} of {weekGames.length} games &middot; click a game for its real box
         score (1st downs, total yards, passing/rushing splits, turnovers, time of possession), a

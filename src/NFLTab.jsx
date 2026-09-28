@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { openTeamSlide } from './slideouts.js'
+import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // The "NFL" tab -- named the same way Going Yard's own equivalent tab is literally labeled "MLB"
 // (PROMPT_SixPoints_GoingYardParity.md #4), not "Standings". Real division standings from
@@ -42,6 +44,7 @@ function TeamCell({ abbr, team }) {
 }
 
 function StandingsTable({ teams }) {
+  const { selectedMatchup } = useMatchup()
   const byConference = useMemo(() => {
     const out = {}
     for (const conf of CONFERENCES) {
@@ -85,7 +88,7 @@ function StandingsTable({ teams }) {
                   </thead>
                   <tbody>
                     {byConference[conf][div].map((t, i) => (
-                      <tr key={t.abbr}>
+                      <tr key={t.abbr} className={isInSelectedMatchup(selectedMatchup, t.abbr) ? 'row-highlight' : undefined}>
                         <td className="sticky-col">
                           {i === 0 && <span className="tier tier-lock" style={{ marginRight: 6 }}>Leader</span>}
                           <TeamCell abbr={t.abbr} team={t} />
@@ -112,6 +115,7 @@ function StandingsTable({ teams }) {
 }
 
 function PlayoffPicture({ teams }) {
+  const { selectedMatchup } = useMatchup()
   const byConference = useMemo(() => {
     const out = {}
     for (const conf of CONFERENCES) {
@@ -163,7 +167,7 @@ function PlayoffPicture({ teams }) {
                 </thead>
                 <tbody>
                   {(byConference[conf] || []).map((t, i) => (
-                    <tr key={t.abbr}>
+                    <tr key={t.abbr} className={isInSelectedMatchup(selectedMatchup, t.abbr) ? 'row-highlight' : undefined}>
                       <td>
                         {i + 1}
                         {i === 0 && <span className="meta-line small" style={{ margin: '0 0 0 4px' }}>(bye)</span>}
@@ -218,8 +222,21 @@ export default function NFLTab() {
           Playoff Picture
         </button>
       </div>
+      <MatchupFilterNoteForNFL />
       {sub === 'standings' && <StandingsTable teams={teams} />}
       {sub === 'playoffs' && <PlayoffPicture teams={teams} />}
     </div>
+  )
+}
+
+function MatchupFilterNoteForNFL() {
+  const { selectedMatchup } = useMatchup()
+  // Standings/Playoff Picture show every team by design (hiding the rest defeats the point of a
+  // standings table) -- the global selection HIGHLIGHTS both teams' rows here instead of
+  // filtering the table down to just them, so this needs its own message, not the generic one.
+  return (
+    <MatchupFilterNote
+      message={selectedMatchup && `${selectedMatchup.away} and ${selectedMatchup.home} highlighted below (global matchup selection)`}
+    />
   )
 }

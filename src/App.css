@@ -121,6 +121,17 @@ th {
   background: var(--bg);
 }
 
+/* A row belonging to the currently-selected global matchup, on a "show everyone" table (NFL
+   standings/playoff picture) where filtering down to just 2 teams would defeat the table's own
+   point -- highlight instead of hide. */
+.row-highlight td {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.row-highlight td.sticky-col {
+  background: color-mix(in srgb, var(--accent) 20%, var(--bg));
+}
+
 /* Pins a table's leftmost identifying column (name/player) while the rest scroll horizontally
    beneath it -- for any table with enough columns that it scrolls sideways (~12+). Add
    className="sticky-col" to that column's <th> and every <td> in that column. z-index tiers:
