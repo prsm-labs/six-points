@@ -23,9 +23,30 @@
 //    credit, not attributed to a specific simulated play (this app's own real actual_tds
 //    convention already works the same way).
 //
-// Explicitly NOT modeled: field goals, PATs, defense/special-teams scoring, sacks, turnovers,
+// Explicitly NOT modeled: field goals, PATs, defense/special-teams scoring, turnovers,
 // game-clock/score-state effects on play calling. See the scope doc's own "suggested build
 // order" -- this is deliberately the lighter v1, not full drive-by-drive simulation.
+//
+// Pressure rate (added 2026-09-28): real, validated per matchup_engine.py's build_team_
+// scoring_and_efficiency docstring. Each pass play's pressure probability is the same real
+// blend validated there -- 0.5*offense's own trailing press_allowed + 0.5*opponent defense's
+// own trailing press_generated (blend corr 0.201 vs a real game's actual pressure rate,
+// beats either single factor). The PRESSURE_* constants below are the real per-play ratios
+// found checking the complete 2025 season split by was_pressure: unpressured 69.66% comp /
+// 7.44 YPA / 0% sack; pressured 35.18% comp / 2.72 YPA / 23.42% sack, mean sack yardage -6.48
+// (std 3.73, n=1287). A pressured pass play is resolved BEFORE picking a receiver: it's either
+// a sack (team-level yardage loss, no target/receiver credited -- matches how nflverse itself
+// records sacks) or a suppressed-but-live target (receiver's own catch_rate/yards scaled by
+// the real pressured:unpressured ratio, not a flat override, so a player's own real efficiency
+// still comes through). TD allocation is untouched -- it's already a validated team-level
+// Poisson draw independent of per-play mechanics; layering a pressure-based TD suppression on
+// top would compound two separate probabilistic models without a real per-play-to-TD link
+// having been checked, so that's deliberately out of scope for this pass.
+const PRESSURE_COMPLETION_MULT = 0.505 // 35.18% / 69.66%, real 2025 season
+const PRESSURE_YPA_MULT = 0.365 // 2.72 / 7.44 YPA, real 2025 season
+const PRESSURE_SACK_RATE = 0.234 // share of pressured pass plays that are sacks, real 2025 season
+const SACK_YARDS_MEAN = -6.48
+const SACK_YARDS_STD = 3.73
 
 function randn() {
   let u = 0
@@ -58,11 +79,15 @@ function weightedChoice(items, weights, totalWeight) {
 
 const SIMS = 3000
 
-function simulateTeam(teamInfo, rosterPlayers, leagueYpc) {
+function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo) {
   const stats = {}
   for (const p of rosterPlayers) {
     stats[p.player_id] = { carries: 0, rushYards: 0, targets: 0, receptions: 0, recYards: 0, tdSum: 0, tdHits: 0 }
   }
+
+  const pressureRate = Math.max(0, Math.min(1,
+    0.5 * (teamInfo.press_allowed ?? 0.291) + 0.5 * (oppTeamInfo?.press_generated ?? 0.291)
+  ))
 
   const rushers = rosterPlayers.filter((p) => p.carry_share > 0)
   const rushWeights = rushers.map((p) => p.carry_share)
@@ -78,6 +103,7 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc) {
   let teamPassPlaysSum = 0
   let teamCompletionsSum = 0
   let teamPassYardsSum = 0
+  let teamSacksSum = 0
 
   for (let sim = 0; sim < SIMS; sim++) {
     const totalPlays = Math.max(40, Math.min(90, Math.round(teamInfo.plays_per_game + randn() * teamInfo.plays_std)))
@@ -98,11 +124,20 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc) {
     }
     if (recTotal > 0) {
       for (let i = 0; i < passPlays; i++) {
+        const isPressured = Math.random() < pressureRate
+        if (isPressured && Math.random() < PRESSURE_SACK_RATE) {
+          // Real: a sack has no receiver/target charted at all (the ball is never thrown) --
+          // team-level yardage loss only, no player's target/catch stats move.
+          teamSacksSum += 1
+          teamPassYardsSum += Math.min(-1, SACK_YARDS_MEAN + randn() * SACK_YARDS_STD)
+          continue
+        }
         const receiver = weightedChoice(receivers, recWeights, recTotal)
         stats[receiver.player_id].targets += 1
-        const catchRate = receiver.catch_rate || 0.6
+        const catchRate = (receiver.catch_rate || 0.6) * (isPressured ? PRESSURE_COMPLETION_MULT : 1)
         if (Math.random() < catchRate) {
-          const meanCatchYards = catchRate > 0 ? receiver.yards_per_target / catchRate : 8
+          const baseMeanYards = receiver.catch_rate > 0 ? receiver.yards_per_target / receiver.catch_rate : 8
+          const meanCatchYards = baseMeanYards * (isPressured ? PRESSURE_YPA_MULT : 1)
           const yards = Math.max(0, meanCatchYards + randn() * Math.max(3, meanCatchYards * 0.6))
           stats[receiver.player_id].receptions += 1
           stats[receiver.player_id].recYards += yards
@@ -146,6 +181,7 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc) {
       mean_pass_plays: Math.round((teamPassPlaysSum / SIMS) * 10) / 10,
       mean_completions: Math.round((teamCompletionsSum / SIMS) * 10) / 10,
       mean_pass_yards: Math.round(teamPassYardsSum / SIMS),
+      mean_sacks: Math.round((teamSacksSum / SIMS) * 10) / 10,
     },
   }
 }
@@ -153,8 +189,8 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc) {
 self.onmessage = (e) => {
   const { home, away, leagueYpc } = e.data
   const result = {
-    home: simulateTeam(home.teamInfo, home.players, leagueYpc),
-    away: simulateTeam(away.teamInfo, away.players, leagueYpc),
+    home: simulateTeam(home.teamInfo, home.players, leagueYpc, away.teamInfo),
+    away: simulateTeam(away.teamInfo, away.players, leagueYpc, home.teamInfo),
   }
   self.postMessage(result)
 }

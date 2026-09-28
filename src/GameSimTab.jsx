@@ -136,7 +136,8 @@ export default function GameSimTab() {
         </div>
         <p className="meta-line small" style={{ margin: '0 0 8px' }}>
           Projected {t.mean_plays} plays ({t.mean_pass_plays} pass) &middot; team passing
-          {qbId && <> ({playerName(qbId)})</>}: {t.mean_completions}/{t.mean_pass_plays}, {t.mean_pass_yards} yds
+          {qbId && <> ({playerName(qbId)})</>}: {t.mean_completions}/{t.mean_pass_plays}, {t.mean_pass_yards} yds,
+          {' '}{t.mean_sacks} sacks taken
         </p>
         <div className="table-wrap">
           <table>
