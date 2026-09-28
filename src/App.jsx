@@ -16,6 +16,7 @@ import NFLTab from './NFLTab.jsx'
 import RedZoneTab from './RedZoneTab.jsx'
 import PrimetimeSplitsTab from './PrimetimeSplitsTab.jsx'
 import KeyMatchupsTab from './KeyMatchupsTab.jsx'
+import GameSimTab from './GameSimTab.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import PlayerSlideout from './PlayerSlideout.jsx'
@@ -454,6 +455,9 @@ export default function App() {
         <button className={tab === 'keymatchups' ? 'active' : ''} onClick={() => setTab('keymatchups')}>
           Key Matchups
         </button>
+        <button className={tab === 'gamesim' ? 'active' : ''} onClick={() => setTab('gamesim')}>
+          Game Sim
+        </button>
         <button className={tab === 'paydirt' ? 'active' : ''} onClick={() => setTab('paydirt')}>
           Paydirt Lab
         </button>
@@ -506,6 +510,7 @@ export default function App() {
       <main>
         {tab === 'matchups' && <AllMatchups />}
         {tab === 'keymatchups' && <KeyMatchupsTab />}
+        {tab === 'gamesim' && <GameSimTab />}
         {tab === 'paydirt' && <PaydirtLab />}
         {tab === 'yardage' && <YardageLab />}
         {tab === 'live' && <LiveTab />}
