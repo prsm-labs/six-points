@@ -45,10 +45,48 @@ function seasonTotals(games, position) {
   ]
 }
 
+// Scheme Fit grade tiles -- real per-player man/zone/blitz performance splits, requested
+// directly against Going Yard's own "Arsenal Fit." See matchup_engine.py's
+// compute_player_scheme_splits() docstring for the real derivation and the disclosed A+/A/B/C/D
+// tier convention (Going Yard itself doesn't use letter grades for this -- verified in its real
+// source -- so this scale is this app's own, not a port).
+const SPLIT_LABELS = { man: 'vs Man', zone: 'vs Zone', blitz: 'vs Blitz', no_blitz: 'vs No Blitz' }
+
+function SchemeFitSection({ splits, sourceIsPrior, position }) {
+  if (!splits) return null
+  const order = ['man', 'zone', 'blitz', 'no_blitz']
+  const present = order.filter((k) => splits[k])
+  if (present.length === 0) return null
+  return (
+    <div className="slideout-section">
+      <h3>Scheme Fit</h3>
+      <p className="meta-line small" style={{ margin: '0 0 8px' }}>
+        Real {sourceIsPrior ? '2025 season' : 'season-to-date'} performance split by coverage/pass-rush
+        look, graded by percentile vs. other {position}s in that same split (A+ = top 10%, D = bottom
+        25%) &middot; not a prediction -- a real historical tendency
+      </p>
+      <div className="stat-grid">
+        {present.map((k) => (
+          <div className="stat-tile" key={k}>
+            <div className="value">{splits[k].grade}</div>
+            <div className="label">
+              {SPLIT_LABELS[k]}
+              <div className="meta-line small" style={{ margin: '2px 0 0' }}>
+                {(splits[k].td_rate * 100).toFixed(1)}% TD/play &middot; {splits[k].ypt} yd/play &middot; n={splits[k].plays}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function PlayerSlideout() {
   const [player, setPlayer] = useState(null)
   const [gameLog, setGameLog] = useState(null)
   const [directoryEntry, setDirectoryEntry] = useState(null)
+  const [schemeSplits, setSchemeSplits] = useState(null)
 
   useEffect(() => subscribePlayerSlide(setPlayer), [])
 
@@ -58,9 +96,11 @@ export default function PlayerSlideout() {
     Promise.all([
       fetch('/data/player_game_logs.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/players.json').then((r) => (r.ok ? r.json() : {})),
-    ]).then(([logs, directory]) => {
+      fetch('/data/scheme_splits.json').then((r) => (r.ok ? r.json() : null)),
+    ]).then(([logs, directory, scheme]) => {
       setGameLog(logs[player.player_id] || [])
       setDirectoryEntry(directory[player.player_id] || null)
+      setSchemeSplits(scheme)
     })
   }, [player?.player_id])
 
@@ -134,6 +174,12 @@ export default function PlayerSlideout() {
                   </p>
                 </div>
               )}
+
+              <SchemeFitSection
+                splits={schemeSplits?.splits?.[player.player_id]}
+                sourceIsPrior={schemeSplits?.source_is_prior_season}
+                position={position}
+              />
 
               <div className="slideout-section">
                 <h3>Last 7 Games</h3>

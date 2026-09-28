@@ -30,20 +30,23 @@
     "defense_profile": {
       "pass_plays_faced": 84,
       "rush_plays_faced": 84,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.719,
+      "man_rate": 0.28,
+      "blitz_rate": 0.275,
+      "blitz_rank": 16,
+      "pressure_rate": 0.247,
+      "pressure_rank": 29,
       "explosive_pass_rate_allowed": 0.107,
       "explosive_rush_rate_allowed": 0.036,
       "explosive_rate_allowed": 0.071,
       "explosive_rate_allowed_rank": 20,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "ATL": {
@@ -77,20 +80,24 @@
     "defense_profile": {
       "pass_plays_faced": 135,
       "rush_plays_faced": 52,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.666,
+      "man_rate": 0.325,
+      "blitz_rate": 0.359,
+      "blitz_rank": 2,
+      "pressure_rate": 0.301,
+      "pressure_rank": 14,
       "explosive_pass_rate_allowed": 0.089,
       "explosive_rush_rate_allowed": 0.019,
       "explosive_rate_allowed": 0.07,
       "explosive_rate_allowed_rank": 18,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "BAL": {
@@ -124,20 +131,23 @@
     "defense_profile": {
       "pass_plays_faced": 112,
       "rush_plays_faced": 78,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.671,
+      "man_rate": 0.321,
+      "blitz_rate": 0.241,
+      "blitz_rank": 22,
+      "pressure_rate": 0.274,
+      "pressure_rank": 23,
       "explosive_pass_rate_allowed": 0.071,
       "explosive_rush_rate_allowed": 0.064,
       "explosive_rate_allowed": 0.068,
       "explosive_rate_allowed_rank": 17,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "BUF": {
@@ -171,22 +181,24 @@
     "defense_profile": {
       "pass_plays_faced": 119,
       "rush_plays_faced": 80,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.687,
+      "man_rate": 0.309,
+      "blitz_rate": 0.255,
+      "blitz_rank": 21,
+      "pressure_rate": 0.323,
+      "pressure_rank": 8,
       "explosive_pass_rate_allowed": 0.118,
       "explosive_rush_rate_allowed": 0.05,
       "explosive_rate_allowed": 0.09,
       "explosive_rate_allowed_rank": 31,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
+        "Zone-heavy",
         "Explosive-Prone"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "CAR": {
@@ -220,20 +232,23 @@
     "defense_profile": {
       "pass_plays_faced": 100,
       "rush_plays_faced": 101,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.79,
+      "man_rate": 0.208,
+      "blitz_rate": 0.257,
+      "blitz_rank": 20,
+      "pressure_rate": 0.199,
+      "pressure_rank": 32,
       "explosive_pass_rate_allowed": 0.05,
       "explosive_rush_rate_allowed": 0.059,
       "explosive_rate_allowed": 0.055,
       "explosive_rate_allowed_rank": 12,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "CHI": {
@@ -267,22 +282,24 @@
     "defense_profile": {
       "pass_plays_faced": 63,
       "rush_plays_faced": 50,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.575,
+      "man_rate": 0.421,
+      "blitz_rate": 0.279,
+      "blitz_rank": 14,
+      "pressure_rate": 0.271,
+      "pressure_rank": 25,
       "explosive_pass_rate_allowed": 0.111,
       "explosive_rush_rate_allowed": 0.06,
       "explosive_rate_allowed": 0.088,
       "explosive_rate_allowed_rank": 28,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
+        "Zone-heavy",
         "Explosive-Prone"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "CIN": {
@@ -316,20 +333,24 @@
     "defense_profile": {
       "pass_plays_faced": 128,
       "rush_plays_faced": 61,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.644,
+      "man_rate": 0.352,
+      "blitz_rate": 0.18,
+      "blitz_rank": 32,
+      "pressure_rate": 0.292,
+      "pressure_rank": 20,
       "explosive_pass_rate_allowed": 0.094,
       "explosive_rush_rate_allowed": 0.033,
       "explosive_rate_allowed": 0.074,
       "explosive_rate_allowed_rank": 21,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "CLE": {
@@ -363,20 +384,23 @@
     "defense_profile": {
       "pass_plays_faced": 112,
       "rush_plays_faced": 81,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
+      "zone_rate": 0.585,
+      "man_rate": 0.411,
+      "blitz_rate": 0.282,
+      "blitz_rank": 12,
+      "pressure_rate": 0.341,
       "pressure_rank": 1,
       "explosive_pass_rate_allowed": 0.089,
       "explosive_rush_rate_allowed": 0.025,
       "explosive_rate_allowed": 0.062,
       "explosive_rate_allowed_rank": 14,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "DAL": {
@@ -410,20 +434,23 @@
     "defense_profile": {
       "pass_plays_faced": 86,
       "rush_plays_faced": 107,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.745,
+      "man_rate": 0.246,
+      "blitz_rate": 0.284,
+      "blitz_rank": 10,
+      "pressure_rate": 0.311,
+      "pressure_rank": 10,
       "explosive_pass_rate_allowed": 0.081,
       "explosive_rush_rate_allowed": 0.075,
       "explosive_rate_allowed": 0.078,
       "explosive_rate_allowed_rank": 24,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "DEN": {
@@ -457,22 +484,24 @@
     "defense_profile": {
       "pass_plays_faced": 119,
       "rush_plays_faced": 85,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.543,
+      "man_rate": 0.448,
+      "blitz_rate": 0.323,
+      "blitz_rank": 5,
+      "pressure_rate": 0.339,
+      "pressure_rank": 2,
       "explosive_pass_rate_allowed": 0.092,
       "explosive_rush_rate_allowed": 0.059,
       "explosive_rate_allowed": 0.078,
       "explosive_rate_allowed_rank": 26,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
+        "Blitz-heavy",
         "Explosive-Prone"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "DET": {
@@ -506,22 +535,24 @@
     "defense_profile": {
       "pass_plays_faced": 139,
       "rush_plays_faced": 80,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.588,
+      "man_rate": 0.409,
+      "blitz_rate": 0.278,
+      "blitz_rank": 15,
+      "pressure_rate": 0.302,
+      "pressure_rank": 13,
       "explosive_pass_rate_allowed": 0.115,
       "explosive_rush_rate_allowed": 0.05,
       "explosive_rate_allowed": 0.091,
       "explosive_rate_allowed_rank": 32,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
+        "Zone-heavy",
         "Explosive-Prone"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "GB": {
@@ -555,22 +586,25 @@
     "defense_profile": {
       "pass_plays_faced": 99,
       "rush_plays_faced": 102,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.802,
+      "man_rate": 0.194,
+      "blitz_rate": 0.202,
+      "blitz_rank": 28,
+      "pressure_rate": 0.303,
+      "pressure_rank": 12,
       "explosive_pass_rate_allowed": 0.051,
       "explosive_rush_rate_allowed": 0.039,
       "explosive_rate_allowed": 0.045,
       "explosive_rate_allowed_rank": 7,
       "explosive_tier": "Stingy",
       "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
         "Bend-Don't-Break"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "HOU": {
@@ -604,20 +638,23 @@
     "defense_profile": {
       "pass_plays_faced": 108,
       "rush_plays_faced": 75,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.673,
+      "man_rate": 0.321,
+      "blitz_rate": 0.229,
+      "blitz_rank": 24,
+      "pressure_rate": 0.295,
+      "pressure_rank": 18,
       "explosive_pass_rate_allowed": 0.12,
       "explosive_rush_rate_allowed": 0.013,
       "explosive_rate_allowed": 0.077,
       "explosive_rate_allowed_rank": 23,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "IND": {
@@ -651,20 +688,23 @@
     "defense_profile": {
       "pass_plays_faced": 106,
       "rush_plays_faced": 87,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.627,
+      "man_rate": 0.364,
+      "blitz_rate": 0.284,
+      "blitz_rank": 11,
+      "pressure_rate": 0.288,
+      "pressure_rank": 21,
       "explosive_pass_rate_allowed": 0.094,
       "explosive_rush_rate_allowed": 0.057,
       "explosive_rate_allowed": 0.078,
       "explosive_rate_allowed_rank": 24,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "JAX": {
@@ -698,22 +738,24 @@
     "defense_profile": {
       "pass_plays_faced": 92,
       "rush_plays_faced": 76,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.759,
+      "man_rate": 0.24,
+      "blitz_rate": 0.265,
+      "blitz_rank": 18,
+      "pressure_rate": 0.266,
+      "pressure_rank": 26,
       "explosive_pass_rate_allowed": 0.141,
       "explosive_rush_rate_allowed": 0.026,
       "explosive_rate_allowed": 0.089,
       "explosive_rate_allowed_rank": 29,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
+        "Zone-heavy",
         "Explosive-Prone"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "KC": {
@@ -747,22 +789,25 @@
     "defense_profile": {
       "pass_plays_faced": 99,
       "rush_plays_faced": 78,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.629,
+      "man_rate": 0.367,
+      "blitz_rate": 0.35,
+      "blitz_rank": 3,
+      "pressure_rate": 0.33,
+      "pressure_rank": 6,
       "explosive_pass_rate_allowed": 0.051,
       "explosive_rush_rate_allowed": 0.026,
       "explosive_rate_allowed": 0.04,
       "explosive_rate_allowed_rank": 6,
       "explosive_tier": "Stingy",
       "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy",
         "Bend-Don't-Break"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "LA": {
@@ -796,22 +841,25 @@
     "defense_profile": {
       "pass_plays_faced": 105,
       "rush_plays_faced": 76,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.745,
+      "man_rate": 0.252,
+      "blitz_rate": 0.191,
+      "blitz_rank": 31,
+      "pressure_rate": 0.312,
+      "pressure_rank": 9,
       "explosive_pass_rate_allowed": 0.048,
       "explosive_rush_rate_allowed": 0.026,
       "explosive_rate_allowed": 0.039,
       "explosive_rate_allowed_rank": 5,
       "explosive_tier": "Stingy",
       "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
         "Bend-Don't-Break"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "LAC": {
@@ -845,20 +893,24 @@
     "defense_profile": {
       "pass_plays_faced": 99,
       "rush_plays_faced": 96,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.77,
+      "man_rate": 0.226,
+      "blitz_rate": 0.199,
+      "blitz_rank": 29,
+      "pressure_rate": 0.297,
+      "pressure_rank": 17,
       "explosive_pass_rate_allowed": 0.091,
       "explosive_rush_rate_allowed": 0.042,
       "explosive_rate_allowed": 0.067,
       "explosive_rate_allowed_rank": 16,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "LV": {
@@ -892,20 +944,24 @@
     "defense_profile": {
       "pass_plays_faced": 106,
       "rush_plays_faced": 78,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.795,
+      "man_rate": 0.203,
+      "blitz_rate": 0.216,
+      "blitz_rank": 27,
+      "pressure_rate": 0.262,
+      "pressure_rank": 27,
       "explosive_pass_rate_allowed": 0.066,
       "explosive_rush_rate_allowed": 0.038,
       "explosive_rate_allowed": 0.054,
       "explosive_rate_allowed_rank": 11,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "MIA": {
@@ -939,22 +995,25 @@
     "defense_profile": {
       "pass_plays_faced": 76,
       "rush_plays_faced": 89,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.724,
+      "man_rate": 0.272,
+      "blitz_rate": 0.322,
+      "blitz_rank": 6,
+      "pressure_rate": 0.255,
+      "pressure_rank": 28,
       "explosive_pass_rate_allowed": 0.118,
       "explosive_rush_rate_allowed": 0.056,
       "explosive_rate_allowed": 0.085,
       "explosive_rate_allowed_rank": 27,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy",
         "Explosive-Prone"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "MIN": {
@@ -988,20 +1047,24 @@
     "defense_profile": {
       "pass_plays_faced": 128,
       "rush_plays_faced": 73,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
+      "zone_rate": 0.81,
+      "man_rate": 0.185,
+      "blitz_rate": 0.461,
       "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "pressure_rate": 0.334,
+      "pressure_rank": 5,
       "explosive_pass_rate_allowed": 0.094,
       "explosive_rush_rate_allowed": 0.027,
       "explosive_rate_allowed": 0.07,
       "explosive_rate_allowed_rank": 19,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "NE": {
@@ -1035,22 +1098,24 @@
     "defense_profile": {
       "pass_plays_faced": 100,
       "rush_plays_faced": 75,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.683,
+      "man_rate": 0.314,
+      "blitz_rate": 0.282,
+      "blitz_rank": 13,
+      "pressure_rate": 0.271,
+      "pressure_rank": 24,
       "explosive_pass_rate_allowed": 0.05,
       "explosive_rush_rate_allowed": 0.013,
       "explosive_rate_allowed": 0.034,
       "explosive_rate_allowed_rank": 4,
       "explosive_tier": "Stingy",
       "style_tags": [
+        "Zone-heavy",
         "Bend-Don't-Break"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "NO": {
@@ -1084,20 +1149,23 @@
     "defense_profile": {
       "pass_plays_faced": 112,
       "rush_plays_faced": 82,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.778,
+      "man_rate": 0.218,
+      "blitz_rate": 0.257,
+      "blitz_rank": 19,
+      "pressure_rate": 0.28,
+      "pressure_rank": 22,
       "explosive_pass_rate_allowed": 0.054,
       "explosive_rush_rate_allowed": 0.049,
       "explosive_rate_allowed": 0.052,
       "explosive_rate_allowed_rank": 9,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "NYG": {
@@ -1131,20 +1199,24 @@
     "defense_profile": {
       "pass_plays_faced": 102,
       "rush_plays_faced": 67,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.598,
+      "man_rate": 0.401,
+      "blitz_rate": 0.297,
+      "blitz_rank": 8,
+      "pressure_rate": 0.297,
+      "pressure_rank": 16,
       "explosive_pass_rate_allowed": 0.059,
       "explosive_rush_rate_allowed": 0.075,
       "explosive_rate_allowed": 0.065,
       "explosive_rate_allowed_rank": 15,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "NYJ": {
@@ -1178,22 +1250,24 @@
     "defense_profile": {
       "pass_plays_faced": 101,
       "rush_plays_faced": 62,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.594,
+      "man_rate": 0.4,
+      "blitz_rate": 0.289,
+      "blitz_rank": 9,
+      "pressure_rate": 0.23,
+      "pressure_rank": 30,
       "explosive_pass_rate_allowed": 0.04,
       "explosive_rush_rate_allowed": 0.016,
       "explosive_rate_allowed": 0.031,
       "explosive_rate_allowed_rank": 3,
       "explosive_tier": "Stingy",
       "style_tags": [
+        "Zone-heavy",
         "Bend-Don't-Break"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "PHI": {
@@ -1227,20 +1301,24 @@
     "defense_profile": {
       "pass_plays_faced": 58,
       "rush_plays_faced": 61,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.562,
+      "man_rate": 0.428,
+      "blitz_rate": 0.192,
+      "blitz_rank": 30,
+      "pressure_rate": 0.323,
+      "pressure_rank": 7,
       "explosive_pass_rate_allowed": 0.086,
       "explosive_rush_rate_allowed": 0.033,
       "explosive_rate_allowed": 0.059,
       "explosive_rate_allowed_rank": 13,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy",
+        "Low-blitz"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "PIT": {
@@ -1274,22 +1352,25 @@
     "defense_profile": {
       "pass_plays_faced": 89,
       "rush_plays_faced": 77,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.644,
+      "man_rate": 0.354,
+      "blitz_rate": 0.303,
+      "blitz_rank": 7,
+      "pressure_rate": 0.293,
+      "pressure_rank": 19,
       "explosive_pass_rate_allowed": 0.124,
       "explosive_rush_rate_allowed": 0.052,
       "explosive_rate_allowed": 0.09,
       "explosive_rate_allowed_rank": 30,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy",
         "Explosive-Prone"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "SEA": {
@@ -1323,22 +1404,25 @@
     "defense_profile": {
       "pass_plays_faced": 99,
       "rush_plays_faced": 80,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.708,
+      "man_rate": 0.287,
+      "blitz_rate": 0.223,
+      "blitz_rank": 25,
+      "pressure_rate": 0.336,
+      "pressure_rank": 3,
       "explosive_pass_rate_allowed": 0.02,
       "explosive_rush_rate_allowed": 0.037,
       "explosive_rate_allowed": 0.028,
       "explosive_rate_allowed_rank": 2,
       "explosive_tier": "Stingy",
       "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
         "Bend-Don't-Break"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "SF": {
@@ -1372,22 +1456,25 @@
     "defense_profile": {
       "pass_plays_faced": 109,
       "rush_plays_faced": 85,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.75,
+      "man_rate": 0.244,
+      "blitz_rate": 0.217,
+      "blitz_rank": 26,
+      "pressure_rate": 0.217,
+      "pressure_rank": 31,
       "explosive_pass_rate_allowed": 0.037,
       "explosive_rush_rate_allowed": 0.012,
       "explosive_rate_allowed": 0.026,
       "explosive_rate_allowed_rank": 1,
       "explosive_tier": "Stingy",
       "style_tags": [
+        "Zone-heavy",
+        "Low-blitz",
         "Bend-Don't-Break"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "TB": {
@@ -1421,22 +1508,25 @@
     "defense_profile": {
       "pass_plays_faced": 100,
       "rush_plays_faced": 73,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.703,
+      "man_rate": 0.292,
+      "blitz_rate": 0.34,
+      "blitz_rank": 4,
+      "pressure_rate": 0.335,
+      "pressure_rank": 4,
       "explosive_pass_rate_allowed": 0.08,
       "explosive_rush_rate_allowed": 0.0,
       "explosive_rate_allowed": 0.046,
       "explosive_rate_allowed_rank": 8,
       "explosive_tier": "Stingy",
       "style_tags": [
+        "Zone-heavy",
+        "Blitz-heavy",
         "Bend-Don't-Break"
       ],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "TEN": {
@@ -1470,20 +1560,23 @@
     "defense_profile": {
       "pass_plays_faced": 89,
       "rush_plays_faced": 104,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.738,
+      "man_rate": 0.259,
+      "blitz_rate": 0.237,
+      "blitz_rank": 23,
+      "pressure_rate": 0.299,
+      "pressure_rank": 15,
       "explosive_pass_rate_allowed": 0.101,
       "explosive_rush_rate_allowed": 0.01,
       "explosive_rate_allowed": 0.052,
       "explosive_rate_allowed_rank": 10,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   },
   "WAS": {
@@ -1517,20 +1610,23 @@
     "defense_profile": {
       "pass_plays_faced": 107,
       "rush_plays_faced": 64,
-      "zone_rate": 0.0,
-      "man_rate": 0.0,
-      "blitz_rate": 0.0,
-      "blitz_rank": 1,
-      "pressure_rate": 0.0,
-      "pressure_rank": 1,
+      "zone_rate": 0.684,
+      "man_rate": 0.305,
+      "blitz_rate": 0.267,
+      "blitz_rank": 17,
+      "pressure_rate": 0.31,
+      "pressure_rank": 11,
       "explosive_pass_rate_allowed": 0.103,
       "explosive_rush_rate_allowed": 0.031,
       "explosive_rate_allowed": 0.076,
       "explosive_rate_allowed_rank": 22,
       "explosive_tier": "Average",
-      "style_tags": [],
-      "coverage_data_available": false,
-      "pressure_data_available": false
+      "style_tags": [
+        "Zone-heavy"
+      ],
+      "coverage_data_available": true,
+      "pressure_data_available": true,
+      "coverage_is_prior_season": true
     }
   }
 }
