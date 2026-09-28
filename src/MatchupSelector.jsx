@@ -1,16 +1,21 @@
 import { useEffect, useState } from 'react'
 import { useMatchup } from './MatchupContext.jsx'
 
-// Always-visible row of this week's real matchups -- click one to cross-filter every wired-in
-// table on every tab to just those two teams (see MatchupContext.jsx). Click the same one again,
-// or the Clear button, to go back to each table's own independent filter.
+// Always-visible horizontally-scrollable row of real matchup CARDS (redesigned from an earlier
+// small-pill version per direct feedback + two real reference screenshots -- a Going Yard-style
+// compact score card and a "sports alert"-style logo/score/status card). Click a card to
+// cross-filter every wired-in table on every tab to just those two teams (see
+// MatchupContext.jsx). Click the same card again, or Clear, to release every table back to its
+// own independent filter.
 //
-// Live score/clock/possession (added same session, requested directly): reuses the exact same
-// real ESPN scoreboard proxy + team-abbreviation matching ScheduleTab.jsx's own live-status
-// poller already uses (event.competitions[0].competitors[].team.abbreviation matches directly
-// against season_schedule.json's home_team/away_team for the large majority of teams -- same
-// convention, not a new crosswalk). Possession indicator mirrors FieldTracker.jsx's own real
-// 🏈-next-to-the-team-with-the-ball convention.
+// Live score/clock/possession: reuses the exact same real ESPN scoreboard proxy + team-
+// abbreviation matching ScheduleTab.jsx's own live-status poller already uses. Possession
+// indicator mirrors FieldTracker.jsx's own real 🏈-next-to-the-team-with-the-ball convention.
+// Real per-game total yards (visible in the "sports alert" reference) is deliberately NOT
+// included -- verified live that ESPN's lightweight scoreboard feed always returns an empty
+// `statistics` array regardless of game state; getting real yardage would mean a much heavier
+// per-game `/summary` call for every card in the row, not a free addition to the poll already
+// running here.
 
 const LIVE_POLL_INTERVAL_MS = 30000
 
@@ -23,8 +28,18 @@ async function fetchScoreboard(dateYYYYMMDD) {
   return direct.json()
 }
 
+function formatKickoff(gametime) {
+  if (!gametime) return ''
+  const [h, m] = gametime.split(':').map(Number)
+  if (Number.isNaN(h)) return ''
+  const ampm = h >= 12 ? 'PM' : 'AM'
+  const h12 = h % 12 === 0 ? 12 : h % 12
+  return `${h12}:${String(m || 0).padStart(2, '0')} ${ampm}`
+}
+
 export default function MatchupSelector() {
   const [games, setGames] = useState(null)
+  const [teamStats, setTeamStats] = useState(null)
   const [liveByGame, setLiveByGame] = useState({})
   const { selectedMatchup, setSelectedMatchup } = useMatchup()
 
@@ -32,9 +47,11 @@ export default function MatchupSelector() {
     Promise.all([
       fetch('/data/season_schedule.json').then((r) => (r.ok ? r.json() : null)),
       fetch('/data/all_matchups_latest.json').then((r) => (r.ok ? r.json() : null)),
-    ]).then(([sched, mu]) => {
+      fetch('/data/team_stats.json').then((r) => (r.ok ? r.json() : {})),
+    ]).then(([sched, mu, ts]) => {
       if (!sched || !mu) return
       setGames(sched.games.filter((g) => g.week === mu.week))
+      setTeamStats(ts || {})
     })
   }, [])
 
@@ -58,7 +75,6 @@ export default function MatchupSelector() {
             const statusType = event.status?.type
             byGame[match.game_id] = {
               state: statusType?.state || null,
-              detail: statusType?.shortDetail || null,
               homeScore: home?.score,
               awayScore: away?.score,
               period: event.status?.period,
@@ -89,36 +105,46 @@ export default function MatchupSelector() {
     setSelectedMatchup(isSame ? null : { home: g.home_team, away: g.away_team })
   }
 
+  function TeamRow({ team, score, hasBall, bold }) {
+    const logo = teamStats?.[team]?.logo
+    return (
+      <div className="matchup-card-team-row">
+        {logo && <img src={logo} alt={team} className="matchup-card-logo" />}
+        <span className={bold ? 'matchup-card-abbr bold' : 'matchup-card-abbr'}>{team}</span>
+        {hasBall && <span className="matchup-card-ball">&#127944;</span>}
+        <span className="matchup-card-score">{score ?? ''}</span>
+      </div>
+    )
+  }
+
   return (
     <div className="matchup-selector">
-      <span className="matchup-selector-label">This week:</span>
       <div className="matchup-selector-row">
         {games.map((g) => {
           const active = selectedMatchup && selectedMatchup.home === g.home_team && selectedMatchup.away === g.away_team
           const live = liveByGame[g.game_id]
           const isLive = live?.state === 'in'
           const isFinal = live?.state === 'post'
-          const awayHasBall = live?.possessionTeamId && live.possessionTeamId === live.awayTeamId
-          const homeHasBall = live?.possessionTeamId && live.possessionTeamId === live.homeTeamId
+          const awayHasBall = isLive && live?.possessionTeamId && live.possessionTeamId === live.awayTeamId
+          const homeHasBall = isLive && live?.possessionTeamId && live.possessionTeamId === live.homeTeamId
+          const homeLeads = live && Number(live.homeScore) > Number(live.awayScore)
+          const awayLeads = live && Number(live.awayScore) > Number(live.homeScore)
           return (
             <button
               key={g.game_id}
-              className={active ? 'matchup-pill active' : 'matchup-pill'}
+              className={active ? 'matchup-card active' : 'matchup-card'}
               onClick={() => toggle(g)}
-              title={isLive ? `Q${live.period} ${live.clock}` : undefined}
             >
-              {awayHasBall && <span className="matchup-pill-ball">&#127944;</span>}
-              {g.away_team}{live ? ` ${live.awayScore}` : ''}
-              {' @ '}
-              {homeHasBall && <span className="matchup-pill-ball">&#127944;</span>}
-              {g.home_team}{live ? ` ${live.homeScore}` : ''}
-              {isLive && <span className="matchup-pill-live"> &middot; Q{live.period} {live.clock}</span>}
-              {isFinal && <span className="matchup-pill-final"> &middot; Final</span>}
+              <TeamRow team={g.away_team} score={live?.awayScore} hasBall={awayHasBall} bold={awayLeads && isFinal} />
+              <TeamRow team={g.home_team} score={live?.homeScore} hasBall={homeHasBall} bold={homeLeads && isFinal} />
+              <div className="matchup-card-status">
+                {isFinal ? 'Final' : isLive ? `Q${live.period} ${live.clock}` : formatKickoff(g.gametime) || g.gameday}
+              </div>
             </button>
           )
         })}
         {selectedMatchup && (
-          <button className="matchup-pill matchup-pill-clear" onClick={() => setSelectedMatchup(null)}>
+          <button className="matchup-card matchup-card-clear" onClick={() => setSelectedMatchup(null)}>
             Clear &times;
           </button>
         )}
