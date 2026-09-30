@@ -34,6 +34,26 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 // PairsPage already discloses. QBs get a blitz-only edge score (real, well-defined) -- man/zone
 // splits are receiving-only by definition, so there's no real per-QB coverage-type signal to
 // blend in without inventing one.
+//
+// Route Edge (added 2026-09-30, after the user pointed out a real breakout the app's usage-only
+// grading had missed -- a receiver whose real route-running was winning against a defense
+// playing real loose coverage, invisible anywhere in this app until now) -- real official NFL
+// Next Gen Stats (matchup_engine.py's build_route_profiles/build_run_funnel_profile, see their
+// own docstrings for the full validation). Kept as its own separate card, NOT folded into the
+// Matchup Edge Score above, because it measures a genuinely different thing: real-validated
+// against the full 2025 season, a player's own trailing route-running separation predicts their
+// OWN future catch rate (real signal, corr 0.184) but does NOT add real incremental touchdown-
+// predictive value beyond raw target volume (t=-1.44, not significant) -- so Route Edge is
+// framed honestly as a catch-volume/efficiency signal, not a scoring-probability one, unlike the
+// td_rate-based Matchup Edge Score above.
+//
+// RBs get NO individual route/rushing-skill grade -- real check first: a runner's own trailing
+// per-touch NGS efficiency (rush_yards_over_expected_per_att) does NOT persist week to week
+// (corr -0.058, essentially noise) at real available sample sizes, unlike a receiver's own real
+// separation skill (corr 0.315). Grading individual RBs on this would present noise as a
+// confident-looking letter grade -- the real, validated signal for RBs is DEFENSE-side only
+// (Run Funnel: box_rate_allowed real+strongly persistent at corr 0.443, ryoe_allowed real but
+// weaker at corr 0.185), shown in the Defense Profile card below instead.
 
 const SPLIT_LABEL = { man: 'vs Man', zone: 'vs Zone', blitz: 'vs Blitz', no_blitz: 'vs No Blitz' }
 
@@ -121,9 +141,82 @@ function DefenseProfileCard({ team, profile }) {
                 stingiest &middot; tier: <strong>{profile.explosive_tier}</strong>
               </td>
             </tr>
+            {profile.coverage_tightness && (
+              <tr>
+                <td>Cushion allowed (NGS)</td>
+                <td>
+                  {profile.coverage_tightness.cushion_allowed.toFixed(2)} yds &middot; #{profile.coverage_tightness.cushion_allowed_rank} of 32 loosest
+                  {profile.coverage_tightness.tag && <> &middot; <strong>{profile.coverage_tightness.tag}</strong></>}
+                </td>
+              </tr>
+            )}
+            {profile.run_funnel && (
+              <tr>
+                <td>Run funnel (NGS)</td>
+                <td>
+                  {(profile.run_funnel.box_rate_allowed * 100).toFixed(1)}% 8+ box &middot; RYOE allowed{' '}
+                  {profile.run_funnel.ryoe_allowed >= 0 ? '+' : ''}{profile.run_funnel.ryoe_allowed.toFixed(2)}/att
+                  {profile.run_funnel.tags.length > 0 && <> &middot; <strong>{profile.run_funnel.tags.join(', ')}</strong></>}
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
+    </div>
+  )
+}
+
+// Returns { score (0-100), separationPct, cushionAllowed, cushionTag } or null if no qualifying
+// real sample exists (min 10 trailing targets for the player, per build_route_profiles).
+function computeRouteEdge(position, routeProfile, coverageTightness) {
+  if (position !== 'WR' && position !== 'TE') return null
+  if (!routeProfile || !coverageTightness) return null
+  // Both are real 0-1-ish inputs on the same "higher = more separation-friendly" direction:
+  // the player's own separation percentile, and how loose this defense's coverage tends to be
+  // (its own rank inverted to a 0-1 scale, 32 teams).
+  const cushionPct = 1 - (coverageTightness.cushion_allowed_rank - 1) / 31
+  const score = (routeProfile.pct * 0.6 + cushionPct * 0.4) * 100
+  return { score, separationPct: routeProfile.pct, cushionAllowed: coverageTightness.cushion_allowed, cushionTag: coverageTightness.tag }
+}
+
+function RouteEdgeCard({ playerName, opponent, position, routeEdge, hasRouteProfile }) {
+  if (position !== 'WR' && position !== 'TE') {
+    return (
+      <p className="meta-line">
+        No individual route/rushing-skill grade for {position || 'this position'} -- real check
+        found a runner's own per-touch NGS efficiency isn't a stable enough real signal to grade
+        (see the Defense Profile's real Run Funnel numbers above instead for the run-game side of
+        this matchup).
+      </p>
+    )
+  }
+  if (!routeEdge) {
+    return (
+      <p className="empty-state">
+        {hasRouteProfile === false
+          ? `Not enough real trailing target sample (min 10) for ${playerName} yet.`
+          : `No real NGS coverage-tightness data for ${opponent} yet.`}
+      </p>
+    )
+  }
+  const label = edgeLabel(routeEdge.score)
+  return (
+    <div className="weather-card">
+      <div className="weather-card-header">
+        <div>
+          <strong>{playerName}</strong> Route Edge vs <strong>{opponent}</strong>
+        </div>
+        <span className={`tier ${label.cls}`}>{label.text}</span>
+      </div>
+      <p className="meta-line" style={{ margin: '4px 0 0' }}>
+        Route Edge {routeEdge.score.toFixed(0)}/100 -- {playerName}'s real separation percentile
+        ({(routeEdge.separationPct * 100).toFixed(0)}th at position) blended with how much real
+        cushion {opponent} tends to give receivers ({routeEdge.cushionAllowed.toFixed(2)} yds
+        {routeEdge.cushionTag && <>, <strong>{routeEdge.cushionTag}</strong></>}). This predicts
+        real catch volume/efficiency, NOT touchdown probability -- validated separately, that's
+        what the Matchup Edge Score above is for.
+      </p>
     </div>
   )
 }
@@ -182,6 +275,7 @@ export default function ScoutingTab() {
   const [teamStats, setTeamStats] = useState(null)
   const [situationalSplits, setSituationalSplits] = useState(null)
   const [schemeSplits, setSchemeSplits] = useState(null)
+  const [routeProfiles, setRouteProfiles] = useState(null)
   const [error, setError] = useState(null)
   const [search, setSearch] = useState('')
   const [selectedPlayerId, setSelectedPlayerId] = useState(null)
@@ -197,13 +291,15 @@ export default function ScoutingTab() {
       fetch('/data/team_stats.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/player_situational_splits.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/scheme_splits.json').then((r) => (r.ok ? r.json() : { splits: {} })),
+      fetch('/data/route_profiles.json').then((r) => (r.ok ? r.json() : { players: {} })),
     ])
-      .then(([logs, dir, stats, splits, scheme]) => {
+      .then(([logs, dir, stats, splits, scheme, routes]) => {
         setGameLogs(logs)
         setDirectory(dir)
         setTeamStats(stats)
         setSituationalSplits(splits)
         setSchemeSplits(scheme.splits || {})
+        setRouteProfiles(routes.players || {})
       })
       .catch((e) => setError(e.message))
   }, [])
@@ -243,6 +339,11 @@ export default function ScoutingTab() {
   const edge = useMemo(
     () => computeEdgeScore(selectedPlayer?.position, playerSchemeSplits, opponentProfile),
     [selectedPlayer, playerSchemeSplits, opponentProfile]
+  )
+  const playerRouteProfile = selectedPlayerId ? routeProfiles?.[selectedPlayerId] : null
+  const routeEdge = useMemo(
+    () => computeRouteEdge(selectedPlayer?.position, playerRouteProfile, opponentProfile?.coverage_tightness),
+    [selectedPlayer, playerRouteProfile, opponentProfile]
   )
   const explosiveTouch = selectedPlayerId ? situationalSplits?.[selectedPlayerId]?.touches?.explosive : null
   const explosivePass = selectedPlayerId ? situationalSplits?.[selectedPlayerId]?.passing?.explosive : null
@@ -342,6 +443,18 @@ export default function ScoutingTab() {
       {selectedPlayer && opponent && (
         <div className="slideout-section">
           <EdgeScoreCard playerName={selectedPlayer.name} opponent={opponent} position={selectedPlayer.position} edge={edge} />
+        </div>
+      )}
+
+      {selectedPlayer && opponent && (
+        <div className="slideout-section">
+          <RouteEdgeCard
+            playerName={selectedPlayer.name}
+            opponent={opponent}
+            position={selectedPlayer.position}
+            routeEdge={routeEdge}
+            hasRouteProfile={playerRouteProfile != null}
+          />
         </div>
       )}
 

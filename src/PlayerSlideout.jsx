@@ -82,11 +82,53 @@ function SchemeFitSection({ splits, sourceIsPrior, position }) {
   )
 }
 
+// Route Profile -- real official NFL Next Gen Stats (own separation/cushion, not a split vs.
+// this game's specific opponent -- that per-opponent blend lives in ScoutingTab's Route Edge
+// card, which also has the defense side). This is the player's own season-to-date real
+// route-running signal, same spirit as Scheme Fit but WR/TE only (see matchup_engine.py's
+// build_route_profiles docstring: NGS receiving doesn't track RBs at all, and RB rushing
+// efficiency isn't a stable real per-player skill at available sample sizes -- so RBs
+// deliberately get nothing here rather than an invented grade).
+function RouteProfileSection({ profile, position }) {
+  if ((position !== 'WR' && position !== 'TE') || !profile) return null
+  return (
+    <div className="slideout-section">
+      <h3>Route Profile</h3>
+      <p className="meta-line small" style={{ margin: '0 0 8px' }}>
+        Real NFL Next Gen Stats, season-to-date &middot; graded by percentile vs. other {position}s
+        on average separation &middot; real-validated to predict this player's own future catch
+        rate, NOT touchdown probability
+      </p>
+      <div className="stat-grid">
+        <div className="stat-tile">
+          <div className="value">{profile.grade}</div>
+          <div className="label">
+            Separation
+            <div className="meta-line small" style={{ margin: '2px 0 0' }}>
+              {profile.avg_separation} yds avg &middot; n={profile.targets} targets
+            </div>
+          </div>
+        </div>
+        <div className="stat-tile">
+          <div className="value">{(profile.catch_pct * 100).toFixed(0)}%</div>
+          <div className="label">
+            Catch Rate
+            <div className="meta-line small" style={{ margin: '2px 0 0' }}>
+              {profile.avg_cushion} yds avg cushion given
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function PlayerSlideout() {
   const [player, setPlayer] = useState(null)
   const [gameLog, setGameLog] = useState(null)
   const [directoryEntry, setDirectoryEntry] = useState(null)
   const [schemeSplits, setSchemeSplits] = useState(null)
+  const [routeProfiles, setRouteProfiles] = useState(null)
 
   useEffect(() => subscribePlayerSlide(setPlayer), [])
 
@@ -97,10 +139,12 @@ export default function PlayerSlideout() {
       fetch('/data/player_game_logs.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/players.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/scheme_splits.json').then((r) => (r.ok ? r.json() : null)),
-    ]).then(([logs, directory, scheme]) => {
+      fetch('/data/route_profiles.json').then((r) => (r.ok ? r.json() : null)),
+    ]).then(([logs, directory, scheme, routes]) => {
       setGameLog(logs[player.player_id] || [])
       setDirectoryEntry(directory[player.player_id] || null)
       setSchemeSplits(scheme)
+      setRouteProfiles(routes)
     })
   }, [player?.player_id])
 
@@ -178,6 +222,11 @@ export default function PlayerSlideout() {
               <SchemeFitSection
                 splits={schemeSplits?.splits?.[player.player_id]}
                 sourceIsPrior={schemeSplits?.source_is_prior_season}
+                position={position}
+              />
+
+              <RouteProfileSection
+                profile={routeProfiles?.players?.[player.player_id]}
                 position={position}
               />
 

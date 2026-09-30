@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "latest_week": 3,
-  "generated_at": "2026-09-28T14:31:05.719945+00:00",
+  "latest_week": 4,
+  "generated_at": "2026-09-30T14:04:24.145590+00:00",
   "games": [
     {
       "game_id": "2026_01_NE_SEA",
@@ -528,8 +528,8 @@
       "gameday": "2026-09-28",
       "gametime": "20:15",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 27,
+      "away_score": 7
     },
     {
       "game_id": "2026_04_PIT_CLE",
@@ -730,6 +730,17 @@
       "away_score": null
     },
     {
+      "game_id": "2026_05_CHI_GB",
+      "week": 5,
+      "home_team": "GB",
+      "away_team": "CHI",
+      "gameday": "2026-10-11",
+      "gametime": "13:00",
+      "roof": "outdoors",
+      "home_score": null,
+      "away_score": null
+    },
+    {
       "game_id": "2026_05_CIN_MIA",
       "week": 5,
       "home_team": "MIA",
@@ -825,17 +836,6 @@
       "gameday": "2026-10-11",
       "gametime": "16:25",
       "roof": null,
-      "home_score": null,
-      "away_score": null
-    },
-    {
-      "game_id": "2026_05_CHI_GB",
-      "week": 5,
-      "home_team": "GB",
-      "away_team": "CHI",
-      "gameday": "2026-10-11",
-      "gametime": "16:25",
-      "roof": "outdoors",
       "home_score": null,
       "away_score": null
     },

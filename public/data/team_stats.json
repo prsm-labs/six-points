@@ -22,10 +22,10 @@
     "def_yards_allowed_pg": 362.3,
     "def_yards_allowed_rank": 26,
     "pass_yards_allowed_pg": 234.3,
-    "pass_def_rank": 22,
+    "pass_def_rank": 23,
     "pass_td_allowed": 8,
     "rush_yards_allowed_pg": 128.0,
-    "rush_def_rank": 26,
+    "rush_def_rank": 25,
     "rush_td_allowed": 3,
     "defense_profile": {
       "pass_plays_faced": 84,
@@ -46,7 +46,21 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 6.87,
+        "cushion_allowed_rank": 9,
+        "plays": 54,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 26.23,
+        "box_rate_allowed_rank": 10,
+        "ryoe_allowed": -0.153,
+        "ryoe_allowed_rank": 11,
+        "plays": 61,
+        "tags": []
+      }
     }
   },
   "ATL": {
@@ -70,7 +84,7 @@
     "off_yards_pg": 342.0,
     "pass_pct": 46.0,
     "def_yards_allowed_pg": 313.0,
-    "def_yards_allowed_rank": 9,
+    "def_yards_allowed_rank": 8,
     "pass_yards_allowed_pg": 263.0,
     "pass_def_rank": 29,
     "pass_td_allowed": 6,
@@ -97,7 +111,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.88,
+        "cushion_allowed_rank": 17,
+        "plays": 77,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 31.818,
+        "box_rate_allowed_rank": 4,
+        "ryoe_allowed": 0.747,
+        "ryoe_allowed_rank": 23,
+        "plays": 22,
+        "tags": [
+          "Stacks the Box"
+        ]
+      }
     }
   },
   "BAL": {
@@ -123,7 +153,7 @@
     "def_yards_allowed_pg": 323.0,
     "def_yards_allowed_rank": 14,
     "pass_yards_allowed_pg": 217.0,
-    "pass_def_rank": 16,
+    "pass_def_rank": 17,
     "pass_td_allowed": 3,
     "rush_yards_allowed_pg": 106.0,
     "rush_def_rank": 13,
@@ -147,7 +177,21 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.47,
+        "cushion_allowed_rank": 22,
+        "plays": 66,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 15.789,
+        "box_rate_allowed_rank": 22,
+        "ryoe_allowed": 0.652,
+        "ryoe_allowed_rank": 22,
+        "plays": 38,
+        "tags": []
+      }
     }
   },
   "BUF": {
@@ -171,7 +215,7 @@
     "off_yards_pg": 403.3,
     "pass_pct": 52.8,
     "def_yards_allowed_pg": 361.3,
-    "def_yards_allowed_rank": 24,
+    "def_yards_allowed_rank": 25,
     "pass_yards_allowed_pg": 254.3,
     "pass_def_rank": 27,
     "pass_td_allowed": 7,
@@ -198,7 +242,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.81,
+        "cushion_allowed_rank": 19,
+        "plays": 67,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 23.529,
+        "box_rate_allowed_rank": 13,
+        "ryoe_allowed": -0.599,
+        "ryoe_allowed_rank": 6,
+        "plays": 51,
+        "tags": [
+          "Run-Funnel Stout"
+        ]
+      }
     }
   },
   "CAR": {
@@ -224,7 +284,7 @@
     "def_yards_allowed_pg": 367.0,
     "def_yards_allowed_rank": 28,
     "pass_yards_allowed_pg": 173.0,
-    "pass_def_rank": 6,
+    "pass_def_rank": 5,
     "pass_td_allowed": 4,
     "rush_yards_allowed_pg": 194.0,
     "rush_def_rank": 32,
@@ -248,7 +308,24 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 7.96,
+        "cushion_allowed_rank": 1,
+        "plays": 37,
+        "tag": "Loose Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 10.959,
+        "box_rate_allowed_rank": 27,
+        "ryoe_allowed": 0.965,
+        "ryoe_allowed_rank": 29,
+        "plays": 73,
+        "tags": [
+          "Light Boxes",
+          "Run-Funnel Vulnerable"
+        ]
+      }
     }
   },
   "CHI": {
@@ -258,40 +335,40 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/chi.png",
     "espn_abbr": "chi",
     "stats_url": "https://www.espn.com/nfl/team/_/name/chi",
-    "record": "1-1",
-    "win_pct": 0.5,
-    "home_record": "0-1",
+    "record": "2-1",
+    "win_pct": 0.667,
+    "home_record": "1-1",
     "away_record": "1-0",
-    "last10": "1-1",
-    "streak": "L1",
-    "points_for": 62,
-    "points_against": 46,
-    "point_diff": 16,
-    "points_pg": 31.0,
-    "points_allowed_pg": 23.0,
-    "off_yards_pg": 424.5,
-    "pass_pct": 49.6,
-    "def_yards_allowed_pg": 362.0,
-    "def_yards_allowed_rank": 25,
-    "pass_yards_allowed_pg": 240.0,
-    "pass_def_rank": 26,
+    "last10": "2-1",
+    "streak": "W1",
+    "points_for": 89,
+    "points_against": 53,
+    "point_diff": 36,
+    "points_pg": 29.7,
+    "points_allowed_pg": 17.7,
+    "off_yards_pg": 408.7,
+    "pass_pct": 50.0,
+    "def_yards_allowed_pg": 324.0,
+    "def_yards_allowed_rank": 15,
+    "pass_yards_allowed_pg": 207.0,
+    "pass_def_rank": 13,
     "pass_td_allowed": 3,
-    "rush_yards_allowed_pg": 122.0,
-    "rush_def_rank": 23,
-    "rush_td_allowed": 2,
+    "rush_yards_allowed_pg": 117.0,
+    "rush_def_rank": 20,
+    "rush_td_allowed": 3,
     "defense_profile": {
-      "pass_plays_faced": 63,
-      "rush_plays_faced": 50,
+      "pass_plays_faced": 91,
+      "rush_plays_faced": 69,
       "zone_rate": 0.575,
       "man_rate": 0.421,
       "blitz_rate": 0.279,
       "blitz_rank": 14,
       "pressure_rate": 0.271,
       "pressure_rank": 25,
-      "explosive_pass_rate_allowed": 0.111,
-      "explosive_rush_rate_allowed": 0.06,
-      "explosive_rate_allowed": 0.088,
-      "explosive_rate_allowed_rank": 28,
+      "explosive_pass_rate_allowed": 0.088,
+      "explosive_rush_rate_allowed": 0.072,
+      "explosive_rate_allowed": 0.081,
+      "explosive_rate_allowed_rank": 27,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
         "Zone-heavy",
@@ -299,7 +376,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 6.02,
+        "cushion_allowed_rank": 13,
+        "plays": 46,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 29.167,
+        "box_rate_allowed_rank": 6,
+        "ryoe_allowed": 0.755,
+        "ryoe_allowed_rank": 24,
+        "plays": 48,
+        "tags": [
+          "Stacks the Box"
+        ]
+      }
     }
   },
   "CIN": {
@@ -323,7 +416,7 @@
     "off_yards_pg": 324.0,
     "pass_pct": 62.5,
     "def_yards_allowed_pg": 356.7,
-    "def_yards_allowed_rank": 23,
+    "def_yards_allowed_rank": 24,
     "pass_yards_allowed_pg": 260.0,
     "pass_def_rank": 28,
     "pass_td_allowed": 3,
@@ -350,7 +443,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 6.39,
+        "cushion_allowed_rank": 10,
+        "plays": 67,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 17.647,
+        "box_rate_allowed_rank": 20,
+        "ryoe_allowed": 3.828,
+        "ryoe_allowed_rank": 32,
+        "plays": 17,
+        "tags": [
+          "Run-Funnel Vulnerable"
+        ]
+      }
     }
   },
   "CLE": {
@@ -374,12 +483,12 @@
     "off_yards_pg": 268.0,
     "pass_pct": 56.7,
     "def_yards_allowed_pg": 345.3,
-    "def_yards_allowed_rank": 21,
+    "def_yards_allowed_rank": 22,
     "pass_yards_allowed_pg": 224.0,
-    "pass_def_rank": 17,
+    "pass_def_rank": 18,
     "pass_td_allowed": 6,
     "rush_yards_allowed_pg": 121.3,
-    "rush_def_rank": 22,
+    "rush_def_rank": 23,
     "rush_td_allowed": 0,
     "defense_profile": {
       "pass_plays_faced": 112,
@@ -400,7 +509,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.09,
+        "cushion_allowed_rank": 28,
+        "plays": 48,
+        "tag": "Press Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 11.765,
+        "box_rate_allowed_rank": 25,
+        "ryoe_allowed": 0.051,
+        "ryoe_allowed_rank": 15,
+        "plays": 51,
+        "tags": [
+          "Light Boxes"
+        ]
+      }
     }
   },
   "DAL": {
@@ -426,7 +551,7 @@
     "def_yards_allowed_pg": 388.7,
     "def_yards_allowed_rank": 30,
     "pass_yards_allowed_pg": 207.3,
-    "pass_def_rank": 13,
+    "pass_def_rank": 14,
     "pass_td_allowed": 7,
     "rush_yards_allowed_pg": 181.3,
     "rush_def_rank": 31,
@@ -450,7 +575,21 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.82,
+        "cushion_allowed_rank": 18,
+        "plays": 49,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 23.214,
+        "box_rate_allowed_rank": 14,
+        "ryoe_allowed": 0.263,
+        "ryoe_allowed_rank": 17,
+        "plays": 56,
+        "tags": []
+      }
     }
   },
   "DEN": {
@@ -476,7 +615,7 @@
     "def_yards_allowed_pg": 382.0,
     "def_yards_allowed_rank": 29,
     "pass_yards_allowed_pg": 237.0,
-    "pass_def_rank": 24,
+    "pass_def_rank": 25,
     "pass_td_allowed": 4,
     "rush_yards_allowed_pg": 145.0,
     "rush_def_rank": 30,
@@ -501,7 +640,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 7.31,
+        "cushion_allowed_rank": 7,
+        "plays": 32,
+        "tag": "Loose Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 22.222,
+        "box_rate_allowed_rank": 17,
+        "ryoe_allowed": 2.847,
+        "ryoe_allowed_rank": 31,
+        "plays": 36,
+        "tags": [
+          "Run-Funnel Vulnerable"
+        ]
+      }
     }
   },
   "DET": {
@@ -530,7 +685,7 @@
     "pass_def_rank": 32,
     "pass_td_allowed": 9,
     "rush_yards_allowed_pg": 118.3,
-    "rush_def_rank": 20,
+    "rush_def_rank": 21,
     "rush_td_allowed": 4,
     "defense_profile": {
       "pass_plays_faced": 139,
@@ -552,7 +707,24 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.79,
+        "cushion_allowed_rank": 20,
+        "plays": 83,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 52.941,
+        "box_rate_allowed_rank": 1,
+        "ryoe_allowed": 1.764,
+        "ryoe_allowed_rank": 30,
+        "plays": 34,
+        "tags": [
+          "Stacks the Box",
+          "Run-Funnel Vulnerable"
+        ]
+      }
     }
   },
   "GB": {
@@ -576,7 +748,7 @@
     "off_yards_pg": 315.3,
     "pass_pct": 73.3,
     "def_yards_allowed_pg": 343.7,
-    "def_yards_allowed_rank": 20,
+    "def_yards_allowed_rank": 21,
     "pass_yards_allowed_pg": 203.3,
     "pass_def_rank": 11,
     "pass_td_allowed": 5,
@@ -604,7 +776,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.98,
+        "cushion_allowed_rank": 15,
+        "plays": 49,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 23.171,
+        "box_rate_allowed_rank": 15,
+        "ryoe_allowed": 0.933,
+        "ryoe_allowed_rank": 26,
+        "plays": 82,
+        "tags": [
+          "Run-Funnel Vulnerable"
+        ]
+      }
     }
   },
   "HOU": {
@@ -628,9 +816,9 @@
     "off_yards_pg": 326.0,
     "pass_pct": 64.5,
     "def_yards_allowed_pg": 326.0,
-    "def_yards_allowed_rank": 15,
+    "def_yards_allowed_rank": 16,
     "pass_yards_allowed_pg": 238.7,
-    "pass_def_rank": 25,
+    "pass_def_rank": 26,
     "pass_td_allowed": 5,
     "rush_yards_allowed_pg": 87.3,
     "rush_def_rank": 5,
@@ -654,7 +842,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 7.89,
+        "cushion_allowed_rank": 2,
+        "plays": 69,
+        "tag": "Loose Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 25.0,
+        "box_rate_allowed_rank": 11,
+        "ryoe_allowed": -0.715,
+        "ryoe_allowed_rank": 4,
+        "plays": 56,
+        "tags": [
+          "Run-Funnel Stout"
+        ]
+      }
     }
   },
   "IND": {
@@ -704,7 +908,24 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.31,
+        "cushion_allowed_rank": 25,
+        "plays": 42,
+        "tag": "Press Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 42.373,
+        "box_rate_allowed_rank": 3,
+        "ryoe_allowed": 0.935,
+        "ryoe_allowed_rank": 27,
+        "plays": 59,
+        "tags": [
+          "Stacks the Box",
+          "Run-Funnel Vulnerable"
+        ]
+      }
     }
   },
   "JAX": {
@@ -728,9 +949,9 @@
     "off_yards_pg": 315.3,
     "pass_pct": 50.3,
     "def_yards_allowed_pg": 328.0,
-    "def_yards_allowed_rank": 16,
+    "def_yards_allowed_rank": 17,
     "pass_yards_allowed_pg": 235.7,
-    "pass_def_rank": 23,
+    "pass_def_rank": 24,
     "pass_td_allowed": 2,
     "rush_yards_allowed_pg": 92.3,
     "rush_def_rank": 8,
@@ -755,7 +976,21 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 7.8,
+        "cushion_allowed_rank": 3,
+        "plays": 29,
+        "tag": "Loose Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 15.625,
+        "box_rate_allowed_rank": 23,
+        "ryoe_allowed": -0.267,
+        "ryoe_allowed_rank": 10,
+        "plays": 32,
+        "tags": []
+      }
     }
   },
   "KC": {
@@ -781,7 +1016,7 @@
     "def_yards_allowed_pg": 278.3,
     "def_yards_allowed_rank": 4,
     "pass_yards_allowed_pg": 178.3,
-    "pass_def_rank": 7,
+    "pass_def_rank": 6,
     "pass_td_allowed": 2,
     "rush_yards_allowed_pg": 100.0,
     "rush_def_rank": 10,
@@ -807,7 +1042,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.42,
+        "cushion_allowed_rank": 23,
+        "plays": 61,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 14.634,
+        "box_rate_allowed_rank": 24,
+        "ryoe_allowed": -0.425,
+        "ryoe_allowed_rank": 7,
+        "plays": 41,
+        "tags": [
+          "Run-Funnel Stout"
+        ]
+      }
     }
   },
   "LA": {
@@ -833,7 +1084,7 @@
     "def_yards_allowed_pg": 274.0,
     "def_yards_allowed_rank": 3,
     "pass_yards_allowed_pg": 172.7,
-    "pass_def_rank": 5,
+    "pass_def_rank": 4,
     "pass_td_allowed": 5,
     "rush_yards_allowed_pg": 101.3,
     "rush_def_rank": 11,
@@ -859,7 +1110,24 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 4.96,
+        "cushion_allowed_rank": 30,
+        "plays": 49,
+        "tag": "Press Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 7.547,
+        "box_rate_allowed_rank": 31,
+        "ryoe_allowed": -0.614,
+        "ryoe_allowed_rank": 5,
+        "plays": 53,
+        "tags": [
+          "Light Boxes",
+          "Run-Funnel Stout"
+        ]
+      }
     }
   },
   "LAC": {
@@ -883,12 +1151,12 @@
     "off_yards_pg": 308.7,
     "pass_pct": 54.2,
     "def_yards_allowed_pg": 351.7,
-    "def_yards_allowed_rank": 22,
+    "def_yards_allowed_rank": 23,
     "pass_yards_allowed_pg": 233.0,
-    "pass_def_rank": 20,
+    "pass_def_rank": 21,
     "pass_td_allowed": 4,
     "rush_yards_allowed_pg": 118.7,
-    "rush_def_rank": 21,
+    "rush_def_rank": 22,
     "rush_td_allowed": 4,
     "defense_profile": {
       "pass_plays_faced": 99,
@@ -910,7 +1178,21 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.95,
+        "cushion_allowed_rank": 16,
+        "plays": 45,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 27.397,
+        "box_rate_allowed_rank": 9,
+        "ryoe_allowed": -0.029,
+        "ryoe_allowed_rank": 14,
+        "plays": 73,
+        "tags": []
+      }
     }
   },
   "LV": {
@@ -934,7 +1216,7 @@
     "off_yards_pg": 315.3,
     "pass_pct": 53.8,
     "def_yards_allowed_pg": 316.7,
-    "def_yards_allowed_rank": 11,
+    "def_yards_allowed_rank": 10,
     "pass_yards_allowed_pg": 200.3,
     "pass_def_rank": 10,
     "pass_td_allowed": 5,
@@ -961,7 +1243,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 4.8,
+        "cushion_allowed_rank": 32,
+        "plays": 47,
+        "tag": "Press Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 10.638,
+        "box_rate_allowed_rank": 28,
+        "ryoe_allowed": -0.052,
+        "ryoe_allowed_rank": 13,
+        "plays": 47,
+        "tags": [
+          "Light Boxes"
+        ]
+      }
     }
   },
   "MIA": {
@@ -985,9 +1283,9 @@
     "off_yards_pg": 290.7,
     "pass_pct": 54.9,
     "def_yards_allowed_pg": 338.0,
-    "def_yards_allowed_rank": 18,
+    "def_yards_allowed_rank": 19,
     "pass_yards_allowed_pg": 231.0,
-    "pass_def_rank": 19,
+    "pass_def_rank": 20,
     "pass_td_allowed": 7,
     "rush_yards_allowed_pg": 107.0,
     "rush_def_rank": 15,
@@ -1004,7 +1302,7 @@
       "explosive_pass_rate_allowed": 0.118,
       "explosive_rush_rate_allowed": 0.056,
       "explosive_rate_allowed": 0.085,
-      "explosive_rate_allowed_rank": 27,
+      "explosive_rate_allowed_rank": 28,
       "explosive_tier": "Explosive-Prone",
       "style_tags": [
         "Zone-heavy",
@@ -1013,7 +1311,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.64,
+        "cushion_allowed_rank": 21,
+        "plays": 21,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 29.412,
+        "box_rate_allowed_rank": 5,
+        "ryoe_allowed": 0.519,
+        "ryoe_allowed_rank": 20,
+        "plays": 51,
+        "tags": [
+          "Stacks the Box"
+        ]
+      }
     }
   },
   "MIN": {
@@ -1037,9 +1351,9 @@
     "off_yards_pg": 240.0,
     "pass_pct": 50.3,
     "def_yards_allowed_pg": 319.7,
-    "def_yards_allowed_rank": 13,
+    "def_yards_allowed_rank": 12,
     "pass_yards_allowed_pg": 234.0,
-    "pass_def_rank": 21,
+    "pass_def_rank": 22,
     "pass_td_allowed": 3,
     "rush_yards_allowed_pg": 85.7,
     "rush_def_rank": 4,
@@ -1064,7 +1378,24 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 7.46,
+        "cushion_allowed_rank": 6,
+        "plays": 60,
+        "tag": "Loose Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 27.778,
+        "box_rate_allowed_rank": 7,
+        "ryoe_allowed": -0.825,
+        "ryoe_allowed_rank": 3,
+        "plays": 54,
+        "tags": [
+          "Stacks the Box",
+          "Run-Funnel Stout"
+        ]
+      }
     }
   },
   "NE": {
@@ -1090,7 +1421,7 @@
     "def_yards_allowed_pg": 278.7,
     "def_yards_allowed_rank": 5,
     "pass_yards_allowed_pg": 170.0,
-    "pass_def_rank": 3,
+    "pass_def_rank": 2,
     "pass_td_allowed": 4,
     "rush_yards_allowed_pg": 108.7,
     "rush_def_rank": 17,
@@ -1115,7 +1446,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 6.22,
+        "cushion_allowed_rank": 12,
+        "plays": 57,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 27.778,
+        "box_rate_allowed_rank": 7,
+        "ryoe_allowed": 0.649,
+        "ryoe_allowed_rank": 21,
+        "plays": 36,
+        "tags": [
+          "Stacks the Box"
+        ]
+      }
     }
   },
   "NO": {
@@ -1139,9 +1486,9 @@
     "off_yards_pg": 383.7,
     "pass_pct": 64.0,
     "def_yards_allowed_pg": 341.0,
-    "def_yards_allowed_rank": 19,
+    "def_yards_allowed_rank": 20,
     "pass_yards_allowed_pg": 211.7,
-    "pass_def_rank": 15,
+    "pass_def_rank": 16,
     "pass_td_allowed": 6,
     "rush_yards_allowed_pg": 129.3,
     "rush_def_rank": 27,
@@ -1165,7 +1512,21 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 7.53,
+        "cushion_allowed_rank": 5,
+        "plays": 60,
+        "tag": "Loose Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 25.0,
+        "box_rate_allowed_rank": 11,
+        "ryoe_allowed": 0.054,
+        "ryoe_allowed_rank": 16,
+        "plays": 64,
+        "tags": []
+      }
     }
   },
   "NYG": {
@@ -1189,9 +1550,9 @@
     "off_yards_pg": 273.3,
     "pass_pct": 50.8,
     "def_yards_allowed_pg": 330.0,
-    "def_yards_allowed_rank": 17,
+    "def_yards_allowed_rank": 18,
     "pass_yards_allowed_pg": 224.7,
-    "pass_def_rank": 18,
+    "pass_def_rank": 19,
     "pass_td_allowed": 7,
     "rush_yards_allowed_pg": 105.3,
     "rush_def_rank": 12,
@@ -1216,7 +1577,21 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.1,
+        "cushion_allowed_rank": 27,
+        "plays": 34,
+        "tag": "Press Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 17.241,
+        "box_rate_allowed_rank": 21,
+        "ryoe_allowed": 0.411,
+        "ryoe_allowed_rank": 19,
+        "plays": 29,
+        "tags": []
+      }
     }
   },
   "NYJ": {
@@ -1242,7 +1617,7 @@
     "def_yards_allowed_pg": 259.0,
     "def_yards_allowed_rank": 2,
     "pass_yards_allowed_pg": 171.0,
-    "pass_def_rank": 4,
+    "pass_def_rank": 3,
     "pass_td_allowed": 5,
     "rush_yards_allowed_pg": 88.0,
     "rush_def_rank": 7,
@@ -1267,7 +1642,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.33,
+        "cushion_allowed_rank": 24,
+        "plays": 42,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 20.0,
+        "box_rate_allowed_rank": 19,
+        "ryoe_allowed": 0.959,
+        "ryoe_allowed_rank": 28,
+        "plays": 20,
+        "tags": [
+          "Run-Funnel Vulnerable"
+        ]
+      }
     }
   },
   "PHI": {
@@ -1277,38 +1668,38 @@
     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/phi.png",
     "espn_abbr": "phi",
     "stats_url": "https://www.espn.com/nfl/team/_/name/phi",
-    "record": "2-0",
-    "win_pct": 1.0,
+    "record": "2-1",
+    "win_pct": 0.667,
     "home_record": "1-0",
-    "away_record": "1-0",
-    "last10": "2-0",
-    "streak": "W2",
-    "points_for": 48,
-    "points_against": 42,
-    "point_diff": 6,
-    "points_pg": 24.0,
-    "points_allowed_pg": 21.0,
-    "off_yards_pg": 330.5,
-    "pass_pct": 55.3,
-    "def_yards_allowed_pg": 293.0,
-    "def_yards_allowed_rank": 7,
-    "pass_yards_allowed_pg": 166.0,
-    "pass_def_rank": 2,
-    "pass_td_allowed": 2,
-    "rush_yards_allowed_pg": 127.0,
-    "rush_def_rank": 24,
-    "rush_td_allowed": 3,
+    "away_record": "1-1",
+    "last10": "2-1",
+    "streak": "L1",
+    "points_for": 55,
+    "points_against": 69,
+    "point_diff": -14,
+    "points_pg": 18.3,
+    "points_allowed_pg": 23.0,
+    "off_yards_pg": 303.0,
+    "pass_pct": 56.5,
+    "def_yards_allowed_pg": 321.0,
+    "def_yards_allowed_rank": 13,
+    "pass_yards_allowed_pg": 193.0,
+    "pass_def_rank": 9,
+    "pass_td_allowed": 4,
+    "rush_yards_allowed_pg": 128.0,
+    "rush_def_rank": 25,
+    "rush_td_allowed": 4,
     "defense_profile": {
-      "pass_plays_faced": 58,
-      "rush_plays_faced": 61,
+      "pass_plays_faced": 92,
+      "rush_plays_faced": 96,
       "zone_rate": 0.562,
       "man_rate": 0.428,
       "blitz_rate": 0.192,
       "blitz_rank": 30,
       "pressure_rate": 0.323,
       "pressure_rank": 7,
-      "explosive_pass_rate_allowed": 0.086,
-      "explosive_rush_rate_allowed": 0.033,
+      "explosive_pass_rate_allowed": 0.087,
+      "explosive_rush_rate_allowed": 0.031,
       "explosive_rate_allowed": 0.059,
       "explosive_rate_allowed_rank": 13,
       "explosive_tier": "Average",
@@ -1318,7 +1709,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 7.54,
+        "cushion_allowed_rank": 4,
+        "plays": 38,
+        "tag": "Loose Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 11.667,
+        "box_rate_allowed_rank": 26,
+        "ryoe_allowed": -0.063,
+        "ryoe_allowed_rank": 12,
+        "plays": 60,
+        "tags": [
+          "Light Boxes"
+        ]
+      }
     }
   },
   "PIT": {
@@ -1342,9 +1749,9 @@
     "off_yards_pg": 305.0,
     "pass_pct": 66.3,
     "def_yards_allowed_pg": 306.7,
-    "def_yards_allowed_rank": 8,
+    "def_yards_allowed_rank": 7,
     "pass_yards_allowed_pg": 192.7,
-    "pass_def_rank": 9,
+    "pass_def_rank": 8,
     "pass_td_allowed": 4,
     "rush_yards_allowed_pg": 114.0,
     "rush_def_rank": 18,
@@ -1370,7 +1777,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 6.0,
+        "cushion_allowed_rank": 14,
+        "plays": 34,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 8.0,
+        "box_rate_allowed_rank": 30,
+        "ryoe_allowed": 0.336,
+        "ryoe_allowed_rank": 18,
+        "plays": 50,
+        "tags": [
+          "Light Boxes"
+        ]
+      }
     }
   },
   "SEA": {
@@ -1422,7 +1845,24 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.25,
+        "cushion_allowed_rank": 26,
+        "plays": 45,
+        "tag": "Press Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 8.108,
+        "box_rate_allowed_rank": 29,
+        "ryoe_allowed": -1.493,
+        "ryoe_allowed_rank": 1,
+        "plays": 37,
+        "tags": [
+          "Light Boxes",
+          "Run-Funnel Stout"
+        ]
+      }
     }
   },
   "SF": {
@@ -1446,9 +1886,9 @@
     "off_yards_pg": 400.3,
     "pass_pct": 51.9,
     "def_yards_allowed_pg": 313.3,
-    "def_yards_allowed_rank": 10,
+    "def_yards_allowed_rank": 9,
     "pass_yards_allowed_pg": 207.3,
-    "pass_def_rank": 13,
+    "pass_def_rank": 14,
     "pass_td_allowed": 3,
     "rush_yards_allowed_pg": 106.0,
     "rush_def_rank": 13,
@@ -1474,7 +1914,23 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 6.94,
+        "cushion_allowed_rank": 8,
+        "plays": 38,
+        "tag": "Loose Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 21.951,
+        "box_rate_allowed_rank": 18,
+        "ryoe_allowed": -0.42,
+        "ryoe_allowed_rank": 8,
+        "plays": 41,
+        "tags": [
+          "Run-Funnel Stout"
+        ]
+      }
     }
   },
   "TB": {
@@ -1526,7 +1982,24 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 5.0,
+        "cushion_allowed_rank": 29,
+        "plays": 41,
+        "tag": "Press Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 51.111,
+        "box_rate_allowed_rank": 2,
+        "ryoe_allowed": -1.204,
+        "ryoe_allowed_rank": 2,
+        "plays": 45,
+        "tags": [
+          "Stacks the Box",
+          "Run-Funnel Stout"
+        ]
+      }
     }
   },
   "TEN": {
@@ -1550,12 +2023,12 @@
     "off_yards_pg": 249.3,
     "pass_pct": 59.2,
     "def_yards_allowed_pg": 316.7,
-    "def_yards_allowed_rank": 11,
+    "def_yards_allowed_rank": 10,
     "pass_yards_allowed_pg": 189.0,
-    "pass_def_rank": 8,
+    "pass_def_rank": 7,
     "pass_td_allowed": 2,
     "rush_yards_allowed_pg": 127.7,
-    "rush_def_rank": 25,
+    "rush_def_rank": 24,
     "rush_td_allowed": 3,
     "defense_profile": {
       "pass_plays_faced": 89,
@@ -1576,7 +2049,21 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 6.35,
+        "cushion_allowed_rank": 11,
+        "plays": 37,
+        "tag": null
+      },
+      "run_funnel": {
+        "box_rate_allowed": 23.077,
+        "box_rate_allowed_rank": 16,
+        "ryoe_allowed": -0.268,
+        "ryoe_allowed_rank": 9,
+        "plays": 65,
+        "tags": []
+      }
     }
   },
   "WAS": {
@@ -1626,7 +2113,24 @@
       ],
       "coverage_data_available": true,
       "pressure_data_available": true,
-      "coverage_is_prior_season": true
+      "coverage_is_prior_season": true,
+      "coverage_tightness": {
+        "cushion_allowed": 4.8,
+        "cushion_allowed_rank": 31,
+        "plays": 62,
+        "tag": "Press Coverage"
+      },
+      "run_funnel": {
+        "box_rate_allowed": 3.704,
+        "box_rate_allowed_rank": 32,
+        "ryoe_allowed": 0.842,
+        "ryoe_allowed_rank": 25,
+        "plays": 27,
+        "tags": [
+          "Light Boxes",
+          "Run-Funnel Vulnerable"
+        ]
+      }
     }
   }
 }
