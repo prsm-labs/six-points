@@ -2001,6 +2001,22 @@
         "status": "Out",
         "injury": "Elbow"
       }
+    ],
+    "4": [
+      {
+        "team": "WAS",
+        "name": "Sam Cosmi",
+        "position": "G",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "WAS",
+        "name": "Nick Cross",
+        "position": "S",
+        "status": "Out",
+        "injury": "Illness"
+      }
     ]
   }
 }

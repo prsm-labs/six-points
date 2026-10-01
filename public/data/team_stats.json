@@ -585,7 +585,7 @@
       "run_funnel": {
         "box_rate_allowed": 23.214,
         "box_rate_allowed_rank": 14,
-        "ryoe_allowed": 0.263,
+        "ryoe_allowed": 0.212,
         "ryoe_allowed_rank": 17,
         "plays": 56,
         "tags": []
@@ -1044,9 +1044,9 @@
       "pressure_data_available": true,
       "coverage_is_prior_season": true,
       "coverage_tightness": {
-        "cushion_allowed": 5.42,
+        "cushion_allowed": 5.37,
         "cushion_allowed_rank": 23,
-        "plays": 61,
+        "plays": 62,
         "tag": null
       },
       "run_funnel": {
@@ -1514,9 +1514,9 @@
       "pressure_data_available": true,
       "coverage_is_prior_season": true,
       "coverage_tightness": {
-        "cushion_allowed": 7.53,
-        "cushion_allowed_rank": 5,
-        "plays": 60,
+        "cushion_allowed": 7.71,
+        "cushion_allowed_rank": 4,
+        "plays": 61,
         "tag": "Loose Coverage"
       },
       "run_funnel": {
@@ -1712,7 +1712,7 @@
       "coverage_is_prior_season": true,
       "coverage_tightness": {
         "cushion_allowed": 7.54,
-        "cushion_allowed_rank": 4,
+        "cushion_allowed_rank": 5,
         "plays": 38,
         "tag": "Loose Coverage"
       },
