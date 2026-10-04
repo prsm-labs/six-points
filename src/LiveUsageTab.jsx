@@ -77,19 +77,20 @@ export default function LiveUsageTab() {
   const directory = usePlayerDirectory()
   const espnIdToPlayer = espnIdToPlayerMap(directory)
 
+  const safePlayers = players || []
+  const teams = useMemo(() => [...new Set(safePlayers.map((p) => p.team))].filter(Boolean).sort(), [safePlayers])
+  const [team, setTeam] = useState('all')
+  const { selectedMatchup } = useMatchup()
+  const filtered = useMemo(() => {
+    if (selectedMatchup) return safePlayers.filter((p) => isInSelectedMatchup(selectedMatchup, p.team))
+    return team === 'all' ? safePlayers : safePlayers.filter((p) => p.team === team)
+  }, [safePlayers, team, selectedMatchup])
+
   if (error) return <p className="empty-state">Couldn't load live usage ({error}).</p>
   if (players === null) return <p className="empty-state">Checking for live games...</p>
   if (liveGameCount === 0) {
     return <p className="empty-state">No games in progress right now -- Heating Up / On Fire only track real live games.</p>
   }
-
-  const teams = useMemo(() => [...new Set(players.map((p) => p.team))].filter(Boolean).sort(), [players])
-  const [team, setTeam] = useState('all')
-  const { selectedMatchup } = useMatchup()
-  const filtered = useMemo(() => {
-    if (selectedMatchup) return players.filter((p) => isInSelectedMatchup(selectedMatchup, p.team))
-    return team === 'all' ? players : players.filter((p) => p.team === team)
-  }, [players, team, selectedMatchup])
 
   const onFire = [...filtered].filter((p) => p.isOnFire).sort((a, b) => b.totalTds - a.totalTds || b.touches - a.touches)
   const heatingUp = [...filtered].filter((p) => p.isHeatingUp && !p.isOnFire).sort((a, b) => (b.touchesDelta || 0) - (a.touchesDelta || 0))
