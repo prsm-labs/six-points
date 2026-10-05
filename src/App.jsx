@@ -17,6 +17,7 @@ import RedZoneTab from './RedZoneTab.jsx'
 import PrimetimeSplitsTab from './PrimetimeSplitsTab.jsx'
 import KeyMatchupsTab from './KeyMatchupsTab.jsx'
 import GameSimTab from './GameSimTab.jsx'
+import RoleReportTab from './RoleReportTab.jsx'
 import MatchupSelector from './MatchupSelector.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
@@ -463,6 +464,9 @@ export default function App() {
         <button className={tab === 'keymatchups' ? 'active' : ''} onClick={() => setTab('keymatchups')}>
           Key Matchups
         </button>
+        <button className={tab === 'rolereport' ? 'active' : ''} onClick={() => setTab('rolereport')}>
+          Role Report
+        </button>
         <button className={tab === 'gamesim' ? 'active' : ''} onClick={() => setTab('gamesim')}>
           Game Sim
         </button>
@@ -518,6 +522,7 @@ export default function App() {
       <main>
         {tab === 'matchups' && <AllMatchups />}
         {tab === 'keymatchups' && <KeyMatchupsTab />}
+        {tab === 'rolereport' && <RoleReportTab />}
         {tab === 'gamesim' && <GameSimTab />}
         {tab === 'paydirt' && <PaydirtLab />}
         {tab === 'yardage' && <YardageLab />}
