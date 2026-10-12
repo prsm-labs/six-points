@@ -4,3 +4,7 @@ dist/
 
 .vercel
 .env*.local
+
+# File Update Protocol backups (*_BKUP_YYMMDD_HHMM.*) stay local, never committed -- the unattended data
+# publish (git add public/data) picked up two on 2026-10-12
+*_BKUP_*
