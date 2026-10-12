@@ -11,7 +11,33 @@ function percentile(values, p) {
   return sorted[idx]
 }
 
+// Paydirt pool (2026-10-12, user: "only picking 4 players per game"): every player with a red-zone
+// role (>= PAYDIRT_MIN_RZ red-zone touches/game, not Out/Doubtful, has 2026 touches) -- ~18 per game, holding ~86% of
+// the week's real TD scorers in the 2023-25 backtest vs 34% for the old top-2-per-team pool.
+// Paydirt Signal = the slate's top PAYDIRT_SIGNAL_N by the grade model's TD %.
+export const PAYDIRT_MIN_RZ = 0.3
+export const PAYDIRT_SIGNAL_N = 15
+
+// piecewise-linear lookup through isotonic calibration knots (same as matchup_engine._calibrate)
+function interp(x, knots) {
+  if (!knots?.x?.length) return x
+  const { x: xs, y: ys } = knots
+  if (x <= xs[0]) return ys[0]
+  for (let i = 1; i < xs.length; i++) {
+    if (x <= xs[i]) {
+      const t = xs[i] === xs[i - 1] ? 0 : (x - xs[i - 1]) / (xs[i] - xs[i - 1])
+      return ys[i - 1] + t * (ys[i] - ys[i - 1])
+    }
+  }
+  return ys[ys.length - 1]
+}
+
 function eligiblePaydirtPlayers(matchups) {
+  if (matchups.some((p) => p.p_td != null)) {
+    // thin_sample = no 2026 touches yet (scored off last season only) -- never in the backtest pool
+    return matchups.filter((p) => !p.thin_sample && (p.redzone_touches_per_game ?? 0) >= PAYDIRT_MIN_RZ && (p.injury_gate ?? 1) >= 0.75)
+  }
+  // pre-grade-model slate: the original top-2 red-zone players per team
   const byTeam = {}
   for (const p of matchups) {
     if (!p.redzone_touches_per_game) continue
@@ -55,18 +81,16 @@ export function usePaydirtSims() {
           const simMap = Object.fromEntries(e.data.map((r) => [r.player_id, r.sim_td_pct]))
           const merged = eligible.map((p) => ({ ...p, sim_td_pct: simMap[p.player_id] ?? 0 }))
 
-          // Paydirt Signal = top quartile of the grade model's TD % within this eligible pool
-          // (switched 2026-10-11 by the user's decision). Backtest 2023-25 on the same pool:
-          // 48.6% scored (49/48/49 by season) vs 42.9% for the old gTD + SimTD% + MatchupScore
-          // gate and 32% for the pool -- numbers live in grade_model.json -> validation.paydirt.
-          // Falls back to the old gate only if this week's pool predates the grade model.
+          // Paydirt Signal = the slate's top 15 by the grade model's TD % (grade model since
+          // 2026-10-11; wider pool + top-15 rule 2026-10-12). Backtest numbers for both pools live in
+          // grade_model.json -> validation.paydirt.pools. Falls back to the old gate only if this
+          // week's slate predates the grade model.
           const graded = merged.some((p) => p.p_td != null)
           if (graded) {
-            const gradeCut = percentile(merged.map((p) => p.p_td ?? 0), 0.75)
-            merged.forEach((p) => {
-              p.paydirt_signal = (p.p_td ?? 0) >= gradeCut
-            })
             merged.sort((a, b) => (b.p_td ?? 0) - (a.p_td ?? 0))
+            merged.forEach((p, i) => {
+              p.paydirt_signal = i < PAYDIRT_SIGNAL_N
+            })
           } else {
             const trueTdCut = percentile(merged.map((p) => p.gtd), 0.75)
             const simCut = percentile(merged.map((p) => p.sim_td_pct), 0.75)
@@ -89,6 +113,8 @@ export function usePaydirtSims() {
   return { rows, error, status }
 }
 
+export const YARDAGE_SIGNAL_N = 15
+
 export function useYardageSims() {
   const [rows, setRows] = useState(null)
   const [error, setError] = useState(null)
@@ -96,13 +122,20 @@ export function useYardageSims() {
   const workerRef = useRef(null)
 
   useEffect(() => {
-    fetch('/data/all_matchups_latest.json')
-      .then((r) => {
+    Promise.all([
+      fetch('/data/all_matchups_latest.json').then((r) => {
         if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
         return r.json()
-      })
-      .then((data) => {
-        const players = data.matchups.filter((p) => p.touches_per_game > 0)
+      }),
+      fetch('/data/grade_model.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ])
+      .then(([data, model]) => {
+        // Yardage Lab (2026-10-12): RB / WR / TE only -- every threshold here is scrimmage yards, and a
+        // QB's 225 line was passing yards the old sim never modeled. Line % = P(scrimmage yards >= line)
+        // from Est. Yards (usage + the opponent's per-position yardage leak) and the held-out spread of
+        // actual / estimated yards (grade_model.json -> yards.by_position[pos].ratio_quantiles).
+        const yards = model?.yards
+        const players = data.matchups.filter((p) => p.touches_per_game > 0 && (!yards || (yards.lines?.[p.position] != null && !p.thin_sample)))
         const avgTouches = players.reduce((a, p) => a + p.touches_per_game, 0) / (players.length || 1)
         const avgYpt = players.reduce((a, p) => a + p.ypt, 0) / (players.length || 1)
 
@@ -118,21 +151,39 @@ export function useYardageSims() {
               0,
               Math.min(99, 50 + (p.touches_per_game - avgTouches) * 3 + (p.ypt - avgYpt) * 2)
             )
-            const estYards = Math.round(p.touches_per_game * p.ypt * 10) / 10
+            const estYards = p.est_yards != null ? p.est_yards : Math.round(p.touches_per_game * p.ypt * 10) / 10
+            const q = yards?.by_position?.[p.position]?.ratio_quantiles
+            const line = yards?.lines?.[p.position]
+            const rawLine = q && line != null && p.est_yards != null
+              ? q.filter((r) => (p.est_yards + 5) * r - 5 >= line).length / q.length
+              : null
+            const linePct = rawLine != null ? interp(rawLine, yards.line_calibration) : null
             return {
               ...p,
               sim_yard_pct: simMap[p.player_id] ?? 0,
               on_field_score: onFieldScore,
               est_yards: estYards,
+              line_pct: linePct,
             }
           })
 
-          const onFieldCut = percentile(merged.map((p) => p.on_field_score), 0.75)
-          const simCut = percentile(merged.map((p) => p.sim_yard_pct), 0.75)
-          merged.forEach((p) => {
-            p.yardage_signal = p.on_field_score >= onFieldCut && p.opp_def_rank_pct >= 60 && p.sim_yard_pct >= simCut
-          })
-          merged.sort((a, b) => b.sim_yard_pct - a.sim_yard_pct)
+          if (merged.some((p) => p.line_pct != null)) {
+            // Yardage Signal = the slate's top 15 by Line % among players not Out/Doubtful
+            // (backtest vs the old gate: grade_model.json -> validation.yardage_lab)
+            merged.sort((a, b) => (b.line_pct ?? -1) - (a.line_pct ?? -1))
+            let n = 0
+            merged.forEach((p) => {
+              p.yardage_signal = (p.injury_gate ?? 1) >= 0.75 && p.line_pct != null && n < YARDAGE_SIGNAL_N
+              if (p.yardage_signal) n += 1
+            })
+          } else {
+            const onFieldCut = percentile(merged.map((p) => p.on_field_score), 0.75)
+            const simCut = percentile(merged.map((p) => p.sim_yard_pct), 0.75)
+            merged.forEach((p) => {
+              p.yardage_signal = p.on_field_score >= onFieldCut && p.opp_def_rank_pct >= 60 && p.sim_yard_pct >= simCut
+            })
+            merged.sort((a, b) => b.sim_yard_pct - a.sim_yard_pct)
+          }
           setRows(merged)
           setStatus('done')
           worker.terminate()

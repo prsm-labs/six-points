@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "latest_week": 5,
-  "generated_at": "2026-10-12T01:17:52.097477+00:00",
+  "generated_at": "2026-10-12T12:52:07.993127+00:00",
   "games": [
     {
       "game_id": "2026_01_NE_SEA",
@@ -857,9 +857,9 @@
       "away_team": "BAL",
       "gameday": "2026-10-11",
       "gametime": "20:20",
-      "roof": null,
-      "home_score": null,
-      "away_score": null
+      "roof": "open",
+      "home_score": 23,
+      "away_score": 30
     },
     {
       "game_id": "2026_05_BUF_LA",

@@ -90,7 +90,7 @@ export default function GameSimTab() {
       setSimRunning(false)
       worker.terminate()
     }
-    worker.postMessage({ home, away, leagueYpc: simInputs.league_ypc, vegasTdPerPoint: simInputs.vegas_td_per_point })
+    worker.postMessage({ home, away, leagueYpc: simInputs.league_ypc, vegasTdPerPoint: simInputs.vegas_td_per_point, vegasWeight: simInputs.vegas_weight ?? 0.5 })
   }
 
   // A real global matchup selection auto-runs this game's sim, so switching tabs after picking
@@ -124,14 +124,15 @@ export default function GameSimTab() {
     return best
   }
 
-  // Market projection (2026-10-11): our own point-in-time team scoring model lost to the Vegas line
-  // in all 5 held-out seasons 2021-25, so the projected score / win % shown here IS the market's,
-  // converted with the real spread error (margin vs spread std 12.6 pts, 2021-25).
+  // Market line (2026-10-11), shown as context: our own point-in-time team scoring model lost to the
+  // Vegas line in all 5 held-out seasons 2021-25, so the score / win % here are the market's, converted
+  // with the real spread error (margin vs spread std 12.6 pts). The sim's TD counts are a 50/50 blend of
+  // the market and our own team model (user, 2026-10-12) -- both inputs are shown.
   function MarketLine({ homeTeam, awayTeam }) {
     const h = simInputs?.teams?.[homeTeam]
     const a = simInputs?.teams?.[awayTeam]
     if (h?.implied_total == null || a?.implied_total == null) {
-      return <p className="meta-line small">No Vegas line posted for this game yet, so TD counts use each team's trailing scoring rates.</p>
+      return <p className="meta-line small">No Vegas line posted for this game yet, so TD counts use our own team model (each offense vs the opponent's defense).</p>
     }
     const sigma = simInputs.margin_sigma || 12.6
     const z = (h.spread || 0) / sigma
@@ -147,6 +148,10 @@ export default function GameSimTab() {
         <span>{fav} favored by {Math.abs(h.spread || 0).toFixed(1)} &middot; {fav} wins {(favWin * 100).toFixed(0)}%</span>
         <span>
           Projected TDs (drive the sim below): {awayTeam} {result?.away?.team?.td_mean ?? '…'}, {homeTeam} {result?.home?.team?.td_mean ?? '…'}
+          {result?.home?.team?.td_source === 'blend' && (
+            <> &middot; half market ({awayTeam} {result.away.team.td_vegas}, {homeTeam} {result.home.team.td_vegas}), half our
+              own team model ({awayTeam} {result.away.team.td_own}, {homeTeam} {result.home.team.td_own})</>
+          )}
         </span>
       </div>
     )

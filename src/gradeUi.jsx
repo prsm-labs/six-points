@@ -23,7 +23,7 @@ export function BreakoutBadge({ m }) {
   return (
     <span
       className={m.soft_matchup ? 'breakout-badge soft' : 'breakout-badge'}
-      title={`Breakout Watch: last-3-week touches ${Number(m.form_ratio).toFixed(2)}x his season rate, outside the week's top 15% by grade${m.soft_matchup ? ', facing a defense in the top third for TDs allowed to his position' : ''}`}
+      title={`Breakout Watch: last-3-week touches ${Number(m.form_ratio).toFixed(2)}x his season rate, outside the week's top 15% by grade${m.soft_matchup ? ', facing a top-third yardage matchup for his role and position' : ''}`}
     >
       📈{m.soft_matchup ? ' soft' : ''}
     </span>

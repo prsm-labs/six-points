@@ -5,6 +5,7 @@ import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { matchesPosition, usePosition } from './positionFilter.js'
 import { useSort, SortTh } from './useSort.jsx'
+import { MatchupCell } from './matchupUi.jsx'
 import PickButton from './PickButton.jsx'
 import KeyMatchupsTab from './KeyMatchupsTab.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag, useLiveOutFilter } from './gradeUi.jsx'
@@ -152,8 +153,8 @@ function BreakoutTable({ data, bo }) {
         {main && <> In the 2023-2025 backtest they beat the grade model's own expectation: TD lift {x(main.td_lift)}
           {' '}({Object.values(main.td_lift_by_season).map((v) => v.toFixed(2)).join(' / ')} by season), 100+ yard
           lift {x(main['100_lift'])}.</>}
-        {soft && <> With a soft defense (📈 soft): {x(soft.td_lift)} / {x(soft['100_lift'])}, but the soft-defense
-          TD edge isn't steady by season ({Object.values(soft.td_lift_by_season).map((v) => v.toFixed(2)).join(' / ')}),
+        {soft && <> With a soft matchup for his role (📈 soft, top third of yards allowed to his position):
+          {' '}{x(soft.td_lift)} / {x(soft['100_lift'])}, but that edge isn't steady by season ({Object.values(soft.td_lift_by_season).map((v) => v.toFixed(2)).join(' / ')}),
           so it's a tag, not a requirement.</>}
         {' '}Full tables: Track Record &gt; Grade Model.
       </p>
@@ -171,7 +172,7 @@ function BreakoutTable({ data, bo }) {
               <SortTh label="100+ %" sortKeyName="p_100" {...thProps} />
               <SortTh label="L3 touches/G" sortKeyName="l3_tpg_s" {...thProps} />
               <SortTh label="vs season" sortKeyName="form_ratio" {...thProps} />
-              <SortTh label="Soft D" sortKeyName="soft_matchup" {...thProps} />
+              <SortTh label="Matchup" sortKeyName="mu_pct" {...thProps} />
             </tr>
           </thead>
           <tbody>
@@ -192,7 +193,7 @@ function BreakoutTable({ data, bo }) {
                 <td>{fmtPct(m.p_100)}</td>
                 <td>{Number(m.l3_tpg_s).toFixed(1)}</td>
                 <td>{Number(m.form_ratio).toFixed(2)}x</td>
-                <td>{m.soft_matchup ? <BreakoutBadge m={m} /> : ''}</td>
+                <td>{m.mu_pct != null ? <MatchupCell m={m} /> : m.soft_matchup ? <BreakoutBadge m={m} /> : ''}</td>
               </tr>
             ))}
           </tbody>

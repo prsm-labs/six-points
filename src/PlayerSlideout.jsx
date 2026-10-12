@@ -5,6 +5,7 @@ import L7Chart, { defaultCategory } from './L7Chart.jsx'
 import GameLogTable from './GameLogTable.jsx'
 import PickButton from './PickButton.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
+import { MatchupCell, fmtYds, leakSummary, muTier } from './matchupUi.jsx'
 
 // Section order per spec §3: header, season stat line, matchup context, L7 chart, recent game
 // log, vs-opponent history. The dot timeline is skipped per spec
@@ -205,7 +206,7 @@ export default function PlayerSlideout() {
           ) : (
             <>
               <div className="slideout-section">
-                <h3>2025 Season</h3>
+                <h3>{player.season ? `${player.season} Season` : 'Season to date'}</h3>
                 <div className="stat-grid">
                   {seasonTotals(gameLog, position).map((s) => (
                     <div className="stat-tile" key={s.label}>
@@ -221,7 +222,12 @@ export default function PlayerSlideout() {
                   <h3>This Week's Matchup</h3>
                   <p className="meta-line">
                     {player.home_or_away === '@' ? '@' : 'vs'} {player.opponent}
-                    {player.opp_def_rank_pct != null && (
+                    {player.mu_pct != null ? (
+                      <> &middot; <MatchupCell m={player} /> {muTier(player)?.toLowerCase()} matchup for his role
+                        ({Math.round(player.mu_pct)}th percentile vs {player.position}s this week)
+                        {player.est_yards != null && <> &middot; Est. Yards {Number(player.est_yards).toFixed(0)}
+                          {' '}({fmtYds(player.mu_yds)} from the matchup)</>}</>
+                    ) : player.opp_def_rank_pct != null && (
                       <> &middot; opponent defense ranks in the {Math.round(player.opp_def_rank_pct)}th
                         percentile of yards allowed vs {position === 'RB' ? 'RB' : 'WR'} (higher = weaker
                         defense, better matchup)</>
@@ -231,6 +237,7 @@ export default function PlayerSlideout() {
                         (Vegas-implied, 50 = neutral)</>
                     )}
                   </p>
+                  {player.mu_pct != null && <p className="meta-line small">{leakSummary(player)}.</p>}
                 </div>
               )}
 

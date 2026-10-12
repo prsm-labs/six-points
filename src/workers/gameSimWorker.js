@@ -79,15 +79,22 @@ function weightedChoice(items, weights, totalWeight) {
 
 const SIMS = 3000
 
-// TD count driver (2026-10-11): the Vegas implied team total x TDs-per-implied-point beat the old
-// 0.5*off_td_avg + 0.5*def_td_allowed_avg mean in every held-out season 2023-25 (best blend was
-// 100% Vegas). The old mean is the fallback when no line is posted yet.
-function teamTdMean(teamInfo, oppTeamInfo, vegasTdPerPoint) {
-  if (teamInfo.implied_total != null && vegasTdPerPoint) return teamInfo.implied_total * vegasTdPerPoint
-  return Math.max(0, 0.5 * teamInfo.off_td_avg + 0.5 * (oppTeamInfo?.def_td_allowed_avg ?? teamInfo.def_td_allowed_avg))
+// TD count driver (2026-10-12, user: "keep the Vegas blend", not Vegas-driven): vegasWeight x (Vegas
+// implied total x TDs per implied point) + the rest x own_td_mean (our own model: league TD/g x this
+// offense x the opponent's defense, shrunk). Held out 2023-25, correlation with actual team TDs:
+// Vegas alone .395, 50/50 blend .347, own model alone .276. Missing either side -> the other one;
+// neither -> the old trailing 0.5*off_td_avg + 0.5*opp def_td_allowed_avg.
+function teamTdSources(teamInfo, oppTeamInfo, vegasTdPerPoint, vegasWeight) {
+  const vegas = teamInfo.implied_total != null && vegasTdPerPoint ? teamInfo.implied_total * vegasTdPerPoint : null
+  const own = teamInfo.own_td_mean ?? null
+  if (vegas != null && own != null) return { mean: vegasWeight * vegas + (1 - vegasWeight) * own, source: 'blend', vegas, own }
+  if (vegas != null) return { mean: vegas, source: 'vegas', vegas, own }
+  if (own != null) return { mean: own, source: 'own', vegas, own }
+  const trailing = Math.max(0, 0.5 * teamInfo.off_td_avg + 0.5 * (oppTeamInfo?.def_td_allowed_avg ?? teamInfo.def_td_allowed_avg))
+  return { mean: trailing, source: 'trailing', vegas, own }
 }
 
-function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo, vegasTdPerPoint) {
+function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo, vegasTdPerPoint, vegasWeight) {
   const stats = {}
   for (const p of rosterPlayers) {
     stats[p.player_id] = { carries: 0, rushYards: 0, targets: 0, receptions: 0, recYards: 0, tdSum: 0, tdHits: 0 }
@@ -107,7 +114,8 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo, vegasTdPe
   const tdWeights = tdCandidates.map((p) => p.usage_sig)
   const tdTotal = tdWeights.reduce((a, b) => a + b, 0)
 
-  const tdMean = teamTdMean(teamInfo, oppTeamInfo, vegasTdPerPoint)
+  const tdSrc = teamTdSources(teamInfo, oppTeamInfo, vegasTdPerPoint, vegasWeight)
+  const tdMean = tdSrc.mean
   let teamPlaysSum = 0
   let teamPassPlaysSum = 0
   let teamCompletionsSum = 0
@@ -192,16 +200,18 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo, vegasTdPe
       mean_pass_yards: Math.round(teamPassYardsSum / SIMS),
       mean_sacks: Math.round((teamSacksSum / SIMS) * 10) / 10,
       td_mean: Math.round(tdMean * 100) / 100,
-      td_source: teamInfo.implied_total != null && vegasTdPerPoint ? 'vegas' : 'trailing',
+      td_source: tdSrc.source,
+      td_vegas: tdSrc.vegas != null ? Math.round(tdSrc.vegas * 100) / 100 : null,
+      td_own: tdSrc.own != null ? Math.round(tdSrc.own * 100) / 100 : null,
     },
   }
 }
 
 self.onmessage = (e) => {
-  const { home, away, leagueYpc, vegasTdPerPoint } = e.data
+  const { home, away, leagueYpc, vegasTdPerPoint, vegasWeight = 0.5 } = e.data
   const result = {
-    home: simulateTeam(home.teamInfo, home.players, leagueYpc, away.teamInfo, vegasTdPerPoint),
-    away: simulateTeam(away.teamInfo, away.players, leagueYpc, home.teamInfo, vegasTdPerPoint),
+    home: simulateTeam(home.teamInfo, home.players, leagueYpc, away.teamInfo, vegasTdPerPoint, vegasWeight),
+    away: simulateTeam(away.teamInfo, away.players, leagueYpc, home.teamInfo, vegasTdPerPoint, vegasWeight),
   }
   self.postMessage(result)
 }

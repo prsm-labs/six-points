@@ -35,6 +35,7 @@ import PlayerSlideout from './PlayerSlideout.jsx'
 import TeamSlideout from './TeamSlideout.jsx'
 import OddsCalculator from './OddsCalculator.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
+import { MatchupCell } from './matchupUi.jsx'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -182,7 +183,7 @@ function AllMatchupsTable({ data }) {
       <p className="meta-line">
         Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length} matchups
         {hasGrades
-          ? <> &middot; <strong>Grade, TD % and 100+ %</strong> come from the backtested grade model (Track Record &gt; Grade Model); Usage Sig through Zone Score are the original stack</>
+          ? <> &middot; <strong>Grade, TD % and 100+ %</strong> come from the backtested grade model (Track Record &gt; Grade Model); Est. Yds and Matchup add what the opponent gives up to each player's position and role (hover a Matchup chip); Usage Sig through Zone Score are the original stack</>
           : <> &middot; all weights are v1 first-guesses, unvalidated beyond the Track Record backtest below</>}
         {' '}&middot; click a column header to sort
       </p>
@@ -198,6 +199,8 @@ function AllMatchupsTable({ data }) {
               {hasGrades && <SortTh label="Grade" sortKeyName="grade_pct" {...thProps} />}
               {hasGrades && <SortTh label="TD %" sortKeyName="p_td" {...thProps} />}
               {hasGrades && <SortTh label="100+ %" sortKeyName="p_100" {...thProps} />}
+              {hasGrades && <SortTh label="Est. Yds" sortKeyName="est_yards" {...thProps} />}
+              {hasGrades && <SortTh label="Matchup" sortKeyName="mu_pct" {...thProps} />}
               <SortTh label="Usage Sig" sortKeyName="usage_sig" {...thProps} />
               <SortTh label="gTD" sortKeyName="gtd" {...thProps} />
               <SortTh label="Explosive" sortKeyName="explosive_score" {...thProps} />
@@ -229,6 +232,8 @@ function AllMatchupsTable({ data }) {
                 {hasGrades && <td><GradeBadge grade={m.grade} title={`Top ${Math.max(1, Math.round((1 - m.grade_pct) * 100))}% of this week's pool`} /></td>}
                 {hasGrades && <td>{fmtPct(m.p_td)}</td>}
                 {hasGrades && <td>{fmtPct(m.p_100)}</td>}
+                {hasGrades && <td>{m.est_yards != null ? Number(m.est_yards).toFixed(0) : '—'}</td>}
+                {hasGrades && <td><MatchupCell m={m} /></td>}
                 <td>{Number(m.usage_sig).toFixed(1)}</td>
                 <td>{Number(m.gtd).toFixed(1)}</td>
                 <td>{Number(m.explosive_score).toFixed(1)}</td>

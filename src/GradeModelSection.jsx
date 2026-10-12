@@ -25,7 +25,17 @@ const FEATURE_LABELS = {
   l3_ypg: 'Scrimmage yards / game, last 3 weeks',
   ypt: 'Yards per touch',
   opp_def_rank_pct: "Opponent's yards-allowed rank (position)",
+  t_off: 'Own offense TDs / game (vs league)',
+  t_def: "Opponent defense TDs allowed / game",
+  t_rz: 'Red-zone trips: own offense x opponent defense',
+  m_rz: 'Red-zone touches opponent allows the position',
+  m_td: 'TDs opponent allows the position',
+  rz_leak: "Opponent's red-zone leak x his red-zone role",
+  yds_leak: "Yards the opponent's leak adds to his role",
+  mu_yds_mult: 'Yardage matchup multiplier for his role',
 }
+
+const fmtSigned = (x) => (x == null ? '—' : `${x > 0 ? '+' : ''}${Number(x).toFixed(1)}`)
 
 function auc(rows, score, hit) {
   const xs = rows.map((r) => ({ s: Number(r[score]), y: hit(r) ? 1 : 0 })).sort((a, b) => a.s - b.s)
@@ -249,8 +259,114 @@ export default function GradeModelSection() {
         </>
       )}
 
+      {v.feature_sets && (
+        <>
+          <h3>What drives the grades: Vegas vs our own team model, and position matchups</h3>
+          <div className="table-wrap">
+            <table>
+              <thead><tr><th>Inputs (each season held out)</th><th>TD AUC</th><th>TD top 15 / wk</th><th>100+ AUC</th><th>100+ top 15 / wk</th></tr></thead>
+              <tbody>
+                {Object.keys(v.feature_sets.td.candidates).map((k) => (
+                  <tr key={k}>
+                    <td>{k}</td>
+                    <td>{v.feature_sets.td.candidates[k].auc.toFixed(3)}</td>
+                    <td>{fmtPct(v.feature_sets.td.candidates[k].top15_hit, 1)}</td>
+                    <td>{v.feature_sets['100'].candidates[k]?.auc.toFixed(3)}</td>
+                    <td>{fmtPct(v.feature_sets['100'].candidates[k]?.top15_hit, 1)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="meta-line small">
+            Since 2026-10-12 the grades don't use the Vegas line (your call: not Vegas-driven). Our own team environment
+            (each offense's TD and red-zone rate vs the opponent defense's, shrunk toward last season) replaces it, at the
+            small cost shown above. Position matchup terms are kept when they don't hurt held-out accuracy
+            (TD: {v.feature_sets.td.matchup_kept ? 'kept' : 'dropped'}, 100+: {v.feature_sets['100'].matchup_kept ? 'kept' : 'dropped'});
+            they move the grades very little because, once a player's role is known, what a defense allows his position
+            barely changes his TD odds. The matchup shows up in yards, below.
+          </p>
+        </>
+      )}
+
+      {v.matchup && v.yards && (
+        <>
+          <h3>Position matchups and yards</h3>
+          <div className="table-wrap">
+            <table>
+              <thead><tr><th>Pos</th><th>Tough third</th><th>Middle</th><th>Soft third</th><th>Est. Yards miss (with / without matchup)</th><th>Used</th></tr></thead>
+              <tbody>
+                {Object.entries(v.matchup.yards_vs_usage_by_tercile).map(([pos, t]) => (
+                  <tr key={pos}>
+                    <td>{pos}</td>
+                    {['tough', 'mid', 'soft'].map((k) => (
+                      <td key={k} className="meta-line small">{Object.values(t[k]).map(fmtSigned).join(' / ')}</td>
+                    ))}
+                    <td>{v.yards[pos]?.with_matchup?.mae} / {v.yards[pos]?.usage_only?.mae} yds</td>
+                    <td>{v.yards[pos]?.matchup_used ? 'yes' : 'no'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="meta-line small">
+            Each cell: actual scrimmage yards minus the usage-only projection, per game, 2023 / 2024 / 2025, by how soft
+            the opponent was for the player's role (yards it allowed his position on deep vs short targets and carries,
+            this season so far, shrunk toward last season and the league). RBs and TEs did better in soft matchups every
+            season; WRs didn't, so WR matchups add 0 yards to Est. Yards. The effect is real but small next to the typical
+            miss, so it adjusts the projection rather than driving it.
+          </p>
+        </>
+      )}
+
+      {v.yardage_lab && (
+        <>
+          <h3>Yardage Signal backtest</h3>
+          <div className="table-wrap">
+            <table>
+              <thead><tr><th>Group (RB 60+ / WR-TE 75+ scrimmage yds)</th><th>n</th><th>Hit the line</th><th>by season</th></tr></thead>
+              <tbody>
+                {v.yardage_lab.gates.map((r) => (
+                  <tr key={r.group}>
+                    <td>{r.group}</td><td>{r.n.toLocaleString()}</td><td><strong>{fmtPct(r.hit_rate, 1)}</strong></td>
+                    <td className="meta-line small">{Object.values(r.by_season).map((x) => fmtPct(x)).join(' / ')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="meta-line small">
+            Ranking accuracy: Line % AUC {v.yardage_lab.auc_line_pct.toFixed(3)} vs the old SimYard% {v.yardage_lab.auc_old_sim.toFixed(3)}.
+            Line % calibration (said / happened): {v.yardage_lab.calibration.filter((c) => c.n >= 100).map((c) => `${fmtPct(c.said)}/${fmtPct(c.happened)}`).join(', ')}.
+          </p>
+        </>
+      )}
+
       {v.paydirt && (
         <>
+          {v.paydirt.pools && (
+            <>
+              <h3>Paydirt Lab pool</h3>
+              <div className="table-wrap">
+                <table>
+                  <thead><tr><th>Pool</th><th>Players / wk</th><th>Holds this share of real TD scorers</th><th>Top 15 / wk scored</th><th>by season</th></tr></thead>
+                  <tbody>
+                    {v.paydirt.pools.map((r) => (
+                      <tr key={r.pool}>
+                        <td>{r.pool}</td><td>{r.players_per_slate}</td><td>{fmtPct(r.share_of_td_scorers_in_pool, 1)}</td>
+                        <td><strong>{fmtPct(r.signal_td_rate, 1)}</strong></td>
+                        <td className="meta-line small">{Object.values(r.signal_by_season).map((x) => fmtPct(x)).join(' / ')}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="meta-line small">
+                The old pool (top 2 red-zone players per team, 4 a game) left out about two thirds of the players who
+                actually scored. Since 2026-10-12 the pool is everyone with {v.paydirt.min_rz}+ red-zone touches a game.
+              </p>
+            </>
+          )}
           <h3>Paydirt Signal: old gate vs grade gate</h3>
           <div className="table-wrap">
             <table>
@@ -267,7 +383,7 @@ export default function GradeModelSection() {
           </div>
           <p className="meta-line small">
             Ranking accuracy in the same pool: SimTD% AUC {v.paydirt.auc_sim.toFixed(3)} vs grade model {v.paydirt.auc_grade.toFixed(3)}.
-            Paydirt Lab's signal uses the grade gate since 2026-10-11.
+            Paydirt Lab's signal used the grade gate from 2026-10-11 (this table: the old top-2 pool) and the wider pool's top 15 from 2026-10-12.
           </p>
         </>
       )}

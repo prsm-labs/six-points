@@ -228,3 +228,19 @@ tr.heat-row.fire > td { background-image: linear-gradient(color-mix(in srgb, var
   text-transform: none;
   color: var(--muted);
 }
+
+/* Position matchup chips (2026-10-12, matchupUi.jsx) */
+.mu-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.mu-soft { background: color-mix(in srgb, var(--accent) 22%, transparent); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+.mu-neutral { color: var(--muted); }
+.mu-tough { color: var(--muted); opacity: 0.75; }
+.mu-yds { font-variant-numeric: tabular-nums; opacity: 0.85; }

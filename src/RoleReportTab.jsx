@@ -5,6 +5,7 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
+import { MatchupCell } from './matchupUi.jsx'
 
 // Role Report -- requested 2026-10-04 after the user showed a real props-tout breakdown
 // ("x3.00 role leak", target share, longshot odds) and asked where in the app to get something
@@ -167,7 +168,7 @@ export default function RoleReportTab() {
               <SortTh label="Target Share" sortKeyName="target_share" {...thProps} />
               <SortTh label="Carry Share" sortKeyName="carry_share" {...thProps} />
               <SortTh label="RZ Touches/G" sortKeyName="redzone_touches_per_game" {...thProps} />
-              <SortTh label="Opp Def %ile" sortKeyName="opp_def_rank_pct" {...thProps} />
+              <SortTh label="Matchup" sortKeyName="mu_pct" {...thProps} />
             </tr>
           </thead>
           <tbody>
@@ -193,7 +194,7 @@ export default function RoleReportTab() {
                 <td>{m.target_share != null ? `${(m.target_share * 100).toFixed(1)}%` : '—'}</td>
                 <td>{m.carry_share != null ? `${(m.carry_share * 100).toFixed(1)}%` : '—'}</td>
                 <td>{Number(m.redzone_touches_per_game).toFixed(1)}</td>
-                <td>{m.opp_def_rank_pct != null ? Number(m.opp_def_rank_pct).toFixed(0) : '—'}</td>
+                <td>{m.mu_pct != null ? <MatchupCell m={m} /> : m.opp_def_rank_pct != null ? Number(m.opp_def_rank_pct).toFixed(0) : '—'}</td>
               </tr>
             ))}
           </tbody>

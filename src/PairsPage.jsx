@@ -8,11 +8,12 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 function buildPairs(matchups) {
   // Concept doc §8: stack two players exploiting the SAME scheme weakness, not just shared
   // form. Proxy used here (no route-tree/coverage-scheme data available yet): teammates facing
-  // the same opponent who both individually clear a favorable-matchup bar (opp_def_rank_pct >=
-  // 60) are, by construction, both exploiting the same defense's weakness that week.
+  // the same opponent who both individually clear a favorable-matchup bar are, by construction, both
+  // exploiting the same defense's weakness that week. Bar (2026-10-12) = mu_pct >= 60, the position
+  // yardage matchup for each player's own role (matchupUi.jsx); old opp_def_rank_pct only as fallback.
   const byTeam = {}
   for (const p of matchups) {
-    if (p.opp_def_rank_pct < 60) continue
+    if ((p.mu_pct ?? p.opp_def_rank_pct) < 60) continue
     if (!byTeam[p.team]) byTeam[p.team] = []
     byTeam[p.team].push(p)
   }
@@ -96,8 +97,9 @@ function PairsTable({ pairs }) {
       <MatchupFilterNote />
       <p className="meta-line">
         {sorted.length} of top {pairs.length} same-team pairs where both players individually
-        clear a favorable-matchup bar (MatchupScore &ge; 60) against the same opponent -- both
-        exploiting the same defensive weakness that week &middot; click a column header to sort
+        have a favorable matchup for their own role (60th percentile or better vs their position:
+        yards the opponent allows on the targets / carries each one actually gets) -- both exploiting
+        the same defense that week &middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>

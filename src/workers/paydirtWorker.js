@@ -22,8 +22,11 @@ function samplePoisson(lambda) {
 function simulateOne(player, leagueAvgTdRateAllowed) {
   const touchesPerGame = player.touches_per_game || 0
   const tdRate = player.td_rate_per_touch || 0
+  // 2026-10-12: the opponent's TDs allowed to this position vs league (mu_td_idx, shrunk toward last
+  // season + league) when the engine provides it; the old unshrunk per-touch TD rate otherwise.
   const oppRate = player.opp_td_rate_allowed || leagueAvgTdRateAllowed
-  const matchupMultiplier = Math.min(2.0, Math.max(0.5, oppRate / (leagueAvgTdRateAllowed || 0.042)))
+  const rawMultiplier = player.mu_td_idx != null ? player.mu_td_idx : oppRate / (leagueAvgTdRateAllowed || 0.042)
+  const matchupMultiplier = Math.min(2.0, Math.max(0.5, rawMultiplier))
   const adjustedRate = Math.min(0.5, tdRate * matchupMultiplier)
 
   const SIMS = 10000

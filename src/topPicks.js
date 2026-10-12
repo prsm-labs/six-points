@@ -70,7 +70,7 @@ export function topPicks(rows, { excludeTeams } = {}) {
     { tier: 'Yards', stat: '100', m: yards, why: yards ? `Best shot at a 100-yard game (${pct(yards.p_100)}), from another team.` : '' },
     {
       tier: 'Breakout', stat: 'td', m: breakout,
-      why: breakout ? `Touches up ${Math.round((breakout.form_ratio - 1) * 100)}% over the last 3 weeks${breakout.soft_matchup ? ', against a defense in the top third for TDs allowed to his position' : ''}.` : '',
+      why: breakout ? `Touches up ${Math.round((breakout.form_ratio - 1) * 100)}% over the last 3 weeks${breakout.soft_matchup ? ', in a top-third matchup for his role (yards the defense allows his position)' : ''}.` : '',
     },
   ]
 }

@@ -3,6 +3,7 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { MatchupCell, RzMatchupCell, leakSummary } from './matchupUi.jsx'
 
 // "Key Matchups" -- requested directly against Going Yard's own feature of the same name. Real
 // finding before building anything (grepped Going Yard's actual live source, same standing rule
@@ -28,8 +29,12 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 // data) are excluded -- "poised for a breakout given the matchup" implies a real current signal
 // exists to reason about, not a rookie/unknown-role fallback number.
 
+// 2026-10-12: matchup now = mu_pct (how many yards this opponent gives up to the player's own role
+// -- his deep/short targets and carries -- vs the rest of his position, build_matchup_features), not
+// the old opp_def_rank_pct (raw yards per play allowed, whose >= 60 cut showed no TD lift 2023-25).
+// Still weighted by real role (usage_sig), so a soft matchup with no role doesn't rank.
 function matchupUpside(m) {
-  return m.opp_def_rank_pct * (m.usage_sig / 14)
+  return (m.mu_pct ?? m.opp_def_rank_pct) * (m.usage_sig / 14)
 }
 
 function PlayerCard({ m, rank }) {
@@ -42,11 +47,21 @@ function PlayerCard({ m, rank }) {
           <strong>{m.player_name}</strong>
         </div>
         <div className="meta-line" style={{ margin: '2px 0' }}>{m.position} &middot; Usage Sig {Number(m.usage_sig).toFixed(1)}</div>
-        <div className="meta-line small" style={{ margin: 0 }}>
-          Matchup: {Number(m.opp_def_rank_pct).toFixed(0)}th pct vs {m.position} &middot;
-          RZ Touches/G {Number(m.redzone_touches_per_game).toFixed(1)} &middot;
-          1st TD% {Number(m.first_td_pct).toFixed(1)}%
-        </div>
+        {m.mu_pct != null ? (
+          <>
+            <div className="meta-line small" style={{ margin: 0, display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
+              <MatchupCell m={m} /> yds matchup &middot; <RzMatchupCell m={m} /> RZ touches allowed &middot;
+              Est. Yards {m.est_yards != null ? Number(m.est_yards).toFixed(0) : '—'}
+            </div>
+            <div className="meta-line small" style={{ margin: '2px 0 0' }}>{leakSummary(m)}</div>
+          </>
+        ) : (
+          <div className="meta-line small" style={{ margin: 0 }}>
+            Matchup: {Number(m.opp_def_rank_pct).toFixed(0)}th pct vs {m.position} &middot;
+            RZ Touches/G {Number(m.redzone_touches_per_game).toFixed(1)} &middot;
+            1st TD% {Number(m.first_td_pct).toFixed(1)}%
+          </div>
+        )}
       </div>
     </div>
   )
@@ -135,12 +150,13 @@ export default function KeyMatchupsTab() {
     <div>
       <MatchupFilterNote />
       <p className="meta-line">
-        Week {data.week} &middot; our own computed "which matchup looks most favorable on paper"
-        cut -- top 3 per team by opponent defensive matchup (position-specific) weighted by real
-        usage, not just top overall Zone Score &middot; NOT a port of Going Yard's own Key
+        Week {data.week} &middot; top 3 per team by how soft the opponent is for each player's own role
+        (yards it allows his position on the kind of touches he gets: deep vs short targets, carries),
+        weighted by real usage &middot; the +/- number is how many of his Est. Yards come from the matchup
+        &middot; hover a chip for what the defense gives up &middot; NOT a port of Going Yard's own Key
         Matchup flag, which is a human researcher's daily manual pick with no algorithmic
-        equivalent in that app either &middot; a favorable matchup on paper is not a validated
-        prediction -- see the Track Record tab for how this app's real predictions have actually
+        equivalent in that app either &middot; in the 2023-25 backtest position matchups moved yards
+        (RB and TE most), not TD odds -- see Yardage Lab and the Track Record tab for how this app's real predictions have actually
         performed &middot; for the backtested version of this idea (rising usage, soft matchup), see
         the Breakout Watch view above
       </p>

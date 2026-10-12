@@ -7,6 +7,8 @@ import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import { fmtPct, GradeBadge } from './gradeUi.jsx'
+import { RzMatchupCell, pct1, useGradeModel } from './matchupUi.jsx'
+import { PAYDIRT_MIN_RZ, PAYDIRT_SIGNAL_N } from './useLabSims.js'
 
 export default function PaydirtLab() {
   const { rows, error, status } = usePaydirtSims()
@@ -35,6 +37,8 @@ function PaydirtTable({ rows }) {
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
   const { selectedMatchup } = useMatchup()
+  const model = useGradeModel()
+  const pools = model?.validation?.paydirt?.pools
 
   const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
   const filtered = useMemo(() => {
@@ -75,16 +79,26 @@ function PaydirtTable({ rows }) {
       </div>
       <MatchupFilterNote />
       <p className="meta-line">
-        {sorted.length} of {rows.length} eligible players (top-2 red-zone touch option per team)
         {graded
-          ? <> &middot; <strong>Paydirt Signal</strong> = top quarter of this pool by the grade model's
-            TD % (switched from the old gTD + SimTD% + MatchupScore gate on 2026-10-11). Backtest
-            2023-2025, same pool: 48.6% of signals scored (49% / 48% / 49% by season) vs 42.9% for the
-            old gate and 32% for the whole pool</>
-          : <> &middot; Paydirt Signal gate is empirical (top-quartile TrueTDScore + SimTD%,
-            MatchupScore &ge; 60)</>}
+          ? <>{sorted.length} of {rows.length} players with a red-zone role ({PAYDIRT_MIN_RZ}+ red-zone touches a game,
+            has played this season, not Out/Doubtful) &middot; <strong>Paydirt Signal</strong> = the slate's top {PAYDIRT_SIGNAL_N} by the
+            grade model's TD %</>
+          : <>{sorted.length} of {rows.length} eligible players (top-2 red-zone touch option per team) &middot; Paydirt
+            Signal gate is empirical (top-quartile TrueTDScore + SimTD%, MatchupScore &ge; 60)</>}
         {' '}&middot; click a column header to sort
       </p>
+      {graded && pools?.length === 2 && (
+        <p className="meta-line small">
+          Backtest 2023-2025: this pool averaged {pools[1].players_per_slate} players a week and held{' '}
+          {pct1(pools[1].share_of_td_scorers_in_pool)} of the players who actually scored, vs{' '}
+          {pools[0].players_per_slate} and {pct1(pools[0].share_of_td_scorers_in_pool)} for the old top-2-per-team pool.
+          The top {PAYDIRT_SIGNAL_N} scored {pct1(pools[1].signal_td_rate)} of the time
+          ({Object.values(pools[1].signal_by_season).map((v) => pct1(v)).join(' / ')} by season). RZ Matchup = red-zone
+          touches the opponent allows the position vs league average (hover for TDs allowed). It's one of TD %'s
+          inputs, but a small one: held out, position matchups barely changed TD odds once a player's role was
+          known -- they show up in yards (Yardage Lab).
+        </p>
+      )}
       {graded && (
         <p className="meta-line small">
           SimTD% (10,000 simulated games each) is kept as a scenario number only. On 2023-2025 it ranked
@@ -103,7 +117,7 @@ function PaydirtTable({ rows }) {
               <SortTh label="Touches/G" sortKeyName="touches_per_game" {...thProps} />
               <SortTh label="RZ Touches/G" sortKeyName="redzone_touches_per_game" {...thProps} />
               <SortTh label="TrueTDScore" sortKeyName="gtd" {...thProps} />
-              <SortTh label="MatchupScore" sortKeyName="opp_def_rank_pct" {...thProps} />
+              <SortTh label="RZ Matchup" sortKeyName="mu_rz_idx" {...thProps} />
               {graded && <SortTh label="TD %" sortKeyName="p_td" {...thProps} />}
               <SortTh label="SimTD%" sortKeyName="sim_td_pct" {...thProps} />
               <th>Signal</th>
@@ -132,7 +146,7 @@ function PaydirtTable({ rows }) {
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.redzone_touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.gtd).toFixed(1)}</td>
-                <td>{Number(p.opp_def_rank_pct).toFixed(1)}</td>
+                <td><RzMatchupCell m={p} /></td>
                 {graded && <td className="zone-score">{fmtPct(p.p_td)} <GradeBadge grade={p.grade} /></td>}
                 <td className={graded ? undefined : 'zone-score'}>{p.sim_td_pct.toFixed(1)}%</td>
                 <td>{p.paydirt_signal ? <span className="tier tier-lock">Paydirt</span> : ''}</td>
