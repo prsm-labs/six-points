@@ -141,7 +141,8 @@ export default function KeyMatchupsTab() {
         Matchup flag, which is a human researcher's daily manual pick with no algorithmic
         equivalent in that app either &middot; a favorable matchup on paper is not a validated
         prediction -- see the Track Record tab for how this app's real predictions have actually
-        performed
+        performed &middot; for the backtested version of this idea (rising usage, soft matchup), see
+        the Breakout Watch view above
       </p>
       {games.map((g) => (
         <GameCard

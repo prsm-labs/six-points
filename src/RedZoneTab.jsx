@@ -4,6 +4,7 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { setPosition, usePosition } from './positionFilter.js'
 
 // Season-long high-usage red-zone player page (a separate ask from the live Heating Up/On Fire
 // tab -- this one's "throughout the season," not live-only). Reuses redzone_touches_per_game,
@@ -14,7 +15,7 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 export default function RedZoneTab() {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
-  const [position, setPosition] = useState('all')
+  const position = usePosition() // app-wide (positionFilter.js) -- this dropdown and the chip row share one value
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
 

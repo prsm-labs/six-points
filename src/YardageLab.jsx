@@ -5,6 +5,7 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useYardageSims, thresholdFor } from './useLabSims.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { setPosition, usePosition } from './positionFilter.js'
 
 export default function YardageLab() {
   const { rows, error, status } = useYardageSims()
@@ -29,7 +30,7 @@ export default function YardageLab() {
 }
 
 function YardageTable({ rows }) {
-  const [position, setPosition] = useState('all')
+  const position = usePosition() // app-wide (positionFilter.js) -- this dropdown and the chip row share one value
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
   const { selectedMatchup } = useMatchup()

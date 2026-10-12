@@ -79,7 +79,15 @@ function weightedChoice(items, weights, totalWeight) {
 
 const SIMS = 3000
 
-function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo) {
+// TD count driver (2026-10-11): the Vegas implied team total x TDs-per-implied-point beat the old
+// 0.5*off_td_avg + 0.5*def_td_allowed_avg mean in every held-out season 2023-25 (best blend was
+// 100% Vegas). The old mean is the fallback when no line is posted yet.
+function teamTdMean(teamInfo, oppTeamInfo, vegasTdPerPoint) {
+  if (teamInfo.implied_total != null && vegasTdPerPoint) return teamInfo.implied_total * vegasTdPerPoint
+  return Math.max(0, 0.5 * teamInfo.off_td_avg + 0.5 * (oppTeamInfo?.def_td_allowed_avg ?? teamInfo.def_td_allowed_avg))
+}
+
+function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo, vegasTdPerPoint) {
   const stats = {}
   for (const p of rosterPlayers) {
     stats[p.player_id] = { carries: 0, rushYards: 0, targets: 0, receptions: 0, recYards: 0, tdSum: 0, tdHits: 0 }
@@ -99,6 +107,7 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo) {
   const tdWeights = tdCandidates.map((p) => p.usage_sig)
   const tdTotal = tdWeights.reduce((a, b) => a + b, 0)
 
+  const tdMean = teamTdMean(teamInfo, oppTeamInfo, vegasTdPerPoint)
   let teamPlaysSum = 0
   let teamPassPlaysSum = 0
   let teamCompletionsSum = 0
@@ -146,7 +155,7 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo) {
         }
       }
     }
-    const numTds = samplePoisson(Math.max(0, 0.5 * teamInfo.off_td_avg + 0.5 * teamInfo.def_td_allowed_avg))
+    const numTds = samplePoisson(tdMean)
     if (tdTotal > 0) {
       for (let i = 0; i < numTds; i++) {
         const scorer = weightedChoice(tdCandidates, tdWeights, tdTotal)
@@ -182,15 +191,17 @@ function simulateTeam(teamInfo, rosterPlayers, leagueYpc, oppTeamInfo) {
       mean_completions: Math.round((teamCompletionsSum / SIMS) * 10) / 10,
       mean_pass_yards: Math.round(teamPassYardsSum / SIMS),
       mean_sacks: Math.round((teamSacksSum / SIMS) * 10) / 10,
+      td_mean: Math.round(tdMean * 100) / 100,
+      td_source: teamInfo.implied_total != null && vegasTdPerPoint ? 'vegas' : 'trailing',
     },
   }
 }
 
 self.onmessage = (e) => {
-  const { home, away, leagueYpc } = e.data
+  const { home, away, leagueYpc, vegasTdPerPoint } = e.data
   const result = {
-    home: simulateTeam(home.teamInfo, home.players, leagueYpc, away.teamInfo),
-    away: simulateTeam(away.teamInfo, away.players, leagueYpc, home.teamInfo),
+    home: simulateTeam(home.teamInfo, home.players, leagueYpc, away.teamInfo, vegasTdPerPoint),
+    away: simulateTeam(away.teamInfo, away.players, leagueYpc, home.teamInfo, vegasTdPerPoint),
   }
   self.postMessage(result)
 }

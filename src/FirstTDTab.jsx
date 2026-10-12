@@ -5,6 +5,7 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useWeekTDs } from './useWeekTDs.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { setPosition, usePosition } from './positionFilter.js'
 
 // First Touchdown -- the real NFL prop market (First TD Scorer / Team to Score First), not just
 // "anytime TD" (already Paydirt Lab's job). Two real, distinct halves:
@@ -26,7 +27,7 @@ const PASS_DEPENDENT_NOTE = 'v1, unvalidated -- see the tab note above'
 function PredictorTable() {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
-  const [position, setPosition] = useState('all')
+  const position = usePosition() // app-wide (positionFilter.js) -- this dropdown and the chip row share one value
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
 

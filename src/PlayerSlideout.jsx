@@ -3,10 +3,12 @@ import { subscribePlayerSlide, closePlayerSlide, openTeamSlide } from './slideou
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import L7Chart, { defaultCategory } from './L7Chart.jsx'
 import GameLogTable from './GameLogTable.jsx'
+import PickButton from './PickButton.jsx'
+import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
 
 // Section order per spec §3: header, season stat line, matchup context, L7 chart, recent game
-// log, vs-opponent history. A picks button and dot timeline are explicitly skipped per spec
-// §3/§8 -- no picks system exists yet, and the dot timeline is optional.
+// log, vs-opponent history. The dot timeline is skipped per spec
+// §3/§8 -- the dot timeline is optional. (Picks button added 2026-10-11 with My Picks, picks.js.)
 
 function seasonTotals(games, position) {
   const sum = (key) => games.reduce((a, g) => a + (g[key] || 0), 0)
@@ -129,6 +131,7 @@ export default function PlayerSlideout() {
   const [directoryEntry, setDirectoryEntry] = useState(null)
   const [schemeSplits, setSchemeSplits] = useState(null)
   const [routeProfiles, setRouteProfiles] = useState(null)
+  const [weekRow, setWeekRow] = useState(null)
 
   useEffect(() => subscribePlayerSlide(setPlayer), [])
 
@@ -140,7 +143,10 @@ export default function PlayerSlideout() {
       fetch('/data/players.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/scheme_splits.json').then((r) => (r.ok ? r.json() : null)),
       fetch('/data/route_profiles.json').then((r) => (r.ok ? r.json() : null)),
-    ]).then(([logs, directory, scheme, routes]) => {
+      fetch('/data/all_matchups_latest.json').then((r) => (r.ok ? r.json() : null)),
+    ]).then(([logs, directory, scheme, routes, latest]) => {
+      // this week's grade-model row, so the header shows it (and picks save it) from any tab
+      setWeekRow(latest?.matchups?.find((m) => m.player_id === player.player_id) || null)
       setGameLog(logs[player.player_id] || [])
       setDirectoryEntry(directory[player.player_id] || null)
       setSchemeSplits(scheme)
@@ -173,6 +179,15 @@ export default function PlayerSlideout() {
                 {player.team}
               </button>
             </div>
+            {weekRow?.grade && (
+              <div className="sub slideout-grade">
+                Week {weekRow.week}: <GradeBadge grade={weekRow.grade} /> TD {fmtPct(weekRow.p_td)} &middot; 100+ {fmtPct(weekRow.p_100)}
+                {' '}<BreakoutBadge m={weekRow} /> <LiveStatusTag m={weekRow} />
+              </div>
+            )}
+            {(weekRow || player.player_id) && (
+              <div style={{ margin: '4px 0' }}><PickButton player={weekRow || player} /></div>
+            )}
             {directoryEntry?.stats_url && (
               <a href={directoryEntry.stats_url} target="_blank" rel="noopener noreferrer" className="external-link">
                 View on ESPN &rarr;

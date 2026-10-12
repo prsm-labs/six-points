@@ -82,7 +82,8 @@ export default function CheatSheetTab() {
   const tdCandidates = useMemo(() => {
     if (!paydirt.rows) return null
     const pool = selectedMatchup ? paydirt.rows.filter((p) => isInSelectedMatchup(selectedMatchup, p.team)) : paydirt.rows
-    return [...pool].sort((a, b) => b.sim_td_pct - a.sim_td_pct).slice(0, 5)
+    // Ranked by the grade model's TD % when present (Paydirt switched to it 2026-10-11)
+    return [...pool].sort((a, b) => (b.p_td ?? b.sim_td_pct / 100) - (a.p_td ?? a.sim_td_pct / 100)).slice(0, 5)
   }, [paydirt.rows, selectedMatchup])
 
   const yardageCandidates = useMemo(() => {
@@ -119,7 +120,7 @@ export default function CheatSheetTab() {
         <Section
           emoji="🏈"
           title="TD Candidates"
-          note="Top 5 by SimTD% (Paydirt Lab's own eligible pool and sims, reused as-is)"
+          note="Top 5 by the grade model's TD % (Paydirt Lab's eligible pool)"
         >
           {!tdCandidates ? (
             <p className="empty-state">Simulating...</p>
@@ -133,9 +134,9 @@ export default function CheatSheetTab() {
                 team={p.team}
                 opponent={p.opponent}
                 position={p.position}
-                stat={`${p.sim_td_pct.toFixed(1)}%`}
-                statLabel="SimTD%"
-                sub={`TrueTDScore ${p.gtd.toFixed(1)}`}
+                stat={p.p_td != null ? `${(p.p_td * 100).toFixed(0)}%` : `${p.sim_td_pct.toFixed(1)}%`}
+                statLabel={p.p_td != null ? 'TD %' : 'SimTD%'}
+                sub={p.p_td != null ? `Grade ${p.grade} · SimTD% ${p.sim_td_pct.toFixed(1)}%` : `TrueTDScore ${p.gtd.toFixed(1)}`}
               />
             ))
           )}

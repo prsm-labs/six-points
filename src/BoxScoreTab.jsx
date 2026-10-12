@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect, useRef } from 'react'
 import { resolveEventIds } from './espnGameResolver.js'
 import { openTeamSlide, openPlayerSlide } from './slideouts.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
@@ -64,7 +64,59 @@ async function fetchGameDetail(eventId) {
   return { boxscore: data.boxscore, drives, status, score: Object.keys(score).length ? score : null, fetchedAt: Date.now() }
 }
 
-function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
+// Live heat on the box score itself (PROMPT_SixPoints_MirrorSlapShot.md §4) -- the same rules
+// as Live > Heating Up (useLiveUsage.js): "high usage" = top 35% of touches (carries + targets),
+// On Fire = high usage + a TD, Heating Up = high usage + touches rose since the previous poll.
+// Computed within the one game being viewed, and only while it's live.
+const HIGH_USAGE_PERCENTILE = 0.65
+
+function statOf(cat, athleteId, label) {
+  const idx = cat?.labels?.indexOf(label) ?? -1
+  if (idx === -1) return 0
+  const a = cat.athletes.find((x) => x.athlete?.id === athleteId)
+  const n = Number(a?.stats?.[idx])
+  return Number.isFinite(n) ? n : 0
+}
+
+function boxTouches(boxscore) {
+  const out = new Map()
+  for (const teamEntry of boxscore?.players || []) {
+    const rushing = teamEntry.statistics?.find((c) => c.name === 'rushing')
+    const receiving = teamEntry.statistics?.find((c) => c.name === 'receiving')
+    const ids = new Set()
+    for (const cat of [rushing, receiving]) for (const a of cat?.athletes || []) if (a.athlete?.id) ids.add(a.athlete.id)
+    for (const id of ids) {
+      out.set(id, {
+        touches: statOf(rushing, id, 'CAR') + statOf(receiving, id, 'TGTS'),
+        tds: statOf(rushing, id, 'TD') + statOf(receiving, id, 'TD'),
+      })
+    }
+  }
+  return out
+}
+
+function heatMap(boxscore, prevTouches) {
+  const cur = boxTouches(boxscore)
+  const withTouches = [...cur.entries()].filter(([, v]) => v.touches > 0).sort((a, b) => b[1].touches - a[1].touches)
+  const cutIdx = Math.max(0, Math.ceil(withTouches.length * (1 - HIGH_USAGE_PERCENTILE)) - 1)
+  const threshold = withTouches[cutIdx]?.[1].touches ?? Infinity
+  const heat = new Map()
+  for (const [id, v] of withTouches) {
+    if (v.touches < threshold) continue
+    const prev = prevTouches?.get(id)
+    if (v.tds >= 1) heat.set(id, 'fire')
+    else if (prev != null && v.touches > prev) heat.set(id, 'heat')
+  }
+  return { heat, touches: new Map([...cur.entries()].map(([id, v]) => [id, v.touches])) }
+}
+
+function HeatTag({ kind }) {
+  if (kind === 'fire') return <span className="heat-tag fire" title="On Fire: high usage in this game and a TD">🔥 On Fire</span>
+  if (kind === 'heat') return <span className="heat-tag" title="Heating Up: high usage and touches rising since the last update">▲ Heating Up</span>
+  return null
+}
+
+function PlayerBoxCategory({ category, espnIdToPlayer, team, heat }) {
   if (!category.athletes || category.athletes.length === 0) return null
 
   return (
@@ -85,8 +137,9 @@ function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
           <tbody>
             {category.athletes.map((a, i) => {
               const match = espnIdToPlayer.get(a.athlete?.id)
+              const hot = heat?.get(a.athlete?.id)
               return (
-                <tr key={i}>
+                <tr key={i} className={hot ? `heat-row ${hot}` : undefined}>
                   <td className="sticky-col">
                     {match ? (
                       <button
@@ -105,6 +158,7 @@ function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
                     ) : (
                       a.athlete?.displayName
                     )}
+                    {hot && <> <HeatTag kind={hot} /></>}
                   </td>
                   {a.stats.map((s, j) => (
                     <td key={j}>{s}</td>
@@ -127,7 +181,7 @@ function PlayerBoxCategory({ category, espnIdToPlayer, team }) {
   )
 }
 
-function PlayerBoxTables({ boxscore, espnIdToPlayer, espnAbbrToNflverse }) {
+function PlayerBoxTables({ boxscore, espnIdToPlayer, espnAbbrToNflverse, heat }) {
   if (!boxscore?.players) return null
 
   return (
@@ -141,7 +195,7 @@ function PlayerBoxTables({ boxscore, espnIdToPlayer, espnAbbrToNflverse }) {
               {nflverseAbbr}
             </button>
             {teamEntry.statistics.map((cat) => (
-              <PlayerBoxCategory key={cat.name} category={cat} espnIdToPlayer={espnIdToPlayer} team={nflverseAbbr} />
+              <PlayerBoxCategory key={cat.name} category={cat} espnIdToPlayer={espnIdToPlayer} team={nflverseAbbr} heat={heat} />
             ))}
           </div>
         )
@@ -197,7 +251,7 @@ function PlayByPlay({ drives, espnAbbrToNflverse }) {
   )
 }
 
-function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse }) {
+function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse, heat }) {
   const [showPlayers, setShowPlayers] = useState(false)
   const [showPlays, setShowPlays] = useState(false)
 
@@ -263,14 +317,14 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse 
       </div>
 
       {showPlayers && (
-        <PlayerBoxTables boxscore={boxscore} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} />
+        <PlayerBoxTables boxscore={boxscore} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} heat={heat} />
       )}
       {showPlays && <PlayByPlay drives={drives} espnAbbrToNflverse={espnAbbrToNflverse} />}
     </div>
   )
 }
 
-function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, espnAbbrToNflverse }) {
+function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, espnAbbrToNflverse, heat }) {
   // Prefer the live score off the fetched detail -- season_schedule.json's score is stale for a
   // game that's still in progress (and absent entirely for one that hasn't kicked off).
   const liveAway = detail?.score?.away
@@ -307,6 +361,7 @@ function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, es
           loading={loading}
           espnIdToPlayer={espnIdToPlayer}
           espnAbbrToNflverse={espnAbbrToNflverse}
+          heat={heat}
         />
       )}
     </div>
@@ -421,6 +476,22 @@ export default function BoxScoreTab() {
   // on its own once ESPN reports the game final (status.state === 'post').
   const selectedStatusState = details[selectedGameId]?.status?.state
   const selectedEventId = eventIdByGame[selectedGameId]
+
+  // Heat for the selected game: compare each new poll's touches with the previous poll's.
+  const prevTouchesRef = useRef({ gameId: null, fetchedAt: null, prev: null, cur: null })
+  const selectedDetail = details[selectedGameId]
+  const heat = useMemo(() => {
+    if (!selectedDetail?.boxscore || selectedDetail.status?.state !== 'in') return null
+    const ref = prevTouchesRef.current
+    if (ref.gameId !== selectedGameId) Object.assign(ref, { gameId: selectedGameId, fetchedAt: null, prev: null, cur: null })
+    if (ref.fetchedAt !== selectedDetail.fetchedAt) {
+      ref.prev = ref.cur
+      ref.fetchedAt = selectedDetail.fetchedAt
+      ref.cur = boxTouches(selectedDetail.boxscore)
+      ref.cur = new Map([...ref.cur.entries()].map(([id, v]) => [id, v.touches]))
+    }
+    return heatMap(selectedDetail.boxscore, ref.prev).heat
+  }, [selectedDetail, selectedGameId])
   useEffect(() => {
     if (!selectedGameId || !selectedEventId) return
     if (selectedStatusState === 'post') return
@@ -487,6 +558,7 @@ export default function BoxScoreTab() {
           loading={loadingGameId === g.game_id}
           espnIdToPlayer={espnIdToPlayer}
           espnAbbrToNflverse={espnAbbrToNflverse}
+          heat={selectedGameId === g.game_id ? heat : null}
         />
       ))}
     </div>

@@ -4,6 +4,7 @@ import { usePlayerDirectory, PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { setPosition, usePosition } from './positionFilter.js'
 
 // Real per-player primetime vs. non-primetime splits -- a lookup/comparison tool, NOT a
 // predictor. Built after the "does usage shift away from stars in primetime" hypothesis was
@@ -63,7 +64,7 @@ export default function PrimetimeSplitsTab() {
   const [error, setError] = useState(null)
   const directory = usePlayerDirectory()
 
-  const [position, setPosition] = useState('all')
+  const position = usePosition() // app-wide (positionFilter.js) -- this dropdown and the chip row share one value
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
 

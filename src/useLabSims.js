@@ -55,12 +55,26 @@ export function usePaydirtSims() {
           const simMap = Object.fromEntries(e.data.map((r) => [r.player_id, r.sim_td_pct]))
           const merged = eligible.map((p) => ({ ...p, sim_td_pct: simMap[p.player_id] ?? 0 }))
 
-          const trueTdCut = percentile(merged.map((p) => p.gtd), 0.75)
-          const simCut = percentile(merged.map((p) => p.sim_td_pct), 0.75)
-          merged.forEach((p) => {
-            p.paydirt_signal = p.gtd >= trueTdCut && p.opp_def_rank_pct >= 60 && p.sim_td_pct >= simCut
-          })
-          merged.sort((a, b) => b.sim_td_pct - a.sim_td_pct)
+          // Paydirt Signal = top quartile of the grade model's TD % within this eligible pool
+          // (switched 2026-10-11 by the user's decision). Backtest 2023-25 on the same pool:
+          // 48.6% scored (49/48/49 by season) vs 42.9% for the old gTD + SimTD% + MatchupScore
+          // gate and 32% for the pool -- numbers live in grade_model.json -> validation.paydirt.
+          // Falls back to the old gate only if this week's pool predates the grade model.
+          const graded = merged.some((p) => p.p_td != null)
+          if (graded) {
+            const gradeCut = percentile(merged.map((p) => p.p_td ?? 0), 0.75)
+            merged.forEach((p) => {
+              p.paydirt_signal = (p.p_td ?? 0) >= gradeCut
+            })
+            merged.sort((a, b) => (b.p_td ?? 0) - (a.p_td ?? 0))
+          } else {
+            const trueTdCut = percentile(merged.map((p) => p.gtd), 0.75)
+            const simCut = percentile(merged.map((p) => p.sim_td_pct), 0.75)
+            merged.forEach((p) => {
+              p.paydirt_signal = p.gtd >= trueTdCut && p.opp_def_rank_pct >= 60 && p.sim_td_pct >= simCut
+            })
+            merged.sort((a, b) => b.sim_td_pct - a.sim_td_pct)
+          }
           setRows(merged)
           setStatus('done')
           worker.terminate()

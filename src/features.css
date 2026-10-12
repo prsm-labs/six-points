@@ -1,0 +1,230 @@
+/* 2026-10-11 Slap Shot parity pass (PROMPT_SixPoints_MirrorSlapShot.md): grade badges, picks,
+   position chips, slate status, alerts, Top Picks, Grade Model page. One accent hue (green) with
+   brightness for hierarchy, per the network color rule; red only for "Out" and misses, as before. */
+
+.grade-badge {
+  display: inline-block;
+  min-width: 28px;
+  text-align: center;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+.g-aplus { background: var(--accent); color: var(--accent-fg); }
+.g-a { background: color-mix(in srgb, var(--accent) 70%, transparent); color: var(--accent-fg); }
+.g-aminus { background: color-mix(in srgb, var(--accent) 40%, transparent); color: var(--fg); }
+.g-b { background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--fg); }
+.g-c { background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--muted); }
+.g-d { border-color: var(--border); color: var(--muted); }
+.g-f { border-color: var(--border); color: var(--muted); opacity: 0.7; }
+
+.breakout-badge {
+  font-size: 0.72rem;
+  padding: 0 4px;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  color: var(--accent);
+  white-space: nowrap;
+}
+.breakout-badge.soft { background: color-mix(in srgb, var(--accent) 15%, transparent); }
+
+.live-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0 4px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.live-status.out { border-color: #c0392b; color: #e05545; }
+
+.pick-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.pick-btn:hover { border-color: var(--accent); color: var(--accent); }
+.pick-btn.picked { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+
+.pick-menu {
+  position: fixed;
+  z-index: 2000;
+  width: 170px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.pick-menu-title { font-size: 0.75rem; color: var(--muted); padding: 4px 8px; }
+.pick-menu button {
+  background: transparent;
+  border: none;
+  color: var(--fg);
+  text-align: left;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.pick-menu button:hover { background: var(--border); }
+.pick-menu button.active { background: var(--accent); color: var(--accent-fg); }
+.pick-menu .pick-remove { color: #e05545; }
+
+.position-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+.position-chips button {
+  background: var(--border);
+  border: none;
+  color: var(--fg);
+  padding: 3px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+.position-chips button.active { background: var(--accent); color: var(--accent-fg); }
+
+.inline-check {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px;
+  min-width: 150px;
+}
+.inline-check input { width: auto !important; }
+
+.slate-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+}
+.slate-status-detail { flex-basis: 100%; color: var(--fg); }
+
+.alert-bell { position: relative; }
+.alert-count {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: #e05545;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  padding: 0 5px;
+  line-height: 1.4;
+}
+.alert-toast {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  width: min(520px, calc(100vw - 32px));
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+  animation: alert-drop 0.25s ease-out;
+}
+.alert-toast.alert-status { border-color: #c0392b; }
+.alert-toast.alert-picked { box-shadow: 0 0 0 2px var(--accent), 0 8px 28px rgba(0, 0, 0, 0.4); }
+.alert-toast-body { flex: 1; display: flex; flex-direction: column; gap: 2px; cursor: pointer; font-size: 0.85rem; }
+.alert-toast-body span { color: var(--muted); }
+.alert-close { background: none; border: none; color: var(--muted); font-size: 1.2rem; cursor: pointer; }
+@keyframes alert-drop { from { transform: translate(-50%, -20px); opacity: 0; } to { transform: translate(-50%, 0); opacity: 1; } }
+.alert-item {
+  border-left: 3px solid var(--accent);
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.alert-item.alert-status { border-left-color: #c0392b; }
+.alert-item.alert-picked { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+
+.top-picks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 8px 0 12px;
+}
+.top-pick-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+}
+.top-pick-card.empty { opacity: 0.6; }
+.top-pick-tier {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.top-pick-head { display: flex; gap: 10px; align-items: center; }
+.top-pick-head > div { flex: 1; }
+.top-pick-stats { display: flex; gap: 10px; align-items: center; margin-top: 8px; font-size: 0.85rem; flex-wrap: wrap; }
+
+.grade-model-section { margin-top: 28px; }
+.grade-model-section h3 { margin: 18px 0 6px; font-size: 1rem; }
+.section-title { margin: 0 0 6px; font-size: 1.2rem; }
+.grade-model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+.coef-row { display: grid; grid-template-columns: minmax(0, 1.4fr) 1fr 48px; gap: 8px; align-items: center; font-size: 0.8rem; margin: 3px 0; }
+.coef-label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.coef-bar-track { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.coef-bar { display: block; height: 100%; border-radius: 4px; }
+.coef-bar.pos { background: var(--accent); }
+.coef-bar.neg { background: var(--muted); }
+.coef-val { text-align: right; font-variant-numeric: tabular-nums; }
+.slideout-grade { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.sub-tabs button.danger { background: #c0392b; color: #fff; }
+
+.heat-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 4px;
+  padding: 0 4px;
+  border-radius: 3px;
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  white-space: nowrap;
+}
+.heat-tag.fire { background: var(--accent); color: var(--accent-fg); }
+/* gradient overlay, so the sticky first column keeps its own opaque background underneath */
+tr.heat-row > td { background-image: linear-gradient(color-mix(in srgb, var(--accent) 8%, transparent), color-mix(in srgb, var(--accent) 8%, transparent)); }
+tr.heat-row.fire > td { background-image: linear-gradient(color-mix(in srgb, var(--accent) 16%, transparent), color-mix(in srgb, var(--accent) 16%, transparent)); }
+.lock-tag {
+  margin-left: 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+}

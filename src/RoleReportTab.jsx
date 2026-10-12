@@ -4,6 +4,7 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { setPosition, usePosition } from './positionFilter.js'
 
 // Role Report -- requested 2026-10-04 after the user showed a real props-tout breakdown
 // ("x3.00 role leak", target share, longshot odds) and asked where in the app to get something
@@ -62,7 +63,7 @@ export default function RoleReportTab() {
   const [matchupData, setMatchupData] = useState(null)
   const [simData, setSimData] = useState(null)
   const [error, setError] = useState(null)
-  const [position, setPosition] = useState('all')
+  const position = usePosition() // app-wide (positionFilter.js) -- this dropdown and the chip row share one value
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
 

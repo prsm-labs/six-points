@@ -90,7 +90,7 @@ export default function GameSimTab() {
       setSimRunning(false)
       worker.terminate()
     }
-    worker.postMessage({ home, away, leagueYpc: simInputs.league_ypc })
+    worker.postMessage({ home, away, leagueYpc: simInputs.league_ypc, vegasTdPerPoint: simInputs.vegas_td_per_point })
   }
 
   // A real global matchup selection auto-runs this game's sim, so switching tabs after picking
@@ -122,6 +122,34 @@ export default function GameSimTab() {
       }
     }
     return best
+  }
+
+  // Market projection (2026-10-11): our own point-in-time team scoring model lost to the Vegas line
+  // in all 5 held-out seasons 2021-25, so the projected score / win % shown here IS the market's,
+  // converted with the real spread error (margin vs spread std 12.6 pts, 2021-25).
+  function MarketLine({ homeTeam, awayTeam }) {
+    const h = simInputs?.teams?.[homeTeam]
+    const a = simInputs?.teams?.[awayTeam]
+    if (h?.implied_total == null || a?.implied_total == null) {
+      return <p className="meta-line small">No Vegas line posted for this game yet, so TD counts use each team's trailing scoring rates.</p>
+    }
+    const sigma = simInputs.margin_sigma || 12.6
+    const z = (h.spread || 0) / sigma
+    // standard normal CDF (Abramowitz-Stegun 7.1.26)
+    const t = 1 / (1 + 0.3275911 * Math.abs(z) / Math.SQRT2)
+    const erf = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-(z * z) / 2)
+    const homeWin = z >= 0 ? 0.5 * (1 + erf) : 0.5 * (1 - erf)
+    const fav = (h.spread || 0) >= 0 ? homeTeam : awayTeam
+    const favWin = fav === homeTeam ? homeWin : 1 - homeWin
+    return (
+      <div className="slate-status" style={{ marginBottom: 12 }}>
+        <span><strong>Market projection:</strong> {awayTeam} {a.implied_total.toFixed(1)} @ {homeTeam} {h.implied_total.toFixed(1)}</span>
+        <span>{fav} favored by {Math.abs(h.spread || 0).toFixed(1)} &middot; {fav} wins {(favWin * 100).toFixed(0)}%</span>
+        <span>
+          Projected TDs (drive the sim below): {awayTeam} {result?.away?.team?.td_mean ?? '…'}, {homeTeam} {result?.home?.team?.td_mean ?? '…'}
+        </span>
+      </div>
+    )
   }
 
   function ResultTable({ team, side }) {
@@ -191,12 +219,12 @@ export default function GameSimTab() {
   return (
     <div>
       <p className="meta-line">
-        Week {simInputs.week} &middot; click a matchup for a real, Monte Carlo-simulated projected
-        box score (3,000 iterations, real team pace + real team TD-rate + real per-player touch
-        shares -- see PROMPT_SixPoints_GameSimulation_Scope.md) &middot; v1: does NOT model field
-        goals, PATs, defense/special-teams scoring, or drive sequencing -- offensive skill-position
-        stats only &middot; not yet backtested against real final box scores -- treat this as a
-        real, disclosed first pass, not a validated prediction
+        Week {simInputs.week} &middot; click a matchup for a Monte Carlo projected box score (3,000
+        iterations: team pace, per-player touch shares, and a team TD count driven by the Vegas
+        implied total) &middot; backtested 2023-2025: the Vegas-driven TD count beat the old
+        trailing-rate one in every season, and the projected score / win % come straight from the
+        market because our own team model lost to it in all 5 seasons tested &middot; still no
+        field goals, PATs, defense/special-teams scoring or drive sequencing in the box score
       </p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 16 }}>
         {games.map((g) => (
@@ -212,6 +240,7 @@ export default function GameSimTab() {
       </div>
 
       {simRunning && <p className="empty-state">Simulating...</p>}
+      {result && <MarketLine homeTeam={result.homeTeam} awayTeam={result.awayTeam} />}
       {result && (
         <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
           <ResultTable team={result.awayTeam} side="away" />

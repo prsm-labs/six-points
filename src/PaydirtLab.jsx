@@ -5,6 +5,8 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { usePaydirtSims } from './useLabSims.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { setPosition, usePosition } from './positionFilter.js'
+import { fmtPct, GradeBadge } from './gradeUi.jsx'
 
 export default function PaydirtLab() {
   const { rows, error, status } = usePaydirtSims()
@@ -29,7 +31,7 @@ export default function PaydirtLab() {
 }
 
 function PaydirtTable({ rows }) {
-  const [position, setPosition] = useState('all')
+  const position = usePosition() // app-wide (positionFilter.js) -- this dropdown and the chip row share one value
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
   const { selectedMatchup } = useMatchup()
@@ -42,7 +44,8 @@ function PaydirtTable({ rows }) {
       .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
   }, [rows, position, team, search, selectedMatchup])
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'sim_td_pct', 'desc')
+  const graded = rows.some((p) => p.p_td != null)
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, graded ? 'p_td' : 'sim_td_pct', 'desc')
   const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   return (
@@ -73,10 +76,22 @@ function PaydirtTable({ rows }) {
       <MatchupFilterNote />
       <p className="meta-line">
         {sorted.length} of {rows.length} eligible players (top-2 red-zone touch option per team)
-        &middot; SimTD% from 10,000 simulated games each &middot; Paydirt Signal gate is empirical
-        (top-quartile TrueTDScore + SimTD%, MatchupScore &ge; 60) since no absolute threshold has
-        been validated yet &middot; click a column header to sort
+        {graded
+          ? <> &middot; <strong>Paydirt Signal</strong> = top quarter of this pool by the grade model's
+            TD % (switched from the old gTD + SimTD% + MatchupScore gate on 2026-10-11). Backtest
+            2023-2025, same pool: 48.6% of signals scored (49% / 48% / 49% by season) vs 42.9% for the
+            old gate and 32% for the whole pool</>
+          : <> &middot; Paydirt Signal gate is empirical (top-quartile TrueTDScore + SimTD%,
+            MatchupScore &ge; 60)</>}
+        {' '}&middot; click a column header to sort
       </p>
+      {graded && (
+        <p className="meta-line small">
+          SimTD% (10,000 simulated games each) is kept as a scenario number only. On 2023-2025 it ranked
+          these players worse than the grade model (AUC .58 vs .68) and was badly spread: its top fifth
+          said 63% and scored 40%, its bottom fifth said 4% and scored 22%.
+        </p>
+      )}
       <div className="table-wrap">
         <table>
           <thead>
@@ -89,6 +104,7 @@ function PaydirtTable({ rows }) {
               <SortTh label="RZ Touches/G" sortKeyName="redzone_touches_per_game" {...thProps} />
               <SortTh label="TrueTDScore" sortKeyName="gtd" {...thProps} />
               <SortTh label="MatchupScore" sortKeyName="opp_def_rank_pct" {...thProps} />
+              {graded && <SortTh label="TD %" sortKeyName="p_td" {...thProps} />}
               <SortTh label="SimTD%" sortKeyName="sim_td_pct" {...thProps} />
               <th>Signal</th>
             </tr>
@@ -117,7 +133,8 @@ function PaydirtTable({ rows }) {
                 <td>{Number(p.redzone_touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.gtd).toFixed(1)}</td>
                 <td>{Number(p.opp_def_rank_pct).toFixed(1)}</td>
-                <td className="zone-score">{p.sim_td_pct.toFixed(1)}%</td>
+                {graded && <td className="zone-score">{fmtPct(p.p_td)} <GradeBadge grade={p.grade} /></td>}
+                <td className={graded ? undefined : 'zone-score'}>{p.sim_td_pct.toFixed(1)}%</td>
                 <td>{p.paydirt_signal ? <span className="tier tier-lock">Paydirt</span> : ''}</td>
               </tr>
             ))}

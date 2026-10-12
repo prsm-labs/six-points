@@ -15,7 +15,15 @@ import DepthChartTab from './DepthChartTab.jsx'
 import NFLTab from './NFLTab.jsx'
 import RedZoneTab from './RedZoneTab.jsx'
 import PrimetimeSplitsTab from './PrimetimeSplitsTab.jsx'
-import KeyMatchupsTab from './KeyMatchupsTab.jsx'
+import BreakoutWatchTab from './BreakoutWatchTab.jsx'
+import MyPicksTab from './MyPicksTab.jsx'
+import GradeModelSection from './GradeModelSection.jsx'
+import PickButton from './PickButton.jsx'
+import { AlertBell, AlertsRunner, AlertToast } from './Alerts.jsx'
+import { LiveStatusRunner } from './liveStatus.js'
+import { setPosition, usePosition } from './positionFilter.js'
+import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag, PositionChips, SlateStatus, useLiveOutFilter } from './gradeUi.jsx'
+import './features.css'
 import GameSimTab from './GameSimTab.jsx'
 import RoleReportTab from './RoleReportTab.jsx'
 import MatchupSelector from './MatchupSelector.jsx'
@@ -104,7 +112,10 @@ function AllMatchups() {
 }
 
 function AllMatchupsTable({ data }) {
-  const [position, setPosition] = useState('all')
+  const position = usePosition()
+  const [hideOut, setHideOut] = useState(true)
+  const notOut = useLiveOutFilter()
+  const hasGrades = data?.matchups?.some((m) => m.p_td != null)
   const [team, setTeam] = useState('all')
   const [opponent, setOpponent] = useState('all')
   const [search, setSearch] = useState('')
@@ -121,9 +132,10 @@ function AllMatchupsTable({ data }) {
       .filter((m) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, m.team) : (team === 'all' || m.team === team))
       .filter((m) => opponent === 'all' || m.opponent === opponent)
       .filter((m) => !search || m.player_name.toLowerCase().includes(search.toLowerCase()))
-  }, [data, position, team, opponent, search, selectedMatchup])
+      .filter((m) => !hideOut || notOut(m))
+  }, [data, position, team, opponent, search, selectedMatchup, hideOut, notOut])
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, 'zone_score', 'desc')
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, hasGrades ? 'p_td' : 'zone_score', 'desc')
 
   if (!data) return <p className="empty-state">Loading...</p>
 
@@ -160,21 +172,32 @@ function AllMatchupsTable({ data }) {
           Player
           <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
+        <label className="inline-check">
+          <input type="checkbox" checked={hideOut} onChange={(e) => setHideOut(e.target.checked)} />
+          Hide players ESPN lists Out (live)
+        </label>
       </div>
+      <SlateStatus data={data} />
       <MatchupFilterNote />
       <p className="meta-line">
         Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length} matchups
-        &middot; all weights are v1 first-guesses, unvalidated beyond the Track Record backtest
-        below &middot; click a column header to sort
+        {hasGrades
+          ? <> &middot; <strong>Grade, TD % and 100+ %</strong> come from the backtested grade model (Track Record &gt; Grade Model); Usage Sig through Zone Score are the original stack</>
+          : <> &middot; all weights are v1 first-guesses, unvalidated beyond the Track Record backtest below</>}
+        {' '}&middot; click a column header to sort
       </p>
       <div className="table-wrap">
         <table>
           <thead>
             <tr>
               <SortTh label="Player" sortKeyName="player_name" className="sticky-col" {...thProps} />
+              <th />
               <SortTh label="Team" sortKeyName="team" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
+              {hasGrades && <SortTh label="Grade" sortKeyName="grade_pct" {...thProps} />}
+              {hasGrades && <SortTh label="TD %" sortKeyName="p_td" {...thProps} />}
+              {hasGrades && <SortTh label="100+ %" sortKeyName="p_100" {...thProps} />}
               <SortTh label="Usage Sig" sortKeyName="usage_sig" {...thProps} />
               <SortTh label="gTD" sortKeyName="gtd" {...thProps} />
               <SortTh label="Explosive" sortKeyName="explosive_score" {...thProps} />
@@ -188,9 +211,10 @@ function AllMatchupsTable({ data }) {
                 <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
-                    {m.player_name}
+                    {m.player_name} <BreakoutBadge m={m} /> <LiveStatusTag m={m} />
                   </div>
                 </td>
+                <td><PickButton player={m} compact /></td>
                 <td>
                   <button className="team-link" onClick={() => openTeamSlide({ team: m.team })}>
                     {m.team}
@@ -202,6 +226,9 @@ function AllMatchupsTable({ data }) {
                   </button>
                 </td>
                 <td>{m.position}</td>
+                {hasGrades && <td><GradeBadge grade={m.grade} title={`Top ${Math.max(1, Math.round((1 - m.grade_pct) * 100))}% of this week's pool`} /></td>}
+                {hasGrades && <td>{fmtPct(m.p_td)}</td>}
+                {hasGrades && <td>{fmtPct(m.p_100)}</td>}
                 <td>{Number(m.usage_sig).toFixed(1)}</td>
                 <td>{Number(m.gtd).toFixed(1)}</td>
                 <td>{Number(m.explosive_score).toFixed(1)}</td>
@@ -332,12 +359,14 @@ function TrackRecord() {
         </label>
       </div>
       {selectedWeek !== 'all' && <WeekDrillDown rows={weekRows} />}
+
+      <GradeModelSection />
     </div>
   )
 }
 
 function WeekDrillDown({ rows }) {
-  const [position, setPosition] = useState('all')
+  const position = usePosition()
   const [team, setTeam] = useState('all')
   const [search, setSearch] = useState('')
   const { selectedMatchup } = useMatchup()
@@ -451,18 +480,26 @@ export default function App() {
           >
             🧮
           </button>
+          <AlertBell />
         </div>
         <p className="tagline">NFL touchdown intelligence, weekly cadence, real backtests only.</p>
         <DataFreshnessBanner />
       </header>
       <TDMarquee onClick={() => setTab('tdtracker')} />
       <MatchupSelector />
+      <PositionChips />
+      <LiveStatusRunner />
+      <AlertsRunner />
+      <AlertToast />
       <nav className="tabs">
         <button className={tab === 'matchups' ? 'active' : ''} onClick={() => setTab('matchups')}>
           All Matchups
         </button>
         <button className={tab === 'keymatchups' ? 'active' : ''} onClick={() => setTab('keymatchups')}>
-          Key Matchups
+          Breakout Watch
+        </button>
+        <button className={tab === 'mypicks' ? 'active' : ''} onClick={() => setTab('mypicks')}>
+          My Picks
         </button>
         <button className={tab === 'rolereport' ? 'active' : ''} onClick={() => setTab('rolereport')}>
           Role Report
@@ -521,7 +558,8 @@ export default function App() {
       </nav>
       <main>
         {tab === 'matchups' && <AllMatchups />}
-        {tab === 'keymatchups' && <KeyMatchupsTab />}
+        {tab === 'keymatchups' && <BreakoutWatchTab />}
+        {tab === 'mypicks' && <MyPicksTab />}
         {tab === 'rolereport' && <RoleReportTab />}
         {tab === 'gamesim' && <GameSimTab />}
         {tab === 'paydirt' && <PaydirtLab />}
