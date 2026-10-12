@@ -13,6 +13,9 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 // no independently-verifiable code-to-label mapping without an authoritative NFL transaction-code
 // legend, and DTD isn't a real NFL term at all (it's MLB/NHL/NBA) -- see the doc's own explicit
 // caution before building either.
+// 2026-10-12: that gap is closed for QB/RB/WR/TE -- ESPN's roster feed labels injured reserve / PUP /
+// suspension in plain words, so depth_charts.json now carries ESPN's order + a status per skill player
+// (skill_source: 'espn'); other position groups and the fallback path are unchanged.
 
 const SKILL_POSITIONS = ['QB', 'RB', 'WR', 'TE']
 
@@ -80,11 +83,20 @@ export default function DepthChartTab() {
   return (
     <div>
       <MatchupFilterNote message={selectedMatchup && `Auto-selected ${team} from the global matchup selection (${selectedMatchup.away} @ ${selectedMatchup.home}) -- switch Team below for the other side`} />
-      <p className="meta-line">
-        Real 2026 depth chart (import_depth_charts()) &middot; skill positions (QB/RB/WR/TE) up
-        top since those are what the rest of the app has real stats for &middot; a status badge
-        appears next to a player on the current real injury report (Out/Doubtful/Questionable)
-      </p>
+      {depthCharts.skill_source === 'espn' ? (
+        <p className="meta-line">
+          QB / RB / WR / TE: ESPN's current depth chart, available players in order (the same order the
+          slate's RB1 / WR2 tags use), then players on injured reserve or Out at the bottom with their status
+          &middot; other groups: nflverse depth chart &middot; checked{' '}
+          {depthCharts.generated_at ? new Date(depthCharts.generated_at).toLocaleString() : '—'}
+        </p>
+      ) : (
+        <p className="meta-line">
+          Real 2026 depth chart (import_depth_charts()) &middot; skill positions (QB/RB/WR/TE) up
+          top since those are what the rest of the app has real stats for &middot; a status badge
+          appears next to a player on the current real injury report (Out/Doubtful/Questionable)
+        </p>
+      )}
       <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 16 }}>
         <label style={{ minWidth: 160 }}>
           Team
@@ -103,7 +115,8 @@ export default function DepthChartTab() {
                 <table>
                   <tbody>
                     {teamChart[pos].map((p, i) => {
-                      const status = p.name ? statusByPlayer[p.name] : null
+                      // ESPN-sourced skill groups carry their own status (2026-10-12); others use the report
+                      const status = p.status !== undefined ? p.status : (p.name ? statusByPlayer[p.name] : null)
                       return (
                         <tr key={i}>
                           <td style={{ width: 24 }}>{p.pos_rank ?? '—'}</td>
@@ -118,7 +131,7 @@ export default function DepthChartTab() {
                           </td>
                           <td>
                             {status && (
-                              <span className={status === 'Out' ? 'tier tier-fade' : status === 'Doubtful' ? 'tier tier-fringe' : 'tier tier-lean'}>
+                              <span className={status === 'Questionable' ? 'tier tier-lean' : status === 'Doubtful' ? 'tier tier-fringe' : 'tier tier-fade'}>
                                 {status}
                               </span>
                             )}

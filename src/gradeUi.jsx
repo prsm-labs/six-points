@@ -74,14 +74,38 @@ export function SlateStatus({ data }) {
     const t = setInterval(() => tick((x) => x + 1), 30000)
     return () => clearInterval(t)
   }, [])
+  const [npOpen, setNpOpen] = useState(false)
   if (!data) return null
   const outRows = data.matchups.filter((m) => liveStatusFor(m, live)?.out)
   const built = data.generated_at ? new Date(data.generated_at) : null
+  // 2026-10-12: players the engine took off the slate (ESPN roster: IR / practice squad / released / traded,
+  // or Out on this week's report), biggest roles first
+  const notPlaying = [...(data.not_playing || [])].sort((a, b) => (b.touches_per_game ?? 0) - (a.touches_per_game ?? 0))
+  const checked = data.roster_checked_at ? new Date(data.roster_checked_at) : null
   return (
     <div className="slate-status">
       <span>
         Week {data.week} pool built {built ? built.toLocaleString() : '—'}
       </span>
+      {data.roster_source && (
+        <span title="Who is on the slate: ESPN's live team rosters and depth charts (nflverse weekly rosters as the fallback). Injured reserve, practice squad, released / traded and Out players are removed and their role goes to the teammates still playing.">
+          Rosters checked {checked ? checked.toLocaleString() : '—'} ({data.roster_source === 'espn' ? 'ESPN' : 'nflverse'})
+        </span>
+      )}
+      {notPlaying.length > 0 && (
+        <button className="team-link" onClick={() => setNpOpen((o) => !o)}>
+          {notPlaying.length} not playing (IR, Out, practice squad…) {npOpen ? '▴' : '▾'}
+        </button>
+      )}
+      {npOpen && (
+        <div className="slate-status-detail not-playing-list">
+          {notPlaying.map((m) => (
+            <div key={`${m.team}-${m.player_id}`}>
+              {m.player_name} ({m.team} {m.position}) <span className="reason">{m.absent_reason}</span>
+            </div>
+          ))}
+        </div>
+      )}
       <span>
         {live.gamesToday > 0
           ? `Live injury check ${live.lastChecked ? live.lastChecked.toLocaleTimeString() : '…'} (${live.gamesToday} game${live.gamesToday === 1 ? '' : 's'} today)`

@@ -5,7 +5,7 @@ import L7Chart, { defaultCategory } from './L7Chart.jsx'
 import GameLogTable from './GameLogTable.jsx'
 import PickButton from './PickButton.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
-import { MatchupCell, fmtYds, leakSummary, muTier } from './matchupUi.jsx'
+import { DepthTag, MatchupCell, fmtYds, leakSummary, muTier, roleSummary } from './matchupUi.jsx'
 
 // Section order per spec §3: header, season stat line, matchup context, L7 chart, recent game
 // log, vs-opponent history. The dot timeline is skipped per spec
@@ -175,7 +175,7 @@ export default function PlayerSlideout() {
           <div className="slideout-header-info">
             <h2>{name}</h2>
             <div className="sub">
-              {position} &middot;{' '}
+              {position}<DepthTag m={weekRow || player} /> &middot;{' '}
               <button className="team-link" onClick={() => player.team && openTeamSlide({ team: player.team })}>
                 {player.team}
               </button>
@@ -238,6 +238,7 @@ export default function PlayerSlideout() {
                     )}
                   </p>
                   {player.mu_pct != null && <p className="meta-line small">{leakSummary(player)}.</p>}
+                  {roleSummary(player) && <p className="meta-line small">{roleSummary(player)}.</p>}
                 </div>
               )}
 

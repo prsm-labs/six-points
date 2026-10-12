@@ -289,6 +289,38 @@ export default function GradeModelSection() {
         </>
       )}
 
+      {v.role && (
+        <>
+          <h3>Who's on the slate, and who inherits the role</h3>
+          <div className="table-wrap">
+            <table>
+              <thead><tr><th>Vacated-role terms (each season held out)</th><th>TD AUC</th><th>TD top 15 / wk</th><th>100+ AUC</th><th>100+ top 15 / wk</th></tr></thead>
+              <tbody>
+                {Object.keys(v.role.td.candidates).map((k) => (
+                  <tr key={k}>
+                    <td>{{ none: 'None (usage, team, matchup only)', all: 'Every absent teammate', new: 'Newly absent teammates only' }[k] || k}
+                      {(v.role.td.kept === k || v.role['100'].kept === k) && <span className="meta-line small"> (used: {[v.role.td.kept === k && 'TD', v.role['100'].kept === k && '100+'].filter(Boolean).join(', ')})</span>}</td>
+                    <td>{v.role.td.candidates[k].auc.toFixed(3)}</td>
+                    <td>{fmtPct(v.role.td.candidates[k].top15_hit, 1)}</td>
+                    <td>{v.role['100'].candidates[k]?.auc.toFixed(3)}</td>
+                    <td>{fmtPct(v.role['100'].candidates[k]?.top15_hit, 1)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="meta-line small">
+            Since 2026-10-12 the slate is built from ESPN's live team rosters and depth charts. Players on injured reserve,
+            the practice squad, released or traded, or Out on this week's report are taken off it; in the 2023-25 history
+            that was 15.6% of the old rows, and they scored a TD 0.6% of the time, so they were also dragging the model
+            down. Each absent player's trailing carries, targets and red-zone touches are handed to the teammates still
+            playing, in proportion to each one's own share (the <em>+role</em> chip). A set of these terms is used only when
+            it improves held-out accuracy.{v.yards && <> In yards it is used for {Object.entries(v.yards)
+              .filter(([, y]) => y.role_used && y.role_used !== 'none').map(([pos, y]) => `${pos} (${y.role_used === 'new' ? 'new absences' : 'all absences'}, miss ${y.role[y.role_used]} vs ${(y.matchup_used ? y.with_matchup : y.usage_only).mae} yds)`).join(', ') || 'no position'}.</>}
+          </p>
+        </>
+      )}
+
       {v.matchup && v.yards && (
         <>
           <h3>Position matchups and yards</h3>

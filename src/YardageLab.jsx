@@ -6,7 +6,7 @@ import { useYardageSims, thresholdFor } from './useLabSims.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
-import { MatchupCell, fmtYds, leakSummary, pct1, useGradeModel } from './matchupUi.jsx'
+import { DepthTag, MatchupCell, RoleChip, fmtYds, leakSummary, pct1, useGradeModel } from './matchupUi.jsx'
 import { YARDAGE_SIGNAL_N } from './useLabSims.js'
 
 export default function YardageLab() {
@@ -158,10 +158,10 @@ function YardageTable({ rows }) {
                 <td>
                   <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />
-                    {p.player_name}
+                    {p.player_name} <RoleChip m={p} />
                   </div>
                 </td>
-                <td>{p.position}</td>
+                <td>{p.position}<DepthTag m={p} /></td>
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.ypt).toFixed(1)}</td>
                 <td className="zone-score">{p.est_yards.toFixed(1)}</td>

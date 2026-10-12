@@ -3,7 +3,7 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
-import { MatchupCell, RzMatchupCell, leakSummary } from './matchupUi.jsx'
+import { DepthTag, MatchupCell, RoleChip, RzMatchupCell, leakSummary, roleSummary } from './matchupUi.jsx'
 
 // "Key Matchups" -- requested directly against Going Yard's own feature of the same name. Real
 // finding before building anything (grepped Going Yard's actual live source, same standing rule
@@ -46,7 +46,7 @@ function PlayerCard({ m, rank }) {
         <div className="player-cell" style={{ padding: 0 }} onClick={() => openPlayerSlide(m)}>
           <strong>{m.player_name}</strong>
         </div>
-        <div className="meta-line" style={{ margin: '2px 0' }}>{m.position} &middot; Usage Sig {Number(m.usage_sig).toFixed(1)}</div>
+        <div className="meta-line" style={{ margin: '2px 0' }}>{m.position}<DepthTag m={m} /> &middot; Usage Sig {Number(m.usage_sig).toFixed(1)} <RoleChip m={m} /></div>
         {m.mu_pct != null ? (
           <>
             <div className="meta-line small" style={{ margin: 0, display: 'flex', gap: 6, flexWrap: 'wrap', alignItems: 'center' }}>
@@ -54,6 +54,7 @@ function PlayerCard({ m, rank }) {
               Est. Yards {m.est_yards != null ? Number(m.est_yards).toFixed(0) : '—'}
             </div>
             <div className="meta-line small" style={{ margin: '2px 0 0' }}>{leakSummary(m)}</div>
+            {roleSummary(m) && <div className="meta-line small" style={{ margin: '2px 0 0' }}>{roleSummary(m)}</div>}
           </>
         ) : (
           <div className="meta-line small" style={{ margin: 0 }}>

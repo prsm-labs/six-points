@@ -244,3 +244,29 @@ tr.heat-row.fire > td { background-image: linear-gradient(color-mix(in srgb, var
 .mu-neutral { color: var(--muted); }
 .mu-tough { color: var(--muted); opacity: 0.75; }
 .mu-yds { font-variant-numeric: tabular-nums; opacity: 0.85; }
+
+/* Roster availability / vacated roles (2026-10-12, matchupUi.jsx) */
+.depth-tag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 4px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.68rem;
+  vertical-align: middle;
+}
+.role-chip {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 5px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: help;
+}
+.not-playing-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2px 14px; margin-top: 4px; }
+.not-playing-list .reason { color: var(--muted); }

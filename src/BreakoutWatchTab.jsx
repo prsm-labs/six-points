@@ -5,7 +5,7 @@ import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { matchesPosition, usePosition } from './positionFilter.js'
 import { useSort, SortTh } from './useSort.jsx'
-import { MatchupCell } from './matchupUi.jsx'
+import { MatchupCell, RoleChip } from './matchupUi.jsx'
 import PickButton from './PickButton.jsx'
 import KeyMatchupsTab from './KeyMatchupsTab.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag, useLiveOutFilter } from './gradeUi.jsx'
@@ -58,6 +58,7 @@ function TopPickCard({ t, locked }) {
         <GradeBadge grade={m.grade} />
         <span>TD {fmtPct(m.p_td)}</span>
         <span>100+ {fmtPct(m.p_100)}</span>
+        <RoleChip m={m} />
         <LiveStatusTag m={m} />
       </div>
       <p className="meta-line small" style={{ margin: '6px 0 0' }}>{t.why}</p>
@@ -181,7 +182,7 @@ function BreakoutTable({ data, bo }) {
                 <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
-                    {m.player_name} <LiveStatusTag m={m} />
+                    {m.player_name} <RoleChip m={m} /> <LiveStatusTag m={m} />
                   </div>
                 </td>
                 <td><PickButton player={m} compact /></td>

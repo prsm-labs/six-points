@@ -7,7 +7,7 @@ import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import { fmtPct, GradeBadge } from './gradeUi.jsx'
-import { RzMatchupCell, pct1, useGradeModel } from './matchupUi.jsx'
+import { DepthTag, RoleChip, RzMatchupCell, pct1, useGradeModel } from './matchupUi.jsx'
 import { PAYDIRT_MIN_RZ, PAYDIRT_SIGNAL_N } from './useLabSims.js'
 
 export default function PaydirtLab() {
@@ -139,10 +139,10 @@ function PaydirtTable({ rows }) {
                 <td>
                   <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />
-                    {p.player_name}
+                    {p.player_name} <RoleChip m={p} />
                   </div>
                 </td>
-                <td>{p.position}</td>
+                <td>{p.position}<DepthTag m={p} /></td>
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.redzone_touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.gtd).toFixed(1)}</td>

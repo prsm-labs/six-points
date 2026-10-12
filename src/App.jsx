@@ -35,7 +35,7 @@ import PlayerSlideout from './PlayerSlideout.jsx'
 import TeamSlideout from './TeamSlideout.jsx'
 import OddsCalculator from './OddsCalculator.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
-import { MatchupCell } from './matchupUi.jsx'
+import { DepthTag, MatchupCell, RoleChip } from './matchupUi.jsx'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -183,7 +183,7 @@ function AllMatchupsTable({ data }) {
       <p className="meta-line">
         Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length} matchups
         {hasGrades
-          ? <> &middot; <strong>Grade, TD % and 100+ %</strong> come from the backtested grade model (Track Record &gt; Grade Model); Est. Yds and Matchup add what the opponent gives up to each player's position and role (hover a Matchup chip); Usage Sig through Zone Score are the original stack</>
+          ? <> &middot; <strong>Grade, TD % and 100+ %</strong> come from the backtested grade model (Track Record &gt; Grade Model); Est. Yds and Matchup add what the opponent gives up to each player's position and role (hover a Matchup chip); injured reserve, practice squad and Out players are off the slate, and a <em>+role</em> chip shows who picks up their touches; Usage Sig through Zone Score are the original stack</>
           : <> &middot; all weights are v1 first-guesses, unvalidated beyond the Track Record backtest below</>}
         {' '}&middot; click a column header to sort
       </p>
@@ -214,7 +214,7 @@ function AllMatchupsTable({ data }) {
                 <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
-                    {m.player_name} <BreakoutBadge m={m} /> <LiveStatusTag m={m} />
+                    {m.player_name} <BreakoutBadge m={m} /> <RoleChip m={m} /> <LiveStatusTag m={m} />
                   </div>
                 </td>
                 <td><PickButton player={m} compact /></td>
@@ -228,7 +228,7 @@ function AllMatchupsTable({ data }) {
                     {m.opponent}
                   </button>
                 </td>
-                <td>{m.position}</td>
+                <td>{m.position}<DepthTag m={m} /></td>
                 {hasGrades && <td><GradeBadge grade={m.grade} title={`Top ${Math.max(1, Math.round((1 - m.grade_pct) * 100))}% of this week's pool`} /></td>}
                 {hasGrades && <td>{fmtPct(m.p_td)}</td>}
                 {hasGrades && <td>{fmtPct(m.p_100)}</td>}

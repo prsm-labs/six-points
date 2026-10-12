@@ -83,6 +83,41 @@ export function RzMatchupCell({ m }) {
   )
 }
 
+// Roster availability + vacated roles (2026-10-12). The engine now builds the slate from ESPN's live
+// rosters: injured reserve, practice squad, released / traded and Out players are taken off it (listed in
+// all_matchups_latest.json -> not_playing), and each absent player's trailing carries / targets / red-zone
+// touches are handed to the teammates still playing, in proportion to their own share:
+//   depth_label   RB1 / WR2 ... from ESPN's current depth chart, among available players
+//   role_gain     touches / game inherited from absent teammates; role_gain_rz the red-zone part
+//   role_yds      the part of Est. Yards that comes from that inherited role (held-out yards model)
+//   vac_from      who it comes from, e.g. "De'Von Achane (Injured Reserve)"
+
+export function DepthTag({ m }) {
+  if (!m?.depth_label) return null
+  return <span className="depth-tag" title="ESPN depth chart, among players available this week">{m.depth_label}</span>
+}
+
+export function roleSummary(m) {
+  if (!m?.vac_from || ((m.role_gain ?? 0) < 0.5 && (m.role_gain_rz ?? 0) < 0.1)) return null
+  const parts = [`+${Number(m.role_gain).toFixed(1)} touches/g`]
+  if ((m.role_gain_rz ?? 0) >= 0.1) parts.push(`+${Number(m.role_gain_rz).toFixed(1)} red-zone`)
+  if (m.role_yds != null && Math.abs(m.role_yds) >= 1) parts.push(`${fmtYds(m.role_yds)} est. yds`)
+  return `Inherits ${parts.join(', ')} from ${m.vac_from}`
+}
+
+/** "+4.1 role" chip when absent teammates' usage flows to this player (1+ touch or 0.3+ red-zone touches
+ *  a game; smaller gains only show in the slideout / Key Matchups text). "new" = an absence this week. */
+export function RoleChip({ m }) {
+  const text = roleSummary(m)
+  if (!text || ((m.role_gain ?? 0) < 1 && (m.role_gain_rz ?? 0) < 0.3)) return null
+  const isNew = (m.role_gain_new ?? 0) >= 0.5
+  return (
+    <span className="role-chip" title={`${text}. Their trailing usage is split among the teammates still playing, by each one's own share; "new" marks absences that started this week, which the trailing averages haven't absorbed yet.`}>
+      {(m.role_gain ?? 0) >= 1 ? `+${Number(m.role_gain).toFixed(1)} role` : `+${Number(m.role_gain_rz).toFixed(1)} RZ`}{isNew ? ' (new)' : ''}
+    </span>
+  )
+}
+
 let modelPromise = null
 /** grade_model.json, fetched once per page load (validation numbers for the lab notes). */
 export function useGradeModel() {
