@@ -4217,6 +4217,50 @@
         "status": "Questionable",
         "injury": "Ankle"
       }
+    ],
+    "6": [
+      {
+        "team": "DEN",
+        "name": "Talanoa Hufanga",
+        "position": "S",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DEN",
+        "name": "Pat Surtain II",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DEN",
+        "name": "Riley Moss",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Ribs"
+      },
+      {
+        "team": "SEA",
+        "name": "Chazz Surratt",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Calf"
+      },
+      {
+        "team": "SEA",
+        "name": "Drake Thomas",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "SEA",
+        "name": "Zach Charbonnet",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Knee"
+      }
     ]
   }
 }
