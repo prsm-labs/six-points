@@ -87,6 +87,20 @@ export default function GradeModelSection() {
       auc100: auc(live, 'p_100', y100), aucZone100: auc(live, 'zone_score', y100),
       byGrade,
       breakout: { n: bo.length, td: bo.length ? bo.filter(td).length / bo.length : null, exp: bo.length ? bo.reduce((a, r) => a + Number(r.p_td), 0) / bo.length : null },
+      // calibration watch (2026-10-18, Slap Shot's calibration.js check): said vs happened by each week's fifth
+      fifths: (() => {
+        const acc = [0, 1, 2, 3, 4].map(() => ({ n: 0, said: 0, hit: 0 }))
+        const byWeek = {}
+        for (const r of live) (byWeek[r.week] = byWeek[r.week] || []).push(r)
+        for (const rs of Object.values(byWeek)) {
+          const sorted = [...rs].sort((a, b) => Number(a.p_td) - Number(b.p_td))
+          sorted.forEach((r, i) => {
+            const f = Math.min(4, Math.floor((i / sorted.length) * 5))
+            acc[f].n += 1; acc[f].said += Number(r.p_td); acc[f].hit += td(r) ? 1 : 0
+          })
+        }
+        return acc.map((a, i) => ({ fifth: i + 1, n: a.n, said: a.n ? a.said / a.n : null, happened: a.n ? a.hit / a.n : null }))
+      })(),
     }
   }, [live])
 
@@ -134,6 +148,23 @@ export default function GradeModelSection() {
               </tbody>
             </table>
           </div>
+          <div className="table-wrap">
+            <table>
+              <thead><tr><th>Week's fifth by TD %</th><th>Players</th><th>Model said</th><th>Scored a TD</th><th>Ratio</th></tr></thead>
+              <tbody>
+                {liveStats.fifths.map((f) => (
+                  <tr key={f.fifth}>
+                    <td>{['Bottom', '2nd', 'Middle', '4th', 'Top'][f.fifth - 1]} fifth</td><td>{f.n}</td><td>{fmtPct(f.said, 1)}</td><td>{fmtPct(f.happened, 1)}</td>
+                    <td className={f.said && Math.abs(f.happened / f.said - 1) > 0.15 ? 'hit-rate-low' : ''}>{f.said ? `${(f.happened / f.said).toFixed(2)}x` : '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="meta-line small">
+            Calibration watch (Slap Shot's check): if a fifth runs well off 1.00x for several weeks, the model gets recalibrated —
+            the 2023-25 backtest was within about ±10% in every fifth, so a few early weeks off is not enough on its own.
+          </p>
           <p className="meta-line small">
             Breakout Watch so far: {liveStats.breakout.n} players, {fmtPct(liveStats.breakout.td, 1)} scored
             (model said {fmtPct(liveStats.breakout.exp, 1)}). Too few to judge yet.
