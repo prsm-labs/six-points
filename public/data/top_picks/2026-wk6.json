@@ -1,0 +1,72 @@
+{
+ "season": 2026,
+ "week": 6,
+ "locked_at": "2026-10-18T15:50:21.833Z",
+ "pool_generated_at": "2026-10-13T12:00:51.991865+00:00",
+ "excluded_started_teams": [
+  "DEN",
+  "HOU",
+  "JAX",
+  "SEA"
+ ],
+ "forced": false,
+ "picks": [
+  {
+   "tier": "Chalk",
+   "stat": "td",
+   "why": "Highest TD chance on the slate (59%).",
+   "player": {
+    "player_id": "00-0038134",
+    "player_name": "Kenneth Walker III",
+    "team": "KC",
+    "opponent": "LAC",
+    "position": "RB",
+    "grade": "A+",
+    "p_td": 0.5887,
+    "p_100": 0.5194,
+    "breakout": false,
+    "soft_matchup": false,
+    "form_ratio": 0.966,
+    "injury_gate": 1
+   }
+  },
+  {
+   "tier": "Yards",
+   "stat": "100",
+   "why": "Best shot at a 100-yard game (55%), from another team.",
+   "player": {
+    "player_id": "00-0038542",
+    "player_name": "Bijan Robinson",
+    "team": "ATL",
+    "opponent": "CHI",
+    "position": "RB",
+    "grade": "A+",
+    "p_td": 0.5837,
+    "p_100": 0.5539,
+    "breakout": false,
+    "soft_matchup": false,
+    "form_ratio": 1.008,
+    "injury_gate": 1
+   }
+  },
+  {
+   "tier": "Breakout",
+   "stat": "td",
+   "why": "Touches up 21% over the last 3 weeks, in a top-third matchup for his role (yards the defense allows his position).",
+   "player": {
+    "player_id": "00-0037838",
+    "player_name": "Isaiah Likely",
+    "team": "NYG",
+    "opponent": "NO",
+    "position": "TE",
+    "grade": "A-",
+    "p_td": 0.2807,
+    "p_100": 0.033,
+    "breakout": true,
+    "soft_matchup": true,
+    "form_ratio": 1.207,
+    "injury_gate": 1
+   }
+  }
+ ]
+}
