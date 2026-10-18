@@ -142,3 +142,17 @@ table.data-table th { position: relative; }
 .tr-tile-num { font-size: 1.4rem; font-weight: 700; margin: 4px 0 2px; }
 .slideout-lines { display: grid; gap: 6px; font-size: 0.85rem; }
 .slideout-gambly { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+/* pairs */
+.pair-card { display: grid; gap: 6px; }
+.pair-card.star { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold), 0 0 14px color-mix(in srgb, var(--gold) 35%, transparent); }
+.pair-head { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.pair-section { font-weight: 700; font-size: 0.82rem; }
+.pair-star { background: var(--gold); color: #1a1400; border-radius: 999px; padding: 1px 8px; font-size: 0.7rem; font-weight: 800; }
+.pair-leg { display: flex; align-items: center; gap: 8px; }
+.pair-leg-main { flex: 1; min-width: 0; }
+.pair-leg-name { font-size: 0.85rem; font-weight: 600; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.pair-foot { border-top: 1px solid var(--border); padding-top: 6px; display: grid; gap: 4px; font-size: 0.85rem; }
+.pair-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.pair-actions a.pill-btn { text-decoration: none; }
+.blind-list { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px; }
+.blind-item { cursor: pointer; font-size: 0.82rem; }

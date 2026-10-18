@@ -2,7 +2,7 @@ import { useState } from 'react'
 import AllMatchupsTab from './AllMatchupsTab.jsx'
 import PaydirtLab from './PaydirtLab.jsx'
 import YardageLab from './YardageLab.jsx'
-import PairsPage from './PairsPage.jsx'
+import PairsTab from './PairsTab.jsx'
 import LadderTab from './LadderTab.jsx'
 import RedZoneTab from './RedZoneTab.jsx'
 import RoleReportTab from './RoleReportTab.jsx'
@@ -14,7 +14,7 @@ const VIEWS = [
   { key: 'board', label: '🏈 All Matchups', Component: AllMatchupsTab },
   { key: 'paydirt', label: '💰 Paydirt Lab', Component: PaydirtLab },
   { key: 'yardage', label: '💨 Yardage Lab', Component: YardageLab },
-  { key: 'pairs', label: '🤝 Pairs', Component: PairsPage },
+  { key: 'pairs', label: '🤝 Pairs', Component: PairsTab },
   { key: 'ladder', label: '🪜 Game Ladder', Component: LadderTab },
   { key: 'redzone', label: '🔴 Red Zone', Component: RedZoneTab },
   { key: 'role', label: '🧩 Role Report', Component: RoleReportTab },

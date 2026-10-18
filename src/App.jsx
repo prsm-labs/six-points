@@ -33,6 +33,7 @@ import AboutTab from './AboutTab.jsx'
 import FirstTDHub from './FirstTDHub.jsx'
 import { installColumnResize } from './columnResize.js'
 import TrackRecordCheatSheets from './TrackRecordCheatSheets.jsx'
+import TrackRecordPairs from './TrackRecordPairs.jsx'
 import './revamp.css'
 
 function parseCsv(text) {
@@ -97,8 +98,9 @@ function TrackRecord() {
       <div className="pill-row hub-row">
         <button className={`pill-btn ${view === 'main' ? 'active' : ''}`} onClick={() => setView('main')}>📈 Grades &amp; tiers</button>
         <button className={`pill-btn ${view === 'cheat' ? 'active' : ''}`} onClick={() => setView('cheat')}>📋 Cheat Sheets</button>
+        <button className={`pill-btn ${view === 'pairs' ? 'active' : ''}`} onClick={() => setView('pairs')}>🤝 Pairs</button>
       </div>
-      {view === 'main' ? <TrackRecordMain /> : <TrackRecordCheatSheets />}
+      {view === 'main' ? <TrackRecordMain /> : view === 'cheat' ? <TrackRecordCheatSheets /> : <TrackRecordPairs />}
     </div>
   )
 }
