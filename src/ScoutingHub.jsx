@@ -1,0 +1,38 @@
+import { useState } from 'react'
+import AllMatchupsTab from './AllMatchupsTab.jsx'
+import PaydirtLab from './PaydirtLab.jsx'
+import YardageLab from './YardageLab.jsx'
+import PairsPage from './PairsPage.jsx'
+import LadderTab from './LadderTab.jsx'
+import RedZoneTab from './RedZoneTab.jsx'
+import RoleReportTab from './RoleReportTab.jsx'
+
+// "Scouting" top-level tab (Slap Shot's tabs/MatchupsHubTab.jsx, 2026-10-18 revamp): All Matchups (the default
+// view) plus every lab, switched by a button row in the page instead of one top-level tab each.
+// Slap Shot -> Six Points: Lamp Lab -> Paydirt Lab (TDs), Apple Lab -> Yardage Lab, Crease Lab -> Red Zone.
+const VIEWS = [
+  { key: 'board', label: '🏈 All Matchups', Component: AllMatchupsTab },
+  { key: 'paydirt', label: '💰 Paydirt Lab', Component: PaydirtLab },
+  { key: 'yardage', label: '💨 Yardage Lab', Component: YardageLab },
+  { key: 'pairs', label: '🤝 Pairs', Component: PairsPage },
+  { key: 'ladder', label: '🪜 Game Ladder', Component: LadderTab },
+  { key: 'redzone', label: '🔴 Red Zone', Component: RedZoneTab },
+  { key: 'role', label: '🧩 Role Report', Component: RoleReportTab },
+]
+
+export default function ScoutingHub() {
+  const [view, setView] = useState('board')
+  const Active = (VIEWS.find((v) => v.key === view) || VIEWS[0]).Component
+  return (
+    <div>
+      <div className="pill-row hub-row">
+        {VIEWS.map((v) => (
+          <button key={v.key} className={`pill-btn ${view === v.key ? 'active' : ''}`} onClick={() => setView(v.key)}>
+            {v.label}
+          </button>
+        ))}
+      </div>
+      <Active />
+    </div>
+  )
+}

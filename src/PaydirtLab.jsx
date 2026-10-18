@@ -9,6 +9,7 @@ import { setPosition, usePosition } from './positionFilter.js'
 import { fmtPct, GradeBadge } from './gradeUi.jsx'
 import { DepthTag, RoleChip, RzMatchupCell, pct1, useGradeModel } from './matchupUi.jsx'
 import { PAYDIRT_MIN_RZ, PAYDIRT_SIGNAL_N } from './useLabSims.js'
+import PickButton from './PickButton.jsx'
 
 export default function PaydirtLab() {
   const { rows, error, status } = usePaydirtSims()
@@ -139,7 +140,7 @@ function PaydirtTable({ rows }) {
                 <td>
                   <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />
-                    {p.player_name} <RoleChip m={p} />
+                    {p.player_name} <PickButton player={p} compact prop="td" /> <RoleChip m={p} />
                   </div>
                 </td>
                 <td>{p.position}<DepthTag m={p} /></td>
@@ -147,7 +148,7 @@ function PaydirtTable({ rows }) {
                 <td>{Number(p.redzone_touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.gtd).toFixed(1)}</td>
                 <td><RzMatchupCell m={p} /></td>
-                {graded && <td className="zone-score">{fmtPct(p.p_td)} <GradeBadge grade={p.grade} /></td>}
+                {graded && <td className="zone-score">{fmtPct(p.p_td)} <GradeBadge grade={p.grade} m={p} /></td>}
                 <td className={graded ? undefined : 'zone-score'}>{p.sim_td_pct.toFixed(1)}%</td>
                 <td>{p.paydirt_signal ? <span className="tier tier-lock">Paydirt</span> : ''}</td>
               </tr>

@@ -1,31 +1,23 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
-import PaydirtLab from './PaydirtLab.jsx'
-import YardageLab from './YardageLab.jsx'
-import PairsPage from './PairsPage.jsx'
 import LiveTab from './LiveTab.jsx'
 import WeatherTab from './WeatherTab.jsx'
 import TDTracker from './TDTracker.jsx'
-import FirstTDTab from './FirstTDTab.jsx'
 import TDMarquee from './TDMarquee.jsx'
 import SplitsTab from './SplitsTab.jsx'
-import CheatSheetTab from './CheatSheetTab.jsx'
 import ScoutingTab from './ScoutingTab.jsx'
 import DepthChartTab from './DepthChartTab.jsx'
 import NFLTab from './NFLTab.jsx'
-import RedZoneTab from './RedZoneTab.jsx'
 import PrimetimeSplitsTab from './PrimetimeSplitsTab.jsx'
 import BreakoutWatchTab from './BreakoutWatchTab.jsx'
 import MyPicksTab from './MyPicksTab.jsx'
 import GradeModelSection from './GradeModelSection.jsx'
-import PickButton from './PickButton.jsx'
 import { AlertBell, AlertsRunner, AlertToast } from './Alerts.jsx'
 import { LiveStatusRunner } from './liveStatus.js'
 import { setPosition, usePosition } from './positionFilter.js'
-import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag, PositionChips, SlateStatus, useLiveOutFilter } from './gradeUi.jsx'
+import { PositionChips } from './gradeUi.jsx'
 import './features.css'
 import GameSimTab from './GameSimTab.jsx'
-import RoleReportTab from './RoleReportTab.jsx'
 import MatchupSelector from './MatchupSelector.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
@@ -35,7 +27,13 @@ import PlayerSlideout from './PlayerSlideout.jsx'
 import TeamSlideout from './TeamSlideout.jsx'
 import OddsCalculator from './OddsCalculator.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
-import { DepthTag, MatchupCell, RoleChip } from './matchupUi.jsx'
+import ScoutingHub from './ScoutingHub.jsx'
+import CheatSheetsTab from './CheatSheetsTab.jsx'
+import AboutTab from './AboutTab.jsx'
+import FirstTDHub from './FirstTDHub.jsx'
+import { installColumnResize } from './columnResize.js'
+import TrackRecordCheatSheets from './TrackRecordCheatSheets.jsx'
+import './revamp.css'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -87,168 +85,25 @@ function DataFreshnessBanner() {
   )
 }
 
-function AllMatchups() {
-  const [data, setData] = useState(null)
-  const [error, setError] = useState(null)
+// 2026-10-18 revamp: the old All Matchups board (Zone Score-first) moved to AllMatchupsTab.jsx inside the
+// 🎯 Scouting hub (grade-first, Slap Shot's layout); its Zone Score columns are still there behind ⚙️.
 
-  useEffect(() => {
-    fetch('/data/all_matchups_latest.json')
-      .then((r) => {
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
-        return r.json()
-      })
-      .then(setData)
-      .catch((e) => setError(e.message))
-  }, [])
-
-  if (error) {
-    return (
-      <p className="empty-state">
-        No matchup data yet ({error}). Run <code>python matchup_engine.py --season 2025 --week N</code> from
-        the project root to generate <code>public/data/all_matchups_latest.json</code>.
-      </p>
-    )
-  }
-  return <AllMatchupsTable data={data} />
-}
-
-function AllMatchupsTable({ data }) {
-  const position = usePosition()
-  const [hideOut, setHideOut] = useState(true)
-  const notOut = useLiveOutFilter()
-  const hasGrades = data?.matchups?.some((m) => m.p_td != null)
-  const [team, setTeam] = useState('all')
-  const [opponent, setOpponent] = useState('all')
-  const [search, setSearch] = useState('')
-  const { selectedMatchup } = useMatchup()
-
-  const teams = useMemo(
-    () => [...new Set((data?.matchups || []).map((m) => m.team))].filter(Boolean).sort(),
-    [data]
-  )
-  const filtered = useMemo(() => {
-    if (!data) return []
-    return data.matchups
-      .filter((m) => position === 'all' || m.position === position)
-      .filter((m) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, m.team) : (team === 'all' || m.team === team))
-      .filter((m) => opponent === 'all' || m.opponent === opponent)
-      .filter((m) => !search || m.player_name.toLowerCase().includes(search.toLowerCase()))
-      .filter((m) => !hideOut || notOut(m))
-  }, [data, position, team, opponent, search, selectedMatchup, hideOut, notOut])
-
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, hasGrades ? 'p_td' : 'zone_score', 'desc')
-
-  if (!data) return <p className="empty-state">Loading...</p>
-
-  const thProps = { sortKey, sortDir, onSort: toggleSort }
-
+// Track Record (2026-10-18 revamp, Slap Shot's Track Record views): the original grade / tier record plus
+// 📋 Cheat Sheets (each week's lists graded vs expected, from the frozen pre-kickoff snapshots).
+function TrackRecord() {
+  const [view, setView] = useState('main')
   return (
     <div>
-      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 110 }}>
-          Position
-          <select value={position} onChange={(e) => setPosition(e.target.value)}>
-            <option value="all">All</option>
-            <option value="QB">QB</option>
-            <option value="RB">RB</option>
-            <option value="WR">WR</option>
-            <option value="TE">TE</option>
-          </select>
-        </label>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={team} onChange={(e) => setTeam(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
-        <label style={{ minWidth: 110 }}>
-          Opponent
-          <select value={opponent} onChange={(e) => setOpponent(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
-        <label style={{ flex: 1, minWidth: 160 }}>
-          Player
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
-        </label>
-        <label className="inline-check">
-          <input type="checkbox" checked={hideOut} onChange={(e) => setHideOut(e.target.checked)} />
-          Hide players ESPN lists Out (live)
-        </label>
+      <div className="pill-row hub-row">
+        <button className={`pill-btn ${view === 'main' ? 'active' : ''}`} onClick={() => setView('main')}>📈 Grades &amp; tiers</button>
+        <button className={`pill-btn ${view === 'cheat' ? 'active' : ''}`} onClick={() => setView('cheat')}>📋 Cheat Sheets</button>
       </div>
-      <SlateStatus data={data} />
-      <MatchupFilterNote />
-      <p className="meta-line">
-        Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length} matchups
-        {hasGrades
-          ? <> &middot; <strong>Grade, TD % and 100+ %</strong> come from the backtested grade model (Track Record &gt; Grade Model); Est. Yds and Matchup add what the opponent gives up to each player's position and role (hover a Matchup chip); injured reserve, practice squad and Out players are off the slate, and a <em>+role</em> chip shows who picks up their touches; Usage Sig through Zone Score are the original stack</>
-          : <> &middot; all weights are v1 first-guesses, unvalidated beyond the Track Record backtest below</>}
-        {' '}&middot; click a column header to sort
-      </p>
-      <div className="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <SortTh label="Player" sortKeyName="player_name" className="sticky-col" {...thProps} />
-              <th />
-              <SortTh label="Team" sortKeyName="team" {...thProps} />
-              <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
-              <SortTh label="Pos" sortKeyName="position" {...thProps} />
-              {hasGrades && <SortTh label="Grade" sortKeyName="grade_pct" {...thProps} />}
-              {hasGrades && <SortTh label="TD %" sortKeyName="p_td" {...thProps} />}
-              {hasGrades && <SortTh label="100+ %" sortKeyName="p_100" {...thProps} />}
-              {hasGrades && <SortTh label="Est. Yds" sortKeyName="est_yards" {...thProps} />}
-              {hasGrades && <SortTh label="Matchup" sortKeyName="mu_pct" {...thProps} />}
-              <SortTh label="Usage Sig" sortKeyName="usage_sig" {...thProps} />
-              <SortTh label="gTD" sortKeyName="gtd" {...thProps} />
-              <SortTh label="Explosive" sortKeyName="explosive_score" {...thProps} />
-              <SortTh label="Green Light" sortKeyName="green_light" {...thProps} />
-              <SortTh label="Zone Score" sortKeyName="zone_score" {...thProps} />
-            </tr>
-          </thead>
-          <tbody>
-            {sorted.map((m, i) => (
-              <tr key={i}>
-                <td className="sticky-col">
-                  <div className="player-cell" onClick={() => openPlayerSlide(m)}>
-                    <PlayerAvatar playerId={m.player_id} name={m.player_name} />
-                    {m.player_name} <BreakoutBadge m={m} /> <RoleChip m={m} /> <LiveStatusTag m={m} />
-                  </div>
-                </td>
-                <td><PickButton player={m} compact /></td>
-                <td>
-                  <button className="team-link" onClick={() => openTeamSlide({ team: m.team })}>
-                    {m.team}
-                  </button>
-                </td>
-                <td>
-                  <button className="team-link" onClick={() => openTeamSlide({ team: m.opponent, context: 'defense' })}>
-                    {m.opponent}
-                  </button>
-                </td>
-                <td>{m.position}<DepthTag m={m} /></td>
-                {hasGrades && <td><GradeBadge grade={m.grade} title={`Top ${Math.max(1, Math.round((1 - m.grade_pct) * 100))}% of this week's pool`} /></td>}
-                {hasGrades && <td>{fmtPct(m.p_td)}</td>}
-                {hasGrades && <td>{fmtPct(m.p_100)}</td>}
-                {hasGrades && <td>{m.est_yards != null ? Number(m.est_yards).toFixed(0) : '—'}</td>}
-                {hasGrades && <td><MatchupCell m={m} /></td>}
-                <td>{Number(m.usage_sig).toFixed(1)}</td>
-                <td>{Number(m.gtd).toFixed(1)}</td>
-                <td>{Number(m.explosive_score).toFixed(1)}</td>
-                <td>{Number(m.green_light).toFixed(1)}</td>
-                <td className="zone-score">{Number(m.zone_score).toFixed(1)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {view === 'main' ? <TrackRecordMain /> : <TrackRecordCheatSheets />}
     </div>
   )
 }
 
-function TrackRecord() {
+function TrackRecordMain() {
   const [rows, setRows] = useState(null)
   const [error, setError] = useState(null)
 
@@ -467,9 +322,35 @@ function WeekDrillDown({ rows }) {
 }
 
 
+// Top-level tabs mirror Slap Shot's App.jsx TABS (2026-10-18 revamp), football versions:
+// Top 3 Tonight -> Top Picks (+ Breakout Watch), Goal Tracker -> TD Tracker, Projections -> Game Sim,
+// First Goal -> 1st TD (+ 👑 King of the End Zone in place of Ice Breaker), Matchup Lookup -> the old Scouting page.
+// NFL extras with no hockey twin stay at the end (standings, depth charts, weather, primetime splits).
+const TABS = [
+  { key: 'cheat', label: '📋 Cheat Sheets', Component: CheatSheetsTab },
+  { key: 'top', label: '🏆 Top Picks', Component: BreakoutWatchTab },
+  { key: 'mypicks', label: '⭐ My Picks', Component: MyPicksTab },
+  { key: 'live', label: '🔴 Live', Component: LiveTab },
+  { key: 'tdtracker', label: '🏈 TD Tracker', Component: TDTracker },
+  { key: 'scouting', label: '🎯 Scouting', Component: ScoutingHub },
+  { key: 'gamesim', label: '🔮 Game Sim', Component: GameSimTab },
+  { key: 'firsttd', label: '🥇 1st TD', Component: FirstTDHub },
+  { key: 'track', label: '📈 Track Record', Component: TrackRecord },
+  { key: 'splits', label: '📊 Splits', Component: SplitsTab },
+  { key: 'lookup', label: '🔍 Matchup Lookup', Component: ScoutingTab },
+  { key: 'nfl', label: '🏟️ NFL', Component: NFLTab },
+  { key: 'depthchart', label: '🧭 Depth Charts', Component: DepthChartTab },
+  { key: 'weather', label: '🌬️ Weather', Component: WeatherTab },
+  { key: 'primetime', label: '🌙 Primetime', Component: PrimetimeSplitsTab },
+  { key: 'about', label: '📌 About', Component: AboutTab },
+]
+
 export default function App() {
-  const [tab, setTab] = useState('matchups')
+  const [tab, setTab] = useState('cheat')
   const [showOddsCalc, setShowOddsCalc] = useState(false)
+  const Active = (TABS.find((t) => t.key === tab) || TABS[0]).Component
+  // Drag-to-resize + ⚙️ column chooser on every table, app-wide (columnResize.js, Slap Shot's).
+  useEffect(() => installColumnResize(), [])
 
   return (
     <div className="app">
@@ -497,91 +378,17 @@ export default function App() {
       <AlertsRunner />
       <AlertToast />
       <nav className="tabs">
-        <button className={tab === 'matchups' ? 'active' : ''} onClick={() => setTab('matchups')}>
-          All Matchups
-        </button>
-        <button className={tab === 'keymatchups' ? 'active' : ''} onClick={() => setTab('keymatchups')}>
-          Breakout Watch
-        </button>
-        <button className={tab === 'mypicks' ? 'active' : ''} onClick={() => setTab('mypicks')}>
-          My Picks
-        </button>
-        <button className={tab === 'rolereport' ? 'active' : ''} onClick={() => setTab('rolereport')}>
-          Role Report
-        </button>
-        <button className={tab === 'gamesim' ? 'active' : ''} onClick={() => setTab('gamesim')}>
-          Game Sim
-        </button>
-        <button className={tab === 'paydirt' ? 'active' : ''} onClick={() => setTab('paydirt')}>
-          Paydirt Lab
-        </button>
-        <button className={tab === 'yardage' ? 'active' : ''} onClick={() => setTab('yardage')}>
-          Yardage Lab
-        </button>
-        <button className={tab === 'live' ? 'active' : ''} onClick={() => setTab('live')}>
-          Live
-        </button>
-        <button className={tab === 'tdtracker' ? 'active' : ''} onClick={() => setTab('tdtracker')}>
-          TD Tracker
-        </button>
-        <button className={tab === 'firsttd' ? 'active' : ''} onClick={() => setTab('firsttd')}>
-          1st TD
-        </button>
-        <button className={tab === 'track' ? 'active' : ''} onClick={() => setTab('track')}>
-          Track Record
-        </button>
-        <button className={tab === 'pairs' ? 'active' : ''} onClick={() => setTab('pairs')}>
-          Pairs
-        </button>
-        <button className={tab === 'weather' ? 'active' : ''} onClick={() => setTab('weather')}>
-          Weather
-        </button>
-        <button className={tab === 'splits' ? 'active' : ''} onClick={() => setTab('splits')}>
-          Splits
-        </button>
-        <button className={tab === 'cheatsheet' ? 'active' : ''} onClick={() => setTab('cheatsheet')}>
-          Cheat Sheets
-        </button>
-        <button className={tab === 'scouting' ? 'active' : ''} onClick={() => setTab('scouting')}>
-          Scouting
-        </button>
-        <button className={tab === 'depthchart' ? 'active' : ''} onClick={() => setTab('depthchart')}>
-          Depth Charts
-        </button>
-        <button className={tab === 'nfl' ? 'active' : ''} onClick={() => setTab('nfl')}>
-          NFL
-        </button>
-        <button className={tab === 'redzone' ? 'active' : ''} onClick={() => setTab('redzone')}>
-          Red Zone
-        </button>
-        <button className={tab === 'primetime' ? 'active' : ''} onClick={() => setTab('primetime')}>
-          Primetime Splits
-        </button>
+        {TABS.map((t) => (
+          <button key={t.key} className={tab === t.key ? 'active' : ''} onClick={() => setTab(t.key)}>
+            {t.label}
+          </button>
+        ))}
         {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
             as a slideout instead, matching how Going Yard itself surfaces its own odds
             calculator (a button that opens a slideout, not a dedicated page). */}
       </nav>
       <main>
-        {tab === 'matchups' && <AllMatchups />}
-        {tab === 'keymatchups' && <BreakoutWatchTab />}
-        {tab === 'mypicks' && <MyPicksTab />}
-        {tab === 'rolereport' && <RoleReportTab />}
-        {tab === 'gamesim' && <GameSimTab />}
-        {tab === 'paydirt' && <PaydirtLab />}
-        {tab === 'yardage' && <YardageLab />}
-        {tab === 'live' && <LiveTab />}
-        {tab === 'tdtracker' && <TDTracker />}
-        {tab === 'firsttd' && <FirstTDTab />}
-        {tab === 'track' && <TrackRecord />}
-        {tab === 'pairs' && <PairsPage />}
-        {tab === 'weather' && <WeatherTab />}
-        {tab === 'splits' && <SplitsTab />}
-        {tab === 'cheatsheet' && <CheatSheetTab />}
-        {tab === 'scouting' && <ScoutingTab />}
-        {tab === 'depthchart' && <DepthChartTab />}
-        {tab === 'nfl' && <NFLTab />}
-        {tab === 'redzone' && <RedZoneTab />}
-        {tab === 'primetime' && <PrimetimeSplitsTab />}
+        <Active />
       </main>
       <PlayerSlideout />
       <TeamSlideout />

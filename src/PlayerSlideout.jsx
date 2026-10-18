@@ -6,6 +6,13 @@ import GameLogTable from './GameLogTable.jsx'
 import PickButton from './PickButton.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
 import { DepthTag, MatchupCell, fmtYds, leakSummary, muTier, roleSummary } from './matchupUi.jsx'
+import { loadSlate } from './slate.js'
+import { DVP_NOTE, matchupText } from './gradeUi.jsx'
+import { AllBookLinks, StatePicker } from './BetLink.jsx'
+import { edgeClass, edgeText, fmtEdge } from './bookOdds.js'
+import GamblyButton from './GamblyButton.jsx'
+import { betLine } from './gambly.js'
+import { HotHandTag } from './revampUi.jsx'
 
 // Section order per spec §3: header, season stat line, matchup context, L7 chart, recent game
 // log, vs-opponent history. The dot timeline is skipped per spec
@@ -144,7 +151,7 @@ export default function PlayerSlideout() {
       fetch('/data/players.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/scheme_splits.json').then((r) => (r.ok ? r.json() : null)),
       fetch('/data/route_profiles.json').then((r) => (r.ok ? r.json() : null)),
-      fetch('/data/all_matchups_latest.json').then((r) => (r.ok ? r.json() : null)),
+      loadSlate(), // 2026-10-18: the shared slate (book odds, edge, hot hand merged in)
     ]).then(([logs, directory, scheme, routes, latest]) => {
       // this week's grade-model row, so the header shows it (and picks save it) from any tab
       setWeekRow(latest?.matchups?.find((m) => m.player_id === player.player_id) || null)
@@ -182,8 +189,9 @@ export default function PlayerSlideout() {
             </div>
             {weekRow?.grade && (
               <div className="sub slideout-grade">
-                Week {weekRow.week}: <GradeBadge grade={weekRow.grade} /> TD {fmtPct(weekRow.p_td)} &middot; 100+ {fmtPct(weekRow.p_100)}
-                {' '}<BreakoutBadge m={weekRow} /> <LiveStatusTag m={weekRow} />
+                Week {weekRow.week}: <GradeBadge grade={weekRow.grade} m={weekRow} /> TD {fmtPct(weekRow.p_td)}
+                {weekRow.p_td2 != null && <> &middot; 2+ TDs {fmtPct(weekRow.p_td2)}</>} &middot; 100+ {fmtPct(weekRow.p_100)}
+                {' '}<BreakoutBadge m={weekRow} /> <HotHandTag m={weekRow} /> <LiveStatusTag m={weekRow} />
               </div>
             )}
             {(weekRow || player.player_id) && (
@@ -205,6 +213,26 @@ export default function PlayerSlideout() {
             <p className="empty-state">Loading...</p>
           ) : (
             <>
+              {weekRow && (
+                // This week (2026-10-18 revamp, Slap Shot's slideout): the model's chances, the matchup line,
+                // recent TDs, every sportsbook's anytime-TD price (tap to bet) and Gambly for each prop.
+                <div className="slideout-section">
+                  <h3>Week {weekRow.week} vs {weekRow.opponent}</h3>
+                  <div className="slideout-lines">
+                    <div>Model: TD {fmtPct(weekRow.p_td, 1)}{weekRow.p_td2 != null && <> · 2+ TDs {fmtPct(weekRow.p_td2, 1)}</>} · 100+ yds {fmtPct(weekRow.p_100, 1)}{weekRow.est_yards != null && <> · est. {Math.round(weekRow.est_yards)} yds</>}</div>
+                    {matchupText(weekRow) && <div title={DVP_NOTE}>{matchupText(weekRow)} <span className="meta-line small">(the defense factor in the grade)</span></div>}
+                    {weekRow.td_l3 != null && <div>TDs in his last 3 games: {weekRow.td_l3} (last game {weekRow.td_last ?? 0}){weekRow.hotHand ? ' · 🔥 hot hand outside the top 25%' : ''}</div>}
+                    <div>Anytime TD: <AllBookLinks book={weekRow.book} /> <StatePicker /></div>
+                    {weekRow.edge != null && <div title={edgeText(weekRow)}>Edge vs best price: <span className={edgeClass(weekRow.edge)}>{fmtEdge(weekRow.edge)} pts</span> <span className="meta-line small">(context — not in the grade)</span></div>}
+                    <div className="slideout-gambly">Send to Gambly:
+                      <GamblyButton compact={false} label="Anytime TD" text={betLine(weekRow, 'td')} />
+                      <GamblyButton compact={false} label="2+ TDs" text={betLine(weekRow, 'td2')} />
+                      <GamblyButton compact={false} label="First TD" text={betLine(weekRow, 'first')} />
+                      {weekRow.position !== 'QB' && <GamblyButton compact={false} label="100+ yds" text={betLine(weekRow, 'yds100')} />}
+                    </div>
+                  </div>
+                </div>
+              )}
               <div className="slideout-section">
                 <h3>{player.season ? `${player.season} Season` : 'Season to date'}</h3>
                 <div className="stat-grid">

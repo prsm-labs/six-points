@@ -8,6 +8,7 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import { DepthTag, MatchupCell, RoleChip, fmtYds, leakSummary, pct1, useGradeModel } from './matchupUi.jsx'
 import { YARDAGE_SIGNAL_N } from './useLabSims.js'
+import PickButton from './PickButton.jsx'
 
 export default function YardageLab() {
   const { rows, error, status } = useYardageSims()
@@ -158,7 +159,7 @@ function YardageTable({ rows }) {
                 <td>
                   <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />
-                    {p.player_name} <RoleChip m={p} />
+                    {p.player_name} <PickButton player={p} compact prop="yds100" /> <RoleChip m={p} />
                   </div>
                 </td>
                 <td>{p.position}<DepthTag m={p} /></td>

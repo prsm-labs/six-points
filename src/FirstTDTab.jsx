@@ -6,6 +6,7 @@ import { useWeekTDs } from './useWeekTDs.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
+import PickButton from './PickButton.jsx'
 
 // First Touchdown -- the real NFL prop market (First TD Scorer / Team to Score First), not just
 // "anytime TD" (already Paydirt Lab's job). Two real, distinct halves:
@@ -118,7 +119,7 @@ function PredictorTable() {
                 <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
-                    {m.player_name}
+                    {m.player_name} <PickButton player={m} compact prop="first" />
                   </div>
                 </td>
                 <td>

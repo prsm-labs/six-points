@@ -13,9 +13,34 @@ export function fmtPct(p, digits = 0) {
 const GRADE_CLASS = { 'A+': 'g-aplus', A: 'g-a', 'A-': 'g-aminus', B: 'g-b', C: 'g-c', D: 'g-d', F: 'g-f' }
 export const GRADE_ORDER = ['A+', 'A', 'A-', 'B', 'C', 'D', 'F']
 
-export function GradeBadge({ grade, title }) {
+// Matchup line for a grade (2026-10-18, Slap Shot's grade tooltip + DVP_NOTE). def_* come from the engine: the
+// opponent's TD-defense index is the defense factor INSIDE the grade; position splits are context only.
+export const DVP_NOTE = "Defense factor in the grade = the opponent's TDs allowed (team level, shrunk toward last season). "
+  + 'Defense-vs-position splits and position "leaks" are shown as context only: 14 defense measures were tested on top of '
+  + 'the model over 2023-25 and none added anything for TDs (they do move estimated yards a little).'
+export function matchupText(m) {
+  if (!m?.def_rank) return null
+  const tier = m.def_tier === 'soft' ? 'soft ▲' : m.def_tier === 'tough' ? 'tough ▼' : 'middle third'
+  return `Matchup: ${m.opponent} TD defense #${m.def_rank} softest of ${m.def_n} this week (${tier})`
+}
+export function gradeTooltip(m) {
+  if (!m?.grade) return undefined
+  const top = m.grade_pct != null ? `top ${Math.max(1, Math.round((1 - m.grade_pct) * 100))}% of this week's pool` : ''
+  const probs = [m.p_td != null && `TD ${fmtPct(m.p_td, 1)}`, m.p_td2 != null && `2+ TDs ${fmtPct(m.p_td2, 1)}`, m.p_100 != null && `100+ yds ${fmtPct(m.p_100, 1)}`].filter(Boolean).join(' · ')
+  return [`Grade ${m.grade}${top ? ` — ${top}` : ''}`, probs, matchupText(m), DVP_NOTE].filter(Boolean).join(String.fromCharCode(10))
+}
+
+/** m (optional): the player row -- adds the ▲ / ▼ matchup marker (soft / tough TD defense) and the full tooltip. */
+export function GradeBadge({ grade, title, m }) {
   if (!grade) return <span className="meta-line small">—</span>
-  return <span className={`grade-badge ${GRADE_CLASS[grade] || ''}`} title={title}>{grade}</span>
+  const tier = m?.def_tier
+  return (
+    <span className={`grade-badge ${GRADE_CLASS[grade] || ''}`} title={m ? gradeTooltip(m) : title}>
+      {grade}
+      {tier === 'soft' && <span className="mu-mark soft">▲</span>}
+      {tier === 'tough' && <span className="mu-mark tough">▼</span>}
+    </span>
+  )
 }
 
 export function BreakoutBadge({ m }) {

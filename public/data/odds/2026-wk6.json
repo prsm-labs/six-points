@@ -1,0 +1,1220 @@
+{
+ "_meta": {
+  "season": 2026,
+  "week": 6,
+  "market": "player_anytime_td",
+  "source": "The Odds API (region us)",
+  "fetches": [
+   {
+    "at": "2026-10-18T21:30:10+00:00",
+    "games": [
+     "DAL@GB",
+     "WAS@SF"
+    ],
+    "creditsLeft": 400
+   }
+  ],
+  "updated": "2026-10-18T21:30:10+00:00",
+  "creditsLeft": 400
+ },
+ "games": {
+  "DAL@GB": {
+   "fetchedAt": "2026-10-18T21:30:10+00:00",
+   "eventId": "82fd5a159fa130e67abab93a9537f70b",
+   "players": 26,
+   "books": [
+    "BOL",
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  },
+  "WAS@SF": {
+   "fetchedAt": "2026-10-18T21:30:10+00:00",
+   "eventId": "f122527f003276d3bca19efa48c902c1",
+   "players": 23,
+   "books": [
+    "BOL",
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  }
+ },
+ "players": {
+  "00-0036997": {
+   "name": "Javonte Williams",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 700,
+    "FD": 700,
+    "BOL": 650,
+    "BR": 750,
+    "MGM": 850,
+    "BOV": 700
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708176_13L88808Q11154264979Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=48141491",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4379299889|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-4071174-6545015&type=Single"
+   },
+   "best": 850,
+   "bestBook": "MGM",
+   "bestImplied": 10.5,
+   "medianImplied": 12.5,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039811": {
+   "name": "MarShawn Lloyd",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": -140,
+    "FD": -140,
+    "BOL": -167,
+    "BR": -132,
+    "MGM": -140,
+    "BOV": -143
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708167_13L88808Q1-135035926Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=42198378",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373441540|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961379-6342209&type=Single"
+   },
+   "best": -132,
+   "bestBook": "BR",
+   "bestImplied": 56.9,
+   "medianImplied": 58.3,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0038124": {
+   "name": "Christian Watson",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 120,
+    "FD": 120,
+    "BOL": 110,
+    "BR": 114,
+    "MGM": 115,
+    "BOV": 120
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708168_13L88808Q1-1411527739Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=43162285",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418302|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961387-6342225&type=Single"
+   },
+   "best": 120,
+   "bestBook": "DK",
+   "bestImplied": 45.5,
+   "medianImplied": 46.0,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0036358": {
+   "name": "CeeDee Lamb",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 120,
+    "FD": 120,
+    "BOL": 120,
+    "BR": 108,
+    "MGM": 110,
+    "BOV": 115
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708181_13L88808Q1759561049Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=16602369",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373430055|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961382-6342217&type=Single"
+   },
+   "best": 120,
+   "bestBook": "DK",
+   "bestImplied": 45.5,
+   "medianImplied": 46.0,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0037247": {
+   "name": "George Pickens",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 135,
+    "FD": 150,
+    "BOL": 130,
+    "BR": 145,
+    "MGM": 138,
+    "BOV": 150
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708182_13L88808Q1-1127265655Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=26919456",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418308|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961375-6342201&type=Single"
+   },
+   "best": 150,
+   "bestBook": "FD",
+   "bestImplied": 40.0,
+   "medianImplied": 41.4,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0040667": {
+   "name": "Matthew Golden",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 165,
+    "FD": 160,
+    "BOL": 150,
+    "BR": 150,
+    "MGM": 135,
+    "BOV": 160
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708169_13L88808Q11480921309Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=48301335",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418312|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961369-6342189&type=Single"
+   },
+   "best": 165,
+   "bestBook": "DK",
+   "bestImplied": 37.7,
+   "medianImplied": 39.2,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0038996": {
+   "name": "Tucker Kraft",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 185,
+    "FD": 175,
+    "BOL": 170,
+    "BR": 180,
+    "MGM": 175,
+    "BOV": 175
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708170_13L88808Q1-834011589Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=53445708",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373441502|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961360-6342171&type=Single"
+   },
+   "best": 185,
+   "bestBook": "DK",
+   "bestImplied": 35.1,
+   "medianImplied": 36.4,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0038098": {
+   "name": "Pierre Strong",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 240,
+    "FD": 240,
+    "BOL": 220,
+    "BR": 225,
+    "MGM": 250,
+    "BOV": 240
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708172_13L88808Q11102624592Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=43162255",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418352|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961401-6342255&type=Single"
+   },
+   "best": 250,
+   "bestBook": "MGM",
+   "bestImplied": 28.6,
+   "medianImplied": 29.4,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0038041": {
+   "name": "Jake Ferguson",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 285,
+    "FD": 280,
+    "BOL": 270,
+    "BR": 290,
+    "MGM": 270,
+    "BOV": 270
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708183_13L88808Q1-144445670Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=27163247",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418288|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961344-6342139&type=Single"
+   },
+   "best": 290,
+   "bestBook": "BR",
+   "bestImplied": 25.6,
+   "medianImplied": 26.7,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039410": {
+   "name": "Ryan Flournoy",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 330,
+    "FD": 320,
+    "BOL": 300,
+    "BR": 390,
+    "MGM": 290,
+    "BOV": 320
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708184_13L88808Q1-24141105Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=66499297",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418283|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961374-6342199&type=Single"
+   },
+   "best": 390,
+   "bestBook": "BR",
+   "bestImplied": 20.4,
+   "medianImplied": 23.8,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0037091": {
+   "name": "Bo Melton",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 550,
+    "FD": 550,
+    "BOL": 500,
+    "BR": 450,
+    "MGM": 575,
+    "BOV": 525
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708174_13L88808Q1-1306189187Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=43162254",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418326|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961367-6342185&type=Single"
+   },
+   "best": 575,
+   "bestBook": "MGM",
+   "bestImplied": 14.8,
+   "medianImplied": 15.7,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0033077": {
+   "name": "Dak Prescott",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 550,
+    "FD": 550,
+    "BOL": 550,
+    "BR": 575,
+    "MGM": 600,
+    "BOV": 525
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708185_13L88808Q1795642865Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=8776314",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373441618|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961346-6342143&type=Single"
+   },
+   "best": 600,
+   "bestBook": "MGM",
+   "bestImplied": 14.3,
+   "medianImplied": 15.4,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0040142": {
+   "name": "Kaleb Johnson",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 600,
+    "FD": 500,
+    "BOL": 500,
+    "BR": 475,
+    "MGM": 525,
+    "BOV": 500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708171_13L88808Q1-1984159220Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=48926504",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418356|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961368-6342187&type=Single"
+   },
+   "best": 600,
+   "bestBook": "DK",
+   "bestImplied": 14.3,
+   "medianImplied": 16.7,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0037801": {
+   "name": "KaVontae Turpin",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 800,
+    "FD": 700,
+    "BOL": 700,
+    "BR": 700,
+    "MGM": 700,
+    "BOV": 700
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708186_13L88808Q1744413187Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=16552724",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418298|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961359-6342169&type=Single"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 12.5,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0037120": {
+   "name": "Tyler Goodson",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 800,
+    "FD": 900,
+    "BOL": 800,
+    "BR": 900,
+    "MGM": 775,
+    "BOV": 900
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708188_13L88808Q1-249713414Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=43162250",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373430053|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961348-6342147&type=Single"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 10.6,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0036264": {
+   "name": "Jordan Love",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 850,
+    "FD": 900,
+    "BOL": 800,
+    "BR": 1100,
+    "MGM": 650,
+    "BOV": 900
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708155_13L88808Q1-1213243313Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=22502311",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373430057|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961351-6342153&type=Single"
+   },
+   "best": 1100,
+   "bestBook": "BR",
+   "bestImplied": 8.3,
+   "medianImplied": 10.3,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0033858": {
+   "name": "Jonnu Smith",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 850,
+    "FD": 800,
+    "BOL": 750,
+    "BR": 700,
+    "MGM": 850,
+    "BOV": 800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708175_13L88808Q1246792384Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=14153657",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418277|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961394-6342239&type=Single"
+   },
+   "best": 850,
+   "bestBook": "DK",
+   "bestImplied": 10.5,
+   "medianImplied": 11.1,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039530": {
+   "name": "Brevyn Spann-Ford",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 900,
+    "FD": 1100,
+    "BOL": 900,
+    "BR": 1100,
+    "MGM": 850,
+    "BOV": 1100
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708189_13L88808Q11068815856Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=26812192",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373441484|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961361-6342173&type=Single"
+   },
+   "best": 1100,
+   "bestBook": "FD",
+   "bestImplied": 8.3,
+   "medianImplied": 9.2,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039062": {
+   "name": "Jonathan Mingo",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 1000,
+    "FD": 1000,
+    "BOL": 1000,
+    "BR": 1100,
+    "BOV": 900
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708187_13L88808Q1941788010Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=42225845",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373441585|{wagerAmount}"
+   },
+   "best": 1100,
+   "bestBook": "BR",
+   "bestImplied": 8.3,
+   "medianImplied": 9.1,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0038705": {
+   "name": "Emari Demercado",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 1000,
+    "FD": 1100,
+    "BOL": 1000,
+    "BR": 1400
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232320151003_13L88808Q1-1148361646Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=48141496",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4377976327|{wagerAmount}"
+   },
+   "best": 1400,
+   "bestBook": "BR",
+   "bestImplied": 6.7,
+   "medianImplied": 8.7,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0040598": {
+   "name": "Mark Redman",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 1100,
+    "FD": 1200,
+    "BOL": 1000,
+    "BR": 1300,
+    "MGM": 1400,
+    "BOV": 1200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708177_13L88808Q1-1407909147Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=48515416",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373430051|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961371-6342193&type=Single"
+   },
+   "best": 1400,
+   "bestBook": "MGM",
+   "bestImplied": 6.7,
+   "medianImplied": 7.7,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0038738": {
+   "name": "Hunter Luepke",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 1100,
+    "FD": 1100,
+    "BOL": 1100,
+    "BR": 950,
+    "MGM": 1000,
+    "BOV": 1100
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708190_13L88808Q11855040172Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=60061696",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373441480|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3961347-6342145&type=Single"
+   },
+   "best": 1100,
+   "bestBook": "DK",
+   "bestImplied": 8.3,
+   "medianImplied": 8.3,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0038547": {
+   "name": "Luke Schoonmaker",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 1300,
+    "FD": 1200,
+    "BOL": 1100,
+    "BR": 1150,
+    "BOV": 1200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232317708191_13L88808Q11836416654Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=42200603",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418296|{wagerAmount}"
+   },
+   "best": 1300,
+   "bestBook": "DK",
+   "bestImplied": 7.1,
+   "medianImplied": 7.7,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0040930": {
+   "name": "Camden Brown",
+   "team": "DAL",
+   "game": "DAL@GB",
+   "books": {
+    "DK": 1300,
+    "FD": 1200,
+    "BOL": 1100,
+    "BR": 1800,
+    "BOV": 1200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378204047%232322705085_13L88808Q1-12861700Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=49993891",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418316|{wagerAmount}"
+   },
+   "best": 1800,
+   "bestBook": "BR",
+   "bestImplied": 5.3,
+   "medianImplied": 7.7,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0040948": {
+   "name": "J. Michael Sturdivant",
+   "team": "GB",
+   "game": "DAL@GB",
+   "books": {
+    "FD": 1300,
+    "BR": 700,
+    "MGM": 850,
+    "BOV": 1300
+   },
+   "links": {
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615900715&selectionId=49579572",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823556?coupon={pickType}|4373418318|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43642-3984398-6384935&type=Single"
+   },
+   "best": 1300,
+   "bestBook": "FD",
+   "bestImplied": 7.1,
+   "medianImplied": 8.8,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0033280": {
+   "name": "Christian McCaffrey",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": -280,
+    "FD": -280,
+    "BOL": -333,
+    "BR": -305,
+    "MGM": -275,
+    "BOV": -300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773834_13L88808Q1-1377627368Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=10609932",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387965|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957727-6335213&type=Single"
+   },
+   "best": -275,
+   "bestBook": "MGM",
+   "bestImplied": 73.3,
+   "medianImplied": 74.3,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0031408": {
+   "name": "Mike Evans",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": -125,
+    "FD": -135,
+    "BOL": -143,
+    "BR": -130,
+    "MGM": -120,
+    "BOV": -136
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773835_13L88808Q11665839176Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=48244063",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373402120|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957745-6335249&type=Single"
+   },
+   "best": -120,
+   "bestBook": "MGM",
+   "bestImplied": 54.5,
+   "medianImplied": 57.0,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0033288": {
+   "name": "George Kittle",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 110,
+    "FD": 110,
+    "BOL": 100,
+    "BR": -105,
+    "MGM": 100,
+    "BOV": 100
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773836_13L88808Q1-2099105975Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=10680468",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373402106|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957740-6335239&type=Single"
+   },
+   "best": 110,
+   "bestBook": "DK",
+   "bestImplied": 47.6,
+   "medianImplied": 50.0,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0037256": {
+   "name": "Rachaad White",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 115,
+    "FD": 115,
+    "BOL": 110,
+    "BR": 106,
+    "MGM": 110,
+    "BOV": 115
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773847_13L88808Q1968442089Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=43162275",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373413638|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957768-6335290&type=Single"
+   },
+   "best": 115,
+   "bestBook": "DK",
+   "bestImplied": 46.5,
+   "medianImplied": 47.1,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0035659": {
+   "name": "Terry McLaurin",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 200,
+    "FD": 200,
+    "BOL": 180,
+    "BR": 210,
+    "MGM": 230,
+    "BOV": 200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773848_13L88808Q11101654981Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=12302590",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387957|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957779-6335312&type=Single"
+   },
+   "best": 230,
+   "bestBook": "MGM",
+   "bestImplied": 30.3,
+   "medianImplied": 33.3,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0031588": {
+   "name": "Stefon Diggs",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 220,
+    "FD": 220,
+    "BOL": 210,
+    "BR": 210,
+    "MGM": 225,
+    "BOV": 230
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773854_13L88808Q1622596392Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=10288139",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373402144|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957775-6335304&type=Single"
+   },
+   "best": 230,
+   "bestBook": "BOV",
+   "bestImplied": 30.3,
+   "medianImplied": 31.2,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039910": {
+   "name": "Jayden Daniels",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 235,
+    "FD": 240,
+    "BOL": 230,
+    "BR": 270,
+    "MGM": 230,
+    "BOV": 240
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773850_13L88808Q1111756323Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=27531331",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373369354|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957773-6335300&type=Single"
+   },
+   "best": 270,
+   "bestBook": "BR",
+   "bestImplied": 27.0,
+   "medianImplied": 29.6,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0031236": {
+   "name": "Brandin Cooks",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 255,
+    "FD": 240,
+    "BOL": 240,
+    "BR": 245,
+    "MGM": 260,
+    "BOV": 250
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773844_13L88808Q1436278619Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=8505903",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373402116|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957738-6335235&type=Single"
+   },
+   "best": 260,
+   "bestBook": "MGM",
+   "bestImplied": 27.8,
+   "medianImplied": 28.8,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0037834": {
+   "name": "Brock Purdy",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 330,
+    "FD": 320,
+    "BOL": 280,
+    "BR": 320,
+    "MGM": 320,
+    "BOV": 300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773839_13L88808Q1579133715Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=27531358",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387931|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957748-6335255&type=Single"
+   },
+   "best": 330,
+   "bestBook": "DK",
+   "bestImplied": 23.3,
+   "medianImplied": 23.8,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0037809": {
+   "name": "Chig Okonkwo",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 330,
+    "FD": 340,
+    "BOL": 300,
+    "BR": 240,
+    "MGM": 320,
+    "BOV": 340
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773851_13L88808Q1-1369631226Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=44578689",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373369386|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957761-6335276&type=Single"
+   },
+   "best": 340,
+   "bestBook": "FD",
+   "bestImplied": 22.7,
+   "medianImplied": 23.5,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0033699": {
+   "name": "Austin Ekeler",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 340,
+    "FD": 310,
+    "BOL": 300,
+    "BR": 205,
+    "MGM": 290,
+    "BOV": 310
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773849_13L88808Q1468752164Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=14807208",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373402098|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957765-6335284&type=Single"
+   },
+   "best": 340,
+   "bestBook": "DK",
+   "bestImplied": 22.7,
+   "medianImplied": 24.7,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0041052": {
+   "name": "Kaelon Black",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 400,
+    "FD": 410,
+    "BOL": 350,
+    "BR": 390,
+    "MGM": 380,
+    "BOV": 370
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773838_13L88808Q11981396460Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=50593710",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387963|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957725-6335209&type=Single"
+   },
+   "best": 410,
+   "bestBook": "FD",
+   "bestImplied": 19.6,
+   "medianImplied": 20.6,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039365": {
+   "name": "Jacob Cowing",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 425,
+    "FD": 440,
+    "BOL": 400,
+    "BR": 440,
+    "MGM": 320,
+    "BOV": 400
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773842_13L88808Q1-1841040872Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=42119640",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373402102|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957731-6335221&type=Single"
+   },
+   "best": 440,
+   "bestBook": "FD",
+   "bestImplied": 18.5,
+   "medianImplied": 19.5,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0041040": {
+   "name": "Antonio Williams",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 500,
+    "FD": 500,
+    "BOL": 450,
+    "BR": 350,
+    "MGM": 425,
+    "BOV": 500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773853_13L88808Q1-908966819Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=38063388",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373402200|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957783-6335320&type=Single"
+   },
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 17.4,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0037742": {
+   "name": "Treylon Burks",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 600,
+    "FD": 650,
+    "BOL": 450,
+    "BR": 420,
+    "MGM": 525,
+    "BOV": 600
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773852_13L88808Q1557870560Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=43162247",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373413644|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957798-6335348&type=Single"
+   },
+   "best": 650,
+   "bestBook": "FD",
+   "bestImplied": 13.3,
+   "medianImplied": 15.1,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0036887": {
+   "name": "Luke Farrell",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 850,
+    "FD": 950,
+    "BOL": 800,
+    "BR": 950,
+    "MGM": 900,
+    "BOV": 825
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773840_13L88808Q1939681134Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=36914889",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387929|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957739-6335237&type=Single"
+   },
+   "best": 950,
+   "bestBook": "FD",
+   "bestImplied": 9.5,
+   "medianImplied": 10.3,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0040172": {
+   "name": "Jordan Watkins",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 900,
+    "FD": 1000,
+    "BOL": 900,
+    "BR": 1300,
+    "MGM": 1050,
+    "BOV": 900
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773843_13L88808Q11030682857Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=48514509",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387906|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957736-6335231&type=Single"
+   },
+   "best": 1300,
+   "bestBook": "BR",
+   "bestImplied": 7.1,
+   "medianImplied": 9.5,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0038643": {
+   "name": "Brayden Willis",
+   "team": "SF",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 1000,
+    "FD": 950,
+    "BOL": 900,
+    "BR": 1300,
+    "BOV": 825
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317778194_13L88808Q1-744633312Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=37579241",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373413785|{wagerAmount}"
+   },
+   "best": 1300,
+   "bestBook": "BR",
+   "bestImplied": 7.1,
+   "medianImplied": 9.5,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0036626": {
+   "name": "Dyami Brown",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 1300,
+    "FD": 1300,
+    "BOL": 900,
+    "BR": 750,
+    "MGM": 1200,
+    "BOV": 1300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773856_13L88808Q1651890407Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=37101847",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387959|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957800-6335352&type=Single"
+   },
+   "best": 1300,
+   "bestBook": "DK",
+   "bestImplied": 7.1,
+   "medianImplied": 7.4,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0036628": {
+   "name": "John Bates",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 1600,
+    "FD": 1600,
+    "BOL": 1400,
+    "BR": 1600,
+    "MGM": 1300,
+    "BOV": 1600
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773857_13L88808Q1711352811Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=40855952",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387927|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957802-6335356&type=Single"
+   },
+   "best": 1600,
+   "bestBook": "DK",
+   "bestImplied": 5.9,
+   "medianImplied": 5.9,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039912": {
+   "name": "Ben Sinnott",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 1800,
+    "FD": 1600,
+    "BOL": 1400,
+    "BR": 1800,
+    "MGM": 1400,
+    "BOV": 1600
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773858_13L88808Q11678347508Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=48308856",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373413652|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3957804-6335360&type=Single"
+   },
+   "best": 1800,
+   "bestBook": "DK",
+   "bestImplied": 5.3,
+   "medianImplied": 5.9,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039686": {
+   "name": "Colson Yankoff",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 2500,
+    "FD": 2500,
+    "BOL": 1700,
+    "BR": 2500,
+    "BOV": 2500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773860_13L88808Q1449244913Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=73285105",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373413704|{wagerAmount}"
+   },
+   "best": 2500,
+   "bestBook": "DK",
+   "bestImplied": 3.8,
+   "medianImplied": 3.8,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  },
+  "00-0039355": {
+   "name": "Luke McCaffrey",
+   "team": "WAS",
+   "game": "WAS@SF",
+   "books": {
+    "DK": 2800,
+    "FD": 3000,
+    "BOL": 2400,
+    "BR": 2500,
+    "MGM": 2800,
+    "BOV": 3000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA378218690%232317773855_13L88808Q1-35451127Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.615840488&selectionId=60048951",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823559?coupon={pickType}|4373387953|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43643-3975442-6368874&type=Single"
+   },
+   "best": 3000,
+   "bestBook": "FD",
+   "bestImplied": 3.2,
+   "medianImplied": 3.4,
+   "fetchedAt": "2026-10-18T21:30:10+00:00"
+  }
+ },
+ "unmatched": [
+  {
+   "game": "DAL@GB",
+   "name": "Green Bay Packers D/ST"
+  },
+  {
+   "game": "DAL@GB",
+   "name": "Dallas Cowboys D/ST"
+  },
+  {
+   "game": "DAL@GB",
+   "name": "Josh Whyle"
+  },
+  {
+   "game": "WAS@SF",
+   "name": "Kyle Juszczyk"
+  },
+  {
+   "game": "WAS@SF",
+   "name": "San Francisco 49ers D/ST"
+  },
+  {
+   "game": "WAS@SF",
+   "name": "Christian Kirk"
+  },
+  {
+   "game": "WAS@SF",
+   "name": "Washington Commanders D/ST"
+  },
+  {
+   "game": "WAS@SF",
+   "name": "James Jordan"
+  }
+ ]
+}

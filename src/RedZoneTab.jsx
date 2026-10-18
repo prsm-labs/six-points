@@ -5,6 +5,7 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
+import PickButton from './PickButton.jsx'
 
 // Season-long high-usage red-zone player page (a separate ask from the live Heating Up/On Fire
 // tab -- this one's "throughout the season," not live-only). Reuses redzone_touches_per_game,
@@ -108,7 +109,7 @@ export default function RedZoneTab() {
                 <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
-                    {m.player_name}
+                    {m.player_name} <PickButton player={m} compact prop="td" />
                   </div>
                 </td>
                 <td>

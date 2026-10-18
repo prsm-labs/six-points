@@ -6,6 +6,7 @@ import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import { DepthTag, MatchupCell, RoleChip } from './matchupUi.jsx'
+import PickButton from './PickButton.jsx'
 
 // Role Report -- requested 2026-10-04 after the user showed a real props-tout breakdown
 // ("x3.00 role leak", target share, longshot odds) and asked where in the app to get something
@@ -177,7 +178,7 @@ export default function RoleReportTab() {
                 <td className="sticky-col">
                   <div className="player-cell" onClick={() => openPlayerSlide(m)}>
                     <PlayerAvatar playerId={m.player_id} name={m.player_name} />
-                    {m.player_name}<DepthTag m={m} /> <RoleChip m={m} />
+                    {m.player_name} <PickButton player={m} compact prop="td" /><DepthTag m={m} /> <RoleChip m={m} />
                     {m.thin_sample && <span className="meta-line small" style={{ marginLeft: 6 }}>(thin sample)</span>}
                   </div>
                 </td>
