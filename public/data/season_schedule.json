@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "latest_week": 6,
-  "generated_at": "2026-10-18T21:40:57.671972+00:00",
+  "generated_at": "2026-10-19T16:14:55.968981+00:00",
   "games": [
     {
       "game_id": "2026_01_NE_SEA",
@@ -979,8 +979,8 @@
       "gameday": "2026-10-18",
       "gametime": "16:05",
       "roof": "dome",
-      "home_score": null,
-      "away_score": null
+      "home_score": 16,
+      "away_score": 18
     },
     {
       "game_id": "2026_06_LAC_KC",
@@ -990,8 +990,8 @@
       "gameday": "2026-10-18",
       "gametime": "16:25",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 22,
+      "away_score": 6
     },
     {
       "game_id": "2026_06_BUF_LV",
@@ -1001,8 +1001,8 @@
       "gameday": "2026-10-18",
       "gametime": "16:25",
       "roof": "dome",
-      "home_score": null,
-      "away_score": null
+      "home_score": 30,
+      "away_score": 33
     },
     {
       "game_id": "2026_06_DAL_GB",
@@ -1012,8 +1012,8 @@
       "gameday": "2026-10-18",
       "gametime": "20:20",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 23,
+      "away_score": 13
     },
     {
       "game_id": "2026_06_WAS_SF",

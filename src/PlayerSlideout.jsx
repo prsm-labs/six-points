@@ -7,7 +7,7 @@ import PickButton from './PickButton.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
 import { DepthTag, MatchupCell, fmtYds, leakSummary, muTier, roleSummary } from './matchupUi.jsx'
 import { loadSlate } from './slate.js'
-import { DVP_NOTE, matchupText } from './gradeUi.jsx'
+import { DVP_NOTE, ROLE_NOTE, matchupText, whoScoresText } from './gradeUi.jsx'
 import { AllBookLinks, StatePicker } from './BetLink.jsx'
 import { edgeClass, edgeText, fmtEdge } from './bookOdds.js'
 import GamblyButton from './GamblyButton.jsx'
@@ -221,6 +221,7 @@ export default function PlayerSlideout() {
                   <div className="slideout-lines">
                     <div>Model: TD {fmtPct(weekRow.p_td, 1)}{weekRow.p_td2 != null && <> · 2+ TDs {fmtPct(weekRow.p_td2, 1)}</>} · 100+ yds {fmtPct(weekRow.p_100, 1)}{weekRow.est_yards != null && <> · est. {Math.round(weekRow.est_yards)} yds</>}</div>
                     {matchupText(weekRow) && <div title={DVP_NOTE}>{matchupText(weekRow)} <span className="meta-line small">(the defense factor in the grade)</span></div>}
+                    {whoScoresText(weekRow) && <div title={ROLE_NOTE}>{whoScoresText(weekRow)} <span className="meta-line small">(context — not in the grade)</span></div>}
                     {weekRow.td_l3 != null && <div>TDs in his last 3 games: {weekRow.td_l3} (last game {weekRow.td_last ?? 0}){weekRow.hotHand ? ' · 🔥 hot hand outside the top 25%' : ''}</div>}
                     <div>Anytime TD: <AllBookLinks book={weekRow.book} /> <StatePicker /></div>
                     {weekRow.edge != null && <div title={edgeText(weekRow)}>Edge vs best price: <span className={edgeClass(weekRow.edge)}>{fmtEdge(weekRow.edge)} pts</span> <span className="meta-line small">(context — not in the grade)</span></div>}

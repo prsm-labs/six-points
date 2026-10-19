@@ -23,11 +23,31 @@ export function matchupText(m) {
   const tier = m.def_tier === 'soft' ? 'soft ▲' : m.def_tier === 'tough' ? 'tough ▼' : 'middle third'
   return `Matchup: ${m.opponent} TD defense #${m.def_rank} softest of ${m.def_n} this week (${tier})`
 }
+// Who scores vs this defense (2026-10-19, user: "D keys on Kittle, the TE2 gets open"): the opponent's TDs allowed
+// this season by the scorer's role on his team (TE1 / TE2 ...), next to a typical defense over the same games.
+// Context only: over 2023-25 a defense's past TDs by role didn't repeat, and backups behind a star, backups vs a
+// defense weak at the position, and primetime depth players all scored no more than the grade said.
+export const ROLE_NOTE = "Context only, not in the grade: tested over 2023-25, a defense's past TDs by role don't repeat, and "
+  + "backups behind a star, backups vs a defense weak at the position, and primetime depth players scored no more than the grade said."
+const ROLE_ORDER = { RB: ['RB1', 'RB2', 'RB3+'], WR: ['WR1', 'WR2', 'WR3', 'WR4+'], TE: ['TE1', 'TE2', 'TE3+'] }
+export function roleLabel(m) {
+  const order = ROLE_ORDER[m?.position]
+  if (!order || !m.use_rank) return null
+  return order[Math.min(m.use_rank, order.length) - 1]
+}
+export function whoScoresText(m) {
+  const order = ROLE_ORDER[m?.position]
+  if (!order || !m.opp_role_tds || !m.opp_games) return null
+  const allowed = order.map((k) => `${k} ${m.opp_role_tds[k] || 0}`).join(' · ')
+  const typical = order.map((k) => `${k} ${((m.role_td_avg?.[k] || 0) * m.opp_games).toFixed(1)}`).join(' · ')
+  const mine = roleLabel(m)
+  return `Who scores vs ${m.opponent} (${m.position} TDs, ${m.opp_games} games): ${allowed} — typical defense ${typical}${mine ? ` · he's his team's ${mine} by usage` : ''}`
+}
 export function gradeTooltip(m) {
   if (!m?.grade) return undefined
   const top = m.grade_pct != null ? `top ${Math.max(1, Math.round((1 - m.grade_pct) * 100))}% of this week's pool` : ''
   const probs = [m.p_td != null && `TD ${fmtPct(m.p_td, 1)}`, m.p_td2 != null && `2+ TDs ${fmtPct(m.p_td2, 1)}`, m.p_100 != null && `100+ yds ${fmtPct(m.p_100, 1)}`].filter(Boolean).join(' · ')
-  return [`Grade ${m.grade}${top ? ` — ${top}` : ''}`, probs, matchupText(m), DVP_NOTE].filter(Boolean).join(String.fromCharCode(10))
+  return [`Grade ${m.grade}${top ? ` — ${top}` : ''}`, probs, matchupText(m), whoScoresText(m), DVP_NOTE].filter(Boolean).join(String.fromCharCode(10))
 }
 
 /** m (optional): the player row -- adds the ▲ / ▼ matchup marker (soft / tough TD defense) and the full tooltip. */
