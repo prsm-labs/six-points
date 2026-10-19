@@ -3,7 +3,8 @@ import { useSlate } from './slate.js'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import PickButton from './PickButton.jsx'
-import { defRankText, fmtPct, GradeBadge, LiveStatusTag, SlateStatus, useLiveOutFilter } from './gradeUi.jsx'
+import { defRankText, fmtPct, GradeBadge, LiveStatusTag, rankWhere, SlateStatus, useLiveOutFilter, YDS_NOTE, ydsRankText, ydsRankTitle } from './gradeUi.jsx'
+import { ydsDefRanks, YDS_POSITIONS } from './slateCore.js'
 import { DepthTag, RoleChip } from './matchupUi.jsx'
 import { HotHandTag } from './revampUi.jsx'
 import { booksText, edgeClass, edgeText, fmtAmerican, fmtEdge, VALUE_EDGE } from './bookOdds.js'
@@ -18,13 +19,21 @@ import CheatSheetTab from './CheatSheetTab.jsx'
 // later in Track Record > Cheat Sheets (hit vs what the model expected).
 const STATUS_FILTERS = [['all', 'All'], ['notOut', 'Hide OUT (live)'], ['healthy', 'No injury tag']]
 
-function ListCard({ title, sub, items, renderRow, prop = 'td' }) {
+// defense tag per list: TD lists show the TD-defense rank, yardage lists the yards-vs-position rank (2026-10-19)
+const DEF_TAGS = {
+  td: (m) => [defRankText(m), undefined],
+  yds: (m) => [ydsRankText(m), ydsRankTitle(m)],
+}
+
+function ListCard({ title, sub, items, renderRow, prop = 'td', defTag = 'td' }) {
   return (
     <div className="card cheat-list">
       <div className="cheat-list-title">{title}</div>
       <div className="meta-line small">{sub}</div>
       {items.length === 0 && <div className="meta-line small">Nobody matches these filters yet.</div>}
-      {items.map((m, i) => (
+      {items.map((m, i) => {
+        const [defText, defTitle] = DEF_TAGS[defTag](m)
+        return (
         <div key={m.player_id} className="cheat-row" onClick={() => openPlayerSlide(m)}>
           <div className="cheat-row-main">
             <span className="meta-line small">{i + 1}.</span>
@@ -35,14 +44,15 @@ function ListCard({ title, sub, items, renderRow, prop = 'td' }) {
                 {' '}<PickButton player={m} compact prop={prop} />
               </div>
               <div className="meta-line small" style={{ margin: 0 }}>
-                {m.position}<DepthTag m={m} /> vs {m.opponent}{defRankText(m) ? ` · ${defRankText(m)}` : ''}
+                {m.position}<DepthTag m={m} /> vs {m.opponent}{defText && <span title={defTitle}>{` · ${defText}`}</span>}
                 {m.book ? ` · ${fmtAmerican(m.book.best)} ${m.book.bestBook}` : ''}
               </div>
             </div>
           </div>
           <span className="cheat-row-stat">{renderRow(m)}</span>
         </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
@@ -110,7 +120,7 @@ function QuickReads() {
       <div className="grid-cards">
         <ListCard title="🏈 TD Candidates" sub="Top 5 by chance to score a TD" items={tdC} renderRow={(m) => fmtPct(m.p_td, 1)} />
         <ListCard title="🏈🏈 2+ TD Candidates" sub="Top 5 by chance of 2+ TDs" items={td2C} prop="td2" renderRow={(m) => fmtPct(m.p_td2, 1)} />
-        <ListCard title="💨 100+ Yard Candidates" sub="Top 5 by chance of 100+ scrimmage yards" items={ydsC} prop="yds100" renderRow={(m) => fmtPct(m.p_100, 1)} />
+        <ListCard title="💨 100+ Yard Candidates" sub="Top 5 by chance of 100+ scrimmage yards · defense tag = yards allowed to his position" items={ydsC} prop="yds100" defTag="yds" renderRow={(m) => fmtPct(m.p_100, 1)} />
         <ListCard title="🔥 Hot Hands" sub="Scored in the last 3 games, outside the week's top 25% — the group that beat the model" items={hot} renderRow={(m) => fmtPct(m.p_td, 1)} />
         {priced.length > 0 && (
           <>
@@ -137,6 +147,75 @@ function QuickReads() {
           ))}
         </div>
       </div>
+      <DefenseRankTable />
+    </div>
+  )
+}
+
+// 🧱 Defense rankings by category (2026-10-19, user: "wouldn't there be different levels of rankings per team / category?"):
+// every defense on this week's slate, ranked among this week's defenses vs TDs (team level, the factor in the grade) and
+// vs RB / WR / TE yards (mu_yds_idx). Ranked over the whole slate; the matchup filter only narrows which rows show.
+const RANK_COLS = [['td', 'vs TDs'], ...YDS_POSITIONS.map((p) => [p, `vs ${p} yds`])]
+function DefenseRankTable() {
+  const slate = useSlate()
+  const { selectedMatchup } = useMatchup()
+  const [sortBy, setSortBy] = useState('td')
+  const rows = useMemo(() => {
+    const all = slate?.matchups || []
+    const yds = ydsDefRanks(all)
+    const by = new Map()
+    for (const m of all) {
+      if (!m.opponent || by.has(m.opponent)) continue
+      const r = { team: m.opponent, vs: m.team, td: m.def_rank ? { rank: m.def_rank, n: m.def_n, idx: m.def_td_idx, tier: m.def_tier } : null }
+      for (const p of YDS_POSITIONS) r[p] = yds.get(`${m.opponent}|${p}`) || null
+      by.set(m.opponent, r)
+    }
+    return [...by.values()].filter((r) => !selectedMatchup || isInSelectedMatchup(selectedMatchup, r.vs))
+  }, [slate, selectedMatchup])
+  if (!rows.length) return null
+  const sorted = [...rows].sort((a, b) => (a[sortBy]?.rank ?? 99) - (b[sortBy]?.rank ?? 99))
+  const cell = (c, key) => {
+    if (!c) return <td key={key} className="meta-line small">—</td>
+    const d = c.idx != null ? Math.round((c.idx - 1) * 100) : null
+    return (
+      <td key={key} title={`#${c.rank} softest of ${c.n} this week${d != null ? ` · allows ${d >= 0 ? '+' : ''}${d}% vs league average` : ''}`}>
+        <span className={`mu-chip mu-${c.tier === 'soft' ? 'soft' : c.tier === 'tough' ? 'tough' : 'neutral'}`}>{rankWhere(c.rank, c.n)}</span>
+        {d != null && <span className="meta-line small"> {d >= 0 ? '+' : ''}{d}%</span>}
+      </td>
+    )
+  }
+  return (
+    <div className="card cheat-list" style={{ marginTop: 12 }}>
+      <div className="cheat-list-title">🧱 Defense Rankings by Category</div>
+      <div className="meta-line small">
+        Every defense this week, ranked among this week's defenses. A defense can be
+        soft in one place and tough in another — use the TD column for TD picks and the yards columns for yardage picks.
+        TDs = team TDs allowed (the defense factor in every grade). {YDS_NOTE} Tap a column to sort.
+      </div>
+      <div className="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th className="sticky-col">Defense</th>
+              {RANK_COLS.map(([k, label]) => (
+                <th key={k} onClick={() => setSortBy(k)} style={{ cursor: 'pointer' }}>{label}{sortBy === k ? ' ▴' : ''}{k === 'WR' ? ' *' : ''}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((r) => (
+              <tr key={r.team}>
+                <td className="sticky-col">
+                  <button className="team-link" onClick={() => openTeamSlide({ team: r.team, context: 'defense' })}>{r.team}</button>
+                  <span className="meta-line small"> vs {r.vs}</span>
+                </td>
+                {RANK_COLS.map(([k]) => cell(r[k], k))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="meta-line small">* WR yards: context only, not in Est. Yards. No QB rush / pass-yards ranking yet — Six Points doesn't project QB yards.</div>
     </div>
   )
 }

@@ -9,6 +9,9 @@ import { setPosition, usePosition } from './positionFilter.js'
 import { DepthTag, MatchupCell, RoleChip, fmtYds, leakSummary, pct1, useGradeModel } from './matchupUi.jsx'
 import { YARDAGE_SIGNAL_N } from './useLabSims.js'
 import PickButton from './PickButton.jsx'
+import { useSlate } from './slate.js'
+import { ydsDefRanks } from './slateCore.js'
+import { rankWhere, YDS_NOTE } from './gradeUi.jsx'
 
 export default function YardageLab() {
   const { rows, error, status } = useYardageSims()
@@ -40,13 +43,21 @@ function YardageTable({ rows }) {
   const model = useGradeModel()
   const modeled = rows.some((r) => r.line_pct != null)
 
+  // 2026-10-19: the opponent's rank among this week's defenses in yards allowed to the position (ranked over the
+  // whole slate, not just the lab's rows)
+  const slate = useSlate()
+  const ydsRanks = useMemo(() => ydsDefRanks(slate?.matchups || rows), [slate, rows])
   const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
   const filtered = useMemo(() => {
     return rows
+      .map((r) => {
+        const y = ydsRanks.get(`${r.opponent}|${r.position}`)
+        return y ? { ...r, yds_rank: y.rank, yds_n: y.n, yds_tier: y.tier } : r
+      })
       .filter((r) => position === 'all' || r.position === position)
       .filter((r) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, r.team) : (team === 'all' || r.team === team))
       .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
-  }, [rows, position, team, search, selectedMatchup])
+  }, [rows, ydsRanks, position, team, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, modeled ? 'line_pct' : 'sim_yard_pct', 'desc')
   const yv = model?.validation?.yards
@@ -87,7 +98,8 @@ function YardageTable({ rows }) {
             &middot; <strong>Est. Yards</strong> = his targets and carries at his own yards per target / carry, adjusted
             for what this opponent gives up to his position (deep vs short passes, yards per carry) &middot;
             <strong> Matchup</strong> = how soft that is for his role vs the rest of his position this week, and how many
-            of his Est. Yards it adds or takes away (hover for the breakdown) &middot; <strong>Line %</strong> = chance
+            of his Est. Yards it adds or takes away (hover for the breakdown) &middot; <strong>D vs Pos</strong> = the
+            opponent's rank among this week's defenses in yards allowed to his position (WR: context only) &middot; <strong>Line %</strong> = chance
             he clears his line &middot; <strong>Yardage Signal</strong> = the slate's top {YARDAGE_SIGNAL_N} by Line %
           </p>
           {yv && ylab && terc && (
@@ -131,6 +143,7 @@ function YardageTable({ rows }) {
               {modeled ? (
                 <>
                   <SortTh label="Matchup" sortKeyName="mu_yds" {...thProps} />
+                  <SortTh label="D vs Pos" sortKeyName="mu_yds_idx" {...thProps} />
                   <SortTh label="Line %" sortKeyName="line_pct" {...thProps} />
                 </>
               ) : (
@@ -170,6 +183,11 @@ function YardageTable({ rows }) {
                 {modeled ? (
                   <>
                     <td><MatchupCell m={p} /></td>
+                    <td title={p.yds_rank ? `${p.opponent} allows ${Math.round((p.mu_yds_idx - 1) * 100) >= 0 ? '+' : ''}${Math.round((p.mu_yds_idx - 1) * 100)}% yards to ${p.position}s vs league average. ${YDS_NOTE}` : undefined}>
+                      {p.yds_rank
+                        ? <span className={`mu-chip mu-${p.yds_tier}`}>{rankWhere(p.yds_rank, p.yds_n)}{p.position === 'WR' ? '*' : ''}</span>
+                        : <span className="meta-line small">—</span>}
+                    </td>
                     <td className="zone-score" title={leakSummary(p)}>{p.line_pct != null ? `${Math.round(p.line_pct * 100)}%` : '—'}</td>
                   </>
                 ) : (

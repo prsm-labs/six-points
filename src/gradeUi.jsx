@@ -26,13 +26,31 @@ export function matchupText(m) {
 // Short defense tag for list rows (2026-10-19, user: "TD D #2/28" read like the #2 defense): "D 2nd-softest vs TDs ▲" /
 // "D 3rd-toughest vs TDs ▼" -- counted from whichever end is closer.
 const ordinal = (n) => `${n}${[11, 12, 13].includes(n % 100) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th')}`
-export function defRankText(m) {
-  if (!m?.def_rank || !m.def_n) return null
-  const fromTop = m.def_rank, fromBottom = m.def_n - m.def_rank + 1
-  const where = fromTop <= fromBottom
+export function rankWhere(rank, n) {
+  const fromTop = rank, fromBottom = n - rank + 1
+  return fromTop <= fromBottom
     ? (fromTop === 1 ? 'softest' : `${ordinal(fromTop)}-softest`)
     : (fromBottom === 1 ? 'toughest' : `${ordinal(fromBottom)}-toughest`)
-  return `D ${where} vs TDs${m.def_tier === 'soft' ? ' ▲' : m.def_tier === 'tough' ? ' ▼' : ''}`
+}
+const tierMark = (t) => (t === 'soft' ? ' ▲' : t === 'tough' ? ' ▼' : '')
+export function defRankText(m) {
+  if (!m?.def_rank || !m.def_n) return null
+  return `D ${rankWhere(m.def_rank, m.def_n)} vs TDs${tierMark(m.def_tier)}`
+}
+// Yards-vs-position tag (2026-10-19, user: separate rankings vs RB / WR / TE yards): "D 9th-softest vs RB yds ▲". From
+// m.yds_rank / yds_n / yds_tier (slateCore.ydsDefRanks over mu_yds_idx). RB / TE matchups are inside Est. Yards and the
+// 100+ chance; WR matchups made held-out WR projections slightly worse, so WR is context only.
+export const YDS_NOTE = 'Yards allowed to the position vs league average (this season, shrunk toward last season + league), '
+  + "ranked among this week's defenses. RB / TE: part of Est. Yards and the 100+ chance (held up 2023-25). "
+  + 'WR: context only -- it made held-out WR projections slightly worse.'
+export function ydsRankText(m) {
+  if (!m?.yds_rank || !m.yds_n) return null
+  return `D ${rankWhere(m.yds_rank, m.yds_n)} vs ${m.position} yds${tierMark(m.yds_tier)}`
+}
+export function ydsRankTitle(m) {
+  if (!m?.yds_rank || m.mu_yds_idx == null) return undefined
+  const d = Math.round((Number(m.mu_yds_idx) - 1) * 100)
+  return `${m.opponent} allows ${d >= 0 ? '+' : ''}${d}% yards to ${m.position}s vs league average — #${m.yds_rank} softest of ${m.yds_n} this week. ${YDS_NOTE}`
 }
 // Who scores vs this defense (2026-10-19, user: "D keys on Kittle, the TE2 gets open"): the opponent's TDs allowed
 // this season by the scorer's role on his team (TE1 / TE2 ...), next to a typical defense over the same games.
