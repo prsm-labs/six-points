@@ -3,7 +3,7 @@ import { useSlate } from './slate.js'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import PickButton from './PickButton.jsx'
-import { fmtPct, GradeBadge, LiveStatusTag, SlateStatus, useLiveOutFilter } from './gradeUi.jsx'
+import { defRankText, fmtPct, GradeBadge, LiveStatusTag, SlateStatus, useLiveOutFilter } from './gradeUi.jsx'
 import { DepthTag, RoleChip } from './matchupUi.jsx'
 import { HotHandTag } from './revampUi.jsx'
 import { booksText, edgeClass, edgeText, fmtAmerican, fmtEdge, VALUE_EDGE } from './bookOdds.js'
@@ -35,7 +35,7 @@ function ListCard({ title, sub, items, renderRow, prop = 'td' }) {
                 {' '}<PickButton player={m} compact prop={prop} />
               </div>
               <div className="meta-line small" style={{ margin: 0 }}>
-                {m.position}<DepthTag m={m} /> vs {m.opponent}{m.def_rank ? ` · ${m.opponent} TD D #${m.def_rank}/${m.def_n}${m.def_tier === 'soft' ? ' ▲' : m.def_tier === 'tough' ? ' ▼' : ''}` : ''}
+                {m.position}<DepthTag m={m} /> vs {m.opponent}{defRankText(m) ? ` · ${defRankText(m)}` : ''}
                 {m.book ? ` · ${fmtAmerican(m.book.best)} ${m.book.bestBook}` : ''}
               </div>
             </div>

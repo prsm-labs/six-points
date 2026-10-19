@@ -23,6 +23,17 @@ export function matchupText(m) {
   const tier = m.def_tier === 'soft' ? 'soft ▲' : m.def_tier === 'tough' ? 'tough ▼' : 'middle third'
   return `Matchup: ${m.opponent} TD defense #${m.def_rank} softest of ${m.def_n} this week (${tier})`
 }
+// Short defense tag for list rows (2026-10-19, user: "TD D #2/28" read like the #2 defense): "D 2nd-softest vs TDs ▲" /
+// "D 3rd-toughest vs TDs ▼" -- counted from whichever end is closer.
+const ordinal = (n) => `${n}${[11, 12, 13].includes(n % 100) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th')}`
+export function defRankText(m) {
+  if (!m?.def_rank || !m.def_n) return null
+  const fromTop = m.def_rank, fromBottom = m.def_n - m.def_rank + 1
+  const where = fromTop <= fromBottom
+    ? (fromTop === 1 ? 'softest' : `${ordinal(fromTop)}-softest`)
+    : (fromBottom === 1 ? 'toughest' : `${ordinal(fromBottom)}-toughest`)
+  return `D ${where} vs TDs${m.def_tier === 'soft' ? ' ▲' : m.def_tier === 'tough' ? ' ▼' : ''}`
+}
 // Who scores vs this defense (2026-10-19, user: "D keys on Kittle, the TE2 gets open"): the opponent's TDs allowed
 // this season by the scorer's role on his team (TE1 / TE2 ...), next to a typical defense over the same games.
 // Context only: over 2023-25 a defense's past TDs by role didn't repeat, and backups behind a star, backups vs a

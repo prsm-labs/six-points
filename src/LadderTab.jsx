@@ -6,7 +6,7 @@ import { BestPriceLink, StatePicker } from './BetLink.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide } from './slideouts.js'
 import PickButton from './PickButton.jsx'
-import { fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
+import { defRankText, fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
 import { DepthTag, RoleChip } from './matchupUi.jsx'
 import { HotHandTag } from './revampUi.jsx'
 import { matchesPosition, usePosition } from './positionFilter.js'
@@ -55,7 +55,7 @@ function TeamSide({ team, opp, players }) {
         <b>{team}</b> <span className="meta-line small">vs {opp}</span>
         {any && (
           <span className={`meta-line small ${any.def_tier === 'soft' ? 'edge-value' : ''}`} title="Opponent's TDs allowed among this week's defenses — the defense factor in every TD %">
-            {' '}· {opp} TD defense #{any.def_rank} softest of {any.def_n}{any.def_tier === 'soft' ? ' ▲' : any.def_tier === 'tough' ? ' ▼' : ''}
+            {' '}· {defRankText(any)}
           </span>
         )}
       </div>
