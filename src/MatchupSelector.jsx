@@ -100,6 +100,26 @@ export default function MatchupSelector() {
 
   if (!games || games.length === 0) return null
 
+  // 2026-10-19 (user): live games first, then upcoming, then finals -- each group in schedule order -- so the
+  // next game is always at the front of the row instead of after every finished one. ESPN's live state decides;
+  // the schedule file's scores (which lag a few hours) and the kickoff clock are only the fallback when ESPN hasn't
+  // answered (kickoff read as -05:00, so in EDT the 5-hour "must be over" mark lands an hour late, never early).
+  const nowMs = Date.now()
+  const phase = (g) => {
+    const st = liveByGame[g.game_id]?.state
+    if (st === 'in') return 0
+    if (st === 'post') return 2
+    if (st) return 1
+    if (g.home_score != null) return 2
+    const kick = Date.parse(`${g.gameday}T${g.gametime || '13:00'}:00-05:00`)
+    if (Number.isNaN(kick) || nowMs < kick) return 1
+    return nowMs - kick > 5 * 3600e3 ? 2 : 0
+  }
+  const ordered = games
+    .map((g, i) => ({ g, i }))
+    .sort((a, b) => phase(a.g) - phase(b.g) || `${a.g.gameday} ${a.g.gametime}`.localeCompare(`${b.g.gameday} ${b.g.gametime}`) || a.i - b.i)
+    .map((x) => x.g)
+
   function toggle(g) {
     const isSame = selectedMatchup && selectedMatchup.home === g.home_team && selectedMatchup.away === g.away_team
     setSelectedMatchup(isSame ? null : { home: g.home_team, away: g.away_team })
@@ -120,7 +140,7 @@ export default function MatchupSelector() {
   return (
     <div className="matchup-selector">
       <div className="matchup-selector-row">
-        {games.map((g) => {
+        {ordered.map((g) => {
           const active = selectedMatchup && selectedMatchup.home === g.home_team && selectedMatchup.away === g.away_team
           const live = liveByGame[g.game_id]
           const isLive = live?.state === 'in'
