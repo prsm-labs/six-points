@@ -1,7 +1,8 @@
 // 📈 King of the End Zone payout graph (Slap Shot's IcebreakerPayoutChart.jsx, football): x = our TD %, y = projected
 // bonus-bet payout if he's the king (log scale) -- the crowd piles onto the likeliest scorers, so they pay least.
 // Dot size = our King %; gold = the top 3 by promo value (King % x payout). Tap a dot to add / remove him from the
-// picked list (the table can show picked players only).
+// picked list (the table can show picked players only). 2026-10-19: every picked player (search, a dot, or a table
+// row) is labelled and placed first, so several picks stay readable together.
 export default function KotePayoutChart({ rows, picked, onToggle }) {
   const pts = rows.filter((r) => r.payout != null && r.p_td != null)
   if (!pts.length) return <p className="meta-line small">Nothing to chart yet.</p>
@@ -21,6 +22,17 @@ export default function KotePayoutChart({ rows, picked, onToggle }) {
   for (const m of [2, 5]) for (let e = Math.floor(yMin); e <= yMax; e += 1) { const v = m * 10 ** e; if (Math.log10(v) > yMin && Math.log10(v) < yMax) yTicks.push(v) }
   const xTicks = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7].filter((v) => v <= xMax)
   const placed = []
+  const order = [...pts].sort((a, b) => picked.has(a.id) - picked.has(b.id)) // picked drawn last (on top), labels placed first
+  const labelOrder = [...pts].filter((r) => labeled.has(r.id)).sort((a, b) => picked.has(b.id) - picked.has(a.id))
+  const labelY = new Map()
+  for (const r of labelOrder) {
+    const cx = x(r.p_td)
+    const rad = 3 + Math.sqrt(r.king) * 22
+    let ly = y(r.payout) - rad - 4
+    while (placed.some((p) => Math.abs(p.x - cx) < 70 && Math.abs(p.y - ly) < 12)) ly -= 12
+    placed.push({ x: cx, y: ly })
+    labelY.set(r.id, ly)
+  }
   return (
     <div className="kote-chart">
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="Projected King of the End Zone payout by TD chance">
@@ -38,19 +50,16 @@ export default function KotePayoutChart({ rows, picked, onToggle }) {
         ))}
         <text x={(W + pad.l) / 2} y={H - 4} textAnchor="middle" className="axis">Our TD % (anytime)</text>
         <text x={14} y={H / 2} textAnchor="middle" className="axis" transform={`rotate(-90 14 ${H / 2})`}>Payout if king</text>
-        {pts.map((r) => {
+        {order.map((r) => {
           const cx = x(r.p_td)
           const cy = y(r.payout)
           const rad = 3 + Math.sqrt(r.king) * 22
           const gold = topEv.has(r.id)
           const isPicked = picked.has(r.id)
-          let label = null
-          if (labeled.has(r.id)) {
-            let ly = cy - rad - 4
-            while (placed.some((p) => Math.abs(p.x - cx) < 70 && Math.abs(p.y - ly) < 12)) ly -= 12
-            placed.push({ x: cx, y: ly })
-            label = <text x={cx} y={ly} textAnchor="middle" className={gold ? 'lbl gold' : 'lbl'}>{r.short}</text>
-          }
+          const ly = labelY.get(r.id)
+          const label = ly != null
+            ? <text x={cx} y={ly} textAnchor="middle" className={isPicked ? 'lbl picked' : gold ? 'lbl gold' : 'lbl'}>{r.short}</text>
+            : null
           return (
             <g key={r.id} className="pt" onClick={() => onToggle(r.id)}>
               <circle cx={cx} cy={cy} r={rad} className={`${gold ? 'gold' : ''} ${isPicked ? 'picked' : ''}`}>

@@ -65,6 +65,7 @@ export default function KingOfEndZone() {
   const [showChart, setShowChart] = useState(true)
   const [picked, setPicked] = useState(() => new Set())
   const [pickedOnly, setPickedOnly] = useState(false)
+  const [query, setQuery] = useState('') // 2026-10-19 (user, Slap Shot's Ice Breaker): search + multi-pick on graph / table
   useEffect(() => {
     fetch('/data/season_schedule.json').then((r) => (r.ok ? r.json() : null)).then(setSched).catch(() => setSched(null))
   }, [])
@@ -104,17 +105,29 @@ export default function KingOfEndZone() {
       return {
         id: e.id, m, dst: e.dst, name: m ? m.player_name : `${e.dst} D/ST`, short: m ? short(m.player_name) : `${e.dst} D/ST`,
         team: m ? m.team : e.dst, position: m ? m.position : 'D/ST', p_td: pTd, king: e.king, payout,
+        x20: e.x20 ?? null, longTd: e.dst ? null : e.longTd ?? null, pLong: e.pLong ?? null,
         promoEv: payout != null ? e.king * payout : null,
         betEv: best != null && pTd != null ? 5 * (pTd * decimalOf(best) - 1) : null,
         bestPrice: best ?? null,
       }
     })
   }, [slate, game, model, pool])
-  const shown = pickedOnly && picked.size ? rows.filter((r) => picked.has(r.id)) : rows
+  const q = query.trim().toLowerCase()
+  const shown = rows
+    .filter((r) => !(pickedOnly && picked.size) || picked.has(r.id))
+    .filter((r) => !q || r.name.toLowerCase().includes(q) || r.team.toLowerCase() === q)
   const { sorted, sortKey, sortDir, toggleSort } = useSort(shown, 'king', 'desc')
   const th = { sortKey, sortDir, onSort: toggleSort }
   const live = useLiveKing(game)
   const toggle = (id) => setPicked((p) => { const n = new Set(p); n.has(id) ? n.delete(id) : n.add(id); return n })
+  // from the graph (Slap Shot's pickFromChart): add / remove him and narrow the table to the picked players
+  const pickFromChart = (id) => {
+    const adding = !picked.has(id)
+    toggle(id)
+    if (adding) setPickedOnly(true)
+  }
+  const clearPicked = () => { setPicked(new Set()); setPickedOnly(false) }
+  const matches = q.length >= 2 ? rows.filter((r) => r.name.toLowerCase().includes(q)).slice(0, 8) : []
 
   if (!slate || !model) return <p className="empty-state">Loading…</p>
   const v = model.validation?.by_season || []
@@ -126,9 +139,13 @@ export default function KingOfEndZone() {
         with the token, and if he scores the game's <b>longest touchdown</b> (rushing, receiving or a return — a QB gets no
         credit for a passing TD) everyone who picked him splits the bonus-bet pool. Ties split; a defensive / return TD pays
         that team's D/ST. <b>King %</b> = our chance he scores the longest TD: {Math.round(20000 / 1000)}k simulated games from each
-        player's TD % (the grade model) and how long his position's TDs really run (4 seasons of play-by-play). Backtest
-        2023-25, every game: our favorite won {v.map((s) => `${Math.round(s.fav_won_sim * 100)}%`).join(' / ')} vs
-        {' '}{v.map((s) => `${Math.round(s.fav_won_naive * 100)}%`).join(' / ')} for the plain top TD scorer.
+        player's TD % (the grade model), split into <b>long (20+ yd)</b> and short TDs by his own <b>explosive-play rate</b> (his
+        20+ yard runs and catches per touch, any position) — then each TD's length from how long those TDs really run at his
+        position (4 seasons of play-by-play). <b>Long TD %</b> = his chance of a 20+ yard TD tonight. Backtest 2023-25, every
+        game: our favorite won {v.map((s) => `${Math.round(s.fav_won_sim * 100)}%`).join(' / ')} vs
+        {' '}{v.map((s) => `${Math.round(s.fav_won_naive * 100)}%`).join(' / ')} for the plain top TD scorer; adding the
+        explosive-play rate named the actual king better in all 3 seasons. The defense's 20+ plays allowed was tested too
+        and didn't hold up (better one season, worse another), so the matchup isn't in King %.
         <b> Payout</b> = pool ÷ projected bettors on him (fit to the two 2026 payouts DraftKings published — a rough guide).
       </div>
 
@@ -168,18 +185,42 @@ export default function KingOfEndZone() {
         </div>
       )}
 
-      {game && showChart && <div className="card"><KotePayoutChart rows={rows} picked={picked} onToggle={toggle} /></div>}
+      {game && (
+        <div className="kote-search">
+          <input type="search" placeholder="Search a player (or team) to find him / add him to the graph…" value={query}
+            onChange={(e) => setQuery(e.target.value)} aria-label="Search players" />
+          {matches.map((r) => (
+            <button key={r.id} className={`pill-btn ${picked.has(r.id) ? 'active' : ''}`} onClick={() => toggle(r.id)}
+              title={picked.has(r.id) ? 'Remove from the graph' : 'Add to the graph'}>
+              {picked.has(r.id) ? '✓ ' : '+ '}{r.name} <span className="meta-line small">{r.team}</span>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {game && showChart && <div className="card"><KotePayoutChart rows={rows} picked={picked} onToggle={pickFromChart} /></div>}
 
       {game && (
         <>
+          {picked.size > 0 && (
+            <div className="kote-picked">
+              <span className="meta-line small">On the graph:</span>
+              {[...picked].map((id) => (
+                <button key={id} className="pill-btn active" title="Remove" onClick={() => toggle(id)}>
+                  {rows.find((r) => r.id === id)?.name || id} ✕
+                </button>
+              ))}
+              <button className={`pill-btn ${pickedOnly ? 'active' : ''}`} onClick={() => setPickedOnly((x) => !x)}>
+                {pickedOnly ? `Table: picked only (${picked.size})` : 'Table: everyone'}
+              </button>
+              <button className="pill-btn" onClick={clearPicked}>Clear all</button>
+            </div>
+          )}
           <div className="toolbar-row">
-            <span className="meta-line small">{game.away_team} @ {game.home_team} · {rows.length} players + both D/ST · pool {fmtUsd(pool)}</span>
-            {picked.size > 0 && (
-              <>
-                <button className={`pill-btn ${pickedOnly ? 'active' : ''}`} onClick={() => setPickedOnly((v) => !v)}>Table: {pickedOnly ? 'picked only' : 'everyone'}</button>
-                <button className="pill-btn" onClick={() => { setPicked(new Set()); setPickedOnly(false) }}>✕ Clear picked</button>
-              </>
-            )}
+            <span className="meta-line small">
+              {game.away_team} @ {game.home_team} · {rows.length} players + both D/ST · pool {fmtUsd(pool)}
+              {q ? ` · ${shown.length} matching “${query.trim()}”` : ''} · tap rows to put several players on the graph (tap again to remove)
+            </span>
           </div>
           <div className="table-wrap">
             <table>
@@ -189,6 +230,8 @@ export default function KingOfEndZone() {
                   <SortTh label="Pos" sortKeyName="position" {...th} />
                   <SortTh label="👑 King %" sortKeyName="king" {...th} />
                   <SortTh label="TD %" sortKeyName="p_td" {...th} />
+                  <SortTh label="Long TD %" sortKeyName="longTd" {...th} />
+                  <SortTh label="20+ plays / touch" sortKeyName="x20" {...th} />
                   <SortTh label="Anytime TD" sortKeyName="bestPrice" {...th} />
                   <SortTh label="Payout if king" sortKeyName="payout" {...th} />
                   <SortTh label="Promo EV" sortKeyName="promoEv" {...th} />
@@ -197,12 +240,16 @@ export default function KingOfEndZone() {
               </thead>
               <tbody>
                 {sorted.map((r) => (
-                  <tr key={r.id} className={picked.has(r.id) ? 'row-picked' : ''}>
+                  <tr key={r.id} className={`kote-row ${picked.has(r.id) ? 'row-picked' : ''}`} onClick={() => toggle(r.id)}
+                    title={picked.has(r.id) ? 'Tap to take him off the graph' : 'Tap to put him on the graph'}>
                     <td className="sticky-col">
-                      <div className="player-cell" onClick={() => (r.m ? openPlayerSlide(r.m) : toggle(r.id))}>
+                      <div className="player-cell">
                         {r.m && <PlayerAvatar playerId={r.m.player_id} name={r.name} />}
                         <div>
-                          <span>{r.name}</span> {r.m && <PickButton player={r.m} compact />}
+                          {r.m
+                            ? <button className="team-link" onClick={(e) => { e.stopPropagation(); openPlayerSlide(r.m) }} title="Open his player card">{r.name}</button>
+                            : <span>{r.name}</span>}
+                          {' '}{r.m && <span onClick={(e) => e.stopPropagation()}><PickButton player={r.m} compact /></span>}
                           <span className="pick-star" onClick={(e) => { e.stopPropagation(); toggle(r.id) }} title="Add to the graph / picked list">{picked.has(r.id) ? '★' : '☆'}</span>
                           <div className="cell-sub">{r.team}{r.m && <DepthTag m={r.m} />} {r.m && <GradeBadge grade={r.m.grade} m={r.m} />} {r.m && <LiveStatusTag m={r.m} />}</div>
                         </div>
@@ -211,7 +258,9 @@ export default function KingOfEndZone() {
                     <td>{r.position}</td>
                     <td className="num"><b>{fmtPct(r.king, 1)}</b></td>
                     <td className="num">{fmtPct(r.p_td, 1)}</td>
-                    <td className="num nowrap" title={r.m ? booksText(r.m.book) : 'D/ST anytime TD price (when the books list it)'}>
+                    <td className="num" title={r.pLong != null ? `${Math.round(r.pLong * 100)}% of his TDs project as 20+ yards` : 'Return / defensive TDs run long by nature'}>{r.longTd != null ? fmtPct(r.longTd, 1) : '—'}</td>
+                    <td className="num" title="His 20+ yard runs + catches per touch (this season, blended with last season)">{r.x20 != null ? fmtPct(r.x20, 1) : '—'}</td>
+                    <td className="num nowrap" title={r.m ? booksText(r.m.book) : 'D/ST anytime TD price (when the books list it)'} onClick={(e) => e.stopPropagation()}>
                       {r.m ? <BestPriceLink book={r.m.book} /> : r.bestPrice != null ? fmtAmerican(r.bestPrice) : '—'}
                     </td>
                     <td className="num">{fmtUsd(r.payout)}</td>

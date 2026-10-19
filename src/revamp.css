@@ -119,6 +119,12 @@ td.num, .num { font-variant-numeric: tabular-nums; }
 .kote-chart .lbl { fill: var(--fg); font-size: 10px; pointer-events: none; }
 .kote-chart .lbl.gold { fill: var(--gold); font-weight: 700; }
 .row-picked td { background: color-mix(in srgb, var(--gold) 12%, transparent); }
+/* 2026-10-19: KotE search + multi-pick (Slap Shot's Ice Breaker) */
+.kote-search, .kote-picked { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0; }
+.kote-search input { flex: 1 1 220px; min-width: 0; max-width: 360px; background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 9px; font-size: 0.85rem; }
+.kote-row { cursor: pointer; }
+.kote-chart circle.picked { fill: color-mix(in srgb, var(--gold) 85%, transparent); stroke: var(--fg); stroke-width: 2.5; }
+.kote-chart .lbl.picked { fill: var(--gold); font-weight: 700; font-size: 11px; }
 
 /* about */
 .about ul { margin: 6px 0 0; padding-left: 18px; line-height: 1.5; font-size: 0.88rem; }
