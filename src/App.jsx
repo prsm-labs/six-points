@@ -34,6 +34,7 @@ import FirstTDHub from './FirstTDHub.jsx'
 import { installColumnResize } from './columnResize.js'
 import TrackRecordCheatSheets from './TrackRecordCheatSheets.jsx'
 import TrackRecordPairs from './TrackRecordPairs.jsx'
+import RankingsTab from './RankingsTab.jsx'
 import './revamp.css'
 
 function parseCsv(text) {
@@ -340,6 +341,7 @@ const TABS = [
   { key: 'track', label: '📈 Track Record', Component: TrackRecord },
   { key: 'splits', label: '📊 Splits', Component: SplitsTab },
   { key: 'lookup', label: '🔍 Matchup Lookup', Component: ScoutingTab },
+  { key: 'rankings', label: '🏅 Rankings', Component: RankingsTab },
   { key: 'nfl', label: '🏟️ NFL', Component: NFLTab },
   { key: 'depthchart', label: '🧭 Depth Charts', Component: DepthChartTab },
   { key: 'weather', label: '🌬️ Weather', Component: WeatherTab },
