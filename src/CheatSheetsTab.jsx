@@ -160,6 +160,11 @@ function DefenseRankTable() {
   const slate = useSlate()
   const { selectedMatchup } = useMatchup()
   const [sortBy, setSortBy] = useState('td')
+  const [sortDir, setSortDir] = useState(1) // 1 = softest first, -1 = toughest first; tap the same column again to flip
+  const sortOn = (k) => {
+    if (k === sortBy) setSortDir((d) => -d)
+    else { setSortBy(k); setSortDir(1) }
+  }
   const rows = useMemo(() => {
     const all = slate?.matchups || []
     const yds = ydsDefRanks(all)
@@ -173,7 +178,11 @@ function DefenseRankTable() {
     return [...by.values()].filter((r) => !selectedMatchup || isInSelectedMatchup(selectedMatchup, r.vs))
   }, [slate, selectedMatchup])
   if (!rows.length) return null
-  const sorted = [...rows].sort((a, b) => (a[sortBy]?.rank ?? 99) - (b[sortBy]?.rank ?? 99))
+  const sorted = [...rows].sort((a, b) => {
+    const ra = a[sortBy]?.rank, rb = b[sortBy]?.rank
+    if (ra == null || rb == null) return (ra == null) - (rb == null) // missing ranks last either way
+    return sortDir * (ra - rb)
+  })
   const cell = (c, key) => {
     if (!c) return <td key={key} className="meta-line small">—</td>
     const d = c.idx != null ? Math.round((c.idx - 1) * 100) : null
@@ -190,7 +199,7 @@ function DefenseRankTable() {
       <div className="meta-line small">
         Every defense this week, ranked among this week's defenses. A defense can be
         soft in one place and tough in another — use the TD column for TD picks and the yards columns for yardage picks.
-        TDs = team TDs allowed (the defense factor in every grade). {YDS_NOTE} Tap a column to sort.
+        TDs = team TDs allowed (the defense factor in every grade). {YDS_NOTE} Tap a column to sort softest first (↓), tap it again for toughest first (↑).
       </div>
       <div className="table-wrap">
         <table>
@@ -198,7 +207,10 @@ function DefenseRankTable() {
             <tr>
               <th className="sticky-col">Defense</th>
               {RANK_COLS.map(([k, label]) => (
-                <th key={k} onClick={() => setSortBy(k)} style={{ cursor: 'pointer' }}>{label}{sortBy === k ? ' ▴' : ''}{k === 'WR' ? ' *' : ''}</th>
+                <th key={k} onClick={() => sortOn(k)} style={{ cursor: 'pointer' }} title="Tap to sort, tap again to flip"
+                  aria-sort={sortBy === k ? (sortDir === 1 ? 'ascending' : 'descending') : 'none'}>
+                  {label}{sortBy === k ? (sortDir === 1 ? ' ↓' : ' ↑') : ''}{k === 'WR' ? ' *' : ''}
+                </th>
               ))}
             </tr>
           </thead>

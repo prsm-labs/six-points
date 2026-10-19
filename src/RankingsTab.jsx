@@ -22,6 +22,11 @@ export default function RankingsTab() {
   const [error, setError] = useState(null)
   const [side, setSide] = useState('off')
   const [sortBy, setSortBy] = useState('points')
+  const [sortDir, setSortDir] = useState(1) // 1 = best (#1) first, -1 = worst first; tap the same column again to flip
+  const sortOn = (k) => {
+    if (k === sortBy) setSortDir((d) => -d)
+    else { setSortBy(k); setSortDir(1) }
+  }
   const slate = useSlate()
   const { selectedMatchup } = useMatchup()
 
@@ -46,7 +51,11 @@ export default function RankingsTab() {
   const rows = Object.entries(data.teams)
     .map(([team, t]) => ({ team, ...t }))
     .filter((r) => !selectedMatchup || isInSelectedMatchup(selectedMatchup, r.team))
-    .sort((a, b) => (a[side][sortBy]?.rank ?? 99) - (b[side][sortBy]?.rank ?? 99))
+    .sort((a, b) => {
+      const ra = a[side][sortBy]?.rank, rb = b[side][sortBy]?.rank
+      if (ra == null || rb == null) return (ra == null) - (rb == null) // missing ranks last either way
+      return sortDir * (ra - rb)
+    })
   const highlight = (rank) => {
     if (!rank) return 'neutral'
     if (side === 'off') return rank <= n / 3 ? 'soft' : rank > (2 * n) / 3 ? 'tough' : 'neutral'
@@ -72,7 +81,7 @@ export default function RankingsTab() {
           : 'the defense that allows the fewest. ▲ highlighted = bottom third, the soft defenses that give up the most.'}
         {' '}Season-to-date numbers as they happened (not adjusted for opponents or shrunk toward last season — the
         defense-vs-position numbers the yards model uses are on Cheat Sheets). Context only: nothing on this page is in a
-        grade. Tap a column to sort; tap a team for its full profile.
+        grade. Tap a column to sort best first (↓), tap it again for worst first (↑); tap a team for its full profile.
       </div>
       <MatchupFilterNote />
       <div className="table-wrap">
@@ -82,8 +91,9 @@ export default function RankingsTab() {
               <th className="sticky-col">Team</th>
               <th>This week</th>
               {cats.map((c) => (
-                <th key={c.key} title={c.label} onClick={() => setSortBy(c.key)} style={{ cursor: 'pointer' }}>
-                  {c.short}{sortBy === c.key ? ' ▴' : ''}
+                <th key={c.key} title={`${c.label} — tap to sort, tap again to flip`} onClick={() => sortOn(c.key)} style={{ cursor: 'pointer' }}
+                  aria-sort={sortBy === c.key ? (sortDir === 1 ? 'ascending' : 'descending') : 'none'}>
+                  {c.short}{sortBy === c.key ? (sortDir === 1 ? ' ↓' : ' ↑') : ''}
                 </th>
               ))}
             </tr>
