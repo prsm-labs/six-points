@@ -201,3 +201,21 @@ table.data-table th { position: relative; }
 .stats-bar .b { align-self: end; width: 16px; background: var(--accent); border-radius: 3px 3px 0 0; }
 .stats-bar .v { color: var(--fg); }
 .stats-bar .x { color: var(--muted); }
+
+/* 2026-10-20 live slideout (ThisWeekCard) + Box Scores lineups */
+.week-live { border: 1px solid var(--border); border-radius: 10px; padding: 10px; background: var(--surface); }
+.week-live.is-live { border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent); }
+.week-live-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+.live-tag, .final-tag { font-size: 0.68rem; font-weight: 800; letter-spacing: .06em; padding: 2px 6px; border-radius: 4px; }
+.live-tag { color: var(--accent); border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent); }
+.final-tag { color: var(--muted); border: 1px solid var(--border); }
+.stat-tile.beat { border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.l7-today .l7-bar { outline: 1.5px solid var(--fg); outline-offset: 1px; }
+.l7-live .l7-bar { outline-color: var(--accent); }
+.l7-today .l7-bar-label { font-weight: 800; color: var(--fg); }
+.lineup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 10px; }
+.lineup-team h4 { margin: 0 0 4px; }
+.lineup-head { font-size: 0.7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 8px 0 2px; }
+.lineup-row { display: flex; align-items: baseline; gap: 6px; font-size: 0.82rem; padding: 2px 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent); min-width: 0; }
+.lineup-slot { width: 38px; flex-shrink: 0; color: var(--muted); font-size: 0.72rem; }
+.lineup-status { margin-left: auto; color: #e0a03a; font-size: 0.72rem; text-align: right; }

@@ -35,7 +35,7 @@ async function fetchGameDetail(eventId) {
   const proxied = await fetch(`/api/summary?event=${eventId}&full=1`).catch(() => null)
   if (proxied && proxied.ok) {
     const data = await proxied.json()
-    if (data.boxscore) return { boxscore: data.boxscore, drives: data.drives || [], status: data.status || null, score: data.score || null, fetchedAt: Date.now() }
+    if (data.boxscore || data.status) return  /* 2026-10-20: pre-game too (lineups) */ { boxscore: data.boxscore, drives: data.drives || [], status: data.status || null, score: data.score || null, injuries: data.injuries || [], fetchedAt: Date.now() }
   }
   const direct = await fetch(
     `https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${eventId}`
@@ -251,12 +251,79 @@ function PlayByPlay({ drives, espnAbbrToNflverse }) {
   )
 }
 
-function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse, heat }) {
+// 2026-10-20 Lineups (user: tap a game -> both teams' lineups): the projected starters from the ESPN depth chart the
+// daily refresh pulls (depth_charts.json, injured reserve / out players skipped to the next man up) plus ESPN's game
+// injury list -- the NFL posts inactives about 90 minutes before kickoff, and they show here once ESPN has them.
+const OFFENSE = [['QB', 1], ['RB', 1], ['WR', 3], ['TE', 1], ['LT', 1], ['LG', 1], ['C', 1], ['RG', 1], ['RT', 1]]
+const DEFENSE = ['LDE', 'LDT', 'DT', 'NT', 'RDT', 'RDE', 'WLB', 'LILB', 'MLB', 'RILB', 'SLB', 'LOLB', 'ROLB', 'LCB', 'NB', 'RCB', 'SS', 'FS']
+const GONE = /injured reserve|out|suspend|pup|physically|non-football|practice squad|released|inactive/i
+function starters(depth, team, outNames = new Set()) {
+  const t = depth?.teams?.[team]
+  if (!t) return null
+  const pick = (pos, n) => (t[pos] || []).filter((p) => p.pos_rank != null && !GONE.test(p.status || '') && !outNames.has(p.name)).sort((a, b) => a.pos_rank - b.pos_rank).slice(0, n)
+  return {
+    offense: OFFENSE.flatMap(([pos, n]) => pick(pos, n).map((p, i) => ({ ...p, slot: n > 1 ? `${pos}${i + 1}` : pos }))),
+    defense: DEFENSE.flatMap((pos) => pick(pos, 1).map((p) => ({ ...p, slot: pos }))),
+  }
+}
+function Lineups({ game, detail, depth, espnAbbrToNflverse }) {
+  const inj = new Map()
+  for (const t of detail?.injuries || []) inj.set(espnAbbrToNflverse.get(String(t.team).toUpperCase()) || t.team, t.injuries || [])
+  const injByName = (team) => new Map((inj.get(team) || []).map((i) => [i.name, i]))
+  if (!depth) return <p className="empty-state">Loading depth charts...</p>
+  return (
+    <div className="lineup-grid">
+      {[game.away_team, game.home_team].map((team) => {
+        const s = starters(depth, team, new Set((inj.get(team) || []).filter((i) => /^out$|inactive/i.test(i.status)).map((i) => i.name)))
+        const ib = injByName(team)
+        const out = (inj.get(team) || []).filter((i) => /out|doubtful|questionable|inactive/i.test(i.status))
+        const row = (p) => {
+          const i = ib.get(p.name)
+          return (
+            <div key={`${p.slot}-${p.player_id}`} className="lineup-row">
+              <span className="lineup-slot">{p.slot}</span>
+              <button className="team-link" onClick={() => openPlayerSlide({ player_id: p.player_id, player_name: p.name, team, position: p.pos_abb })}>{p.name}</button>
+              {(i?.status || p.status) && <span className="lineup-status">{i?.status || p.status}</span>}
+            </div>
+          )
+        }
+        return (
+          <div key={team} className="lineup-team">
+            <h4><button className="team-link" onClick={() => openTeamSlide({ team })}>{team}</button></h4>
+            {!s ? <p className="meta-line small">No depth chart for {team}.</p> : (
+              <>
+                <div className="lineup-head">Offense</div>
+                {s.offense.map(row)}
+                <div className="lineup-head">Defense</div>
+                {s.defense.map(row)}
+              </>
+            )}
+            <div className="lineup-head">Injury report / inactives (ESPN)</div>
+            {out.length ? out.map((i) => (
+              <div key={i.name} className="lineup-row"><span className="lineup-slot">{i.position}</span><span>{i.name}</span><span className="lineup-status">{i.status}{i.detail ? ` · ${i.detail}` : ''}</span></div>
+            )) : <p className="meta-line small" style={{ margin: 0 }}>None listed.</p>}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse, heat, depth }) {
   const [showPlayers, setShowPlayers] = useState(false)
   const [showPlays, setShowPlays] = useState(false)
+  const [showLineups, setShowLineups] = useState(false)
 
   if (loading) return <p className="empty-state" style={{ margin: '10px 0 0' }}>Loading box score...</p>
-  if (!detail?.boxscore) return <p className="empty-state" style={{ margin: '10px 0 0' }}>Box score not available yet for this game.</p>
+  const pre = !detail || detail.status?.state === 'pre' || !detail.boxscore?.teams?.[0]?.statistics?.length
+  if (pre) {
+    return (
+      <div style={{ marginTop: 10 }}>
+        <p className="meta-line small" style={{ marginTop: 0 }}>{detail?.status?.detail || 'Not started'} · lineups below; the box score appears at kickoff.</p>
+        <Lineups game={game} detail={detail} depth={depth} espnAbbrToNflverse={espnAbbrToNflverse} />
+      </div>
+    )
+  }
 
   const { boxscore, drives } = detail
   const [away, home] = boxscore.teams
@@ -314,7 +381,11 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
         <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowPlays((v) => !v)}>
           {showPlays ? 'Hide play-by-play ▲' : 'Show play-by-play ▼'}
         </button>
+        <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowLineups((v) => !v)}>
+          {showLineups ? 'Hide lineups ▲' : 'Show lineups ▼'}
+        </button>
       </div>
+      {showLineups && <Lineups game={game} detail={detail} depth={depth} espnAbbrToNflverse={espnAbbrToNflverse} />}
 
       {showPlayers && (
         <PlayerBoxTables boxscore={boxscore} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} heat={heat} />
@@ -324,7 +395,7 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
   )
 }
 
-function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, espnAbbrToNflverse, heat }) {
+function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, espnAbbrToNflverse, heat, depth }) {
   // Prefer the live score off the fetched detail -- season_schedule.json's score is stale for a
   // game that's still in progress (and absent entirely for one that hasn't kicked off).
   const liveAway = detail?.score?.away
@@ -362,6 +433,7 @@ function GameRow({ game, selected, onSelect, detail, loading, espnIdToPlayer, es
           espnIdToPlayer={espnIdToPlayer}
           espnAbbrToNflverse={espnAbbrToNflverse}
           heat={heat}
+          depth={depth}
         />
       )}
     </div>
@@ -378,6 +450,8 @@ export default function BoxScoreTab() {
   const [loadingGameId, setLoadingGameId] = useState(null)
   const [error, setError] = useState(null)
   const directory = usePlayerDirectory()
+  const [depth, setDepth] = useState(null)
+  useEffect(() => { fetch('/data/depth_charts.json').then((r) => (r.ok ? r.json() : null)).then(setDepth).catch(() => setDepth(null)) }, [])
 
   useEffect(() => {
     Promise.all([
@@ -498,7 +572,7 @@ export default function BoxScoreTab() {
     const timer = setInterval(async () => {
       try {
         const detail = await fetchGameDetail(selectedEventId)
-        if (detail?.boxscore) setDetails((prev) => ({ ...prev, [selectedGameId]: detail }))
+        if (detail?.boxscore || detail?.status) setDetails((prev) => ({ ...prev, [selectedGameId]: detail }))
       } catch {
         // a single failed poll shouldn't blank an already-loaded box score
       }
@@ -559,6 +633,7 @@ export default function BoxScoreTab() {
           espnIdToPlayer={espnIdToPlayer}
           espnAbbrToNflverse={espnAbbrToNflverse}
           heat={selectedGameId === g.game_id ? heat : null}
+          depth={depth}
         />
       ))}
     </div>

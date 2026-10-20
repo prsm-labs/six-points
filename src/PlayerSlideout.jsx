@@ -13,6 +13,49 @@ import { edgeClass, edgeText, fmtEdge } from './bookOdds.js'
 import GamblyButton from './GamblyButton.jsx'
 import { betLine } from './gambly.js'
 import { HotHandTag } from './revampUi.jsx'
+import { useThisWeekLine } from './useThisWeekLine.js'
+
+// 2026-10-20 live slideout: this week's line while his game is on (25 s refresh) and after it ends, next to the
+// model's pre-game numbers; the game also joins the Last 7 chart as an outlined bar.
+function ThisWeekCard({ t, m, position }) {
+  if (!t?.started) return null
+  const l = t.line
+  const g = t.game
+  const score = t.score ? `${g.away_team} ${t.score.away ?? 0} – ${g.home_team} ${t.score.home ?? 0}` : `${g.away_team} @ ${g.home_team}`
+  const tds = l ? l.rush_td + l.rec_td : 0
+  const tiles = !l ? [] : position === 'QB'
+    ? [['C/ATT', `${l.pass_cmp}/${l.pass_att}`], ['Pass Yds', l.pass_yards], ['Pass TD', l.pass_td], ['INT', l.interceptions], ['Rush Yds', l.rush_yards], ['Rush TD', l.rush_td, l.rush_td > 0]]
+    : position === 'RB'
+      ? [['Carries', l.rush_att], ['Rush Yds', l.rush_yards], ['Rec', `${l.receptions}/${l.targets}`], ['Rec Yds', l.rec_yards], ['TDs', tds, tds > 0], ['Scrim Yds', l.rush_yards + l.rec_yards, m?.est_yards != null && l.rush_yards + l.rec_yards >= m.est_yards]]
+      : [['Targets', l.targets], ['Rec', l.receptions], ['Rec Yds', l.rec_yards, m?.est_yards != null && l.rec_yards >= m.est_yards], ['TDs', tds, tds > 0], ['Rush Yds', l.rush_yards]]
+  return (
+    <div className={`slideout-section week-live ${t.live ? 'is-live' : ''}`}>
+      <div className="week-live-head">
+        <span className={t.live ? 'live-tag' : 'final-tag'}>{t.live ? '● LIVE' : 'FINAL'}</span>
+        <strong>{score}</strong>
+        {t.live && t.detail && <span className="meta-line small" style={{ margin: 0 }}>{t.detail}</span>}
+      </div>
+      {!l && <p className="meta-line small">{t.out ? `${t.out.status} for this game.` : 'No stats in the box score yet.'}</p>}
+      {l && (
+        <div className="stat-grid">
+          {tiles.map(([label, value, good]) => (
+            <div className={`stat-tile ${good ? 'beat' : ''}`} key={label}>
+              <div className="value">{value}</div>
+              <div className="label">{label}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      {l && m && (
+        <p className="meta-line small">
+          Pre-game: TD {fmtPct(m.p_td, 1)}{m.est_yards != null ? ` · est. ${Math.round(m.est_yards)} yds` : ''}{m.p_100 != null && position !== 'QB' ? ` · 100+ ${fmtPct(m.p_100, 1)}` : ''}
+          {tds > 0 ? ' · ✓ scored' : ''}
+        </p>
+      )}
+      <p className="meta-line small">{t.live ? 'Live from ESPN — updates every 25 seconds.' : 'Final line.'} This game is the outlined last bar on the Last 7 chart.</p>
+    </div>
+  )
+}
 
 // Section order per spec §3: header, season stat line, matchup context, L7 chart, recent game
 // log, vs-opponent history. The dot timeline is skipped per spec
@@ -142,6 +185,8 @@ export default function PlayerSlideout() {
   const [weekRow, setWeekRow] = useState(null)
 
   useEffect(() => subscribePlayerSlide(setPlayer), [])
+  const espnId = directoryEntry?.stats_url?.match(/\/id\/(\d+)\//)?.[1] || null
+  const thisWeek = useThisWeekLine(player, weekRow, espnId)
 
   useEffect(() => {
     if (!player) return
@@ -213,6 +258,7 @@ export default function PlayerSlideout() {
             <p className="empty-state">Loading...</p>
           ) : (
             <>
+              <ThisWeekCard t={thisWeek} m={weekRow} position={position} />
               {weekRow && (
                 // This week (2026-10-18 revamp, Slap Shot's slideout): the model's chances, the matchup line,
                 // recent TDs, every sportsbook's anytime-TD price (tap to bet) and Gambly for each prop.
@@ -286,7 +332,9 @@ export default function PlayerSlideout() {
               <div className="slideout-section">
                 <h3>Last 7 Games</h3>
                 <L7Chart
-                  gameLog={gameLog}
+                  gameLog={thisWeek?.started && thisWeek.line
+                    ? [...gameLog.filter((g) => g.week !== thisWeek.game.week), { ...thisWeek.line, week: thisWeek.game.week, opponent: thisWeek.game.home_team === (weekRow?.team || player.team) ? thisWeek.game.away_team : thisWeek.game.home_team, home_or_away: thisWeek.game.home_team === (weekRow?.team || player.team) ? 'vs' : '@', today: true, live: thisWeek.live }]
+                    : gameLog}
                   position={position}
                   initialCategory={defaultCategory(position, recentTargets)}
                 />
