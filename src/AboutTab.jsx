@@ -34,6 +34,7 @@ export default function AboutTab() {
           <li>Not used anywhere in a grade: Vegas team totals or spreads. Sportsbook anytime-TD prices are shown for comparison (Book Odds / Edge), never as an input.</li>
           <li>Defense rankings by category (Cheat Sheets): each defense ranked vs TDs and vs RB / WR / TE yards. A defense can be soft in one and tough in another, so TD lists show the TD rank and yardage lists the yards rank. RB / TE yards matchups are in Est. Yards; WR yards matchups are context only (they made held-out WR projections slightly worse).</li>
           <li>Tested as nothing: TD droughts ("due"), opponent EPA ratings on top of the model — for TDs, and (Oct 2026) for yards: team offense / defense EPA moved RB / WR / TE yards estimates by under 0.1 yd a game.</li>
+          <li>Tested as nothing (Oct 2026): man / zone coverage and blitz matchups (a receiver's own numbers vs man, zone or the blitz, against how often the defense plays it) and offense-type matchups (play action, shotgun, heavy personnel vs the defense's results against each) — 2023-25, each season held out, no consistent gain for TDs or yards. Last season's man / zone / blitz lines show in a player's game log on 📊 Stats as context.</li>
         </ul>
       </div>
       <div className="card">

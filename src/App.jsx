@@ -35,6 +35,7 @@ import { installColumnResize } from './columnResize.js'
 import TrackRecordCheatSheets from './TrackRecordCheatSheets.jsx'
 import TrackRecordPairs from './TrackRecordPairs.jsx'
 import RankingsTab from './RankingsTab.jsx'
+import StatsTab from './StatsTab.jsx'
 import './revamp.css'
 
 function parseCsv(text) {
@@ -336,6 +337,7 @@ const TABS = [
   { key: 'live', label: '🔴 Live', Component: LiveTab },
   { key: 'tdtracker', label: '🏈 TD Tracker', Component: TDTracker },
   { key: 'scouting', label: '🎯 Scouting', Component: ScoutingHub },
+  { key: 'stats', label: '📊 Stats', Component: StatsTab },
   { key: 'gamesim', label: '🔮 Game Sim', Component: GameSimTab },
   { key: 'firsttd', label: '🥇 1st TD', Component: FirstTDHub },
   { key: 'track', label: '📈 Track Record', Component: TrackRecord },

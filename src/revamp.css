@@ -162,3 +162,17 @@ table.data-table th { position: relative; }
 .pair-actions a.pill-btn { text-decoration: none; }
 .blind-list { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 6px; }
 .blind-item { cursor: pointer; font-size: 0.82rem; }
+/* 📊 Stats tab (2026-10-20) */
+.stats-filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0; }
+.stats-filters input:not([type=number]) { flex: 1 1 200px; min-width: 0; max-width: 340px; background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 9px; font-size: 0.85rem; }
+.stats-filters select, .stats-filters input[type=number] { background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 6px; padding: 5px 6px; font-size: 0.82rem; }
+.stats-row { cursor: pointer; }
+.stats-row.open > td { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.stats-detail > td { padding: 0 !important; }
+.stats-log { padding: 8px 10px 12px; border-left: 3px solid var(--accent); display: grid; gap: 6px; max-width: min(1100px, calc(100vw - 48px)); position: sticky; left: 0; white-space: normal; }
+.stats-log-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.stats-bars { display: flex; gap: 4px; align-items: flex-end; height: 92px; overflow-x: auto; }
+.stats-bar { display: grid; grid-template-rows: auto 1fr auto; justify-items: center; min-width: 30px; height: 100%; font-size: 0.66rem; }
+.stats-bar .b { align-self: end; width: 16px; background: var(--accent); border-radius: 3px 3px 0 0; }
+.stats-bar .v { color: var(--fg); }
+.stats-bar .x { color: var(--muted); }
