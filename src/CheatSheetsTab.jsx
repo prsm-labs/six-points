@@ -13,6 +13,7 @@ import { matchesPosition, usePosition } from './positionFilter.js'
 import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import CheatSheetTab from './CheatSheetTab.jsx'
+import PrismPicks from './PrismPicks.jsx'
 
 // 📋 Cheat Sheets (Slap Shot's tabs/CheatSheetsTab.jsx, 2026-10-18 revamp): this week's quick reads -- top candidates
 // per prop, value vs the book, and the defenses worth attacking -- with injury / roster status. Each list is graded
@@ -104,6 +105,7 @@ function QuickReads() {
   return (
     <div>
       <SlateStatus data={slate} />
+      <PrismPicks slate={slate} notOut={notOut} />
       <div className="note">
         ℹ️ Lists use the grade model's chances (TD %, 2+ TD %, 100+ yds %). 🔥 = scored in his last 3 games and not a top-25%
         TD chance (beat the model 1.3x over 2023-25). ▲ / ▼ = facing a soft / tough TD defense this week. Book prices: best

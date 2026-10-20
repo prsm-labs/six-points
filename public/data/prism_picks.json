@@ -1,0 +1,281 @@
+{
+ "generated_at": "2026-10-20T14:38+00:00",
+ "season": 2026,
+ "week": 7,
+ "rule": {
+  "floor": 0.8,
+  "last_max": 0.75,
+  "margin": 0.05,
+  "last_n": 8,
+  "min_games": 4,
+  "picks": 5,
+  "per_game": 2
+ },
+ "backtest": {
+  "n": 235,
+  "hits": 211,
+  "said": 0.916,
+  "weeks": 47,
+  "seasons": {
+   "2023": [
+    65,
+    58
+   ],
+   "2024": [
+    85,
+    79
+   ],
+   "2025": [
+    85,
+    74
+   ]
+  },
+  "bands": [
+   [
+    0.8,
+    0.85,
+    16,
+    13
+   ],
+   [
+    0.85,
+    0.9,
+    72,
+    63
+   ],
+   [
+    0.9,
+    0.95,
+    94,
+    87
+   ],
+   [
+    0.95,
+    1.01,
+    53,
+    48
+   ]
+  ]
+ },
+ "live": {
+  "n": 5,
+  "hits": 5,
+  "void": 0,
+  "weeks": 1
+ },
+ "weeks": [
+  {
+   "week": 6,
+   "source": "snapshot (backfilled)",
+   "picks": [
+    {
+     "player_id": "00-0036555",
+     "name": "Chuba Hubbard",
+     "team": "CAR",
+     "opp": "PHI",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9822,
+     "est": 105.7,
+     "last": [
+      8,
+      6
+     ],
+     "depth": "RB1",
+     "game": "CAR-PHI",
+     "actual": 121,
+     "result": "hit",
+     "track": 0.932,
+     "trackN": 55
+    },
+    {
+     "player_id": "00-0037258",
+     "name": "Dameon Pierce",
+     "team": "PHI",
+     "opp": "CAR",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9515,
+     "est": 81.3,
+     "last": [
+      4,
+      0
+     ],
+     "depth": "RB2",
+     "game": "CAR-PHI",
+     "actual": 50,
+     "result": "hit",
+     "track": 0.92,
+     "trackN": 55
+    },
+    {
+     "player_id": "00-0037263",
+     "name": "Tyler Allgeier",
+     "team": "ARI",
+     "opp": "LA",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9341,
+     "est": 74.3,
+     "last": [
+      8,
+      3
+     ],
+     "depth": "RB2",
+     "game": "ARI-LA",
+     "actual": 48,
+     "result": "hit",
+     "track": 0.925,
+     "trackN": 97
+    },
+    {
+     "player_id": "00-0036358",
+     "name": "CeeDee Lamb",
+     "team": "DAL",
+     "opp": "GB",
+     "pos": "WR",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9275,
+     "est": 81.6,
+     "last": [
+      8,
+      6
+     ],
+     "depth": "WR1",
+     "game": "DAL-GB",
+     "actual": 70,
+     "result": "hit",
+     "track": 0.923,
+     "trackN": 97
+    },
+    {
+     "player_id": "00-0040719",
+     "name": "Bhayshul Tuten",
+     "team": "JAX",
+     "opp": "HOU",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9108,
+     "est": 73.0,
+     "last": [
+      8,
+      5
+     ],
+     "depth": "RB1",
+     "game": "HOU-JAX",
+     "actual": 87,
+     "result": "hit",
+     "track": 0.918,
+     "trackN": 97
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "source": "live",
+   "picks": [
+    {
+     "player_id": "00-0036555",
+     "name": "Chuba Hubbard",
+     "team": "CAR",
+     "opp": "TB",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9822,
+     "est": 100.5,
+     "last": [
+      8,
+      6
+     ],
+     "depth": "RB1",
+     "game": "CAR-TB",
+     "track": 0.932,
+     "trackN": 55
+    },
+    {
+     "player_id": "00-0039794",
+     "name": "Braelon Allen",
+     "team": "NYJ",
+     "opp": "MIA",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9341,
+     "est": 76.1,
+     "last": [
+      8,
+      6
+     ],
+     "depth": "RB2",
+     "game": "MIA-NYJ",
+     "track": 0.925,
+     "trackN": 97
+    },
+    {
+     "player_id": "00-0039337",
+     "name": "Malik Nabers",
+     "team": "NYG",
+     "opp": "HOU",
+     "pos": "WR",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9275,
+     "est": 79.7,
+     "last": [
+      8,
+      5
+     ],
+     "depth": "WR1",
+     "game": "HOU-NYG",
+     "track": 0.923,
+     "trackN": 97
+    },
+    {
+     "player_id": "00-0036358",
+     "name": "CeeDee Lamb",
+     "team": "DAL",
+     "opp": "PHI",
+     "pos": "WR",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9275,
+     "est": 84.8,
+     "last": [
+      8,
+      6
+     ],
+     "depth": "WR1",
+     "game": "DAL-PHI",
+     "track": 0.923,
+     "trackN": 97
+    },
+    {
+     "player_id": "00-0040124",
+     "name": "Tetairoa McMillan",
+     "team": "CAR",
+     "opp": "TB",
+     "pos": "WR",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9275,
+     "est": 83.7,
+     "last": [
+      8,
+      6
+     ],
+     "depth": "WR1",
+     "game": "CAR-TB",
+     "track": 0.923,
+     "trackN": 97
+    }
+   ],
+   "updated_at": "2026-10-20T10:38-04:00"
+  }
+ ]
+}
