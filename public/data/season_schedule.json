@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "latest_week": 6,
-  "generated_at": "2026-10-19T22:01:29.696372+00:00",
+  "latest_week": 7,
+  "generated_at": "2026-10-20T12:00:58.420645+00:00",
   "games": [
     {
       "game_id": "2026_01_NE_SEA",
@@ -1023,8 +1023,8 @@
       "gameday": "2026-10-19",
       "gametime": "20:15",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 23,
+      "away_score": 17
     },
     {
       "game_id": "2026_07_NE_CHI",
