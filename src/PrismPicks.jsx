@@ -30,7 +30,9 @@ export default function PrismPicks({ slate, notOut }) {
           <div className="meta-line small" style={{ margin: 0 }}>This week's highest-hitting props that aren't the obvious ones</div>
         </div>
       </div>
-      {picks.length === 0 && <div className="meta-line small">No prop clears the bar this week — PRISM Picks only shows looks that have hit {share(bt.hits, bt.n)} of the time.</div>}
+      {picks.length === 0 && (d.paused
+        ? <div className="meta-line small"><b>None this week.</b> {d.paused} (The first version picked lines like 25+ scrimmage yards for a WR1 — true most weeks, but not a real prop.)</div>
+        : <div className="meta-line small">No prop clears the bar this week — PRISM Picks only shows looks that have hit {share(bt.hits, bt.n)} of the time.</div>)}
       {picks.map((c, i) => {
         const m = byId.get(c.player_id)
         const out = m && notOut && !notOut(m)
@@ -51,11 +53,11 @@ export default function PrismPicks({ slate, notOut }) {
           </div>
         )
       })}
-      <div className="prism-foot meta-line small">
+      {!d.paused && <div className="prism-foot meta-line small">
         Track record: {bt.hits} of {bt.n} hit ({share(bt.hits, bt.n)}) over {bt.weeks} weeks, 2023-25, held out
         {d.live.n ? ` · this season: ${d.live.hits} of ${d.live.n} (${share(d.live.hits, d.live.n)})` : ''}.
         Rule: scrimmage-yard lines at an {pct(d.rule.floor)}+ chance that the player cleared in {pct(d.rule.last_max)} or fewer of his last {d.rule.last_n} games (the every-week lines are left out), with the model at least {Math.round(d.rule.margin * 100)} points above that; one per player, {d.rule.per_game} per game. Anytime TD never clears the bar (top TD chances sit near 60%). A pick freezes at its kickoff; open slots refill daily until the last game starts.
-      </div>
+      </div>}
       {past.length > 0 && (
         <details className="prism-past">
           <summary>Past weeks</summary>

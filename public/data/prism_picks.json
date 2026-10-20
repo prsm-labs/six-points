@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T14:38+00:00",
+ "generated_at": "2026-10-20T15:52+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -57,6 +57,7 @@
    ]
   ]
  },
+ "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
  "live": {
   "n": 5,
   "hits": 5,
@@ -178,104 +179,9 @@
   {
    "week": 7,
    "source": "live",
-   "picks": [
-    {
-     "player_id": "00-0036555",
-     "name": "Chuba Hubbard",
-     "team": "CAR",
-     "opp": "TB",
-     "pos": "RB",
-     "line": 25,
-     "label": "25+ scrimmage yards",
-     "chance": 0.9822,
-     "est": 100.5,
-     "last": [
-      8,
-      6
-     ],
-     "depth": "RB1",
-     "game": "CAR-TB",
-     "track": 0.932,
-     "trackN": 55
-    },
-    {
-     "player_id": "00-0039794",
-     "name": "Braelon Allen",
-     "team": "NYJ",
-     "opp": "MIA",
-     "pos": "RB",
-     "line": 25,
-     "label": "25+ scrimmage yards",
-     "chance": 0.9341,
-     "est": 76.1,
-     "last": [
-      8,
-      6
-     ],
-     "depth": "RB2",
-     "game": "MIA-NYJ",
-     "track": 0.925,
-     "trackN": 97
-    },
-    {
-     "player_id": "00-0039337",
-     "name": "Malik Nabers",
-     "team": "NYG",
-     "opp": "HOU",
-     "pos": "WR",
-     "line": 25,
-     "label": "25+ scrimmage yards",
-     "chance": 0.9275,
-     "est": 79.7,
-     "last": [
-      8,
-      5
-     ],
-     "depth": "WR1",
-     "game": "HOU-NYG",
-     "track": 0.923,
-     "trackN": 97
-    },
-    {
-     "player_id": "00-0036358",
-     "name": "CeeDee Lamb",
-     "team": "DAL",
-     "opp": "PHI",
-     "pos": "WR",
-     "line": 25,
-     "label": "25+ scrimmage yards",
-     "chance": 0.9275,
-     "est": 84.8,
-     "last": [
-      8,
-      6
-     ],
-     "depth": "WR1",
-     "game": "DAL-PHI",
-     "track": 0.923,
-     "trackN": 97
-    },
-    {
-     "player_id": "00-0040124",
-     "name": "Tetairoa McMillan",
-     "team": "CAR",
-     "opp": "TB",
-     "pos": "WR",
-     "line": 25,
-     "label": "25+ scrimmage yards",
-     "chance": 0.9275,
-     "est": 83.7,
-     "last": [
-      8,
-      6
-     ],
-     "depth": "WR1",
-     "game": "CAR-TB",
-     "track": 0.923,
-     "trackN": 97
-    }
-   ],
-   "updated_at": "2026-10-20T10:38-04:00"
+   "picks": [],
+   "updated_at": "2026-10-20T11:52-04:00",
+   "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested."
   }
  ]
 }
