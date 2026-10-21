@@ -1,0 +1,1115 @@
+{
+ "generated_at": "2026-10-21T17:22+00:00",
+ "season": 2026,
+ "week": 7,
+ "rule": {
+  "z": 2.0,
+  "min_games": 3,
+  "min_avg": 25
+ },
+ "backtest": {
+  "n": 1067,
+  "hits": 822,
+  "weeks": 45,
+  "bands": [
+   [
+    2.0,
+    3.0,
+    576,
+    417
+   ],
+   [
+    3.0,
+    99,
+    491,
+    405
+   ]
+  ],
+  "seasons": {
+   "2023": [
+    400,
+    315
+   ],
+   "2024": [
+    361,
+    283
+   ],
+   "2025": [
+    306,
+    224
+   ]
+  },
+  "positions": {
+   "RB": [
+    338,
+    253
+   ],
+   "TE": [
+    139,
+    111
+   ],
+   "WR": [
+    590,
+    458
+   ]
+  },
+  "baseline": 0.602,
+  "naive": "last 3 games 125%+ of season avg -> 56% under it"
+ },
+ "live": {
+  "n": 25,
+  "hits": 21,
+  "void": 1
+ },
+ "weeks": [
+  {
+   "week": 6,
+   "source": "snapshot",
+   "fades": [
+    {
+     "player_id": "00-0039064",
+     "name": "Zay Flowers",
+     "team": "BAL",
+     "opp": "CLE",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 109.5,
+     "est": 70.5,
+     "z": 4.64,
+     "games": [
+      150,
+      104,
+      118,
+      66
+     ],
+     "why": [
+      "Est. Yards well below his average"
+     ],
+     "actual": 67,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0039491",
+     "name": "Jalen Coker",
+     "team": "CAR",
+     "opp": "PHI",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 74.0,
+     "est": 45.6,
+     "z": 4.21,
+     "games": [
+      138,
+      66,
+      18
+     ],
+     "why": [
+      "one big game (138) lifts his average -- 42 a game in the others"
+     ],
+     "actual": 97,
+     "result": "miss",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0037239",
+     "name": "Chris Olave",
+     "team": "NO",
+     "opp": "NYG",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 107.4,
+     "est": 72.3,
+     "z": 4.13,
+     "games": [
+      182,
+      86,
+      107,
+      116,
+      46
+     ],
+     "why": [
+      "one big game (182) lifts his average -- 89 a game in the others"
+     ],
+     "actual": 43,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0040734",
+     "name": "TreVeyon Henderson",
+     "team": "NE",
+     "opp": "NYJ",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 43.2,
+     "est": 23.9,
+     "z": 3.96,
+     "games": [
+      76,
+      29,
+      42,
+      26
+     ],
+     "why": [
+      "one big game (76) lifts his average -- 32 a game in the others"
+     ],
+     "actual": 40,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0039041",
+     "name": "Elijah Higgins",
+     "team": "ARI",
+     "opp": "LA",
+     "pos": "TE",
+     "depth": "TE2",
+     "line": 32.0,
+     "est": 16.6,
+     "z": 3.78,
+     "games": [
+      20,
+      19,
+      57
+     ],
+     "why": [
+      "one big game (57) lifts his average -- 20 a game in the others"
+     ],
+     "actual": 28,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0039338",
+     "name": "Brock Bowers",
+     "team": "LV",
+     "opp": "BUF",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 104.0,
+     "est": 72.4,
+     "z": 3.71,
+     "games": [
+      116,
+      86,
+      110
+     ],
+     "why": [
+      "Est. Yards well below his average"
+     ],
+     "actual": 70,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0038134",
+     "name": "Kenneth Walker III",
+     "team": "KC",
+     "opp": "LAC",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 155.2,
+     "est": 115.7,
+     "z": 3.68,
+     "games": [
+      191,
+      178,
+      73,
+      179
+     ],
+     "why": [
+      "Est. Yards well below his average"
+     ],
+     "actual": 139,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0038933",
+     "name": "Dalton Kincaid",
+     "team": "BUF",
+     "opp": "LV",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 55.4,
+     "est": 34.8,
+     "z": 3.49,
+     "games": [
+      130,
+      95,
+      38,
+      7,
+      7
+     ],
+     "why": [
+      "one big game (130) lifts his average -- 37 a game in the others"
+     ],
+     "actual": 38,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0038543",
+     "name": "Jaxon Smith-Njigba",
+     "team": "SEA",
+     "opp": "DEN",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 119.8,
+     "est": 87.6,
+     "z": 3.44,
+     "games": [
+      122,
+      155,
+      128,
+      76,
+      118
+     ],
+     "why": [
+      "Est. Yards well below his average"
+     ],
+     "actual": 134,
+     "result": "miss",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0033858",
+     "name": "Jonnu Smith",
+     "team": "GB",
+     "opp": "DAL",
+     "pos": "TE",
+     "depth": "TE2",
+     "line": 28.3,
+     "est": 15.3,
+     "z": 3.33,
+     "games": [
+      50,
+      16,
+      19
+     ],
+     "why": [
+      "one big game (50) lifts his average -- 18 a game in the others"
+     ],
+     "result": "void",
+     "actual": null,
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0040131",
+     "name": "Kyle Williams",
+     "team": "NE",
+     "opp": "NYJ",
+     "pos": "WR",
+     "depth": "WR5",
+     "line": 33.8,
+     "est": 19.6,
+     "z": 3.2,
+     "games": [
+      10,
+      34,
+      0,
+      91
+     ],
+     "why": [
+      "one big game (91) lifts his average -- 15 a game in the others"
+     ],
+     "actual": 12,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0036554",
+     "name": "Nico Collins",
+     "team": "HOU",
+     "opp": "JAX",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 85.3,
+     "est": 61.4,
+     "z": 3.05,
+     "games": [
+      82,
+      118,
+      56
+     ],
+     "why": [
+      "Est. Yards well below his average"
+     ],
+     "actual": 79,
+     "result": "hit",
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0035537",
+     "name": "Ty Johnson",
+     "team": "BUF",
+     "opp": "LV",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 44.7,
+     "est": 29.2,
+     "z": 2.86,
+     "games": [
+      50,
+      12,
+      72
+     ],
+     "why": [
+      "one big game (72) lifts his average -- 31 a game in the others"
+     ],
+     "actual": 27,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0040138",
+     "name": "Jaylin Noel",
+     "team": "HOU",
+     "opp": "JAX",
+     "pos": "WR",
+     "depth": "WR5",
+     "line": 50.6,
+     "est": 34.2,
+     "z": 2.8,
+     "games": [
+      53,
+      44,
+      25,
+      89,
+      42
+     ],
+     "why": [
+      "one big game (89) lifts his average -- 41 a game in the others"
+     ],
+     "actual": 107,
+     "result": "miss",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0040237",
+     "name": "Tez Johnson",
+     "team": "TB",
+     "opp": "PIT",
+     "pos": "WR",
+     "depth": "WR4",
+     "line": 28.8,
+     "est": 17.8,
+     "z": 2.61,
+     "games": [
+      -4,
+      49,
+      8,
+      27,
+      64
+     ],
+     "why": [
+      "one big game (64) lifts his average -- 20 a game in the others"
+     ],
+     "actual": 7,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0038124",
+     "name": "Christian Watson",
+     "team": "GB",
+     "opp": "DAL",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 94.8,
+     "est": 73.0,
+     "z": 2.55,
+     "games": [
+      147,
+      41,
+      96,
+      47,
+      143
+     ],
+     "why": [
+      "Est. Yards well below his average"
+     ],
+     "actual": 64,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0038542",
+     "name": "Bijan Robinson",
+     "team": "ATL",
+     "opp": "CHI",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 146.4,
+     "est": 119.5,
+     "z": 2.46,
+     "games": [
+      173,
+      81,
+      213,
+      147,
+      118
+     ],
+     "why": [
+      "Est. Yards well below his average"
+     ],
+     "actual": 53,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0030506",
+     "name": "Travis Kelce",
+     "team": "KC",
+     "opp": "LAC",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 61.5,
+     "est": 45.3,
+     "z": 2.41,
+     "games": [
+      71,
+      101,
+      59,
+      15
+     ],
+     "why": [
+      "one big game (101) lifts his average -- 48 a game in the others"
+     ],
+     "actual": 53,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0033906",
+     "name": "Alvin Kamara",
+     "team": "NO",
+     "opp": "NYG",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 31.8,
+     "est": 20.8,
+     "z": 2.4,
+     "games": [
+      22,
+      41,
+      58,
+      6
+     ],
+     "why": [
+      "one big game (58) lifts his average -- 23 a game in the others"
+     ],
+     "actual": 69,
+     "result": "miss",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0034383",
+     "name": "Dalton Schultz",
+     "team": "HOU",
+     "opp": "JAX",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 48.8,
+     "est": 35.0,
+     "z": 2.33,
+     "games": [
+      35,
+      140,
+      30,
+      9,
+      30
+     ],
+     "why": [
+      "one big game (140) lifts his average -- 26 a game in the others"
+     ],
+     "actual": 33,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0031381",
+     "name": "Davante Adams",
+     "team": "LA",
+     "opp": "ARI",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 88.2,
+     "est": 69.9,
+     "z": 2.19,
+     "games": [
+      26,
+      195,
+      137,
+      32,
+      51
+     ],
+     "why": [
+      "one big game (195) lifts his average -- 62 a game in the others"
+     ],
+     "actual": 39,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0038606",
+     "name": "Parker Washington",
+     "team": "JAX",
+     "opp": "HOU",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 71.0,
+     "est": 55.5,
+     "z": 2.08,
+     "games": [
+      83,
+      98,
+      40,
+      10,
+      124
+     ],
+     "why": [
+      "one big game (124) lifts his average -- 58 a game in the others"
+     ],
+     "actual": 64,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0036358",
+     "name": "CeeDee Lamb",
+     "team": "DAL",
+     "opp": "GB",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 100.2,
+     "est": 81.6,
+     "z": 2.06,
+     "games": [
+      44,
+      153,
+      112,
+      183,
+      9
+     ],
+     "why": [
+      "one big game (183) lifts his average -- 80 a game in the others"
+     ],
+     "actual": 70,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0040124",
+     "name": "Tetairoa McMillan",
+     "team": "CAR",
+     "opp": "PHI",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 96.2,
+     "est": 78.2,
+     "z": 2.04,
+     "games": [
+      75,
+      101,
+      17,
+      192
+     ],
+     "why": [
+      "one big game (192) lifts his average -- 64 a game in the others"
+     ],
+     "actual": 86,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0039075",
+     "name": "Puka Nacua",
+     "team": "LA",
+     "opp": "ARI",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 116.0,
+     "est": 96.3,
+     "z": 2.01,
+     "games": [
+      74,
+      127,
+      147
+     ],
+     "why": [
+      "Est. Yards well below his average"
+     ],
+     "actual": 80,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0041013",
+     "name": "Emmett Johnson",
+     "team": "KC",
+     "opp": "LAC",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 32.5,
+     "est": 22.9,
+     "z": 2.01,
+     "games": [
+      68,
+      35,
+      17,
+      10
+     ],
+     "why": [
+      "one big game (68) lifts his average -- 21 a game in the others"
+     ],
+     "actual": 24,
+     "result": "hit",
+     "track": 0.729,
+     "trackN": 590
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "source": "live",
+   "fades": [
+    {
+     "player_id": "00-0033858",
+     "name": "Jonnu Smith",
+     "team": "GB",
+     "opp": "DET",
+     "pos": "TE",
+     "depth": "TE2",
+     "line": 28.3,
+     "est": 11.1,
+     "z": 5.17,
+     "games": [
+      50,
+      16,
+      19
+     ],
+     "why": [
+      "one big game (50) lifts his average -- 18 a game in the others"
+     ],
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0038134",
+     "name": "Kenneth Walker III",
+     "team": "KC",
+     "opp": "SEA",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 152.0,
+     "est": 113.6,
+     "z": 3.6,
+     "games": [
+      191,
+      178,
+      73,
+      179,
+      139
+     ],
+     "why": [
+      "SEA takes away 8 yds for his role"
+     ],
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0039338",
+     "name": "Brock Bowers",
+     "team": "LV",
+     "opp": "LA",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 95.5,
+     "est": 68.5,
+     "z": 3.26,
+     "games": [
+      116,
+      86,
+      110,
+      70
+     ],
+     "why": [
+      "LA takes away 3 yds for his role"
+     ],
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0039064",
+     "name": "Zay Flowers",
+     "team": "BAL",
+     "opp": "CIN",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 101.0,
+     "est": 73.9,
+     "z": 3.15,
+     "games": [
+      150,
+      104,
+      118,
+      66,
+      67
+     ],
+     "why": [
+      "his usage (8.4 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0038543",
+     "name": "Jaxon Smith-Njigba",
+     "team": "SEA",
+     "opp": "KC",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 122.2,
+     "est": 92.3,
+     "z": 3.11,
+     "games": [
+      122,
+      155,
+      128,
+      76,
+      118,
+      134
+     ],
+     "why": [
+      "his usage (10.8 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.822,
+     "trackN": 502
+    },
+    {
+     "player_id": "00-0038542",
+     "name": "Bijan Robinson",
+     "team": "ATL",
+     "opp": "SF",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 130.8,
+     "est": 100.8,
+     "z": 2.99,
+     "games": [
+      173,
+      81,
+      213,
+      147,
+      118,
+      53
+     ],
+     "why": [
+      "SF takes away 3 yds for his role",
+      "one big game (213) lifts his average -- 114 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0037157",
+     "name": "Bam Knight",
+     "team": "ARI",
+     "opp": "DEN",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 43.3,
+     "est": 27.6,
+     "z": 2.99,
+     "games": [
+      24,
+      8,
+      98
+     ],
+     "why": [
+      "one big game (98) lifts his average -- 16 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0039041",
+     "name": "Elijah Higgins",
+     "team": "ARI",
+     "opp": "DEN",
+     "pos": "TE",
+     "depth": "TE2",
+     "line": 31.0,
+     "est": 18.5,
+     "z": 2.91,
+     "games": [
+      20,
+      19,
+      57,
+      28
+     ],
+     "why": [
+      "one big game (57) lifts his average -- 22 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0040138",
+     "name": "Jaylin Noel",
+     "team": "HOU",
+     "opp": "NYG",
+     "pos": "WR",
+     "depth": "WR3",
+     "line": 60.0,
+     "est": 42.1,
+     "z": 2.76,
+     "games": [
+      53,
+      44,
+      25,
+      89,
+      42,
+      107
+     ],
+     "why": [
+      "one big game (107) lifts his average -- 51 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0036554",
+     "name": "Nico Collins",
+     "team": "HOU",
+     "opp": "NYG",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 83.8,
+     "est": 62.3,
+     "z": 2.72,
+     "games": [
+      82,
+      118,
+      56,
+      79
+     ],
+     "why": [
+      "his usage (8.1 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0037239",
+     "name": "Chris Olave",
+     "team": "NO",
+     "opp": "PIT",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 96.7,
+     "est": 73.9,
+     "z": 2.65,
+     "games": [
+      182,
+      86,
+      107,
+      116,
+      46,
+      43
+     ],
+     "why": [
+      "one big game (182) lifts his average -- 80 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0040887",
+     "name": "Josh Cuevas",
+     "team": "BAL",
+     "opp": "CIN",
+     "pos": "TE",
+     "depth": "TE3",
+     "line": 28.0,
+     "est": 17.1,
+     "z": 2.64,
+     "games": [
+      14,
+      26,
+      44
+     ],
+     "why": [
+      "his usage (3.2 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0040131",
+     "name": "Kyle Williams",
+     "team": "NE",
+     "opp": "CHI",
+     "pos": "WR",
+     "depth": "WR4",
+     "line": 29.4,
+     "est": 18.2,
+     "z": 2.63,
+     "games": [
+      10,
+      34,
+      0,
+      91,
+      12
+     ],
+     "why": [
+      "one big game (91) lifts his average -- 14 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0039139",
+     "name": "Jahmyr Gibbs",
+     "team": "DET",
+     "opp": "GB",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 147.6,
+     "est": 119.1,
+     "z": 2.61,
+     "games": [
+      186,
+      113,
+      164,
+      68,
+      207
+     ],
+     "why": [
+      "his usage (26.3 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0038124",
+     "name": "Christian Watson",
+     "team": "GB",
+     "opp": "DET",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 89.7,
+     "est": 68.2,
+     "z": 2.6,
+     "games": [
+      147,
+      41,
+      96,
+      47,
+      143,
+      64
+     ],
+     "why": [
+      "one big game (147) lifts his average -- 78 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0034829",
+     "name": "Mike Gesicki",
+     "team": "CIN",
+     "opp": "BAL",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 39.8,
+     "est": 26.9,
+     "z": 2.48,
+     "games": [
+      78,
+      37,
+      40,
+      4
+     ],
+     "why": [
+      "one big game (78) lifts his average -- 27 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0040782",
+     "name": "Isaiah Bond",
+     "team": "CLE",
+     "opp": "TEN",
+     "pos": "WR",
+     "depth": "WR4",
+     "line": 28.7,
+     "est": 19.1,
+     "z": 2.19,
+     "games": [
+      10,
+      2,
+      74
+     ],
+     "why": [
+      "one big game (74) lifts his average -- 6 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
+     "player_id": "00-0030506",
+     "name": "Travis Kelce",
+     "team": "KC",
+     "opp": "SEA",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 59.8,
+     "est": 45.3,
+     "z": 2.15,
+     "games": [
+      71,
+      101,
+      59,
+      15,
+      53
+     ],
+     "why": [
+      "one big game (101) lifts his average -- 50 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    }
+   ],
+   "updated_at": "2026-10-21T13:22-04:00"
+  }
+ ]
+}

@@ -6,6 +6,7 @@ import PairsTab from './PairsTab.jsx'
 import LadderTab from './LadderTab.jsx'
 import RedZoneTab from './RedZoneTab.jsx'
 import RoleReportTab from './RoleReportTab.jsx'
+import FadeLab from './FadeLab.jsx'
 
 // "Scouting" top-level tab (Slap Shot's tabs/MatchupsHubTab.jsx, 2026-10-18 revamp): All Matchups (the default
 // view) plus every lab, switched by a button row in the page instead of one top-level tab each.
@@ -18,6 +19,7 @@ const VIEWS = [
   { key: 'ladder', label: '🪜 Game Ladder', Component: LadderTab },
   { key: 'redzone', label: '🔴 Red Zone', Component: RedZoneTab },
   { key: 'role', label: '🧩 Role Report', Component: RoleReportTab },
+  { key: 'fade', label: '🧊 Fade', Component: FadeLab },
 ]
 
 export default function ScoutingHub() {
