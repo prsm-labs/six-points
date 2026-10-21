@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { subscribePlayerSlide, closePlayerSlide, openTeamSlide } from './slideouts.js'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import L7Chart, { defaultCategory } from './L7Chart.jsx'
+import { H2HBadge, H2H_NOTE, VENUE_NOTE, h2hFor, useH2H, venueFor } from './h2h.jsx'
 import GameLogTable from './GameLogTable.jsx'
 import PickButton from './PickButton.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
@@ -183,6 +184,8 @@ export default function PlayerSlideout() {
   const [schemeSplits, setSchemeSplits] = useState(null)
   const [routeProfiles, setRouteProfiles] = useState(null)
   const [weekRow, setWeekRow] = useState(null)
+  const [chartMode, setChartMode] = useState('l7')
+  const h2hData = useH2H()
 
   useEffect(() => subscribePlayerSlide(setPlayer), [])
   const espnId = directoryEntry?.stats_url?.match(/\/id\/(\d+)\//)?.[1] || null
@@ -213,6 +216,10 @@ export default function PlayerSlideout() {
   }, [gameLog, player])
 
   if (!player) return null
+  const h2h = h2hFor(h2hData, weekRow)
+  const venue = venueFor(h2hData, weekRow)
+  const vLabel = venue?.side === 'home' ? '🏠 Home' : '✈️ Road'
+  const chartGames = chartMode === 'h2h' && h2h ? h2h.games : chartMode === 'venue' && venue ? venue.games : null
 
   const name = player.player_name || directoryEntry?.name || ''
   const position = player.position || directoryEntry?.position || ''
@@ -237,6 +244,14 @@ export default function PlayerSlideout() {
                 Week {weekRow.week}: <GradeBadge grade={weekRow.grade} m={weekRow} /> TD {fmtPct(weekRow.p_td)}
                 {weekRow.p_td2 != null && <> &middot; 2+ TDs {fmtPct(weekRow.p_td2)}</>} &middot; 100+ {fmtPct(weekRow.p_100)}
                 {' '}<BreakoutBadge m={weekRow} /> <HotHandTag m={weekRow} /> <LiveStatusTag m={weekRow} />
+              </div>
+            )}
+            {(h2h || venue) && (
+              <div className="sub slideout-grade">
+                {h2h && <span title={H2H_NOTE}>🆚 H2H vs {weekRow.opponent}: <H2HBadge h={h2h} /> <span className="meta-line small">{h2h.text}</span></span>}
+                {h2h && venue && <> &middot; </>}
+                {venue && <span title={VENUE_NOTE}>{vLabel}: <H2HBadge h={venue} /> <span className="meta-line small">{venue.text}</span></span>}
+                <span className="meta-line small"> (context, not a prediction)</span>
               </div>
             )}
             {(weekRow || player.player_id) && (
@@ -330,11 +345,20 @@ export default function PlayerSlideout() {
               />
 
               <div className="slideout-section">
-                <h3>Last 7 Games</h3>
+                <h3>{chartGames ? (chartMode === 'h2h' ? `H2H vs ${weekRow.opponent}` : `${vLabel} games`) : 'Last 7 Games'}</h3>
+                {(h2h || venue) && (
+                  <div className="pill-row" style={{ marginBottom: 6 }}>
+                    <button className={`pill-btn ${!chartGames ? 'active' : ''}`} onClick={() => setChartMode('l7')}>Last 7</button>
+                    {h2h && <button className={`pill-btn ${chartMode === 'h2h' && chartGames ? 'active' : ''}`} onClick={() => setChartMode('h2h')}>🆚 H2H vs {weekRow.opponent} ({h2h.n})</button>}
+                    {venue && <button className={`pill-btn ${chartMode === 'venue' && chartGames ? 'active' : ''}`} onClick={() => setChartMode('venue')}>{vLabel} (this week)</button>}
+                  </div>
+                )}
+                {chartGames && <p className="meta-line small">{chartMode === 'h2h' ? `Last ${chartGames.length} of ${h2h.n} games vs ${weekRow.opponent} since 2022` : `Last ${chartGames.length} of his ${venue.n} ${venue.side === 'home' ? 'home' : 'road'} games, last season + this`} (oldest → newest). Context only.</p>}
                 <L7Chart
-                  gameLog={thisWeek?.started && thisWeek.line
+                  key={chartGames ? chartMode : 'l7'}
+                  gameLog={chartGames || (thisWeek?.started && thisWeek.line
                     ? [...gameLog.filter((g) => g.week !== thisWeek.game.week), { ...thisWeek.line, week: thisWeek.game.week, opponent: thisWeek.game.home_team === (weekRow?.team || player.team) ? thisWeek.game.away_team : thisWeek.game.home_team, home_or_away: thisWeek.game.home_team === (weekRow?.team || player.team) ? 'vs' : '@', today: true, live: thisWeek.live }]
-                    : gameLog}
+                    : gameLog)}
                   position={position}
                   initialCategory={defaultCategory(position, recentTargets)}
                 />

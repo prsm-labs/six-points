@@ -80,7 +80,7 @@ export default function L7Chart({ gameLog, position, initialCategory }) {
           const isHit = value >= cat.threshold
           const heightPct = Math.max(4, Math.round((value / max) * 100))
           return (
-            <div className={`l7-bar-col ${g.today ? 'l7-today' : ''} ${g.live ? 'l7-live' : ''}`} key={i} title={`${value} (${g.home_or_away === '@' ? '@' : 'vs'} ${g.opponent}, Wk ${g.week}${g.today ? (g.live ? ', live' : ', this week') : ''})`}>
+            <div className={`l7-bar-col ${g.today ? 'l7-today' : ''} ${g.live ? 'l7-live' : ''}`} key={i} title={`${value} (${g.home_or_away === '@' ? '@' : 'vs'} ${g.opponent}, Wk ${g.week}${g.season ? ` ${g.season}` : ''}${g.today ? (g.live ? ', live' : ', this week') : ''})`}>
               <div className="l7-bar-track">
                 <div
                   className={`l7-bar ${isHit ? 'l7-bar-hit' : 'l7-bar-miss'}`}

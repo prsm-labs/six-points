@@ -14,6 +14,7 @@ import { matchesPosition, usePosition } from './positionFilter.js'
 import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { HotHandTag, dvpRanks } from './revampUi.jsx'
+import { H2HBadge, H2H_NOTE, VENUE_NOTE, h2hFor, useH2H, venueFor } from './h2h.jsx'
 
 // All Matchups (Slap Shot's tabs/AllMatchupsTab.jsx, 2026-10-18 revamp): this week's slate ranked by the grade model,
 // one row per player with the defense he's facing, his recent form, the book's price and our edge. Matchup-first --
@@ -24,15 +25,18 @@ export default function AllMatchupsTab() {
   const { selectedMatchup } = useMatchup()
   const f = useListFilters()
   const notOut = useLiveOutFilter()
+  const h2hData = useH2H()
 
   const rows = useMemo(() => {
     if (!slate?.matchups) return null
     const dvp = dvpRanks(slate.matchups)
     return slate.matchups.map((m) => {
       const d = dvp.get(`${m.opponent}|${m.position}`)
-      return { ...m, dvp: d, dvpSoft: d ? d.of + 1 - d.rank : null, td_l3: m.td_l3 ?? null }
+      const h = h2hFor(h2hData, m), v = venueFor(h2hData, m)
+      return { ...m, dvp: d, dvpSoft: d ? d.of + 1 - d.rank : null, td_l3: m.td_l3 ?? null,
+        h2h: h, h2hScore: h?.letter ? h.score : null, ha: v, haScore: v?.letter ? v.score : null }
     })
-  }, [slate])
+  }, [slate, h2hData])
   const shown = useMemo(() => {
     if (!rows) return []
     return applyListFilters(rows, f)
@@ -84,6 +88,8 @@ export default function AllMatchupsTab() {
               <SortTh label="Matchup" sortKeyName="mu_pct" {...th} />
               <SortTh label="D vs Pos" sortKeyName="dvpSoft" {...th} />
               <SortTh label="Zone Score" sortKeyName="zone_score" {...th} />
+              <SortTh label="H2H" sortKeyName="h2hScore" {...th} />
+              <SortTh label="H/A" sortKeyName="haScore" {...th} />
             </tr>
           </thead>
           <tbody>
@@ -122,6 +128,8 @@ export default function AllMatchupsTab() {
                   {m.dvp ? <>#{m.dvp.rank}<span className="meta-line small"> of {m.dvp.of}</span></> : '—'}
                 </td>
                 <td className="num zone-score">{Number(m.zone_score).toFixed(1)}</td>
+                <td title={H2H_NOTE}><H2HBadge h={m.h2h} /></td>
+                <td title={VENUE_NOTE}><H2HBadge h={m.ha} /></td>
               </tr>
             ))}
           </tbody>
