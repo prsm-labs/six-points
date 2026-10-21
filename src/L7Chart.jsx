@@ -39,6 +39,15 @@ export function defaultCategory(position, recentTargetsPerGame) {
   return 'rec_yards'
 }
 
+// 2026-10-21 (user: dates under the bars): M/D from game_date; games from an earlier season (H2H / home-road views) add the year
+const NOW = new Date()
+const CUR_SEASON = NOW.getMonth() >= 2 ? NOW.getFullYear() : NOW.getFullYear() - 1 // NFL season year (Sept-Feb)
+function barDate(g) {
+  if (!g.game_date) return ''
+  const [y, m, d] = String(g.game_date).slice(0, 10).split('-')
+  return g.season != null && g.season < CUR_SEASON ? `${Number(m)}/${Number(d)}/${y.slice(2)}` : `${Number(m)}/${Number(d)}`
+}
+
 function hitRateClass(pct) {
   if (pct >= 57) return 'hit-rate-good'
   if (pct >= 43) return 'hit-rate-mid'
@@ -91,6 +100,7 @@ export default function L7Chart({ gameLog, position, initialCategory }) {
               <div className="l7-bar-label">
                 {g.today && g.live ? 'LIVE' : <>{g.home_or_away}{g.opponent}</>}
               </div>
+              {!g.today && barDate(g) && <div className="l7-bar-sub">{barDate(g)}</div>}
               <div className="l7-bar-sub">{secondaryStat(category, g)}</div>
             </div>
           )
