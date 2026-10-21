@@ -219,3 +219,8 @@ table.data-table th { position: relative; }
 .lineup-row { display: flex; align-items: baseline; gap: 6px; font-size: 0.82rem; padding: 2px 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent); min-width: 0; }
 .lineup-slot { width: 38px; flex-shrink: 0; color: var(--muted); font-size: 0.72rem; }
 .lineup-status { margin-left: auto; color: #e0a03a; font-size: 0.72rem; text-align: right; }
+
+/* 2026-10-20 Box Scores -> 📈 Live projection */
+.lp-team { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; padding: 8px 10px; border: 1px solid rgba(255,255,255,.12); border-radius: 8px; }
+.lp-up { color: #2ecc71; }
+.lp-down { color: #ff6b6b; }

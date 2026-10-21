@@ -4,6 +4,7 @@ import { openTeamSlide, openPlayerSlide } from './slideouts.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
 import { useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import LiveProjection from './LiveProjection.jsx'
 
 // Real box scores via ESPN's summary API. The week's games are a lightweight, always-visible
 // list (scores already live in season_schedule.json, no ESPN call needed just to show them) --
@@ -313,6 +314,7 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
   const [showPlayers, setShowPlayers] = useState(false)
   const [showPlays, setShowPlays] = useState(false)
   const [showLineups, setShowLineups] = useState(false)
+  const [showProj, setShowProj] = useState(false)  // 2026-10-20 📈 Live projection
 
   if (loading) return <p className="empty-state" style={{ margin: '10px 0 0' }}>Loading box score...</p>
   const pre = !detail || detail.status?.state === 'pre' || !detail.boxscore?.teams?.[0]?.statistics?.length
@@ -372,7 +374,10 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
         </table>
       </div>
 
-      <div style={{ display: 'flex', gap: 16, marginTop: 10 }}>
+      <div style={{ display: 'flex', gap: 16, marginTop: 10, flexWrap: 'wrap' }}>
+        <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowProj((v) => !v)}>
+          {showProj ? 'Hide live projection ▲' : '📈 Show live projection ▼'}
+        </button>
         {boxscore.players && (
           <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowPlayers((v) => !v)}>
             {showPlayers ? 'Hide player box score ▲' : 'Show player box score ▼'}
@@ -385,6 +390,7 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
           {showLineups ? 'Hide lineups ▲' : 'Show lineups ▼'}
         </button>
       </div>
+      {showProj && <LiveProjection game={game} detail={detail} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} />}
       {showLineups && <Lineups game={game} detail={detail} depth={depth} espnAbbrToNflverse={espnAbbrToNflverse} />}
 
       {showPlayers && (
