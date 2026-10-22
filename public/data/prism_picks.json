@@ -1,63 +1,80 @@
 {
- "generated_at": "2026-10-22T11:01+00:00",
+ "generated_at": "2026-10-22T13:29+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
-  "floor": 0.8,
+  "floor": 0.7,
   "last_max": 0.75,
   "margin": 0.05,
   "last_n": 8,
   "min_games": 4,
   "picks": 5,
-  "per_game": 2
+  "per_game": 2,
+  "real": 0.55,
+  "cap": 1.01,
+  "min_line": 25
  },
  "backtest": {
-  "n": 235,
-  "hits": 211,
-  "said": 0.916,
+  "n": 125,
+  "hits": 92,
+  "said": 0.8136,
   "weeks": 47,
   "seasons": {
    "2023": [
-    65,
-    58
+    24,
+    13
    ],
    "2024": [
-    85,
-    79
+    60,
+    45
    ],
    "2025": [
-    85,
-    74
+    41,
+    34
+   ]
+  },
+  "positions": {
+   "RB": [
+    73,
+    58
+   ],
+   "TE": [
+    46,
+    31
+   ],
+   "WR": [
+    6,
+    3
    ]
   },
   "bands": [
    [
+    0.7,
+    0.75,
+    28,
+    19
+   ],
+   [
+    0.75,
+    0.8,
+    42,
+    29
+   ],
+   [
     0.8,
     0.85,
-    16,
-    13
+    11,
+    9
    ],
    [
     0.85,
-    0.9,
-    72,
-    63
-   ],
-   [
-    0.9,
-    0.95,
-    94,
-    87
-   ],
-   [
-    0.95,
     1.01,
-    53,
-    48
+    44,
+    35
    ]
   ]
  },
- "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
+ "paused": null,
  "live": {
   "n": 5,
   "hits": 5,
@@ -179,9 +196,43 @@
   {
    "week": 7,
    "source": "live",
-   "picks": [],
-   "updated_at": "2026-10-22T07:01-04:00",
-   "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested."
+   "picks": [
+    {
+     "player_id": "00-0040198",
+     "name": "Ollie Gordon II",
+     "team": "MIA",
+     "opp": "NYJ",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.8341,
+     "est": 59.7,
+     "last": [
+      8,
+      3
+     ],
+     "depth": "RB1",
+     "game": "MIA-NYJ",
+     "track": 0.773,
+     "trackN": 11
+    }
+   ],
+   "updated_at": "2026-10-22T09:29-04:00",
+   "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
+   "nextGame": {
+    "teams": [
+     "CHI",
+     "NE"
+    ],
+    "kickoff": "2026-10-22T20:15:00-04:00",
+    "label": "NE @ CHI",
+    "closest": {
+     "name": "Roschon Johnson",
+     "team": "CHI",
+     "label": "25+ scrimmage yards",
+     "chance": 0.5652
+    }
+   }
   }
  ]
 }

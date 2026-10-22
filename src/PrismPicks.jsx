@@ -31,8 +31,13 @@ export default function PrismPicks({ slate, notOut }) {
         </div>
       </div>
       {picks.length === 0 && (d.paused
-        ? <div className="meta-line small"><b>None this week.</b> {d.paused} (The first version picked lines like 25+ scrimmage yards for a WR1 — true most weeks, but not a real prop.)</div>
-        : <div className="meta-line small">No prop clears the bar this week — PRISM Picks only shows looks that have hit {share(bt.hits, bt.n)} of the time.</div>)}
+        ? <div className="meta-line small"><b>None this week.</b> {d.paused}</div>
+        : <div className="meta-line small">No line clears the bar this week yet — PRISM Picks only shows looks like the ones that have hit {share(bt.hits, bt.n)} of the time. Open slots refill daily until the last game starts.</div>)}
+      {/* 2026-10-22 (user): the next game always gets its best qualifying pick; when none clears the bar, say so */}
+      {wk?.nextGame && !picks.some((c) => wk.nextGame.teams.includes(c.team)) && (
+        <div className="meta-line small">Next up: <b>{wk.nextGame.label || wk.nextGame.teams.join(' / ')}</b> ({new Date(wk.nextGame.kickoff).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' })}) — no line clears the {pct(d.rule.floor)} bar
+          {wk.nextGame.closest ? ` (closest: ${wk.nextGame.closest.name} ${wk.nextGame.closest.label}, ${pct(wk.nextGame.closest.chance)})` : ''}.</div>
+      )}
       {picks.map((c, i) => {
         const m = byId.get(c.player_id)
         const out = m && notOut && !notOut(m)
@@ -56,7 +61,7 @@ export default function PrismPicks({ slate, notOut }) {
       {!d.paused && <div className="prism-foot meta-line small">
         Track record: {bt.hits} of {bt.n} hit ({share(bt.hits, bt.n)}) over {bt.weeks} weeks, 2023-25, held out
         {d.live.n ? ` · this season: ${d.live.hits} of ${d.live.n} (${share(d.live.hits, d.live.n)})` : ''}.
-        Rule: scrimmage-yard lines at an {pct(d.rule.floor)}+ chance that the player cleared in {pct(d.rule.last_max)} or fewer of his last {d.rule.last_n} games (the every-week lines are left out), with the model at least {Math.round(d.rule.margin * 100)} points above that; one per player, {d.rule.per_game} per game. Anytime TD never clears the bar (top TD chances sit near 60%). A pick freezes at its kickoff; open slots refill daily until the last game starts.
+        Rule: real scrimmage-yard lines — ones he cleared in {pct(d.rule.real)} or fewer of his last {d.rule.last_n} games, {d.rule.min_line}+ yds — at a {pct(d.rule.floor)}+ chance; one per player, {d.rule.per_game} per game, top {d.rule.picks} a week, and the next game to kick off always gets its best one. By season: {Object.entries(bt.seasons || {}).map(([s, [n, h]]) => `${s} ${share(h, n)}`).join(' · ')}. Anytime TD never clears the bar (top TD chances sit near 60%). A pick freezes at its kickoff; open slots refill daily until the last game starts.
       </div>}
       {past.length > 0 && (
         <details className="prism-past">
