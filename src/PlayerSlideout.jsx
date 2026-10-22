@@ -255,6 +255,9 @@ export default function PlayerSlideout() {
                 {' '}<BreakoutBadge m={weekRow} /> <HotHandTag m={weekRow} /> <LiveStatusTag m={weekRow} />
               </div>
             )}
+            {/* 2026-10-22 early-season role check (nfl_project/build_role_check.py) */}
+            {weekRow?.roleFlag === 'backup' && <div className="sub slideout-grade" title="Kept out of Top Picks and PRISM Picks">🪑? ESPN's depth chart has him {weekRow.depth_label}, below the role his usage projects, with {weekRow.teamGp} game{weekRow.teamGp === 1 ? '' : 's'} for {weekRow.team} — treat this week's numbers as an upper bound.</div>}
+            {weekRow && !weekRow.roleFlag && weekRow.teamGp === 0 && <div className="sub slideout-grade">📅 No games with {weekRow.team} yet{weekRow.lastTeam && weekRow.lastTeam !== weekRow.team ? ` (last season: ${weekRow.lastTeam})` : ''} — his usage leans on last season until he plays.</div>}
             {(h2h || venue) && (
               <div className="sub slideout-grade">
                 {h2h && <span title={H2H_NOTE}>🆚 H2H vs {weekRow.opponent}: <H2HBadge h={h2h} /> <span className="meta-line small">{h2h.text}</span></span>}

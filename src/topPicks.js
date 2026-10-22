@@ -55,7 +55,8 @@ function pct(p) {
 }
 
 export function topPicks(rows, { excludeTeams } = {}) {
-  const pool = rows.filter((m) => m.injury_gate >= 0.75 && m.p_td != null && !(excludeTeams && excludeTeams.has(m.team)))
+  // 2026-10-22: role-flagged players (build_role_check.py: < 3 team games, depth chart below our usage rank) sit out
+  const pool = rows.filter((m) => m.injury_gate >= 0.75 && m.p_td != null && !m.roleFlag && !(excludeTeams && excludeTeams.has(m.team)))
   const used = new Set()
   const take = (list) => {
     const p = list.find((m) => !used.has(m.team))

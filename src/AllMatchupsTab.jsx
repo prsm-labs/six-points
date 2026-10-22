@@ -101,7 +101,7 @@ export default function AllMatchupsTab() {
                     <div>
                       <span>{m.player_name}</span> <PickButton player={m} compact />
                       <div className="cell-sub">
-                        {m.team} · {m.position}<DepthTag m={m} /> <BreakoutBadge m={m} /> <HotHandTag m={m} /> <RoleChip m={m} /> <LiveStatusTag m={m} />
+                        {m.team} · {m.position}<DepthTag m={m} />{m.roleFlag && <span title={`Depth chart ${m.depth_label}, below his usage rank, ${m.teamGp} team games — kept out of Top Picks`}> 🪑?</span>}{!m.roleFlag && m.teamGp === 0 && <span title={`No games with ${m.team} yet${m.lastTeam && m.lastTeam !== m.team ? ` (last season ${m.lastTeam})` : ''}`}> 📅</span>} <BreakoutBadge m={m} /> <HotHandTag m={m} /> <RoleChip m={m} /> <LiveStatusTag m={m} />
                       </div>
                     </div>
                   </div>
