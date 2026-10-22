@@ -363,7 +363,7 @@ export default function App() {
       <header>
         <div className="header-row">
           <img src="/logo.png" alt="Six Points" className="logo" />
-          <h1>Six Points</h1>
+          <h1 title="NFL touchdown intelligence, weekly cadence, real backtests only.">Six Points</h1>
           <button
             className="odds-calc-toggle"
             onClick={() => setShowOddsCalc(true)}
@@ -374,12 +374,10 @@ export default function App() {
           </button>
           <AlertBell />
         </div>
-        <p className="tagline">NFL touchdown intelligence, weekly cadence, real backtests only.</p>
         <DataFreshnessBanner />
       </header>
       <TDMarquee onClick={() => setTab('tdtracker')} />
       <MatchupSelector />
-      <PositionChips />
       <LiveStatusRunner />
       <AlertsRunner />
       <AlertToast />
@@ -393,6 +391,8 @@ export default function App() {
             as a slideout instead, matching how Going Yard itself surfaces its own odds
             calculator (a button that opens a slideout, not a dedicated page). */}
       </nav>
+      {/* 2026-10-22 (user: CourtIQ is cleaner): position filter sits under the tabs, not between the game cards and the tabs */}
+      <PositionChips />
       <main>
         <Active />
       </main>

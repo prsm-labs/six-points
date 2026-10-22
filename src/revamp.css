@@ -253,3 +253,31 @@ table.data-table th { position: relative; }
 .cmp-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: var(--surface2); gap: 2px; }
 .cmp-bar span { background: color-mix(in srgb, var(--muted) 45%, transparent); }
 .cmp-bar span.lead { background: var(--accent); }
+
+/* 2026-10-22 (user: Six Points still bulky next to CourtIQ) -- CourtIQ-sized header, game cards, ticker, status */
+.app { padding-top: 14px; }
+.header-row { gap: 10px; }
+.header-row img.logo { width: 30px; height: 30px; border-radius: 7px; }
+header h1 { font-size: 1.35rem; }
+.odds-calc-toggle { padding: 4px 8px; font-size: 0.95rem; }
+.data-freshness { margin: 4px 0 8px; font-size: 0.72rem; }
+.ticker-wrap { margin-bottom: 6px; border-radius: 7px; }
+.ticker-wrap > span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 0.75rem; }
+.ticker-label { padding: 5px 9px; font-size: 0.72rem; }
+.ticker-track { padding: 5px 0; }
+.ticker-item { font-size: 0.78rem; padding: 0 12px; }
+.matchup-selector { padding: 6px 0 8px; border-bottom: 0; }
+.matchup-selector-row { gap: 8px; padding-bottom: 2px; }
+.matchup-card { width: auto; min-width: 104px; padding: 7px 10px; gap: 2px; background: var(--surface); font-size: 0.8rem; }
+.matchup-card-team-row { gap: 6px; }
+.matchup-card-logo { width: 16px; height: 16px; }
+.matchup-card-abbr { font-size: 0.8rem; }
+.matchup-card-score { font-size: 0.8rem; margin-left: 8px; }
+.matchup-card-status { font-size: 0.7rem; margin-top: 0; padding-top: 0; border-top: 0; }
+.matchup-card-all { justify-content: center; }
+.matchup-card-all .matchup-card-abbr { flex: 0 0 auto; white-space: nowrap; }
+.tabs { margin-bottom: 8px; }
+.position-chips { margin: 0 0 10px; gap: 6px; padding: 0; border-bottom: 0; }
+.position-chips button { padding: 4px 11px; font-size: 0.78rem; background: transparent; border: 1px solid var(--border); }
+.position-chips button.active { border-color: var(--accent); }
+.slate-status { padding: 8px 12px; gap: 4px 14px; font-size: 0.78rem; border-radius: 10px; }

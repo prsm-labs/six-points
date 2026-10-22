@@ -137,9 +137,16 @@ export default function MatchupSelector() {
     )
   }
 
+  // 2026-10-22 (user: CourtIQ's cards are the standard): an "All games" card first, weekday on the kickoff, and a
+  // "Showing X @ Y only" card while one game narrows the pages
+  const day = (d) => (d ? new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { weekday: 'short' }) : '')
   return (
     <div className="matchup-selector">
       <div className="matchup-selector-row">
+        <button className={selectedMatchup ? 'matchup-card matchup-card-all' : 'matchup-card matchup-card-all active'} onClick={() => setSelectedMatchup(null)}>
+          <span className="matchup-card-abbr">All games</span>
+          <div className="matchup-card-status">{games.length} this week</div>
+        </button>
         {ordered.map((g) => {
           const active = selectedMatchup && selectedMatchup.home === g.home_team && selectedMatchup.away === g.away_team
           const live = liveByGame[g.game_id]
@@ -158,14 +165,15 @@ export default function MatchupSelector() {
               <TeamRow team={g.away_team} score={live?.awayScore} hasBall={awayHasBall} bold={awayLeads && isFinal} />
               <TeamRow team={g.home_team} score={live?.homeScore} hasBall={homeHasBall} bold={homeLeads && isFinal} />
               <div className="matchup-card-status">
-                {isFinal ? 'Final' : isLive ? `Q${live.period} ${live.clock}` : formatKickoff(g.gametime) || g.gameday}
+                {isFinal ? 'Final' : isLive ? `● Q${live.period} ${live.clock}` : `${day(g.gameday)} ${formatKickoff(g.gametime)}`.trim() || g.gameday}
               </div>
             </button>
           )
         })}
         {selectedMatchup && (
-          <button className="matchup-card matchup-card-clear" onClick={() => setSelectedMatchup(null)}>
-            Clear &times;
+          <button className="matchup-card matchup-card-all" onClick={() => setSelectedMatchup(null)} title="Every page is narrowed to this game">
+            <span className="matchup-card-abbr">Showing {selectedMatchup.away} @ {selectedMatchup.home} only</span>
+            <div className="matchup-card-status">✕ all games</div>
           </button>
         )}
       </div>
