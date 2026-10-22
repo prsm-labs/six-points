@@ -5486,6 +5486,99 @@
         "status": "Questionable",
         "injury": "Ankle"
       }
+    ],
+    "7": [
+      {
+        "team": "CHI",
+        "name": "T.J. Edwards",
+        "position": "LB",
+        "status": "Doubtful",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "CHI",
+        "name": "Jack Sanborn",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "CHI",
+        "name": "Tyrique Stevenson",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Hip"
+      },
+      {
+        "team": "CHI",
+        "name": "Kyle Monangai",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Thumb"
+      },
+      {
+        "team": "NE",
+        "name": "Morgan Moses",
+        "position": "T",
+        "status": "Questionable",
+        "injury": "Foot"
+      },
+      {
+        "team": "NE",
+        "name": "Kevin Byard",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Chest"
+      },
+      {
+        "team": "NE",
+        "name": "Carlton Davis III",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Neck"
+      },
+      {
+        "team": "NE",
+        "name": "Christian Elliss",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Chest"
+      },
+      {
+        "team": "NE",
+        "name": "Alijah Vera-Tucker",
+        "position": "G",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "NE",
+        "name": "Ben Brown",
+        "position": "C",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "NE",
+        "name": "Craig Woodson",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "NE",
+        "name": "Karon Prunty",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "NE",
+        "name": "Channing Canada",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Hamstring"
+      }
     ]
   }
 }

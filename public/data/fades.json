@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-21T17:22+00:00",
+ "generated_at": "2026-10-22T11:01+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -745,28 +745,6 @@
      "trackN": 502
     },
     {
-     "player_id": "00-0039338",
-     "name": "Brock Bowers",
-     "team": "LV",
-     "opp": "LA",
-     "pos": "TE",
-     "depth": "TE1",
-     "line": 95.5,
-     "est": 68.5,
-     "z": 3.26,
-     "games": [
-      116,
-      86,
-      110,
-      70
-     ],
-     "why": [
-      "LA takes away 3 yds for his role"
-     ],
-     "track": 0.822,
-     "trackN": 502
-    },
-    {
      "player_id": "00-0039064",
      "name": "Zay Flowers",
      "team": "BAL",
@@ -1019,30 +997,6 @@
      "trackN": 590
     },
     {
-     "player_id": "00-0038124",
-     "name": "Christian Watson",
-     "team": "GB",
-     "opp": "DET",
-     "pos": "WR",
-     "depth": "WR1",
-     "line": 89.7,
-     "est": 68.2,
-     "z": 2.6,
-     "games": [
-      147,
-      41,
-      96,
-      47,
-      143,
-      64
-     ],
-     "why": [
-      "one big game (147) lifts his average -- 78 a game in the others"
-     ],
-     "track": 0.729,
-     "trackN": 590
-    },
-    {
      "player_id": "00-0034829",
      "name": "Mike Gesicki",
      "team": "CIN",
@@ -1084,32 +1038,9 @@
      ],
      "track": 0.729,
      "trackN": 590
-    },
-    {
-     "player_id": "00-0030506",
-     "name": "Travis Kelce",
-     "team": "KC",
-     "opp": "SEA",
-     "pos": "TE",
-     "depth": "TE1",
-     "line": 59.8,
-     "est": 45.3,
-     "z": 2.15,
-     "games": [
-      71,
-      101,
-      59,
-      15,
-      53
-     ],
-     "why": [
-      "one big game (101) lifts his average -- 50 a game in the others"
-     ],
-     "track": 0.729,
-     "trackN": 590
     }
    ],
-   "updated_at": "2026-10-21T13:22-04:00"
+   "updated_at": "2026-10-22T07:01-04:00"
   }
  ]
 }
