@@ -50,6 +50,39 @@ function wallclockByPlayId(drives) {
   return map
 }
 
+// 2026-10-22 🏈 Game Tracker: every play with its start / end spot (yardLine = distance from the HOME goal line, a fixed
+// scale), down & distance and which side has the ball; the in-progress drive (drives.current) is added when ESPN lists it
+// separately. Last 80 plays only.
+function slimTrack(data) {
+  const comp = data.header?.competitions?.[0]
+  const side = Object.fromEntries((comp?.competitors || []).map((c) => [c.team?.id, c.homeAway]))
+  const abbr = Object.fromEntries((comp?.competitors || []).map((c) => [c.team?.id, c.team?.abbreviation]))
+  const all = [...(data.drives?.previous || [])]
+  const cur = data.drives?.current
+  if (cur && !all.some((d) => d.id === cur.id)) all.push(cur)
+  const spot = (s) => (s && s.yardLine != null
+    ? { yardLine: s.yardLine, side: side[s.team?.id] || null, dd: s.downDistanceText || null, down: s.down || null, dist: s.distance ?? null }
+    : null)
+  const plays = []
+  all.forEach((d, i) => {
+    for (const p of d.plays || []) {
+      plays.push({
+        id: p.id, drive: i, team: abbr[d.team?.id] || d.team?.abbreviation || '', side: side[d.team?.id] || null,
+        text: p.text || '', type: p.type?.text || '', period: p.period?.number ?? null, clock: p.clock?.displayValue || '',
+        scoring: !!p.scoringPlay, yds: p.statYardage ?? null, start: spot(p.start), end: spot(p.end),
+      })
+    }
+  })
+  const away = (comp?.competitors || []).find((c) => c.homeAway === 'away')?.team?.abbreviation || ''
+  const home = (comp?.competitors || []).find((c) => c.homeAway === 'home')?.team?.abbreviation || ''
+  return {
+    away, home,
+    drives: all.map((d) => ({ team: abbr[d.team?.id] || d.team?.abbreviation || '', side: side[d.team?.id] || null, start: d.start?.yardLine ?? null,
+      startText: d.start?.text || '', description: d.description || '', result: d.displayResult || d.result || '' })),
+    plays: plays.slice(-80),
+  }
+}
+
 function slimInjuries(injuries) {
   return (injuries || []).map((teamEntry) => ({
     team: teamEntry.team?.abbreviation || '',
@@ -97,6 +130,7 @@ export default async function handler(req, res) {
     if (full) {
       payload.boxscore = data.boxscore || null
       payload.drives = slimDrives(data.drives)
+      payload.track = slimTrack(data)
     }
     res.status(200).json(payload)
   } catch (err) {

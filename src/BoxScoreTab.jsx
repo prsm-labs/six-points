@@ -5,6 +5,7 @@ import { usePlayerDirectory } from './PlayerDirectory.jsx'
 import { useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import LiveProjection from './LiveProjection.jsx'
+import FieldGameTracker from './FieldGameTracker.jsx'
 
 // Real box scores via ESPN's summary API. The week's games are a lightweight, always-visible
 // list (scores already live in season_schedule.json, no ESPN call needed just to show them) --
@@ -36,7 +37,7 @@ async function fetchGameDetail(eventId) {
   const proxied = await fetch(`/api/summary?event=${eventId}&full=1`).catch(() => null)
   if (proxied && proxied.ok) {
     const data = await proxied.json()
-    if (data.boxscore || data.status) return  /* 2026-10-20: pre-game too (lineups) */ { boxscore: data.boxscore, drives: data.drives || [], status: data.status || null, score: data.score || null, injuries: data.injuries || [], fetchedAt: Date.now() }
+    if (data.boxscore || data.status) return  /* 2026-10-20: pre-game too (lineups) */ { boxscore: data.boxscore, drives: data.drives || [], track: data.track || null, status: data.status || null, score: data.score || null, injuries: data.injuries || [], fetchedAt: Date.now() }
   }
   const direct = await fetch(
     `https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${eventId}`
@@ -312,7 +313,7 @@ function Lineups({ game, detail, depth, espnAbbrToNflverse }) {
 }
 
 // 2026-10-22 (user: CourtIQ's Live / box score is the standard): one view at a time, picked with pills
-const VIEWS = [['box', '📋 Box score'], ['proj', '📈 Live projection'], ['lineups', '👥 Lineups'], ['compare', '⚖️ Team comparison'], ['pbp', '📜 Play-by-play']]
+const VIEWS = [['box', '📋 Box score'], ['proj', '📈 Live projection'], ['tracker', '🏈 Game Tracker'], ['lineups', '👥 Lineups'], ['compare', '⚖️ Team comparison'], ['pbp', '📜 Play-by-play']]
 const ESPN_ABBR = { LA: 'lar', WAS: 'wsh' }
 export function TeamLogo({ team, size = 18 }) {
   if (!team) return null
@@ -391,6 +392,7 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
         </div>
       )}
       {view === 'pbp' && <PlayByPlay drives={drives} espnAbbrToNflverse={espnAbbrToNflverse} />}
+      {view === 'tracker' && <FieldGameTracker detail={detail} />}
     </div>
   )
 }
