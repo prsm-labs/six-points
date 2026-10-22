@@ -186,15 +186,16 @@ function PlayerBoxTables({ boxscore, espnIdToPlayer, espnAbbrToNflverse, heat })
   if (!boxscore?.players) return null
 
   return (
-    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', marginTop: 6 }}>
+    <div className="box-grid">
       {boxscore.players.map((teamEntry, i) => {
         const espnAbbr = teamEntry.team?.abbreviation?.toUpperCase()
         const nflverseAbbr = espnAbbrToNflverse.get(espnAbbr) || espnAbbr
         return (
-          <div key={i} style={{ flex: '1 1 360px', minWidth: 300 }}>
-            <button className="team-link" style={{ fontWeight: 800 }} onClick={() => openTeamSlide({ team: nflverseAbbr })}>
-              {nflverseAbbr}
-            </button>
+          <div key={i} className="card box-card">
+            <div className="box-title"><TeamLogo team={nflverseAbbr} size={22} />
+              <button className="team-link" style={{ fontWeight: 800 }} onClick={() => openTeamSlide({ team: nflverseAbbr })}>{nflverseAbbr}</button>
+              <span className="meta-line small" style={{ margin: 0 }}>{i === 0 ? 'away' : 'home'}</span>
+            </div>
             {teamEntry.statistics.map((cat) => (
               <PlayerBoxCategory key={cat.name} category={cat} espnIdToPlayer={espnIdToPlayer} team={nflverseAbbr} heat={heat} />
             ))}
@@ -310,11 +311,23 @@ function Lineups({ game, detail, depth, espnAbbrToNflverse }) {
   )
 }
 
+// 2026-10-22 (user: CourtIQ's Live / box score is the standard): one view at a time, picked with pills
+const VIEWS = [['box', '📋 Box score'], ['proj', '📈 Live projection'], ['lineups', '👥 Lineups'], ['compare', '⚖️ Team comparison'], ['pbp', '📜 Play-by-play']]
+const ESPN_ABBR = { LA: 'lar', WAS: 'wsh' }
+export function TeamLogo({ team, size = 18 }) {
+  if (!team) return null
+  return <img src={`https://a.espncdn.com/i/teamlogos/nfl/500/${(ESPN_ABBR[team] || team).toLowerCase()}.png`} alt="" width={size} height={size} style={{ objectFit: 'contain' }} />
+}
+const kickLabel = (g) => {
+  const day = g.gameday ? new Date(`${g.gameday}T12:00:00`).toLocaleDateString([], { weekday: 'short' }) : ''
+  const [hh, mm] = String(g.gametime || '').split(':').map(Number)
+  return `${day}${Number.isFinite(hh) ? ` ${((hh + 11) % 12) + 1}:${String(mm || 0).padStart(2, '0')} ${hh >= 12 ? 'PM' : 'AM'} ET` : ''}`
+}
+const firstNum = (v) => { const m = String(v ?? '').match(/-?\d+(\.\d+)?/); return m ? Number(m[0]) : 0 }
+const LOWER_BETTER = /turnover|penalt|fumbles lost|interceptions thrown|sacks-yards lost/i
+
 function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse, heat, depth }) {
-  const [showPlayers, setShowPlayers] = useState(false)
-  const [showPlays, setShowPlays] = useState(false)
-  const [showLineups, setShowLineups] = useState(false)
-  const [showProj, setShowProj] = useState(false)  // 2026-10-20 📈 Live projection
+  const [view, setView] = useState('box')
 
   if (loading) return <p className="empty-state" style={{ margin: '10px 0 0' }}>Loading box score...</p>
   const pre = !detail || detail.status?.state === 'pre' || !detail.boxscore?.teams?.[0]?.statistics?.length
@@ -345,58 +358,39 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
           {detail.fetchedAt && ` · updated ${new Date(detail.fetchedAt).toLocaleTimeString()}`}
         </p>
       )}
-      <div className="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>
-                <button className="team-link" onClick={() => openTeamSlide({ team: game.away_team })}>
-                  {game.away_team}
-                </button>
-              </th>
-              <th></th>
-              <th>
-                <button className="team-link" onClick={() => openTeamSlide({ team: game.home_team })}>
-                  {game.home_team}
-                </button>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {statRows.map((r, i) => (
-              <tr key={i}>
-                <td>{r.away}</td>
-                <td className="meta-line" style={{ margin: 0, textAlign: 'center' }}>{r.label}</td>
-                <td>{r.home}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="pill-row">
+        {VIEWS.filter(([k]) => k !== 'box' || boxscore.players).map(([k, l]) => (
+          <button key={k} className={`pill-btn ${view === k ? 'active' : ''}`} onClick={() => setView(k)}>{l}</button>
+        ))}
       </div>
-
-      <div style={{ display: 'flex', gap: 16, marginTop: 10, flexWrap: 'wrap' }}>
-        <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowProj((v) => !v)}>
-          {showProj ? 'Hide live projection ▲' : '📈 Show live projection ▼'}
-        </button>
-        {boxscore.players && (
-          <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowPlayers((v) => !v)}>
-            {showPlayers ? 'Hide player box score ▲' : 'Show player box score ▼'}
-          </button>
-        )}
-        <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowPlays((v) => !v)}>
-          {showPlays ? 'Hide play-by-play ▲' : 'Show play-by-play ▼'}
-        </button>
-        <button className="team-link" style={{ fontSize: '0.82rem', fontWeight: 700 }} onClick={() => setShowLineups((v) => !v)}>
-          {showLineups ? 'Hide lineups ▲' : 'Show lineups ▼'}
-        </button>
-      </div>
-      {showProj && <LiveProjection game={game} detail={detail} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} />}
-      {showLineups && <Lineups game={game} detail={detail} depth={depth} espnAbbrToNflverse={espnAbbrToNflverse} />}
-
-      {showPlayers && (
-        <PlayerBoxTables boxscore={boxscore} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} heat={heat} />
+      {view === 'box' && <PlayerBoxTables boxscore={boxscore} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} heat={heat} />}
+      {view === 'proj' && <LiveProjection game={game} detail={detail} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} />}
+      {view === 'lineups' && <Lineups game={game} detail={detail} depth={depth} espnAbbrToNflverse={espnAbbrToNflverse} />}
+      {view === 'compare' && (
+        <div className="card cmp-card">
+          <div className="cmp-head">
+            <span><TeamLogo team={game.away_team} size={22} /> <button className="team-link" onClick={() => openTeamSlide({ team: game.away_team })}><b>{game.away_team}</b></button> {detail.score?.away ?? ''}</span>
+            <span className="meta-line small" style={{ margin: 0 }}>{detail.status?.detail || ''}</span>
+            <span>{detail.score?.home ?? ''} <button className="team-link" onClick={() => openTeamSlide({ team: game.home_team })}><b>{game.home_team}</b></button> <TeamLogo team={game.home_team} size={22} /></span>
+          </div>
+          {statRows.map((r) => {
+            const a = firstNum(r.away), h = firstNum(r.home), tot = Math.abs(a) + Math.abs(h) || 1
+            const low = LOWER_BETTER.test(r.label)
+            const lead = a === h ? 0 : (a > h) !== low ? -1 : 1
+            return (
+              <div key={r.label} className="cmp-row">
+                <span className={`cmp-val ${lead < 0 ? 'lead' : ''}`}>{r.away}</span>
+                <div className="cmp-mid">
+                  <div className="cmp-label small">{r.label}{low ? ' (fewer is better)' : ''}</div>
+                  <div className="cmp-bar"><span style={{ width: `${(Math.abs(a) / tot) * 100}%` }} className={lead < 0 ? 'lead' : ''} /><span style={{ width: `${(Math.abs(h) / tot) * 100}%` }} className={lead > 0 ? 'lead' : ''} /></div>
+                </div>
+                <span className={`cmp-val r ${lead > 0 ? 'lead' : ''}`}>{r.home}</span>
+              </div>
+            )
+          })}
+        </div>
       )}
-      {showPlays && <PlayByPlay drives={drives} espnAbbrToNflverse={espnAbbrToNflverse} />}
+      {view === 'pbp' && <PlayByPlay drives={drives} espnAbbrToNflverse={espnAbbrToNflverse} />}
     </div>
   )
 }
@@ -551,6 +545,13 @@ export default function BoxScoreTab() {
     const match = weekGames.find((g) => g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away)
     if (match && match.game_id !== selectedGameId) handleSelect(match)
   }, [selectedMatchup, weekGames])
+  // 2026-10-22: like CourtIQ, a game is always open -- today's unfinished game, else the next one, else the last
+  useEffect(() => {
+    if (selectedGameId || selectedMatchup || !filteredGames.length || !teamStats) return
+    const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' })
+    const pick = filteredGames.find((g) => g.gameday === today && g.home_score == null) || filteredGames.find((g) => g.home_score == null) || filteredGames[filteredGames.length - 1]
+    if (pick) handleSelect(pick)
+  }, [filteredGames, selectedGameId, selectedMatchup, teamStats])
 
   // Keep the selected game's box score / play-by-play fresh while it's still in progress. Stops
   // on its own once ESPN reports the game final (status.state === 'post').
@@ -628,20 +629,34 @@ export default function BoxScoreTab() {
         full player/position breakdown for both teams, and the real play-by-play, all via ESPN's
         summary API
       </p>
-      {filteredGames.map((g) => (
-        <GameRow
-          key={g.game_id}
-          game={g}
-          selected={selectedGameId === g.game_id}
-          onSelect={() => handleSelect(g)}
-          detail={details[g.game_id]}
-          loading={loadingGameId === g.game_id}
-          espnIdToPlayer={espnIdToPlayer}
-          espnAbbrToNflverse={espnAbbrToNflverse}
-          heat={selectedGameId === g.game_id ? heat : null}
-          depth={depth}
-        />
-      ))}
+      {/* 2026-10-22 (user: CourtIQ's Live is the standard): compact score cards; the picked game opens right below */}
+      <div className="score-grid">
+        {filteredGames.map((g) => {
+          const d = details[g.game_id]
+          const st = d?.status?.state
+          const live = st === 'in'
+          const a = d?.score?.away ?? g.away_score, h = d?.score?.home ?? g.home_score
+          const status = d?.status?.detail || (g.home_score != null ? 'Final' : kickLabel(g))
+          return (
+            <button key={g.game_id} className={`score-card ${selectedGameId === g.game_id ? 'active' : ''}`} onClick={() => selectedGameId !== g.game_id && handleSelect(g)}>
+              <div className="sc-row"><TeamLogo team={g.away_team} size={20} /> {g.away_team} <b>{a ?? ''}</b></div>
+              <div className="sc-row"><TeamLogo team={g.home_team} size={20} /> {g.home_team} <b>{h ?? ''}</b></div>
+              <div className={`sc-status ${live ? 'live' : ''}`}>{live ? '● ' : ''}{status}</div>
+            </button>
+          )
+        })}
+      </div>
+      {(() => {
+        const g = filteredGames.find((x) => x.game_id === selectedGameId)
+        if (!g) return null
+        return (
+          <div className="card" style={{ marginTop: 4 }}>
+            <div className="box-title"><TeamLogo team={g.away_team} size={22} /> <b>{g.away_team}</b> <span className="meta-line small" style={{ margin: 0 }}>@</span> <TeamLogo team={g.home_team} size={22} /> <b>{g.home_team}</b></div>
+            <GameDetail game={g} detail={details[g.game_id]} loading={loadingGameId === g.game_id} espnIdToPlayer={espnIdToPlayer}
+              espnAbbrToNflverse={espnAbbrToNflverse} heat={heat} depth={depth} />
+          </div>
+        )
+      })()}
     </div>
   )
 }

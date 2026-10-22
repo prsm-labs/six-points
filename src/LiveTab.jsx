@@ -11,19 +11,19 @@ import LiveUsageTab from './LiveUsageTab.jsx'
 // badges, GoingYardParity.md follow-up request). Live Sim was scoped out as a bigger lift,
 // lower priority than the rest of this batch.
 export default function LiveTab() {
-  const [sub, setSub] = useState('schedule')
+  const [sub, setSub] = useState('boxscores') // 2026-10-22: Live opens on the games / box scores, like CourtIQ
 
   return (
     <div>
       <div className="sub-tabs">
+        <button className={sub === 'boxscores' ? 'active' : ''} onClick={() => setSub('boxscores')}>
+          📋 Box Scores
+        </button>
         <button className={sub === 'schedule' ? 'active' : ''} onClick={() => setSub('schedule')}>
           Schedule
         </button>
         <button className={sub === 'themes' ? 'active' : ''} onClick={() => setSub('themes')}>
           Themes
-        </button>
-        <button className={sub === 'boxscores' ? 'active' : ''} onClick={() => setSub('boxscores')}>
-          Box Scores
         </button>
         <button className={sub === 'inactives' ? 'active' : ''} onClick={() => setSub('inactives')}>
           Inactives

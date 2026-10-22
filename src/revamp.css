@@ -231,3 +231,25 @@ table.data-table th { position: relative; }
 .prism-card .prism-head > div { flex: 1 1 0; min-width: 0; }  /* title takes the room, toggle stays on the right */
 .prism-toggle { margin-left: auto; background: transparent; border: 1px solid currentColor; border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 0.8rem; cursor: pointer; color: inherit; opacity: 0.85; }
 .prism-toggle:hover { opacity: 1; }
+
+/* 2026-10-22 (user: CourtIQ's UI is the standard) -- Box Scores score cards, side-by-side team box, team comparison bars */
+.score-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; margin-bottom: 12px; }
+.score-card { display: grid; gap: 3px; text-align: left; padding: 9px 11px; border-radius: 10px; border: 1px solid var(--border); background: var(--surface); color: var(--fg); cursor: pointer; font: inherit; font-size: 0.85rem; }
+.score-card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.sc-row { display: flex; align-items: center; gap: 6px; font-weight: 600; }
+.sc-row b { margin-left: auto; }
+.sc-status { font-size: 0.72rem; color: var(--muted); }
+.sc-status.live { color: #e5584b; }
+.box-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr)); gap: 12px; margin-top: 10px; }
+.box-grid .card { margin: 0; }
+.box-title { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.cmp-card { max-width: 760px; margin-top: 10px; }
+.cmp-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 8px; }
+.cmp-row { display: grid; grid-template-columns: 82px 1fr 82px; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--border); }
+.cmp-val { font-variant-numeric: tabular-nums; font-size: 0.88rem; }
+.cmp-val.r { text-align: right; }
+.cmp-val.lead { font-weight: 800; color: var(--accent); }
+.cmp-label { text-align: center; color: var(--muted); margin-bottom: 3px; }
+.cmp-bar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: var(--surface2); gap: 2px; }
+.cmp-bar span { background: color-mix(in srgb, var(--muted) 45%, transparent); }
+.cmp-bar span.lead { background: var(--accent); }

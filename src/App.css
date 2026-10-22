@@ -181,24 +181,32 @@ th.sortable:hover {
 .tier-fringe { background: #6b6b6b33; color: #9aa0ab; }
 .tier-fade { background: #1e3d2733; color: #4a7a58; }
 
+/* 2026-10-22 (user: CourtIQ's pill sub-tabs are the standard) -- was grey rectangles */
 .sub-tabs {
   display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
 }
 
 .sub-tabs button {
-  background: var(--border);
-  border: none;
+  background: transparent;
+  border: 1px solid var(--border);
   color: var(--fg);
-  padding: 6px 14px;
-  border-radius: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.sub-tabs button:hover {
+  border-color: var(--accent);
 }
 
 .sub-tabs button.active {
   background: var(--accent);
+  border-color: var(--accent);
   color: var(--accent-fg);
 }
 
