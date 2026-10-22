@@ -4,6 +4,7 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import L7Chart, { defaultCategory } from './L7Chart.jsx'
 import { H2HBadge, H2H_NOTE, VENUE_NOTE, h2hFor, useH2H, venueFor } from './h2h.jsx'
 import { OnOffPicker, onOffGames, useOnOff } from './OnOff.jsx'
+import ProfileLinks from './ProfileLinks.jsx'
 import GameLogTable from './GameLogTable.jsx'
 import PickButton from './PickButton.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
@@ -240,7 +241,7 @@ export default function PlayerSlideout() {
         <div className="slideout-header">
           <PlayerAvatar playerId={player.player_id} name={name} />
           <div className="slideout-header-info">
-            <h2>{name}</h2>
+            <h2>{name}<ProfileLinks name={name} espnId={espnId} /></h2>
             <div className="sub">
               {position}<DepthTag m={weekRow || player} /> &middot;{' '}
               <button className="team-link" onClick={() => player.team && openTeamSlide({ team: player.team })}>
