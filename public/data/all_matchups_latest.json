@@ -3,7 +3,7 @@
   "week": 7,
   "generated_at": "2026-10-20T12:00:58.420645+00:00",
   "roster_source": "espn",
-  "roster_checked_at": "2026-10-22T11:01:26.303683+00:00",
+  "roster_checked_at": "2026-10-22T16:00:32.870503+00:00",
   "role_td_league": {
     "RB1": 0.64,
     "WR1": 0.355,
@@ -2562,7 +2562,7 @@
       "team": "CLE",
       "opponent": "TEN",
       "player_id": "00-0039373",
-      "player_name": "Audric Estimé",
+      "player_name": "Audric EstimÃ©",
       "position": "RB",
       "usage_sig": 3.3091598915989158,
       "gtd": 14.491581975332398,

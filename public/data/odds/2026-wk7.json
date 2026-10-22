@@ -1,0 +1,584 @@
+{
+ "_meta": {
+  "season": 2026,
+  "week": 7,
+  "market": "player_anytime_td",
+  "source": "The Odds API (region us)",
+  "fetches": [
+   {
+    "at": "2026-10-22T16:00:45+00:00",
+    "games": [
+     "NE@CHI"
+    ],
+    "creditsLeft": 365
+   }
+  ],
+  "updated": "2026-10-22T16:00:45+00:00",
+  "creditsLeft": 365
+ },
+ "games": {
+  "NE@CHI": {
+   "fetchedAt": "2026-10-22T16:00:45+00:00",
+   "eventId": "ffebea881c1d7b2dfb85b3e590c35985",
+   "players": 22,
+   "books": [
+    "BOL",
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  }
+ },
+ "players": {
+  "00-0036275": {
+   "name": "D'Andre Swift",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": -155,
+    "FD": -160,
+    "BOL": -167,
+    "BR": -182,
+    "MGM": -155,
+    "BOV": -157
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615191_13L88808Q151577722Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=16602381",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381221187|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092702-6591946&type=Single"
+   },
+   "best": -155,
+   "bestBook": "DK",
+   "bestImplied": 60.8,
+   "medianImplied": 61.3,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0036875": {
+   "name": "Rhamondre Stevenson",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": -105,
+    "FD": -105,
+    "BOL": -111,
+    "BR": -118,
+    "MGM": -105,
+    "BOV": -110
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615202_13L88808Q1-1828996474Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=26919640",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381230023|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092729-6592000&type=Single"
+   },
+   "best": -105,
+   "bestBook": "DK",
+   "bestImplied": 51.2,
+   "medianImplied": 51.8,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0035676": {
+   "name": "A.J. Brown",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 145,
+    "FD": 135,
+    "BOL": 130,
+    "BR": 128,
+    "MGM": 140,
+    "BOV": 145
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615204_13L88808Q11457589561Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=27385286",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381229795|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092699-6591938&type=Single"
+   },
+   "best": 145,
+   "bestBook": "DK",
+   "bestImplied": 40.8,
+   "medianImplied": 42.1,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0040126": {
+   "name": "Colston Loveland",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 170,
+    "FD": 175,
+    "BOL": 170,
+    "BR": 170,
+    "MGM": 185,
+    "BOV": 170
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615193_13L88808Q1-2109230062Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=50526288",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381229951|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092534-6591610&type=Single"
+   },
+   "best": 185,
+   "bestBook": "MGM",
+   "bestImplied": 35.1,
+   "medianImplied": 37.0,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0039919": {
+   "name": "Rome Odunze",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 175,
+    "FD": 175,
+    "BOL": 170,
+    "BR": 175,
+    "MGM": 200,
+    "BOV": 175
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615194_13L88808Q1-848465730Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=48504773",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381229987|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092481-6591504&type=Single"
+   },
+   "best": 200,
+   "bestBook": "MGM",
+   "bestImplied": 33.3,
+   "medianImplied": 36.4,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0040735": {
+   "name": "Luther Burden III",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 190,
+    "FD": 190,
+    "BOL": 180,
+    "BR": 190,
+    "MGM": 165,
+    "BOV": 190
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615192_13L88808Q12086988331Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=48308855",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381221181|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092592-6591726&type=Single"
+   },
+   "best": 190,
+   "bestBook": "DK",
+   "bestImplied": 34.5,
+   "medianImplied": 34.5,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0033090": {
+   "name": "Hunter Henry",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 230,
+    "FD": 220,
+    "BOL": 220,
+    "BR": 220,
+    "BOV": 230
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615206_13L88808Q1-1762786291Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=11151036",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381229874|{wagerAmount}"
+   },
+   "best": 230,
+   "bestBook": "DK",
+   "bestImplied": 30.3,
+   "medianImplied": 31.2,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0039021": {
+   "name": "Roschon Johnson",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 240,
+    "FD": 230,
+    "BOL": 220,
+    "BR": 225,
+    "MGM": 195,
+    "BOV": 240
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615195_13L88808Q11750193742Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=48274474",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381229892|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4096578-6596119&type=Single"
+   },
+   "best": 240,
+   "bestBook": "DK",
+   "bestImplied": 29.4,
+   "medianImplied": 30.5,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0038621": {
+   "name": "DeMario Douglas",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 300,
+    "FD": 320,
+    "BOL": 300,
+    "BR": 300,
+    "MGM": 290,
+    "BOV": 300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615207_13L88808Q1-205213128Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=51144401",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381204261|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092677-6591908&type=Single"
+   },
+   "best": 320,
+   "bestBook": "FD",
+   "bestImplied": 23.8,
+   "medianImplied": 25.0,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0039851": {
+   "name": "Drake Maye",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 340,
+    "FD": 350,
+    "BOL": 325,
+    "BR": 310,
+    "MGM": 280,
+    "BOV": 340
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615205_13L88808Q1-725127430Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=48167907",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381259331|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092706-6591956&type=Single"
+   },
+   "best": 350,
+   "bestBook": "FD",
+   "bestImplied": 22.2,
+   "medianImplied": 23.1,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0032464": {
+   "name": "Kalif Raymond",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 380,
+    "FD": 400,
+    "BOL": 350,
+    "BR": 425,
+    "MGM": 390,
+    "BOV": 380
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615196_13L88808Q1633357284Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=14783655",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381230001|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092472-6591486&type=Single"
+   },
+   "best": 425,
+   "bestBook": "BR",
+   "bestImplied": 19.0,
+   "medianImplied": 20.6,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0039918": {
+   "name": "Caleb Williams",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 380,
+    "FD": 360,
+    "BOL": 350,
+    "BR": 340,
+    "MGM": 310,
+    "BOV": 380
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615197_13L88808Q11505799344Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=41325151",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381204249|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092684-6591910&type=Single"
+   },
+   "best": 380,
+   "bestBook": "DK",
+   "bestImplied": 20.8,
+   "medianImplied": 22.0,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0040734": {
+   "name": "TreVeyon Henderson",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 390,
+    "FD": 360,
+    "BOL": 350,
+    "BR": 290,
+    "MGM": 250,
+    "BOV": 390
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615203_13L88808Q1709721529Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=39228426",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381221268|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092590-6591728&type=Single"
+   },
+   "best": 390,
+   "bestBook": "DK",
+   "bestImplied": 20.4,
+   "medianImplied": 22.0,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0040563": {
+   "name": "Efton Chism III",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 500,
+    "FD": 490,
+    "BOL": 450,
+    "BR": 430,
+    "MGM": 600,
+    "BOV": 500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615209_13L88808Q1-2056923875Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=88247252",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381221295|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092509-6591560&type=Single"
+   },
+   "best": 600,
+   "bestBook": "MGM",
+   "bestImplied": 14.3,
+   "medianImplied": 16.8,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0041395": {
+   "name": "Eli Raridon",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 500,
+    "FD": 470,
+    "BOL": 450,
+    "BR": 475,
+    "MGM": 600,
+    "BOV": 500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615210_13L88808Q1-39347883Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=95394736",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381221218|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092501-6591544&type=Single"
+   },
+   "best": 600,
+   "bestBook": "MGM",
+   "bestImplied": 14.3,
+   "medianImplied": 17.0,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0036290": {
+   "name": "Cole Kmet",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 550,
+    "FD": 500,
+    "BOL": 500,
+    "BR": 510,
+    "MGM": 650,
+    "BOV": 525
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615198_13L88808Q1-1982448170Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=26920153",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381204247|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092639-6591818&type=Single"
+   },
+   "best": 650,
+   "bestBook": "MGM",
+   "bestImplied": 13.3,
+   "medianImplied": 16.2,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0040131": {
+   "name": "Kyle Williams",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 550,
+    "FD": 700,
+    "BOL": 600,
+    "BR": 550,
+    "MGM": 425,
+    "BOV": 525
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615211_13L88808Q11958986630Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=7717045",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381259301|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092683-6591902&type=Single"
+   },
+   "best": 700,
+   "bestBook": "FD",
+   "bestImplied": 12.5,
+   "medianImplied": 15.4,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0040556": {
+   "name": "Corey Kiner",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 550,
+    "FD": 650,
+    "BOL": 550,
+    "BR": 700,
+    "MGM": 650,
+    "BOV": 525
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615212_13L88808Q1-1553366467Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=48142643",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381204257|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092546-6591634&type=Single"
+   },
+   "best": 700,
+   "bestBook": "BR",
+   "bestImplied": 12.5,
+   "medianImplied": 14.4,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0041558": {
+   "name": "Sam Roush",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 1000,
+    "FD": 1000,
+    "BOL": 900,
+    "BR": 1300,
+    "MGM": 1300,
+    "BOV": 1000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615201_13L88808Q1519659230Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=48333013",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381204251|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092498-6591538&type=Single"
+   },
+   "best": 1300,
+   "bestBook": "BR",
+   "bestImplied": 7.1,
+   "medianImplied": 9.1,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0040277": {
+   "name": "Jahdae Walker",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 1400,
+    "FD": 1600,
+    "BOL": 1400,
+    "BR": 1200,
+    "BOV": 1400
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615199_13L88808Q1-1770507643Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=72056132",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381204245|{wagerAmount}"
+   },
+   "best": 1600,
+   "bestBook": "FD",
+   "bestImplied": 5.9,
+   "medianImplied": 6.7,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0041051": {
+   "name": "Zavion Thomas",
+   "team": "CHI",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 1500,
+    "FD": 1500,
+    "BOL": 1400,
+    "BR": 1400,
+    "MGM": 1400,
+    "BOV": 1500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615200_13L88808Q1266242460Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=60265436",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381204243|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092685-6591914&type=Single"
+   },
+   "best": 1500,
+   "bestBook": "DK",
+   "bestImplied": 6.2,
+   "medianImplied": 6.5,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  },
+  "00-0038564": {
+   "name": "Cameron Latu",
+   "team": "NE",
+   "game": "NE@CHI",
+   "books": {
+    "DK": 2200,
+    "FD": 1700,
+    "BOL": 1400,
+    "BR": 1700,
+    "MGM": 3000,
+    "BOV": 2200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA380414163%232326615213_13L88808Q11182691913Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.617700503&selectionId=42200800",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823560?coupon={pickType}|4381204255|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:43657-4092649-6591844&type=Single"
+   },
+   "best": 3000,
+   "bestBook": "MGM",
+   "bestImplied": 3.2,
+   "medianImplied": 5.0,
+   "fetchedAt": "2026-10-22T16:00:45+00:00"
+  }
+ },
+ "unmatched": [
+  {
+   "game": "NE@CHI",
+   "name": "Tanner Arkin"
+  },
+  {
+   "game": "NE@CHI",
+   "name": "Zavier Scott"
+  }
+ ],
+ "dst": {
+  "CHI": {
+   "DK": 600,
+   "FD": 750,
+   "MGM": 450,
+   "BOV": 600
+  },
+  "NE": {
+   "DK": 600,
+   "FD": 700,
+   "MGM": 575,
+   "BOV": 600
+  }
+ }
+}
