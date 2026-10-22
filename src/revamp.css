@@ -224,3 +224,10 @@ table.data-table th { position: relative; }
 .lp-team { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; padding: 8px 10px; border: 1px solid rgba(255,255,255,.12); border-radius: 8px; }
 .lp-up { color: #2ecc71; }
 .lp-down { color: #ff6b6b; }
+
+/* 2026-10-22 PRISM Picks collapsible (default collapsed): only the header shows until opened */
+.prism-card.collapsed > :not(.prism-head) { display: none; }
+.prism-card.collapsed .prism-book-btn { display: none; }
+.prism-card .prism-head > div { flex: 1 1 0; min-width: 0; }  /* title takes the room, toggle stays on the right */
+.prism-toggle { margin-left: auto; background: transparent; border: 1px solid currentColor; border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 0.8rem; cursor: pointer; color: inherit; opacity: 0.85; }
+.prism-toggle:hover { opacity: 1; }

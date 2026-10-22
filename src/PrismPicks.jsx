@@ -12,6 +12,7 @@ const RESULT = { hit: '✅', miss: '✗', void: 'void' }
 
 export default function PrismPicks({ slate, notOut }) {
   const [d, setD] = useState(null)
+  const [open, setOpen] = useState(false)
   useEffect(() => {
     fetch('/data/prism_picks.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).then(setD).catch(() => setD(null))
   }, [])
@@ -22,13 +23,15 @@ export default function PrismPicks({ slate, notOut }) {
   const past = d.weeks.filter((w) => w.week !== d.week && w.picks.some((p) => p.result)).reverse()
   const bt = d.backtest
   return (
-    <div className="card prism-card">
+    <div className={`card prism-card ${open ? 'open' : 'collapsed'}`}>
       <div className="prism-head">
         <span className="prism-gem" aria-hidden="true">💎</span>
         <div>
           <div className="prism-title">PRISM Picks</div>
           <div className="meta-line small" style={{ margin: 0 }}>This week's highest-hitting props that aren't the obvious ones</div>
         </div>
+        {/* 2026-10-22 (user): collapsed by default -- tap to expand */}
+        <button type="button" className="prism-toggle" aria-expanded={open} onClick={() => setOpen((v) => !v)}>{open ? '▴ Hide' : `▾ Show${picks.length ? ` ${picks.length} pick${picks.length === 1 ? '' : 's'}` : ''}`}</button>
       </div>
       {picks.length === 0 && (d.paused
         ? <div className="meta-line small"><b>None this week.</b> {d.paused}</div>
