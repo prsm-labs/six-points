@@ -6,7 +6,9 @@ import { MODES, PROPS, toDecimal } from './pairs.js'
 // frozen at the Sunday lock) graded against the ledger. A leg hits on a TD (anytime) or 100+ scrimmage yards; a leg
 // whose player didn't play is void and the pair settles on the other leg. Units only for TD + TD pairs with a book
 // parlay price (1 unit at that price).
-const BOARD_LABEL = Object.fromEntries([...MODES.map((m) => [m.key, m.label]), ['balanced:td', '⚖️ Balanced · 🏈 TD only'], ['balanced:yds', '⚖️ Balanced · 💨 Yards only']])
+const BOARD_LABEL = Object.fromEntries([...MODES.map((m) => [m.key, m.label]), ['balanced:td', '⚖️ Balanced · 🏈 TD only'], ['balanced:yds', '⚖️ Balanced · 💨 Yards only'],
+  // 2026-10-23 pair levels: <level>:<mode> boards
+  ...['safe', 'mid', 'long'].flatMap((lv) => MODES.map((m) => [`${lv}:${m.key}`, `${{ safe: '🛡️ Safe', mid: '⚖️ Mid-range', long: '🌠 Long shot' }[lv]} · ${m.label}`]))])
 
 export default function TrackRecordPairs() {
   const [ledger, setLedger] = useState(null)

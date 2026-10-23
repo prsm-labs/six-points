@@ -15,6 +15,17 @@ export const PAIR_CORR = {
   opp: { tt: 1, ty: 1.07, yy: 1 },
 }
 
+// Levels (2026-10-23, user: mid-range + long-shot pairs, data-backed): All = the board as before (default); 🛡️ Safe = both-hit
+// 25%+; ⚖️ Mid-range = 10-25% (two strong TD legs); 🌠 Long shot = 3-10% (two longer-shot TDs, about +900 to +3200). Same legs
+// and measured factors at every level (graded by chance band in Track Record). Mid / long lead with the one measured
+// rise-together link: TD + 100 yds on opposite sides of one game (+7%, the shootout).
+export const LEVELS = [
+  { key: 'all', label: 'All levels', min: 0, max: 1.01, blurb: 'Every chance band — the board as before' },
+  { key: 'safe', label: '🛡️ Safe', min: 0.25, max: 1.01, blurb: 'Both-hit 25% or better' },
+  { key: 'mid', label: '⚖️ Mid-range', min: 0.1, max: 0.25, blurb: 'Both-hit 10-25% (about +300 to +900 fair)' },
+  { key: 'long', label: '🌠 Long shot', min: 0.03, max: 0.1, blurb: 'Both-hit 3-10% — the stars-align pairs (about +900 to +3200 fair)' },
+]
+export const LEVEL_KEYS = LEVELS.map((l) => l.key)
 export const MAX_PAIRS = 10
 const LEGS_PER_PROP = 40
 const MAX_PER_PLAYER = { balanced: 1, default: 2 }
@@ -99,7 +110,7 @@ function take(sorted, n, state) {
   const got = []
   for (const pr of sorted) {
     if (got.length >= n) break
-    if (state.keys.has(pr.key)) continue
+    if (state.keys.has(pr.key) || pr.chance < (state.min ?? 0) || pr.chance >= (state.max ?? 1.01)) continue
     const ids = pr.legs.map((l) => l.m.player_id)
     if (ids.some((id) => (state.uses.get(id) || 0) >= state.cap)) continue
     state.keys.add(pr.key)
@@ -139,7 +150,7 @@ function withStars(list, universe) {
 const isOut = (m) => Boolean(m.absent_reason) || m.week_status === 'Out'
 
 // players: this week's slate rows (slate.js). excludeTeams: teams whose game already kicked off (left out of a lock).
-export function buildPairs(players, { mode = 'balanced', boost = 0, prop = null, excludeTeams = new Set() } = {}) {
+export function buildPairs(players, { mode = 'balanced', boost = 0, prop = null, excludeTeams = new Set(), level = 'all' } = {}) {
   const live = players.filter((m) => !excludeTeams.has(m.team) && !isOut(m))
   const top = (k) => live.map((m) => legOf(m, k)).filter(Boolean).sort((a, b) => b.chance - a.chance).slice(0, LEGS_PER_PROP)
   const allTd = top('td')
@@ -149,13 +160,14 @@ export function buildPairs(players, { mode = 'balanced', boost = 0, prop = null,
   // hot hands / breakouts sit outside the top by design -- give them their own candidate legs
   const hotLegs = live.filter((m) => m.hotHand || m.breakout).flatMap((m) => [legOf(m, 'td'), legOf(m, 'yds')]).filter(Boolean)
     .filter((l) => !prop || l.prop === prop)
-  return withStars(pickPairs({ td, yds, hotLegs, mode, boost, prop }), starUniverse(allTd, allYds))
+  const LV = LEVELS.find((l) => l.key === level) || LEVELS[0]
+  return withStars(pickPairs({ td, yds, hotLegs, mode, boost, prop, band: { min: LV.min, max: LV.max }, level }), starUniverse(allTd, allYds))
 }
 
-function pickPairs({ td, yds, hotLegs, mode, boost, prop }) {
+function pickPairs({ td, yds, hotLegs, mode, boost, prop, band = { min: 0, max: 1.01 }, level = 'all' }) {
   const byChance = (a, b) => b.chance - a.chance
   const byEv = (a, b) => b.ev - a.ev
-  const state = { keys: new Set(), uses: new Map(), cap: MAX_PER_PLAYER[mode] ?? MAX_PER_PLAYER.default }
+  const state = { keys: new Set(), uses: new Map(), cap: MAX_PER_PLAYER[mode] ?? MAX_PER_PLAYER.default, ...band }
   const tag = (list, section) => list.map((pr) => ({ ...pr, section }))
   const tdPairs = allPairs(td, (a, b) => relation(a, b) === 'diff', boost).sort(byChance)
   const valuePairs = allPairs(td.filter((l) => l.book), (a, b) => relation(a, b) === 'diff', boost).filter((pr) => pr.ev != null && pr.ev > 0).sort(byEv)
@@ -175,7 +187,9 @@ function pickPairs({ td, yds, hotLegs, mode, boost, prop }) {
   if (mode === 'hot') return tag(take(hotPairs, MAX_PAIRS, state), '🔥 Hot hand')
   if (mode === 'soft') return tag(take(softPairs, MAX_PAIRS, state), '▲ Soft matchup')
   if (mode === 'stacks') return stacks.length ? tag(take(stacks, MAX_PAIRS, state), '🔗 Same game').map((pr) => ({ ...pr, section: pr.rel === 'team' ? '🔗 Teammates' : '⚔️ Opponents' })) : []
+  const together = level === 'mid' || level === 'long' ? tag(take(stacks.filter((pr) => pr.corr > 1.03), 2, state), '✨ Stars align: shootout') : []
   const out = [
+    ...together,
     ...tag(take(tdPairs, 2, state), '🏈 TDs'),
     ...tag(take(valuePairs, 2, state), '💰 Value'),
     ...tag(take(softPairs, 2, state), '▲ Soft matchup'),

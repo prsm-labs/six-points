@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23T16:01+00:00",
+ "generated_at": "2026-10-23T17:35+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -73,6 +73,162 @@
     35
    ]
   ]
+ },
+ "tiers": {
+  "mid": {
+   "label": "Mid-range",
+   "rule": {
+    "label": "Mid-range",
+    "floor": 0.3,
+    "cap": 0.5,
+    "real": 0.35,
+    "rank": "chance",
+    "stat_cap": 3,
+    "min_line": {
+     "YDS": 50,
+     "TD": 1,
+     "TD2": 2
+    }
+   },
+   "backtest": {
+    "n": 235,
+    "hits": 109,
+    "said": 0.4333,
+    "own": 0.2309,
+    "weeks": 47,
+    "seasons": {
+     "2023": [
+      65,
+      33
+     ],
+     "2024": [
+      85,
+      35
+     ],
+     "2025": [
+      85,
+      41
+     ]
+    },
+    "stats": {
+     "TD": [
+      95,
+      34
+     ],
+     "YDS": [
+      140,
+      75
+     ]
+    },
+    "bands": [
+     [
+      0.3,
+      0.35,
+      0,
+      0
+     ],
+     [
+      0.35,
+      0.4,
+      58,
+      23
+     ],
+     [
+      0.4,
+      0.45,
+      88,
+      38
+     ],
+     [
+      0.45,
+      1.01,
+      89,
+      48
+     ]
+    ]
+   },
+   "live": {
+    "n": 5,
+    "hits": 4,
+    "void": 0
+   }
+  },
+  "long": {
+   "label": "Long shots",
+   "rule": {
+    "label": "Long shots",
+    "floor": 0.1,
+    "cap": 0.25,
+    "real": 0.15,
+    "rank": "lift",
+    "stat_cap": 2,
+    "min_line": {
+     "YDS": 50,
+     "TD": 1,
+     "TD2": 2
+    }
+   },
+   "backtest": {
+    "n": 234,
+    "hits": 56,
+    "said": 0.1959,
+    "own": 0.0107,
+    "weeks": 47,
+    "seasons": {
+     "2023": [
+      65,
+      14
+     ],
+     "2024": [
+      85,
+      23
+     ],
+     "2025": [
+      84,
+      19
+     ]
+    },
+    "stats": {
+     "TD": [
+      94,
+      21
+     ],
+     "TD2": [
+      46,
+      7
+     ],
+     "YDS": [
+      94,
+      28
+     ]
+    },
+    "bands": [
+     [
+      0.1,
+      0.15,
+      38,
+      5
+     ],
+     [
+      0.15,
+      0.2,
+      61,
+      10
+     ],
+     [
+      0.2,
+      1.01,
+      135,
+      41
+     ]
+    ]
+   },
+   "live": {
+    "n": 5,
+    "hits": 1,
+    "void": 0
+   }
+  }
  },
  "paused": null,
  "live": {
@@ -191,7 +347,234 @@
      "track": 0.918,
      "trackN": 97
     }
-   ]
+   ],
+   "tiers": {
+    "mid": [
+     {
+      "player_id": "00-0040583",
+      "name": "Woody Marks",
+      "team": "HOU",
+      "opp": "JAX",
+      "pos": "RB",
+      "est": 67.0,
+      "depth": "RB2",
+      "game": "HOU-JAX",
+      "stat": "YDS",
+      "line": 55,
+      "label": "55+ scrimmage yards",
+      "chance": 0.4746,
+      "last": [
+       8,
+       2
+      ],
+      "actual": 81,
+      "result": "hit",
+      "track": 0.536,
+      "trackN": 90
+     },
+     {
+      "player_id": "00-0039794",
+      "name": "Braelon Allen",
+      "team": "NYJ",
+      "opp": "NE",
+      "pos": "RB",
+      "est": 65.2,
+      "depth": "RB2",
+      "game": "NE-NYJ",
+      "stat": "YDS",
+      "line": 55,
+      "label": "55+ scrimmage yards",
+      "chance": 0.4476,
+      "last": [
+       8,
+       2
+      ],
+      "actual": 104,
+      "result": "hit",
+      "track": 0.457,
+      "trackN": 90
+     },
+     {
+      "player_id": "00-0037256",
+      "name": "Rachaad White",
+      "team": "WAS",
+      "opp": "SF",
+      "pos": "RB",
+      "est": 64.3,
+      "depth": "RB2",
+      "game": "SF-WAS",
+      "stat": "YDS",
+      "line": 55,
+      "label": "55+ scrimmage yards",
+      "chance": 0.4476,
+      "last": [
+       8,
+       2
+      ],
+      "actual": 57,
+      "result": "hit",
+      "track": 0.457,
+      "trackN": 90
+     },
+     {
+      "player_id": "00-0040122",
+      "name": "Ashton Jeanty",
+      "team": "LV",
+      "opp": "BUF",
+      "pos": "RB",
+      "est": 89.8,
+      "depth": "RB1",
+      "game": "BUF-LV",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3943,
+      "last": [
+       8,
+       2
+      ],
+      "actual": 1,
+      "result": "hit",
+      "track": 0.411,
+      "trackN": 60
+     },
+     {
+      "player_id": "00-0037228",
+      "name": "Jaylen Warren",
+      "team": "PIT",
+      "opp": "TB",
+      "pos": "RB",
+      "est": 114.9,
+      "depth": "RB1",
+      "game": "PIT-TB",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3909,
+      "last": [
+       8,
+       2
+      ],
+      "actual": 0,
+      "result": "miss",
+      "track": 0.41,
+      "trackN": 60
+     }
+    ],
+    "long": [
+     {
+      "player_id": "00-0038794",
+      "name": "Jaleel McLaughlin",
+      "team": "CLE",
+      "opp": "BAL",
+      "pos": "RB",
+      "est": 53.8,
+      "depth": "RB2",
+      "game": "BAL-CLE",
+      "stat": "YDS",
+      "line": 65,
+      "label": "65+ scrimmage yards",
+      "chance": 0.2399,
+      "last": [
+       8,
+       0
+      ],
+      "actual": 55,
+      "result": "miss",
+      "track": 0.298,
+      "trackN": 137
+     },
+     {
+      "player_id": "00-0036997",
+      "name": "Javonte Williams",
+      "team": "DAL",
+      "opp": "GB",
+      "pos": "RB",
+      "est": 83.1,
+      "depth": "RB1",
+      "game": "DAL-GB",
+      "stat": "YDS",
+      "line": 105,
+      "label": "105+ scrimmage yards",
+      "chance": 0.214,
+      "last": [
+       8,
+       0
+      ],
+      "actual": 50,
+      "result": "miss",
+      "track": 0.291,
+      "trackN": 137
+     },
+     {
+      "player_id": "00-0037261",
+      "name": "Khalil Shakir",
+      "team": "BUF",
+      "opp": "LV",
+      "pos": "WR",
+      "est": 41.0,
+      "depth": "WR2",
+      "game": "BUF-LV",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.1915,
+      "last": [
+       8,
+       0
+      ],
+      "actual": 1,
+      "result": "hit",
+      "track": 0.197,
+      "trackN": 63
+     },
+     {
+      "player_id": "00-0033307",
+      "name": "Kendrick Bourne",
+      "team": "ARI",
+      "opp": "LA",
+      "pos": "WR",
+      "est": 39.2,
+      "depth": "WR2",
+      "game": "ARI-LA",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.1663,
+      "last": [
+       8,
+       0
+      ],
+      "actual": 0,
+      "result": "miss",
+      "track": 0.186,
+      "trackN": 63
+     },
+     {
+      "player_id": "00-0038559",
+      "name": "Michael Wilson",
+      "team": "ARI",
+      "opp": "LA",
+      "pos": "WR",
+      "est": 65.3,
+      "depth": "WR1",
+      "game": "ARI-LA",
+      "stat": "TD2",
+      "line": 2,
+      "label": "2+ TDs",
+      "chance": 0.1001,
+      "last": [
+       8,
+       0
+      ],
+      "actual": 0,
+      "result": "miss",
+      "track": 0.125,
+      "trackN": 39
+     }
+    ]
+   },
+   "tiersSource": "rebuilt from the frozen pre-kickoff snapshot"
   },
   {
    "week": 7,
@@ -217,7 +600,7 @@
      "trackN": 11
     }
    ],
-   "updated_at": "2026-10-23T12:01-04:00",
+   "updated_at": "2026-10-23T13:35-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
@@ -232,6 +615,212 @@
      "label": "25+ scrimmage yards",
      "chance": 0.5389
     }
+   },
+   "tiers": {
+    "mid": [
+     {
+      "player_id": "00-0039794",
+      "name": "Braelon Allen",
+      "team": "NYJ",
+      "opp": "MIA",
+      "pos": "RB",
+      "est": 75.9,
+      "depth": "RB2",
+      "game": "MIA-NYJ",
+      "stat": "YDS",
+      "line": 70,
+      "label": "70+ scrimmage yards",
+      "chance": 0.4258,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.45,
+      "trackN": 90
+     },
+     {
+      "player_id": "00-0036997",
+      "name": "Javonte Williams",
+      "team": "DAL",
+      "opp": "PHI",
+      "pos": "RB",
+      "est": 76.8,
+      "depth": "RB1",
+      "game": "DAL-PHI",
+      "stat": "YDS",
+      "line": 75,
+      "label": "75+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.445,
+      "trackN": 90
+     },
+     {
+      "player_id": "00-0038563",
+      "name": "Tre Tucker",
+      "team": "LV",
+      "opp": "LA",
+      "pos": "WR",
+      "est": 52.3,
+      "depth": "WR1",
+      "game": "LA-LV",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.445,
+      "trackN": 90
+     },
+     {
+      "player_id": "00-0040122",
+      "name": "Ashton Jeanty",
+      "team": "LV",
+      "opp": "LA",
+      "pos": "RB",
+      "est": 86.9,
+      "depth": "RB1",
+      "game": "LA-LV",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3784,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.404,
+      "trackN": 60
+     },
+     {
+      "player_id": "00-0040583",
+      "name": "Woody Marks",
+      "team": "HOU",
+      "opp": "NYG",
+      "pos": "RB",
+      "est": 68.1,
+      "depth": "RB2",
+      "game": "HOU-NYG",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3779,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.404,
+      "trackN": 60
+     }
+    ],
+    "long": [
+     {
+      "player_id": "00-0033293",
+      "name": "Aaron Jones",
+      "team": "MIN",
+      "opp": "IND",
+      "pos": "RB",
+      "est": 102.9,
+      "depth": "RB1",
+      "game": "IND-MIN",
+      "stat": "YDS",
+      "line": 130,
+      "label": "130+ scrimmage yards",
+      "chance": 0.214,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.291,
+      "trackN": 137
+     },
+     {
+      "player_id": "00-0038997",
+      "name": "Josh Downs",
+      "team": "IND",
+      "opp": "MIN",
+      "pos": "WR",
+      "est": 47.2,
+      "depth": "WR1",
+      "game": "IND-MIN",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.195,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.199,
+      "trackN": 63
+     },
+     {
+      "player_id": "00-0036555",
+      "name": "Chuba Hubbard",
+      "team": "CAR",
+      "opp": "TB",
+      "pos": "RB",
+      "est": 100.5,
+      "depth": "RB1",
+      "game": "CAR-TB",
+      "stat": "YDS",
+      "line": 130,
+      "label": "130+ scrimmage yards",
+      "chance": 0.1834,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.194,
+      "trackN": 63
+     },
+     {
+      "player_id": "00-0033307",
+      "name": "Kendrick Bourne",
+      "team": "ARI",
+      "opp": "DEN",
+      "pos": "WR",
+      "est": 43.5,
+      "depth": "WR2",
+      "game": "ARI-DEN",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.1577,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.181,
+      "trackN": 63
+     },
+     {
+      "player_id": "00-0039065",
+      "name": "Sam LaPorta",
+      "team": "DET",
+      "opp": "GB",
+      "pos": "TE",
+      "est": 54.2,
+      "depth": "TE1",
+      "game": "DET-GB",
+      "stat": "TD2",
+      "line": 2,
+      "label": "2+ TDs",
+      "chance": 0.1003,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.125,
+      "trackN": 39
+     }
+    ]
    }
   }
  ]

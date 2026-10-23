@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSlate } from './slate.js'
-import { buildPairs, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican } from './pairs.js'
+import { buildPairs, LEVELS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican } from './pairs.js'
 import { startedTeams } from './topPicks.js'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide } from './slideouts.js'
@@ -83,6 +83,7 @@ function PairCard({ pr, boost, started }) {
 function LiveBoard() {
   const slate = useSlate()
   const [mode, setMode] = useState('balanced')
+  const [level, setLevel] = useState('all')
   const [prop, setProp] = useState(null)
   const [boost, setBoost] = useState(0)
   const [stars, setStars] = useState(null)
@@ -97,12 +98,14 @@ function LiveBoard() {
     fetch(`/data/pairs/${slate.season}-wk${slate.week}.json`).then((r) => (r.ok ? r.json() : null)).then(setLocked).catch(() => {})
   }, [slate?.season, slate?.week])
   const started = useMemo(() => startedTeams(sched, slate?.week), [sched, slate?.week])
-  const pairs = useMemo(() => (slate?.matchups ? buildPairs(slate.matchups, { mode, prop, boost }) : []), [slate, mode, prop, boost])
+  const pairs = useMemo(() => (slate?.matchups ? buildPairs(slate.matchups, { mode, prop, boost, level }) : []), [slate, mode, prop, boost, level])
   const shown = stars ? pairs.filter((p) => p.starRank && p.starRank <= stars).sort((a, b) => a.starRank - b.starRank) : pairs
   const blind = useMemo(() => (slate?.matchups ? notInPairs(slate.matchups, pairs).slice(0, 12) : []), [slate, pairs])
   if (!slate) return <p className="empty-state">Loading…</p>
   const modeInfo = MODES.find((m) => m.key === mode)
-  const lockedBoard = locked?.boards?.[prop && mode === 'balanced' ? `balanced:${prop}` : mode] || null
+  // all = the original boards; safe / mid / long = <level>:<mode> (no prop boards per level -- live only)
+  const lockedBoard = locked?.boards?.[level !== 'all' ? (prop ? '' : `${level}:${mode}`) : prop && mode === 'balanced' ? `balanced:${prop}` : mode] || null
+  const levelInfo = LEVELS.find((l) => l.key === level)
   return (
     <div>
       <div className="note">
@@ -110,7 +113,10 @@ function LiveBoard() {
         yards</b> legs. Both-hit chance = leg × leg × how the legs move together — measured on 2023-25: different games and
         teammates ≈ independent, TD + 100 yds on opposite sides of one game +7% (shootouts). ★ = the strongest {STAR_TOP} pairs
         of their kind this week. Pairs lock at the Sunday lock and are graded in Track Record.
+        {' '}Levels: 🛡️ Safe (both hit 25%+), ⚖️ Mid-range (10-25%), 🌠 Long shot (3-10%) — the same legs and factors, so a long shot is priced
+        as honestly as a safe pair; mid-range and long shots lead with ✨ the shootout link (TD + 100 yds across one game, +7%).
       </div>
+      <div className="pill-row">{LEVELS.map((l) => <button key={l.key} className={`pill-btn ${level === l.key ? 'active' : ''}`} onClick={() => setLevel(l.key)} title={l.blurb}>{l.label}</button>)}</div>
       <div className="pill-row">{MODES.map((m) => <button key={m.key} className={`pill-btn ${mode === m.key ? 'active' : ''}`} onClick={() => setMode(m.key)}>{m.label}</button>)}</div>
       <div className="pill-row">
         {PROP_FILTERS.map((p) => <button key={String(p.key)} className={`pill-btn ${prop === p.key ? 'active' : ''}`} onClick={() => setProp(p.key)}>{p.label}</button>)}
@@ -122,7 +128,7 @@ function LiveBoard() {
         <StatePicker />
         {lockedBoard && <button className={`pill-btn ${showLocked ? 'active' : ''}`} onClick={() => setShowLocked((v) => !v)}>{showLocked ? '🔒 Locked' : '🔄 Live'} board</button>}
       </div>
-      <p className="meta-line small">{modeInfo?.blurb}</p>
+      <p className="meta-line small">{level !== 'all' ? `${levelInfo.blurb} · ` : ''}{modeInfo?.blurb}</p>
       {showLocked && lockedBoard ? (
         <div className="grid-cards">
           {lockedBoard.map((r) => (

@@ -8,7 +8,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { lockMs, startedTeams } from '../src/topPicks.js'
-import { buildPairs, MODE_KEYS, pairRecord } from '../src/pairs.js'
+import { buildPairs, LEVEL_KEYS, MODE_KEYS, pairRecord } from '../src/pairs.js'
 import { enrichSlate } from '../src/slateCore.js'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
@@ -36,6 +36,8 @@ const started = startedTeams(schedule, data.week, now)
 const boards = {}
 for (const mode of MODE_KEYS) boards[mode] = buildPairs(data.matchups, { mode, excludeTeams: started }).map(pairRecord)
 for (const prop of ['td', 'yds']) boards[`balanced:${prop}`] = buildPairs(data.matchups, { mode: 'balanced', prop, excludeTeams: started }).map(pairRecord)
+// 2026-10-23 levels: safe / mid-range / long-shot boards for every mode (plain mode keys stay the original "all" board)
+for (const level of LEVEL_KEYS.filter((l) => l !== 'all')) for (const mode of MODE_KEYS) boards[`${level}:${mode}`] = buildPairs(data.matchups, { mode, level, excludeTeams: started }).map(pairRecord)
 const out = {
   season: data.season, week: data.week, locked_at: new Date(now).toISOString(), pool_generated_at: data.generated_at,
   odds_file: odds ? path.basename(oddsPath) : null, excluded_started_teams: [...started].sort(), forced: force, boards,
