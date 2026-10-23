@@ -5578,6 +5578,20 @@
         "position": "CB",
         "status": "Out",
         "injury": "Hamstring"
+      },
+      {
+        "team": "PIT",
+        "name": "Brandin Echols",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "PIT",
+        "name": "Ben Skowronek",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Calf"
       }
     ]
   }

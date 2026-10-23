@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-22T16:00+00:00",
+ "generated_at": "2026-10-23T11:01+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -217,20 +217,20 @@
      "trackN": 11
     }
    ],
-   "updated_at": "2026-10-22T12:00-04:00",
+   "updated_at": "2026-10-23T07:01-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
-     "CHI",
-     "NE"
+     "NO",
+     "PIT"
     ],
-    "kickoff": "2026-10-22T20:15:00-04:00",
-    "label": "NE @ CHI",
+    "kickoff": "2026-10-25T09:30:00-04:00",
+    "label": "PIT @ NO",
     "closest": {
-     "name": "Roschon Johnson",
-     "team": "CHI",
+     "name": "Darnell Washington",
+     "team": "PIT",
      "label": "25+ scrimmage yards",
-     "chance": 0.5652
+     "chance": 0.5389
     }
    }
   }
