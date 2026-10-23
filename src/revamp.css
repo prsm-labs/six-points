@@ -294,3 +294,11 @@ header h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
 .header-row .alert-bell, .header-row .odds-calc-toggle ~ * { margin-left: 0 !important; }
 .tabs button { font-size: 14px; padding: 10px 12px; }
 .tabs button.active { color: var(--fg); }
+
+/* 2026-10-22 (user: thin scrollbars that blend in, in the app's accent) -- every scroll area, page included */
+* { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--accent) 55%, transparent) transparent; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--accent) 55%, transparent); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+::-webkit-scrollbar-button { display: none; }
