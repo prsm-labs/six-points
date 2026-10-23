@@ -312,3 +312,36 @@ header h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
 .link-btn{margin-left:8px;background:none;border:0;color:var(--accent);cursor:pointer;padding:0;font:inherit;}
 .actual-line{display:block;font-size:11px;font-weight:400;color:var(--fg,var(--text));text-align:right;font-variant-numeric:tabular-nums;}
 .hit-mark.miss{color:#e5484d;}
+
+/* 📅 Schedule (2026-10-23 rebuild, CourtIQ / Slap Shot layout) + game links */
+.sch-nav{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+.sch-nav select{background:var(--surface);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:6px 9px;font:inherit;}
+.sch-range{font-weight:600;min-width:110px;text-align:center;}
+.sch-team-pick{margin-left:auto;}
+.sch-day{padding:10px 12px;margin-bottom:12px;}
+.sch-day.today{border-color:color-mix(in srgb,var(--accent) 60%,var(--border));}
+.sch-day-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;}
+.sch-today{font-size:11px;letter-spacing:.08em;border:1px solid var(--border);border-radius:999px;padding:1px 8px;color:var(--muted);}
+.sch-row{display:grid;grid-template-columns:110px minmax(170px,240px) 1fr;gap:6px 14px;align-items:center;padding:7px 4px;border-top:1px solid var(--border);}
+.sch-day-head + .sch-row{border-top:0;}
+.sch-row.clickable{cursor:pointer;border-radius:8px;}
+.sch-row.clickable:hover{background:color-mix(in srgb,var(--accent) 8%,transparent);}
+.sch-status{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;}
+.sch-status.live{color:#e5484d;font-weight:700;}
+.sch-teams{display:grid;gap:3px;}
+.sch-team{display:flex;align-items:center;gap:6px;}
+.sch-team.win .sch-abbr,.sch-team.win .sch-score{font-weight:800;}
+.sch-team.focus .sch-abbr{color:var(--accent);}
+.sch-abbr{min-width:34px;font-weight:600;}
+.sch-score{margin-left:auto;font-variant-numeric:tabular-nums;}
+.sch-side{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:12px;}
+.sch-cat{color:var(--muted);font-size:12px;}
+.matchup-chip{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin:6px 0 2px;padding:5px 10px;border:1px solid var(--border);border-radius:999px;background:var(--surface2);color:var(--fg);font:inherit;font-size:12px;cursor:pointer;font-variant-numeric:tabular-nums;}
+.matchup-chip img{vertical-align:-2px;}
+.matchup-chip:hover{border-color:var(--accent);}
+.matchup-chip.live{border-color:#e5484d;}
+.matchup-chip .mc-status{font-weight:700;color:var(--muted);}
+.matchup-chip.live .mc-status{color:#e5484d;}
+.matchup-chip .mc-at{color:var(--muted);}
+.matchup-chip .mc-go{color:var(--accent);}
+@media (max-width:600px){.sch-row{grid-template-columns:1fr;gap:4px;}.sch-team-pick{margin-left:0;flex:1 1 100%;}}

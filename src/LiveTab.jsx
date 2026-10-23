@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { liveFocus } from './nav.js'
 import LiveThemes from './LiveThemes.jsx'
 import BoxScoreTab from './BoxScoreTab.jsx'
 import InactivesTab from './InactivesTab.jsx'
@@ -12,6 +13,9 @@ import LiveUsageTab from './LiveUsageTab.jsx'
 // lower priority than the rest of this batch.
 export default function LiveTab() {
   const [sub, setSub] = useState('boxscores') // 2026-10-22: Live opens on the games / box scores, like CourtIQ
+  // 2026-10-23: a tapped Schedule game / slideout matchup opens on Box Scores (BoxScoreTab picks the game)
+  const focus = liveFocus.use()
+  useEffect(() => { if (focus) setSub('boxscores') }, [focus?.at]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
@@ -32,7 +36,7 @@ export default function LiveTab() {
           Heating Up
         </button>
       </div>
-      {sub === 'schedule' && <ScheduleTab onViewBoxScore={() => setSub('boxscores')} />}
+      {sub === 'schedule' && <ScheduleTab />}
       {sub === 'themes' && <LiveThemes />}
       {sub === 'boxscores' && <BoxScoreTab />}
       {sub === 'inactives' && <InactivesTab />}

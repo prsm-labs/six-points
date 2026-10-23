@@ -39,6 +39,7 @@ import StatsTab from './StatsTab.jsx'
 import './revamp.css'
 import WeekBar, { PastWeekGuard } from './WeekBar.jsx'
 import { useViewWeek } from './weekView.js'
+import { tabRequest } from './nav.js'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -356,6 +357,9 @@ const TABS = [
 export default function App() {
   const [tab, setTab] = useState('cheat')
   const viewWeek = useViewWeek()
+  // 2026-10-23: a Schedule row / slideout matchup asks for the Live tab (nav.js openGame)
+  const tabReq = tabRequest.use()
+  useEffect(() => { if (tabReq) setTab(tabReq.tab) }, [tabReq])
   const [showOddsCalc, setShowOddsCalc] = useState(false)
   const Active = (TABS.find((t) => t.key === tab) || TABS[0]).Component
   // Drag-to-resize + ⚙️ column chooser on every table, app-wide (columnResize.js, Slap Shot's).

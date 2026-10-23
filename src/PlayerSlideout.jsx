@@ -17,6 +17,7 @@ import GamblyButton from './GamblyButton.jsx'
 import { betLine } from './gambly.js'
 import { HotHandTag } from './revampUi.jsx'
 import { useThisWeekLine } from './useThisWeekLine.js'
+import MatchupChip from './MatchupChip.jsx'
 
 // 2026-10-20 live slideout: this week's line while his game is on (25 s refresh) and after it ends, next to the
 // model's pre-game numbers; the game also joins the Last 7 chart as an outlined bar.
@@ -248,6 +249,7 @@ export default function PlayerSlideout() {
                 {player.team}
               </button>
             </div>
+            <MatchupChip player={player} weekRow={weekRow} t={thisWeek} gameLog={gameLog} />
             {weekRow?.grade && (
               <div className="sub slideout-grade">
                 Week {weekRow.week}: <GradeBadge grade={weekRow.grade} m={weekRow} /> TD {fmtPct(weekRow.p_td)}

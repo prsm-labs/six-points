@@ -6,6 +6,8 @@ import { useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import LiveProjection from './LiveProjection.jsx'
 import FieldGameTracker from './FieldGameTracker.jsx'
+import { liveFocus } from './nav.js'
+import { viewWeek } from './weekView.js'
 
 // Real box scores via ESPN's summary API. The week's games are a lightweight, always-visible
 // list (scores already live in season_schedule.json, no ESPN call needed just to show them) --
@@ -447,6 +449,8 @@ export default function BoxScoreTab() {
   const [teamStats, setTeamStats] = useState(null)
   const [selectedWeek, setSelectedWeek] = useState(null)
   const [selectedGameId, setSelectedGameId] = useState(null)
+  // 2026-10-23: opened from a Schedule row / slideout matchup (nav.js openGame) -> that week + that game
+  const focus = liveFocus.use()
   const [details, setDetails] = useState({})
   const [eventIdByGame, setEventIdByGame] = useState({})
   const [loadingGameId, setLoadingGameId] = useState(null)
@@ -466,7 +470,7 @@ export default function BoxScoreTab() {
       .then(([sched, stats]) => {
         setSchedule(sched)
         setTeamStats(stats)
-        setSelectedWeek(sched.latest_week)
+        setSelectedWeek(liveFocus.get()?.week ?? viewWeek() ?? sched.latest_week)
       })
       .catch((e) => setError(e.message))
   }, [])
@@ -547,9 +551,16 @@ export default function BoxScoreTab() {
     const match = weekGames.find((g) => g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away)
     if (match && match.game_id !== selectedGameId) handleSelect(match)
   }, [selectedMatchup, weekGames])
+  useEffect(() => { if (focus?.week && schedule) setSelectedWeek(focus.week) }, [focus?.at, schedule]) // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    if (!focus || focus.used || !teamStats) return
+    const g = weekGames.find((x) => x.game_id === focus.gameId)
+    if (g) { focus.used = true; if (g.game_id !== selectedGameId) handleSelect(g) }
+  }, [focus, weekGames, teamStats]) // eslint-disable-line react-hooks/exhaustive-deps
   // 2026-10-22: like CourtIQ, a game is always open -- today's unfinished game, else the next one, else the last
   useEffect(() => {
-    if (selectedGameId || selectedMatchup || !filteredGames.length || !teamStats) return
+    // a game opened from the Schedule / a slideout wins over the default pick
+    if (selectedGameId || selectedMatchup || !filteredGames.length || !teamStats || (focus && weekGames.some((x) => x.game_id === focus.gameId))) return
     const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' })
     const pick = filteredGames.find((g) => g.gameday === today && g.home_score == null) || filteredGames.find((g) => g.home_score == null) || filteredGames[filteredGames.length - 1]
     if (pick) handleSelect(pick)
