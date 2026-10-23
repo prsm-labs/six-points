@@ -14,6 +14,8 @@ import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import CheatSheetTab from './CheatSheetTab.jsx'
 import PrismPicks from './PrismPicks.jsx'
+import { useMasterSearch } from './masterFilter.js'
+import { matchesSearch } from './teamSearch.js'
 
 // 📋 Cheat Sheets (Slap Shot's tabs/CheatSheetsTab.jsx, 2026-10-18 revamp): this week's quick reads -- top candidates
 // per prop, value vs the book, and the defenses worth attacking -- with injury / roster status. Each list is graded
@@ -74,6 +76,7 @@ function QuickReads() {
   const slate = useSlate()
   const position = usePosition()
   const { selectedMatchup } = useMatchup()
+  const search = useMasterSearch()
   const [statusFilter, setStatusFilter] = useState('notOut')
   const notOut = useLiveOutFilter()
 
@@ -82,6 +85,7 @@ function QuickReads() {
     return slate.matchups
       .filter((m) => matchesPosition(m.position, position))
       .filter((m) => !selectedMatchup || isInSelectedMatchup(selectedMatchup, m.team))
+      .filter((m) => matchesSearch(search, [m.player_name], [m.team, m.opponent])) // 2026-10-23: header search
       .filter((m) => statusFilter === 'all' || (statusFilter === 'notOut' ? notOut(m) : notOut(m) && !m.week_status))
   }, [slate, position, selectedMatchup, statusFilter, notOut])
 

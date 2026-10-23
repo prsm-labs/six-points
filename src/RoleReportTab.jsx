@@ -7,6 +7,7 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import { DepthTag, MatchupCell, RoleChip } from './matchupUi.jsx'
 import PickButton from './PickButton.jsx'
+import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
 // Role Report -- requested 2026-10-04 after the user showed a real props-tout breakdown
 // ("x3.00 role leak", target share, longshot odds) and asked where in the app to get something
@@ -66,8 +67,8 @@ export default function RoleReportTab() {
   const [simData, setSimData] = useState(null)
   const [error, setError] = useState(null)
   const position = usePosition() // app-wide (positionFilter.js) -- this dropdown and the chip row share one value
-  const [team, setTeam] = useState('all')
-  const [search, setSearch] = useState('')
+  const team = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
+  const search = useMasterSearch() // 2026-10-23: the header search; this page's box retired
 
   useEffect(() => {
     Promise.all([
@@ -133,17 +134,6 @@ export default function RoleReportTab() {
             <option value="WR">WR</option>
             <option value="TE">TE</option>
           </select>
-        </label>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={team} onChange={(e) => setTeam(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
-        <label style={{ flex: 1, minWidth: 160 }}>
-          Player
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
       </div>
       <MatchupFilterNote />

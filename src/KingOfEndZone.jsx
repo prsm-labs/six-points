@@ -12,6 +12,7 @@ import { DepthTag } from './matchupUi.jsx'
 import { resolveEventIds } from './espnGameResolver.js'
 import { parseScoringPlay } from './scoringPlays.js'
 import { useSort, SortTh } from './useSort.jsx'
+import { useMasterSearch } from './masterFilter.js'
 
 // 👑 King of the End Zone (2026-10-18 revamp; Slap Shot's IcebreakerView.jsx, football). See kote.js for the promo,
 // the simulation, its backtest and the payout model.
@@ -65,7 +66,7 @@ export default function KingOfEndZone() {
   const [showChart, setShowChart] = useState(true)
   const [picked, setPicked] = useState(() => new Set())
   const [pickedOnly, setPickedOnly] = useState(false)
-  const [query, setQuery] = useState('') // 2026-10-19 (user, Slap Shot's Ice Breaker): search + multi-pick on graph / table
+  const query = useMasterSearch() // 2026-10-23: the header search (its own box retired) // 2026-10-19 (user, Slap Shot's Ice Breaker): search + multi-pick on graph / table
   useEffect(() => {
     fetch('/data/season_schedule.json').then((r) => (r.ok ? r.json() : null)).then(setSched).catch(() => setSched(null))
   }, [])
@@ -187,8 +188,7 @@ export default function KingOfEndZone() {
 
       {game && (
         <div className="kote-search">
-          <input type="search" placeholder="Search a player (or team) to find him / add him to the graph…" value={query}
-            onChange={(e) => setQuery(e.target.value)} aria-label="Search players" />
+          {query && <span className="meta-line small" style={{ margin: 0 }}>Add to the graph:</span>}
           {matches.map((r) => (
             <button key={r.id} className={`pill-btn ${picked.has(r.id) ? 'active' : ''}`} onClick={() => toggle(r.id)}
               title={picked.has(r.id) ? 'Remove from the graph' : 'Add to the graph'}>

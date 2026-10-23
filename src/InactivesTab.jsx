@@ -3,6 +3,7 @@ import { openTeamSlide } from './slideouts.js'
 import { useLiveInactives } from './useLiveInactives.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { useMasterTeam } from './masterFilter.js'
 
 // NFL's real pre-game lineup-confirmation equivalent is the inactives report -- released ~90
 // min before kickoff, resolving on its own clock. Two views: the static Weekly Report (below,
@@ -101,7 +102,7 @@ function WeeklyReportView() {
   const [report, setReport] = useState(null)
   const [error, setError] = useState(null)
   const [selectedWeek, setSelectedWeek] = useState(null)
-  const [teamFilter, setTeamFilter] = useState('all')
+  const teamFilter = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
 
   useEffect(() => {
     fetch('/data/injury_report.json')
@@ -152,13 +153,6 @@ function WeeklyReportView() {
           Week
           <select value={selectedWeek || ''} onChange={(e) => setSelectedWeek(Number(e.target.value))}>
             {weekOptions.map((w) => <option key={w} value={w}>Week {w}</option>)}
-          </select>
-        </label>
-        <label style={{ minWidth: 120 }}>
-          Team
-          <select value={teamFilter} onChange={(e) => setTeamFilter(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
         </label>
       </div>

@@ -5,7 +5,7 @@ import { useMatchup } from './MatchupContext.jsx'
 // back to manual control, rather than a silent override that's confusing to notice.
 export default function MatchupFilterNote({ message }) {
   const { selectedMatchup, setSelectedMatchup } = useMatchup()
-  if (!selectedMatchup) return null
+  if (!selectedMatchup || selectedMatchup.teamOnly) return null // the header's team filter shows its own state
   return (
     <p className="meta-line small" style={{ margin: '0 0 8px' }}>
       {message || `Showing ${selectedMatchup.away} @ ${selectedMatchup.home} (global matchup selection active, overriding the Team filter below)`}

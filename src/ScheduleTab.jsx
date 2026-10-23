@@ -109,8 +109,9 @@ export default function ScheduleTab() {
   const [schedule, setSchedule] = useState(null)
   const [error, setError] = useState(null)
   const [week, setWeek] = useState(null)
-  const [team, setTeam] = useState('')
+  // 2026-10-23: the team comes from the header (MasterFilter) or the game strip; this page's own picker was retired
   const { selectedMatchup } = useMatchup()
+  const team = selectedMatchup?.teamOnly ? selectedMatchup.home : ''
   useEffect(() => {
     fetch('/data/season_schedule.json')
       .then((r) => { if (!r.ok) throw new Error(`${r.status} ${r.statusText}`); return r.json() })
@@ -122,7 +123,7 @@ export default function ScheduleTab() {
   const current = schedule ? currentWeekOf(schedule.games) : null
   const weekGames = useMemo(() => (schedule && week ? schedule.games.filter((g) => g.week === week) : []), [schedule, week])
   const espn = useEspnWeek(weekGames)
-  const focus = team ? [team] : selectedMatchup ? [selectedMatchup.away, selectedMatchup.home] : null
+  const focus = selectedMatchup ? [selectedMatchup.away, selectedMatchup.home] : null
   const shown = weekGames.filter((g) => !focus || focus.includes(g.home_team) || focus.includes(g.away_team))
   const days = [...new Set(shown.map((g) => g.gameday))].sort()
   const rec = team ? shown.filter((g) => g.home_score != null).reduce((r, g) => {
@@ -146,12 +147,8 @@ export default function ScheduleTab() {
         <button className="pill-btn" onClick={() => setWeek(Math.min(weeks[weeks.length - 1], week + 1))} aria-label="Next week">▶</button>
         <span className="sch-range">{span}</span>
         {week !== current && <button className="pill-btn" onClick={() => setWeek(current)}>This week</button>}
-        <select className="sch-team-pick" value={team} onChange={(e) => setTeam(e.target.value)} aria-label="Team">
-          <option value="">All teams</option>
-          {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-        </select>
       </div>
-      {!team && selectedMatchup && <p className="meta-line small">Showing {selectedMatchup.away} @ {selectedMatchup.home} (the game strip above) -- tap All games to clear.</p>}
+      {!team && selectedMatchup && !selectedMatchup.teamOnly && <p className="meta-line small">Showing {selectedMatchup.away} @ {selectedMatchup.home} (the game strip above) -- tap All games to clear.</p>}
       {rec && rec.w + rec.l + rec.t > 0 && <p className="meta-line small">{team}: {rec.w}-{rec.l}{rec.t ? `-${rec.t}` : ''} in the finished games shown.</p>}
       {!days.length && <p className="empty-state">No games{focus ? ' for this team' : ''} in Week {week}{team ? ' (bye week?)' : ''}.</p>}
       {days.map((d) => (

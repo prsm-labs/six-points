@@ -4,6 +4,7 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
+import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
 // 📊 Stats (2026-10-20, user: "a 'stats' or 'splits' page that shows a player and teams stats throughout the year.
 // Filterable and searchable by team and/or player"). Every player's and team's regular-season line from play-by-play
@@ -258,8 +259,9 @@ export default function StatsTab() {
   const [view, setView] = useState('players')
   const [win, setWin] = useState('season')
   const [perGame, setPerGame] = useState(false)
-  const [team, setTeam] = useState('all')
-  const [query, setQuery] = useState('')
+  // 2026-10-23: team + search come from the header (MasterFilter); this page's own boxes were retired
+  const team = useMasterTeam() || 'all'
+  const query = useMasterSearch()
   const [minG, setMinG] = useState(1)
   const [side, setSide] = useState('o')
   const [open, setOpen] = useState(null)
@@ -416,17 +418,11 @@ export default function StatsTab() {
         <button className={`pill-btn ${perGame ? 'active' : ''}`} onClick={() => setPerGame((v) => !v)}>{perGame ? 'Per game' : 'Totals'}</button>
       </div>
       <div className="stats-filters">
-        <input value={query} onChange={(e) => setQuery(e.target.value)}
-          placeholder={view === 'players' ? 'Search a player or team (e.g. SF)…' : 'Search a team…'} aria-label="Search" />
         {view === 'players' && (
           <select value={pos} onChange={(e) => setPosition(e.target.value)} aria-label="Position">
             {POS.map((p) => <option key={p} value={p}>{p === 'all' ? 'All positions' : p}</option>)}
           </select>
         )}
-        <select value={team} onChange={(e) => setTeam(e.target.value)} aria-label="Team">
-          <option value="all">All teams</option>
-          {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-        </select>
         {view === 'players' && (
           <label className="meta-line small">Min games <input type="number" min={0} max={17} value={minG} onChange={(e) => setMinG(Number(e.target.value) || 0)} style={{ width: 52 }} /></label>
         )}

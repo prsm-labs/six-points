@@ -14,12 +14,7 @@ export default function ListFilters({ shown, total }) {
     <div className="card list-filters">
       <div className="list-filters-row">
         <button className="pill-btn" onClick={() => setOpen((v) => !v)}>⚙ Filters{n ? ` (${n})` : ''} {open ? '▲' : '▼'}</button>
-        <input
-          value={f.search}
-          onChange={(e) => setListFilter('search', e.target.value)}
-          placeholder="Search player or team (KC, Chiefs, Kelce)"
-          className="list-search"
-        />
+        {/* 2026-10-23: the player / team search moved to the header (MasterFilter) -- one search for the whole app */}
         {shown != null && <span className="meta-line small" style={{ margin: 0 }}>{shown} of {total} players</span>}
         {n > 0 && <button className="pill-btn" onClick={clearListFilters}>✕ Clear</button>}
       </div>

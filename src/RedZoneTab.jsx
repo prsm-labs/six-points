@@ -6,6 +6,7 @@ import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import PickButton from './PickButton.jsx'
+import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
 // Season-long high-usage red-zone player page (a separate ask from the live Heating Up/On Fire
 // tab -- this one's "throughout the season," not live-only). Reuses redzone_touches_per_game,
@@ -17,8 +18,8 @@ export default function RedZoneTab() {
   const [data, setData] = useState(null)
   const [error, setError] = useState(null)
   const position = usePosition() // app-wide (positionFilter.js) -- this dropdown and the chip row share one value
-  const [team, setTeam] = useState('all')
-  const [search, setSearch] = useState('')
+  const team = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
+  const search = useMasterSearch() // 2026-10-23: the header search; this page's box retired
 
   useEffect(() => {
     fetch('/data/all_matchups_latest.json')
@@ -69,17 +70,6 @@ export default function RedZoneTab() {
             <option value="WR">WR</option>
             <option value="TE">TE</option>
           </select>
-        </label>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={team} onChange={(e) => setTeam(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
-        <label style={{ flex: 1, minWidth: 160 }}>
-          Player
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
       </div>
       <MatchupFilterNote />

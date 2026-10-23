@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
 // Real weather via /api/weather.js (WeatherAPI.com, server-side key). Unlike the ESPN proxies
 // (scoreboard.js/summary.js), there is NO client-side direct-fetch fallback here -- WeatherAPI
@@ -139,7 +140,7 @@ export default function WeatherTab() {
 }
 
 function WeatherTabBody({ schedule, weatherByTeam }) {
-  const [team, setTeam] = useState('all')
+  const team = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
   const { selectedMatchup } = useMatchup()
   const teams = useMemo(
     () => [...new Set(schedule.games.flatMap((g) => [g.home_team, g.away_team]))].sort(),
@@ -156,13 +157,6 @@ function WeatherTabBody({ schedule, weatherByTeam }) {
   return (
     <div>
       <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={team} onChange={(e) => setTeam(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
       </div>
       <MatchupFilterNote />
       <p className="meta-line">

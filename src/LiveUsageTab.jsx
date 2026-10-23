@@ -4,6 +4,7 @@ import { usePlayerDirectory } from './PlayerDirectory.jsx'
 import { openPlayerSlide } from './slideouts.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
 // "Heating Up" / "On Fire" -- live high-usage/TD badges, requested directly against Going
 // Yard's own equivalent live signal badges. See useLiveUsage.js for the real data mechanics
@@ -79,7 +80,7 @@ export default function LiveUsageTab() {
 
   const safePlayers = players || []
   const teams = useMemo(() => [...new Set(safePlayers.map((p) => p.team))].filter(Boolean).sort(), [safePlayers])
-  const [team, setTeam] = useState('all')
+  const team = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
   const { selectedMatchup } = useMatchup()
   const filtered = useMemo(() => {
     if (selectedMatchup) return safePlayers.filter((p) => isInSelectedMatchup(selectedMatchup, p.team))
@@ -98,13 +99,6 @@ export default function LiveUsageTab() {
   return (
     <div>
       <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={team} onChange={(e) => setTeam(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
       </div>
       <MatchupFilterNote />
       <p className="meta-line">

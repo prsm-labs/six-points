@@ -8,6 +8,7 @@ import LiveProjection from './LiveProjection.jsx'
 import FieldGameTracker from './FieldGameTracker.jsx'
 import { liveFocus } from './nav.js'
 import { viewWeek } from './weekView.js'
+import { useMasterTeam } from './masterFilter.js'
 
 // Real box scores via ESPN's summary API. The week's games are a lightweight, always-visible
 // list (scores already live in season_schedule.json, no ESPN call needed just to show them) --
@@ -495,7 +496,7 @@ export default function BoxScoreTab() {
     return map
   }, [teamStats])
 
-  const [teamFilter, setTeamFilter] = useState('all')
+  const teamFilter = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
 
   const weekGames = useMemo(
     () => (schedule && selectedWeek ? schedule.games.filter((g) => g.week === selectedWeek) : []),
@@ -625,13 +626,6 @@ export default function BoxScoreTab() {
             {weekOptions.map((w) => (
               <option key={w} value={w}>Week {w}</option>
             ))}
-          </select>
-        </label>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={teamFilter} onChange={(e) => setTeamFilter(e.target.value)}>
-            <option value="all">All</option>
-            {weekTeams.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
         </label>
       </div>

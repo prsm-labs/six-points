@@ -6,6 +6,7 @@ import { useWeekTDs } from './useWeekTDs.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { formatETTime, etSlateDateStr } from './etTime.js'
+import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
 // TD Tracker is its own page, not a rename/extension of Live Themes -- Live Themes' job is
 // clustering ("are TDs happening close together"), this page's job is a plain chronological
@@ -120,8 +121,8 @@ export default function TDTracker() {
 
   const { tds, error: tdError } = useWeekTDs(selectedWeek, schedule?.games, teamStats)
 
-  const [team, setTeam] = useState('all')
-  const [search, setSearch] = useState('')
+  const team = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
+  const search = useMasterSearch() // 2026-10-23: the header search; this page's box retired
 
   const tdsWithTeam = useMemo(() => {
     const withTeam = (tds || []).map((td) => ({ ...td, nflverseTeam: espnAbbrToNflverse.get(td.teamAbbr.toUpperCase()) || td.teamAbbr }))
@@ -187,17 +188,6 @@ export default function TDTracker() {
               <option key={w} value={w}>Week {w}</option>
             ))}
           </select>
-        </label>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={team} onChange={(e) => setTeam(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
-        <label style={{ flex: 1, minWidth: 160 }}>
-          Scorer
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search scorer name..." />
         </label>
       </div>
 

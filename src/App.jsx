@@ -38,8 +38,10 @@ import RankingsTab from './RankingsTab.jsx'
 import StatsTab from './StatsTab.jsx'
 import './revamp.css'
 import WeekBar, { PastWeekGuard } from './WeekBar.jsx'
+import MasterFilter from './MasterFilter.jsx'
 import { useViewWeek } from './weekView.js'
 import { tabRequest } from './nav.js'
+import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -234,8 +236,8 @@ function TrackRecordMain() {
 
 function WeekDrillDown({ rows }) {
   const position = usePosition()
-  const [team, setTeam] = useState('all')
-  const [search, setSearch] = useState('')
+  const team = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
+  const search = useMasterSearch() // 2026-10-23: the header search; this page's box retired
   const { selectedMatchup } = useMatchup()
 
   const teams = useMemo(() => [...new Set(rows.map((r) => r.team))].filter(Boolean).sort(), [rows])
@@ -261,17 +263,6 @@ function WeekDrillDown({ rows }) {
             <option value="WR">WR</option>
             <option value="TE">TE</option>
           </select>
-        </label>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={team} onChange={(e) => setTeam(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
-        <label style={{ flex: 1, minWidth: 160 }}>
-          Player
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search player name..." />
         </label>
       </div>
       <MatchupFilterNote />
@@ -385,7 +376,7 @@ export default function App() {
       </header>
       <TDMarquee onClick={() => setTab('tdtracker')} />
       {/* 2026-10-23: 📅 week picker -- a past week swaps every page to that week's slate + results */}
-      <WeekBar />
+      <div className="master-bar"><WeekBar /><MasterFilter /></div>
       <MatchupSelector key={`ms-${viewWeek || 'now'}`} />
       <LiveStatusRunner />
       <AlertsRunner />

@@ -4,6 +4,7 @@ import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
 function buildPairs(matchups) {
   // Concept doc §8: stack two players exploiting the SAME scheme weakness, not just shared
@@ -64,8 +65,8 @@ export default function PairsPage() {
 }
 
 function PairsTable({ pairs }) {
-  const [team, setTeam] = useState('all')
-  const [search, setSearch] = useState('')
+  const team = useMasterTeam() || 'all' // 2026-10-23: from the header (MasterFilter); this page's picker retired
+  const search = useMasterSearch() // 2026-10-23: the header search; this page's box retired
   const { selectedMatchup } = useMatchup()
 
   const teams = useMemo(() => [...new Set(pairs.map((p) => p.team))].filter(Boolean).sort(), [pairs])
@@ -82,17 +83,6 @@ function PairsTable({ pairs }) {
   return (
     <div>
       <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 110 }}>
-          Team
-          <select value={team} onChange={(e) => setTeam(e.target.value)}>
-            <option value="all">All</option>
-            {teams.map((t) => <option key={t} value={t}>{t}</option>)}
-          </select>
-        </label>
-        <label style={{ flex: 1, minWidth: 160 }}>
-          Player
-          <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search either player..." />
-        </label>
       </div>
       <MatchupFilterNote />
       <p className="meta-line">
