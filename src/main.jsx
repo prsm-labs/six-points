@@ -1,3 +1,4 @@
+import './weekView.js' // 2026-10-23: 📅 week picker -- installs the past-week fetch layer before anything loads data
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'

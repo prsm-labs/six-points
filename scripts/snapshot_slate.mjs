@@ -68,4 +68,16 @@ index.snapshots = [...index.snapshots.filter((s) => !(s.season === out.season &&
   { season: out.season, week: out.week, file: path.basename(outPath), backfilled: out.backfilled, snapshot_at: out.snapshot_at }]
   .sort((a, b) => a.season - b.season || a.week - b.week)
 fs.writeFileSync(indexPath, JSON.stringify(index, null, 1))
+// 2026-10-23 (📅 week picker): also keep the WHOLE slate as locked -> public/data/weeks/<season>-wk<week>.json, so a past week
+// opens in the app exactly as it looked before kickoff (the snapshot above keeps only the graded columns).
+const weeksDir = path.join(root, 'public/data/weeks')
+fs.mkdirSync(weeksDir, { recursive: true })
+const fullName = `${data.season}-wk${data.week}.json`
+fs.writeFileSync(path.join(weeksDir, fullName), JSON.stringify(data))
+const wIdxPath = path.join(weeksDir, 'index.json')
+const wIdx = fs.existsSync(wIdxPath) ? JSON.parse(fs.readFileSync(wIdxPath, 'utf8')) : { weeks: [] }
+wIdx.weeks = [...wIdx.weeks.filter((s) => !(s.season === data.season && s.week === data.week)),
+  { season: data.season, week: data.week, file: fullName, source: backfill ? 'backfill' : 'lock', generated_at: data.generated_at }]
+  .sort((a, b) => a.season - b.season || a.week - b.week)
+fs.writeFileSync(wIdxPath, JSON.stringify(wIdx, null, 1))
 console.log(`Snapshot ${out.season} week ${out.week}: ${players.length} players${odds ? `, ${Object.keys(odds.players).length} priced` : ''}${backfill ? ' (backfilled)' : ''}`)

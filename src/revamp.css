@@ -302,3 +302,13 @@ header h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
 ::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--accent) 55%, transparent); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 ::-webkit-scrollbar-button { display: none; }
+
+/* 📅 week picker (2026-10-23) */
+.date-bar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:6px 0 0;font-size:13px;}
+.date-pick{display:inline-flex;align-items:center;gap:6px;}
+.date-pick select{background:var(--card,var(--surface));color:var(--fg,var(--text));border:1px solid var(--border);border-radius:8px;padding:6px 9px;font:inherit;cursor:pointer;}
+.date-bar.past{padding:8px 12px;border:1px solid color-mix(in srgb,var(--accent) 60%,var(--border));border-radius:10px;background:color-mix(in srgb,var(--accent) 8%,transparent);}
+.date-note{flex:1 1 260px;}
+.link-btn{margin-left:8px;background:none;border:0;color:var(--accent);cursor:pointer;padding:0;font:inherit;}
+.actual-line{display:block;font-size:11px;font-weight:400;color:var(--fg,var(--text));text-align:right;font-variant-numeric:tabular-nums;}
+.hit-mark.miss{color:#e5484d;}

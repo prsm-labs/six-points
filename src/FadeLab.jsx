@@ -33,7 +33,8 @@ export default function FadeLab() {
   if (d === undefined) return <p className="empty-state">Loading...</p>
   if (!d) return <p className="empty-state">No fade data yet.</p>
   const bt = d.backtest
-  const past = d.weeks.filter((w) => w.week !== d.week && w.fades.some((f) => f.result)).reverse()
+  // 2026-10-23: only last week here -- any week is one pick away in the 📅 week picker at the top
+  const past = d.weeks.filter((w) => w.week < d.week && w.fades.some((f) => f.result)).slice(-1)
   return (
     <div>
       <p className="meta-line">
@@ -97,7 +98,7 @@ export default function FadeLab() {
       </p>
       {past.length > 0 && (
         <details className="prism-past">
-          <summary>Past weeks</summary>
+          <summary>Last week</summary>
           {past.map((w) => {
             const g = w.fades.filter((f) => f.result === 'hit' || f.result === 'miss')
             return (

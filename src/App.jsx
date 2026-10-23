@@ -37,6 +37,8 @@ import TrackRecordPairs from './TrackRecordPairs.jsx'
 import RankingsTab from './RankingsTab.jsx'
 import StatsTab from './StatsTab.jsx'
 import './revamp.css'
+import WeekBar, { PastWeekGuard } from './WeekBar.jsx'
+import { useViewWeek } from './weekView.js'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -353,6 +355,7 @@ const TABS = [
 
 export default function App() {
   const [tab, setTab] = useState('cheat')
+  const viewWeek = useViewWeek()
   const [showOddsCalc, setShowOddsCalc] = useState(false)
   const Active = (TABS.find((t) => t.key === tab) || TABS[0]).Component
   // Drag-to-resize + ⚙️ column chooser on every table, app-wide (columnResize.js, Slap Shot's).
@@ -374,10 +377,12 @@ export default function App() {
           </button>
           <AlertBell />
         </div>
-        <DataFreshnessBanner />
+        <DataFreshnessBanner key={`df-${viewWeek || 'now'}`} />
       </header>
       <TDMarquee onClick={() => setTab('tdtracker')} />
-      <MatchupSelector />
+      {/* 2026-10-23: 📅 week picker -- a past week swaps every page to that week's slate + results */}
+      <WeekBar />
+      <MatchupSelector key={`ms-${viewWeek || 'now'}`} />
       <LiveStatusRunner />
       <AlertsRunner />
       <AlertToast />
@@ -394,7 +399,9 @@ export default function App() {
       {/* 2026-10-22 (user: CourtIQ is cleaner): position filter sits under the tabs, not between the game cards and the tabs */}
       <PositionChips />
       <main>
-        <Active />
+        <PastWeekGuard key={`${tab}|${viewWeek || ''}`} past={Boolean(viewWeek)}>
+          <Active key={viewWeek || 'now'} />
+        </PastWeekGuard>
       </main>
       <PlayerSlideout />
       <TeamSlideout />

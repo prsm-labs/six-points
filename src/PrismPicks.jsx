@@ -20,7 +20,8 @@ export default function PrismPicks({ slate, notOut }) {
   const wk = d.weeks.find((w) => w.week === d.week)
   const byId = new Map((slate?.matchups || []).map((m) => [m.player_id, m]))
   const picks = wk?.picks || []
-  const past = d.weeks.filter((w) => w.week !== d.week && w.picks.some((p) => p.result)).reverse()
+  // 2026-10-23: only last week here -- any week is one pick away in the 📅 week picker at the top
+  const past = d.weeks.filter((w) => w.week < d.week && w.picks.some((p) => p.result)).slice(-1)
   const bt = d.backtest
   return (
     <div className={`card prism-card ${open ? 'open' : 'collapsed'}`}>
@@ -68,7 +69,7 @@ export default function PrismPicks({ slate, notOut }) {
       </div>}
       {past.length > 0 && (
         <details className="prism-past">
-          <summary>Past weeks</summary>
+          <summary>Last week</summary>
           {past.map((w) => {
             const g = w.picks.filter((p) => p.result === 'hit' || p.result === 'miss')
             return (

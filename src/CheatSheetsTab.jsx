@@ -26,6 +26,18 @@ const DEF_TAGS = {
   yds: (m) => [ydsRankText(m), ydsRankTitle(m)],
 }
 
+// 2026-10-23 past week (📅 week picker): his real line that week and ✅ / ✗ for the card's bet (TD lists: scored; yards: 100+).
+function ActualMark({ m, prop }) {
+  const a = m.actual
+  if (!a) return null
+  const ok = prop === 'yds100' ? (a.yds != null ? a.yds >= 100 : null) : a.tds == null ? null : prop === 'td2' ? a.tds >= 2 : a.tds >= 1
+  return (
+    <span className="actual-line">
+      {a.tds ?? 0} TD · {a.yds ?? 0} yds{ok != null && <span className={`hit-mark ${ok ? 'hit' : 'miss'}`}>{ok ? ' ✅' : ' ✗'}</span>}
+    </span>
+  )
+}
+
 function ListCard({ title, sub, items, renderRow, prop = 'td', defTag = 'td' }) {
   return (
     <div className="card cheat-list">
@@ -50,7 +62,7 @@ function ListCard({ title, sub, items, renderRow, prop = 'td', defTag = 'td' }) 
               </div>
             </div>
           </div>
-          <span className="cheat-row-stat">{renderRow(m)}</span>
+          <span className="cheat-row-stat">{renderRow(m)}<ActualMark m={m} prop={prop} /></span>
         </div>
         )
       })}

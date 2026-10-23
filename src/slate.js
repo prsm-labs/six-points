@@ -5,7 +5,9 @@ import { enrichSlate } from './slateCore.js'
 // all_matchups_latest.json + this week's anytime TD odds (public/data/odds/<season>-wk<week>.json, build_odds.py)
 // merged onto each player row by slateCore.js (also used by the lock scripts). Odds are CONTEXT ONLY -- they never
 // feed the grade (user, 2026-10-18). See slateCore.js for m.book / m.edge / m.hotHand.
-let cache = null
+// 2026-10-23: one cached slate per picked week (weekView.js serves a past week's file through fetch)
+import { viewWeek } from './weekView.js'
+const caches = {}
 
 async function fetchJson(url) {
   try {
@@ -17,14 +19,15 @@ async function fetchJson(url) {
 }
 
 export function loadSlate() {
-  if (cache) return cache
-  cache = (async () => {
+  const k = viewWeek() ?? 'now'
+  if (caches[k]) return caches[k]
+  caches[k] = (async () => {
     const data = await fetchJson('/data/all_matchups_latest.json')
     if (!data) return null
     const odds = await fetchJson(`/data/odds/${data.season}-wk${data.week}.json`)
-    return enrichSlate(data, odds)
+    return { ...enrichSlate(data, odds), past: Boolean(data.past), replay: Boolean(data.replay) }
   })()
-  return cache
+  return caches[k]
 }
 
 export function useSlate() {
