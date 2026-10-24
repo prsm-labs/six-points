@@ -375,18 +375,17 @@ export default function App() {
         </div>
         <DataFreshnessBanner key={`df-${viewWeek || 'now'}`} />
       </header>
-      <TDMarquee onClick={() => setTab('tdtracker')} />
+      {/* 2026-10-24 (user prototype): ☰ page menu first in the row under the logo, then the date picker, team and search */}
+      {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
+          as a slideout instead, matching how Going Yard itself surfaces its own odds
+          calculator (a button that opens a slideout, not a dedicated page). */}
       {/* 2026-10-23: 📅 week picker -- a past week swaps every page to that week's slate + results */}
-      <div className="master-bar"><WeekBar /><MasterFilter /></div>
+      <div className="master-bar tm-row"><TabMenu tabs={TABS} tab={tab} setTab={setTab} /><WeekBar /><MasterFilter /></div>
+      <TDMarquee onClick={() => setTab('tdtracker')} />
       <MatchupSelector key={`ms-${viewWeek || 'now'}`} />
       <LiveStatusRunner />
       <AlertsRunner />
       <AlertToast />
-      {/* 2026-10-24 (user): ☰ page menu replaces the scrolling tab bar */}
-      {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
-          as a slideout instead, matching how Going Yard itself surfaces its own odds
-          calculator (a button that opens a slideout, not a dedicated page). */}
-      <TabMenu tabs={TABS} tab={tab} setTab={setTab} />
       {/* 2026-10-22 (user: CourtIQ is cleaner): position filter sits under the tabs, not between the game cards and the tabs */}
       <PositionChips />
       <main>
