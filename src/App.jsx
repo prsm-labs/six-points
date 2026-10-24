@@ -42,6 +42,7 @@ import MasterFilter from './MasterFilter.jsx'
 import { useViewWeek } from './weekView.js'
 import { tabRequest } from './nav.js'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
+import TabMenu from './TabMenu.jsx'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -381,16 +382,11 @@ export default function App() {
       <LiveStatusRunner />
       <AlertsRunner />
       <AlertToast />
-      <nav className="tabs">
-        {TABS.map((t) => (
-          <button key={t.key} className={tab === t.key ? 'active' : ''} onClick={() => setTab(t.key)}>
-            {t.label}
-          </button>
-        ))}
-        {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
-            as a slideout instead, matching how Going Yard itself surfaces its own odds
-            calculator (a button that opens a slideout, not a dedicated page). */}
-      </nav>
+      {/* 2026-10-24 (user): ☰ page menu replaces the scrolling tab bar */}
+      {/* Odds Calculator is deliberately not a nav tab -- surfaced via the 🧮 header button
+          as a slideout instead, matching how Going Yard itself surfaces its own odds
+          calculator (a button that opens a slideout, not a dedicated page). */}
+      <TabMenu tabs={TABS} tab={tab} setTab={setTab} />
       {/* 2026-10-22 (user: CourtIQ is cleaner): position filter sits under the tabs, not between the game cards and the tabs */}
       <PositionChips />
       <main>
