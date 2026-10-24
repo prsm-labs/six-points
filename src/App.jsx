@@ -360,7 +360,7 @@ export default function App() {
     <div className="app">
       <header>
         <div className="header-row">
-          <img src="/logo.png" alt="Six Points" className="logo" />
+          {/* 2026-10-23 new logo (six laces): dark tile, accent tile in light mode */}<picture><source media="(prefers-color-scheme: light)" srcSet="/logo-accent.svg" /><img src="/logo-dark.svg" alt="Six Points" className="logo" /></picture>
           <h1 title="NFL touchdown intelligence, weekly cadence, real backtests only.">Six Points</h1>
           <button
             className="odds-calc-toggle"
