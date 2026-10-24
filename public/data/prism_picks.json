@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23T17:35+00:00",
+ "generated_at": "2026-10-24T11:08+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -600,7 +600,7 @@
      "trackN": 11
     }
    ],
-   "updated_at": "2026-10-23T13:35-04:00",
+   "updated_at": "2026-10-24T07:08-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
@@ -679,6 +679,26 @@
       "trackN": 90
      },
      {
+      "player_id": "00-0039361",
+      "name": "Bucky Irving",
+      "team": "TB",
+      "opp": "CAR",
+      "pos": "RB",
+      "est": 91.9,
+      "depth": "RB1",
+      "game": "CAR-TB",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3785,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.405,
+      "trackN": 60
+     },
+     {
       "player_id": "00-0040122",
       "name": "Ashton Jeanty",
       "team": "LV",
@@ -697,36 +717,36 @@
       ],
       "track": 0.404,
       "trackN": 60
-     },
+     }
+    ],
+    "long": [
      {
       "player_id": "00-0040583",
       "name": "Woody Marks",
       "team": "HOU",
       "opp": "NYG",
       "pos": "RB",
-      "est": 68.1,
+      "est": 73.7,
       "depth": "RB2",
       "game": "HOU-NYG",
-      "stat": "TD",
-      "line": 1,
-      "label": "Anytime TD",
-      "chance": 0.3779,
+      "stat": "YDS",
+      "line": 90,
+      "label": "90+ scrimmage yards",
+      "chance": 0.214,
       "last": [
        8,
-       2
+       0
       ],
-      "track": 0.404,
-      "trackN": 60
-     }
-    ],
-    "long": [
+      "track": 0.291,
+      "trackN": 137
+     },
      {
       "player_id": "00-0033293",
       "name": "Aaron Jones",
       "team": "MIN",
       "opp": "IND",
       "pos": "RB",
-      "est": 102.9,
+      "est": 104.1,
       "depth": "RB1",
       "game": "IND-MIN",
       "stat": "YDS",
@@ -758,26 +778,6 @@
        0
       ],
       "track": 0.199,
-      "trackN": 63
-     },
-     {
-      "player_id": "00-0036555",
-      "name": "Chuba Hubbard",
-      "team": "CAR",
-      "opp": "TB",
-      "pos": "RB",
-      "est": 100.5,
-      "depth": "RB1",
-      "game": "CAR-TB",
-      "stat": "YDS",
-      "line": 130,
-      "label": "130+ scrimmage yards",
-      "chance": 0.1834,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.194,
       "trackN": 63
      },
      {

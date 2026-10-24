@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-23T16:01+00:00",
+ "generated_at": "2026-10-24T11:08+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -729,8 +729,8 @@
      "pos": "RB",
      "depth": "RB1",
      "line": 152.0,
-     "est": 113.6,
-     "z": 3.6,
+     "est": 112.9,
+     "z": 3.68,
      "games": [
       191,
       178,
@@ -814,31 +814,6 @@
      "trackN": 502
     },
     {
-     "player_id": "00-0038542",
-     "name": "Bijan Robinson",
-     "team": "ATL",
-     "opp": "SF",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 130.8,
-     "est": 100.8,
-     "z": 2.99,
-     "games": [
-      173,
-      81,
-      213,
-      147,
-      118,
-      53
-     ],
-     "why": [
-      "SF takes away 3 yds for his role",
-      "one big game (213) lifts his average -- 114 a game in the others"
-     ],
-     "track": 0.729,
-     "trackN": 590
-    },
-    {
      "player_id": "00-0037157",
      "name": "Bam Knight",
      "team": "ARI",
@@ -867,8 +842,8 @@
      "pos": "TE",
      "depth": "TE2",
      "line": 31.0,
-     "est": 18.5,
-     "z": 2.91,
+     "est": 18.7,
+     "z": 2.84,
      "games": [
       20,
       19,
@@ -1019,6 +994,30 @@
      "trackN": 590
     },
     {
+     "player_id": "00-0038124",
+     "name": "Christian Watson",
+     "team": "GB",
+     "opp": "DET",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 89.7,
+     "est": 68.2,
+     "z": 2.6,
+     "games": [
+      147,
+      41,
+      96,
+      47,
+      143,
+      64
+     ],
+     "why": [
+      "one big game (147) lifts his average -- 78 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
      "player_id": "00-0034829",
      "name": "Mike Gesicki",
      "team": "CIN",
@@ -1062,7 +1061,7 @@
      "trackN": 590
     }
    ],
-   "updated_at": "2026-10-23T12:01-04:00"
+   "updated_at": "2026-10-24T07:08-04:00"
   }
  ]
 }
