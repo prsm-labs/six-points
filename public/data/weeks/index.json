@@ -6,6 +6,13 @@
    "file": "2026-wk6.json",
    "source": "lock",
    "generated_at": "2026-10-13T12:00:51.991865+00:00"
+  },
+  {
+   "season": 2026,
+   "week": 7,
+   "file": "2026-wk7.json",
+   "source": "lock",
+   "generated_at": "2026-10-20T12:00:58.420645+00:00"
   }
  ]
 }

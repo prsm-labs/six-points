@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T11:01+00:00",
+ "generated_at": "2026-10-25T15:51+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -589,7 +589,7 @@
      "line": 25,
      "label": "25+ scrimmage yards",
      "chance": 0.8341,
-     "est": 59.7,
+     "est": 59.9,
      "last": [
       8,
       3
@@ -600,31 +600,83 @@
      "trackN": 11
     }
    ],
-   "updated_at": "2026-10-25T07:01-04:00",
+   "updated_at": "2026-10-25T11:51-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
-     "NO",
-     "PIT"
+     "ATL",
+     "BAL",
+     "CAR",
+     "CIN",
+     "CLE",
+     "HOU",
+     "IND",
+     "MIA",
+     "MIN",
+     "NYG",
+     "NYJ",
+     "SF",
+     "TB",
+     "TEN"
     ],
-    "kickoff": "2026-10-25T09:30:00-04:00",
-    "label": "PIT @ NO",
+    "kickoff": "2026-10-25T13:00:00-04:00",
+    "label": "SF @ ATL",
     "closest": {
-     "name": "Darnell Washington",
-     "team": "PIT",
+     "name": "Ollie Gordon II",
+     "team": "MIA",
      "label": "25+ scrimmage yards",
-     "chance": 0.5389
+     "chance": 0.8341
     }
    },
    "tiers": {
     "mid": [
+     {
+      "player_id": "00-0040784",
+      "name": "Quinshon Judkins",
+      "team": "CLE",
+      "opp": "TEN",
+      "pos": "RB",
+      "est": 92.3,
+      "depth": "RB1",
+      "game": "CLE-TEN",
+      "stat": "YDS",
+      "line": 80,
+      "label": "80+ scrimmage yards",
+      "chance": 0.4476,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.457,
+      "trackN": 90
+     },
+     {
+      "player_id": "00-0041438",
+      "name": "Carnell Tate",
+      "team": "TEN",
+      "opp": "CLE",
+      "pos": "WR",
+      "est": 62.6,
+      "depth": "WR1",
+      "game": "CLE-TEN",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
+      "chance": 0.4346,
+      "last": [
+       6,
+       2
+      ],
+      "track": 0.453,
+      "trackN": 90
+     },
      {
       "player_id": "00-0039794",
       "name": "Braelon Allen",
       "team": "NYJ",
       "opp": "MIA",
       "pos": "RB",
-      "est": 75.9,
+      "est": 76.0,
       "depth": "RB2",
       "game": "MIA-NYJ",
       "stat": "YDS",
@@ -636,46 +688,6 @@
        2
       ],
       "track": 0.45,
-      "trackN": 90
-     },
-     {
-      "player_id": "00-0036997",
-      "name": "Javonte Williams",
-      "team": "DAL",
-      "opp": "PHI",
-      "pos": "RB",
-      "est": 76.8,
-      "depth": "RB1",
-      "game": "DAL-PHI",
-      "stat": "YDS",
-      "line": 75,
-      "label": "75+ scrimmage yards",
-      "chance": 0.4115,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.445,
-      "trackN": 90
-     },
-     {
-      "player_id": "00-0038563",
-      "name": "Tre Tucker",
-      "team": "LV",
-      "opp": "LA",
-      "pos": "WR",
-      "est": 52.3,
-      "depth": "WR1",
-      "game": "LA-LV",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
-      "chance": 0.4115,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.445,
       "trackN": 90
      },
      {
@@ -721,6 +733,26 @@
     ],
     "long": [
      {
+      "player_id": "00-0033293",
+      "name": "Aaron Jones",
+      "team": "MIN",
+      "opp": "IND",
+      "pos": "RB",
+      "est": 108.4,
+      "depth": "RB1",
+      "game": "IND-MIN",
+      "stat": "YDS",
+      "line": 130,
+      "label": "130+ scrimmage yards",
+      "chance": 0.2399,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.298,
+      "trackN": 137
+     },
+     {
       "player_id": "00-0040583",
       "name": "Woody Marks",
       "team": "HOU",
@@ -732,26 +764,6 @@
       "stat": "YDS",
       "line": 90,
       "label": "90+ scrimmage yards",
-      "chance": 0.214,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.291,
-      "trackN": 137
-     },
-     {
-      "player_id": "00-0033293",
-      "name": "Aaron Jones",
-      "team": "MIN",
-      "opp": "IND",
-      "pos": "RB",
-      "est": 104.1,
-      "depth": "RB1",
-      "game": "IND-MIN",
-      "stat": "YDS",
-      "line": 130,
-      "label": "130+ scrimmage yards",
       "chance": 0.214,
       "last": [
        8,

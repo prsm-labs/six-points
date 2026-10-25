@@ -6,6 +6,13 @@
    "file": "2026-wk6.json",
    "backfilled": true,
    "snapshot_at": null
+  },
+  {
+   "season": 2026,
+   "week": 7,
+   "file": "2026-wk7.json",
+   "backfilled": false,
+   "snapshot_at": "2026-10-25T15:51:51.515Z"
   }
  ]
 }

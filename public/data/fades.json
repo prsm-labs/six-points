@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T11:01+00:00",
+ "generated_at": "2026-10-25T15:52+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -927,27 +927,6 @@
      "trackN": 590
     },
     {
-     "player_id": "00-0040887",
-     "name": "Josh Cuevas",
-     "team": "BAL",
-     "opp": "CIN",
-     "pos": "TE",
-     "depth": "TE3",
-     "line": 28.0,
-     "est": 17.1,
-     "z": 2.64,
-     "games": [
-      14,
-      26,
-      44
-     ],
-     "why": [
-      "his usage (3.2 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.729,
-     "trackN": 590
-    },
-    {
      "player_id": "00-0040131",
      "name": "Kyle Williams",
      "team": "NE",
@@ -1018,6 +997,27 @@
      "trackN": 590
     },
     {
+     "player_id": "00-0040887",
+     "name": "Josh Cuevas",
+     "team": "BAL",
+     "opp": "CIN",
+     "pos": "TE",
+     "depth": "TE3",
+     "line": 28.0,
+     "est": 17.5,
+     "z": 2.51,
+     "games": [
+      14,
+      26,
+      44
+     ],
+     "why": [
+      "his usage (3.2 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.729,
+     "trackN": 590
+    },
+    {
      "player_id": "00-0034829",
      "name": "Mike Gesicki",
      "team": "CIN",
@@ -1061,7 +1061,7 @@
      "trackN": 590
     }
    ],
-   "updated_at": "2026-10-25T07:01-04:00"
+   "updated_at": "2026-10-25T11:52-04:00"
   }
  ]
 }
