@@ -5618,14 +5618,14 @@
         "team": "ATL",
         "name": "Beaux Collins",
         "position": "WR",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Hip"
       },
       {
         "team": "ATL",
         "name": "Cameron Williams",
         "position": "T",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Ankle"
       },
       {
@@ -5646,7 +5646,7 @@
         "team": "BAL",
         "name": "Lamar Jackson",
         "position": "QB",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Ankle"
       },
       {
@@ -5749,13 +5749,6 @@
       },
       {
         "team": "CLE",
-        "name": "Grant Delpit",
-        "position": "S",
-        "status": "Questionable",
-        "injury": "Concussion"
-      },
-      {
-        "team": "CLE",
         "name": "Teven Jenkins",
         "position": "G",
         "status": "Out",
@@ -5777,17 +5770,45 @@
       },
       {
         "team": "CLE",
-        "name": "Dylan Sampson",
-        "position": "RB",
-        "status": "Questionable",
-        "injury": "Knee"
-      },
-      {
-        "team": "CLE",
         "name": "Dillon Gabriel",
         "position": "QB",
         "status": "Out",
         "injury": "Back"
+      },
+      {
+        "team": "DAL",
+        "name": "P.J. Locke",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Foot"
+      },
+      {
+        "team": "DAL",
+        "name": "KaVontae Turpin",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Ribs"
+      },
+      {
+        "team": "DAL",
+        "name": "Dee Winters",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Calf"
+      },
+      {
+        "team": "DAL",
+        "name": "Marist Liufau",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Forearm"
+      },
+      {
+        "team": "DAL",
+        "name": "Drew Shelton",
+        "position": "T",
+        "status": "Out",
+        "injury": "Hamstring"
       },
       {
         "team": "DEN",
@@ -5910,13 +5931,6 @@
       },
       {
         "team": "IND",
-        "name": "Rigoberto Sanchez",
-        "position": "P",
-        "status": "Questionable",
-        "injury": "Foot"
-      },
-      {
-        "team": "IND",
         "name": "Sauce Gardner",
         "position": "CB",
         "status": "Out",
@@ -5947,7 +5961,7 @@
         "team": "IND",
         "name": "CJ Allen",
         "position": "LB",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Ankle"
       },
       {
@@ -6012,6 +6026,13 @@
         "position": "WR",
         "status": "Questionable",
         "injury": "Calf"
+      },
+      {
+        "team": "LV",
+        "name": "Quay Walker",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Chest"
       },
       {
         "team": "LV",
@@ -6113,6 +6134,13 @@
       },
       {
         "team": "NE",
+        "name": "Christian Gonzalez",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Illness"
+      },
+      {
+        "team": "NE",
         "name": "Craig Woodson",
         "position": "S",
         "status": "Questionable",
@@ -6178,7 +6206,7 @@
         "team": "NYG",
         "name": "Jevon Holland",
         "position": "S",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Concussion"
       },
       {
@@ -6242,6 +6270,83 @@
         "name": "Francisco Mauigoa",
         "position": "LB",
         "status": "Out",
+        "injury": "Quadricep"
+      },
+      {
+        "team": "PHI",
+        "name": "Saquon Barkley",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "PHI",
+        "name": "Jonathan Greenard",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "PHI",
+        "name": "Michael Carter II",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Abdomen"
+      },
+      {
+        "team": "PHI",
+        "name": "DeVonta Smith",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "PHI",
+        "name": "Landon Dickerson",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "PHI",
+        "name": "Grant Calcaterra",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Back"
+      },
+      {
+        "team": "PHI",
+        "name": "Dontayvion Wicks",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "PHI",
+        "name": "Nolan Smith",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "PHI",
+        "name": "Jakorian Bennett",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "PHI",
+        "name": "Jalyx Hunt",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "PHI",
+        "name": "Eli Stowers",
+        "position": "TE",
+        "status": "Questionable",
         "injury": "Quadricep"
       },
       {
