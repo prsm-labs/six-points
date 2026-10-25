@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { isTouchdown } from './scoringPlays.js'
 import FieldTracker from './FieldTracker.jsx'
-import { useMatchup } from './MatchupContext.jsx'
+import { isSelectedGame, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 
 // No live games exist right now -- the 2026 season doesn't start until 2026-09-09 (concept
@@ -140,7 +140,7 @@ export default function LiveThemes() {
   // to "no selection" doesn't need a re-fetch) -- only the rendered list below narrows down.
   const displayedLiveGames = useMemo(() => {
     if (!selectedMatchup) return liveGames
-    return liveGames.filter((g) => g.home === selectedMatchup.home && g.away === selectedMatchup.away)
+    return liveGames.filter((g) => isSelectedGame(selectedMatchup, g.home, g.away))
   }, [liveGames, selectedMatchup])
   const liveTimerRef = useRef(null)
 

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useMatchup } from './MatchupContext.jsx'
+import { isSelectedGame, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 
@@ -148,7 +148,7 @@ function WeatherTabBody({ schedule, weatherByTeam }) {
   )
   const filtered = useMemo(
     () => schedule.games.filter((g) => {
-      if (selectedMatchup) return g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away
+      if (selectedMatchup) return isSelectedGame(selectedMatchup, g.home_team, g.away_team)
       return team === 'all' || g.home_team === team || g.away_team === team
     }),
     [schedule, team, selectedMatchup]

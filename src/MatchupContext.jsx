@@ -30,5 +30,20 @@ export function useMatchup() {
 /** True if `team` is either side of the currently-selected global matchup. */
 export function isInSelectedMatchup(selectedMatchup, team) {
   if (!selectedMatchup || !team) return false
+  if (selectedMatchup.games) return selectedMatchup.games.some((g) => team === g.home || team === g.away)
   return team === selectedMatchup.home || team === selectedMatchup.away
 }
+
+// 2026-10-25 (user: Ctrl-click several matchup cards for a multi-game view; a Multi-select option on touch): a selection of
+// several games keeps home / away = the first one (single-game tools like Game Sim use it) and lists them all in `games`.
+export const selectedGames = (sel) => (!sel || sel.teamOnly ? [] : sel.games || [{ home: sel.home, away: sel.away }])
+export function isSelectedGame(sel, home, away) {
+  if (!sel) return true
+  if (sel.teamOnly) return home === sel.home || away === sel.home
+  return selectedGames(sel).some((g) => g.home === home && g.away === away)
+}
+export function gamesFromList(list) {
+  if (!list.length) return null
+  return list.length === 1 ? { home: list[0].home, away: list[0].away } : { home: list[0].home, away: list[0].away, games: list }
+}
+export const gamesText = (sel) => selectedGames(sel).map((g) => `${g.away} @ ${g.home}`).join(', ')

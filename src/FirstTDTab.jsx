@@ -3,7 +3,7 @@ import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useWeekTDs } from './useWeekTDs.js'
-import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
+import { useMatchup, isInSelectedMatchup, selectedGames } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import PickButton from './PickButton.jsx'
@@ -168,7 +168,7 @@ function TrackerTable() {
       firsts.push(td)
     }
     if (selectedMatchup) {
-      return firsts.filter((td) => td.game.includes(selectedMatchup.home) && td.game.includes(selectedMatchup.away))
+      return firsts.filter((td) => selectedGames(selectedMatchup).some((g) => td.game.includes(g.home) && td.game.includes(g.away)))
     }
     return firsts
   }, [tds, selectedMatchup])

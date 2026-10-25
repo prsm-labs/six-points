@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
-import { useMatchup } from './MatchupContext.jsx'
+import { isSelectedGame, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { DepthTag, MatchupCell, RoleChip, RzMatchupCell, leakSummary, roleSummary } from './matchupUi.jsx'
 
@@ -133,7 +133,7 @@ export default function KeyMatchupsTab() {
     if (!schedule || !data) return []
     const week = data.week
     const weekGames = schedule.games.filter((g) => g.week === week)
-    if (selectedMatchup) return weekGames.filter((g) => g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away)
+    if (selectedMatchup) return weekGames.filter((g) => isSelectedGame(selectedMatchup, g.home_team, g.away_team))
     return weekGames
   }, [schedule, data, selectedMatchup])
 

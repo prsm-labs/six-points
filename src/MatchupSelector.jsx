@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { useMatchup } from './MatchupContext.jsx'
+import { gamesFromList, selectedGames, useMatchup } from './MatchupContext.jsx'
+import './MultiPick.css'
 
 // Always-visible horizontally-scrollable row of real matchup CARDS (redesigned from an earlier
 // small-pill version per direct feedback + two real reference screenshots -- a Going Yard-style
@@ -42,6 +43,8 @@ export default function MatchupSelector() {
   const [teamStats, setTeamStats] = useState(null)
   const [liveByGame, setLiveByGame] = useState({})
   const { selectedMatchup, setSelectedMatchup } = useMatchup()
+  const [multi, setMulti] = useState(false) // 2026-10-25 Multi-select chip (touch: taps add / remove games)
+  const picked = selectedGames(selectedMatchup)
 
   useEffect(() => {
     Promise.all([
@@ -120,8 +123,12 @@ export default function MatchupSelector() {
     .sort((a, b) => phase(a.g) - phase(b.g) || `${a.g.gameday} ${a.g.gametime}`.localeCompare(`${b.g.gameday} ${b.g.gametime}`) || a.i - b.i)
     .map((x) => x.g)
 
-  function toggle(g) {
-    const isSame = selectedMatchup && selectedMatchup.home === g.home_team && selectedMatchup.away === g.away_team
+  function toggle(g, add) {
+    if (add) {
+      const on = picked.some((x) => x.home === g.home_team && x.away === g.away_team)
+      return setSelectedMatchup(gamesFromList(on ? picked.filter((x) => !(x.home === g.home_team && x.away === g.away_team)) : [...picked, { home: g.home_team, away: g.away_team }]))
+    }
+    const isSame = picked.length === 1 && picked[0].home === g.home_team && picked[0].away === g.away_team
     setSelectedMatchup(isSame ? null : { home: g.home_team, away: g.away_team })
   }
 
@@ -147,8 +154,14 @@ export default function MatchupSelector() {
           <span className="matchup-card-abbr">All games</span>
           <div className="matchup-card-status">{games.length} this week</div>
         </button>
+        {/* 2026-10-25 multi-select: Ctrl / Cmd + click a game adds it; on touch this chip turns taps into add / remove */}
+        <button className={`matchup-card matchup-card-all ms-toggle ${multi ? 'on' : ''}`} aria-pressed={multi} onClick={() => setMulti(!multi)}
+          title="Pick several games at once (on a computer: hold Ctrl or Cmd and click)">
+          <span className="matchup-card-abbr">{multi ? '☑ Multi-select on' : '☐ Multi-select'}</span>
+          <div className="matchup-card-status">{multi ? 'tap games to add / remove' : 'or Ctrl / ⌘ + click'}</div>
+        </button>
         {ordered.map((g) => {
-          const active = selectedMatchup && selectedMatchup.home === g.home_team && selectedMatchup.away === g.away_team
+          const active = picked.some((x) => x.home === g.home_team && x.away === g.away_team)
           const live = liveByGame[g.game_id]
           const isLive = live?.state === 'in'
           const isFinal = live?.state === 'post'
@@ -159,9 +172,10 @@ export default function MatchupSelector() {
           return (
             <button
               key={g.game_id}
-              className={active ? 'matchup-card active' : 'matchup-card'}
-              onClick={() => toggle(g)}
+              className={active ? 'matchup-card active ms-picked' : 'matchup-card'}
+              onClick={(e) => toggle(g, multi || e.ctrlKey || e.metaKey)}
             >
+              {picked.length > 1 && active && <span className="ms-check" aria-hidden="true">✓</span>}
               <TeamRow team={g.away_team} score={live?.awayScore} hasBall={awayHasBall} bold={awayLeads && isFinal} />
               <TeamRow team={g.home_team} score={live?.homeScore} hasBall={homeHasBall} bold={homeLeads && isFinal} />
               <div className="matchup-card-status">
@@ -170,9 +184,9 @@ export default function MatchupSelector() {
             </button>
           )
         })}
-        {selectedMatchup && (
-          <button className="matchup-card matchup-card-all" onClick={() => setSelectedMatchup(null)} title="Every page is narrowed to this game">
-            <span className="matchup-card-abbr">Showing {selectedMatchup.away} @ {selectedMatchup.home} only</span>
+        {picked.length > 0 && (
+          <button className="matchup-card matchup-card-all" onClick={() => setSelectedMatchup(null)} title="Every page is narrowed to the picked games">
+            <span className="matchup-card-abbr">{picked.length > 1 ? `Showing ${picked.length} games: ${picked.map((x) => `${x.away}-${x.home}`).join(', ')}` : `Showing ${picked[0].away} @ ${picked[0].home} only`}</span>
             <div className="matchup-card-status">✕ all games</div>
           </button>
         )}
