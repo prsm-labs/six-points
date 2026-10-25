@@ -14,7 +14,7 @@ export const TD_OPTIONS = [null, 10, 20, 30, 40]
 const LETTERS = ['A+', 'A', 'A-', 'B', 'C', 'D', 'F']
 const H2H_LETTERS = ['A+', 'A', 'B', 'C', 'D', 'F']
 
-const DEFAULTS = { minTd: null, tags: [], tagsMode: 'all', top: [], prism: [], grades: [], h2h: [], venue: [], search: '' }
+const DEFAULTS = { minTd: null, tags: [], tagsNot: [], tagsMode: 'all', top: [], prism: [], grades: [], h2h: [], venue: [], search: '' }
 let state = { ...DEFAULTS }
 const listeners = new Set()
 const notify = () => listeners.forEach((fn) => fn())
@@ -93,7 +93,7 @@ export function buildGroups(ctx = {}) {
     if ((m.edge ?? -99) >= 3) t.push('value')
     if (m.roleFlag) t.push('rolecheck')
     if (!m.roleFlag && m.teamGp === 0) t.push('first')
-    if (!m.week_status) t.push('healthy')
+    if (m.week_status) t.push('injury')
     return t
   }
   const tops = [...new Set([...(picks?.values() || [])].flatMap((e) => e.top))]
@@ -117,7 +117,7 @@ export function buildGroups(ctx = {}) {
       { v: 'value', label: '💰 Value vs book', title: 'Our TD % at least 3 points above the chance the best sportsbook price implies (context, never a grade input)' },
       { v: 'rolecheck', label: '🪑? Role check', title: 'Under 3 games for his team and lower on the ESPN depth chart than his usage — kept out of Top Picks / PRISM Picks' },
       { v: 'first', label: '📅 New to team', title: 'No games with his team yet' },
-      { v: 'healthy', label: 'No injury tag', title: 'Only players with no injury designation this week' },
+      { v: 'injury', label: '🩹 Injury tag', title: 'Questionable / Doubtful this week — tap twice to hide them' },
     ] },
     { key: 'grades', label: 'Grade', type: 'multi', get: (m) => m.grade, options: LETTERS.map((l) => ({ v: l, label: l })),
       hint: 'Pick the exact letters — the backtested grade model' },
