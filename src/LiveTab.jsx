@@ -11,6 +11,7 @@ import LiveUsageTab from './LiveUsageTab.jsx'
 // box scores), Inactives (the weekly injury report), Heating Up (real live high-usage/TD
 // badges, GoingYardParity.md follow-up request). Live Sim was scoped out as a bigger lift,
 // lower priority than the rest of this batch.
+// 2026-10-25: Themes -> 📡 This week so far (LiveThemes.jsx rewritten: the week vs our projections, context only).
 export default function LiveTab() {
   const [sub, setSub] = useState('boxscores') // 2026-10-22: Live opens on the games / box scores, like CourtIQ
   // 2026-10-23: a tapped Schedule game / slideout matchup opens on Box Scores (BoxScoreTab picks the game)
@@ -27,7 +28,7 @@ export default function LiveTab() {
           Schedule
         </button>
         <button className={sub === 'themes' ? 'active' : ''} onClick={() => setSub('themes')}>
-          Themes
+          📡 This week so far
         </button>
         <button className={sub === 'inactives' ? 'active' : ''} onClick={() => setSub('inactives')}>
           Inactives

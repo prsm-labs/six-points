@@ -270,3 +270,20 @@ tr.heat-row.fire > td { background-image: linear-gradient(color-mix(in srgb, var
 }
 .not-playing-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 2px 14px; margin-top: 4px; }
 .not-playing-list .reason { color: var(--muted); }
+
+/* 2026-10-25 📡 This week so far (LiveThemes.jsx) */
+.sofar-tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 10px 0 14px; }
+.sofar-tile { display: grid; gap: 2px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; font-size: 0.8rem; }
+.sofar-tile b { font-size: 1.4rem; }
+.sofar-tile b.up { color: var(--accent); }
+.sofar-tile b.down { color: #e5584b; }
+.sofar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; margin-bottom: 12px; }
+.sofar-card { padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; min-width: 0; }
+.sofar-card h4 { margin: 0 0 6px; font-size: 0.95rem; display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+.sofar-card h4 .muted { font-size: 0.75rem; font-weight: 400; }
+.sofar-row { display: grid; grid-template-columns: auto 1fr auto; gap: 8px; align-items: center; padding: 5px 0; border-bottom: 1px solid var(--border); cursor: pointer; font-size: 0.85rem; }
+.sofar-row:last-child { border-bottom: 0; }
+.sofar-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sofar-sub { display: block; color: var(--muted); font-size: 0.75rem; overflow: hidden; text-overflow: ellipsis; }
+.sofar-flurry { padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.8rem; display: grid; gap: 2px; }
+@media (max-width: 600px) { .sofar-grid { grid-template-columns: 1fr; } }
