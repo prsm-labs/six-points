@@ -9,7 +9,7 @@ import { DepthTag, MatchupCell, RoleChip } from './matchupUi.jsx'
 import { BestPriceLink, EdgeCell, StatePicker } from './BetLink.jsx'
 import { booksText } from './bookOdds.js'
 import ListFilters from './ListFilters.jsx'
-import { applyListFilters, useListFilters } from './listFilters.js'
+import { applyListFilters, useFilterContext, useListFilters } from './listFilters.js'
 import { matchesPosition, usePosition } from './positionFilter.js'
 import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
@@ -37,13 +37,13 @@ export default function AllMatchupsTab() {
         h2h: h, h2hScore: h?.letter ? h.score : null, ha: v, haScore: v?.letter ? v.score : null }
     })
   }, [slate, h2hData])
-  const shown = useMemo(() => {
-    if (!rows) return []
-    return applyListFilters(rows, f)
-      .filter((m) => matchesPosition(m.position, position))
-      .filter((m) => !selectedMatchup || isInSelectedMatchup(selectedMatchup, m.team))
-      .filter((m) => notOut(m))
-  }, [rows, f, position, selectedMatchup, notOut])
+  // 2026-10-25 FilterPanel: base = before the panel's filters (its pill counts); fctx = this week's picks + team rest
+  const fctx = useFilterContext(slate)
+  const base = useMemo(() => (rows || [])
+    .filter((m) => matchesPosition(m.position, position))
+    .filter((m) => !selectedMatchup || isInSelectedMatchup(selectedMatchup, m.team))
+    .filter((m) => notOut(m)), [rows, position, selectedMatchup, notOut])
+  const shown = useMemo(() => (rows ? applyListFilters(base, f, fctx) : []), [rows, base, f, fctx])
   const { sorted, sortKey, sortDir, toggleSort } = useSort(shown, 'grade_score', 'desc')
   const th = { sortKey, sortDir, onSort: toggleSort }
 
@@ -66,7 +66,7 @@ export default function AllMatchupsTab() {
       </div>
       <SlateStatus data={slate} />
       <MatchupFilterNote />
-      <ListFilters shown={sorted.length} total={rows.length} />
+      <ListFilters shown={sorted.length} total={rows.length} base={base} ctx={fctx} />
       <div className="toolbar-row"><StatePicker /></div>
       <div className="table-wrap">
         <table>

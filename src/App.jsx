@@ -13,6 +13,7 @@ import BreakoutWatchTab from './BreakoutWatchTab.jsx'
 import MyPicksTab from './MyPicksTab.jsx'
 import GradeModelSection from './GradeModelSection.jsx'
 import { AlertBell, AlertsRunner, AlertToast } from './Alerts.jsx'
+import AppRefresh from './AppRefresh.jsx'
 import { LiveStatusRunner } from './liveStatus.js'
 import { setPosition, usePosition } from './positionFilter.js'
 import { PositionChips } from './gradeUi.jsx'
@@ -372,6 +373,8 @@ export default function App() {
             🧮
           </button>
           <AlertBell />
+          {/* 2026-10-25 (user): app refresh button -- reloads the page with fresh data */}
+          <AppRefresh />
         </div>
         <DataFreshnessBanner key={`df-${viewWeek || 'now'}`} />
       </header>
