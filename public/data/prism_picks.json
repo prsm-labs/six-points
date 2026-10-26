@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T16:01+00:00",
+ "generated_at": "2026-10-26T19:27+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -596,7 +596,6 @@
      ],
      "depth": "RB2",
      "game": "DAL-PHI",
-     "result": "void",
      "track": 0.859,
      "trackN": 49
     },
@@ -622,7 +621,7 @@
      "result": "hit"
     }
    ],
-   "updated_at": "2026-10-26T12:01-04:00",
+   "updated_at": "2026-10-26T15:27-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
