@@ -353,4 +353,22 @@ header h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
 .master-filter select,.master-filter input{background:var(--surface);color:var(--fg);border:1px solid var(--border);border-radius:8px;padding:6px 9px;font:inherit;font-size:13px;}
 .master-filter input{flex:1 1 200px;max-width:320px;min-width:0;}
 .master-filter .on{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent);}
+/* 2026-10-26 mini Game Tracker strip above the box score (FieldGameTracker.jsx MiniField) */
+.mini-field{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;width:100%;max-width:760px;margin:2px 0 10px;padding:10px 14px 8px;background:var(--surface);border:1px solid var(--border);border-radius:12px;}
+.mini-field:hover,.mini-field:focus-visible{border-color:var(--accent);}
+.mini-field-dd{display:flex;flex-direction:column;line-height:1.15;min-width:64px;}
+.mini-field-dd b{font-size:16px;color:var(--fg);}
+.mini-field-dd span{font-size:12px;color:var(--muted);}
+.mini-field-bar{position:relative;padding:0 10px;}
+.mini-field-track{position:relative;height:8px;margin:11px 0 6px;background:color-mix(in srgb,var(--muted) 35%,transparent);border-radius:4px;}
+.mini-field-drive{position:absolute;top:0;height:100%;background:var(--accent);border-radius:4px;}
+.mini-field-tick{position:absolute;top:-3px;width:2px;height:14px;margin-left:-1px;background:color-mix(in srgb,var(--muted) 55%,transparent);border-radius:1px;}
+.mini-field-first{position:absolute;top:-6px;width:3px;height:20px;margin-left:-1.5px;background:var(--gold);border-radius:1px;z-index:1;}
+.mini-field-ball{position:absolute;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;display:flex;align-items:center;justify-content:center;background:var(--surface);border:2px solid var(--accent);border-radius:50%;z-index:2;transition:left .6s ease;}
+.mini-field-labels{position:relative;height:14px;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;}
+.mini-field-labels span{position:absolute;transform:translateX(-50%);}
+.mini-field-ends{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:2px;}
+.mini-field-play{grid-column:1 / -1;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mini-field-play b{color:var(--fg);}
+@media (max-width:600px){.mini-field{gap:4px 10px;padding:9px 10px 7px;}.mini-field-minor{display:none;}.mini-field-dd b{font-size:14px;}}
 @media (max-width:600px){.master-filter{justify-content:stretch;}.master-filter select{flex:0 1 38%;min-width:0;}.master-filter input{flex:1 1 50%;max-width:none;}.date-bar > .meta-line{display:none;}}

@@ -5,7 +5,7 @@ import { usePlayerDirectory } from './PlayerDirectory.jsx'
 import { useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import LiveProjection from './LiveProjection.jsx'
-import FieldGameTracker from './FieldGameTracker.jsx'
+import FieldGameTracker, { MiniField } from './FieldGameTracker.jsx'
 import { liveFocus } from './nav.js'
 import { viewWeek } from './weekView.js'
 import { useMasterTeam } from './masterFilter.js'
@@ -363,6 +363,7 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
           {detail.fetchedAt && ` · updated ${new Date(detail.fetchedAt).toLocaleTimeString()}`}
         </p>
       )}
+      {detail.status?.state === 'in' && view !== 'tracker' && <MiniField detail={detail} onOpen={() => setView('tracker')} />}
       <div className="pill-row">
         {VIEWS.filter(([k]) => k !== 'box' || boxscore.players).map(([k, l]) => (
           <button key={k} className={`pill-btn ${view === k ? 'active' : ''}`} onClick={() => setView(k)}>{l}</button>

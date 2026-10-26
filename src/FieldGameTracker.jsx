@@ -88,6 +88,65 @@ function Field({ track, focus, clockText }) {
   )
 }
 
+// 2026-10-26 (user: a convenient mini Game Tracker above the box score, like a sportsbook app's live strip; the full tracker stays):
+// one horizontal bar from the AWAY goal line (left) to the HOME goal line (right), same orientation as the field above. Shows
+// down & distance, the current drive (from its start to the ball), the ball as the offense's logo and the gold first-down
+// marker, plus the last play. Same ESPN play-by-play as the field, so it also jumps play to play. Tap it to open the full tracker.
+const ESPN_LOGO = (t) => `https://a.espncdn.com/i/teamlogos/nfl/500/${String(t || '').toLowerCase()}.png`
+const clamp = (v) => Math.max(0, Math.min(100, v))
+
+export function MiniField({ detail, onOpen }) {
+  const track = detail?.track
+  if (!track?.plays?.length) return null
+  const located = track.plays.filter((p) => posOf(p.end) != null)
+  const last = located[located.length - 1]
+  const latest = track.plays[track.plays.length - 1]
+  const spot = last?.end
+  const ball = posOf(spot)
+  const offSide = spot?.side || last?.side
+  const off = offSide === 'home' ? track.home : offSide === 'away' ? track.away : last?.team
+  const dir = offSide === 'home' ? -1 : 1
+  const first = spot?.down && spot?.dist != null && ball != null ? clamp(ball + dir * spot.dist) : null
+  const drive = last ? track.drives[last.drive] : null
+  const start = drive && drive.side === offSide && drive.start != null ? posOf({ yardLine: drive.start }) : null
+  const [dd, where] = String(spot?.dd || '').split(' at ')
+  const ticks = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+  const label = (p) => (p <= 50 ? p : 100 - p)
+  return (
+    <button type="button" className="mini-field" onClick={onOpen} title="Open the full Game Tracker">
+      <div className="mini-field-dd">
+        <b>{dd || (latest?.scoring ? 'Score' : '—')}</b>
+        <span>{where || ''}</span>
+      </div>
+      <div className="mini-field-bar">
+        <div className="mini-field-track">
+          {start != null && ball != null && (
+            <span className="mini-field-drive" style={{ left: `${Math.min(start, ball)}%`, width: `${Math.abs(ball - start)}%` }} />
+          )}
+          {ticks.map((p) => <span key={p} className="mini-field-tick" style={{ left: `${p}%` }} />)}
+          {first != null && <span className="mini-field-first" style={{ left: `${first}%` }} />}
+          {ball != null && (
+            <span className="mini-field-ball" style={{ left: `${ball}%` }}>
+              <img src={ESPN_LOGO(off)} alt={off} width={18} height={18} />
+            </span>
+          )}
+        </div>
+        <div className="mini-field-labels">
+          <span style={{ left: 0 }}>G</span>
+          {ticks.map((p) => <span key={p} className={p % 20 && p !== 50 ? 'mini-field-minor' : ''} style={{ left: `${p}%` }}>{label(p)}</span>)}
+          <span style={{ left: '100%' }}>G</span>
+        </div>
+        <div className="mini-field-ends"><span>◀ {track.away} goal</span><span>{track.home} goal ▶</span></div>
+      </div>
+      {latest && (
+        <div className="mini-field-play">
+          <span>{QL(latest.period)} {latest.clock} · <b>{latest.team}</b></span> {latest.text}
+        </div>
+      )}
+    </button>
+  )
+}
+
 export default function FieldGameTracker({ detail }) {
   const [focusId, setFocusId] = useState(null)
   const track = detail?.track
