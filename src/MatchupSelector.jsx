@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { gamesFromList, selectedGames, useMatchup } from './MatchupContext.jsx'
 import './MultiPick.css'
+import GameStepper from './GameStepper.jsx'
 
 // Always-visible horizontally-scrollable row of real matchup CARDS (redesigned from an earlier
 // small-pill version per direct feedback + two real reference screenshots -- a Going Yard-style
@@ -147,6 +148,9 @@ export default function MatchupSelector() {
   // 2026-10-22 (user: CourtIQ's cards are the standard): an "All games" card first, weekday on the kickoff, and a
   // "Showing X @ Y only" card while one game narrows the pages
   const day = (d) => (d ? new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { weekday: 'short' }) : '')
+  // 2026-10-26 ◀ ▶ stepper (swipe / ← →) in card order; off while several games are picked
+  const steps = picked.length > 1 ? [] : ordered.map((g) => ({ key: `${g.away_team}@${g.home_team}`, label: `${g.away_team} @ ${g.home_team}` }))
+  const stepAt = picked.length === 1 ? ordered.findIndex((g) => g.home_team === picked[0].home && g.away_team === picked[0].away) : -1
   return (
     <div className="matchup-selector">
       <div className="matchup-selector-row">
@@ -191,6 +195,8 @@ export default function MatchupSelector() {
           </button>
         )}
       </div>
+      <GameStepper items={steps} index={stepAt} onPick={(k) => { const [away, home] = k.split('@'); setSelectedMatchup({ home, away }) }}
+        activeSelector=".matchup-selector-row .matchup-card.active:not(.matchup-card-all)" />
     </div>
   )
 }
