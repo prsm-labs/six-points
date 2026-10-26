@@ -50,6 +50,21 @@ function lineFor(boxscore, espnId) {
   return null
 }
 
+// 2026-10-26: a defender's line (defensive / interceptions categories), or null if he isn't in them.
+function defLineFor(boxscore, espnId) {
+  for (const t of boxscore?.players || []) {
+    const de = cat(t, 'defensive'), it = cat(t, 'interceptions')
+    if (![de, it].some((c) => c?.athletes?.some((a) => a.athlete?.id === espnId))) continue
+    const tkl = num(stat(de, espnId, 'TOT')), solo = num(stat(de, espnId, 'SOLO'))
+    return {
+      tkl, solo, ast: Math.max(0, tkl - solo), sk: num(stat(de, espnId, 'SACKS')), tfl: num(stat(de, espnId, 'TFL')),
+      pd: num(stat(de, espnId, 'PD')), qbh: num(stat(de, espnId, 'QB HTS')), td: num(stat(de, espnId, 'TD')),
+      int: num(stat(it, espnId, 'INT')), ff: 0, fr: 0,
+    }
+  }
+  return null
+}
+
 export function useThisWeekLine(player, weekRow, espnId) {
   const team = weekRow?.team || player?.team
   const week = weekRow?.week
@@ -78,6 +93,7 @@ export function useThisWeekLine(player, weekRow, espnId) {
               game, eventId, state, live: state === 'in', done: state === 'post', started: state === 'in' || state === 'post',
               detail: d.status?.detail || null, score: d.score || null,
               line: lineFor(d.boxscore, espnId),
+              def: defLineFor(d.boxscore, espnId),
               out: (d.injuries || []).flatMap((t) => t.injuries).find((i) => i.name === (player.player_name || weekRow?.player_name) && /out|inactive/i.test(i.status)) || null,
             })
           }

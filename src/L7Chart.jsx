@@ -16,9 +16,17 @@ const CATEGORIES = {
   rush_yards: { label: '🎯 +20 Rush Yd', getValue: (g) => g.rush_yards, threshold: 20, positions: ['RB', 'QB', 'WR'] },
   receptions: { label: '🎯 +4 Rec', getValue: (g) => g.receptions, threshold: 4, positions: ['WR', 'TE', 'RB'] },
   rec_yards: { label: '🎯 +20 Rec Yd', getValue: (g) => g.rec_yards, threshold: 20, positions: ['WR', 'TE', 'RB'] },
+  // 2026-10-26 defenders (DefenseSlideout.jsx passes position 'DEF'); thresholds are placeholders like the ones above
+  def_tkl: { label: '🎯 5+ Tkl', getValue: (g) => g.tkl, threshold: 5, positions: ['DEF'] },
+  def_sk: { label: '🎯 Sack', getValue: (g) => g.sk, threshold: 0.5, positions: ['DEF'] },
+  def_qbh: { label: '🎯 QB Hit', getValue: (g) => g.qbh, threshold: 1, positions: ['DEF'] },
+  def_tfl: { label: '🎯 TFL', getValue: (g) => g.tfl, threshold: 1, positions: ['DEF'] },
+  def_pd: { label: '🎯 Pass Def', getValue: (g) => g.pd, threshold: 1, positions: ['DEF'] },
+  def_int: { label: '🎯 INT', getValue: (g) => g.int, threshold: 1, positions: ['DEF'] },
 }
 
 function secondaryStat(category, game) {
+  if (category.startsWith('def_')) return game.snap_pct != null ? `${game.snap_pct}% snp` : 'live'
   switch (category) {
     case 'pass_yards':
     case 'pass_td':

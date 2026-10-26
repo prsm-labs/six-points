@@ -18,6 +18,7 @@ import { betLine } from './gambly.js'
 import { HotHandTag } from './revampUi.jsx'
 import { useThisWeekLine } from './useThisWeekLine.js'
 import MatchupChip from './MatchupChip.jsx'
+import DefenseBody, { isDefensePos, useDefense } from './DefenseSlideout.jsx'
 
 // 2026-10-20 live slideout: this week's line while his game is on (25 s refresh) and after it ends, next to the
 // model's pre-game numbers; the game also joins the Last 7 chart as an outlined bar.
@@ -189,6 +190,9 @@ export default function PlayerSlideout() {
   const [weekRow, setWeekRow] = useState(null)
   const [chartMode, setChartMode] = useState('l7')
   const h2hData = useH2H()
+  // 2026-10-26 (user): defenders open their own body (DefenseSlideout.jsx) instead of an empty offensive one
+  const defData = useDefense()
+  const [slateWeek, setSlateWeek] = useState(null)
   // 2026-10-21 👥 with / without teammates (OnOff.jsx); resets when another player opens
   const [sel, setSel] = useState([])
   const [how, setHow] = useState('without')
@@ -196,8 +200,11 @@ export default function PlayerSlideout() {
   const onoffData = useOnOff(weekRow?.team || player?.team)
 
   useEffect(() => subscribePlayerSlide(setPlayer), [])
-  const espnId = directoryEntry?.stats_url?.match(/\/id\/(\d+)\//)?.[1] || null
-  const thisWeek = useThisWeekLine(player, weekRow, espnId)
+  const defEntry = defData?.players?.[player?.player_id] || null
+  const isDef = isDefensePos(player?.position) || (!!defEntry && !directoryEntry && isDefensePos(defEntry.position))
+  const espnId = directoryEntry?.stats_url?.match(/\/id\/(\d+)\//)?.[1] || (isDef ? defEntry?.espn_id : null) || null
+  const lineRow = weekRow || (isDef && slateWeek ? { team: defEntry?.team || player?.team, week: slateWeek, player_name: player?.player_name } : null)
+  const thisWeek = useThisWeekLine(player, lineRow, espnId)
 
   useEffect(() => {
     if (!player) return
@@ -211,6 +218,7 @@ export default function PlayerSlideout() {
     ]).then(([logs, directory, scheme, routes, latest]) => {
       // this week's grade-model row, so the header shows it (and picks save it) from any tab
       setWeekRow(latest?.matchups?.find((m) => m.player_id === player.player_id) || null)
+      setSlateWeek(latest?.week ?? null)
       setGameLog(logs[player.player_id] || [])
       setDirectoryEntry(directory[player.player_id] || null)
       setSchemeSplits(scheme)
@@ -231,8 +239,9 @@ export default function PlayerSlideout() {
   const oo = onOffGames(onoffData?.team === onoffTeam ? onoffData : null, player.player_id, sel, how)
   const chartGames = oo.match ? oo.match : chartMode === 'h2h' && h2h ? h2h.games : chartMode === 'venue' && venue ? venue.games : null
 
-  const name = player.player_name || directoryEntry?.name || ''
-  const position = player.position || directoryEntry?.position || ''
+  const name = player.player_name || directoryEntry?.name || defEntry?.name || ''
+  const position = player.position || directoryEntry?.position || defEntry?.position || ''
+  const statsUrl = directoryEntry?.stats_url || (espnId ? `https://www.espn.com/nfl/player/_/id/${espnId}` : null)
   const recentTargets = gameLog && gameLog.length ? gameLog.slice(-3).reduce((a, g) => a + g.targets, 0) / Math.min(3, gameLog.length) : 0
 
   return (
@@ -240,16 +249,16 @@ export default function PlayerSlideout() {
       <div className="slideout-backdrop" onClick={closePlayerSlide} />
       <div className="slideout-panel">
         <div className="slideout-header">
-          <PlayerAvatar playerId={player.player_id} name={name} />
+          <PlayerAvatar playerId={player.player_id} name={name} src={isDef ? defEntry?.headshot : undefined} />
           <div className="slideout-header-info">
             <h2>{name}<ProfileLinks name={name} espnId={espnId} /></h2>
             <div className="sub">
-              {position}<DepthTag m={weekRow || player} /> &middot;{' '}
+              {isDef && defEntry?.position && defEntry.position !== position ? `${position} (${defEntry.position})` : position}<DepthTag m={weekRow || player} /> &middot;{' '}
               <button className="team-link" onClick={() => player.team && openTeamSlide({ team: player.team })}>
                 {player.team}
               </button>
             </div>
-            <MatchupChip player={player} weekRow={weekRow} t={thisWeek} gameLog={gameLog} />
+            <MatchupChip player={player} weekRow={weekRow || lineRow} t={thisWeek} gameLog={isDef ? defEntry?.games : gameLog} />
             {weekRow?.grade && (
               <div className="sub slideout-grade">
                 Week {weekRow.week}: <GradeBadge grade={weekRow.grade} m={weekRow} /> TD {fmtPct(weekRow.p_td)}
@@ -268,11 +277,11 @@ export default function PlayerSlideout() {
                 <span className="meta-line small"> (context, not a prediction)</span>
               </div>
             )}
-            {(weekRow || player.player_id) && (
+            {!isDef && (weekRow || player.player_id) && (
               <div style={{ margin: '4px 0' }}><PickButton player={weekRow || player} /></div>
             )}
-            {directoryEntry?.stats_url && (
-              <a href={directoryEntry.stats_url} target="_blank" rel="noopener noreferrer" className="external-link">
+            {statsUrl && (
+              <a href={statsUrl} target="_blank" rel="noopener noreferrer" className="external-link">
                 View on ESPN &rarr;
               </a>
             )}
@@ -285,6 +294,8 @@ export default function PlayerSlideout() {
         <div className="slideout-body">
           {!gameLog ? (
             <p className="empty-state">Loading...</p>
+          ) : isDef ? (
+            <DefenseBody player={player} entry={defEntry} d={defData} thisWeek={thisWeek} />
           ) : (
             <>
               <ThisWeekCard t={thisWeek} m={weekRow} position={position} />

@@ -9,6 +9,7 @@ import FieldGameTracker from './FieldGameTracker.jsx'
 import { liveFocus } from './nav.js'
 import { viewWeek } from './weekView.js'
 import { useMasterTeam } from './masterFilter.js'
+import { useDefense } from './DefenseSlideout.jsx'
 
 // Real box scores via ESPN's summary API. The week's games are a lightweight, always-visible
 // list (scores already live in season_schedule.json, no ESPN call needed just to show them) --
@@ -479,14 +480,18 @@ export default function BoxScoreTab() {
   // Our players.json stats_url already embeds each player's real ESPN athlete id
   // (espn.com/nfl/player/_/id/<id>/...), verified when the slideout external links were built --
   // reusing that instead of a name match to wire box-score rows to our own player slideout.
+  const defData = useDefense() // 2026-10-26: defenders' box-score rows open their defensive slideout too
   const espnIdToPlayer = useMemo(() => {
     const map = new Map()
     for (const [playerId, info] of Object.entries(directory)) {
       const match = info.stats_url?.match(/\/id\/(\d+)\//)
       if (match) map.set(match[1], { playerId, name: info.name, position: info.position })
     }
+    for (const [playerId, info] of Object.entries(defData?.players || {})) {
+      if (info.espn_id && !map.has(info.espn_id)) map.set(info.espn_id, { playerId, name: info.name, position: info.position })
+    }
     return map
-  }, [directory])
+  }, [directory, defData])
 
   const espnAbbrToNflverse = useMemo(() => {
     const map = new Map()

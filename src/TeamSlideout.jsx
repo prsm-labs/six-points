@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { subscribeTeamSlide, closeTeamSlide } from './slideouts.js'
+import { DefenseLeaders } from './DefenseSlideout.jsx'
 
 // Mirrors AppTeamSlideout (spec §6): header w/ record, home/away/last-10/streak/point-diff pill
 // row, offense/defense stat blocks. When opened from an "opponent" column (context: 'defense'),
@@ -155,6 +156,7 @@ export default function TeamSlideout() {
           ) : isDefenseContext ? (
             <>
               <DefenseSection stats={stats} emphasized />
+              <DefenseLeaders team={team.team} />
               <RecordSection stats={stats} />
               <OffenseSection stats={stats} />
             </>
@@ -163,6 +165,7 @@ export default function TeamSlideout() {
               <RecordSection stats={stats} />
               <OffenseSection stats={stats} />
               <DefenseSection stats={stats} />
+              <DefenseLeaders team={team.team} />
             </>
           )}
         </div>

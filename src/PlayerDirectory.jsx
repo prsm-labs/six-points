@@ -34,12 +34,12 @@ function initials(name) {
     .toUpperCase()
 }
 
-export function PlayerAvatar({ playerId, name }) {
+export function PlayerAvatar({ playerId, name, src }) {
   const directory = useContext(PlayerDirectoryContext)
   const entry = directory[playerId]
   const [failed, setFailed] = useState(false)
   const displayName = name || entry?.name || ''
-  const headshot = entry?.headshot
+  const headshot = src || entry?.headshot // src: 2026-10-26 defenders (not in players.json)
 
   if (!headshot || failed) {
     return <span className="avatar avatar-fallback">{initials(displayName)}</span>
