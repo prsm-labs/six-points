@@ -268,6 +268,7 @@ export default function PlayerSlideout() {
             )}
             {/* 2026-10-22 early-season role check (nfl_project/build_role_check.py) */}
             {weekRow?.roleFlag === 'backup' && <div className="sub slideout-grade" title="Kept out of Top Picks and PRISM Picks">🪑? ESPN's depth chart has him {weekRow.depth_label}, below the role his usage projects, with {weekRow.teamGp} game{weekRow.teamGp === 1 ? '' : 's'} for {weekRow.team} — treat this week's numbers as an upper bound.</div>}
+            {weekRow?.starterBack && <div className="sub slideout-grade" title="Kept out of Top Picks and PRISM Picks">🔙 {weekRow.starterBack.name} is back{weekRow.starterBack.q ? ' (Questionable)' : ''} after missing {weekRow.starterBack.out} game{weekRow.starterBack.out === 1 ? '' : 's'}. {weekRow.player_name} averaged {weekRow.starterBack.tch_out} touches a game while he was out{weekRow.starterBack.tch_with != null ? ` vs ${weekRow.starterBack.tch_with} with him` : ''} — proceed with caution. In 2023-25, backup RBs in this spot cleared 25 yards 71% of the time vs 90% for other RBs with the same projection.</div>}
             {weekRow && !weekRow.roleFlag && weekRow.teamGp === 0 && <div className="sub slideout-grade">📅 No games with {weekRow.team} yet{weekRow.lastTeam && weekRow.lastTeam !== weekRow.team ? ` (last season: ${weekRow.lastTeam})` : ''} — his usage leans on last season until he plays.</div>}
             {(h2h || venue) && (
               <div className="sub slideout-grade">

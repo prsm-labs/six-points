@@ -107,14 +107,21 @@ export function roleSummary(m) {
 
 /** "+4.1 role" chip when absent teammates' usage flows to this player (1+ touch or 0.3+ red-zone touches
  *  a game; smaller gains only show in the slideout / Key Matchups text). "new" = an absence this week. */
+// 2026-10-26: 🔙 starter back (build_role_check.py) rides along with the role chip so every list / card shows it
+function StarterBackTag({ m }) {
+  const b = m.starterBack
+  if (!b) return null
+  return <span className="starter-back" title={`${b.name} is back${b.q ? ' (Questionable)' : ''} after missing ${b.out} game${b.out === 1 ? '' : 's'} — ${m.player_name ? `${m.player_name}'s` : 'his'} recent usage came without him. Proceed with caution; kept out of Top Picks / PRISM Picks`}>🔙 </span>
+}
+
 export function RoleChip({ m }) {
   const text = roleSummary(m)
-  if (!text || ((m.role_gain ?? 0) < 1 && (m.role_gain_rz ?? 0) < 0.3)) return null
+  if (!text || ((m.role_gain ?? 0) < 1 && (m.role_gain_rz ?? 0) < 0.3)) return <StarterBackTag m={m} />
   const isNew = (m.role_gain_new ?? 0) >= 0.5
   return (
-    <span className="role-chip" title={`${text}. Their trailing usage is split among the teammates still playing, by each one's own share; "new" marks absences that started this week, which the trailing averages haven't absorbed yet.`}>
+    <><StarterBackTag m={m} /><span className="role-chip" title={`${text}. Their trailing usage is split among the teammates still playing, by each one's own share; "new" marks absences that started this week, which the trailing averages haven't absorbed yet.`}>
       {(m.role_gain ?? 0) >= 1 ? `+${Number(m.role_gain).toFixed(1)} role` : `+${Number(m.role_gain_rz).toFixed(1)} RZ`}{isNew ? ' (new)' : ''}
-    </span>
+    </span></>
   )
 }
 

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T19:27+00:00",
+ "generated_at": "2026-10-26T21:24+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -581,25 +581,6 @@
    "source": "live",
    "picks": [
     {
-     "player_id": "00-0037258",
-     "name": "Dameon Pierce",
-     "team": "PHI",
-     "opp": "DAL",
-     "pos": "RB",
-     "line": 25,
-     "label": "25+ scrimmage yards",
-     "chance": 1.0,
-     "est": 81.3,
-     "last": [
-      5,
-      1
-     ],
-     "depth": "RB2",
-     "game": "DAL-PHI",
-     "track": 0.859,
-     "trackN": 49
-    },
-    {
      "player_id": "00-0040198",
      "name": "Ollie Gordon II",
      "team": "MIA",
@@ -621,7 +602,7 @@
      "result": "hit"
     }
    ],
-   "updated_at": "2026-10-26T15:27-04:00",
+   "updated_at": "2026-10-26T17:24-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
@@ -631,10 +612,10 @@
     "kickoff": "2026-10-26T20:15:00-04:00",
     "label": "DAL @ PHI",
     "closest": {
-     "name": "Dameon Pierce",
+     "name": "Makai Lemon",
      "team": "PHI",
      "label": "25+ scrimmage yards",
-     "chance": 1.0
+     "chance": 0.6152
     }
    },
    "tiers": {

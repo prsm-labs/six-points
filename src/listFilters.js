@@ -93,6 +93,7 @@ export function buildGroups(ctx = {}) {
     if ((m.edge ?? -99) >= 3) t.push('value')
     if (m.roleFlag) t.push('rolecheck')
     if (!m.roleFlag && m.teamGp === 0) t.push('first')
+    if (m.starterBack) t.push('starterback')
     if (m.week_status) t.push('injury')
     return t
   }
@@ -117,6 +118,7 @@ export function buildGroups(ctx = {}) {
       { v: 'value', label: '📖 Above book', title: 'Our TD % at least 3 points above the chance the best sportsbook price implies. Context, not value: where we and the book disagree, the book has been closer (never a grade input)' },
       { v: 'rolecheck', label: '🪑? Role check', title: 'Under 3 games for his team and lower on the ESPN depth chart than his usage — kept out of Top Picks / PRISM Picks' },
       { v: 'first', label: '📅 New to team', title: 'No games with his team yet' },
+      { v: 'starterback', label: '🔙 Starter back', title: "His recent usage came while the lead at his position was out, and the lead is back (or Questionable) — proceed with caution; kept out of Top Picks / PRISM Picks" },
       { v: 'injury', label: '🩹 Injury tag', title: 'Questionable / Doubtful this week — tap twice to hide them' },
     ] },
     { key: 'grades', label: 'Grade', type: 'multi', get: (m) => m.grade, options: LETTERS.map((l) => ({ v: l, label: l })),

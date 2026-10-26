@@ -139,7 +139,8 @@
       "teamGp": 5,
       "newTeam": true,
       "lastTeam": "SEA",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -262,7 +263,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -386,7 +388,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -508,7 +511,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -630,7 +634,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "GB",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -754,7 +759,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -878,7 +884,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -1000,7 +1007,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -1122,7 +1130,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -1245,7 +1254,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -1367,7 +1377,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -1490,7 +1501,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -1612,7 +1624,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -1735,7 +1748,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -1858,7 +1872,15 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": {
+        "name": "Breece Hall",
+        "player_id": "00-0038120",
+        "out": 3,
+        "q": true,
+        "tch_out": 21.0,
+        "tch_with": 8.0
+      }
     },
     {
       "season": 2026,
@@ -1980,7 +2002,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -2103,7 +2126,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -2227,7 +2251,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -2352,7 +2377,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -2475,7 +2501,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -2599,7 +2626,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -2723,7 +2751,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -2846,7 +2875,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -2969,7 +2999,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -3093,7 +3124,15 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "NO",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": {
+        "name": "Quinshon Judkins",
+        "player_id": "00-0040784",
+        "out": 1,
+        "q": false,
+        "tch_out": 9.0,
+        "tch_with": null
+      }
     },
     {
       "season": 2026,
@@ -3217,7 +3256,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -3341,7 +3381,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -3464,7 +3505,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "NYJ",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -3587,7 +3629,15 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "HOU",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": {
+        "name": "Saquon Barkley",
+        "player_id": "00-0034844",
+        "out": 2,
+        "q": true,
+        "tch_out": 16.5,
+        "tch_with": null
+      }
     },
     {
       "season": 2026,
@@ -3710,7 +3760,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -3832,7 +3883,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "GB",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -3954,7 +4006,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -4078,7 +4131,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -4201,7 +4255,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -4323,7 +4378,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -4448,7 +4504,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -4570,7 +4627,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -4695,7 +4753,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -4817,7 +4876,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -4938,7 +4998,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -5060,7 +5121,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -5186,7 +5248,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -5309,7 +5372,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -5431,7 +5495,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -5553,7 +5618,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -5676,7 +5742,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -5800,7 +5867,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "ATL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -5924,7 +5992,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -6047,7 +6116,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "PIT",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -6171,7 +6241,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -6293,7 +6364,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -6418,7 +6490,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -6543,7 +6616,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -6666,7 +6740,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -6779,7 +6854,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "NYJ",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -6903,7 +6979,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -7016,7 +7093,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -7140,7 +7218,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "CLE",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -7264,7 +7343,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -7388,7 +7468,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -7512,7 +7593,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -7635,7 +7717,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -7757,7 +7840,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -7881,7 +7965,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8003,7 +8088,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8126,7 +8212,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8248,7 +8335,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8371,7 +8459,8 @@
       "teamGp": 5,
       "newTeam": true,
       "lastTeam": "MIA",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8497,7 +8586,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8622,7 +8712,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8747,7 +8838,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8871,7 +8963,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -8995,7 +9088,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -9121,7 +9215,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -9245,7 +9340,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -9358,7 +9454,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -9481,7 +9578,8 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "PHI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -9603,7 +9701,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -9725,7 +9824,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -9838,7 +9938,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -9963,7 +10064,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -10088,7 +10190,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -10212,7 +10315,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -10334,7 +10438,8 @@
       "teamGp": 5,
       "newTeam": true,
       "lastTeam": "ARI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -10456,7 +10561,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -10579,7 +10685,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -10703,7 +10810,8 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "IND",
-      "roleFlag": "backup"
+      "roleFlag": "backup",
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -10826,7 +10934,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -10951,7 +11060,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -11076,7 +11186,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -11198,7 +11309,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "BAL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -11320,7 +11432,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -11442,7 +11555,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -11565,7 +11679,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -11688,7 +11803,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -11811,7 +11927,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -11934,7 +12051,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -12057,7 +12175,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -12181,7 +12300,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -12294,7 +12414,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -12417,7 +12538,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -12541,7 +12663,8 @@
       "teamGp": 3,
       "newTeam": true,
       "lastTeam": "CAR",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -12664,7 +12787,15 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": {
+        "name": "Breece Hall",
+        "player_id": "00-0038120",
+        "out": 3,
+        "q": true,
+        "tch_out": 6.0,
+        "tch_with": null
+      }
     },
     {
       "season": 2026,
@@ -12784,7 +12915,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -12908,7 +13040,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -13034,7 +13167,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -13156,7 +13290,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -13280,7 +13415,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -13402,7 +13538,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -13515,7 +13652,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -13638,7 +13776,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -13762,7 +13901,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -13886,7 +14026,8 @@
       "teamGp": 4,
       "newTeam": true,
       "lastTeam": "SF",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -14010,7 +14151,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -14135,7 +14277,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -14259,7 +14402,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -14383,7 +14527,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -14507,7 +14652,8 @@
       "teamGp": 3,
       "newTeam": true,
       "lastTeam": "NYJ",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -14631,7 +14777,15 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": {
+        "name": "Adonai Mitchell",
+        "player_id": "00-0039890",
+        "out": 4,
+        "q": false,
+        "tch_out": 7.0,
+        "tch_with": 1.0
+      }
     },
     {
       "season": 2026,
@@ -14751,7 +14905,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "ARI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -14877,7 +15032,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -14990,7 +15146,8 @@
       "teamGp": 4,
       "newTeam": true,
       "lastTeam": "ARI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -15115,7 +15272,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -15228,7 +15386,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -15354,7 +15513,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": "backup"
+      "roleFlag": "backup",
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -15478,7 +15638,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -15600,7 +15761,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -15722,7 +15884,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -15847,7 +16010,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -15970,7 +16134,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -16096,7 +16261,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "SEA",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -16218,7 +16384,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -16338,7 +16505,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -16461,7 +16629,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -16587,7 +16756,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": "backup"
+      "roleFlag": "backup",
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -16710,7 +16880,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -16823,7 +16994,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -16948,7 +17120,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "ARI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -17072,7 +17245,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -17194,7 +17368,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -17318,7 +17493,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -17440,7 +17616,8 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "ARI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -17564,7 +17741,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -17688,7 +17866,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -17813,7 +17992,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -17937,7 +18117,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -18061,7 +18242,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -18174,7 +18356,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -18297,7 +18480,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -18419,7 +18603,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -18543,7 +18728,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -18667,7 +18853,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "CLE",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -18793,7 +18980,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -18917,7 +19105,8 @@
       "teamGp": 5,
       "newTeam": true,
       "lastTeam": "LAC",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -19042,7 +19231,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "MIA",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -19167,7 +19357,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -19289,7 +19480,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -19413,7 +19605,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -19535,7 +19728,15 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": {
+        "name": "Cam Skattebo",
+        "player_id": "00-0040715",
+        "out": 1,
+        "q": true,
+        "tch_out": 9.0,
+        "tch_with": 2.5
+      }
     },
     {
       "season": 2026,
@@ -19659,7 +19860,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -19782,7 +19984,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -19908,7 +20111,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20033,7 +20237,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20157,7 +20362,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20278,7 +20484,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20398,7 +20605,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20524,7 +20732,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20637,7 +20846,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20761,7 +20971,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "ARI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20874,7 +21085,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -20997,7 +21209,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "ATL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -21122,7 +21335,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -21248,7 +21462,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "NYG",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -21372,7 +21587,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -21496,7 +21712,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -21622,7 +21839,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -21742,7 +21960,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -21868,7 +22087,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -21991,7 +22211,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -22115,7 +22336,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -22239,7 +22461,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "CLE",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -22363,7 +22586,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -22476,7 +22700,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -22599,7 +22824,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "TB",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -22722,7 +22948,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "NYG",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -22846,7 +23073,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -22971,7 +23199,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -23092,7 +23321,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -23216,7 +23446,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -23340,7 +23571,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -23466,7 +23698,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -23590,7 +23823,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "PHI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -23716,7 +23950,8 @@
       "teamGp": 4,
       "newTeam": true,
       "lastTeam": "MIN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -23840,7 +24075,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -23965,7 +24201,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "CLE",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -24089,7 +24326,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -24212,7 +24450,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -24334,7 +24573,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "PHI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -24447,7 +24687,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -24560,7 +24801,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -24673,7 +24915,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -24796,7 +25039,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -24919,7 +25163,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25042,7 +25287,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25167,7 +25413,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "NE",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25289,7 +25536,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25402,7 +25650,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25523,7 +25772,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25636,7 +25886,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25762,7 +26013,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25875,7 +26127,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -25997,7 +26250,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -26120,7 +26374,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -26244,7 +26499,8 @@
       "teamGp": 3,
       "newTeam": true,
       "lastTeam": "PIT",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -26369,7 +26625,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -26493,7 +26750,8 @@
       "teamGp": 5,
       "newTeam": true,
       "lastTeam": "SF",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -26618,7 +26876,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -26731,7 +26990,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -26854,7 +27114,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -26977,7 +27238,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -27099,7 +27361,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -27222,7 +27485,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -27347,7 +27611,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -27460,7 +27725,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -27582,7 +27848,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -27706,7 +27973,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -27828,7 +28096,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -27950,7 +28219,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -28073,7 +28343,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -28186,7 +28457,8 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "MIN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -28311,7 +28583,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "KC",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -28433,7 +28706,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "TEN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -28546,7 +28820,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -28671,7 +28946,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -28794,7 +29070,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -28907,7 +29184,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "LV",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -29031,7 +29309,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -29154,7 +29433,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -29267,7 +29547,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "NO",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -29393,7 +29674,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -29519,7 +29801,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -29641,7 +29924,8 @@
       "teamGp": 4,
       "newTeam": true,
       "lastTeam": "PHI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -29754,7 +30038,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -29879,7 +30164,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30001,7 +30287,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "IND",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30114,7 +30401,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30237,7 +30525,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30361,7 +30650,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30484,7 +30774,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30608,7 +30899,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30734,7 +31026,8 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "SEA",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30859,7 +31152,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -30982,7 +31276,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -31095,7 +31390,8 @@
       "teamGp": 5,
       "newTeam": true,
       "lastTeam": "GB",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -31219,7 +31515,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -31342,7 +31639,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "HOU",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -31467,7 +31765,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "KC",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -31580,7 +31879,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -31700,7 +32000,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": "backup"
+      "roleFlag": "backup",
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -31823,7 +32124,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "BAL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -31945,7 +32247,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -32068,7 +32371,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -32188,7 +32492,8 @@
       "teamGp": 4,
       "newTeam": true,
       "lastTeam": "NE",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -32311,7 +32616,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -32437,7 +32743,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -32562,7 +32869,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -32687,7 +32995,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "DET",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -32813,7 +33122,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -32936,7 +33246,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -33059,7 +33370,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -33184,7 +33496,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -33307,7 +33620,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -33432,7 +33746,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -33554,7 +33869,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -33679,7 +33995,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "BAL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -33792,7 +34109,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "NYJ",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -33915,7 +34233,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -34035,7 +34354,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -34159,7 +34479,15 @@
       "teamGp": 4,
       "newTeam": true,
       "lastTeam": "DEN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": {
+        "name": "Quinshon Judkins",
+        "player_id": "00-0040784",
+        "out": 1,
+        "q": false,
+        "tch_out": 13.0,
+        "tch_with": 1.3
+      }
     },
     {
       "season": 2026,
@@ -34284,7 +34612,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -34409,7 +34738,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -34534,7 +34864,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -34647,7 +34978,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -34772,7 +35104,8 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "DAL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -34885,7 +35218,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35008,7 +35342,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "SEA",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35130,7 +35465,8 @@
       "teamGp": 4,
       "newTeam": true,
       "lastTeam": "CIN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35250,7 +35586,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35375,7 +35712,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35498,7 +35836,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35621,7 +35960,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35745,7 +36085,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35868,7 +36209,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "TEN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -35993,7 +36335,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -36106,7 +36449,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -36228,7 +36572,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -36353,7 +36698,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -36477,7 +36823,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "WAS",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -36590,7 +36937,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -36712,7 +37060,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -36838,7 +37187,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "ATL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -36951,7 +37301,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -37075,7 +37426,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -37198,7 +37550,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -37320,7 +37673,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -37445,7 +37799,8 @@
       "teamGp": 3,
       "newTeam": true,
       "lastTeam": "NO",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -37570,7 +37925,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "HOU",
-      "roleFlag": "backup"
+      "roleFlag": "backup",
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -37693,7 +38049,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -37814,7 +38171,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -37927,7 +38285,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "HOU",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -38050,7 +38409,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "NO",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -38163,7 +38523,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -38286,7 +38647,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -38411,7 +38773,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "HOU",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -38534,7 +38897,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -38660,7 +39024,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -38782,7 +39147,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -38895,7 +39261,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39019,7 +39386,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39142,7 +39510,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "LAC",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39266,7 +39635,8 @@
       "teamGp": 5,
       "newTeam": true,
       "lastTeam": "CHI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39392,7 +39762,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39516,7 +39887,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "CHI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39629,7 +40001,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "CIN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39754,7 +40127,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39867,7 +40241,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -39989,7 +40364,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -40102,7 +40478,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -40226,7 +40603,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -40348,7 +40726,8 @@
       "teamGp": 5,
       "newTeam": true,
       "lastTeam": "PIT",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -40470,7 +40849,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -40592,7 +40972,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -40715,7 +41096,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -40839,7 +41221,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -40964,7 +41347,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "BUF",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -41086,7 +41470,8 @@
       "teamGp": 3,
       "newTeam": true,
       "lastTeam": "IND",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -41199,7 +41584,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -41312,7 +41698,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "MIA",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -41432,7 +41819,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -41554,7 +41942,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -41667,7 +42056,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -41790,7 +42180,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "PHI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -41914,7 +42305,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -42027,7 +42419,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -42150,7 +42543,8 @@
       "teamGp": 4,
       "newTeam": true,
       "lastTeam": "JAX",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -42274,7 +42668,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -42397,7 +42792,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -42521,7 +42917,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "DET",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -42645,7 +43042,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -42767,7 +43165,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -42880,7 +43279,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43006,7 +43406,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "LV",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43119,7 +43520,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43232,7 +43634,8 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "LV",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43345,7 +43748,8 @@
       "teamGp": 6,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43470,7 +43874,8 @@
       "teamGp": 5,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43596,7 +44001,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "NYG",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43719,7 +44125,8 @@
       "teamGp": 3,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43842,7 +44249,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "CIN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -43955,7 +44363,8 @@
       "teamGp": 6,
       "newTeam": true,
       "lastTeam": "ATL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -44077,7 +44486,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "NO",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -44202,7 +44612,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -44325,7 +44736,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "KC",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -44447,7 +44859,8 @@
       "teamGp": 2,
       "newTeam": true,
       "lastTeam": "BAL",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -44573,7 +44986,8 @@
       "teamGp": 1,
       "newTeam": true,
       "lastTeam": "CIN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -44695,7 +45109,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -44808,7 +45223,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "IND",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -44921,7 +45337,8 @@
       "teamGp": 1,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45043,7 +45460,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45167,7 +45585,8 @@
       "teamGp": 3,
       "newTeam": true,
       "lastTeam": "CHI",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45292,7 +45711,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "IND",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45405,7 +45825,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "KC",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45527,7 +45948,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "SF",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45640,7 +46062,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "NE",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45753,7 +46176,8 @@
       "teamGp": 0,
       "newTeam": true,
       "lastTeam": "BUF",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45866,7 +46290,8 @@
       "teamGp": 2,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -45979,7 +46404,8 @@
       "teamGp": 0,
       "newTeam": false,
       "lastTeam": "DEN",
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -46101,7 +46527,8 @@
       "teamGp": 4,
       "newTeam": false,
       "lastTeam": null,
-      "roleFlag": null
+      "roleFlag": null,
+      "starterBack": null
     }
   ],
   "not_playing": [
