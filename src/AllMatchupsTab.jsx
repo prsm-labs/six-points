@@ -6,7 +6,7 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import PickButton from './PickButton.jsx'
 import { BreakoutBadge, fmtPct, GradeBadge, LiveStatusTag, SlateStatus, useLiveOutFilter } from './gradeUi.jsx'
 import { DepthTag, MatchupCell, RoleChip } from './matchupUi.jsx'
-import { BestPriceLink, EdgeCell, StatePicker } from './BetLink.jsx'
+import { BestPriceLink, EdgeCell, MarketCell, StatePicker } from './BetLink.jsx'
 import { booksText } from './bookOdds.js'
 import ListFilters from './ListFilters.jsx'
 import { applyListFilters, useFilterContext, useListFilters } from './listFilters.js'
@@ -60,9 +60,10 @@ export default function AllMatchupsTab() {
         ℹ️ <strong>Grade, TD %, 2+ TD % and 100+ %</strong> come from the backtested grade model (role, red-zone share, recent
         form, team scoring environment, vacated roles). ▲ / ▼ on a grade = facing one of this week's softest / stingiest
         third of TD defenses — the defense factor inside the grade. <strong>D vs Pos</strong> and the yards <strong>Matchup</strong> chip
-        are context: position splits added nothing for TDs over 2023-25. <strong>Book Odds / Edge</strong> = best anytime TD price
-        (priced once a week: Thursday for TNF, Saturday for Sunday / Monday) and our TD % minus its implied chance —
-        context only, never in the grade. Hover anything for details; ⚙️ in the first header picks columns.
+        are context: position splits added nothing for TDs over 2023-25. <strong>Book Odds / vs Book</strong> = best anytime TD price
+        (priced once a week: Thursday for TNF, Saturday for Sunday / Monday) and our TD % minus its implied chance — not a value
+        signal: where we and the book disagree, the book has been closer. <strong>Market %</strong> = half our TD %, half the
+        book's (vig out), which beat both. All context only, never in the grade. Hover anything for details; ⚙️ in the first header picks columns.
       </div>
       <SlateStatus data={slate} />
       <MatchupFilterNote />
@@ -79,7 +80,8 @@ export default function AllMatchupsTab() {
               <SortTh label="2+ TD %" sortKeyName="p_td2" {...th} />
               <SortTh label="100+ %" sortKeyName="p_100" {...th} />
               <SortTh label="Book Odds" sortKeyName="bookImplied" {...th} />
-              <SortTh label="Edge" sortKeyName="edge" {...th} />
+              <SortTh label="vs Book" sortKeyName="edge" {...th} />
+              <SortTh label="Market %" sortKeyName="market" {...th} />
               <SortTh label="Est. Yds" sortKeyName="est_yards" {...th} />
               <SortTh label="TDs L3" sortKeyName="td_l3" {...th} />
               <SortTh label="Touch/g L3" sortKeyName="l3_tpg_s" {...th} />
@@ -115,6 +117,7 @@ export default function AllMatchupsTab() {
                 <td className="num">{fmtPct(m.p_100, 1)}</td>
                 <td className="num nowrap" title={booksText(m.book)}><BestPriceLink book={m.book} /></td>
                 <td className="num"><EdgeCell m={m} /></td>
+                <td className="num"><MarketCell m={m} /></td>
                 <td className="num">{m.est_yards != null ? Number(m.est_yards).toFixed(0) : '—'}</td>
                 <td className="num" title={m.td_last != null ? `TDs in his last 3 games played (last game: ${m.td_last})` : undefined}>{m.td_l3 ?? '—'}</td>
                 <td className="num" title={m.touches_per_game != null ? `Season ${Number(m.touches_per_game).toFixed(1)} / game` : undefined}>

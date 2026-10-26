@@ -1,6 +1,7 @@
 // Pure (no React) slate enrichment shared by the browser (slate.js) and the lock scripts (scripts/*.mjs), so a locked
 // board is built from exactly what the page shows. 2026-10-18 revamp.
 //   m.book / m.edge  -- this week's anytime TD price (odds/<season>-wk<week>.json) and our TD % minus its implied %
+//   m.market         -- context-only market check: half our TD %, half the book's, vig out (market.js, 2026-10-26)
 //   m.hotHand        -- a TD in his last 3 games and outside the week's top 25% by TD % (beat the model 1.3x, 2023-25)
 //   m.yds_rank / yds_n / yds_tier -- the opponent's rank among this week's defenses in yards allowed to his position
 //                    (mu_yds_idx, 1 = softest), thirds = soft / neutral / tough (2026-10-19)
@@ -8,6 +9,8 @@
 // Yards-vs-position ranks (2026-10-19, user: separate rankings vs RB / WR / TE yards, not just vs TDs). mu_yds_idx is the
 // engine's yards allowed to the position vs league average (this season, shrunk toward last season + league); it's the
 // same for every player facing that defense at that position. Returns Map 'OPP|POS' -> { rank, n, idx, tier }.
+import { marketPct } from './market.js'
+
 export const YDS_POSITIONS = ['RB', 'WR', 'TE']
 export function ydsDefRanks(rows) {
   const by = {}
@@ -52,6 +55,7 @@ export function enrichSlate(data, odds) {
       bookBest: book?.best ?? null,
       bookImplied: book?.bestImplied ?? null,
       edge: book && tdPct != null ? Math.round((tdPct - book.bestImplied) * 10) / 10 : null,
+      market: book ? marketPct(tdPct, book) : null,
       td_pct_rank: tdPctRank,
       hotHand: (m.td_l3 ?? 0) > 0 && tdPctRank != null && tdPctRank < 0.75,
       yds_rank: yr?.rank ?? null,

@@ -114,7 +114,7 @@ export function buildGroups(ctx = {}) {
       { v: 'hot', label: '🔥 Hot hand', title: 'Scored a TD in his last 3 games and NOT a top-25% TD chance this week -- this group scored 1.33x what the model said in 2023-25 (every season)' },
       { v: 'breakout', label: '🚀 Breakout Watch', title: "Touches last 3 games 1.2x+ his season rate, outside the week's top 15% -- backtested lift" },
       { v: 'role', label: '+ Role gain', title: 'Inherits 1+ touch a game from an injured / inactive teammate' },
-      { v: 'value', label: '💰 Value vs book', title: 'Our TD % at least 3 points above the chance the best sportsbook price implies (context, never a grade input)' },
+      { v: 'value', label: '📖 Above book', title: 'Our TD % at least 3 points above the chance the best sportsbook price implies. Context, not value: where we and the book disagree, the book has been closer (never a grade input)' },
       { v: 'rolecheck', label: '🪑? Role check', title: 'Under 3 games for his team and lower on the ESPN depth chart than his usage — kept out of Top Picks / PRISM Picks' },
       { v: 'first', label: '📅 New to team', title: 'No games with his team yet' },
       { v: 'injury', label: '🩹 Injury tag', title: 'Questionable / Doubtful this week — tap twice to hide them' },

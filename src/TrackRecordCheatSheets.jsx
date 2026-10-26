@@ -12,8 +12,8 @@ const LISTS = [
   { key: 'td2', title: '🏈🏈 2+ TD Candidates', p: 'p_td2', hit: (o) => o.tds >= 2 },
   { key: 'yds', title: '💨 100+ Yard Candidates', p: 'p_100', hit: (o) => o.yds >= 100 },
   { key: 'hot', title: '🔥 Hot Hands', p: 'p_td', hit: (o) => o.tds > 0, filter: (m) => m.hotHand },
-  { key: 'value', title: '💰 Best Value vs Book', p: 'p_td', hit: (o) => o.tds > 0, filter: (m) => m.edge != null && m.edge >= 3, sort: 'edge' },
-  { key: 'over', title: '📉 Overvalued by Books', p: 'p_td', hit: (o) => o.tds > 0, filter: (m) => m.edge != null && m.edge < 0, sort: 'edgeAsc', bookSaid: true },
+  { key: 'value', title: '📖 We Rate Higher Than the Book', p: 'p_td', hit: (o) => o.tds > 0, filter: (m) => m.edge != null && m.edge >= 3, sort: 'edge' },
+  { key: 'over', title: '📖 Book Rates Higher Than Us', p: 'p_td', hit: (o) => o.tds > 0, filter: (m) => m.edge != null && m.edge < 0, sort: 'edgeAsc', bookSaid: true },
 ]
 
 export default function TrackRecordCheatSheets() {

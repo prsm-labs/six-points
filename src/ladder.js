@@ -1,8 +1,9 @@
 // Game ladder (Scouting -> 🪜 Game Ladder; Slap Shot's lib/ladder.js, 2026-10-18 revamp): for each team this week,
 // the best anytime-TD pick in each price band -- favorite down to super-deep longshot -- the way a handicapper lays
 // out a game sheet. Band = the player's best sportsbook anytime-TD price; with no price yet, the fair price from our
-// TD %. Within a band the pick is the best value: our TD % minus the book's implied % (vig included). Unpriced players
-// rank after priced ones, by our TD %. Honorable mention = the best value on the team not already shown.
+// TD %. Within a band the pick has the highest market check (market.js: half our TD %, half the book's, vig out); until
+// 2026-10-26 it was the biggest edge, but where we disagreed the book was closer. Unpriced players rank after priced ones,
+// by our TD %. Honorable mention = the highest market check on the team not already shown.
 // NFL bands are shorter than hockey's (anytime TD favorites run -275 to +150).
 import { fairAmerican } from './bookOdds.js'
 
@@ -22,7 +23,7 @@ export function ladderPrice(m) {
 
 const bandOf = (am) => LADDER_BANDS.find((b) => am <= b.max) || LADDER_BANDS[LADDER_BANDS.length - 1]
 const valueSort = (a, b) =>
-  (b.edge != null) - (a.edge != null) || (b.edge ?? 0) - (a.edge ?? 0) || (b.p_td ?? 0) - (a.p_td ?? 0)
+  (b.market != null) - (a.market != null) || (b.market ?? 0) - (a.market ?? 0) || (b.p_td ?? 0) - (a.p_td ?? 0)
 
 export function teamLadder(players, { alts = 2 } = {}) {
   const rows = players.filter((m) => m.p_td != null).map((m) => ({ m, price: ladderPrice(m) })).filter((r) => r.price)
@@ -32,6 +33,6 @@ export function teamLadder(players, { alts = 2 } = {}) {
     for (const m of inBand.slice(0, 1 + alts)) used.add(m.player_id)
     return { ...band, pick: inBand[0] || null, alts: inBand.slice(1, 1 + alts), size: inBand.length }
   })
-  const honorable = rows.map((r) => r.m).filter((m) => !used.has(m.player_id) && m.edge != null).sort(valueSort)[0] || null
+  const honorable = rows.map((r) => r.m).filter((m) => !used.has(m.player_id) && m.market != null).sort(valueSort)[0] || null
   return { bands, honorable, count: rows.length }
 }

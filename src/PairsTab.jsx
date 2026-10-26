@@ -48,7 +48,7 @@ function PairCard({ pr, boost, started }) {
   if (pr.legs.every((l) => l.m.def_tier === 'soft')) why.push('both vs soft TD defenses ▲')
   if (pr.legs.some((l) => l.m.hotHand)) why.push('🔥 hot hand leg')
   if (pr.legs.some((l) => l.m.def_tier === 'tough')) why.push('⚠ a leg faces a tough defense ▼')
-  if (pr.parlay && pr.parlay.american > pr.fair) why.push('book pays more than our fair price')
+  if (pr.ev != null && pr.ev > 0) why.push('book pays more than the market check price')
   const text = betText(pr.legs.map((l) => betLine(l.m, l.prop === 'td' ? 'td' : 'yds100')), { sameGame: pr.sameGame })
   const legBooks = pr.legs.map((l) => l.m.book)
   const multi = ['FD', 'DK'].map((bk) => ({ bk, link: pr.parlay && pr.legs.every((l) => l.prop === 'td') ? multiBetUrl(legBooks, bk) : null })).filter((x) => x.link?.url)
@@ -66,7 +66,7 @@ function PairCard({ pr, boost, started }) {
           <div className="meta-line small" style={{ margin: 0 }}>
             Book parlay {fmtAmerican(pr.parlay.american)} at {BOOK_NAMES[pr.parlay.book] || pr.parlay.book} ({pr.parlay.legs.map(fmtAmerican).join(' × ')})
             {boost > 0 && <> → boosted {fmtAmerican(toAmerican(pr.parlay.boostedDec))}</>}
-            {pr.ev != null && <> · EV <span className={pr.ev > 0 ? 'edge-value' : 'edge-neg'}>{pr.ev > 0 ? '+' : ''}{(pr.ev * 100).toFixed(0)}%</span></>}
+            {pr.ev != null && <> · <span title="Expected return per 1 unit at the market check: chance both hit (each TD leg half ours, half the book, vig out) x payout - 1">EV</span> <span className={pr.ev > 0 ? 'edge-value' : 'edge-neg'}>{pr.ev > 0 ? '+' : ''}{(pr.ev * 100).toFixed(0)}%</span></>}
           </div>
         )}
         {pr.sameGame && <div className="meta-line small" style={{ margin: 0 }}>Same game: books price their own same-game parlays — our fair price only.</div>}

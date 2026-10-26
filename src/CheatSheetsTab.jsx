@@ -18,7 +18,7 @@ import { useMasterSearch } from './masterFilter.js'
 import { matchesSearch } from './teamSearch.js'
 
 // 📋 Cheat Sheets (Slap Shot's tabs/CheatSheetsTab.jsx, 2026-10-18 revamp): this week's quick reads -- top candidates
-// per prop, value vs the book, and the defenses worth attacking -- with injury / roster status. Each list is graded
+// per prop, ours vs the book (context), and the defenses worth attacking -- with injury / roster status. Each list is graded
 // later in Track Record > Cheat Sheets (hit vs what the model expected).
 const STATUS_FILTERS = [['all', 'All'], ['notOut', 'Hide OUT (live)'], ['healthy', 'No injury tag']]
 
@@ -100,8 +100,8 @@ function QuickReads() {
   const overvalued = [...priced].filter((m) => m.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5)
   const edgeRow = (m) => (
     <span title={`${edgeText(m)}\n${booksText(m.book)}`} className="edge-stack">
-      <span className={edgeClass(m.edge)}>{fmtEdge(m.edge)}</span>
-      <span className="meta-line small">{fmtPct(m.p_td)} vs {m.book.bestImplied}% · {fmtAmerican(m.book.best)}</span>
+      <span className={edgeClass(m.edge)}>mkt {m.market}%</span>
+      <span className="meta-line small">{fmtPct(m.p_td)} vs {m.book.bestImplied}% ({fmtEdge(m.edge)}) · {fmtAmerican(m.book.best)}</span>
     </span>
   )
   // 🔓 defenses to attack (Slap Shot's "Most Attackable Goalies"): opponents ranked by TDs allowed (the defense factor
@@ -142,8 +142,8 @@ function QuickReads() {
         <ListCard title="🔥 Hot Hands" sub="Scored in the last 3 games, outside the week's top 25% — the group that beat the model" items={hot} renderRow={(m) => fmtPct(m.p_td, 1)} />
         {priced.length > 0 && (
           <>
-            <ListCard title="💰 Best Value vs Book" sub="Anytime TD: our chance most above the best sportsbook price" items={bestValue} renderRow={edgeRow} />
-            <ListCard title="📉 Overvalued by Books" sub="Priced shorter than our chance supports — the popular names to fade" items={overvalued} renderRow={edgeRow} />
+            <ListCard title="📖 We Rate Higher Than the Book" sub="Anytime TD, our chance most above the best price. Context, not value: in week 7 this group scored at the book's number (we said 24.5%, book 17.2%, 17.0% scored). mkt = market check" items={bestValue} renderRow={edgeRow} />
+            <ListCard title="📖 Book Rates Higher Than Us" sub="Priced shorter than our chance. Not a fade: in week 7 these scored nearer the book's number (we said 14.8%, book 20.3%, 18.7% scored). mkt = market check" items={overvalued} renderRow={edgeRow} />
           </>
         )}
         <div className="card cheat-list">
@@ -256,7 +256,7 @@ export default function CheatSheetsTab() {
     <div>
       <div className="section-head">
         <h2>📋 Cheat Sheets</h2>
-        <p className="meta-line">This week's quick reads — top candidates, value vs the book and the defenses worth attacking, with injury status</p>
+        <p className="meta-line">This week's quick reads — top candidates, ours vs the book and the defenses worth attacking, with injury status</p>
       </div>
       <div className="pill-row hub-row">
         <button className={`pill-btn ${view === 'main' ? 'active' : ''}`} onClick={() => setView('main')}>📋 Quick reads</button>

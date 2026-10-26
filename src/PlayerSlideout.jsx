@@ -300,7 +300,7 @@ export default function PlayerSlideout() {
                     {whoScoresText(weekRow) && <div title={ROLE_NOTE}>{whoScoresText(weekRow)} <span className="meta-line small">(context — not in the grade)</span></div>}
                     {weekRow.td_l3 != null && <div>TDs in his last 3 games: {weekRow.td_l3} (last game {weekRow.td_last ?? 0}){weekRow.hotHand ? ' · 🔥 hot hand outside the top 25%' : ''}</div>}
                     <div>Anytime TD: <AllBookLinks book={weekRow.book} /> <StatePicker /></div>
-                    {weekRow.edge != null && <div title={edgeText(weekRow)}>Edge vs best price: <span className={edgeClass(weekRow.edge)}>{fmtEdge(weekRow.edge)} pts</span> <span className="meta-line small">(context — not in the grade)</span></div>}
+                    {weekRow.edge != null && <div title={edgeText(weekRow)}>vs best price: <span className={edgeClass(weekRow.edge)}>{fmtEdge(weekRow.edge)} pts</span> · market check <b>{weekRow.market}%</b> <span className="meta-line small">(half ours, half the book — context, not in the grade)</span></div>}
                     <div className="slideout-gambly">Send to Gambly:
                       <GamblyButton compact={false} label="Anytime TD" text={betLine(weekRow, 'td')} />
                       <GamblyButton compact={false} label="2+ TDs" text={betLine(weekRow, 'td2')} />

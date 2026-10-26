@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useSlate } from './slate.js'
 import { LADDER_BANDS, ladderPrice, teamLadder } from './ladder.js'
-import { booksText, edgeClass, fmtAmerican, fmtEdge } from './bookOdds.js'
+import { booksText, fmtAmerican, MARKET_NOTE } from './bookOdds.js'
 import { BestPriceLink, StatePicker } from './BetLink.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide } from './slideouts.js'
@@ -37,7 +37,7 @@ function PickLine({ m, alt }) {
           <span title={m.book ? booksText(m.book) : 'No sportsbook price yet — banded by our fair price'}>
             {price?.priced ? <BestPriceLink book={m.book} /> : <span className="meta-line small">fair {fmtAmerican(price?.am)}</span>}
           </span>
-          {m.edge != null && <span className={edgeClass(m.edge)}> {fmtEdge(m.edge)}</span>}
+          {m.market != null && <span className="meta-line small" title={MARKET_NOTE}> · mkt {m.market}%</span>}
         </div>
       </div>
       {!alt && <GradeBadge grade={m.grade} m={m} />}
@@ -69,7 +69,7 @@ function TeamSide({ team, opp, players }) {
         </div>
       ))}
       <div className="ladder-band">
-        <div className="ladder-band-label" title="Best value on the team not already shown above">HM</div>
+        <div className="ladder-band-label" title="Highest market check on the team not already shown above">HM</div>
         <div>{ladder.honorable ? <PickLine m={ladder.honorable} /> : <span className="meta-line small">—</span>}</div>
       </div>
     </div>
@@ -104,8 +104,9 @@ export default function LadderTab() {
     <div>
       <div className="note">
         🪜 <b>Game Ladder</b> — each team's anytime-TD picks from favorite to super-deep longshot, banded by the best sportsbook
-        price ({LADDER_BANDS.map((b) => `${b.short} ${b.title.replace('Best price ', '')}`).join(' · ')}). Inside a band the pick is
-        the best value — our TD % minus the book's implied % — with the next two below it. HM = best value left on the team.
+        price ({LADDER_BANDS.map((b) => `${b.short} ${b.title.replace('Best price ', '')}`).join(' · ')}). Inside a band the pick has
+        the highest market check (mkt: half our TD %, half the book's, vig out — where we and the book disagreed, the book was
+        closer), with the next two below it. HM = highest market check left on the team.
         No price yet = banded by our fair price. The defense line is context: the TD % already includes the opponent's TD defense.
       </div>
       <MatchupFilterNote />

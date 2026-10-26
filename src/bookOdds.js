@@ -1,13 +1,18 @@
 import { useSyncExternalStore } from 'react'
+import { marketPct, MARKET_NOTE } from './market.js'
+
+export { MARKET_DEVIG, MARKET_NOTE, marketPct } from './market.js'
 
 // Sportsbook ANYTIME TD prices on a player (slate.js, from public/data/odds/<season>-wk<week>.json; build_odds.py):
-// m.book = { best, bestBook, bestImplied, medianImplied, books, links }, m.edge = our TD % minus bestImplied.
+// m.book = { best, bestBook, bestImplied, medianImplied, books, links }, m.edge = our TD % minus bestImplied,
+// m.market = the market check (market.js). 2026-10-26: the edge is shown neutrally ("vs book"), not as value -- where we
+// and the book disagreed, the book was closer.
 // Context only -- never a grade input (user, 2026-10-18). Port of Slap Shot's lib/bookOdds.js.
-export const VALUE_EDGE = 3
+export const VALUE_EDGE = 3 // "rated 3+ pts above the book" cut (filter tag / Cheat Sheets list) -- not a value signal
 
 export const fmtAmerican = (v) => (v == null ? '—' : v > 0 ? `+${v}` : `${v}`)
 export const fmtEdge = (e) => (e == null ? '—' : `${e > 0 ? '+' : ''}${Number(e).toFixed(1)}`)
-export const edgeClass = (e) => (e == null ? '' : e >= VALUE_EDGE ? 'edge-value' : e < 0 ? 'edge-neg' : '')
+export const edgeClass = () => '' // neutral since 2026-10-26 (was edge-value at >= VALUE_EDGE, edge-neg below 0)
 
 export function booksText(book) {
   if (!book) return 'No sportsbook price yet (priced once a week: Thu / Sat)'
@@ -16,7 +21,9 @@ export function booksText(book) {
 
 export function edgeText(m) {
   if (!m.book) return 'No sportsbook price yet'
-  return `Ours ${(m.p_td * 100).toFixed(1)}% vs book ${m.book.bestImplied}% (${fmtAmerican(m.book.best)} ${m.book.bestBook}) — edge ${fmtEdge(m.edge)} pts`
+  const mkt = m.market ?? marketPct(m.p_td * 100, m.book)
+  return `Ours ${(m.p_td * 100).toFixed(1)}% vs book ${m.book.bestImplied}% (${fmtAmerican(m.book.best)} ${m.book.bestBook}) — ${fmtEdge(m.edge)} pts vs the book · market check ${mkt}%
+${MARKET_NOTE}`
 }
 
 // Fair American price for a probability (no vig).

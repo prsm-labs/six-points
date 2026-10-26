@@ -45,6 +45,12 @@ export function EdgeCell({ m }) {
   return <span className={edgeClass(m.edge)} title={edgeText(m)}>{fmtEdge(m.edge)}</span>
 }
 
+// Market check (market.js): half our TD %, half the book's best price with the vig out -- context only.
+export function MarketCell({ m }) {
+  if (m.market == null) return <span className="meta-line small">—</span>
+  return <span title={edgeText(m)}>{m.market}%</span>
+}
+
 // 📍 state for BetMGM / BetRivers links (saved on this device).
 export function StatePicker() {
   const state = useBetState()

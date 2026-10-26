@@ -6,9 +6,11 @@
 //   teammates          TD+TD 1.01   TD+100 1.03   100+100 0.99   (seasons swing 0.75-1.30) -> 1.00
 //   opponents          TD+TD 0.98   TD+100 1.07 (1.08 / 1.13 / 1.01: the shootout link)   100+100 1.01
 // Ranked by the model's chance that both legs hit (grade, matchup and form are already in each leg's chance). Only
-// the "Value vs book" mode (and 2 of Balanced's slots) rank by sportsbook price. Book parlay price = TD + TD legs in
+// the "Value vs book" mode (and 2 of Balanced's slots) rank by expected return at the book, with the market check chance. Book parlay price = TD + TD legs in
 // different games, decimal A x decimal B at one book where both are listed; same-game pairs get our fair price only.
 // Locked at the Sunday lock (scripts/lock_pairs.mjs) and graded in Track Record > Pairs.
+import { marketPct } from './market.js'
+
 export const PAIR_CORR = {
   diff: { tt: 1, ty: 1, yy: 1 },
   team: { tt: 1, ty: 1, yy: 1 },
@@ -37,7 +39,7 @@ export const PROPS = {
 
 export const MODES = [
   { key: 'balanced', label: '⚖️ Balanced', blurb: 'Strongest TD pairs by the model, best value TD pairs, soft matchups, hot hands, a same-game stack and a yards pair' },
-  { key: 'value', label: '💰 Value vs book', blurb: 'TD + TD pairs, different games, ranked by expected return at the best book' },
+  { key: 'value', label: '💰 Value vs book', blurb: 'TD + TD pairs, different games, ranked by expected return at the best book, using the market check chance (half ours, half the book)' },
   { key: 'safest', label: '🛡️ Safest', blurb: 'Highest chance both legs hit, any prop' },
   { key: 'hot', label: '🔥 Hot hands', blurb: 'At least one leg is a 🔥 hot hand (scored in his last 3 games, outside the top 25%) or on Breakout Watch' },
   { key: 'soft', label: '▲ Soft matchups', blurb: "Both legs face one of this week's softest TD defenses (top third)" },
@@ -82,13 +84,25 @@ function bookParlay(a, b, boost) {
   return { ...best, american: toAmerican(best.dec), boostedDec: boosted, boostedAmerican: toAmerican(boosted) }
 }
 
+// Expected return uses the market check chance (2026-10-26; Slap Shot's lib/pairs.js): each priced TD leg's chance is
+// moved to half ours, half the book (market.js). With our chance alone the "value" pairs were just the ones we rated above
+// the book -- and where we disagreed, the book was closer.
+function marketPairChance(chance, legs) {
+  let c = chance
+  for (const l of legs) {
+    const mk = l.prop === 'td' && l.book ? marketPct(l.chance * 100, l.book) : null
+    if (mk != null && l.chance > 0) c *= mk / 100 / l.chance
+  }
+  return Math.min(0.99, c)
+}
+
 function makePair(a, b, boost) {
   const rel = relation(a, b)
   const corr = PAIR_CORR[rel][corrKey(a, b)]
   const chance = Math.min(0.99, a.chance * b.chance * corr)
   const sameGame = rel !== 'diff'
   const parlay = !sameGame && a.prop === 'td' && b.prop === 'td' ? bookParlay(a, b, boost) : null
-  const ev = parlay ? chance * parlay.boostedDec - 1 : null
+  const ev = parlay ? marketPairChance(chance, [a, b]) * parlay.boostedDec - 1 : null
   const [x, y] = a.m.player_id < b.m.player_id ? [a, b] : [b, a]
   return { key: `${x.m.player_id}:${x.prop}|${y.m.player_id}:${y.prop}`, legs: [a, b], rel, corr, chance, fair: fairAmerican(chance), sameGame, parlay, ev }
 }
@@ -211,7 +225,6 @@ export function notInPairs(players, pairs, { excludeTeams = new Set() } = {}) {
     if ((m.grade || '').startsWith('A')) why.push(`${m.grade} grade`)
     if (m.hotHand) why.push('🔥 hot hand')
     if (m.breakout) why.push('🚀 breakout')
-    if (m.edge != null && m.edge >= 3) why.push(`💰 edge +${m.edge.toFixed(1)}`)
     if (m.def_tier === 'soft' && /^[AB]/.test(m.grade || '')) why.push('▲ soft D')
     if ((m.role_gain ?? 0) >= 2) why.push(`+${Number(m.role_gain).toFixed(1)} role`)
     if (!why.length) continue
