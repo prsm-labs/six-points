@@ -12,7 +12,10 @@ import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 // First Touchdown -- the real NFL prop market (First TD Scorer / Team to Score First), not just
 // "anytime TD" (already Paydirt Lab's job). Two real, distinct halves:
 //
-// Predictor: this week's players ranked by a real, disclosed-v1 first_td_pct from
+// 2026-10-26: first_td_pct is now matchup_engine.apply_first_td -- competing clocks from each player's backtested TD chance
+// (rate -ln(1 - p_td) over every rate in the game x 0.93), held out 2023-25: first TDs said 233 / 236 / 240 vs 240 / 237 / 232
+// (the old formula below said 18% too many), scorer log loss 3.03-3.21 -> 2.83-2.85; 1st Team TD % = the team's share.
+// Old note -- Predictor: this week's players ranked by a real, disclosed-v1 first_td_pct from
 // matchup_engine.py (real per-team trailing "who wins the race to score first" rate, shrunk
 // toward a neutral 50% via K_FIRST_TD_TEAM, multiplied by the player's own real red-zone role
 // share (usage_sig/14) -- reused, not a second parallel per-player signal built from a much
@@ -24,7 +27,7 @@ import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 // ESPN scoring-play feed TD Tracker already has (useWeekTDs), just takes the first row per game
 // instead of every row, since ESPN returns each game's scoring plays in real chronological order.
 
-const PASS_DEPENDENT_NOTE = 'v1, unvalidated -- see the tab note above'
+const PASS_DEPENDENT_NOTE = 'backtested 2023-25 -- calibrated, beats the old team-race formula every season'
 
 function PredictorTable() {
   const [data, setData] = useState(null)
@@ -86,9 +89,9 @@ function PredictorTable() {
       <MatchupFilterNote />
       <p className="meta-line">
         Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length}{' '}
-        players &middot; First TD % = real team first-scoring rate &times; this player's own
-        red-zone role share ({PASS_DEPENDENT_NOTE}) &middot; 1st Team TD % is that same team rate
-        shown on its own &middot; click a column header to sort
+        players &middot; First TD % = this player's share of every TD chance in his game (each player's
+        TD % as a scoring rate; {PASS_DEPENDENT_NOTE}) &middot; 1st Team TD % = his team's share &middot; click a
+        column header to sort
       </p>
       <div className="table-wrap">
         <table>
