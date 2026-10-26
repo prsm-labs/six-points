@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T11:01+00:00",
+ "generated_at": "2026-10-26T14:51+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -719,7 +719,9 @@
       "one big game (50) lifts his average -- 18 a game in the others"
      ],
      "track": 0.822,
-     "trackN": 502
+     "trackN": 502,
+     "actual": 9,
+     "result": "hit"
     },
     {
      "player_id": "00-0038134",
@@ -742,7 +744,9 @@
       "SEA takes away 8 yds for his role"
      ],
      "track": 0.822,
-     "trackN": 502
+     "trackN": 502,
+     "actual": 57,
+     "result": "hit"
     },
     {
      "player_id": "00-0039338",
@@ -764,7 +768,9 @@
       "LA takes away 3 yds for his role"
      ],
      "track": 0.822,
-     "trackN": 502
+     "trackN": 502,
+     "actual": 73,
+     "result": "hit"
     },
     {
      "player_id": "00-0039064",
@@ -787,7 +793,9 @@
       "his usage (8.4 touches a game) projects below what he's averaged"
      ],
      "track": 0.822,
-     "trackN": 502
+     "trackN": 502,
+     "actual": 137,
+     "result": "miss"
     },
     {
      "player_id": "00-0038543",
@@ -811,7 +819,9 @@
       "his usage (10.8 touches a game) projects below what he's averaged"
      ],
      "track": 0.822,
-     "trackN": 502
+     "trackN": 502,
+     "actual": 163,
+     "result": "miss"
     },
     {
      "player_id": "00-0037157",
@@ -832,7 +842,9 @@
       "one big game (98) lifts his average -- 16 a game in the others"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 57,
+     "result": "miss"
     },
     {
      "player_id": "00-0039041",
@@ -854,7 +866,9 @@
       "one big game (57) lifts his average -- 22 a game in the others"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 17,
+     "result": "hit"
     },
     {
      "player_id": "00-0040138",
@@ -878,7 +892,9 @@
       "one big game (107) lifts his average -- 51 a game in the others"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": -3,
+     "result": "hit"
     },
     {
      "player_id": "00-0036554",
@@ -900,7 +916,9 @@
       "his usage (8.1 touches a game) projects below what he's averaged"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 6,
+     "result": "hit"
     },
     {
      "player_id": "00-0037239",
@@ -924,7 +942,9 @@
       "one big game (182) lifts his average -- 80 a game in the others"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 56,
+     "result": "hit"
     },
     {
      "player_id": "00-0040131",
@@ -947,7 +967,9 @@
       "one big game (91) lifts his average -- 14 a game in the others"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 0,
+     "result": "hit"
     },
     {
      "player_id": "00-0039139",
@@ -970,7 +992,9 @@
       "his usage (26.3 touches a game) projects below what he's averaged"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 143,
+     "result": "hit"
     },
     {
      "player_id": "00-0038124",
@@ -994,7 +1018,9 @@
       "one big game (147) lifts his average -- 78 a game in the others"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 57,
+     "result": "hit"
     },
     {
      "player_id": "00-0040887",
@@ -1015,7 +1041,9 @@
       "his usage (3.2 touches a game) projects below what he's averaged"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 35,
+     "result": "miss"
     },
     {
      "player_id": "00-0034829",
@@ -1037,7 +1065,9 @@
       "one big game (78) lifts his average -- 27 a game in the others"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "actual": 6,
+     "result": "hit"
     },
     {
      "player_id": "00-0040782",
@@ -1058,10 +1088,12 @@
       "one big game (74) lifts his average -- 6 a game in the others"
      ],
      "track": 0.729,
-     "trackN": 590
+     "trackN": 590,
+     "result": "void",
+     "actual": null
     }
    ],
-   "updated_at": "2026-10-26T07:01-04:00"
+   "updated_at": "2026-10-26T10:51-04:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T11:01+00:00",
+ "generated_at": "2026-10-26T14:51+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -581,6 +581,26 @@
    "source": "live",
    "picks": [
     {
+     "player_id": "00-0037258",
+     "name": "Dameon Pierce",
+     "team": "PHI",
+     "opp": "DAL",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 1.0,
+     "est": 81.3,
+     "last": [
+      5,
+      1
+     ],
+     "depth": "RB2",
+     "game": "DAL-PHI",
+     "result": "void",
+     "track": 0.859,
+     "trackN": 49
+    },
+    {
      "player_id": "00-0040198",
      "name": "Ollie Gordon II",
      "team": "MIA",
@@ -597,10 +617,12 @@
      "depth": "RB1",
      "game": "MIA-NYJ",
      "track": 0.773,
-     "trackN": 11
+     "trackN": 11,
+     "actual": 103,
+     "result": "hit"
     }
    ],
-   "updated_at": "2026-10-26T07:01-04:00",
+   "updated_at": "2026-10-26T10:51-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
@@ -610,10 +632,10 @@
     "kickoff": "2026-10-26T20:15:00-04:00",
     "label": "DAL @ PHI",
     "closest": {
-     "name": "Makai Lemon",
+     "name": "Dameon Pierce",
      "team": "PHI",
      "label": "25+ scrimmage yards",
-     "chance": 0.6627
+     "chance": 1.0
     }
    },
    "tiers": {
@@ -636,7 +658,9 @@
        2
       ],
       "track": 0.457,
-      "trackN": 90
+      "trackN": 90,
+      "actual": 104,
+      "result": "hit"
      },
      {
       "player_id": "00-0041438",
@@ -656,7 +680,9 @@
        2
       ],
       "track": 0.453,
-      "trackN": 90
+      "trackN": 90,
+      "actual": 69,
+      "result": "hit"
      },
      {
       "player_id": "00-0039794",
@@ -676,7 +702,9 @@
        2
       ],
       "track": 0.45,
-      "trackN": 90
+      "trackN": 90,
+      "actual": 134,
+      "result": "hit"
      },
      {
       "player_id": "00-0039361",
@@ -696,7 +724,9 @@
        2
       ],
       "track": 0.405,
-      "trackN": 60
+      "trackN": 60,
+      "actual": 2,
+      "result": "hit"
      },
      {
       "player_id": "00-0040122",
@@ -716,7 +746,9 @@
        2
       ],
       "track": 0.404,
-      "trackN": 60
+      "trackN": 60,
+      "actual": 1,
+      "result": "hit"
      }
     ],
     "long": [
@@ -738,7 +770,9 @@
        0
       ],
       "track": 0.298,
-      "trackN": 137
+      "trackN": 137,
+      "actual": 26,
+      "result": "miss"
      },
      {
       "player_id": "00-0040583",
@@ -758,7 +792,9 @@
        0
       ],
       "track": 0.291,
-      "trackN": 137
+      "trackN": 137,
+      "actual": 81,
+      "result": "miss"
      },
      {
       "player_id": "00-0038997",
@@ -778,7 +814,9 @@
        0
       ],
       "track": 0.199,
-      "trackN": 63
+      "trackN": 63,
+      "actual": 0,
+      "result": "miss"
      },
      {
       "player_id": "00-0033307",
@@ -798,7 +836,9 @@
        0
       ],
       "track": 0.181,
-      "trackN": 63
+      "trackN": 63,
+      "actual": 0,
+      "result": "miss"
      },
      {
       "player_id": "00-0039065",
@@ -818,7 +858,9 @@
        0
       ],
       "track": 0.125,
-      "trackN": 39
+      "trackN": 39,
+      "actual": 0,
+      "result": "miss"
      }
     ]
    }
