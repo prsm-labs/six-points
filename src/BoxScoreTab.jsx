@@ -616,6 +616,8 @@ export default function BoxScoreTab() {
     )
   }
   if (!schedule) return <p className="empty-state">Loading...</p>
+  // 2026-10-26 (user): on the strip's own week the header strip (▾ Expand for a full grid) picks the game -- no second set of cards
+  const stripWeek = selectedWeek === (viewWeek() ?? schedule.latest_week)
 
   return (
     <div>
@@ -636,14 +638,16 @@ export default function BoxScoreTab() {
         </label>
       </div>
       <MatchupFilterNote message={selectedMatchup && `${selectedMatchup.away} @ ${selectedMatchup.home} auto-selected below (global matchup selection)`} />
-      <p className="meta-line">
+      {stripWeek ? (
+        <p className="meta-line">{filteredGames.length} of {weekGames.length} games &middot; pick a game in the strip up top (▾ Expand to see them all, or swipe / ← →)</p>
+      ) : <p className="meta-line">
         {filteredGames.length} of {weekGames.length} games &middot; click a game for its real box
         score (1st downs, total yards, passing/rushing splits, turnovers, time of possession), a
         full player/position breakdown for both teams, and the real play-by-play, all via ESPN's
         summary API
-      </p>
+      </p>}
       {/* 2026-10-22 (user: CourtIQ's Live is the standard): compact score cards; the picked game opens right below */}
-      <div className="score-grid">
+      {!stripWeek && <div className="score-grid">
         {filteredGames.map((g) => {
           const d = details[g.game_id]
           const st = d?.status?.state
@@ -658,7 +662,7 @@ export default function BoxScoreTab() {
             </button>
           )
         })}
-      </div>
+      </div>}
       {(() => {
         const g = filteredGames.find((x) => x.game_id === selectedGameId)
         if (!g) return null

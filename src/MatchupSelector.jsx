@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { gamesFromList, selectedGames, useMatchup } from './MatchupContext.jsx'
 import './MultiPick.css'
-import GameStepper from './GameStepper.jsx'
+import GameStepper, { StripToggle, useStripExpanded } from './GameStepper.jsx'
 
 // Always-visible horizontally-scrollable row of real matchup CARDS (redesigned from an earlier
 // small-pill version per direct feedback + two real reference screenshots -- a Going Yard-style
@@ -45,6 +45,7 @@ export default function MatchupSelector() {
   const [liveByGame, setLiveByGame] = useState({})
   const { selectedMatchup, setSelectedMatchup } = useMatchup()
   const [multi, setMulti] = useState(false) // 2026-10-25 Multi-select chip (touch: taps add / remove games)
+  const expanded = useStripExpanded() // 2026-10-26 ▾ Expand / ▴ Collapse (GameStepper.jsx)
   const picked = selectedGames(selectedMatchup)
 
   useEffect(() => {
@@ -153,7 +154,8 @@ export default function MatchupSelector() {
   const stepAt = picked.length === 1 ? ordered.findIndex((g) => g.home_team === picked[0].home && g.away_team === picked[0].away) : -1
   return (
     <div className="matchup-selector">
-      <div className="matchup-selector-row">
+      <div className={`matchup-selector-row ${expanded ? 'strip-expanded' : ''}`}>
+        <StripToggle className="matchup-card matchup-card-all" />
         <button className={selectedMatchup ? 'matchup-card matchup-card-all' : 'matchup-card matchup-card-all active'} onClick={() => setSelectedMatchup(null)}>
           <span className="matchup-card-abbr">All games</span>
           <div className="matchup-card-status">{games.length} this week</div>
