@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T15:51+00:00",
+ "generated_at": "2026-10-26T11:01+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -600,32 +600,20 @@
      "trackN": 11
     }
    ],
-   "updated_at": "2026-10-25T11:51-04:00",
+   "updated_at": "2026-10-26T07:01-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
-     "ATL",
-     "BAL",
-     "CAR",
-     "CIN",
-     "CLE",
-     "HOU",
-     "IND",
-     "MIA",
-     "MIN",
-     "NYG",
-     "NYJ",
-     "SF",
-     "TB",
-     "TEN"
+     "DAL",
+     "PHI"
     ],
-    "kickoff": "2026-10-25T13:00:00-04:00",
-    "label": "SF @ ATL",
+    "kickoff": "2026-10-26T20:15:00-04:00",
+    "label": "DAL @ PHI",
     "closest": {
-     "name": "Ollie Gordon II",
-     "team": "MIA",
+     "name": "Makai Lemon",
+     "team": "PHI",
      "label": "25+ scrimmage yards",
-     "chance": 0.8341
+     "chance": 0.6627
     }
    },
    "tiers": {
