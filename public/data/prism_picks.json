@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T14:51+00:00",
+ "generated_at": "2026-10-26T16:01+00:00",
  "season": 2026,
  "week": 7,
  "rule": {
@@ -622,7 +622,7 @@
      "result": "hit"
     }
    ],
-   "updated_at": "2026-10-26T10:51-04:00",
+   "updated_at": "2026-10-26T12:01-04:00",
    "paused": "Rebuilding on real receiving / rushing yard lines — back once they're tested.",
    "nextGame": {
     "teams": [
