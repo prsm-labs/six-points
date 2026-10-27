@@ -1,0 +1,386 @@
+{
+ "generated_at": "2026-10-27T21:59+00:00",
+ "season": 2026,
+ "week": 8,
+ "rule": {
+  "z": 2.0,
+  "window": 3,
+  "min_games": 3,
+  "min_avg": 25
+ },
+ "backtest": {
+  "n": 1063,
+  "hits": 742,
+  "weeks": 45,
+  "bands": [
+   [
+    2.0,
+    3.0,
+    699,
+    459
+   ],
+   [
+    3.0,
+    99,
+    364,
+    283
+   ]
+  ],
+  "seasons": {
+   "2023": [
+    381,
+    267
+   ],
+   "2024": [
+    312,
+    222
+   ],
+   "2025": [
+    370,
+    253
+   ]
+  },
+  "positions": {
+   "RB": [
+    545,
+    395
+   ],
+   "TE": [
+    99,
+    65
+   ],
+   "WR": [
+    419,
+    282
+   ]
+  },
+  "beatEst": 0.4516,
+  "baseline": 0.5083,
+  "naive": "last 3 <= 75% of his season, no model -> 69% above"
+ },
+ "live": {
+  "n": 7,
+  "hits": 5,
+  "void": 0
+ },
+ "weeks": [
+  {
+   "week": 6,
+   "source": "snapshot",
+   "picks": [
+    {
+     "player_id": "00-0040583",
+     "name": "Woody Marks",
+     "team": "HOU",
+     "opp": "JAX",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 42.7,
+     "est": 67.0,
+     "z": 2.97,
+     "games": [
+      40,
+      35,
+      21,
+      22,
+      85
+     ],
+     "last": [
+      21,
+      22,
+      85
+     ],
+     "why": [
+      "43 a game lately vs 41 on the season"
+     ],
+     "actual": 81,
+     "result": "hit",
+     "track": 0.658,
+     "trackN": 705
+    },
+    {
+     "player_id": "00-0041547",
+     "name": "KC Concepcion",
+     "team": "CLE",
+     "opp": "BAL",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 26.0,
+     "est": 39.5,
+     "z": 2.15,
+     "games": [
+      58,
+      22,
+      9,
+      64,
+      5
+     ],
+     "last": [
+      9,
+      64,
+      5
+     ],
+     "why": [
+      "26 a game lately vs 32 on the season"
+     ],
+     "actual": 39,
+     "result": "hit",
+     "track": 0.658,
+     "trackN": 705
+    },
+    {
+     "player_id": "00-0037256",
+     "name": "Rachaad White",
+     "team": "WAS",
+     "opp": "SF",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 48.0,
+     "est": 64.3,
+     "z": 2.03,
+     "games": [
+      27,
+      83,
+      41,
+      20
+     ],
+     "last": [
+      83,
+      41,
+      20
+     ],
+     "why": [
+      "48 a game lately vs 43 on the season"
+     ],
+     "actual": 57,
+     "result": "hit",
+     "track": 0.658,
+     "trackN": 705
+    },
+    {
+     "player_id": "00-0040663",
+     "name": "Harold Fannin Jr.",
+     "team": "CLE",
+     "opp": "BAL",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 27.3,
+     "est": 40.0,
+     "z": 2.0,
+     "games": [
+      21,
+      54,
+      51,
+      27,
+      4
+     ],
+     "last": [
+      51,
+      27,
+      4
+     ],
+     "why": [
+      "27 a game lately vs 31 on the season"
+     ],
+     "actual": 9,
+     "result": "miss",
+     "track": 0.658,
+     "trackN": 705
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "source": "snapshot",
+   "picks": [
+    {
+     "player_id": "00-0034351",
+     "name": "Dallas Goedert",
+     "team": "PHI",
+     "opp": "DAL",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 34.3,
+     "est": 57.5,
+     "z": 3.06,
+     "games": [
+      77,
+      4,
+      38,
+      61
+     ],
+     "last": [
+      4,
+      38,
+      61
+     ],
+     "why": [
+      "34 a game lately vs 45 on the season"
+     ],
+     "actual": 48,
+     "result": "hit",
+     "track": 0.772,
+     "trackN": 365
+    },
+    {
+     "player_id": "00-0040867",
+     "name": "Makai Lemon",
+     "team": "PHI",
+     "opp": "DAL",
+     "pos": "WR",
+     "depth": "WR3",
+     "line": 29.7,
+     "est": 48.7,
+     "z": 2.73,
+     "games": [
+      -5,
+      9,
+      29,
+      27,
+      43,
+      19
+     ],
+     "last": [
+      27,
+      43,
+      19
+     ],
+     "why": [
+      "30 a game lately vs 20 on the season"
+     ],
+     "actual": 67,
+     "result": "hit",
+     "track": 0.658,
+     "trackN": 705
+    },
+    {
+     "player_id": "00-0036040",
+     "name": "Juwan Johnson",
+     "team": "NO",
+     "opp": "PIT",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 25.0,
+     "est": 37.9,
+     "z": 2.1,
+     "games": [
+      54,
+      66,
+      53,
+      59,
+      16,
+      0
+     ],
+     "last": [
+      59,
+      16,
+      0
+     ],
+     "why": [
+      "25 a game lately vs 41 on the season"
+     ],
+     "actual": 7,
+     "result": "miss",
+     "track": 0.658,
+     "trackN": 705
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "source": "live",
+   "picks": [
+    {
+     "player_id": "00-0041037",
+     "name": "Denzel Boston",
+     "team": "CLE",
+     "opp": "PIT",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 29.3,
+     "est": 51.9,
+     "z": 3.13,
+     "games": [
+      59,
+      95,
+      41,
+      89,
+      46,
+      15,
+      27
+     ],
+     "last": [
+      46,
+      15,
+      27
+     ],
+     "why": [
+      "29 a game lately vs 53 on the season"
+     ],
+     "track": 0.772,
+     "trackN": 365
+    },
+    {
+     "player_id": "00-0037256",
+     "name": "Rachaad White",
+     "team": "WAS",
+     "opp": "PHI",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 39.3,
+     "est": 61.5,
+     "z": 2.83,
+     "games": [
+      27,
+      83,
+      41,
+      20,
+      57
+     ],
+     "last": [
+      41,
+      20,
+      57
+     ],
+     "why": [
+      "role up: +11 yds (teammates out / snaps)",
+      "39 a game lately vs 46 on the season"
+     ],
+     "track": 0.658,
+     "trackN": 705
+    },
+    {
+     "player_id": "00-0036358",
+     "name": "CeeDee Lamb",
+     "team": "DAL",
+     "opp": "ARI",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 51.0,
+     "est": 74.8,
+     "z": 2.75,
+     "games": [
+      44,
+      153,
+      112,
+      183,
+      9,
+      70,
+      74
+     ],
+     "last": [
+      9,
+      70,
+      74
+     ],
+     "why": [
+      "51 a game lately vs 92 on the season"
+     ],
+     "track": 0.658,
+     "trackN": 705
+    }
+   ],
+   "updated_at": "2026-10-27T17:59-04:00"
+  }
+ ]
+}

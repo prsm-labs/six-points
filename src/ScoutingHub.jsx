@@ -7,6 +7,7 @@ import LadderTab from './LadderTab.jsx'
 import RedZoneTab from './RedZoneTab.jsx'
 import RoleReportTab from './RoleReportTab.jsx'
 import FadeLab from './FadeLab.jsx'
+import BounceLab from './BounceLab.jsx'
 import RiskSliderTab from './RiskSliderTab.jsx'
 
 // "Scouting" top-level tab (Slap Shot's tabs/MatchupsHubTab.jsx, 2026-10-18 revamp): All Matchups (the default
@@ -22,6 +23,7 @@ const VIEWS = [
   { key: 'redzone', label: '🔴 Red Zone', Component: RedZoneTab },
   { key: 'role', label: '🧩 Role Report', Component: RoleReportTab },
   { key: 'fade', label: '🧊 Fade', Component: FadeLab },
+  { key: 'bounce', label: '📈 Bounce-back', Component: BounceLab },  // 2026-10-27: Fade's mirror
 ]
 
 export default function ScoutingHub() {

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useSlate } from './slate.js'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
@@ -32,7 +32,7 @@ const DEF_TAGS = {
 function ActualMark({ m, prop }) {
   const a = m.actual
   if (!a) return null
-  const ok = prop === 'yds100' ? (a.yds != null ? a.yds >= 100 : null) : a.tds == null ? null : prop === 'td2' ? a.tds >= 2 : a.tds >= 1
+  const ok = prop === 'bounce' ? (a.yds != null ? a.yds > m._bline : null) : prop === 'yds100' ? (a.yds != null ? a.yds >= 100 : null) : a.tds == null ? null : prop === 'td2' ? a.tds >= 2 : a.tds >= 1
   return (
     <span className="actual-line">
       {a.tds ?? 0} TD · {a.yds ?? 0} yds{ok != null && <span className={`hit-mark ${ok ? 'hit' : 'miss'}`}>{ok ? ' ✅' : ' ✗'}</span>}
@@ -79,6 +79,9 @@ function QuickReads() {
   const search = useMasterSearch()
   const [statusFilter, setStatusFilter] = useState('notOut')
   const notOut = useLiveOutFilter()
+  // 2026-10-27 📈 Bounce-backs (build_bounce.py): this week's top 5 by gap, players in the filtered pool only
+  const [bounce, setBounce] = useState(null)
+  useEffect(() => { fetch('/data/bounce.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).then(setBounce).catch(() => setBounce(null)) }, [slate?.week])
 
   const pool = useMemo(() => {
     if (!slate?.matchups) return []
@@ -95,6 +98,9 @@ function QuickReads() {
   const td2C = top('p_td2')
   const ydsC = top('p_100')
   const hot = top('p_td', 5, (m) => m.hotHand)
+  const poolById = new Map(pool.map((m) => [m.player_id, m]))
+  const bounceTop = (bounce?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, 5)
+    .map((f) => ({ ...poolById.get(f.player_id), _bline: f.line, _best: f.est, _btrack: f.track }))
   const priced = pool.filter((m) => m.edge != null)
   const bestValue = [...priced].filter((m) => m.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5)
   const overvalued = [...priced].filter((m) => m.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5)
@@ -139,6 +145,8 @@ function QuickReads() {
         <ListCard title="🏈 TD Candidates" sub="Top 5 by chance to score a TD" items={tdC} renderRow={(m) => fmtPct(m.p_td, 1)} />
         <ListCard title="🏈🏈 2+ TD Candidates" sub="Top 5 by chance of 2+ TDs" items={td2C} prop="td2" renderRow={(m) => fmtPct(m.p_td2, 1)} />
         <ListCard title="💨 100+ Yard Candidates" sub="Top 5 by chance of 100+ scrimmage yards · defense tag = yards allowed to his position" items={ydsC} prop="yds100" defTag="yds" renderRow={(m) => fmtPct(m.p_100, 1)} />
+        <ListCard title="📈 Bounce-backs" sub={`Est. Yards well above his last 3 games: ${bounce?.backtest ? Math.round((bounce.backtest.hits / bounce.backtest.n) * 100) : 70}% of past bounce-backs finished above that average (back to his level, not past it)`} items={bounceTop} prop="bounce" defTag="yds"
+          renderRow={(m) => <span className="edge-stack"><b>{fmtPct(m._btrack, 0)}</b><span className="meta-line small">over {m._bline.toFixed(0)} yds · est {m._best.toFixed(0)}</span></span>} />
         <ListCard title="🔥 Hot Hands" sub="Scored in the last 3 games, outside the week's top 25% — the group that beat the model" items={hot} renderRow={(m) => fmtPct(m.p_td, 1)} />
         {priced.length > 0 && (
           <>

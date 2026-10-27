@@ -64,7 +64,7 @@ window.fetch = async (input, init) => {
   if (week != null && url.startsWith('/data/')) {
     const path = url.split('?')[0]
     if (path === '/data/all_matchups_latest.json') return respond(await pastSlate(week))
-    if (path === '/data/prism_picks.json' || path === '/data/fades.json') {
+    if (path === '/data/prism_picks.json' || path === '/data/fades.json' || path === '/data/bounce.json') {
       const d = await realFetch(url, init).then((r) => (r.ok ? r.json() : null)).catch(() => null)
       if (d) return respond({ ...d, week, weeks: (d.weeks || []).filter((x) => x.week <= week) })
     }
