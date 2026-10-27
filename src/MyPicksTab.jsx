@@ -8,6 +8,7 @@ import { useSlate } from './slate.js'
 import GamblyButton from './GamblyButton.jsx'
 import { betLine, betText, PICK_PROP } from './gambly.js'
 import { BestPriceLink, StatePicker } from './BetLink.jsx'
+import PicksLive from './PicksLive.jsx'
 
 // My Picks (Slap Shot's tabs/MyPicksTab.jsx layout, 2026-10-18 revamp): every player picked with a ＋ button
 // (picks.js, saved in this browser), grouped by category, with this week's matchup + book price from the live slate,
@@ -30,6 +31,8 @@ export default function MyPicksTab() {
   const slate = useSlate()
   const [graded, setGraded] = useState({})
   const [confirmClear, setConfirmClear] = useState(false)
+  // 2026-10-26 (user): 📡 Live = a box score of my picks vs our pre-game + live projections; By category = the old list
+  const [view, setView] = useState('live')
 
   useEffect(() => {
     fetch('/data/grade_record.csv')
@@ -74,6 +77,14 @@ export default function MyPicksTab() {
         <h2>⭐ My Picks</h2>
         <p className="meta-line">Players you've tagged with the ＋ button — saved in this browser, with this week's matchup and book price</p>
       </div>
+
+      {list.length > 0 && (
+        <div className="sub-tabs">
+          {[['live', '📡 Live'], ['cat', '🗂 By category']].map(([k, l]) => <button key={k} className={view === k ? 'active' : ''} onClick={() => setView(k)}>{l}</button>)}
+        </div>
+      )}
+      {view === 'live' && list.length > 0 && slate && <PicksLive slate={slate} picks={list} />}
+      {(view === 'cat' || !list.length) && <>
 
       {list.length > 0 && (
         <div className="sub-tabs">
@@ -155,6 +166,7 @@ export default function MyPicksTab() {
           "scored a TD" here (the play-by-play order isn't in the ledger). {PICK_TYPE.fav.emoji} Favorites show the box line without a call.
         </p>
       )}
+      </>}
     </div>
   )
 }
