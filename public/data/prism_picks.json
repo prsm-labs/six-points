@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-27T11:01+00:00",
+ "generated_at": "2026-10-27T16:01+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -850,25 +850,6 @@
    "source": "live",
    "picks": [
     {
-     "player_id": "00-0037258",
-     "name": "Dameon Pierce",
-     "team": "PHI",
-     "opp": "WAS",
-     "pos": "RB",
-     "line": 25,
-     "label": "25+ scrimmage yards",
-     "chance": 0.9361,
-     "est": 72.1,
-     "last": [
-      6,
-      2
-     ],
-     "depth": "RB2",
-     "game": "PHI-WAS",
-     "track": 0.834,
-     "trackN": 49
-    },
-    {
      "player_id": "00-0040198",
      "name": "Ollie Gordon II",
      "team": "MIA",
@@ -985,14 +966,14 @@
       "trackN": 62
      },
      {
-      "player_id": "00-0039794",
-      "name": "Braelon Allen",
-      "team": "NYJ",
-      "opp": "LV",
-      "pos": "RB",
-      "est": 90.1,
-      "depth": "RB2",
-      "game": "LV-NYJ",
+      "player_id": "00-0037247",
+      "name": "George Pickens",
+      "team": "DAL",
+      "opp": "ARI",
+      "pos": "WR",
+      "est": 66.5,
+      "depth": "WR2",
+      "game": "ARI-DAL",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
@@ -1012,7 +993,7 @@
       "team": "CHI",
       "opp": "SEA",
       "pos": "WR",
-      "est": 53.8,
+      "est": 53.7,
       "depth": "WR1",
       "game": "CHI-SEA",
       "stat": "TD",
@@ -1092,7 +1073,7 @@
       "team": "ARI",
       "opp": "DAL",
       "pos": "TE",
-      "est": 67.5,
+      "est": 66.5,
       "depth": "TE1",
       "game": "ARI-DAL",
       "stat": "TD2",
@@ -1108,7 +1089,7 @@
      }
     ]
    },
-   "updated_at": "2026-10-27T07:01-04:00"
+   "updated_at": "2026-10-27T12:01-04:00"
   }
  ]
 }

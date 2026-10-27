@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-27T11:01+00:00",
+ "generated_at": "2026-10-27T16:01+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -1242,8 +1242,8 @@
      "pos": "RB",
      "depth": "RB1",
      "line": 136.2,
-     "est": 107.0,
-     "z": 2.82,
+     "est": 107.3,
+     "z": 2.79,
      "games": [
       191,
       178,
@@ -1416,31 +1416,6 @@
      "trackN": 600
     },
     {
-     "player_id": "00-0038542",
-     "name": "Bijan Robinson",
-     "team": "ATL",
-     "opp": "TB",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 127.6,
-     "est": 102.8,
-     "z": 2.44,
-     "games": [
-      173,
-      81,
-      213,
-      147,
-      118,
-      53,
-      108
-     ],
-     "why": [
-      "one big game (213) lifts his average -- 113 a game in the others"
-     ],
-     "track": 0.73,
-     "trackN": 600
-    },
-    {
      "player_id": "00-0040124",
      "name": "Tetairoa McMillan",
      "team": "CAR",
@@ -1536,7 +1511,7 @@
      "trackN": 600
     }
    ],
-   "updated_at": "2026-10-27T07:01-04:00"
+   "updated_at": "2026-10-27T12:01-04:00"
   }
  ]
 }
