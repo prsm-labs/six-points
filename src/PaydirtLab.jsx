@@ -11,6 +11,9 @@ import { DepthTag, RoleChip, RzMatchupCell, pct1, useGradeModel } from './matchu
 import { PAYDIRT_MIN_RZ, PAYDIRT_SIGNAL_N } from './useLabSims.js'
 import PickButton from './PickButton.jsx'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
+import { useSlate } from './slate.js'
+import { useRecentById } from './lineBoard.js'
+import { HitStrip } from './RiskBoard.jsx'
 
 export default function PaydirtLab() {
   const { rows, error, status } = usePaydirtSims()
@@ -52,6 +55,8 @@ function PaydirtTable({ rows }) {
 
   const graded = rows.some((p) => p.p_td != null)
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, graded ? 'p_td' : 'sim_td_pct', 'desc')
+  // 2026-10-27 L7 strip (user): his last 7 games, green = scored a TD (lines/<season>-wk<N>.json; last season fills early weeks)
+  const recentById = useRecentById(useSlate())
   const thProps = { sortKey, sortDir, onSort: toggleSort }
 
   return (
@@ -104,6 +109,7 @@ function PaydirtTable({ rows }) {
               <SortTh label="Team" sortKeyName="team" className="sticky-col" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
               <SortTh label="Player" sortKeyName="player_name" {...thProps} />
+              <th title="His last 7 games: green = scored a touchdown, oldest to newest (last season's games fill in early on)">L7 · TD</th>
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
               <SortTh label="Touches/G" sortKeyName="touches_per_game" {...thProps} />
               <SortTh label="RZ Touches/G" sortKeyName="redzone_touches_per_game" {...thProps} />
@@ -133,6 +139,7 @@ function PaydirtTable({ rows }) {
                     {p.player_name} <PickButton player={p} compact prop="td" /> <RoleChip m={p} />
                   </div>
                 </td>
+                <td><HitStrip recent={recentById.get(p.player_id)} stat="TD" line={1} /></td>
                 <td>{p.position}<DepthTag m={p} /></td>
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.redzone_touches_per_game).toFixed(1)}</td>

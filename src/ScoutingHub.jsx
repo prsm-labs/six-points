@@ -7,12 +7,14 @@ import LadderTab from './LadderTab.jsx'
 import RedZoneTab from './RedZoneTab.jsx'
 import RoleReportTab from './RoleReportTab.jsx'
 import FadeLab from './FadeLab.jsx'
+import RiskSliderTab from './RiskSliderTab.jsx'
 
 // "Scouting" top-level tab (Slap Shot's tabs/MatchupsHubTab.jsx, 2026-10-18 revamp): All Matchups (the default
 // view) plus every lab, switched by a button row in the page instead of one top-level tab each.
 // Slap Shot -> Six Points: Lamp Lab -> Paydirt Lab (TDs), Apple Lab -> Yardage Lab, Crease Lab -> Red Zone.
 const VIEWS = [
   { key: 'board', label: '🏈 All Matchups', Component: AllMatchupsTab },
+  { key: 'risk', label: '🎚️ Risk Slider', Component: RiskSliderTab },  // 2026-10-27: safe -> long shot over every RB / WR / TE ladder
   { key: 'paydirt', label: '💰 Paydirt Lab', Component: PaydirtLab },
   { key: 'yardage', label: '💨 Yardage Lab', Component: YardageLab },
   { key: 'pairs', label: '🤝 Pairs', Component: PairsTab },

@@ -13,6 +13,8 @@ import { useSlate } from './slate.js'
 import { ydsDefRanks } from './slateCore.js'
 import { rankWhere, YDS_NOTE } from './gradeUi.jsx'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
+import { useRecentById } from './lineBoard.js'
+import { HitStrip } from './RiskBoard.jsx'
 
 export default function YardageLab() {
   const { rows, error, status } = useYardageSims()
@@ -61,6 +63,8 @@ function YardageTable({ rows }) {
   }, [rows, ydsRanks, position, team, search, selectedMatchup])
 
   const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, modeled ? 'line_pct' : 'sim_yard_pct', 'desc')
+  // 2026-10-27 L7 strip (user): his last 7 games against the position's threshold (scrimmage yards; last season fills early weeks)
+  const recentById = useRecentById(slate)
   const yv = model?.validation?.yards
   const ylab = model?.validation?.yardage_lab
   const terc = model?.validation?.matchup?.yards_vs_usage_by_tercile
@@ -125,6 +129,7 @@ function YardageTable({ rows }) {
               <SortTh label="Team" sortKeyName="team" className="sticky-col" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
               <SortTh label="Player" sortKeyName="player_name" {...thProps} />
+              <th title="His last 7 games against the threshold (RB 60+, WR / TE 75+ scrimmage yards): green = reached it, oldest to newest">L7 · threshold</th>
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
               <SortTh label="Touches/G" sortKeyName="touches_per_game" {...thProps} />
               <SortTh label="Yds/Touch" sortKeyName="ypt" {...thProps} />
@@ -165,6 +170,7 @@ function YardageTable({ rows }) {
                     {p.player_name} <PickButton player={p} compact prop="yds100" /> <RoleChip m={p} />
                   </div>
                 </td>
+                <td><HitStrip recent={recentById.get(p.player_id)} stat="YDS" line={thresholdFor(p.position)} /></td>
                 <td>{p.position}<DepthTag m={p} /></td>
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.ypt).toFixed(1)}</td>
