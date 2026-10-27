@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "latest_week": 7,
-  "generated_at": "2026-10-26T14:49:17.014678+00:00",
+  "latest_week": 8,
+  "generated_at": "2026-10-27T10:01:14.011562+00:00",
   "games": [
     {
       "game_id": "2026_01_NE_SEA",
@@ -1177,8 +1177,8 @@
       "gameday": "2026-10-26",
       "gametime": "20:15",
       "roof": "outdoors",
-      "home_score": null,
-      "away_score": null
+      "home_score": 21,
+      "away_score": 38
     },
     {
       "game_id": "2026_08_CAR_GB",

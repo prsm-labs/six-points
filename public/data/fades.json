@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-27T05:38+00:00",
+ "generated_at": "2026-10-27T11:01+00:00",
  "season": 2026,
- "week": 7,
+ "week": 8,
  "rule": {
   "z": 2.0,
   "min_games": 3,
@@ -57,9 +57,9 @@
   "naive": "last 3 games 125%+ of season avg -> 56% under it"
  },
  "live": {
-  "n": 25,
-  "hits": 21,
-  "void": 1
+  "n": 40,
+  "hits": 32,
+  "void": 2
  },
  "weeks": [
   {
@@ -1094,6 +1094,449 @@
     }
    ],
    "updated_at": "2026-10-27T01:38-04:00"
+  },
+  {
+   "week": 8,
+   "source": "live",
+   "fades": [
+    {
+     "player_id": "00-0041511",
+     "name": "Omar Cooper Jr.",
+     "team": "NYJ",
+     "opp": "LV",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 82.7,
+     "est": 50.7,
+     "z": 4.49,
+     "games": [
+      30,
+      103,
+      115
+     ],
+     "why": [
+      "his usage (4.4 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.82,
+     "trackN": 507
+    },
+    {
+     "player_id": "00-0038840",
+     "name": "Brycen Tremayne",
+     "team": "CAR",
+     "opp": "GB",
+     "pos": "WR",
+     "depth": "WR3",
+     "line": 38.3,
+     "est": 21.0,
+     "z": 3.78,
+     "games": [
+      83,
+      32,
+      0
+     ],
+     "why": [
+      "one big game (83) lifts his average -- 16 a game in the others"
+     ],
+     "track": 0.82,
+     "trackN": 507
+    },
+    {
+     "player_id": "00-0040887",
+     "name": "Josh Cuevas",
+     "team": "BAL",
+     "opp": "BUF",
+     "pos": "TE",
+     "depth": "TE3",
+     "line": 29.8,
+     "est": 15.4,
+     "z": 3.66,
+     "games": [
+      14,
+      26,
+      44,
+      35
+     ],
+     "why": [
+      "his usage (3.2 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.82,
+     "trackN": 507
+    },
+    {
+     "player_id": "00-0036410",
+     "name": "Tee Higgins",
+     "team": "CIN",
+     "opp": "TEN",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 95.2,
+     "est": 66.9,
+     "z": 3.46,
+     "games": [
+      59,
+      95,
+      90,
+      157,
+      22,
+      148
+     ],
+     "why": [
+      "one big game (157) lifts his average -- 83 a game in the others"
+     ],
+     "track": 0.82,
+     "trackN": 507
+    },
+    {
+     "player_id": "00-0039064",
+     "name": "Zay Flowers",
+     "team": "BAL",
+     "opp": "BUF",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 107.0,
+     "est": 79.3,
+     "z": 3.11,
+     "games": [
+      150,
+      104,
+      118,
+      66,
+      67,
+      137
+     ],
+     "why": [
+      "his usage (8.7 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.82,
+     "trackN": 507
+    },
+    {
+     "player_id": "00-0034829",
+     "name": "Mike Gesicki",
+     "team": "CIN",
+     "opp": "TEN",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 33.0,
+     "est": 19.9,
+     "z": 2.94,
+     "games": [
+      78,
+      37,
+      40,
+      4,
+      6
+     ],
+     "why": [
+      "one big game (78) lifts his average -- 22 a game in the others"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0038134",
+     "name": "Kenneth Walker III",
+     "team": "KC",
+     "opp": "DEN",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 136.2,
+     "est": 107.0,
+     "z": 2.82,
+     "games": [
+      191,
+      178,
+      73,
+      179,
+      139,
+      57
+     ],
+     "why": [
+      "his usage (23.0 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0039798",
+     "name": "Isaiah Davis",
+     "team": "NYJ",
+     "opp": "LV",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 32.3,
+     "est": 20.1,
+     "z": 2.73,
+     "games": [
+      17,
+      26,
+      54
+     ],
+     "why": [
+      "one big game (54) lifts his average -- 22 a game in the others"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0041523",
+     "name": "Caleb Douglas",
+     "team": "MIA",
+     "opp": "NE",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 61.0,
+     "est": 43.2,
+     "z": 2.71,
+     "games": [
+      94,
+      19,
+      70
+     ],
+     "why": [
+      "his usage (4.4 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0038951",
+     "name": "Sean Tucker",
+     "team": "TB",
+     "opp": "ATL",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 26.7,
+     "est": 15.9,
+     "z": 2.7,
+     "games": [
+      10,
+      18,
+      52
+     ],
+     "why": [
+      "one big game (52) lifts his average -- 14 a game in the others"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0035537",
+     "name": "Ty Johnson",
+     "team": "BUF",
+     "opp": "BAL",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 40.2,
+     "est": 26.4,
+     "z": 2.7,
+     "games": [
+      50,
+      12,
+      72,
+      27
+     ],
+     "why": [
+      "one big game (72) lifts his average -- 30 a game in the others"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0039338",
+     "name": "Brock Bowers",
+     "team": "LV",
+     "opp": "NYJ",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 91.0,
+     "est": 69.0,
+     "z": 2.65,
+     "games": [
+      116,
+      86,
+      110,
+      70,
+      73
+     ],
+     "why": [
+      "his usage (9.3 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0031610",
+     "name": "Darren Waller",
+     "team": "CAR",
+     "opp": "GB",
+     "pos": "TE",
+     "depth": "TE2",
+     "line": 33.0,
+     "est": 20.9,
+     "z": 2.65,
+     "games": [
+      28,
+      33,
+      51,
+      36,
+      0,
+      50
+     ],
+     "why": [
+      "his usage (4.2 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0038543",
+     "name": "Jaxon Smith-Njigba",
+     "team": "SEA",
+     "opp": "CHI",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 128.0,
+     "est": 101.9,
+     "z": 2.59,
+     "games": [
+      122,
+      155,
+      128,
+      76,
+      118,
+      134,
+      163
+     ],
+     "why": [
+      "his usage (11.1 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0038542",
+     "name": "Bijan Robinson",
+     "team": "ATL",
+     "opp": "TB",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 127.6,
+     "est": 102.8,
+     "z": 2.44,
+     "games": [
+      173,
+      81,
+      213,
+      147,
+      118,
+      53,
+      108
+     ],
+     "why": [
+      "one big game (213) lifts his average -- 113 a game in the others"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0040124",
+     "name": "Tetairoa McMillan",
+     "team": "CAR",
+     "opp": "GB",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 85.2,
+     "est": 65.7,
+     "z": 2.4,
+     "games": [
+      75,
+      101,
+      17,
+      192,
+      86,
+      40
+     ],
+     "why": [
+      "one big game (192) lifts his average -- 64 a game in the others"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0036988",
+     "name": "Josh Palmer",
+     "team": "BUF",
+     "opp": "BAL",
+     "pos": "WR",
+     "depth": "WR4",
+     "line": 29.2,
+     "est": 19.0,
+     "z": 2.35,
+     "games": [
+      34,
+      43,
+      3,
+      37
+     ],
+     "why": [
+      "his usage (3.1 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0039065",
+     "name": "Sam LaPorta",
+     "team": "DET",
+     "opp": "MIN",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 55.7,
+     "est": 42.0,
+     "z": 2.11,
+     "games": [
+      48,
+      52,
+      44,
+      84,
+      88,
+      18
+     ],
+     "why": [
+      "his usage (6.0 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0036358",
+     "name": "CeeDee Lamb",
+     "team": "DAL",
+     "opp": "ARI",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 92.1,
+     "est": 74.8,
+     "z": 2.01,
+     "games": [
+      44,
+      153,
+      112,
+      183,
+      9,
+      70,
+      74
+     ],
+     "why": [
+      "one big game (183) lifts his average -- 77 a game in the others"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    }
+   ],
+   "updated_at": "2026-10-27T07:01-04:00"
   }
  ]
 }

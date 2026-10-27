@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-27T05:38+00:00",
+ "generated_at": "2026-10-27T11:01+00:00",
  "season": 2026,
- "week": 7,
+ "week": 8,
  "rule": {
   "floor": 0.7,
   "last_max": 0.75,
@@ -148,8 +148,8 @@
     ]
    },
    "live": {
-    "n": 5,
-    "hits": 4,
+    "n": 10,
+    "hits": 9,
     "void": 0
    }
   },
@@ -224,7 +224,7 @@
     ]
    },
    "live": {
-    "n": 5,
+    "n": 10,
     "hits": 1,
     "void": 0
    }
@@ -232,10 +232,10 @@
  },
  "paused": null,
  "live": {
-  "n": 5,
-  "hits": 5,
+  "n": 6,
+  "hits": 6,
   "void": 0,
-  "weeks": 1
+  "weeks": 2
  },
  "weeks": [
   {
@@ -844,6 +844,271 @@
      }
     ]
    }
+  },
+  {
+   "week": 8,
+   "source": "live",
+   "picks": [
+    {
+     "player_id": "00-0037258",
+     "name": "Dameon Pierce",
+     "team": "PHI",
+     "opp": "WAS",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.9361,
+     "est": 72.1,
+     "last": [
+      6,
+      2
+     ],
+     "depth": "RB2",
+     "game": "PHI-WAS",
+     "track": 0.834,
+     "trackN": 49
+    },
+    {
+     "player_id": "00-0040198",
+     "name": "Ollie Gordon II",
+     "team": "MIA",
+     "opp": "NE",
+     "pos": "RB",
+     "line": 35,
+     "label": "35+ scrimmage yards",
+     "chance": 0.7831,
+     "est": 73.9,
+     "last": [
+      8,
+      4
+     ],
+     "depth": "RB1",
+     "game": "MIA-NE",
+     "track": 0.703,
+     "trackN": 42
+    }
+   ],
+   "nextGame": {
+    "teams": [
+     "CAR",
+     "GB"
+    ],
+    "kickoff": "2026-10-29T20:15:00-04:00",
+    "label": "CAR @ GB",
+    "closest": {
+     "name": "Chuba Hubbard",
+     "team": "CAR",
+     "label": "80+ scrimmage yards",
+     "chance": 0.5111
+    }
+   },
+   "tiers": {
+    "mid": [
+     {
+      "player_id": "00-0036997",
+      "name": "Javonte Williams",
+      "team": "DAL",
+      "opp": "ARI",
+      "pos": "RB",
+      "est": 85.3,
+      "depth": "RB1",
+      "game": "ARI-DAL",
+      "stat": "YDS",
+      "line": 85,
+      "label": "85+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.461,
+      "trackN": 93
+     },
+     {
+      "player_id": "00-0037256",
+      "name": "Rachaad White",
+      "team": "WAS",
+      "opp": "PHI",
+      "pos": "RB",
+      "est": 61.5,
+      "depth": "RB1",
+      "game": "PHI-WAS",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.461,
+      "trackN": 93
+     },
+     {
+      "player_id": "00-0035261",
+      "name": "Tony Pollard",
+      "team": "TEN",
+      "opp": "CIN",
+      "pos": "RB",
+      "est": 78.8,
+      "depth": "RB1",
+      "game": "CIN-TEN",
+      "stat": "YDS",
+      "line": 80,
+      "label": "80+ scrimmage yards",
+      "chance": 0.3972,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.428,
+      "trackN": 62
+     },
+     {
+      "player_id": "00-0037240",
+      "name": "Jameson Williams",
+      "team": "DET",
+      "opp": "MIN",
+      "pos": "WR",
+      "est": 56.4,
+      "depth": "WR2",
+      "game": "DET-MIN",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3775,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.42,
+      "trackN": 62
+     },
+     {
+      "player_id": "00-0039794",
+      "name": "Braelon Allen",
+      "team": "NYJ",
+      "opp": "LV",
+      "pos": "RB",
+      "est": 90.1,
+      "depth": "RB2",
+      "game": "LV-NYJ",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3772,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.419,
+      "trackN": 62
+     }
+    ],
+    "long": [
+     {
+      "player_id": "00-0039919",
+      "name": "Rome Odunze",
+      "team": "CHI",
+      "opp": "SEA",
+      "pos": "WR",
+      "est": 53.8,
+      "depth": "WR1",
+      "game": "CHI-SEA",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.2342,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.292,
+      "trackN": 139
+     },
+     {
+      "player_id": "00-0040719",
+      "name": "Bhayshul Tuten",
+      "team": "JAX",
+      "opp": "IND",
+      "pos": "RB",
+      "est": 78.7,
+      "depth": "RB1",
+      "game": "IND-JAX",
+      "stat": "YDS",
+      "line": 100,
+      "label": "100+ scrimmage yards",
+      "chance": 0.214,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.286,
+      "trackN": 139
+     },
+     {
+      "player_id": "00-0033921",
+      "name": "Chris Godwin Jr.",
+      "team": "TB",
+      "opp": "ATL",
+      "pos": "WR",
+      "est": 40.8,
+      "depth": "WR2",
+      "game": "ATL-TB",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.195,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.194,
+      "trackN": 65
+     },
+     {
+      "player_id": "00-0039880",
+      "name": "Malik Washington",
+      "team": "MIA",
+      "opp": "NE",
+      "pos": "WR",
+      "est": 50.3,
+      "depth": "WR1",
+      "game": "MIA-NE",
+      "stat": "YDS",
+      "line": 75,
+      "label": "75+ scrimmage yards",
+      "chance": 0.168,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.181,
+      "trackN": 65
+     },
+     {
+      "player_id": "00-0037744",
+      "name": "Trey McBride",
+      "team": "ARI",
+      "opp": "DAL",
+      "pos": "TE",
+      "est": 67.5,
+      "depth": "TE1",
+      "game": "ARI-DAL",
+      "stat": "TD2",
+      "line": 2,
+      "label": "2+ TDs",
+      "chance": 0.1032,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.124,
+      "trackN": 40
+     }
+    ]
+   },
+   "updated_at": "2026-10-27T07:01-04:00"
   }
  ]
 }
