@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-27T16:01+00:00",
+ "generated_at": "2026-10-28T11:01+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -1164,30 +1164,6 @@
      "trackN": 507
     },
     {
-     "player_id": "00-0036410",
-     "name": "Tee Higgins",
-     "team": "CIN",
-     "opp": "TEN",
-     "pos": "WR",
-     "depth": "WR2",
-     "line": 95.2,
-     "est": 66.9,
-     "z": 3.46,
-     "games": [
-      59,
-      95,
-      90,
-      157,
-      22,
-      148
-     ],
-     "why": [
-      "one big game (157) lifts his average -- 83 a game in the others"
-     ],
-     "track": 0.82,
-     "trackN": 507
-    },
-    {
      "player_id": "00-0039064",
      "name": "Zay Flowers",
      "team": "BAL",
@@ -1212,27 +1188,28 @@
      "trackN": 507
     },
     {
-     "player_id": "00-0034829",
-     "name": "Mike Gesicki",
+     "player_id": "00-0036410",
+     "name": "Tee Higgins",
      "team": "CIN",
      "opp": "TEN",
-     "pos": "TE",
-     "depth": "TE1",
-     "line": 33.0,
-     "est": 19.9,
-     "z": 2.94,
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 95.2,
+     "est": 69.4,
+     "z": 3.09,
      "games": [
-      78,
-      37,
-      40,
-      4,
-      6
+      59,
+      95,
+      90,
+      157,
+      22,
+      148
      ],
      "why": [
-      "one big game (78) lifts his average -- 22 a game in the others"
+      "one big game (157) lifts his average -- 83 a game in the others"
      ],
-     "track": 0.73,
-     "trackN": 600
+     "track": 0.82,
+     "trackN": 507
     },
     {
      "player_id": "00-0038134",
@@ -1254,6 +1231,29 @@
      ],
      "why": [
       "his usage (23.0 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
+     "player_id": "00-0034829",
+     "name": "Mike Gesicki",
+     "team": "CIN",
+     "opp": "TEN",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 33.0,
+     "est": 20.4,
+     "z": 2.79,
+     "games": [
+      78,
+      37,
+      40,
+      4,
+      6
+     ],
+     "why": [
+      "one big game (78) lifts his average -- 22 a game in the others"
      ],
      "track": 0.73,
      "trackN": 600
@@ -1511,7 +1511,7 @@
      "trackN": 600
     }
    ],
-   "updated_at": "2026-10-27T12:01-04:00"
+   "updated_at": "2026-10-28T07:01-04:00"
   }
  ]
 }
