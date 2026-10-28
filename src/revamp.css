@@ -160,7 +160,7 @@ table.data-table th { position: relative; }
 .col-resize:hover, .col-resize.active { background: color-mix(in srgb, var(--accent) 45%, transparent); }
 .col-gear { border: 0; background: transparent; cursor: pointer; padding: 0 4px 0 0; font-size: 0.75rem; }
 .col-chooser {
-  position: fixed; z-index: 3000; width: min(280px, calc(100vw - 16px)); max-height: 70vh; overflow: auto;
+  position: fixed; z-index: 3000; width: min(280px, calc(100vw - 16px)); max-height: calc(70vh / var(--z, 1)); overflow: auto;
   background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px; box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
   font-size: 0.8rem;
 }

@@ -9,6 +9,7 @@ import { betLine } from './gambly.js'
 // below the button, or above when there's no room. 2026-10-18: every pick button also carries Slap Shot's Gambly
 // button for the page's prop (`prop`: td | td2 | first | yds100; null hides it).
 const MENU_W = 200
+const pageZoom = () => parseFloat(getComputedStyle(document.documentElement).zoom) || 1 // 2026-10-28 big-screen zoom (CSS --z)
 
 export default function PickButton({ player, compact, prop = 'td' }) {
   const picks = usePicks()
@@ -44,10 +45,12 @@ export default function PickButton({ player, compact, prop = 'td' }) {
   function toggle(e) {
     e.stopPropagation()
     if (open) return setOpen(false)
-    const r = btnRef.current.getBoundingClientRect()
+    // measured in window pixels; the menu is placed in page pixels (they differ by the big-screen zoom)
+    const z = pageZoom(), b = btnRef.current.getBoundingClientRect()
+    const r = { left: b.left / z, top: b.top / z, bottom: b.bottom / z }
     const menuH = (PICK_TYPES.length + (current ? 2 : 1)) * 30 + 12
-    const left = Math.min(Math.max(8, r.left), window.innerWidth - MENU_W - 8)
-    const below = r.bottom + 4 + menuH <= window.innerHeight
+    const left = Math.min(Math.max(8, r.left), window.innerWidth / z - MENU_W - 8)
+    const below = r.bottom + 4 + menuH <= window.innerHeight / z
     setPos({ left, top: below ? r.bottom + 4 : Math.max(8, r.top - 4 - menuH) })
     setOpen(true)
   }

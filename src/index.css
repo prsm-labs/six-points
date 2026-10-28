@@ -29,3 +29,31 @@ body {
   background: var(--bg);
   color: var(--fg);
 }
+
+/* 2026-10-28 big screens (user: on a 1920 monitor at 100% scaling the apps only filled the middle -- had to zoom the
+   browser to 150%; users shouldn't need settings). Wide windows zoom the whole page so it fills the width: --z = window
+   width / 1340 (the 1280 page + gutters + scrollbar), in 5% steps from 1.10, capped at 2.0. Under 1474 px (phones,
+   tablets, laptops) nothing changes. Media queries read the real window width, so the zoom never feeds back. Anything
+   sized to the window height (vh / dvh) divides by --z, and code that places pop-ups from measured positions divides by
+   pageZoom() -- otherwise both come out --z times too big / too far. */
+:root { --z: 1; }
+@media (min-width: 1475px) { :root { --z: 1.10; } }
+@media (min-width: 1541px) { :root { --z: 1.15; } }
+@media (min-width: 1608px) { :root { --z: 1.20; } }
+@media (min-width: 1675px) { :root { --z: 1.25; } }
+@media (min-width: 1742px) { :root { --z: 1.30; } }
+@media (min-width: 1810px) { :root { --z: 1.35; } }
+@media (min-width: 1876px) { :root { --z: 1.40; } }
+@media (min-width: 1943px) { :root { --z: 1.45; } }
+@media (min-width: 2010px) { :root { --z: 1.50; } }
+@media (min-width: 2077px) { :root { --z: 1.55; } }
+@media (min-width: 2144px) { :root { --z: 1.60; } }
+@media (min-width: 2211px) { :root { --z: 1.65; } }
+@media (min-width: 2278px) { :root { --z: 1.70; } }
+@media (min-width: 2345px) { :root { --z: 1.75; } }
+@media (min-width: 2412px) { :root { --z: 1.80; } }
+@media (min-width: 2479px) { :root { --z: 1.85; } }
+@media (min-width: 2546px) { :root { --z: 1.90; } }
+@media (min-width: 2613px) { :root { --z: 1.95; } }
+@media (min-width: 2680px) { :root { --z: 2.00; } }
+html { zoom: var(--z); }

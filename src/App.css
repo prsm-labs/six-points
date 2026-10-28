@@ -422,7 +422,7 @@ th.sortable:hover {
   top: 0;
   right: 0;
   width: min(420px, 100vw);
-  height: 100vh;
+  height: calc(100vh / var(--z, 1));
   background: var(--bg);
   border-left: 1px solid var(--border);
   z-index: 901;
