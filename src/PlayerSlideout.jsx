@@ -19,6 +19,21 @@ import { HotHandTag } from './revampUi.jsx'
 import { useThisWeekLine } from './useThisWeekLine.js'
 import MatchupChip from './MatchupChip.jsx'
 import DefenseBody, { isDefensePos, useDefense } from './DefenseSlideout.jsx'
+import HitRateCard from './HitRateCard.jsx'
+import Fold from './Fold.jsx'
+import { useHitGames } from './hitGames.js'
+
+// 2026-10-28 hit-rate card: the props a book posts for his position; default line = his average rounded (yards to 5)
+const HR = {
+  PYDS: { k: 'PYDS', label: 'Pass yds', unit: 'pass yds', step: 10, min: 10 },
+  RYDS: { k: 'RYDS', label: 'Rush yds', unit: 'rush yds', step: 5, min: 5 },
+  RECYDS: { k: 'RECYDS', label: 'Rec yds', unit: 'rec yds', step: 5, min: 5 },
+  SCRIM: { k: 'SCRIM', label: 'Scrim yds', unit: 'scrim yds', step: 5, min: 5 },
+  REC: { k: 'REC', label: 'Catches', unit: 'catches', step: 1, min: 1 },
+  TD: { k: 'TD', label: 'TD', unit: 'TD', step: 1, min: 1, def: 1 },
+}
+const HR_BY_POS = { QB: ['PYDS', 'RYDS'], RB: ['RYDS', 'SCRIM', 'RECYDS', 'REC', 'TD'], WR: ['RECYDS', 'REC', 'TD'], TE: ['RECYDS', 'REC', 'TD'] }
+const HR_REST = [{ label: 'Short week', test: (r) => r <= 4 }, { label: 'Normal week', test: (r) => r >= 5 && r <= 8 }, { label: 'Off a bye', test: (r) => r >= 9 }]
 
 // 2026-10-20 live slideout: this week's line while his game is on (25 s refresh) and after it ends, next to the
 // model's pre-game numbers; the game also joins the Last 7 chart as an outlined bar.
@@ -198,6 +213,7 @@ export default function PlayerSlideout() {
   const [how, setHow] = useState('without')
   useEffect(() => { setSel([]) }, [player?.player_id])
   const onoffData = useOnOff(weekRow?.team || player?.team)
+  const hit = useHitGames(player?.player_id)
 
   useEffect(() => subscribePlayerSlide(setPlayer), [])
   const defEntry = defData?.players?.[player?.player_id] || null
@@ -272,10 +288,12 @@ export default function PlayerSlideout() {
             {weekRow && !weekRow.roleFlag && weekRow.teamGp === 0 && <div className="sub slideout-grade">📅 No games with {weekRow.team} yet{weekRow.lastTeam && weekRow.lastTeam !== weekRow.team ? ` (last season: ${weekRow.lastTeam})` : ''} — his usage leans on last season until he plays.</div>}
             {(h2h || venue) && (
               <div className="sub slideout-grade">
-                {h2h && <span title={H2H_NOTE}>🆚 H2H vs {weekRow.opponent}: <H2HBadge h={h2h} /> <span className="meta-line small">{h2h.text}</span></span>}
-                {h2h && venue && <> &middot; </>}
-                {venue && <span title={VENUE_NOTE}>{vLabel}: <H2HBadge h={venue} /> <span className="meta-line small">{venue.text}</span></span>}
-                <span className="meta-line small"> (context, not a prediction)</span>
+                {/* 2026-10-28 (user): the H2H / home-road sentences fold behind More; the grades stay on one line */}
+                <Fold summary={<>{h2h && <span title={H2H_NOTE}>🆚 H2H vs {weekRow.opponent}: <H2HBadge h={h2h} /></span>}{h2h && venue && <> &middot; </>}{venue && <span title={VENUE_NOTE}>{vLabel}: <H2HBadge h={venue} /></span>}</>}>
+                  {h2h && <div className="meta-line small">🆚 {h2h.text}</div>}
+                  {venue && <div className="meta-line small">{vLabel}: {venue.text}</div>}
+                  <div className="meta-line small">Context, not a prediction.</div>
+                </Fold>
               </div>
             )}
             {!isDef && (weekRow || player.player_id) && (
@@ -306,13 +324,16 @@ export default function PlayerSlideout() {
                 <div className="slideout-section">
                   <h3>Week {weekRow.week} vs {weekRow.opponent}</h3>
                   <div className="slideout-lines">
-                    <div>Model: TD {fmtPct(weekRow.p_td, 1)}{weekRow.p_td2 != null && <> · 2+ TDs {fmtPct(weekRow.p_td2, 1)}</>} · 100+ yds {fmtPct(weekRow.p_100, 1)}{weekRow.est_yards != null && <> · est. {Math.round(weekRow.est_yards)} yds</>}</div>
+                    <Fold summary={<>Model: TD {fmtPct(weekRow.p_td, 1)}{weekRow.p_td2 != null && <> · 2+ TDs {fmtPct(weekRow.p_td2, 1)}</>} · 100+ yds {fmtPct(weekRow.p_100, 1)}{weekRow.est_yards != null && <> · est. {Math.round(weekRow.est_yards)} yds</>}</>}>
+                    <div className="slideout-lines">
                     {matchupText(weekRow) && <div title={DVP_NOTE}>{matchupText(weekRow)} <span className="meta-line small">(the defense factor in the grade)</span></div>}
                     {ydsRankText(weekRow) && <div title={ydsRankTitle(weekRow)}>Yards: {weekRow.opponent} {ydsRankText(weekRow)} <span className="meta-line small">({weekRow.position === 'WR' ? 'context — not in Est. Yards for WRs' : 'part of Est. Yards and the 100+ chance'})</span></div>}
                     {whoScoresText(weekRow) && <div title={ROLE_NOTE}>{whoScoresText(weekRow)} <span className="meta-line small">(context — not in the grade)</span></div>}
                     {weekRow.td_l3 != null && <div>TDs in his last 3 games: {weekRow.td_l3} (last game {weekRow.td_last ?? 0}){weekRow.hotHand ? ' · 🔥 hot hand outside the top 25%' : ''}</div>}
                     <div>Anytime TD: <AllBookLinks book={weekRow.book} /> <StatePicker /></div>
                     {weekRow.edge != null && <div title={edgeText(weekRow)}>vs best price: <span className={edgeClass(weekRow.edge)}>{fmtEdge(weekRow.edge)} pts</span> · market check <b>{weekRow.market}%</b> <span className="meta-line small">(half ours, half the book — context, not in the grade)</span></div>}
+                    </div>
+                    </Fold>
                     <div className="slideout-gambly">Send to Gambly:
                       <GamblyButton compact={false} label="Anytime TD" text={betLine(weekRow, 'td')} />
                       <GamblyButton compact={false} label="2+ TDs" text={betLine(weekRow, 'td2')} />
@@ -320,6 +341,14 @@ export default function PlayerSlideout() {
                       {weekRow.position !== 'QB' && <GamblyButton compact={false} label="100+ yds" text={betLine(weekRow, 'yds100')} />}
                     </div>
                   </div>
+                </div>
+              )}
+              {HR_BY_POS[position] && (
+                <div className="slideout-section">
+                  <h3>Hit rates</h3>
+                  <HitRateCard games={hit.games} ready={hit.ready} stats={HR_BY_POS[position].map((k) => HR[k])} opp={weekRow?.opponent || player.opponent}
+                    rest={HR_REST} played={{ label: 'Snaps', unit: '% snaps', round: (m) => Math.round(m / 5) * 5 }}
+                    seasonLabels={['This season', '2025']} tierLabels={['🟢 Soft (10 softest)', 'Average', '🔴 Stingy (10 stingiest)']} />
                 </div>
               )}
               <div className="slideout-section">
@@ -337,6 +366,7 @@ export default function PlayerSlideout() {
               {player.opponent && (
                 <div className="slideout-section">
                   <h3>This Week's Matchup</h3>
+                  <Fold summary={<span className="meta-line">{player.home_or_away === '@' ? '@' : 'vs'} {player.opponent}{player.mu_pct != null && <> · <MatchupCell m={player} /> {muTier(player)?.toLowerCase()} matchup for his role</>}</span>}>
                   <p className="meta-line">
                     {player.home_or_away === '@' ? '@' : 'vs'} {player.opponent}
                     {player.mu_pct != null ? (
@@ -356,6 +386,7 @@ export default function PlayerSlideout() {
                   </p>
                   {player.mu_pct != null && <p className="meta-line small">{leakSummary(player)}.</p>}
                   {roleSummary(player) && <p className="meta-line small">{roleSummary(player)}.</p>}
+                  </Fold>
                 </div>
               )}
 
