@@ -2,6 +2,8 @@ import './weekView.js' // 2026-10-23: 📅 week picker -- installs the past-week
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+import { startNoteCollapse } from './noteCollapse.js' // 2026-10-28 collapsible explanation boxes
+import './noteCollapse.css'
 import { PlayerDirectoryProvider } from './PlayerDirectory.jsx'
 import { MatchupProvider } from './MatchupContext.jsx'
 import './index.css'
@@ -15,3 +17,5 @@ createRoot(document.getElementById('root')).render(
     </PlayerDirectoryProvider>
   </StrictMode>,
 )
+
+startNoteCollapse()
