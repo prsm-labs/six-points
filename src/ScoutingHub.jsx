@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import AllMatchupsTab from './AllMatchupsTab.jsx'
 import PaydirtLab from './PaydirtLab.jsx'
 import YardageLab from './YardageLab.jsx'
@@ -31,13 +32,7 @@ export default function ScoutingHub() {
   const Active = (VIEWS.find((v) => v.key === view) || VIEWS[0]).Component
   return (
     <div>
-      <div className="pill-row hub-row">
-        {VIEWS.map((v) => (
-          <button key={v.key} className={`pill-btn ${view === v.key ? 'active' : ''}`} onClick={() => setView(v.key)}>
-            {v.label}
-          </button>
-        ))}
-      </div>
+      <ViewPicker options={VIEWS.map((v) => [v.key, v.label])} value={view} onChange={setView} pillClass="pill-btn" rowClass="pill-row hub-row" label="Scouting" />
       <Active />
     </div>
   )

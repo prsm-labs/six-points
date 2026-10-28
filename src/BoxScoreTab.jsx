@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect, useRef } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { resolveEventIds } from './espnGameResolver.js'
 import { openTeamSlide, openPlayerSlide } from './slideouts.js'
 import { usePlayerDirectory } from './PlayerDirectory.jsx'
@@ -364,11 +365,7 @@ function GameDetail({ game, detail, loading, espnIdToPlayer, espnAbbrToNflverse,
         </p>
       )}
       {detail.status?.state === 'in' && view !== 'tracker' && <MiniField detail={detail} onOpen={() => setView('tracker')} />}
-      <div className="pill-row">
-        {VIEWS.filter(([k]) => k !== 'box' || boxscore.players).map(([k, l]) => (
-          <button key={k} className={`pill-btn ${view === k ? 'active' : ''}`} onClick={() => setView(k)}>{l}</button>
-        ))}
-      </div>
+      <ViewPicker options={VIEWS.filter(([k]) => k !== 'box' || boxscore.players)} value={view} onChange={setView} pillClass="pill-btn" />
       {view === 'box' && <PlayerBoxTables boxscore={boxscore} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} heat={heat} />}
       {view === 'proj' && <LiveProjection game={game} detail={detail} espnIdToPlayer={espnIdToPlayer} espnAbbrToNflverse={espnAbbrToNflverse} />}
       {view === 'lineups' && <Lineups game={game} detail={detail} depth={depth} espnAbbrToNflverse={espnAbbrToNflverse} />}
