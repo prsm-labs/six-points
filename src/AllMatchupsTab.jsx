@@ -15,6 +15,7 @@ import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { HotHandTag, dvpRanks } from './revampUi.jsx'
 import { H2HBadge, H2H_NOTE, VENUE_NOTE, h2hFor, useH2H, venueFor } from './h2h.jsx'
+import { OppDefCell, OPP_DEF_NOTE } from './oppDef.jsx'
 
 // All Matchups (Slap Shot's tabs/AllMatchupsTab.jsx, 2026-10-18 revamp): this week's slate ranked by the grade model,
 // one row per player with the defense he's facing, his recent form, the book's price and our edge. Matchup-first --
@@ -43,7 +44,7 @@ export default function AllMatchupsTab() {
     .filter((m) => matchesPosition(m.position, position))
     .filter((m) => !selectedMatchup || isInSelectedMatchup(selectedMatchup, m.team))
     .filter((m) => notOut(m)), [rows, position, selectedMatchup, notOut])
-  const shown = useMemo(() => (rows ? applyListFilters(base, f, fctx) : []), [rows, base, f, fctx])
+  const shown = useMemo(() => (rows ? applyListFilters(base, f, fctx) : []).map((m) => ({ ...m, oppDefSoft: m.def_rank && m.def_n ? m.def_n + 1 - m.def_rank : null })), [rows, base, f, fctx])
   const { sorted, sortKey, sortDir, toggleSort } = useSort(shown, 'grade_score', 'desc')
   const th = { sortKey, sortDir, onSort: toggleSort }
 
@@ -75,6 +76,7 @@ export default function AllMatchupsTab() {
             <tr>
               <SortTh label="Player" sortKeyName="player_name" className="sticky-col" {...th} />
               <SortTh label="Opp" sortKeyName="opponent" {...th} />
+              <SortTh label="Opp D" sortKeyName="oppDefSoft" title={OPP_DEF_NOTE} {...th} />
               <SortTh label="Grade" sortKeyName="grade_score" {...th} />
               <SortTh label="TD %" sortKeyName="p_td" {...th} />
               <SortTh label="2+ TD %" sortKeyName="p_td2" {...th} />
@@ -111,6 +113,7 @@ export default function AllMatchupsTab() {
                 <td>
                   <button className="team-link" onClick={() => openTeamSlide({ team: m.opponent, context: 'defense' })}>{m.opponent}</button>
                 </td>
+                <OppDefCell m={m} />
                 <td><GradeBadge grade={m.grade} m={m} /></td>
                 <td className="num">{fmtPct(m.p_td, 1)}</td>
                 <td className="num">{fmtPct(m.p_td2, 1)}</td>

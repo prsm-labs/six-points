@@ -11,6 +11,7 @@ import { DepthTag, RoleChip, RzMatchupCell, pct1, useGradeModel } from './matchu
 import { PAYDIRT_MIN_RZ, PAYDIRT_SIGNAL_N } from './useLabSims.js'
 import PickButton from './PickButton.jsx'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
+import { OppDefCell } from './oppDef.jsx'
 import { useSlate } from './slate.js'
 import { useRecentById } from './lineBoard.js'
 import { HitStrip } from './RiskBoard.jsx'
@@ -51,6 +52,7 @@ function PaydirtTable({ rows }) {
       .filter((r) => position === 'all' || r.position === position)
       .filter((r) => selectedMatchup ? isInSelectedMatchup(selectedMatchup, r.team) : (team === 'all' || r.team === team))
       .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
+      .map((r) => ({ ...r, oppDefSoft: r.def_rank && r.def_n ? r.def_n + 1 - r.def_rank : null })) // 2026-10-28 Opp D sort
   }, [rows, position, team, search, selectedMatchup])
 
   const graded = rows.some((p) => p.p_td != null)
@@ -108,6 +110,7 @@ function PaydirtTable({ rows }) {
             <tr>
               <SortTh label="Team" sortKeyName="team" className="sticky-col" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
+              <SortTh label="Opp D" sortKeyName="oppDefSoft" {...thProps} />
               <SortTh label="Player" sortKeyName="player_name" {...thProps} />
               <th title="His last 7 games: green = scored a touchdown, oldest to newest (last season's games fill in early on)">L7 · TD</th>
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
@@ -133,6 +136,7 @@ function PaydirtTable({ rows }) {
                     {p.opponent}
                   </button>
                 </td>
+                <OppDefCell m={p} />
                 <td>
                   <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />

@@ -9,12 +9,13 @@ import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
 import { matchesSearch } from './teamSearch.js'
 import { startedTeams, topPicks } from './topPicks.js'
 import { applyGroups } from './FilterPanel.jsx'
+import { DEF_TIERS, oppDefTier } from './oppDef.jsx'
 
 export const TD_OPTIONS = [null, 10, 20, 30, 40]
 const LETTERS = ['A+', 'A', 'A-', 'B', 'C', 'D', 'F']
 const H2H_LETTERS = ['A+', 'A', 'B', 'C', 'D', 'F']
 
-const DEFAULTS = { minTd: null, tags: [], tagsNot: [], tagsMode: 'all', top: [], prism: [], grades: [], h2h: [], venue: [], search: '' }
+const DEFAULTS = { minTd: null, tags: [], tagsNot: [], tagsMode: 'all', top: [], prism: [], grades: [], h2h: [], venue: [], oppd: [], search: '' }
 let state = { ...DEFAULTS }
 const listeners = new Set()
 const notify = () => listeners.forEach((fn) => fn())
@@ -111,7 +112,6 @@ export function buildGroups(ctx = {}) {
       { v: 'short', label: '🗓️ Short week', title: "5 or fewer days since his team's last game (Thursday after Sunday, etc.) — the NFL's back-to-back; context, not in the grade" },
       { v: 'bye', label: '😴 Off a bye', title: 'His team had a bye last week — context, not in the grade' },
       { v: 'limited', label: '⚠️ Data limited', title: 'Thin sample — few games of usage behind his numbers' },
-      { v: 'soft', label: '▲ Soft TD defense', title: "Opponent in this week's softest third by TDs allowed (the defense factor inside the grade)" },
       { v: 'hot', label: '🔥 Hot hand', title: 'Scored a TD in his last 3 games and NOT a top-25% TD chance this week -- this group scored 1.33x what the model said in 2023-25 (every season)' },
       { v: 'breakout', label: '🚀 Breakout Watch', title: "Touches last 3 games 1.2x+ his season rate, outside the week's top 15% -- backtested lift" },
       { v: 'role', label: '+ Role gain', title: 'Inherits 1+ touch a game from an injured / inactive teammate' },
@@ -127,6 +127,9 @@ export function buildGroups(ctx = {}) {
       hint: 'His history vs this opponent against his own normal — context, tracked' },
     { key: 'venue', label: 'Home / away', chip: 'H/A', type: 'multi', get: (m) => m.ha?.letter, options: H2H_LETTERS.map((l) => ({ v: l, label: l })),
       hint: 'How he does at home (or on the road, whichever this week is) vs his own normal — context' },
+    // 2026-10-28 Opp D (user): replaces the '▲ Soft TD defense' tag with all three bands (oppDef.jsx)
+    { key: 'oppd', label: 'Opponent defense', chip: 'Opp D', type: 'multi', get: oppDefTier, options: DEF_TIERS,
+      hint: "This week's opponent among the week's TD defenses (the factor inside the grade) — Soft = softest third, Tough = stingiest third" },
   ]
 }
 
