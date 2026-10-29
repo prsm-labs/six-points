@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T16:09+00:00",
+ "generated_at": "2026-10-29T11:01+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -966,23 +966,23 @@
       "trackN": 62
      },
      {
-      "player_id": "00-0037247",
-      "name": "George Pickens",
-      "team": "DAL",
-      "opp": "ARI",
-      "pos": "WR",
-      "est": 66.5,
-      "depth": "WR2",
-      "game": "ARI-DAL",
+      "player_id": "00-0037228",
+      "name": "Jaylen Warren",
+      "team": "PIT",
+      "opp": "CLE",
+      "pos": "RB",
+      "est": 107.0,
+      "depth": "RB1",
+      "game": "CLE-PIT",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.3772,
+      "chance": 0.3657,
       "last": [
        8,
-       2
+       1
       ],
-      "track": 0.419,
+      "track": 0.414,
       "trackN": 62
      }
     ],
@@ -1048,23 +1048,23 @@
       "trackN": 65
      },
      {
-      "player_id": "00-0039880",
-      "name": "Malik Washington",
-      "team": "MIA",
-      "opp": "NE",
-      "pos": "WR",
-      "est": 50.3,
-      "depth": "WR1",
-      "game": "MIA-NE",
+      "player_id": "00-0039811",
+      "name": "MarShawn Lloyd",
+      "team": "GB",
+      "opp": "CAR",
+      "pos": "RB",
+      "est": 36.8,
+      "depth": "RB2",
+      "game": "CAR-GB",
       "stat": "YDS",
-      "line": 75,
-      "label": "75+ scrimmage yards",
-      "chance": 0.168,
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.1883,
       "last": [
-       8,
+       7,
        0
       ],
-      "track": 0.181,
+      "track": 0.191,
       "trackN": 65
      },
      {
@@ -1089,7 +1089,7 @@
      }
     ]
    },
-   "updated_at": "2026-10-28T12:09-04:00"
+   "updated_at": "2026-10-29T07:01-04:00"
   }
  ]
 }

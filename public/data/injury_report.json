@@ -6559,6 +6559,92 @@
         "status": "Questionable",
         "injury": "Foot"
       }
+    ],
+    "8": [
+      {
+        "team": "CAR",
+        "name": "Damien Lewis",
+        "position": "G",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "CAR",
+        "name": "Bobby Brown III",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Hand"
+      },
+      {
+        "team": "CAR",
+        "name": "Jaelan Phillips",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "CAR",
+        "name": "Akayleb Evans",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Triceps"
+      },
+      {
+        "team": "CAR",
+        "name": "Torricelli Simpkins III",
+        "position": "G",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "GB",
+        "name": "Zaire Franklin",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Shin"
+      },
+      {
+        "team": "GB",
+        "name": "Devonte Wyatt",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "GB",
+        "name": "Sean Rhyan",
+        "position": "C",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "GB",
+        "name": "Brenton Cox Jr.",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Quadricep"
+      },
+      {
+        "team": "GB",
+        "name": "Travis Glover",
+        "position": "G",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "GB",
+        "name": "Matthew Golden",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "GB",
+        "name": "Anthony Campbell",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Ankle"
+      }
     ]
   }
 }
