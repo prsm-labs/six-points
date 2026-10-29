@@ -264,14 +264,7 @@
       "newTeam": false,
       "lastTeam": null,
       "roleFlag": null,
-      "starterBack": {
-        "name": "Pierre Strong",
-        "player_id": "00-0038098",
-        "out": 1,
-        "q": false,
-        "tch_out": 18.0,
-        "tch_with": null
-      }
+      "starterBack": null
     },
     {
       "season": 2026,
@@ -3136,7 +3129,14 @@
       "newTeam": true,
       "lastTeam": "NO",
       "roleFlag": null,
-      "starterBack": null
+      "starterBack": {
+        "name": "Quinshon Judkins",
+        "player_id": "00-0040784",
+        "out": 1,
+        "q": false,
+        "tch_out": 9.0,
+        "tch_with": null
+      }
     },
     {
       "season": 2026,
@@ -3878,7 +3878,14 @@
       "newTeam": false,
       "lastTeam": null,
       "roleFlag": null,
-      "starterBack": null
+      "starterBack": {
+        "name": "Josh Jacobs",
+        "player_id": "00-0035700",
+        "out": 6,
+        "q": false,
+        "tch_out": 13.0,
+        "tch_with": null
+      }
     },
     {
       "season": 2026,
@@ -31698,7 +31705,7 @@
       "starterBack": {
         "name": "DeVonta Smith",
         "player_id": "00-0036912",
-        "out": 1,
+        "out": 3,
         "q": true,
         "tch_out": 5.0,
         "tch_with": 2.0
@@ -34896,9 +34903,9 @@
       "starterBack": {
         "name": "DeVonta Smith",
         "player_id": "00-0036912",
-        "out": 1,
+        "out": 3,
         "q": true,
-        "tch_out": 8.0,
+        "tch_out": 7.0,
         "tch_with": 4.0
       }
     },
@@ -35653,7 +35660,14 @@
       "newTeam": true,
       "lastTeam": "DEN",
       "roleFlag": null,
-      "starterBack": null
+      "starterBack": {
+        "name": "Quinshon Judkins",
+        "player_id": "00-0040784",
+        "out": 1,
+        "q": false,
+        "tch_out": 13.0,
+        "tch_with": 1.3
+      }
     },
     {
       "season": 2026,
@@ -40328,7 +40342,14 @@
       "newTeam": true,
       "lastTeam": "PIT",
       "roleFlag": null,
-      "starterBack": null
+      "starterBack": {
+        "name": "Josh Jacobs",
+        "player_id": "00-0035700",
+        "out": 6,
+        "q": false,
+        "tch_out": 6.2,
+        "tch_with": null
+      }
     },
     {
       "season": 2026,
