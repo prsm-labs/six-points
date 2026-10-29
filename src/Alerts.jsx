@@ -4,6 +4,10 @@ import { normName, subscribeLiveStatus } from './liveStatus.js'
 import { parseScoringPlay } from './scoringPlays.js'
 import { usePicks } from './picks.js'
 import { openPlayerSlide } from './slideouts.js'
+import { checkSavedFilters, removeFilter, useSavedFilters } from './savedFilters.js'
+import { applyListFilters, useFilterContext } from './listFilters.js'
+import { useSlate } from './slate.js'
+import { matchesPosition } from './positionFilter.js'
 
 // Alert sources (§10): (1) a real TD in any game in progress today -- ESPN scoreboard + the
 // existing /api/summary scoringPlays feed, polled every 45s only while a game is live, first poll
@@ -24,6 +28,18 @@ async function getJson(proxyUrl, directUrl) {
 }
 
 export function AlertsRunner() {
+  // 2026-10-28 (3) saved filter alerts (⚙ Filters -> 🔔 Alert me, savedFilters.js): re-checked whenever this week's slate
+  // loads or refreshes (not a past week picked in the week bar) -- one summary per week, then each newly matching player
+  const slate = useSlate()
+  const fctx = useFilterContext(slate)
+  const saved = useSavedFilters()
+  useEffect(() => {
+    if (!slate?.matchups?.length || slate.past || !saved.length) return
+    checkSavedFilters(`${slate.season}-w${slate.week}`, (f) => {
+      const base = slate.matchups.filter((m) => !m.liveOut && matchesPosition(m.position, f.scope?.pos || 'all'))
+      return (applyListFilters(base, { ...f.value, search: '' }, fctx) || []).map((m) => ({ id: m.player_id, name: m.player_name, player: m }))
+    }, pushAlert)
+  }, [slate, fctx, saved])
   const picks = usePicks()
   const picksRef = useRef(picks)
   picksRef.current = picks
@@ -138,6 +154,21 @@ export function AlertToast() {
   )
 }
 
+function SavedFilterList() {
+  const saved = useSavedFilters()
+  return (
+    <div style={{ marginBottom: 12 }}>
+      <h3 style={{ margin: '0 0 6px' }}>🔔 Saved filter alerts</h3>
+      {!saved.length ? <p className="meta-line small">None yet — set filters on All Matchups or the Risk Slider, then tap 🔔 Alert me in the ⚙ Filters bar.</p>
+        : saved.map((f) => (
+          <div key={f.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, fontSize: '0.85rem', padding: '3px 0' }}>
+            <span>{f.name}</span><button className="pill-btn" onClick={() => removeFilter(f.id)}>Remove</button>
+          </div>
+        ))}
+    </div>
+  )
+}
+
 export function AlertBell() {
   const { list, unseen } = useAlerts()
   const [open, setOpen] = useState(false)
@@ -160,11 +191,12 @@ export function AlertBell() {
             <div className="slideout-header">
               <div className="slideout-header-info">
                 <h2>Alerts</h2>
-                <div className="sub">TDs and game-day Out calls while this page is open</div>
+                <div className="sub">TDs, game-day Out calls and your saved filters, while this page is open</div>
               </div>
               <button className="slideout-close" onClick={() => setOpen(false)} aria-label="Close">&times;</button>
             </div>
             <div className="slideout-body">
+              <SavedFilterList />
               <div className="sub-tabs">
                 <button className={!picksOnly ? 'active' : ''} onClick={() => setPicksOnly(false)}>All</button>
                 <button className={picksOnly ? 'active' : ''} onClick={() => setPicksOnly(true)}>My picks only</button>
