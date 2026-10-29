@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T19:05+00:00",
+ "generated_at": "2026-10-29T23:05+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -1344,6 +1344,29 @@
      "trackN": 600
     },
     {
+     "player_id": "00-0039338",
+     "name": "Brock Bowers",
+     "team": "LV",
+     "opp": "NYJ",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 91.0,
+     "est": 69.0,
+     "z": 2.65,
+     "games": [
+      116,
+      86,
+      110,
+      70,
+      73
+     ],
+     "why": [
+      "his usage (9.3 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
      "player_id": "00-0031610",
      "name": "Darren Waller",
      "team": "CAR",
@@ -1351,8 +1374,8 @@
      "pos": "TE",
      "depth": "TE2",
      "line": 33.0,
-     "est": 20.9,
-     "z": 2.65,
+     "est": 21.0,
+     "z": 2.62,
      "games": [
       28,
       33,
@@ -1439,6 +1462,31 @@
      "trackN": 600
     },
     {
+     "player_id": "00-0040667",
+     "name": "Matthew Golden",
+     "team": "GB",
+     "opp": "CAR",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 78.0,
+     "est": 61.0,
+     "z": 2.18,
+     "games": [
+      95,
+      58,
+      100,
+      27,
+      123,
+      104,
+      39
+     ],
+     "why": [
+      "his usage (8.2 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
      "player_id": "00-0039065",
      "name": "Sam LaPorta",
      "team": "DET",
@@ -1488,7 +1536,7 @@
      "trackN": 600
     }
    ],
-   "updated_at": "2026-10-29T15:05-04:00"
+   "updated_at": "2026-10-29T19:05-04:00"
   }
  ]
 }
