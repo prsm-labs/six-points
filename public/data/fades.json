@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T19:05+00:00",
+ "generated_at": "2026-10-30T23:05+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -1164,6 +1164,29 @@
      "trackN": 507
     },
     {
+     "player_id": "00-0039915",
+     "name": "Ladd McConkey",
+     "team": "LAC",
+     "opp": "LA",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 40.0,
+     "est": 22.9,
+     "z": 3.57,
+     "games": [
+      82,
+      35,
+      66,
+      0,
+      17
+     ],
+     "why": [
+      "one big game (82) lifts his average -- 30 a game in the others"
+     ],
+     "track": 0.82,
+     "trackN": 507
+    },
+    {
      "player_id": "00-0039064",
      "name": "Zay Flowers",
      "team": "BAL",
@@ -1557,7 +1580,7 @@
      "trackN": 600
     }
    ],
-   "updated_at": "2026-10-30T15:05-04:00"
+   "updated_at": "2026-10-30T19:05-04:00"
   }
  ]
 }

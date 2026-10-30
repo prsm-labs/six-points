@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T19:05+00:00",
+ "generated_at": "2026-10-30T23:05+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -900,6 +900,26 @@
    "tiers": {
     "mid": [
      {
+      "player_id": "00-0034844",
+      "name": "Saquon Barkley",
+      "team": "PHI",
+      "opp": "WAS",
+      "pos": "RB",
+      "est": 107.6,
+      "depth": "RB1",
+      "game": "PHI-WAS",
+      "stat": "YDS",
+      "line": 90,
+      "label": "90+ scrimmage yards",
+      "chance": 0.4746,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.539,
+      "trackN": 90
+     },
+     {
       "player_id": "00-0033293",
       "name": "Aaron Jones",
       "team": "MIN",
@@ -940,26 +960,6 @@
       "trackN": 93
      },
      {
-      "player_id": "00-0037256",
-      "name": "Rachaad White",
-      "team": "WAS",
-      "opp": "PHI",
-      "pos": "RB",
-      "est": 61.5,
-      "depth": "RB1",
-      "game": "PHI-WAS",
-      "stat": "YDS",
-      "line": 60,
-      "label": "60+ scrimmage yards",
-      "chance": 0.4115,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.461,
-      "trackN": 93
-     },
-     {
       "player_id": "00-0037240",
       "name": "Jameson Williams",
       "team": "DET",
@@ -985,18 +985,18 @@
       "team": "TEN",
       "opp": "CIN",
       "pos": "RB",
-      "est": 78.8,
+      "est": 80.5,
       "depth": "RB1",
       "game": "CIN-TEN",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.377,
+      "chance": 0.3774,
       "last": [
        8,
        2
       ],
-      "track": 0.419,
+      "track": 0.42,
       "trackN": 62
      }
     ],
@@ -1103,7 +1103,7 @@
      }
     ]
    },
-   "updated_at": "2026-10-30T15:05-04:00"
+   "updated_at": "2026-10-30T19:05-04:00"
   }
  ]
 }

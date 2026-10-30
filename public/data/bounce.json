@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T19:05+00:00",
+ "generated_at": "2026-10-30T23:05+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -291,6 +291,35 @@
    "source": "live",
    "picks": [
     {
+     "player_id": "00-0034844",
+     "name": "Saquon Barkley",
+     "team": "PHI",
+     "opp": "WAS",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 53.7,
+     "est": 107.6,
+     "z": 5.2,
+     "games": [
+      80,
+      20,
+      80,
+      10,
+      71
+     ],
+     "last": [
+      80,
+      10,
+      71
+     ],
+     "why": [
+      "role up: +40 yds (teammates out / snaps)",
+      "54 a game lately vs 52 on the season"
+     ],
+     "track": 0.772,
+     "trackN": 365
+    },
+    {
      "player_id": "00-0033293",
      "name": "Aaron Jones",
      "team": "MIN",
@@ -408,9 +437,40 @@
      ],
      "track": 0.658,
      "trackN": 705
+    },
+    {
+     "player_id": "00-0038117",
+     "name": "Wan'Dale Robinson",
+     "team": "TEN",
+     "opp": "CIN",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 27.3,
+     "est": 40.5,
+     "z": 2.07,
+     "games": [
+      38,
+      9,
+      57,
+      20,
+      53,
+      22,
+      7
+     ],
+     "last": [
+      53,
+      22,
+      7
+     ],
+     "why": [
+      "role up: +7 yds (teammates out / snaps)",
+      "27 a game lately vs 29 on the season"
+     ],
+     "track": 0.658,
+     "trackN": 705
     }
    ],
-   "updated_at": "2026-10-30T15:05-04:00"
+   "updated_at": "2026-10-30T19:05-04:00"
   }
  ]
 }
