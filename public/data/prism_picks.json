@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T23:05+00:00",
+ "generated_at": "2026-10-30T11:01+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -871,16 +871,30 @@
    ],
    "nextGame": {
     "teams": [
-     "CAR",
-     "GB"
+     "ARI",
+     "ATL",
+     "BAL",
+     "BUF",
+     "CIN",
+     "CLE",
+     "DAL",
+     "DET",
+     "IND",
+     "JAX",
+     "LV",
+     "MIN",
+     "NYJ",
+     "PIT",
+     "TB",
+     "TEN"
     ],
-    "kickoff": "2026-10-29T20:15:00-04:00",
-    "label": "CAR @ GB",
+    "kickoff": "2026-11-01T13:00:00-05:00",
+    "label": "BAL @ BUF",
     "closest": {
-     "name": "Chuba Hubbard",
-     "team": "CAR",
-     "label": "80+ scrimmage yards",
-     "chance": 0.5111
+     "name": "Jordan Addison",
+     "team": "MIN",
+     "label": "25+ scrimmage yards",
+     "chance": 0.5795
     }
    },
    "tiers": {
@@ -1089,7 +1103,7 @@
      }
     ]
    },
-   "updated_at": "2026-10-29T19:05-04:00"
+   "updated_at": "2026-10-30T07:01-04:00"
   }
  ]
 }
