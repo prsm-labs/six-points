@@ -1,9 +1,9 @@
-// build_game_sims.mjs -- the Game Sim's 10,000 play-by-play simulations per game (2026-10-29, user: RotoBot-style "we simulated
-// this game 10,000 times" with a full box score and QBs). Run from nfl_project after build_sim_teams.py / build_sim_players.py:
+// build_game_sims.mjs -- the Game Sim's 15,000 play-by-play simulations per game (2026-10-29, user: RotoBot-style "we simulated
+// this game 15,000 times" with a full box score and QBs). Run from nfl_project after build_sim_teams.py / build_sim_players.py:
 //   node six-points/scripts/build_game_sims.mjs
 // For each game of the slate week: the play-by-play engine (src/sim/nflSim.js) runs 2,000 games on our own inputs, each offense is
 // then scaled so its average lands halfway between that and the market's implied total (the Game Sim's 50/50 own / market blend,
-// user 2026-10-12; own-only when no line is posted), and 10,000 games are run. Writes public/data/sims/<game_id>.json (averages,
+// user 2026-10-12; own-only when no line is posted), and 15,000 games are run. Writes public/data/sims/<game_id>.json (averages,
 // player box score, and the most typical game play by play for the replay) + sims/index.json. A game that has kicked off keeps
 // its pre-kickoff file. Backtest (2024-25 held out): see nfl_project/claude/CLAUDE.md 2026-10-29.
 import fs from 'fs'
@@ -15,7 +15,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url))
 const DATA = path.resolve(HERE, '../public/data')
 const ROOT = path.resolve(HERE, '../..')
 const OUTDIR = path.join(DATA, 'sims')
-const N = 10000
+const N = 15000
 const read = (p) => JSON.parse(fs.readFileSync(p, 'utf8'))
 
 const L = read(path.join(ROOT, 'sim_league.json'))

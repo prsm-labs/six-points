@@ -5,11 +5,11 @@ import { useMatchup } from './MatchupContext.jsx'
 import NflSimReplay, { NFL_TEAMS } from './NflSimReplay.jsx'
 import './NflSimReplay.css'
 
-// 🔮 Game Sim, rebuilt 2026-10-29 (user: RotoBot's "we simulated this game 10,000 times" -- the old page only had rushing and
-// receiving averages, no full box score and no QBs). Every game of the week is played 10,000 times snap by snap
+// 🔮 Game Sim, rebuilt 2026-10-29 (user: RotoBot's "we simulated this game 15,000 times" -- the old page only had rushing and
+// receiving averages, no full box score and no QBs). Every game of the week is played 15,000 times snap by snap
 // (scripts/build_game_sims.mjs + src/sim/nflSim.js; league play tables from 2022-26 play-by-play, each offense and defense's own
 // 2026 rates, each QB's own passing, the players' usage). The page shows the most typical of those games as a replay, then the
-// 10,000-game averages as a full box score. Backtest 2024-25 held out: see nfl_project/claude/CLAUDE.md 2026-10-29.
+// 15,000-game averages as a full box score. Backtest 2024-25 held out: see nfl_project/claude/CLAUDE.md 2026-10-29.
 
 const LOGO = (t) => `https://a.espncdn.com/i/teamlogos/nfl/500/${String(t === 'LA' ? 'lar' : t || '').toLowerCase()}.png`
 const f1 = (v) => (v == null ? '—' : (Math.round(v * 10) / 10).toFixed(1))
@@ -106,12 +106,12 @@ export default function GameSimTab() {
   return (
     <div>
       <p className="note">
-        Every game this week is played 10,000 times, snap by snap: run or pass, sacks, scrambles, completions, interceptions, fumbles,
+        Every game this week is played 15,000 times, snap by snap: run or pass, sacks, scrambles, completions, interceptions, fumbles,
         penalties, 4th-down calls, field goals, punts and the clock, drawn from five seasons of NFL play-by-play and shifted by each
         offense's and defense's own 2026 numbers, each quarterback's own passing and each player's share of the carries and targets.
         Each offense is then nudged halfway toward the betting market's team total (the same 50/50 blend this page has always used).
-        The replay is the most typical of the 10,000 games -- the winner most of them pick, on the side of the spread and total most
-        of them land, closest to the median score -- and the tables below it are the averages of all 10,000. Tested on 2024-25 games
+        The replay is the most typical of the 15,000 games -- the winner most of them pick, on the side of the spread and total most
+        of them land, closest to the median score -- and the tables below it are the averages of all 15,000. Tested on 2024-25 games
         it never saw: scores within 0.1 point of the market's accuracy, QB passing yards 15% closer than the season average, and TD
         chances and scrimmage yards about even with our grade model -- the grades stay the official numbers. Simulated games, not
         predictions; games lock at kickoff.
@@ -132,20 +132,21 @@ export default function GameSimTab() {
       {sim && (
         <>
           <div className="slate-status gs-sum">
-            <span><strong>10,000 games:</strong> {sim.away} {f1(sim.summary.away.mean)} @ {sim.home} {f1(sim.summary.home.mean)} on average
+            <span><strong>{(sim.n || 15000).toLocaleString('en-US')} games:</strong> {sim.away} {f1(sim.summary.away.mean)} @ {sim.home} {f1(sim.summary.home.mean)} on average
               · {fav} wins {favPct}% · median total {sim.summary.medTotal}</span>
             <span>Usual range (80% of sims): {sim.away} {sim.summary.away.p10}-{sim.summary.away.p90}, {sim.home} {sim.summary.home.p10}-{sim.summary.home.p90}</span>
             <span>Our own sim alone: {sim.away} {sim.own.away} - {sim.home} {sim.own.home}{marketTxt ? ` · market: ${marketTxt}` : ' · no market line yet, own sim only'}</span>
             {sim.frozen && <span>🔒 Locked at kickoff -- this is the pre-game simulation.</span>}
+            {!sim.frozen && <span>👥 Rebuilt with every injury refresh, including the game-day inactives runs (~90 min before kickoff) -- last built {new Date(sim.generated_at).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' })}.</span>}
           </div>
           <NflSimReplay sim={sim} />
-          <h3 className="gs-h">📊 10,000-game box score (averages)</h3>
+          <h3 className="gs-h">📊 {(sim.n || 15000).toLocaleString('en-US')}-game box score (averages)</h3>
           <div className="gs-boxes">
             <BoxTables sim={sim} side="away" />
             <BoxTables sim={sim} side="home" />
           </div>
-          <p className="meta-line small">Averages over all 10,000 games (a player's TD and yards here are the sim's; his grade, TD % and Est. Yards on
-            the other pages come from the grade model, which is the official number). "Any TD" = share of the 10,000 games he scored at least once.
+          <p className="meta-line small">Averages over all 15,000 games (a player's TD and yards here are the sim's; his grade, TD % and Est. Yards on
+            the other pages come from the grade model, which is the official number). "Any TD" = share of the 15,000 games he scored at least once.
             Passing yards are the QB's; sacks are yards lost by the team. Updated {new Date(sim.generated_at).toLocaleString()}.</p>
         </>
       )}
