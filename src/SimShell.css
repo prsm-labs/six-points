@@ -11,6 +11,8 @@
 .ss-tname { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 1.02rem; min-width: 0; }
 .ss-tname span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 6px; }
 .ss-tname img { flex: none; object-fit: contain; }
+.ss-tname em { font-style: normal; }
+.ss-abbr { display: none; }
 .ss-score { font-size: 2.1rem; font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; min-width: 1.6em; text-align: center; }
 .ss-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #f4c542; box-shadow: 0 0 8px #f4c542; }
 .ss-clock { display: flex; align-items: center; justify-content: center; padding: 0 14px; font-weight: 800; font-size: 1.05rem;
@@ -63,6 +65,8 @@
   .ss { padding: 8px; }
   .ss-score { font-size: 1.6rem; }
   .ss-tname { font-size: .85rem; gap: 5px; }
+  .ss-full { display: none; }
+  .ss-abbr { display: inline; }
   .ss-tname img { width: 22px; height: 22px; }
   .ss-team { padding: 6px 8px; }
   .ss-clock { min-width: 70px; padding: 0 6px; font-size: .9rem; }

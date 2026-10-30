@@ -103,7 +103,7 @@ export default function SimShell({ teams, frames, Surface, panels, footnote, per
         {side === 'home' && <div className="ss-score">{score}</div>}
         <div className="ss-tname">
           {side === 'away' && tm.logo && <img src={tm.logo} alt="" width={30} height={30} />}
-          <span>{pos && side === 'home' && <i className="ss-dot" />}{tm.name}{pos && side === 'away' && <i className="ss-dot" />}</span>
+          <span>{pos && side === 'home' && <i className="ss-dot" />}<em className="ss-full">{tm.name}</em><em className="ss-abbr">{tm.abbr}</em>{pos && side === 'away' && <i className="ss-dot" />}</span>
           {side === 'home' && tm.logo && <img src={tm.logo} alt="" width={30} height={30} />}
         </div>
         {side === 'away' && <div className="ss-score">{score}</div>}
