@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T16:02+00:00",
+ "generated_at": "2026-10-30T19:05+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -291,6 +291,36 @@
    "source": "live",
    "picks": [
     {
+     "player_id": "00-0033293",
+     "name": "Aaron Jones",
+     "team": "MIN",
+     "opp": "DET",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 90.3,
+     "est": 133.7,
+     "z": 3.75,
+     "games": [
+      40,
+      105,
+      92,
+      128,
+      117,
+      26
+     ],
+     "last": [
+      128,
+      117,
+      26
+     ],
+     "why": [
+      "role up: +38 yds (teammates out / snaps)",
+      "90 a game lately vs 85 on the season"
+     ],
+     "track": 0.772,
+     "trackN": 365
+    },
+    {
      "player_id": "00-0041037",
      "name": "Denzel Boston",
      "team": "CLE",
@@ -380,7 +410,7 @@
      "trackN": 705
     }
    ],
-   "updated_at": "2026-10-30T12:02-04:00"
+   "updated_at": "2026-10-30T15:05-04:00"
   }
  ]
 }

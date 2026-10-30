@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T16:02+00:00",
+ "generated_at": "2026-10-30T19:05+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -1212,6 +1212,27 @@
      "trackN": 507
     },
     {
+     "player_id": "00-0039067",
+     "name": "Rashee Rice",
+     "team": "KC",
+     "opp": "DEN",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 63.3,
+     "est": 43.6,
+     "z": 2.99,
+     "games": [
+      19,
+      83,
+      88
+     ],
+     "why": [
+      "his usage (8.8 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
      "player_id": "00-0038134",
      "name": "Kenneth Walker III",
      "team": "KC",
@@ -1536,7 +1557,7 @@
      "trackN": 600
     }
    ],
-   "updated_at": "2026-10-30T12:02-04:00"
+   "updated_at": "2026-10-30T15:05-04:00"
   }
  ]
 }

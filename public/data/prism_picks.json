@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T16:02+00:00",
+ "generated_at": "2026-10-30T19:05+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -900,6 +900,26 @@
    "tiers": {
     "mid": [
      {
+      "player_id": "00-0033293",
+      "name": "Aaron Jones",
+      "team": "MIN",
+      "opp": "DET",
+      "pos": "RB",
+      "est": 133.7,
+      "depth": "RB1",
+      "game": "DET-MIN",
+      "stat": "YDS",
+      "line": 110,
+      "label": "110+ scrimmage yards",
+      "chance": 0.4746,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.539,
+      "trackN": 90
+     },
+     {
       "player_id": "00-0036997",
       "name": "Javonte Williams",
       "team": "DAL",
@@ -940,26 +960,6 @@
       "trackN": 93
      },
      {
-      "player_id": "00-0035261",
-      "name": "Tony Pollard",
-      "team": "TEN",
-      "opp": "CIN",
-      "pos": "RB",
-      "est": 78.8,
-      "depth": "RB1",
-      "game": "CIN-TEN",
-      "stat": "YDS",
-      "line": 80,
-      "label": "80+ scrimmage yards",
-      "chance": 0.3972,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.428,
-      "trackN": 62
-     },
-     {
       "player_id": "00-0037240",
       "name": "Jameson Williams",
       "team": "DET",
@@ -980,23 +980,23 @@
       "trackN": 62
      },
      {
-      "player_id": "00-0037228",
-      "name": "Jaylen Warren",
-      "team": "PIT",
-      "opp": "CLE",
+      "player_id": "00-0035261",
+      "name": "Tony Pollard",
+      "team": "TEN",
+      "opp": "CIN",
       "pos": "RB",
-      "est": 107.0,
+      "est": 78.8,
       "depth": "RB1",
-      "game": "CLE-PIT",
+      "game": "CIN-TEN",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.3657,
+      "chance": 0.377,
       "last": [
        8,
-       1
+       2
       ],
-      "track": 0.414,
+      "track": 0.419,
       "trackN": 62
      }
     ],
@@ -1103,7 +1103,7 @@
      }
     ]
    },
-   "updated_at": "2026-10-30T12:01-04:00"
+   "updated_at": "2026-10-30T15:05-04:00"
   }
  ]
 }
