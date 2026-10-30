@@ -2,255 +2,152 @@ import { useEffect, useMemo, useState } from 'react'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup } from './MatchupContext.jsx'
+import NflSimReplay, { NFL_TEAMS } from './NflSimReplay.jsx'
+import './NflSimReplay.css'
 
-// Click-a-matchup simulated box score -- the real v1 from PROMPT_SixPoints_GameSimulation_
-// Scope.md, built after that doc's own recommended order: real team pace + real team TD-rate
-// blend + real per-player touch shares, Monte Carlo'd client-side (gameSimWorker.js) the same
-// way Paydirt/Yardage Lab already do. See the worker's own comment for the full model and what's
-// deliberately NOT included yet (FG/PAT/D-ST scoring, drive-level sequencing).
-//
-// This is a real, disclosed v1, not a finished product: every input is a verified real signal
-// (see matchup_engine.py's build_team_pace/build_team_scoring_and_efficiency docstrings for the
-// actual validation numbers), but the simulation itself hasn't been backtested end-to-end
-// against real final box scores yet -- that's the next real step before trusting the output at
-// face value, same standing rule every score in this app has followed since session 1.
+// 🔮 Game Sim, rebuilt 2026-10-29 (user: RotoBot's "we simulated this game 10,000 times" -- the old page only had rushing and
+// receiving averages, no full box score and no QBs). Every game of the week is played 10,000 times snap by snap
+// (scripts/build_game_sims.mjs + src/sim/nflSim.js; league play tables from 2022-26 play-by-play, each offense and defense's own
+// 2026 rates, each QB's own passing, the players' usage). The page shows the most typical of those games as a replay, then the
+// 10,000-game averages as a full box score. Backtest 2024-25 held out: see nfl_project/claude/CLAUDE.md 2026-10-29.
+
+const LOGO = (t) => `https://a.espncdn.com/i/teamlogos/nfl/500/${String(t === 'LA' ? 'lar' : t || '').toLowerCase()}.png`
+const f1 = (v) => (v == null ? '—' : (Math.round(v * 10) / 10).toFixed(1))
+const f0 = (v) => (v == null ? '—' : Math.round(v))
+
+function BoxTables({ sim, side }) {
+  const team = side === 'home' ? sim.home : sim.away
+  const rows = sim.players.filter((p) => p.side === side)
+  const qbId = sim.qb?.[side]
+  const qb = rows.find((p) => p.id === qbId)
+  const rush = rows.filter((p) => p.ra >= 0.3).sort((a, b) => b.ry - a.ry)
+  const rec = rows.filter((p) => p.tg >= 0.3).sort((a, b) => b.rcy - a.rcy)
+  const t = sim.team[side]
+  const open = (p) => openPlayerSlide({ player_id: p.id, player_name: p.name, team: p.team, position: p.pos })
+  const Name = ({ p }) => (
+    <td className="sticky-col">
+      <div className="player-cell" onClick={() => open(p)}><PlayerAvatar playerId={p.id} name={p.name} />{p.name}</div>
+    </td>
+  )
+  return (
+    <div className="gs-box" style={{ '--tc': NFL_TEAMS[team]?.[1] || 'var(--accent)' }}>
+      <div className="gs-box-h">
+        <img src={LOGO(team)} alt="" width={22} height={22} />
+        <button className="team-link" onClick={() => openTeamSlide({ team })}>{NFL_TEAMS[team]?.[0] || team}</button>
+        <span className="meta-line small" style={{ margin: 0 }}>avg {f1(sim.summary[side].mean)} pts · {f0(t.yds)} yds · {f1(t.to)} TO</span>
+      </div>
+      {qb && (
+        <div className="table-wrap"><table className="gs-t">
+          <thead><tr><th className="sticky-col">Passing</th><th>Cmp/Att</th><th>Yds</th><th>TD</th><th>INT</th><th>Sacked</th><th>Rush</th></tr></thead>
+          <tbody><tr><Name p={qb} /><td>{f1(qb.pc)}/{f1(qb.pa)}</td><td><b>{f0(qb.py)}</b></td><td>{f1(qb.ptd)}</td><td>{f1(qb.pint)}</td><td>{f1(qb.sk)}</td>
+            <td>{f1(qb.ra)} / {f0(qb.ry)}</td></tr></tbody>
+        </table></div>
+      )}
+      <div className="table-wrap"><table className="gs-t">
+        <thead><tr><th className="sticky-col">Rushing</th><th>Car</th><th>Yds</th><th>TD</th><th>Any TD</th></tr></thead>
+        <tbody>{rush.map((p) => <tr key={p.id}><Name p={p} /><td>{f1(p.ra)}</td><td><b>{f0(p.ry)}</b></td><td>{f1(p.rtd)}</td><td>{f0(p.td_pct)}%</td></tr>)}</tbody>
+      </table></div>
+      <div className="table-wrap"><table className="gs-t">
+        <thead><tr><th className="sticky-col">Receiving</th><th>Tgt</th><th>Rec</th><th>Yds</th><th>TD</th><th>Any TD</th></tr></thead>
+        <tbody>{rec.map((p) => <tr key={p.id}><Name p={p} /><td>{f1(p.tg)}</td><td>{f1(p.rec)}</td><td><b>{f0(p.rcy)}</b></td><td>{f1(p.rctd)}</td><td>{f0(p.td_pct)}%</td></tr>)}</tbody>
+      </table></div>
+      <div className="gs-team">
+        <span>Kicking{sim.kicker?.[side] ? ` (${sim.kicker[side]})` : ''}: <b>{f1(t.fgm)}/{f1(t.fga)} FG</b> · {f1(t.xpm)} XP</span>
+        <span>Plays <b>{f0(t.plays)}</b> · pass {f0(t.pyds)} / rush {f0(t.ryds)} yds · 1st downs {f0(t.fd)}</span>
+        <span>Punts {f1(t.punts)} · sacks made {f1(t.sacks)} · possession {Math.floor(t.top / 60)}:{String(Math.round(t.top % 60)).padStart(2, '0')}</span>
+      </div>
+    </div>
+  )
+}
 
 export default function GameSimTab() {
-  const [simInputs, setSimInputs] = useState(null)
-  const [schedule, setSchedule] = useState(null)
-  const [matchups, setMatchups] = useState(null)
-  const [teamStats, setTeamStats] = useState(null)
-  const [directory, setDirectory] = useState(null)
+  const [index, setIndex] = useState(null)
   const [error, setError] = useState(null)
-  const [selectedGameId, setSelectedGameId] = useState(null)
-  const [result, setResult] = useState(null)
-  const [simRunning, setSimRunning] = useState(false)
+  const [gid, setGid] = useState(null)
+  const [sim, setSim] = useState(null)
+  const [loading, setLoading] = useState(false)
   const { selectedMatchup } = useMatchup()
 
   useEffect(() => {
-    Promise.all([
-      fetch('/data/game_sim_inputs.json').then((r) => {
-        if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
-        return r.json()
-      }),
-      fetch('/data/season_schedule.json').then((r) => r.json()),
-      fetch('/data/all_matchups_latest.json').then((r) => r.json()),
-      fetch('/data/team_stats.json').then((r) => (r.ok ? r.json() : {})),
-      fetch('/data/players.json').then((r) => (r.ok ? r.json() : {})),
-    ])
-      .then(([sim, sched, mu, ts, dir]) => {
-        setSimInputs(sim)
-        setSchedule(sched)
-        setMatchups(mu)
-        setTeamStats(ts)
-        setDirectory(dir)
-      })
-      .catch((e) => setError(e.message))
+    fetch('/data/sims/index.json').then((r) => {
+      if (!r.ok) throw new Error(`${r.status} ${r.statusText}`)
+      return r.json()
+    }).then(setIndex).catch((e) => setError(e.message))
   }, [])
 
-  const games = useMemo(() => {
-    if (!schedule || !simInputs) return []
-    return schedule.games.filter((g) => g.week === simInputs.week)
-  }, [schedule, simInputs])
-
-  const usageSigByPlayer = useMemo(() => {
-    if (!matchups) return {}
-    const map = {}
-    for (const m of matchups.matchups) map[m.player_id] = m.usage_sig
-    return map
-  }, [matchups])
-
-  function runSim(game) {
-    if (!simInputs) return
-    setSimRunning(true)
-    setResult(null)
-    setSelectedGameId(game.game_id)
-
-    const buildRoster = (team) =>
-      Object.entries(simInputs.players)
-        .filter(([, p]) => p.team === team)
-        .map(([playerId, p]) => ({
-          player_id: playerId,
-          ...p,
-          usage_sig: usageSigByPlayer[playerId] || 0,
-        }))
-
-    const home = { teamInfo: simInputs.teams[game.home_team] || {}, players: buildRoster(game.home_team) }
-    const away = { teamInfo: simInputs.teams[game.away_team] || {}, players: buildRoster(game.away_team) }
-
-    if (!home.teamInfo.plays_per_game || !away.teamInfo.plays_per_game) {
-      setError(`Missing real pace data for ${game.home_team} or ${game.away_team} -- run the pipeline once more.`)
-      setSimRunning(false)
-      return
-    }
-
-    const worker = new Worker(new URL('./workers/gameSimWorker.js', import.meta.url), { type: 'module' })
-    worker.onmessage = (e) => {
-      setResult({ ...e.data, homeTeam: game.home_team, awayTeam: game.away_team })
-      setSimRunning(false)
-      worker.terminate()
-    }
-    worker.postMessage({ home, away, leagueYpc: simInputs.league_ypc, vegasTdPerPoint: simInputs.vegas_td_per_point, vegasWeight: simInputs.vegas_weight ?? 0.5 })
-  }
-
-  // A real global matchup selection auto-runs this game's sim, so switching tabs after picking
-  // a matchup elsewhere doesn't require re-selecting it here too.
+  const games = index?.games || []
+  // the header's game pick drives this page too
   useEffect(() => {
-    if (!selectedMatchup || games.length === 0) return
-    const match = games.find((g) => g.home_team === selectedMatchup.home && g.away_team === selectedMatchup.away)
-    if (match && match.game_id !== selectedGameId) runSim(match)
+    if (!games.length) return
+    const want = selectedMatchup ? games.find((g) => g.home === selectedMatchup.home && g.away === selectedMatchup.away) : null
+    if (want) setGid(want.game_id)
+    else if (!gid) setGid(games[0].game_id)
   }, [selectedMatchup, games])
 
-  function playerName(playerId) {
-    return directory?.[playerId]?.name || playerId
-  }
-  function playerPosition(playerId) {
-    return directory?.[playerId]?.position || ''
-  }
+  useEffect(() => {
+    if (!gid) return
+    setLoading(true)
+    fetch(`/data/sims/${gid}.json`).then((r) => r.json()).then((d) => { setSim(d); setLoading(false) }).catch((e) => { setError(e.message); setLoading(false) })
+  }, [gid])
 
-  function primaryQb(team) {
-    if (!simInputs || !directory) return null
-    let best = null
-    let bestUsage = -1
-    for (const [playerId, p] of Object.entries(simInputs.players)) {
-      if (p.team !== team) continue
-      if (directory[playerId]?.position !== 'QB') continue
-      const usage = usageSigByPlayer[playerId] || 0
-      if (usage > bestUsage) {
-        bestUsage = usage
-        best = playerId
-      }
-    }
-    return best
-  }
+  const homeWin = sim ? sim.summary.homeWin + sim.summary.tie / 2 : null
+  const fav = sim ? (homeWin >= 0.5 ? sim.home : sim.away) : null
+  const favPct = sim ? Math.round(100 * Math.max(homeWin, 1 - homeWin)) : null
+  const marketTxt = useMemo(() => {
+    if (!sim?.market) return null
+    const m = sim.market
+    const f = m.spread >= 0 ? sim.home : sim.away
+    return `${sim.away} ${m.away} @ ${sim.home} ${m.home} (${f} -${Math.abs(m.spread)}, total ${m.total})`
+  }, [sim])
 
-  // Market line (2026-10-11), shown as context: our own point-in-time team scoring model lost to the
-  // Vegas line in all 5 held-out seasons 2021-25, so the score / win % here are the market's, converted
-  // with the real spread error (margin vs spread std 12.6 pts). The sim's TD counts are a 50/50 blend of
-  // the market and our own team model (user, 2026-10-12) -- both inputs are shown.
-  function MarketLine({ homeTeam, awayTeam }) {
-    const h = simInputs?.teams?.[homeTeam]
-    const a = simInputs?.teams?.[awayTeam]
-    if (h?.implied_total == null || a?.implied_total == null) {
-      return <p className="meta-line small">No Vegas line posted for this game yet, so TD counts use our own team model (each offense vs the opponent's defense).</p>
-    }
-    const sigma = simInputs.margin_sigma || 12.6
-    const z = (h.spread || 0) / sigma
-    // standard normal CDF (Abramowitz-Stegun 7.1.26)
-    const t = 1 / (1 + 0.3275911 * Math.abs(z) / Math.SQRT2)
-    const erf = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-(z * z) / 2)
-    const homeWin = z >= 0 ? 0.5 * (1 + erf) : 0.5 * (1 - erf)
-    const fav = (h.spread || 0) >= 0 ? homeTeam : awayTeam
-    const favWin = fav === homeTeam ? homeWin : 1 - homeWin
-    return (
-      <div className="slate-status" style={{ marginBottom: 12 }}>
-        <span><strong>Market projection:</strong> {awayTeam} {a.implied_total.toFixed(1)} @ {homeTeam} {h.implied_total.toFixed(1)}</span>
-        <span>{fav} favored by {Math.abs(h.spread || 0).toFixed(1)} &middot; {fav} wins {(favWin * 100).toFixed(0)}%</span>
-        <span>
-          Projected TDs (drive the sim below): {awayTeam} {result?.away?.team?.td_mean ?? '…'}, {homeTeam} {result?.home?.team?.td_mean ?? '…'}
-          {result?.home?.team?.td_source === 'blend' && (
-            <> &middot; half market ({awayTeam} {result.away.team.td_vegas}, {homeTeam} {result.home.team.td_vegas}), half our
-              own team model ({awayTeam} {result.away.team.td_own}, {homeTeam} {result.home.team.td_own})</>
-          )}
-        </span>
-      </div>
-    )
-  }
-
-  function ResultTable({ team, side }) {
-    if (!result) return null
-    const rows = result[side].players
-    const qbId = primaryQb(team)
-    const t = result[side].team
-    return (
-      <div style={{ flex: '1 1 340px', minWidth: 300 }}>
-        <div style={{ fontWeight: 700, marginBottom: 6 }}>
-          <button className="team-link" onClick={() => openTeamSlide({ team })}>{team}</button>
-        </div>
-        <p className="meta-line small" style={{ margin: '0 0 8px' }}>
-          Projected {t.mean_plays} plays ({t.mean_pass_plays} pass) &middot; team passing
-          {qbId && <> ({playerName(qbId)})</>}: {t.mean_completions}/{t.mean_pass_plays}, {t.mean_pass_yards} yds,
-          {' '}{t.mean_sacks} sacks taken
-        </p>
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th className="sticky-col">Player</th>
-                <th>Pos</th>
-                <th>Car</th>
-                <th>Rush Yd</th>
-                <th>Tgt</th>
-                <th>Rec</th>
-                <th>Rec Yd</th>
-                <th>TD%</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r) => (
-                <tr key={r.player_id}>
-                  <td className="sticky-col">
-                    <div className="player-cell" onClick={() => openPlayerSlide({ player_id: r.player_id, player_name: playerName(r.player_id), team, position: playerPosition(r.player_id) })}>
-                      <PlayerAvatar playerId={r.player_id} name={playerName(r.player_id)} />
-                      {playerName(r.player_id)}
-                    </div>
-                  </td>
-                  <td>{playerPosition(r.player_id)}</td>
-                  <td>{r.carries || '—'}</td>
-                  <td>{r.rush_yards || '—'}</td>
-                  <td>{r.targets || '—'}</td>
-                  <td>{r.receptions || '—'}</td>
-                  <td>{r.rec_yards || '—'}</td>
-                  <td className={r.td_pct >= 40 ? 'zone-score' : undefined}>{r.td_pct.toFixed(1)}%</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <p className="empty-state">
-        No game simulation data yet ({error}). Run <code>python matchup_engine.py --season 2026</code>{' '}
-        from the project root first.
-      </p>
-    )
-  }
-  if (!simInputs || !schedule) return <p className="empty-state">Loading...</p>
+  if (error) return <p className="empty-state">No game simulations yet ({error}).</p>
+  if (!index) return <p className="empty-state">Loading...</p>
 
   return (
     <div>
-      <p className="meta-line">
-        Week {simInputs.week} &middot; click a matchup for a Monte Carlo projected box score (3,000
-        iterations: team pace, per-player touch shares, and a team TD count driven by the Vegas
-        implied total) &middot; backtested 2023-2025: the Vegas-driven TD count beat the old
-        trailing-rate one in every season, and the projected score / win % come straight from the
-        market because our own team model lost to it in all 5 seasons tested &middot; still no
-        field goals, PATs, defense/special-teams scoring or drive sequencing in the box score
+      <p className="note">
+        Every game this week is played 10,000 times, snap by snap: run or pass, sacks, scrambles, completions, interceptions, fumbles,
+        penalties, 4th-down calls, field goals, punts and the clock, drawn from five seasons of NFL play-by-play and shifted by each
+        offense's and defense's own 2026 numbers, each quarterback's own passing and each player's share of the carries and targets.
+        Each offense is then nudged halfway toward the betting market's team total (the same 50/50 blend this page has always used).
+        The replay is the most typical of the 10,000 games -- the winner most of them pick, on the side of the spread and total most
+        of them land, closest to the median score -- and the tables below it are the averages of all 10,000. Tested on 2024-25 games
+        it never saw: scores within 0.1 point of the market's accuracy, QB passing yards 15% closer than the season average, and TD
+        chances and scrimmage yards about even with our grade model -- the grades stay the official numbers. Simulated games, not
+        predictions; games lock at kickoff.
       </p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 16 }}>
-        {games.map((g) => (
-          <button
-            key={g.game_id}
-            className={selectedGameId === g.game_id ? 'active' : ''}
-            style={{ padding: '8px 14px' }}
-            onClick={() => runSim(g)}
-          >
-            {g.away_team} @ {g.home_team}
-          </button>
-        ))}
+      <div className="gs-games">
+        {games.map((g) => {
+          const hw = g.homeWin
+          const fv = hw >= 0.5 ? g.home : g.away
+          return (
+            <button key={g.game_id} className={`gs-game${gid === g.game_id ? ' active' : ''}`} onClick={() => setGid(g.game_id)}>
+              <span className="gs-game-t"><img src={LOGO(g.away)} alt="" width={16} height={16} />{g.away} @ {g.home}<img src={LOGO(g.home)} alt="" width={16} height={16} /></span>
+              <span className="gs-game-s">{fv} {Math.round(100 * Math.max(hw, 1 - hw))}% · typ. {g.typical[1]}-{g.typical[0]}</span>
+            </button>
+          )
+        })}
       </div>
-
-      {simRunning && <p className="empty-state">Simulating...</p>}
-      {result && <MarketLine homeTeam={result.homeTeam} awayTeam={result.awayTeam} />}
-      {result && (
-        <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-          <ResultTable team={result.awayTeam} side="away" />
-          <ResultTable team={result.homeTeam} side="home" />
-        </div>
+      {loading && !sim && <p className="empty-state">Loading the simulation...</p>}
+      {sim && (
+        <>
+          <div className="slate-status gs-sum">
+            <span><strong>10,000 games:</strong> {sim.away} {f1(sim.summary.away.mean)} @ {sim.home} {f1(sim.summary.home.mean)} on average
+              · {fav} wins {favPct}% · median total {sim.summary.medTotal}</span>
+            <span>Usual range (80% of sims): {sim.away} {sim.summary.away.p10}-{sim.summary.away.p90}, {sim.home} {sim.summary.home.p10}-{sim.summary.home.p90}</span>
+            <span>Our own sim alone: {sim.away} {sim.own.away} - {sim.home} {sim.own.home}{marketTxt ? ` · market: ${marketTxt}` : ' · no market line yet, own sim only'}</span>
+            {sim.frozen && <span>🔒 Locked at kickoff -- this is the pre-game simulation.</span>}
+          </div>
+          <NflSimReplay sim={sim} />
+          <h3 className="gs-h">📊 10,000-game box score (averages)</h3>
+          <div className="gs-boxes">
+            <BoxTables sim={sim} side="away" />
+            <BoxTables sim={sim} side="home" />
+          </div>
+          <p className="meta-line small">Averages over all 10,000 games (a player's TD and yards here are the sim's; his grade, TD % and Est. Yards on
+            the other pages come from the grade model, which is the official number). "Any TD" = share of the 10,000 games he scored at least once.
+            Passing yards are the QB's; sacks are yards lost by the team. Updated {new Date(sim.generated_at).toLocaleString()}.</p>
+        </>
       )}
     </div>
   )
