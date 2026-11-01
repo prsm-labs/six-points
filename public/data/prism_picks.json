@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T16:02+00:00",
+ "generated_at": "2026-11-01T11:01+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -900,32 +900,12 @@
    "tiers": {
     "mid": [
      {
-      "player_id": "00-0034844",
-      "name": "Saquon Barkley",
-      "team": "PHI",
-      "opp": "WAS",
-      "pos": "RB",
-      "est": 107.6,
-      "depth": "RB1",
-      "game": "PHI-WAS",
-      "stat": "YDS",
-      "line": 90,
-      "label": "90+ scrimmage yards",
-      "chance": 0.4746,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.539,
-      "trackN": 90
-     },
-     {
       "player_id": "00-0033293",
       "name": "Aaron Jones",
       "team": "MIN",
       "opp": "DET",
       "pos": "RB",
-      "est": 133.7,
+      "est": 133.2,
       "depth": "RB1",
       "game": "DET-MIN",
       "stat": "YDS",
@@ -938,6 +918,26 @@
       ],
       "track": 0.539,
       "trackN": 90
+     },
+     {
+      "player_id": "00-0034844",
+      "name": "Saquon Barkley",
+      "team": "PHI",
+      "opp": "WAS",
+      "pos": "RB",
+      "est": 91.7,
+      "depth": "RB1",
+      "game": "PHI-WAS",
+      "stat": "YDS",
+      "line": 85,
+      "label": "85+ scrimmage yards",
+      "chance": 0.4258,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.466,
+      "trackN": 93
      },
      {
       "player_id": "00-0036997",
@@ -1007,7 +1007,7 @@
       "team": "CHI",
       "opp": "SEA",
       "pos": "WR",
-      "est": 53.7,
+      "est": 53.8,
       "depth": "WR1",
       "game": "CHI-SEA",
       "stat": "TD",
@@ -1103,7 +1103,7 @@
      }
     ]
    },
-   "updated_at": "2026-10-31T12:02-04:00"
+   "updated_at": "2026-11-01T06:01-05:00"
   }
  ]
 }

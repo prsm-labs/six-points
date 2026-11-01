@@ -6772,6 +6772,27 @@
         "injury": "Ankle"
       },
       {
+        "team": "CHI",
+        "name": "D'Marco Jackson",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "CHI",
+        "name": "Kyle Monangai",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Thumb"
+      },
+      {
+        "team": "CHI",
+        "name": "Malik Muhammad",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Toe"
+      },
+      {
         "team": "CIN",
         "name": "Joe Giles-Harris",
         "position": "LB",
@@ -7302,6 +7323,62 @@
         "position": "CB",
         "status": "Out",
         "injury": "Hamstring"
+      },
+      {
+        "team": "SEA",
+        "name": "Uchenna Nwosu",
+        "position": "LB",
+        "status": "Doubtful",
+        "injury": "Ankle"
+      },
+      {
+        "team": "SEA",
+        "name": "Drew Lock",
+        "position": "QB",
+        "status": "Questionable",
+        "injury": "Elbow"
+      },
+      {
+        "team": "SEA",
+        "name": "Rashid Shaheed",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "SEA",
+        "name": "Velus Jones Jr.",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "SEA",
+        "name": "Charles Cross",
+        "position": "T",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "SEA",
+        "name": "Brandon Pili",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Back"
+      },
+      {
+        "team": "SEA",
+        "name": "Patrick O'Connell",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Toe"
+      },
+      {
+        "team": "SEA",
+        "name": "Anthony Bradford",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Knee"
       },
       {
         "team": "TB",

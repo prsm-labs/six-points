@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T16:02+00:00",
+ "generated_at": "2026-11-01T11:01+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -1256,6 +1256,29 @@
      "trackN": 600
     },
     {
+     "player_id": "00-0039338",
+     "name": "Brock Bowers",
+     "team": "LV",
+     "opp": "NYJ",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 91.0,
+     "est": 67.8,
+     "z": 2.82,
+     "games": [
+      116,
+      86,
+      110,
+      70,
+      73
+     ],
+     "why": [
+      "his usage (9.3 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.73,
+     "trackN": 600
+    },
+    {
      "player_id": "00-0038134",
      "name": "Kenneth Walker III",
      "team": "KC",
@@ -1388,29 +1411,6 @@
      "trackN": 600
     },
     {
-     "player_id": "00-0039338",
-     "name": "Brock Bowers",
-     "team": "LV",
-     "opp": "NYJ",
-     "pos": "TE",
-     "depth": "TE1",
-     "line": 91.0,
-     "est": 69.0,
-     "z": 2.65,
-     "games": [
-      116,
-      86,
-      110,
-      70,
-      73
-     ],
-     "why": [
-      "his usage (9.3 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.73,
-     "trackN": 600
-    },
-    {
      "player_id": "00-0031610",
      "name": "Darren Waller",
      "team": "CAR",
@@ -1435,26 +1435,26 @@
      "trackN": 600
     },
     {
-     "player_id": "00-0038543",
-     "name": "Jaxon Smith-Njigba",
-     "team": "SEA",
-     "opp": "CHI",
-     "pos": "WR",
-     "depth": "WR1",
-     "line": 128.0,
-     "est": 101.9,
-     "z": 2.59,
+     "player_id": "00-0038542",
+     "name": "Bijan Robinson",
+     "team": "ATL",
+     "opp": "TB",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 127.6,
+     "est": 102.8,
+     "z": 2.44,
      "games": [
-      122,
-      155,
-      128,
-      76,
+      173,
+      81,
+      213,
+      147,
       118,
-      134,
-      163
+      53,
+      108
      ],
      "why": [
-      "his usage (11.1 touches a game) projects below what he's averaged"
+      "one big game (213) lifts his average -- 113 a game in the others"
      ],
      "track": 0.73,
      "trackN": 600
@@ -1580,7 +1580,7 @@
      "trackN": 600
     }
    ],
-   "updated_at": "2026-10-31T12:02-04:00"
+   "updated_at": "2026-11-01T06:01-05:00"
   }
  ]
 }
