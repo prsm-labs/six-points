@@ -298,7 +298,8 @@ function StatsTable() {
         {data.season} season through week {data.throughWeek} ({data.games} games) &middot; {sorted.length} players &middot;
         1st TD = scored his game's first touchdown &middot; 1st Team TD = scored his team's first touchdown (includes 1st TD games)
         &middot; L5: green = first TD of the game, light green = team's first, red = neither &middot; a passing TD counts for the
-        receiver &middot; updated each morning from the play-by-play
+        receiver &middot; RZ = snaps at the opponent's 20 or closer: targets, rush attempts, and Usage = his share of his team's
+        red zone targets + rushes in his games &middot; updated each morning from the play-by-play
       </p>
       <div className="table-wrap">
         <table>
@@ -314,6 +315,9 @@ function StatsTable() {
               <SortTh label="1st Team TD" sortKeyName="ftt" {...thProps} />
               <SortTh label="1st Team TD %" sortKeyName="fttPct" {...thProps} />
               <SortTh label="L5 · 1st TD" sortKeyName="l5" {...thProps} />
+              <SortTh label="RZ Tgt" sortKeyName="rzTgt" {...thProps} />
+              <SortTh label="RZ Rush" sortKeyName="rzRush" {...thProps} />
+              <SortTh label="RZ Usage" sortKeyName="rzShare" {...thProps} />
             </tr>
           </thead>
           <tbody>
@@ -334,6 +338,9 @@ function StatsTable() {
                 <td>{p.ftt}</td>
                 <td>{pct(p.fttPct)}</td>
                 <td><FirstTdStrip games={p.last5} /></td>
+                <td>{p.rzTgt ?? '—'}</td>
+                <td>{p.rzRush ?? '—'}</td>
+                <td>{p.rzShare == null ? '—' : pct(p.rzShare)}</td>
               </tr>
             ))}
           </tbody>
