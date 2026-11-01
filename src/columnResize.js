@@ -11,6 +11,12 @@ const KEY = "sixpoints.colw.v1";
 const HIDE_KEY = "sixpoints.colhide.v1";
 const MIN_W = 44;
 const MAX_W = 360;
+// 2026-11-01 (user: still only the Player column on a phone): 360 px is a whole phone screen, so a saved width also
+// stops at 40% of the window, and touch drags no longer resize (a scroll starting on a header edge stretched columns).
+const maxW = () => {
+  const z = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
+  return Math.max(MIN_W, Math.min(MAX_W, Math.round((window.innerWidth / z) * 0.4)));
+};
 
 const load = (k) => { try { return JSON.parse(localStorage.getItem(k) || "{}") || {}; } catch { return {}; } };
 let widths = load(KEY);
@@ -46,7 +52,7 @@ function rules() {
       // 2026-11-01 (user: 1st TD Stats showed only the Player column): a saved width is shared by every table with that
       // column name, and one stretched "Player" (a stray drag on a phone header) pushed every other column off screen.
       // Saved widths now stop at MAX_W, which also fixes widths already saved.
-      const w = widths[label] && Math.min(widths[label], MAX_W);
+      const w = widths[label] && Math.min(widths[label], maxW());
       if (!w) return;
       const pad = w < 140 ? "padding-left:6px;padding-right:6px;" : "";
       css += `${sel}{width:${w}px;min-width:${w}px;max-width:${w}px;white-space:normal;overflow:hidden;overflow-wrap:break-word;${pad}}\n`;
@@ -101,6 +107,7 @@ function startDrag(e, th) {
     return;
   }
   lastTap = { label, t: now };
+  if (e.pointerType === "touch") return; // phones: double-tap reset only
   const handle = e.currentTarget;
   // window pixels -> page pixels (big-screen zoom, 2026-10-28)
   const z = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
@@ -113,7 +120,7 @@ function startDrag(e, th) {
     const dx = (ev.clientX - startX) / z;
     if (!moved && Math.abs(dx) < 3) return;
     moved = true;
-    widths[label] = Math.min(MAX_W, Math.max(MIN_W, Math.round(startW + dx)));
+    widths[label] = Math.min(maxW(), Math.max(MIN_W, Math.round(startW + dx)));
     apply();
   };
   const up = () => {
@@ -212,6 +219,7 @@ export function installColumnResize() {
   }
   const obs = new MutationObserver(schedule);
   obs.observe(document.body, { childList: true, subtree: true });
+  window.addEventListener("resize", schedule);
   schedule();
-  return () => { obs.disconnect(); closeChooser(); };
+  return () => { obs.disconnect(); window.removeEventListener("resize", schedule); closeChooser(); };
 }
