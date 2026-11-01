@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T17:06+00:00",
+ "generated_at": "2026-11-01T17:17+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -891,34 +891,14 @@
     "kickoff": "2026-11-01T13:00:00-05:00",
     "label": "BAL @ BUF",
     "closest": {
-     "name": "Jordan Addison",
-     "team": "MIN",
-     "label": "25+ scrimmage yards",
-     "chance": 0.5795
+     "name": "Braelon Allen",
+     "team": "NYJ",
+     "label": "55+ scrimmage yards",
+     "chance": 0.6708
     }
    },
    "tiers": {
     "mid": [
-     {
-      "player_id": "00-0033293",
-      "name": "Aaron Jones",
-      "team": "MIN",
-      "opp": "DET",
-      "pos": "RB",
-      "est": 133.2,
-      "depth": "RB1",
-      "game": "DET-MIN",
-      "stat": "YDS",
-      "line": 110,
-      "label": "110+ scrimmage yards",
-      "chance": 0.4746,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.539,
-      "trackN": 90
-     },
      {
       "player_id": "00-0034844",
       "name": "Saquon Barkley",
@@ -931,6 +911,26 @@
       "stat": "YDS",
       "line": 85,
       "label": "85+ scrimmage yards",
+      "chance": 0.4258,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.466,
+      "trackN": 93
+     },
+     {
+      "player_id": "00-0037525",
+      "name": "Jordan Mason",
+      "team": "MIN",
+      "opp": "DET",
+      "pos": "RB",
+      "est": 63.5,
+      "depth": "RB1",
+      "game": "DET-MIN",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
       "chance": 0.4258,
       "last": [
        8,
@@ -985,7 +985,7 @@
       "team": "TEN",
       "opp": "CIN",
       "pos": "RB",
-      "est": 80.5,
+      "est": 80.6,
       "depth": "RB1",
       "game": "CIN-TEN",
       "stat": "TD",
@@ -1082,28 +1082,28 @@
       "trackN": 65
      },
      {
-      "player_id": "00-0037744",
-      "name": "Trey McBride",
-      "team": "ARI",
-      "opp": "DAL",
-      "pos": "TE",
-      "est": 66.5,
-      "depth": "TE1",
-      "game": "ARI-DAL",
+      "player_id": "00-0033293",
+      "name": "Aaron Jones",
+      "team": "MIN",
+      "opp": "DET",
+      "pos": "RB",
+      "est": 95.7,
+      "depth": "RB2",
+      "game": "DET-MIN",
       "stat": "TD2",
       "line": 2,
       "label": "2+ TDs",
-      "chance": 0.1032,
+      "chance": 0.1164,
       "last": [
        8,
        0
       ],
-      "track": 0.124,
+      "track": 0.132,
       "trackN": 40
      }
     ]
    },
-   "updated_at": "2026-11-01T12:06-05:00"
+   "updated_at": "2026-11-01T12:17-05:00"
   }
  ]
 }

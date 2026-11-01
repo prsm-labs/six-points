@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T17:06+00:00",
+ "generated_at": "2026-11-01T17:17+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -320,36 +320,6 @@
      "trackN": 365
     },
     {
-     "player_id": "00-0033293",
-     "name": "Aaron Jones",
-     "team": "MIN",
-     "opp": "DET",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 90.3,
-     "est": 133.2,
-     "z": 3.71,
-     "games": [
-      40,
-      105,
-      92,
-      128,
-      117,
-      26
-     ],
-     "last": [
-      128,
-      117,
-      26
-     ],
-     "why": [
-      "role up: +38 yds (teammates out / snaps)",
-      "90 a game lately vs 85 on the season"
-     ],
-     "track": 0.772,
-     "trackN": 365
-    },
-    {
      "player_id": "00-0041037",
      "name": "Denzel Boston",
      "team": "CLE",
@@ -378,35 +348,6 @@
      ],
      "track": 0.772,
      "trackN": 365
-    },
-    {
-     "player_id": "00-0037256",
-     "name": "Rachaad White",
-     "team": "WAS",
-     "opp": "PHI",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 39.3,
-     "est": 61.5,
-     "z": 2.83,
-     "games": [
-      27,
-      83,
-      41,
-      20,
-      57
-     ],
-     "last": [
-      41,
-      20,
-      57
-     ],
-     "why": [
-      "role up: +11 yds (teammates out / snaps)",
-      "39 a game lately vs 46 on the season"
-     ],
-     "track": 0.658,
-     "trackN": 705
     },
     {
      "player_id": "00-0036358",
@@ -446,8 +387,8 @@
      "pos": "WR",
      "depth": "WR2",
      "line": 27.3,
-     "est": 40.5,
-     "z": 2.07,
+     "est": 40.8,
+     "z": 2.11,
      "games": [
       38,
       9,
@@ -470,7 +411,7 @@
      "trackN": 705
     }
    ],
-   "updated_at": "2026-11-01T12:06-05:00"
+   "updated_at": "2026-11-01T12:17-05:00"
   }
  ]
 }
