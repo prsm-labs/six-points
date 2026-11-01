@@ -168,7 +168,7 @@ export function SlateStatus({ data }) {
       )}
       {notPlaying.length > 0 && (
         <button className="team-link" onClick={() => setNpOpen((o) => !o)}>
-          {notPlaying.length} not playing (IR, Out, practice squad…) {npOpen ? '▴' : '▾'}
+          {notPlaying.length} not playing (IR, Out, practice squad, backup QBs / no role…) {npOpen ? '▴' : '▾'}
         </button>
       )}
       {npOpen && (

@@ -58,12 +58,46 @@ async function pastSlate(w) {
   })
 }
 
+// 2026-11-01 (user: stop listing backup QBs like Carson Wentz and players with no usage who won't take a snap): rows with
+// no projected role move from `matchups` to `not_playing` (reason "No projected role ..."), so every page drops them and
+// the status bar's not-playing list names them. No projection changes. Rule:
+//   QB: not QB1 on ESPN's depth chart AND not his team's top QB by usage (a backup named the starter keeps his row)
+//   RB / WR / TE: below RB2 / WR3 / TE2 on ESPN's depth chart, no vacated role (< 1 touch inherited), AND no games for this
+//     team this season (teamGp 0, his usage is last season's / a prior) or a known snap share under 5%
+// Rows without these fields (weeks 1-5 replays) are left alone.
+const DEEP = { RB: 2, WR: 3, TE: 2 }
+function noRole(m) {
+  const n = Number(/(\d+)/.exec(m.depth_label || '')?.[1])
+  if (!n) return null
+  if (m.position === 'QB') return n > 1 && m.use_rank > 1 ? 'No projected role (backup QB)' : null
+  if (!DEEP[m.position] || n <= DEEP[m.position] || (m.role_gain || 0) >= 1 || m.teamGp == null) return null
+  if (m.teamGp === 0) return `No projected role (no games for ${m.team} this season)`
+  if (m.snap_pct_avg != null && m.snap_pct_avg < 0.05) return `No projected role (${Math.round(m.snap_pct_avg * 100)}% of snaps)`
+  return null
+}
+function trimNoRole(d) {
+  if (!d?.matchups) return d
+  const keep = []
+  const off = []
+  for (const m of d.matchups) {
+    const why = noRole(m)
+    if (why) off.push({ ...m, absent_reason: why, noRole: true })
+    else keep.push(m)
+  }
+  return off.length ? { ...d, matchups: keep, not_playing: [...(d.not_playing || []), ...off] } : d
+}
+
 const respond = (obj) => new Response(JSON.stringify(obj), { status: 200, headers: { 'content-type': 'application/json' } })
 window.fetch = async (input, init) => {
   const url = typeof input === 'string' ? input : input?.url || ''
+  if (url.split('?')[0] === '/data/all_matchups_latest.json') {
+    if (week != null) return respond(trimNoRole(await pastSlate(week)))
+    const r = await realFetch(input, init)
+    if (!r.ok) return r
+    return respond(trimNoRole(await r.json()))
+  }
   if (week != null && url.startsWith('/data/')) {
     const path = url.split('?')[0]
-    if (path === '/data/all_matchups_latest.json') return respond(await pastSlate(week))
     if (path === '/data/prism_picks.json' || path === '/data/fades.json' || path === '/data/bounce.json') {
       const d = await realFetch(url, init).then((r) => (r.ok ? r.json() : null)).catch(() => null)
       if (d) return respond({ ...d, week, weeks: (d.weeks || []).filter((x) => x.week <= week) })
