@@ -8,6 +8,7 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import PickButton from './PickButton.jsx'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
+import './RiskBoard.css' // the L5 strip reuses the L7 hit-strip squares
 
 // First Touchdown -- the real NFL prop market (First TD Scorer / Team to Score First), not just
 // "anytime TD" (already Paydirt Lab's job). Two real, distinct halves:
@@ -247,6 +248,101 @@ function TrackerTable() {
   )
 }
 
+// 2026-11-01 Stats (user: "a first touchdown stat table, listing all players and their touchdown totals, first touchdown and
+// first team touchdown and a mini 1st TD L5 strip"). first_td_stats.json (build_first_td.py, nflverse play-by-play, daily):
+// this season's games, TDs, the game's first TD, his team's first TD, and his last 5 games. Context only.
+const L5_CLASS = (g) => (g.ftd ? 'y' : g.ftt ? 't' : 'n')
+const L5_TEXT = (g) => (g.ftd ? 'first TD of the game' : g.ftt ? "his team's first TD" : g.td ? `${g.td} TD, not first` : 'no TD')
+
+function FirstTdStrip({ games }) {
+  if (!games?.length) return <span className="rb-muted">—</span>
+  const n = games.filter((g) => g.ftd).length
+  return (
+    <span className="hit-strip ftd-strip" title={`Last ${games.length} games: ${n} first TD of the game`}>
+      {games.map((g, i) => (
+        <i key={i} className={L5_CLASS(g)} title={`Wk ${g.w} vs ${g.opp}: ${L5_TEXT(g)}`}
+          style={L5_CLASS(g) === 't' ? { background: 'color-mix(in srgb, var(--rb-good) 38%, transparent)' } : undefined} />
+      ))}
+      <b>{n}/{games.length}</b>
+    </span>
+  )
+}
+
+function StatsTable() {
+  const [data, setData] = useState(null)
+  const [error, setError] = useState(null)
+  const position = usePosition()
+  const team = useMasterTeam() || 'all'
+  const search = useMasterSearch()
+  const { selectedMatchup } = useMatchup()
+  useEffect(() => {
+    fetch('/data/first_td_stats.json')
+      .then((r) => { if (!r.ok) throw new Error(`${r.status} ${r.statusText}`); return r.json() })
+      .then(setData)
+      .catch((e) => setError(e.message))
+  }, [])
+  const rows = useMemo(() => (data?.players || [])
+    .map((p) => ({ ...p, ftdPct: p.gp ? p.ftd / p.gp : 0, fttPct: p.gp ? p.ftt / p.gp : 0, l5: p.last5.filter((g) => g.ftd).length }))
+    .filter((p) => position === 'all' || p.pos === position)
+    .filter((p) => (selectedMatchup ? isInSelectedMatchup(selectedMatchup, p.team) : team === 'all' || p.team === team))
+    .filter((p) => !search || `${p.name} ${p.team}`.toLowerCase().includes(search.toLowerCase())), [data, position, team, search, selectedMatchup])
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(rows, 'ftd', 'desc')
+  const thProps = { sortKey, sortDir, onSort: toggleSort }
+  if (error) return <p className="empty-state">No first-TD stats yet ({error}).</p>
+  if (!data) return <p className="empty-state">Loading...</p>
+  const pct = (v) => `${Math.round(v * 100)}%`
+  return (
+    <div>
+      <MatchupFilterNote />
+      <p className="meta-line">
+        {data.season} season through week {data.throughWeek} ({data.games} games) &middot; {sorted.length} players &middot;
+        1st TD = scored his game's first touchdown &middot; 1st Team TD = scored his team's first touchdown (includes 1st TD games)
+        &middot; L5: green = first TD of the game, light green = team's first, red = neither &middot; a passing TD counts for the
+        receiver &middot; updated each morning from the play-by-play
+      </p>
+      <div className="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <SortTh label="Player" sortKeyName="name" className="sticky-col" {...thProps} />
+              <SortTh label="Team" sortKeyName="team" {...thProps} />
+              <SortTh label="Pos" sortKeyName="pos" {...thProps} />
+              <SortTh label="GP" sortKeyName="gp" {...thProps} />
+              <SortTh label="TDs" sortKeyName="tds" {...thProps} />
+              <SortTh label="1st TD" sortKeyName="ftd" {...thProps} />
+              <SortTh label="1st TD %" sortKeyName="ftdPct" {...thProps} />
+              <SortTh label="1st Team TD" sortKeyName="ftt" {...thProps} />
+              <SortTh label="1st Team TD %" sortKeyName="fttPct" {...thProps} />
+              <SortTh label="L5 · 1st TD" sortKeyName="l5" {...thProps} />
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((p) => (
+              <tr key={p.pid}>
+                <td className="sticky-col">
+                  <div className="player-cell" onClick={() => openPlayerSlide({ player_id: p.pid, player_name: p.name, team: p.team, position: p.pos })}>
+                    <PlayerAvatar playerId={p.pid} name={p.name} />
+                    {p.name}
+                  </div>
+                </td>
+                <td><button className="team-link" onClick={() => openTeamSlide({ team: p.team })}>{p.team}</button></td>
+                <td>{p.pos || '—'}</td>
+                <td>{p.gp}</td>
+                <td>{p.tds}</td>
+                <td className="zone-score">{p.ftd}</td>
+                <td>{pct(p.ftdPct)}</td>
+                <td>{p.ftt}</td>
+                <td>{pct(p.fttPct)}</td>
+                <td><FirstTdStrip games={p.last5} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
 export default function FirstTDTab() {
   const [view, setView] = useState('predictor')
   return (
@@ -255,11 +351,14 @@ export default function FirstTDTab() {
         <button className={view === 'predictor' ? 'active' : ''} onClick={() => setView('predictor')}>
           Predictor
         </button>
+        <button className={view === 'stats' ? 'active' : ''} onClick={() => setView('stats')}>
+          Stats
+        </button>
         <button className={view === 'tracker' ? 'active' : ''} onClick={() => setView('tracker')}>
           Tracker
         </button>
       </div>
-      {view === 'predictor' ? <PredictorTable /> : <TrackerTable />}
+      {view === 'predictor' ? <PredictorTable /> : view === 'stats' ? <StatsTable /> : <TrackerTable />}
     </div>
   )
 }
