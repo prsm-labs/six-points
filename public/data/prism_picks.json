@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T16:01+00:00",
+ "generated_at": "2026-11-01T16:50+00:00",
  "season": 2026,
  "week": 8,
  "rule": {
@@ -891,10 +891,10 @@
     "kickoff": "2026-11-01T13:00:00-05:00",
     "label": "BAL @ BUF",
     "closest": {
-     "name": "Jordan Addison",
-     "team": "MIN",
-     "label": "25+ scrimmage yards",
-     "chance": 0.5795
+     "name": "Braelon Allen",
+     "team": "NYJ",
+     "label": "55+ scrimmage yards",
+     "chance": 0.6708
     }
    },
    "tiers": {
@@ -905,7 +905,7 @@
       "team": "MIN",
       "opp": "DET",
       "pos": "RB",
-      "est": 133.2,
+      "est": 134.4,
       "depth": "RB1",
       "game": "DET-MIN",
       "stat": "YDS",
@@ -985,7 +985,7 @@
       "team": "TEN",
       "opp": "CIN",
       "pos": "RB",
-      "est": 80.5,
+      "est": 80.6,
       "depth": "RB1",
       "game": "CIN-TEN",
       "stat": "TD",
@@ -1103,7 +1103,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-01T11:01-05:00"
+   "updated_at": "2026-11-01T11:50-05:00"
   }
  ]
 }
