@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { parseCsv } from './csv.js'
 import { fmtPct } from './gradeUi.jsx'
+import { useRadar } from './RadarLab.jsx'
 
 // Track Record > 📋 Cheat Sheets (Slap Shot's TrackRecordCheatSheets.jsx, 2026-10-18 revamp): every week's Cheat Sheet
 // lists rebuilt with the Cheat Sheets ranking and graded against what happened -- hits vs what the model expected.
@@ -19,6 +20,7 @@ const LISTS = [
 export default function TrackRecordCheatSheets() {
   const [ledger, setLedger] = useState(null)
   const [snaps, setSnaps] = useState({})
+  const radar = useRadar()  // 2026-11-02 🔦 Under the radar record
   useEffect(() => {
     fetch('/data/grade_record.csv').then((r) => (r.ok ? r.text() : '')).then((t) => setLedger(t ? parseCsv(t) : [])).catch(() => setLedger([]))
     fetch('/data/snapshots/index.json').then((r) => (r.ok ? r.json() : null)).then((idx) => {
@@ -95,6 +97,17 @@ export default function TrackRecordCheatSheets() {
         ledger replayed with today's model (marked). Book lists start once anytime-TD odds are in the snapshot.
       </div>
       <div className="grid-cards">
+        {radar?.backtest && (
+          <div className="card">
+            <div className="cheat-list-title">🔦 Under the radar</div>
+            <div className="tr-tile-num">{radar.record.live.n ? `${radar.record.live.hits}` : '—'} <span className="meta-line small">{radar.record.live.n ? `of ${radar.record.live.n} scored (live since week ${radar.liveFromWeek})` : `live from week ${radar.liveFromWeek}`}</span></div>
+            <div className="meta-line small" style={{ margin: 0 }}>
+              this season incl. replayed weeks {radar.record.all.hits}/{radar.record.all.n}{radar.record.all.said != null ? ` (said ${fmtPct(radar.record.all.said, 0)})` : ''}
+              {' '}· backtest 2023-25 {radar.backtest.hits}/{radar.backtest.n} ({fmtPct(radar.backtest.hits / radar.backtest.n, 0)}, said {fmtPct(radar.backtest.said, 0)}, their own rate {fmtPct(radar.backtest.own, 0)})
+              {' '}· old top-10 TD list {fmtPct(radar.backtest.oldList.hits / radar.backtest.oldList.n, 0)} vs their own {fmtPct(radar.backtest.oldList.own, 0)}
+            </div>
+          </div>
+        )}
         {totals.map((t) => (
           <div key={t.key} className="card">
             <div className="cheat-list-title">{t.title}</div>

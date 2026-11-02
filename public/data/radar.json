@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T16:52+00:00",
+ "generated_at": "2026-11-02T16:53+00:00",
  "season": 2026,
  "week": 8,
  "liveFromWeek": 9,
@@ -1169,6 +1169,60 @@
    "replay": true,
    "picks": [
     {
+     "player_id": "00-0037228",
+     "name": "Jaylen Warren",
+     "team": "PIT",
+     "opp": "CLE",
+     "pos": "RB",
+     "chance": 0.4105,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.2855,
+     "est": 106.2,
+     "recent": [
+      [
+       "2026-09-13",
+       "ATL",
+       0
+      ],
+      [
+       "2026-09-20",
+       "NE",
+       0
+      ],
+      [
+       "2026-09-27",
+       "CIN",
+       0
+      ],
+      [
+       "2026-10-01",
+       "CLE",
+       0
+      ],
+      [
+       "2026-10-11",
+       "IND",
+       2
+      ],
+      [
+       "2026-10-18",
+       "TB",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NO",
+       0
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0039919",
      "name": "Rome Odunze",
      "team": "CHI",
@@ -1277,216 +1331,268 @@
      "result": null
     },
     {
-     "player_id": "00-0039793",
-     "name": "AJ Barner",
-     "team": "SEA",
-     "opp": "CHI",
-     "pos": "TE",
-     "chance": 0.2526,
-     "hits": 1,
+     "player_id": "00-0037240",
+     "name": "Jameson Williams",
+     "team": "DET",
+     "opp": "MIN",
+     "pos": "WR",
+     "chance": 0.4223,
+     "hits": 2,
      "n": 8,
-     "own": 0.125,
-     "lift": 0.1276,
-     "est": 36.2,
+     "own": 0.25,
+     "lift": 0.1723,
+     "est": 56.4,
      "recent": [
       [
-       "2026-09-09",
-       "NE",
+       "2025",
+       "",
        0
       ],
       [
-       "2026-09-20",
-       "ARI",
-       1
+       "2026-09-13",
+       "NO",
+       0
+      ],
+      [
+       "2026-09-17",
+       "BUF",
+       0
       ],
       [
        "2026-09-27",
-       "WAS",
+       "NYJ",
        0
       ],
       [
        "2026-10-04",
-       "LAC",
+       "CAR",
        0
       ],
       [
        "2026-10-11",
-       "SF",
+       "ARI",
+       2
+      ],
+      [
+       "2026-10-25",
+       "GB",
+       2
+      ]
+     ],
+     "why": [
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0035261",
+     "name": "Tony Pollard",
+     "team": "TEN",
+     "opp": "CIN",
+     "pos": "RB",
+     "chance": 0.421,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.171,
+     "est": 80.6,
+     "recent": [
+      [
+       "2026-09-13",
+       "NYJ",
        0
       ],
       [
-       "2026-10-15",
-       "DEN",
+       "2026-09-20",
+       "PHI",
+       0
+      ],
+      [
+       "2026-09-27",
+       "NYG",
+       0
+      ],
+      [
+       "2026-10-04",
+       "BAL",
+       1
+      ],
+      [
+       "2026-10-11",
+       "HOU",
+       0
+      ],
+      [
+       "2026-10-18",
+       "IND",
        0
       ],
       [
        "2026-10-25",
-       "KC",
+       "CLE",
+       3
+      ]
+     ],
+     "why": [
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0039794",
+     "name": "Braelon Allen",
+     "team": "NYJ",
+     "opp": "LV",
+     "pos": "RB",
+     "chance": 0.4183,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.1683,
+     "est": 90.1,
+     "recent": [
+      [
+       "2026-09-13",
+       "TEN",
+       0
+      ],
+      [
+       "2026-09-20",
+       "GB",
+       1
+      ],
+      [
+       "2026-09-27",
+       "DET",
+       0
+      ],
+      [
+       "2026-10-04",
+       "CHI",
+       0
+      ],
+      [
+       "2026-10-11",
+       "CLE",
+       1
+      ],
+      [
+       "2026-10-18",
+       "NE",
+       0
+      ],
+      [
+       "2026-10-25",
+       "MIA",
        0
       ]
      ],
      "why": [
-      "1.0 red-zone touches a game",
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0035640",
+     "name": "DK Metcalf",
+     "team": "PIT",
+     "opp": "CLE",
+     "pos": "WR",
+     "chance": 0.2771,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1521,
+     "est": 57.4,
+     "recent": [
+      [
+       "2026-09-13",
+       "ATL",
+       0
+      ],
+      [
+       "2026-09-20",
+       "NE",
+       0
+      ],
+      [
+       "2026-09-27",
+       "CIN",
+       1
+      ],
+      [
+       "2026-10-01",
+       "CLE",
+       0
+      ],
+      [
+       "2026-10-11",
+       "IND",
+       0
+      ],
+      [
+       "2026-10-18",
+       "TB",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NO",
+       0
+      ]
+     ],
+     "why": [
       "scored in 1 of his last 8 games"
      ],
      "result": null
     },
     {
-     "player_id": "00-0038996",
-     "name": "Tucker Kraft",
-     "team": "GB",
-     "opp": "CAR",
-     "pos": "TE",
-     "chance": 0.3008,
+     "player_id": "00-0037247",
+     "name": "George Pickens",
+     "team": "DAL",
+     "opp": "ARI",
+     "pos": "WR",
+     "chance": 0.386,
      "hits": 2,
      "n": 8,
      "own": 0.25,
-     "lift": 0.0508,
-     "est": 45.5,
+     "lift": 0.136,
+     "est": 55.0,
      "recent": [
       [
        "2026-09-13",
-       "MIN",
+       "NYG",
        0
       ],
       [
        "2026-09-20",
-       "NYJ",
+       "WAS",
        0
       ],
       [
-       "2026-09-24",
-       "ATL",
+       "2026-09-27",
+       "BAL",
        0
       ],
       [
        "2026-10-04",
+       "HOU",
+       0
+      ],
+      [
+       "2026-10-08",
        "TB",
        1
       ],
       [
-       "2026-10-11",
-       "CHI",
-       0
-      ],
-      [
        "2026-10-18",
-       "DAL",
-       0
-      ],
-      [
-       "2026-10-25",
-       "DET",
-       1
-      ]
-     ],
-     "why": [
-      "scored in 2 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0040735",
-     "name": "Luther Burden III",
-     "team": "CHI",
-     "opp": "SEA",
-     "pos": "WR",
-     "chance": 0.2857,
-     "hits": 2,
-     "n": 8,
-     "own": 0.25,
-     "lift": 0.0357,
-     "est": 59.7,
-     "recent": [
-      [
-       "2026-09-13",
-       "CAR",
-       0
-      ],
-      [
-       "2026-09-20",
-       "MIN",
-       0
-      ],
-      [
-       "2026-09-28",
-       "PHI",
-       1
-      ],
-      [
-       "2026-10-04",
-       "NYJ",
-       0
-      ],
-      [
-       "2026-10-11",
        "GB",
        0
       ],
       [
-       "2026-10-18",
-       "ATL",
-       0
-      ],
-      [
-       "2026-10-22",
-       "NE",
-       1
-      ]
-     ],
-     "why": [
-      "1.2 red-zone touches a game",
-      "scored in 2 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0039491",
-     "name": "Jalen Coker",
-     "team": "CAR",
-     "opp": "GB",
-     "pos": "WR",
-     "chance": 0.2365,
-     "hits": 2,
-     "n": 8,
-     "own": 0.25,
-     "lift": -0.0135,
-     "est": 54.0,
-     "recent": [
-      [
-       "2025",
-       "",
-       0
-      ],
-      [
-       "2025",
-       "",
-       1
-      ],
-      [
-       "2026-09-13",
-       "CHI",
-       2
-      ],
-      [
-       "2026-09-20",
-       "ATL",
-       0
-      ],
-      [
-       "2026-09-27",
-       "CLE",
-       0
-      ],
-      [
-       "2026-10-18",
+       "2026-10-26",
        "PHI",
-       0
-      ],
-      [
-       "2026-10-25",
-       "TB",
-       0
+       1
       ]
      ],
      "why": [
@@ -1495,61 +1601,115 @@
      "result": null
     },
     {
-     "player_id": "00-0037005",
-     "name": "Tommy Tremble",
-     "team": "CAR",
-     "opp": "GB",
-     "pos": "TE",
-     "chance": 0.216,
-     "hits": 2,
-     "n": 8,
-     "own": 0.25,
-     "lift": -0.034,
-     "est": 21.1,
+     "player_id": "00-0040867",
+     "name": "Makai Lemon",
+     "team": "PHI",
+     "opp": "WAS",
+     "pos": "WR",
+     "chance": 0.2789,
+     "hits": 1,
+     "n": 7,
+     "own": 0.1429,
+     "lift": 0.136,
+     "est": 40.4,
      "recent": [
       [
-       "2025",
-       "",
-       1
-      ],
-      [
        "2026-09-13",
-       "CHI",
+       "WAS",
        0
       ],
       [
        "2026-09-20",
-       "ATL",
+       "TEN",
        0
       ],
       [
-       "2026-09-27",
-       "CLE",
+       "2026-09-28",
+       "CHI",
        0
       ],
       [
        "2026-10-04",
+       "LA",
+       0
+      ],
+      [
+       "2026-10-11",
+       "JAX",
+       0
+      ],
+      [
+       "2026-10-18",
+       "CAR",
+       0
+      ],
+      [
+       "2026-10-26",
+       "DAL",
+       1
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 7 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0037263",
+     "name": "Tyler Allgeier",
+     "team": "ARI",
+     "opp": "DAL",
+     "pos": "RB",
+     "chance": 0.2553,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1303,
+     "est": 48.7,
+     "recent": [
+      [
+       "2026-09-13",
+       "LAC",
+       0
+      ],
+      [
+       "2026-09-20",
+       "SEA",
+       0
+      ],
+      [
+       "2026-09-27",
+       "SF",
+       0
+      ],
+      [
+       "2026-10-04",
+       "NYG",
+       1
+      ],
+      [
+       "2026-10-11",
        "DET",
        0
       ],
       [
        "2026-10-18",
-       "PHI",
-       2
+       "LA",
+       0
       ],
       [
        "2026-10-25",
-       "TB",
+       "DEN",
        0
       ]
      ],
      "why": [
-      "scored in 2 of his last 8 games"
+      "scored in 1 of his last 8 games"
      ],
      "result": null
     }
    ],
-   "updated_at": "2026-11-02T11:52-05:00"
+   "updated_at": "2026-11-02T11:53-05:00"
   }
  ]
 }

@@ -15,6 +15,7 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 import CheatSheetTab from './CheatSheetTab.jsx'
 import PrismPicks from './PrismPicks.jsx'
 import { useMasterSearch } from './masterFilter.js'
+import { useRadar } from './RadarLab.jsx'
 import { matchesSearch } from './teamSearch.js'
 
 // 📋 Cheat Sheets (Slap Shot's tabs/CheatSheetsTab.jsx, 2026-10-18 revamp): this week's quick reads -- top candidates
@@ -82,6 +83,7 @@ function QuickReads() {
   // 2026-10-27 📈 Bounce-backs (build_bounce.py): this week's top 5 by gap, players in the filtered pool only
   const [bounce, setBounce] = useState(null)
   useEffect(() => { fetch('/data/bounce.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).then(setBounce).catch(() => setBounce(null)) }, [slate?.week])
+  const radar = useRadar(slate?.week)  // 2026-11-02 🔦 Under the radar (build_radar.py)
 
   const pool = useMemo(() => {
     if (!slate?.matchups) return []
@@ -101,6 +103,8 @@ function QuickReads() {
   const poolById = new Map(pool.map((m) => [m.player_id, m]))
   const bounceTop = (bounce?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, 5)
     .map((f) => ({ ...poolById.get(f.player_id), _bline: f.line, _best: f.est, _btrack: f.track }))
+  const radarTop = (radar?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, 5)
+    .map((f) => ({ ...poolById.get(f.player_id), _rchance: f.chance, _rhits: f.hits, _rn: f.n }))
   const priced = pool.filter((m) => m.edge != null)
   const bestValue = [...priced].filter((m) => m.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5)
   const overvalued = [...priced].filter((m) => m.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5)
@@ -143,6 +147,8 @@ function QuickReads() {
       <MatchupFilterNote />
       <div className="grid-cards">
         <ListCard title="🏈 TD Candidates" sub="Top 5 by chance to score a TD" items={tdC} renderRow={(m) => fmtPct(m.p_td, 1)} />
+        <ListCard title="🔦 Under the radar" sub={`Scored in 2 or fewer of his last 8, 20%+ TD chance this week — ranked by how far this week beats his usual. Backtest: ${radar?.backtest ? Math.round((radar.backtest.hits / radar.backtest.n) * 100) : 33}% scored vs their own ${radar?.backtest ? Math.round(radar.backtest.own * 100) : 11}% · Scouting → Under the radar`} items={radarTop}
+          renderRow={(m) => <span className="edge-stack"><b>{fmtPct(m._rchance, 0)}</b><span className="meta-line small">scored {m._rhits} of last {m._rn}</span></span>} />
         <ListCard title="🏈🏈 2+ TD Candidates" sub="Top 5 by chance of 2+ TDs" items={td2C} prop="td2" renderRow={(m) => fmtPct(m.p_td2, 1)} />
         <ListCard title="💨 100+ Yard Candidates" sub="Top 5 by chance of 100+ scrimmage yards · defense tag = yards allowed to his position" items={ydsC} prop="yds100" defTag="yds" renderRow={(m) => fmtPct(m.p_100, 1)} />
         <ListCard title="📈 Bounce-backs" sub={`Est. Yards well above his last 3 games: ${bounce?.backtest ? Math.round((bounce.backtest.hits / bounce.backtest.n) * 100) : 70}% of past bounce-backs finished above that average (back to his level, not past it)`} items={bounceTop} prop="bounce" defTag="yds"
