@@ -10,12 +10,13 @@ import { matchesSearch } from './teamSearch.js'
 import { startedTeams, topPicks } from './topPicks.js'
 import { applyGroups } from './FilterPanel.jsx'
 import { DEF_TIERS, oppDefTier } from './oppDef.jsx'
+import { EDGES, edgeIndex, loadWind } from './edges.js'
 
 export const TD_OPTIONS = [null, 10, 20, 30, 40]
 const LETTERS = ['A+', 'A', 'A-', 'B', 'C', 'D', 'F']
 const H2H_LETTERS = ['A+', 'A', 'B', 'C', 'D', 'F']
 
-const DEFAULTS = { minTd: null, tags: [], tagsNot: [], tagsMode: 'all', top: [], prism: [], grades: [], h2h: [], venue: [], oppd: [], search: '' }
+const DEFAULTS = { minTd: null, tags: [], tagsNot: [], tagsMode: 'all', edge: [], edgeNot: [], edgeMode: 'all', top: [], prism: [], grades: [], h2h: [], venue: [], oppd: [], search: '' }
 let state = { ...DEFAULTS }
 const listeners = new Set()
 const notify = () => listeners.forEach((fn) => fn())
@@ -51,13 +52,16 @@ export function useFilterContext(slate) {
         const l = idx?.locks?.find((x) => x.season === season && x.week === week)
         const lock = l ? await getJson(`/data/top_picks/${l.file}`) : null
         if (alive) setSrc({ week, lock, pp, schedule })
+        // 2026-11-02 tested edges (edges.js): QB change needs the game logs, Windy the game-day weather -- loaded after the rest
+        const [logs, wind] = await Promise.all([getJson('/data/player_game_logs.json'), slate?.past || slate?.replay ? {} : loadWind(schedule, week, getJson)])
+        if (alive) setSrc({ week, lock, pp, schedule, logs, wind })
       })
     return () => { alive = false }
   }, [season, week])
   return useMemo(() => {
     const picks = new Map()
     const rest = new Map()
-    if (!slate?.matchups || !src || src.week !== week) return { picks, rest }
+    if (!slate?.matchups || !src || src.week !== week) return { picks, rest, edges: new Map() }
     const add = (id, k, v) => { if (id == null) return; const e = picks.get(id) || { top: [], prism: [] }; if (!e[k].includes(v)) e[k].push(v); picks.set(id, e) }
     const top = src.lock?.picks?.map((p) => ({ tier: p.tier, id: p.player?.player_id }))
       || (slate.past || slate.replay ? [] : topPicks(slate.matchups, { excludeTeams: startedTeams(src.schedule, week) }).map((t) => ({ tier: t.tier, id: t.m?.player_id })))
@@ -74,13 +78,13 @@ export function useFilterContext(slate) {
         rest.set(t, { days: Math.round((day(g.gameday) - day(prev.gameday)) / 864e5), bye: prev.week < week - 1 })
       }
     }
-    return { picks, rest }
+    return { picks, rest, edges: edgeIndex(slate, src.logs, src.wind, src.schedule) }
   }, [slate, src, week, season])
 }
 
 // ctx: useFilterContext(slate). Rows carry h2h / ha (All Matchups adds them from h2h.jsx).
 export function buildGroups(ctx = {}) {
-  const { picks, rest } = ctx
+  const { picks, rest, edges } = ctx
   const tagKeys = (m) => {
     const t = []
     const r = rest?.get(m.team)
@@ -121,6 +125,8 @@ export function buildGroups(ctx = {}) {
       { v: 'starterback', label: '🔙 Starter back', title: "His recent usage came while the lead at his position was out, and the lead is back (or Questionable) — proceed with caution; kept out of Top Picks / PRISM Picks" },
       { v: 'injury', label: '🩹 Injury tag', title: 'Questionable / Doubtful this week — tap twice to hide them' },
     ] },
+    // 2026-11-02 tested edges (edges.js): spots that beat -- or missed -- our own chance every held-out season
+    { key: 'edge', label: 'Edges (tested)', chip: 'Edge', type: 'tags', get: (m) => edges?.get(m.player_id) || [], options: EDGES },
     { key: 'grades', label: 'Grade', type: 'multi', get: (m) => m.grade, options: LETTERS.map((l) => ({ v: l, label: l })),
       hint: 'Pick the exact letters — the backtested grade model' },
     { key: 'h2h', label: 'H2H grade', chip: 'H2H', type: 'multi', get: (m) => m.h2h?.letter, options: H2H_LETTERS.map((l) => ({ v: l, label: l })),
