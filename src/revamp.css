@@ -390,3 +390,7 @@ header h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
 .lu-kind.boost { color: #2fae5c; }
 .lu-kind.avoid { color: #e5584b; }
 .lu-btn { margin-top: 6px; }
+/* 2026-11-03 Soft D / Tough D badge on Cheat Sheets rows (CheatSheetsTab.jsx DefBadge) */
+.def-badge { font-size: 10px; font-weight: 600; padding: 0 6px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; vertical-align: 1px; }
+.def-badge.soft { color: #2fae5c; }
+.def-badge.tough { color: #e5584b; }

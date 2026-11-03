@@ -28,6 +28,13 @@ const DEF_TAGS = {
   td: (m) => [defRankText(m), undefined],
   yds: (m) => [ydsRankText(m), ydsRankTitle(m)],
 }
+// 2026-11-03 Soft D / Tough D badge (user: soft / tough matchup badges on the prop cheat sheets): the card's own defense tier
+// (TD lists: TD defense thirds; yardage lists: yards allowed to his position). Context only -- the chance already counts it.
+const DEF_TIER = { td: (m) => m.def_tier, yds: (m) => m.yds_tier }
+function DefBadge({ tier, title }) {
+  if (tier !== 'soft' && tier !== 'tough') return null
+  return <span className={`def-badge ${tier}`} title={title}>{tier === 'soft' ? 'Soft D' : 'Tough D'}</span>
+}
 
 // 2026-10-23 past week (📅 week picker): his real line that week and ✅ / ✗ for the card's bet (TD lists: scored; yards: 100+).
 function ActualMark({ m, prop }) {
@@ -58,6 +65,7 @@ function ListCard({ title, sub, items, renderRow, prop = 'td', defTag = 'td' }) 
               <div>
                 {m.player_name} <span className="meta-line small">({m.team})</span> <GradeBadge grade={m.grade} m={m} /> <HotHandTag m={m} /> <RoleChip m={m} /> <LiveStatusTag m={m} />
                 {' '}<PickButton player={m} compact prop={prop} />
+                {' '}<DefBadge tier={DEF_TIER[defTag](m)} title={`${defText || ''}. Context — the chance already counts the defense`} />
               </div>
               <div className="meta-line small" style={{ margin: 0 }}>
                 {m.position}<DepthTag m={m} /> vs {m.opponent}{defText && <span title={defTitle}>{` · ${defText}`}</span>}
