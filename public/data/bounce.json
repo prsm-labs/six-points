@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-03T11:01+00:00",
+ "generated_at": "2026-11-03T16:03+00:00",
  "season": 2026,
- "week": 8,
+ "week": 9,
  "rule": {
   "z": 2.0,
   "window": 3,
@@ -59,8 +59,8 @@
   "naive": "last 3 <= 75% of his season, no model -> 69% above"
  },
  "live": {
-  "n": 7,
-  "hits": 5,
+  "n": 11,
+  "hits": 9,
   "void": 0
  },
  "weeks": [
@@ -317,7 +317,9 @@
       "54 a game lately vs 52 on the season"
      ],
      "track": 0.772,
-     "trackN": 365
+     "trackN": 365,
+     "actual": 54,
+     "result": "hit"
     },
     {
      "player_id": "00-0041037",
@@ -347,7 +349,9 @@
       "29 a game lately vs 53 on the season"
      ],
      "track": 0.772,
-     "trackN": 365
+     "trackN": 365,
+     "actual": 37,
+     "result": "hit"
     },
     {
      "player_id": "00-0036358",
@@ -377,7 +381,9 @@
       "51 a game lately vs 92 on the season"
      ],
      "track": 0.658,
-     "trackN": 705
+     "trackN": 705,
+     "actual": 58,
+     "result": "hit"
     },
     {
      "player_id": "00-0038117",
@@ -408,10 +414,234 @@
       "27 a game lately vs 29 on the season"
      ],
      "track": 0.658,
-     "trackN": 705
+     "trackN": 705,
+     "actual": 57,
+     "result": "hit"
     }
    ],
    "updated_at": "2026-11-03T06:01-05:00"
+  },
+  {
+   "week": 9,
+   "source": "live",
+   "picks": [
+    {
+     "player_id": "00-0041037",
+     "name": "Denzel Boston",
+     "team": "CLE",
+     "opp": "NO",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 26.3,
+     "est": 52.4,
+     "z": 3.6,
+     "games": [
+      59,
+      95,
+      41,
+      89,
+      46,
+      15,
+      27,
+      37
+     ],
+     "last": [
+      15,
+      27,
+      37
+     ],
+     "why": [
+      "26 a game lately vs 51 on the season"
+     ],
+     "track": 0.773,
+     "trackN": 367
+    },
+    {
+     "player_id": "00-0037238",
+     "name": "Drake London",
+     "team": "ATL",
+     "opp": "CIN",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 45.3,
+     "est": 69.5,
+     "z": 2.9,
+     "games": [
+      35,
+      49,
+      194,
+      96,
+      118,
+      62,
+      66,
+      8
+     ],
+     "last": [
+      62,
+      66,
+      8
+     ],
+     "why": [
+      "45 a game lately vs 78 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 707
+    },
+    {
+     "player_id": "00-0037239",
+     "name": "Chris Olave",
+     "team": "NO",
+     "opp": "CLE",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 48.3,
+     "est": 69.3,
+     "z": 2.52,
+     "games": [
+      182,
+      86,
+      107,
+      116,
+      46,
+      43,
+      56
+     ],
+     "last": [
+      46,
+      43,
+      56
+     ],
+     "why": [
+      "48 a game lately vs 91 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 707
+    },
+    {
+     "player_id": "00-0038542",
+     "name": "Bijan Robinson",
+     "team": "ATL",
+     "opp": "CIN",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 79.0,
+     "est": 101.4,
+     "z": 2.22,
+     "games": [
+      173,
+      81,
+      213,
+      147,
+      118,
+      53,
+      108,
+      76
+     ],
+     "last": [
+      53,
+      108,
+      76
+     ],
+     "why": [
+      "79 a game lately vs 121 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 707
+    },
+    {
+     "player_id": "00-0037256",
+     "name": "Rachaad White",
+     "team": "WAS",
+     "opp": "LA",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 45.7,
+     "est": 63.0,
+     "z": 2.18,
+     "games": [
+      27,
+      83,
+      41,
+      20,
+      57,
+      60
+     ],
+     "last": [
+      20,
+      57,
+      60
+     ],
+     "why": [
+      "role up: +9 yds (teammates out / snaps)",
+      "46 a game lately vs 48 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 707
+    },
+    {
+     "player_id": "00-0036158",
+     "name": "J.K. Dobbins",
+     "team": "DEN",
+     "opp": "CAR",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 27.3,
+     "est": 41.3,
+     "z": 2.17,
+     "games": [
+      36,
+      36,
+      53,
+      52,
+      74,
+      46,
+      23,
+      13
+     ],
+     "last": [
+      46,
+      23,
+      13
+     ],
+     "why": [
+      "27 a game lately vs 42 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 707
+    },
+    {
+     "player_id": "00-0038997",
+     "name": "Josh Downs",
+     "team": "IND",
+     "opp": "DAL",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 29.3,
+     "est": 42.5,
+     "z": 2.02,
+     "games": [
+      37,
+      72,
+      77,
+      16,
+      47,
+      47,
+      18,
+      23
+     ],
+     "last": [
+      47,
+      18,
+      23
+     ],
+     "why": [
+      "29 a game lately vs 42 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 707
+    }
+   ],
+   "updated_at": "2026-11-03T11:03-05:00"
   }
  ]
 }

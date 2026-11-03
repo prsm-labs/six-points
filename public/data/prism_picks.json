@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-03T11:01+00:00",
+ "generated_at": "2026-11-03T16:03+00:00",
  "season": 2026,
- "week": 8,
+ "week": 9,
  "rule": {
   "floor": 0.7,
   "last_max": 0.75,
@@ -148,8 +148,8 @@
     ]
    },
    "live": {
-    "n": 10,
-    "hits": 9,
+    "n": 15,
+    "hits": 11,
     "void": 0
    }
   },
@@ -224,18 +224,18 @@
     ]
    },
    "live": {
-    "n": 10,
-    "hits": 1,
+    "n": 15,
+    "hits": 2,
     "void": 0
    }
   }
  },
  "paused": null,
  "live": {
-  "n": 6,
-  "hits": 6,
+  "n": 7,
+  "hits": 7,
   "void": 0,
-  "weeks": 2
+  "weeks": 3
  },
  "weeks": [
   {
@@ -866,7 +866,9 @@
      "depth": "RB1",
      "game": "MIA-NE",
      "track": 0.703,
-     "trackN": 42
+     "trackN": 42,
+     "actual": 69,
+     "result": "hit"
     }
    ],
    "nextGame": {
@@ -903,7 +905,9 @@
        2
       ],
       "track": 0.466,
-      "trackN": 93
+      "trackN": 93,
+      "actual": 54,
+      "result": "miss"
      },
      {
       "player_id": "00-0037525",
@@ -923,7 +927,9 @@
        2
       ],
       "track": 0.466,
-      "trackN": 93
+      "trackN": 93,
+      "actual": 20,
+      "result": "miss"
      },
      {
       "player_id": "00-0036997",
@@ -943,7 +949,9 @@
        2
       ],
       "track": 0.461,
-      "trackN": 93
+      "trackN": 93,
+      "actual": 57,
+      "result": "miss"
      },
      {
       "player_id": "00-0037240",
@@ -963,7 +971,9 @@
        2
       ],
       "track": 0.42,
-      "trackN": 62
+      "trackN": 62,
+      "actual": 1,
+      "result": "hit"
      },
      {
       "player_id": "00-0035261",
@@ -983,7 +993,9 @@
        2
       ],
       "track": 0.42,
-      "trackN": 62
+      "trackN": 62,
+      "actual": 2,
+      "result": "hit"
      }
     ],
     "long": [
@@ -1005,7 +1017,9 @@
        0
       ],
       "track": 0.292,
-      "trackN": 139
+      "trackN": 139,
+      "actual": 0,
+      "result": "miss"
      },
      {
       "player_id": "00-0040719",
@@ -1025,7 +1039,9 @@
        0
       ],
       "track": 0.286,
-      "trackN": 139
+      "trackN": 139,
+      "actual": 159,
+      "result": "hit"
      },
      {
       "player_id": "00-0033921",
@@ -1045,7 +1061,9 @@
        0
       ],
       "track": 0.194,
-      "trackN": 65
+      "trackN": 65,
+      "actual": 0,
+      "result": "miss"
      },
      {
       "player_id": "00-0039811",
@@ -1065,7 +1083,9 @@
        0
       ],
       "track": 0.191,
-      "trackN": 65
+      "trackN": 65,
+      "actual": 16,
+      "result": "miss"
      },
      {
       "player_id": "00-0033293",
@@ -1085,11 +1105,239 @@
        0
       ],
       "track": 0.132,
-      "trackN": 40
+      "trackN": 40,
+      "actual": 0,
+      "result": "miss"
      }
     ]
    },
    "updated_at": "2026-11-03T06:01-05:00"
+  },
+  {
+   "week": 9,
+   "source": "live",
+   "picks": [],
+   "nextGame": {
+    "teams": [
+     "BAL",
+     "JAX"
+    ],
+    "kickoff": "2026-11-05T20:15:00-05:00",
+    "label": "JAX @ BAL",
+    "closest": {
+     "name": "Ja'Kobi Lane",
+     "team": "BAL",
+     "label": "25+ scrimmage yards",
+     "chance": 0.4333
+    }
+   },
+   "tiers": {
+    "mid": [
+     {
+      "player_id": "00-0036997",
+      "name": "Javonte Williams",
+      "team": "DAL",
+      "opp": "IND",
+      "pos": "RB",
+      "est": 86.6,
+      "depth": "RB1",
+      "game": "DAL-IND",
+      "stat": "YDS",
+      "line": 85,
+      "label": "85+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.451,
+      "trackN": 96
+     },
+     {
+      "player_id": "00-0037256",
+      "name": "Rachaad White",
+      "team": "WAS",
+      "opp": "LA",
+      "pos": "RB",
+      "est": 63.0,
+      "depth": "RB1",
+      "game": "LA-WAS",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.451,
+      "trackN": 96
+     },
+     {
+      "player_id": "00-0036919",
+      "name": "Kenny Gainwell",
+      "team": "TB",
+      "opp": "CHI",
+      "pos": "RB",
+      "est": 50.8,
+      "depth": "RB2",
+      "game": "CHI-TB",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.451,
+      "trackN": 96
+     },
+     {
+      "player_id": "00-0038597",
+      "name": "Chase Brown",
+      "team": "CIN",
+      "opp": "ATL",
+      "pos": "RB",
+      "est": 80.0,
+      "depth": "RB1",
+      "game": "ATL-CIN",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3776,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.431,
+      "trackN": 64
+     },
+     {
+      "player_id": "00-0040784",
+      "name": "Quinshon Judkins",
+      "team": "CLE",
+      "opp": "NO",
+      "pos": "RB",
+      "est": 66.9,
+      "depth": "RB1",
+      "game": "CLE-NO",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3514,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.419,
+      "trackN": 64
+     }
+    ],
+    "long": [
+     {
+      "player_id": "00-0039919",
+      "name": "Rome Odunze",
+      "team": "CHI",
+      "opp": "TB",
+      "pos": "WR",
+      "est": 53.7,
+      "depth": "WR1",
+      "game": "CHI-TB",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.2188,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.29,
+      "trackN": 141
+     },
+     {
+      "player_id": "00-0035700",
+      "name": "Josh Jacobs",
+      "team": "GB",
+      "opp": "NE",
+      "pos": "RB",
+      "est": 77.8,
+      "depth": "RB1",
+      "game": "GB-NE",
+      "stat": "YDS",
+      "line": 95,
+      "label": "95+ scrimmage yards",
+      "chance": 0.214,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.288,
+      "trackN": 141
+     },
+     {
+      "player_id": "00-0041547",
+      "name": "KC Concepcion",
+      "team": "CLE",
+      "opp": "NO",
+      "pos": "WR",
+      "est": 53.6,
+      "depth": "WR2",
+      "game": "CLE-NO",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.1851,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.185,
+      "trackN": 67
+     },
+     {
+      "player_id": "00-0036555",
+      "name": "Chuba Hubbard",
+      "team": "CAR",
+      "opp": "DEN",
+      "pos": "RB",
+      "est": 99.9,
+      "depth": "RB1",
+      "game": "CAR-DEN",
+      "stat": "YDS",
+      "line": 130,
+      "label": "130+ scrimmage yards",
+      "chance": 0.1834,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.185,
+      "trackN": 67
+     },
+     {
+      "player_id": "00-0039075",
+      "name": "Puka Nacua",
+      "team": "LA",
+      "opp": "WAS",
+      "pos": "WR",
+      "est": 77.0,
+      "depth": "WR1",
+      "game": "LA-WAS",
+      "stat": "TD2",
+      "line": 2,
+      "label": "2+ TDs",
+      "chance": 0.1035,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.123,
+      "trackN": 41
+     }
+    ]
+   },
+   "updated_at": "2026-11-03T11:03-05:00"
   }
  ]
 }
