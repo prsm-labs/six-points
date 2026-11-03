@@ -7,6 +7,7 @@ import './noteCollapse.css'
 import { PlayerDirectoryProvider } from './PlayerDirectory.jsx'
 import { MatchupProvider } from './MatchupContext.jsx'
 import './index.css'
+import { bootOffline } from './offline.js'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,3 +20,4 @@ createRoot(document.getElementById('root')).render(
 )
 
 startNoteCollapse()
+bootOffline() // 2026-11-02 📦 keeps the offline worker only for viewers who saved a snapshot

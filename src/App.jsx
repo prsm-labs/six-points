@@ -44,6 +44,8 @@ import { useViewWeek } from './weekView.js'
 import { tabRequest } from './nav.js'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 import TabMenu from './TabMenu.jsx'
+import { OfflineBanner, OfflineMenuButton } from './Offline.jsx'
+import offlineConfig from './offlineConfig.js'
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -383,7 +385,9 @@ export default function App() {
           as a slideout instead, matching how Going Yard itself surfaces its own odds
           calculator (a button that opens a slideout, not a dedicated page). */}
       {/* 2026-10-23: 📅 week picker -- a past week swaps every page to that week's slate + results */}
-      <div className="master-bar tm-row"><TabMenu tabs={TABS} tab={tab} setTab={setTab} /><WeekBar /><MasterFilter /></div>
+      {/* 2026-11-02 (user): ☰ > 📦 Offline & data (save a time-stamped offline copy, download the numbers); banner while on the copy */}
+      <div className="master-bar tm-row"><TabMenu tabs={TABS} tab={tab} setTab={setTab} footer={(close) => <OfflineMenuButton config={offlineConfig} onOpen={close} />} /><WeekBar /><MasterFilter /></div>
+      <OfflineBanner />
       <TDMarquee onClick={() => setTab('tdtracker')} />
       <MatchupSelector key={`ms-${viewWeek || 'now'}`} />
       <LiveStatusRunner />
