@@ -22,6 +22,7 @@ import DefenseBody, { isDefensePos, useDefense } from './DefenseSlideout.jsx'
 import HitRateCard from './HitRateCard.jsx'
 import Fold from './Fold.jsx'
 import { useHitGames } from './hitGames.js'
+import LinedUp from './LinedUp.jsx'
 
 // 2026-10-28 hit-rate card: the props a book posts for his position; default line = his average rounded (yards to 5)
 const HR = {
@@ -318,6 +319,7 @@ export default function PlayerSlideout() {
           ) : (
             <>
               <ThisWeekCard t={thisWeek} m={weekRow} position={position} />
+              <LinedUp id={player.player_id} />
               {weekRow && (
                 // This week (2026-10-18 revamp, Slap Shot's slideout): the model's chances, the matchup line,
                 // recent TDs, every sportsbook's anytime-TD price (tap to bet) and Gambly for each prop.

@@ -380,3 +380,13 @@ header h1 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
 .mini-field-play b{color:var(--fg);}
 @media (max-width:600px){.mini-field{gap:4px 10px;padding:9px 10px 7px;}.mini-field-minor{display:none;}.mini-field-dd b{font-size:14px;}}
 @media (max-width:600px){.master-filter{justify-content:stretch;}.master-filter select{flex:0 1 38%;min-width:0;}.master-filter input{flex:1 1 50%;max-width:none;}.date-bar > .meta-line{display:none;}}
+
+/* 2026-11-03 🔗 Lined up this week (slideout): tested edges as a short narrative + "show players like this" */
+.lined-up { border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.lu-row { padding: 6px 0; border-bottom: 1px solid var(--border); }
+.lu-row:last-of-type { border-bottom: 0; }
+.lu-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 2px; }
+.lu-kind { font-size: 11px; padding: 1px 6px; border-radius: 999px; border: 1px solid currentColor; }
+.lu-kind.boost { color: #2fae5c; }
+.lu-kind.avoid { color: #e5584b; }
+.lu-btn { margin-top: 6px; }
