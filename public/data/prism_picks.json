@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03T16:03+00:00",
+ "generated_at": "2026-11-04T11:03+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1125,14 +1125,34 @@
     "kickoff": "2026-11-05T20:15:00-05:00",
     "label": "JAX @ BAL",
     "closest": {
-     "name": "Ja'Kobi Lane",
+     "name": "Justice Hill",
      "team": "BAL",
-     "label": "25+ scrimmage yards",
-     "chance": 0.4333
+     "label": "35+ scrimmage yards",
+     "chance": 0.4888
     }
    },
    "tiers": {
     "mid": [
+     {
+      "player_id": "00-0037263",
+      "name": "Tyler Allgeier",
+      "team": "ARI",
+      "opp": "SEA",
+      "pos": "RB",
+      "est": 83.3,
+      "depth": "RB1",
+      "game": "ARI-SEA",
+      "stat": "YDS",
+      "line": 70,
+      "label": "70+ scrimmage yards",
+      "chance": 0.4476,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.462,
+      "trackN": 96
+     },
      {
       "player_id": "00-0036997",
       "name": "Javonte Williams",
@@ -1165,26 +1185,6 @@
       "stat": "YDS",
       "line": 60,
       "label": "60+ scrimmage yards",
-      "chance": 0.4115,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.451,
-      "trackN": 96
-     },
-     {
-      "player_id": "00-0036919",
-      "name": "Kenny Gainwell",
-      "team": "TB",
-      "opp": "CHI",
-      "pos": "RB",
-      "est": 50.8,
-      "depth": "RB2",
-      "game": "CHI-TB",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
       "chance": 0.4115,
       "last": [
        8,
@@ -1337,7 +1337,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-03T11:03-05:00"
+   "updated_at": "2026-11-04T06:03-05:00"
   }
  ]
 }

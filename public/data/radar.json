@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03T16:03+00:00",
+ "generated_at": "2026-11-04T11:03+00:00",
  "season": 2026,
  "week": 9,
  "liveFromWeek": 9,
@@ -1834,6 +1834,63 @@
      "result": null
     },
     {
+     "player_id": "00-0037263",
+     "name": "Tyler Allgeier",
+     "team": "ARI",
+     "opp": "SEA",
+     "pos": "RB",
+     "chance": 0.4515,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.2015,
+     "est": 83.3,
+     "recent": [
+      [
+       "2026-09-20",
+       "SEA",
+       0
+      ],
+      [
+       "2026-09-27",
+       "SF",
+       0
+      ],
+      [
+       "2026-10-04",
+       "NYG",
+       1
+      ],
+      [
+       "2026-10-11",
+       "DET",
+       0
+      ],
+      [
+       "2026-10-18",
+       "LA",
+       0
+      ],
+      [
+       "2026-10-25",
+       "DEN",
+       0
+      ],
+      [
+       "2026-11-01",
+       "DAL",
+       2
+      ]
+     ],
+     "why": [
+      "+8.8 touches a game from teammates who are out",
+      "2.3 red-zone touches a game",
+      "touches up: 13.4 lately vs 11.2",
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0038597",
      "name": "Chase Brown",
      "team": "CIN",
@@ -2213,68 +2270,14 @@
       ]
      ],
      "why": [
+      "+6.6 touches a game from teammates who are out",
       "2.6 red-zone touches a game",
-      "scored in 2 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0040126",
-     "name": "Colston Loveland",
-     "team": "CHI",
-     "opp": "TB",
-     "pos": "TE",
-     "chance": 0.3655,
-     "hits": 2,
-     "n": 8,
-     "own": 0.25,
-     "lift": 0.1155,
-     "est": 44.2,
-     "recent": [
-      [
-       "2026-09-20",
-       "MIN",
-       0
-      ],
-      [
-       "2026-09-28",
-       "PHI",
-       0
-      ],
-      [
-       "2026-10-04",
-       "NYJ",
-       0
-      ],
-      [
-       "2026-10-11",
-       "GB",
-       0
-      ],
-      [
-       "2026-10-18",
-       "ATL",
-       1
-      ],
-      [
-       "2026-10-22",
-       "NE",
-       1
-      ],
-      [
-       "2026-11-02",
-       "SEA",
-       0
-      ]
-     ],
-     "why": [
-      "1.2 red-zone touches a game",
       "scored in 2 of his last 8 games"
      ],
      "result": null
     }
    ],
-   "updated_at": "2026-11-03T11:03-05:00"
+   "updated_at": "2026-11-04T06:03-05:00"
   }
  ]
 }
