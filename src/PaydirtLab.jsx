@@ -15,6 +15,7 @@ import { OppDefCell } from './oppDef.jsx'
 import { useSlate } from './slate.js'
 import { useRecentById } from './lineBoard.js'
 import { HitStrip } from './RiskBoard.jsx'
+import { useLabBand } from './labBand.jsx'
 
 export default function PaydirtLab() {
   const { rows, error, status } = usePaydirtSims()
@@ -56,7 +57,11 @@ function PaydirtTable({ rows }) {
   }, [rows, position, team, search, selectedMatchup])
 
   const graded = rows.some((p) => p.p_td != null)
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, graded ? 'p_td' : 'sim_td_pct', 'desc')
+  // 2026-11-03 📱 prop band on the phone cards (labBand.jsx): anytime TD / 2+ TDs per card, − / + for the whole lab
+  const band = useLabBand('TD', useSlate())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const banded = useMemo(() => filtered.map((p) => ({ ...p, _band: band.chance(p) })), [filtered, band.labLine, band.ready])
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(banded, graded ? 'p_td' : 'sim_td_pct', 'desc')
   // 2026-10-27 L7 strip (user): his last 7 games, green = scored a TD (lines/<season>-wk<N>.json; last season fills early weeks)
   const recentById = useRecentById(useSlate())
   const thProps = { sortKey, sortDir, onSort: toggleSort }
@@ -111,16 +116,17 @@ function PaydirtTable({ rows }) {
               <SortTh label="Team" sortKeyName="team" className="sticky-col" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
               <SortTh label="Opp D" sortKeyName="oppDefSoft" {...thProps} />
-              <SortTh label="Player" sortKeyName="player_name" {...thProps} />
-              <th title="His last 7 games: green = scored a touchdown, oldest to newest (last season's games fill in early on)">L7 · TD</th>
+              <SortTh label="Player" sortKeyName="player_name" className="tc-head" {...thProps} />
+              <SortTh label="Chance at line" sortKeyName="_band" className="tc-band" {...thProps} />
+              <th className="tc-more" title="His last 7 games: green = scored a touchdown, oldest to newest (last season's games fill in early on)">L7 · TD</th>
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
               <SortTh label="Touches/G" sortKeyName="touches_per_game" {...thProps} />
               <SortTh label="RZ Touches/G" sortKeyName="redzone_touches_per_game" {...thProps} />
-              <SortTh label="TrueTDScore" sortKeyName="gtd" {...thProps} />
-              <SortTh label="RZ Matchup" sortKeyName="mu_rz_idx" {...thProps} />
-              {graded && <SortTh label="TD %" sortKeyName="p_td" {...thProps} />}
-              <SortTh label="SimTD%" sortKeyName="sim_td_pct" {...thProps} />
-              <th>Signal</th>
+              <SortTh label="TrueTDScore" sortKeyName="gtd" className="tc-more" {...thProps} />
+              <SortTh label="RZ Matchup" sortKeyName="mu_rz_idx" className="tc-more" {...thProps} />
+              {graded && <SortTh label="TD %" sortKeyName="p_td" className="tc-prim" {...thProps} />}
+              <SortTh label="SimTD%" sortKeyName="sim_td_pct" className={graded ? 'tc-more' : 'tc-prim'} {...thProps} />
+              <th className="tc-more">Signal</th>
             </tr>
           </thead>
           <tbody>
@@ -137,21 +143,22 @@ function PaydirtTable({ rows }) {
                   </button>
                 </td>
                 <OppDefCell m={p} />
-                <td>
+                <td className="tc-head">
                   <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />
                     {p.player_name} <PickButton player={p} compact prop="td" /> <RoleChip m={p} />
                   </div>
                 </td>
-                <td><HitStrip recent={recentById.get(p.player_id)} stat="TD" line={1} /></td>
+                <td className="tc-band">{band.render(p)}</td>
+                <td className="tc-more"><HitStrip recent={recentById.get(p.player_id)} stat="TD" line={1} /></td>
                 <td>{p.position}<DepthTag m={p} /></td>
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.redzone_touches_per_game).toFixed(1)}</td>
-                <td>{Number(p.gtd).toFixed(1)}</td>
-                <td><RzMatchupCell m={p} /></td>
+                <td className="tc-more">{Number(p.gtd).toFixed(1)}</td>
+                <td className="tc-more"><RzMatchupCell m={p} /></td>
                 {graded && <td className="zone-score">{fmtPct(p.p_td)} <GradeBadge grade={p.grade} m={p} /></td>}
-                <td className={graded ? undefined : 'zone-score'}>{p.sim_td_pct.toFixed(1)}%</td>
-                <td>{p.paydirt_signal ? <span className="tier tier-lock">Paydirt</span> : ''}</td>
+                <td className={graded ? 'tc-more' : 'zone-score'}>{p.sim_td_pct.toFixed(1)}%</td>
+                <td className="tc-more">{p.paydirt_signal ? <span className="tier tier-lock">Paydirt</span> : ''}</td>
               </tr>
             ))}
           </tbody>

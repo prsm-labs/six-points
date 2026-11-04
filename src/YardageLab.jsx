@@ -15,6 +15,7 @@ import { rankWhere, YDS_NOTE } from './gradeUi.jsx'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 import { useRecentById } from './lineBoard.js'
 import { HitStrip } from './RiskBoard.jsx'
+import { useLabBand } from './labBand.jsx'
 
 export default function YardageLab() {
   const { rows, error, status } = useYardageSims()
@@ -62,7 +63,11 @@ function YardageTable({ rows }) {
       .filter((r) => !search || r.player_name.toLowerCase().includes(search.toLowerCase()))
   }, [rows, ydsRanks, position, team, search, selectedMatchup])
 
-  const { sorted, sortKey, sortDir, toggleSort } = useSort(filtered, modeled ? 'line_pct' : 'sim_yard_pct', 'desc')
+  // 2026-11-03 📱 prop band on the phone cards (labBand.jsx): one scrimmage-yards line per card, − / + for the whole lab
+  const band = useLabBand('YDS', slate)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const banded = useMemo(() => filtered.map((p) => ({ ...p, _band: band.chance(p) })), [filtered, band.labLine, band.ready])
+  const { sorted, sortKey, sortDir, toggleSort } = useSort(banded, modeled ? 'line_pct' : 'sim_yard_pct', 'desc')
   // 2026-10-27 L7 strip (user): his last 7 games against the position's threshold (scrimmage yards; last season fills early weeks)
   const recentById = useRecentById(slate)
   const yv = model?.validation?.yards
@@ -128,27 +133,28 @@ function YardageTable({ rows }) {
             <tr>
               <SortTh label="Team" sortKeyName="team" className="sticky-col" {...thProps} />
               <SortTh label="Opp" sortKeyName="opponent" {...thProps} />
-              <SortTh label="Player" sortKeyName="player_name" {...thProps} />
-              <th title="His last 7 games against the threshold (RB 60+, WR / TE 75+ scrimmage yards): green = reached it, oldest to newest">L7 · threshold</th>
+              <SortTh label="Player" sortKeyName="player_name" className="tc-head" {...thProps} />
+              <SortTh label="Chance at line" sortKeyName="_band" className="tc-band" {...thProps} />
+              <th className="tc-more" title="His last 7 games against the threshold (RB 60+, WR / TE 75+ scrimmage yards): green = reached it, oldest to newest">L7 · threshold</th>
               <SortTh label="Pos" sortKeyName="position" {...thProps} />
               <SortTh label="Touches/G" sortKeyName="touches_per_game" {...thProps} />
               <SortTh label="Yds/Touch" sortKeyName="ypt" {...thProps} />
-              <SortTh label="Est. Yards" sortKeyName="est_yards" {...thProps} />
-              <SortTh label="Threshold" sortKeyName="position" {...thProps} />
+              <SortTh label="Est. Yards" sortKeyName="est_yards" className="tc-prim" {...thProps} />
+              <SortTh label="Threshold" sortKeyName="position" className="tc-more" {...thProps} />
               {modeled ? (
                 <>
-                  <SortTh label="Matchup" sortKeyName="mu_yds" {...thProps} />
+                  <SortTh label="Matchup" sortKeyName="mu_yds" className="tc-more" {...thProps} />
                   <SortTh label="D vs Pos" sortKeyName="mu_yds_idx" {...thProps} />
-                  <SortTh label="Line %" sortKeyName="line_pct" {...thProps} />
+                  <SortTh label="Line %" sortKeyName="line_pct" className="tc-more" {...thProps} />
                 </>
               ) : (
                 <>
-                  <SortTh label="OnFieldScore" sortKeyName="on_field_score" {...thProps} />
-                  <SortTh label="MatchupScore" sortKeyName="opp_def_rank_pct" {...thProps} />
+                  <SortTh label="OnFieldScore" sortKeyName="on_field_score" className="tc-more" {...thProps} />
+                  <SortTh label="MatchupScore" sortKeyName="opp_def_rank_pct" className="tc-more" {...thProps} />
                 </>
               )}
-              <SortTh label="SimYard%" sortKeyName="sim_yard_pct" {...thProps} />
-              <th>Signal</th>
+              <SortTh label="SimYard%" sortKeyName="sim_yard_pct" className="tc-more" {...thProps} />
+              <th className="tc-more">Signal</th>
             </tr>
           </thead>
           <tbody>
@@ -164,36 +170,37 @@ function YardageTable({ rows }) {
                     {p.opponent}
                   </button>
                 </td>
-                <td>
+                <td className="tc-head">
                   <div className="player-cell" onClick={() => openPlayerSlide(p)}>
                     <PlayerAvatar playerId={p.player_id} name={p.player_name} />
                     {p.player_name} <PickButton player={p} compact prop="yds100" /> <RoleChip m={p} />
                   </div>
                 </td>
-                <td><HitStrip recent={recentById.get(p.player_id)} stat="YDS" line={thresholdFor(p.position)} /></td>
+                <td className="tc-band">{band.render(p)}</td>
+                <td className="tc-more"><HitStrip recent={recentById.get(p.player_id)} stat="YDS" line={thresholdFor(p.position)} /></td>
                 <td>{p.position}<DepthTag m={p} /></td>
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.ypt).toFixed(1)}</td>
                 <td className="zone-score">{p.est_yards.toFixed(1)}</td>
-                <td>{thresholdFor(p.position)}+</td>
+                <td className="tc-more">{thresholdFor(p.position)}+</td>
                 {modeled ? (
                   <>
-                    <td><MatchupCell m={p} /></td>
+                    <td className="tc-more"><MatchupCell m={p} /></td>
                     <td title={p.yds_rank ? `${p.opponent} allows ${Math.round((p.mu_yds_idx - 1) * 100) >= 0 ? '+' : ''}${Math.round((p.mu_yds_idx - 1) * 100)}% yards to ${p.position}s vs league average. ${YDS_NOTE}` : undefined}>
                       {p.yds_rank
                         ? <span className={`mu-chip mu-${p.yds_tier}`}>{rankWhere(p.yds_rank, p.yds_n)}{p.position === 'WR' ? '*' : ''}</span>
                         : <span className="meta-line small">—</span>}
                     </td>
-                    <td className="zone-score" title={leakSummary(p)}>{p.line_pct != null ? `${Math.round(p.line_pct * 100)}%` : '—'}</td>
+                    <td className="zone-score tc-more" title={leakSummary(p)}>{p.line_pct != null ? `${Math.round(p.line_pct * 100)}%` : '—'}</td>
                   </>
                 ) : (
                   <>
-                    <td>{p.on_field_score.toFixed(1)}</td>
-                    <td>{Number(p.opp_def_rank_pct).toFixed(1)}</td>
+                    <td className="tc-more">{p.on_field_score.toFixed(1)}</td>
+                    <td className="tc-more">{Number(p.opp_def_rank_pct).toFixed(1)}</td>
                   </>
                 )}
-                <td>{p.sim_yard_pct.toFixed(1)}%</td>
-                <td>{p.yardage_signal ? <span className="tier tier-lean">Yardage</span> : ''}</td>
+                <td className="tc-more">{p.sim_yard_pct.toFixed(1)}%</td>
+                <td className="tc-more">{p.yardage_signal ? <span className="tier tier-lean">Yardage</span> : ''}</td>
               </tr>
             ))}
           </tbody>
