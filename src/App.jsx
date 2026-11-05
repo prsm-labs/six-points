@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import './App.css'
 import LiveTab, { showScoresView } from './LiveTab.jsx' // 2026-11-05: 📺 Scores
 import StatsHub from './StatsHub.jsx' // 2026-11-05: Stats + Splits + Primetime + Matchup Lookup
@@ -99,11 +100,8 @@ function TrackRecord() {
   const [view, setView] = useState('main')
   return (
     <div>
-      <div className="pill-row hub-row">
-        <button className={`pill-btn ${view === 'main' ? 'active' : ''}`} onClick={() => setView('main')}>📈 Grades &amp; tiers</button>
-        <button className={`pill-btn ${view === 'cheat' ? 'active' : ''}`} onClick={() => setView('cheat')}>📋 Cheat Sheets</button>
-        <button className={`pill-btn ${view === 'pairs' ? 'active' : ''}`} onClick={() => setView('pairs')}>🤝 Pairs</button>
-      </div>
+      <ViewPicker pillClass="pill-btn" rowClass="pill-row hub-row" label="Record" value={view} onChange={setView}
+        options={[['main', '📈 Grades & tiers'], ['cheat', '📋 Cheat Sheets'], ['pairs', '🤝 Pairs']]} />
       {view === 'main' ? <TrackRecordMain /> : view === 'cheat' ? <TrackRecordCheatSheets /> : <TrackRecordPairs />}
     </div>
   )

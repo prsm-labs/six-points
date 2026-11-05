@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
@@ -411,18 +412,13 @@ export default function StatsTab() {
           <button key={k} className={`pill-btn ${view === k ? 'active' : ''}`} onClick={() => { setView(k); setOpen(null) }}>{label}</button>
         ))}
       </div>
-      <div className="pill-row">
-        {WINDOWS.map(([k, label]) => (
-          <button key={k} className={`pill-btn ${win === k ? 'active' : ''}`} onClick={() => setWin(k)}>{label}</button>
-        ))}
-        <button className={`pill-btn ${perGame ? 'active' : ''}`} onClick={() => setPerGame((v) => !v)}>{perGame ? 'Per game' : 'Totals'}</button>
+      {/* 2026-11-05 (user: single-choice button rows -> dropdowns; buttons only where several can be picked) */}
+      <div className="vp-row">
+        <ViewPicker select compact label="Games" options={WINDOWS} value={win} onChange={setWin} />
+        <ViewPicker select compact label="Show" options={[['pg', 'Per game'], ['tot', 'Totals']]} value={perGame ? 'pg' : 'tot'} onChange={(v) => setPerGame(v === 'pg')} />
       </div>
       <div className="stats-filters">
-        {view === 'players' && (
-          <select value={pos} onChange={(e) => setPosition(e.target.value)} aria-label="Position">
-            {POS.map((p) => <option key={p} value={p}>{p === 'all' ? 'All positions' : p}</option>)}
-          </select>
-        )}
+        {/* 2026-11-05: position comes from the app-wide Position dropdown under the game strip (this one repeated it) */}
         {view === 'players' && (
           <label className="meta-line small">Min games <input type="number" min={0} max={17} value={minG} onChange={(e) => setMinG(Number(e.target.value) || 0)} style={{ width: 52 }} /></label>
         )}

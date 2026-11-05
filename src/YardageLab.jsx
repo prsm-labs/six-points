@@ -77,18 +77,7 @@ function YardageTable({ rows }) {
 
   return (
     <div>
-      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 110 }}>
-          Position
-          <select value={position} onChange={(e) => setPosition(e.target.value)}>
-            <option value="all">All</option>
-            {!modeled && <option value="QB">QB</option>}
-            <option value="RB">RB</option>
-            <option value="WR">WR</option>
-            <option value="TE">TE</option>
-          </select>
-        </label>
-      </div>
+      {/* 2026-11-05: position comes from the app-wide Position dropdown under the game strip (this page's own copy removed) */}
       <MatchupFilterNote />
       {modeled ? (
         <>

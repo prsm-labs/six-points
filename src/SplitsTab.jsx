@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
@@ -70,24 +71,10 @@ function LeaderboardView({ gameLogs, directory }) {
 
   return (
     <div>
-      <div className="sub-tabs" style={{ marginBottom: 10 }}>
-        {WINDOWS.map((w) => (
-          <button key={w.key} className={window === w.key ? 'active' : ''} onClick={() => setWindowKey(w.key)}>
-            {w.label}
-          </button>
-        ))}
+      <div className="vp-row">
+        <ViewPicker select compact label="Games" options={WINDOWS.map((w) => [w.key, w.label])} value={window} onChange={setWindowKey} />
       </div>
       <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 120 }}>
-          Position
-          <select value={position} onChange={(e) => setPosition(e.target.value)}>
-            <option value="all">All</option>
-            <option value="QB">QB</option>
-            <option value="RB">RB</option>
-            <option value="WR">WR</option>
-            <option value="TE">TE</option>
-          </select>
-        </label>
         <label style={{ minWidth: 100 }}>
           Min games
           <input type="number" value={minGames} min={0} onChange={(e) => setMinGames(Number(e.target.value))} />
@@ -384,17 +371,8 @@ export default function SplitsTab() {
 
   return (
     <div>
-      <div className="sub-tabs">
-        <button className={view === 'leaderboard' ? 'active' : ''} onClick={() => setView('leaderboard')}>
-          Leaderboard
-        </button>
-        <button className={view === 'situational' ? 'active' : ''} onClick={() => setView('situational')}>
-          Situational
-        </button>
-        <button className={view === 'momentum' ? 'active' : ''} onClick={() => setView('momentum')}>
-          Momentum
-        </button>
-      </div>
+      <ViewPicker pillClass="pill-btn" rowClass="pill-row hub-row" label="Splits" value={view} onChange={setView}
+        options={[['leaderboard', 'Leaderboard'], ['situational', 'Situational'], ['momentum', 'Momentum']]} />
       {view === 'leaderboard' && <LeaderboardView gameLogs={gameLogs} directory={directory} />}
       {view === 'situational' && <SituationalView directory={directory} />}
       {view === 'momentum' && <MomentumView gameLogs={gameLogs} directory={directory} />}

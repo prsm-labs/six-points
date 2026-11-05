@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { isInSelectedMatchup, useMatchup } from './MatchupContext.jsx'
@@ -245,11 +246,8 @@ export default function BreakoutWatchTab() {
 
   return (
     <div>
-      <div className="sub-tabs">
-        <button className={view === 'top' ? 'active' : ''} onClick={() => setView('top')}>Top Picks</button>
-        <button className={view === 'breakout' ? 'active' : ''} onClick={() => setView('breakout')}>Breakout Watch</button>
-        <button className={view === 'upside' ? 'active' : ''} onClick={() => setView('upside')}>Matchup Upside</button>
-      </div>
+      <ViewPicker pillClass="pill-btn" rowClass="pill-row hub-row" label="Top Picks" value={view} onChange={setView}
+        options={[['top', '🏆 Top Picks'], ['breakout', '🚀 Breakout Watch'], ['upside', '📈 Matchup Upside']]} />
       {view === 'upside' && <KeyMatchupsTab />}
       {view !== 'upside' && error && <p className="empty-state">No matchup data yet ({error}).</p>}
       {view !== 'upside' && data && !hasGrades && (

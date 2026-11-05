@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { useSlate } from './slate.js'
 import { buildPairs, LEVELS, MODES, notInPairs, PROP_FILTERS, PROPS, relText, STAR_TOP, toAmerican } from './pairs.js'
 import { startedTeams } from './topPicks.js'
@@ -116,15 +117,15 @@ function LiveBoard() {
         {' '}Levels: 🛡️ Safe (both hit 25%+), ⚖️ Mid-range (10-25%), 🌠 Long shot (3-10%) — the same legs and factors, so a long shot is priced
         as honestly as a safe pair; mid-range and long shots lead with ✨ the shootout link (TD + 100 yds across one game, +7%).
       </div>
-      <div className="pill-row">{LEVELS.map((l) => <button key={l.key} className={`pill-btn ${level === l.key ? 'active' : ''}`} onClick={() => setLevel(l.key)} title={l.blurb}>{l.label}</button>)}</div>
-      <div className="pill-row">{MODES.map((m) => <button key={m.key} className={`pill-btn ${mode === m.key ? 'active' : ''}`} onClick={() => setMode(m.key)}>{m.label}</button>)}</div>
-      <div className="pill-row">
-        {PROP_FILTERS.map((p) => <button key={String(p.key)} className={`pill-btn ${prop === p.key ? 'active' : ''}`} onClick={() => setProp(p.key)}>{p.label}</button>)}
-        {[null, 3, 5].map((s) => <button key={String(s)} className={`pill-btn ${stars === s ? 'active' : ''}`} onClick={() => setStars(s)}>{s ? `★ Top ${s}` : 'All pairs'}</button>)}
+      {/* 2026-11-05 (user: single-choice button rows -> dropdowns; buttons only where several can be picked): level · sort · props · top N · boost */}
+      <div className="vp-row">
+        <ViewPicker select compact label="Level" options={LEVELS.map((l) => [l.key, l.label])} value={level} onChange={setLevel} />
+        <ViewPicker select compact label="Sort" options={MODES.map((m) => [m.key, m.label])} value={mode} onChange={setMode} />
+        <ViewPicker select compact label="Props" options={PROP_FILTERS.map((p) => [p.key, p.label])} value={prop} onChange={setProp} />
+        <ViewPicker select compact label="Show" options={[[null, 'All pairs'], [3, '★ Top 3'], [5, '★ Top 5']]} value={stars} onChange={setStars} />
+        <ViewPicker select compact label="Boost" options={BOOSTS.map((b) => [b, b ? `+${b * 100}%` : 'None'])} value={boost} onChange={setBoost} />
       </div>
       <div className="pill-row">
-        <span className="meta-line small">Profit boost:</span>
-        {BOOSTS.map((b) => <button key={b} className={`pill-btn ${boost === b ? 'active' : ''}`} onClick={() => setBoost(b)}>{b ? `+${b * 100}%` : 'None'}</button>)}
         <StatePicker />
         {lockedBoard && <button className={`pill-btn ${showLocked ? 'active' : ''}`} onClick={() => setShowLocked((v) => !v)}>{showLocked ? '🔒 Locked' : '🔄 Live'} board</button>}
       </div>

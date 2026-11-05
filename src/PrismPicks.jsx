@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide } from './slideouts.js'
 import PickButton from './PickButton.jsx'
@@ -48,8 +49,9 @@ export default function PrismPicks({ slate, notOut }) {
         <button type="button" className="prism-toggle" aria-expanded={open} onClick={() => setOpen((v) => !v)}>{open ? '▴ Hide' : `▾ Show${count('safe') + count('mid') + count('long') ? ` ${count('safe') + count('mid') + count('long')} picks` : ''}`}</button>
       </div>
       {d.tiers && (
-        <div className="pill-row" style={{ width: 'fit-content', maxWidth: '100%', flexWrap: 'wrap', margin: '8px 0 4px' }}>
-          {LEVELS.map((x) => <button key={x.key} type="button" className={`pill-btn ${level === x.key ? 'active' : ''}`} onClick={() => setLevel(x.key)}>{x.label}{count(x.key) ? ` · ${count(x.key)}` : ''}</button>)}
+        <div className="vp-row prism-levels" style={{ margin: '8px 0 4px' }}>
+          {/* 2026-11-05: the level is one choice -> a dropdown */}
+          <ViewPicker select compact label="Level" value={level} onChange={setLevel} options={LEVELS.map((x) => [x.key, `${x.label}${count(x.key) ? ` · ${count(x.key)}` : ''}`])} />
         </div>
       )}
       {picks.length === 0 && tier && <div className="meta-line small">{wk && !wk.tiers ? 'Pick levels started in week 7 of 2026.' : `No line clears this level's bar this week yet — it only shows looks like the ones that have hit ${share(bt.hits, bt.n)} of the time.`}</div>}

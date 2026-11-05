@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
@@ -75,18 +76,7 @@ function PredictorTable() {
 
   return (
     <div>
-      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 110 }}>
-          Position
-          <select value={position} onChange={(e) => setPosition(e.target.value)}>
-            <option value="all">All</option>
-            <option value="QB">QB</option>
-            <option value="RB">RB</option>
-            <option value="WR">WR</option>
-            <option value="TE">TE</option>
-          </select>
-        </label>
-      </div>
+      {/* 2026-11-05: position comes from the app-wide Position dropdown under the game strip (this page's own copy removed) */}
       <MatchupFilterNote />
       <p className="meta-line">
         Season {data.season}, Week {data.week} &middot; {sorted.length} of {data.matchups.length}{' '}
@@ -354,16 +344,9 @@ export default function FirstTDTab() {
   const [view, setView] = useState('predictor')
   return (
     <div>
-      <div className="sub-tabs">
-        <button className={view === 'predictor' ? 'active' : ''} onClick={() => setView('predictor')}>
-          Predictor
-        </button>
-        <button className={view === 'stats' ? 'active' : ''} onClick={() => setView('stats')}>
-          Stats
-        </button>
-        <button className={view === 'tracker' ? 'active' : ''} onClick={() => setView('tracker')}>
-          Tracker
-        </button>
+      <div>
+        <ViewPicker pillClass="pill-btn" rowClass="pill-row hub-row" label="1st TD" value={view} onChange={setView}
+          options={[['predictor', 'Predictor'], ['stats', 'Stats'], ['tracker', 'Tracker']]} />
       </div>
       {view === 'predictor' ? <PredictorTable /> : view === 'stats' ? <StatsTable /> : <TrackerTable />}
     </div>

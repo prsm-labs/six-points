@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { useSlate } from './slate.js'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
@@ -171,10 +172,9 @@ function QuickReads() {
         anytime TD price, pulled once a week (Thursday for TNF, Saturday for Sunday / Monday)
         {priceCount ? ` — ${priceCount} players priced so far.` : ' — none priced yet this week.'}
       </div>
-      <div className="pill-row">
-        {STATUS_FILTERS.map(([k, label]) => (
-          <button key={k} className={`pill-btn ${statusFilter === k ? 'active' : ''}`} onClick={() => setStatusFilter(k)}>{label}</button>
-        ))}
+      {/* 2026-11-05 (user: single-choice button rows -> dropdowns; buttons only where several can be picked) */}
+      <div className="vp-row">
+        <ViewPicker select compact label="Injuries" options={STATUS_FILTERS} value={statusFilter} onChange={setStatusFilter} />
         <StatePicker />
       </div>
       <MatchupFilterNote />

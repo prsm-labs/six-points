@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { useMatchup } from './MatchupContext.jsx'
@@ -116,18 +117,14 @@ export default function GameSimTab() {
         chances and scrimmage yards about even with our grade model -- the grades stay the official numbers. Simulated games, not
         predictions; games lock at kickoff.
       </p>
-      <div className="gs-games">
-        {games.map((g) => {
-          const hw = g.homeWin
-          const fv = hw >= 0.5 ? g.home : g.away
-          return (
-            <button key={g.game_id} className={`gs-game${gid === g.game_id ? ' active' : ''}`} onClick={() => setGid(g.game_id)}>
-              <span className="gs-game-t"><img src={LOGO(g.away)} alt="" width={16} height={16} />{g.away} @ {g.home}<img src={LOGO(g.home)} alt="" width={16} height={16} /></span>
-              <span className="gs-game-s">{fv} {Math.round(100 * Math.max(hw, 1 - hw))}% · typ. {g.typical[1]}-{g.typical[0]}</span>
-            </button>
-          )
-        })}
-      </div>
+      {/* 2026-11-05 (user: the games are already in the matchup cards up top): one dropdown, each game with its simulated favorite and
+          typical score; picking a game in the header strip picks it here too */}
+      {games.length > 0 && <div className="vp-row">
+        <ViewPicker select compact label="Game" value={gid} onChange={setGid} options={games.map((g) => {
+          const fv = g.homeWin >= 0.5 ? g.home : g.away
+          return [g.game_id, `${g.away} @ ${g.home} · ${fv} ${Math.round(100 * Math.max(g.homeWin, 1 - g.homeWin))}% · ${g.typical[1]}-${g.typical[0]}`]
+        })} />
+      </div>}
       {loading && !sim && <p className="empty-state">Loading the simulation...</p>}
       {sim && (
         <>

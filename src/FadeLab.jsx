@@ -44,14 +44,7 @@ export default function FadeLab() {
         {d.live?.n ? <> · this season {d.live.hits}/{d.live.n}</> : null}. Fading a player just because his last 3 games were big{' '}
         <b>lost</b> in the same test ({bt.naive}), so a hot streak alone never puts him here. Fades freeze at kickoff. Not a lock.
       </p>
-      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 110 }}>
-          Position
-          <select value={position} onChange={(e) => setPosition(e.target.value)}>
-            <option value="all">All</option><option value="RB">RB</option><option value="WR">WR</option><option value="TE">TE</option>
-          </select>
-        </label>
-      </div>
+      {/* 2026-11-05: position comes from the app-wide Position dropdown under the game strip (this page's own copy removed) */}
       <MatchupFilterNote />
       {sorted.length === 0 ? <p className="empty-state">No fades {wk ? 'match this filter' : 'this week yet'}.</p> : (
         <div className="table-wrap">

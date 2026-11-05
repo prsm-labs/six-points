@@ -53,14 +53,7 @@ export default function RadarLab() {
         {rec?.all?.n ? <> This season (weeks 6-{d.liveFromWeek - 1} replayed from the frozen line boards): <b>{rec.all.hits}/{rec.all.n}</b> (said {pct(rec.all.said)}).</> : null}
         {rec?.live?.n ? <> Live since week {d.liveFromWeek}: <b>{rec.live.hits}/{rec.live.n}</b>.</> : null} Not a lock.
       </p>
-      <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
-        <label style={{ minWidth: 110 }}>
-          Position
-          <select value={position} onChange={(e) => setPosition(e.target.value)}>
-            <option value="all">All</option><option value="RB">RB</option><option value="WR">WR</option><option value="TE">TE</option>
-          </select>
-        </label>
-      </div>
+      {/* 2026-11-05: position comes from the app-wide Position dropdown under the game strip (this page's own copy removed) */}
       <MatchupFilterNote />
       {sorted.length === 0 ? <p className="empty-state">Nobody under the radar {wk ? 'matches this filter' : 'this week yet'}.</p> : (
         <div className="table-wrap">

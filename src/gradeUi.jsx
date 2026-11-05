@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { POSITIONS, setPosition, usePosition } from './positionFilter.js'
 import { liveStatusFor, useLiveStatus } from './liveStatus.js'
 
@@ -127,14 +128,10 @@ export function useLiveOutFilter() {
 
 export function PositionChips() {
   const pos = usePosition()
+  // 2026-11-05 (user: single-choice button rows -> dropdowns): the app-wide position filter is one dropdown
   return (
-    <div className="position-chips" role="group" aria-label="Position filter (all tabs)">
-      <span className="meta-line small" style={{ margin: 0 }}>Position</span>
-      {POSITIONS.map((p) => (
-        <button key={p} className={pos === p ? 'active' : ''} onClick={() => setPosition(p)}>
-          {p === 'all' ? 'All' : p}
-        </button>
-      ))}
+    <div className="vp-row" aria-label="Position filter (all tabs)">
+      <ViewPicker select compact label="Position" options={POSITIONS.map((p) => [p, p === 'all' ? 'All positions' : p])} value={pos} onChange={setPosition} />
     </div>
   )
 }

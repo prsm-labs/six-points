@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import ViewPicker from './ViewPicker.jsx'
 import { parseCsv } from './csv.js'
 import { MODES, PROPS, toDecimal } from './pairs.js'
 
@@ -63,7 +64,8 @@ export default function TrackRecordPairs() {
   const starRows = rows.filter((g) => g.pr.starRank)
   return (
     <div>
-      <div className="pill-row">{boards.map((b) => <button key={b} className={`pill-btn ${board === b ? 'active' : ''}`} onClick={() => setBoard(b)}>{BOARD_LABEL[b] || b}</button>)}</div>
+      {/* 2026-11-05 (user: single-choice button rows -> dropdowns) */}
+      <div className="vp-row"><ViewPicker select compact label="Board" options={boards.map((b) => [b, BOARD_LABEL[b] || b])} value={board} onChange={setBoard} /></div>
       <div className="grid-cards">
         <div className="card"><div className="cheat-list-title">Pairs hit</div><div className="tr-tile-num">{hits} <span className="meta-line small">of {rows.length}</span></div><div className="meta-line small">expected {exp.toFixed(1)} ({exp ? (hits / exp).toFixed(2) : '—'}x)</div></div>
         <div className="card"><div className="cheat-list-title">★ Best pairs</div><div className="tr-tile-num">{starRows.filter((g) => g.hit).length} <span className="meta-line small">of {starRows.length}</span></div><div className="meta-line small">expected {starRows.reduce((s, g) => s + g.pr.chancePct / 100, 0).toFixed(1)}</div></div>
