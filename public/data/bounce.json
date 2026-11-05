@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T16:02+00:00",
+ "generated_at": "2026-11-05T11:02+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -426,37 +426,6 @@
    "source": "live",
    "picks": [
     {
-     "player_id": "00-0041037",
-     "name": "Denzel Boston",
-     "team": "CLE",
-     "opp": "NO",
-     "pos": "WR",
-     "depth": "WR1",
-     "line": 26.3,
-     "est": 52.4,
-     "z": 3.6,
-     "games": [
-      59,
-      95,
-      41,
-      89,
-      46,
-      15,
-      27,
-      37
-     ],
-     "last": [
-      15,
-      27,
-      37
-     ],
-     "why": [
-      "26 a game lately vs 51 on the season"
-     ],
-     "track": 0.773,
-     "trackN": 367
-    },
-    {
      "player_id": "00-0037238",
      "name": "Drake London",
      "team": "ATL",
@@ -464,8 +433,8 @@
      "pos": "WR",
      "depth": "WR1",
      "line": 45.3,
-     "est": 69.5,
-     "z": 2.9,
+     "est": 70.5,
+     "z": 3.0,
      "games": [
       35,
       49,
@@ -483,6 +452,38 @@
      ],
      "why": [
       "45 a game lately vs 78 on the season"
+     ],
+     "track": 0.773,
+     "trackN": 367
+    },
+    {
+     "player_id": "00-0038542",
+     "name": "Bijan Robinson",
+     "team": "ATL",
+     "opp": "CIN",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 79.0,
+     "est": 107.6,
+     "z": 2.76,
+     "games": [
+      173,
+      81,
+      213,
+      147,
+      118,
+      53,
+      108,
+      76
+     ],
+     "last": [
+      53,
+      108,
+      76
+     ],
+     "why": [
+      "role up: +6 yds (teammates out / snaps)",
+      "79 a game lately vs 121 on the season"
      ],
      "track": 0.659,
      "trackN": 707
@@ -513,37 +514,6 @@
      ],
      "why": [
       "48 a game lately vs 91 on the season"
-     ],
-     "track": 0.659,
-     "trackN": 707
-    },
-    {
-     "player_id": "00-0038542",
-     "name": "Bijan Robinson",
-     "team": "ATL",
-     "opp": "CIN",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 79.0,
-     "est": 101.4,
-     "z": 2.22,
-     "games": [
-      173,
-      81,
-      213,
-      147,
-      118,
-      53,
-      108,
-      76
-     ],
-     "last": [
-      53,
-      108,
-      76
-     ],
-     "why": [
-      "79 a game lately vs 121 on the season"
      ],
      "track": 0.659,
      "trackN": 707
@@ -641,7 +611,7 @@
      "trackN": 707
     }
    ],
-   "updated_at": "2026-11-04T11:02-05:00"
+   "updated_at": "2026-11-05T06:02-05:00"
   }
  ]
 }

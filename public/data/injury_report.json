@@ -7485,6 +7485,57 @@
         "status": "Questionable",
         "injury": "Pectoral"
       }
+    ],
+    "9": [
+      {
+        "team": "BAL",
+        "name": "Lamar Jackson",
+        "position": "QB",
+        "status": "Out",
+        "injury": "Thumb"
+      },
+      {
+        "team": "BAL",
+        "name": "Tyler Huntley",
+        "position": "QB",
+        "status": "Out",
+        "injury": "Toe"
+      },
+      {
+        "team": "BAL",
+        "name": "Jaylinn Hawkins",
+        "position": "S",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "BAL",
+        "name": "Nate Wiggins",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Stinger"
+      },
+      {
+        "team": "BAL",
+        "name": "Adam Randall",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Neck"
+      },
+      {
+        "team": "JAX",
+        "name": "Travon Walker",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Rib"
+      },
+      {
+        "team": "JAX",
+        "name": "Bhayshul Tuten",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Ankle"
+      }
     ]
   }
 }
