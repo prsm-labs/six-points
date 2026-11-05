@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-05T11:02+00:00",
+ "generated_at": "2026-11-05T14:33+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1778,8 +1778,8 @@
      "pos": "WR",
      "depth": "WR4",
      "line": 31.5,
-     "est": 17.8,
-     "z": 3.25,
+     "est": 17.9,
+     "z": 3.21,
      "games": [
       83,
       32,
@@ -1895,8 +1895,8 @@
      "pos": "WR",
      "depth": "WR1",
      "line": 90.9,
-     "est": 69.3,
-     "z": 2.59,
+     "est": 69.4,
+     "z": 2.58,
      "games": [
       182,
       86,
@@ -1935,28 +1935,6 @@
      "trackN": 616
     },
     {
-     "player_id": "00-0039890",
-     "name": "Adonai Mitchell",
-     "team": "NYJ",
-     "opp": "KC",
-     "pos": "WR",
-     "depth": "WR3",
-     "line": 66.2,
-     "est": 49.2,
-     "z": 2.43,
-     "games": [
-      60,
-      63,
-      0,
-      142
-     ],
-     "why": [
-      "one big game (142) lifts his average -- 41 a game in the others"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
      "player_id": "00-0032764",
      "name": "Derrick Henry",
      "team": "BAL",
@@ -1979,6 +1957,28 @@
      "why": [
       "JAX takes away 5 yds for his role",
       "one big game (163) lifts his average -- 78 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
+     "player_id": "00-0039890",
+     "name": "Adonai Mitchell",
+     "team": "NYJ",
+     "opp": "KC",
+     "pos": "WR",
+     "depth": "WR3",
+     "line": 66.2,
+     "est": 49.3,
+     "z": 2.41,
+     "games": [
+      60,
+      63,
+      0,
+      142
+     ],
+     "why": [
+      "one big game (142) lifts his average -- 41 a game in the others"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2104,27 +2104,22 @@
      "trackN": 616
     },
     {
-     "player_id": "00-0038543",
-     "name": "Jaxon Smith-Njigba",
-     "team": "SEA",
-     "opp": "ARI",
-     "pos": "WR",
-     "depth": "WR1",
-     "line": 126.8,
-     "est": 104.3,
-     "z": 2.2,
+     "player_id": "00-0038951",
+     "name": "Sean Tucker",
+     "team": "TB",
+     "opp": "CHI",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 26.7,
+     "est": 17.5,
+     "z": 2.19,
      "games": [
-      122,
-      155,
-      128,
-      76,
-      118,
-      134,
-      163,
-      118
+      10,
+      18,
+      52
      ],
      "why": [
-      "his usage (11.1 touches a game) projects below what he's averaged"
+      "one big game (52) lifts his average -- 14 a game in the others"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2151,22 +2146,27 @@
      "trackN": 616
     },
     {
-     "player_id": "00-0038951",
-     "name": "Sean Tucker",
-     "team": "TB",
-     "opp": "CHI",
-     "pos": "RB",
-     "depth": "RB3",
-     "line": 26.7,
-     "est": 17.6,
-     "z": 2.16,
+     "player_id": "00-0038543",
+     "name": "Jaxon Smith-Njigba",
+     "team": "SEA",
+     "opp": "ARI",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 126.8,
+     "est": 104.8,
+     "z": 2.14,
      "games": [
-      10,
-      18,
-      52
+      122,
+      155,
+      128,
+      76,
+      118,
+      134,
+      163,
+      118
      ],
      "why": [
-      "one big game (52) lifts his average -- 14 a game in the others"
+      "his usage (11.1 touches a game) projects below what he's averaged"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2179,8 +2179,8 @@
      "pos": "RB",
      "depth": "RB2",
      "line": 36.8,
-     "est": 26.2,
-     "z": 2.07,
+     "est": 26.1,
+     "z": 2.09,
      "games": [
       50,
       12,
@@ -2202,8 +2202,8 @@
      "pos": "RB",
      "depth": "RB1",
      "line": 128.7,
-     "est": 107.8,
-     "z": 2.01,
+     "est": 107.7,
+     "z": 2.02,
      "games": [
       191,
       178,
@@ -2220,7 +2220,7 @@
      "trackN": 616
     }
    ],
-   "updated_at": "2026-11-05T06:02-05:00"
+   "updated_at": "2026-11-05T09:33-05:00"
   }
  ]
 }

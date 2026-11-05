@@ -1,0 +1,704 @@
+{
+ "_meta": {
+  "season": 2026,
+  "week": 9,
+  "market": "player_anytime_td",
+  "source": "The Odds API (region us)",
+  "fetches": [
+   {
+    "at": "2026-11-05T14:33:08+00:00",
+    "games": [
+     "JAX@BAL"
+    ],
+    "creditsLeft": 475
+   }
+  ],
+  "updated": "2026-11-05T14:33:08+00:00",
+  "creditsLeft": 475
+ },
+ "games": {
+  "JAX@BAL": {
+   "fetchedAt": "2026-11-05T14:33:08+00:00",
+   "eventId": "c75744790b7acf6260c78ba5e739c0e5",
+   "players": 27,
+   "books": [
+    "BOL",
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  }
+ },
+ "players": {
+  "00-0038611": {
+   "name": "Chris Rodriguez Jr.",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": -110,
+    "FD": -105,
+    "BOL": -111,
+    "BR": 110,
+    "MGM": -118,
+    "BOV": -114
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168579_13L88808Q11137102484Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=60221458",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400756872|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357924-7079728&type=Single"
+   },
+   "best": 110,
+   "bestBook": "BR",
+   "bestImplied": 47.6,
+   "medianImplied": 52.5,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0040719": {
+   "name": "Bhayshul Tuten",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": -105,
+    "FD": -105,
+    "BOL": -111,
+    "BR": 123,
+    "MGM": -105,
+    "BOV": -110
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168574_13L88808Q11230695518Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=60238401",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762815|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357903-7079684&type=Single"
+   },
+   "best": 123,
+   "bestBook": "BR",
+   "bestImplied": 44.8,
+   "medianImplied": 51.2,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0032764": {
+   "name": "Derrick Henry",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 135,
+    "FD": 130,
+    "BOL": 130,
+    "BR": 112,
+    "MGM": 110,
+    "BOV": 135
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168561_13L88808Q1-660534674Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=8776315",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762821|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357927-7079732&type=Single"
+   },
+   "best": 135,
+   "bestBook": "DK",
+   "bestImplied": 42.6,
+   "medianImplied": 43.5,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0038606": {
+   "name": "Parker Washington",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 145,
+    "FD": 140,
+    "BOL": 140,
+    "BR": 165,
+    "MGM": 145,
+    "BOV": 145
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168575_13L88808Q1-849064763Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=42217323",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762811|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357861-7079600&type=Single"
+   },
+   "best": 165,
+   "bestBook": "BR",
+   "bestImplied": 37.7,
+   "medianImplied": 40.8,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0038935": {
+   "name": "Brenton Strange",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 250,
+    "FD": 230,
+    "BOL": 230,
+    "BR": 255,
+    "MGM": 240,
+    "BOV": 250
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168576_13L88808Q1-1393332464Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=42217310",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400756862|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357923-7079724&type=Single"
+   },
+   "best": 255,
+   "bestBook": "BR",
+   "bestImplied": 28.2,
+   "medianImplied": 29.0,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0034960": {
+   "name": "Jakobi Meyers",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 330,
+    "FD": 310,
+    "BOL": 300,
+    "BR": 360,
+    "MGM": 260,
+    "BOV": 330
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168577_13L88808Q1-992648746Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=25672272",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771081|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357913-7079702&type=Single"
+   },
+   "best": 360,
+   "bestBook": "BR",
+   "bestImplied": 21.7,
+   "medianImplied": 23.8,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0039064": {
+   "name": "Zay Flowers",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 360,
+    "FD": 370,
+    "BOL": 350,
+    "BR": 320,
+    "MGM": 320,
+    "BOV": 360
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168562_13L88808Q12018204784Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=38093936",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762817|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357918-7079714&type=Single"
+   },
+   "best": 370,
+   "bestBook": "FD",
+   "bestImplied": 21.3,
+   "medianImplied": 22.0,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0036971": {
+   "name": "Trevor Lawrence",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 400,
+    "FD": 410,
+    "BOL": 400,
+    "BR": 500,
+    "MGM": 360,
+    "BOV": 400
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168582_13L88808Q1-1192653454Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=18933968",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400756868|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357892-7079662&type=Single"
+   },
+   "best": 500,
+   "bestBook": "BR",
+   "bestImplied": 16.7,
+   "medianImplied": 20.0,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0034753": {
+   "name": "Mark Andrews",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 500,
+    "FD": 500,
+    "BOL": 500,
+    "BR": 550,
+    "MGM": 500,
+    "BOV": 500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168563_13L88808Q1-1031442765Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=10676533",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762813|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357916-7079710&type=Single"
+   },
+   "best": 550,
+   "bestBook": "BR",
+   "bestImplied": 15.4,
+   "medianImplied": 16.7,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0034975": {
+   "name": "Justice Hill",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 500,
+    "FD": 500,
+    "BOL": 450,
+    "BR": 475,
+    "MGM": 525,
+    "BOV": 500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168564_13L88808Q11994625172Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=16552616",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771083|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357875-7079626&type=Single"
+   },
+   "best": 525,
+   "bestBook": "MGM",
+   "bestImplied": 16.0,
+   "medianImplied": 16.7,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0041503": {
+   "name": "Nate Boerkircher",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 500,
+    "FD": 500,
+    "BOL": 500,
+    "BR": 540,
+    "MGM": 575,
+    "BOV": 500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168583_13L88808Q1-292926888Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=59928483",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762825|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357877-7079632&type=Single"
+   },
+   "best": 575,
+   "bestBook": "MGM",
+   "bestImplied": 14.8,
+   "medianImplied": 16.7,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0039893": {
+   "name": "Brian Thomas Jr.",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 550,
+    "FD": 550,
+    "BOL": 500,
+    "BR": 700,
+    "MGM": 575,
+    "BOV": 525
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168578_13L88808Q1-271780635Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=60006433",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400756870|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357899-7079676&type=Single"
+   },
+   "best": 700,
+   "bestBook": "BR",
+   "bestImplied": 12.5,
+   "medianImplied": 15.4,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0032104": {
+   "name": "Ameer Abdullah",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 550,
+    "FD": 550,
+    "BOL": 500,
+    "BR": 600,
+    "MGM": 550,
+    "BOV": 525
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168586_13L88808Q1352353478Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=8776306",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400756878|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357890-7079658&type=Single"
+   },
+   "best": 600,
+   "bestBook": "BR",
+   "bestImplied": 14.3,
+   "medianImplied": 15.4,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0040870": {
+   "name": "Ja'Kobi Lane",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 650,
+    "FD": 750,
+    "BOL": 650,
+    "BR": 650,
+    "MGM": 825,
+    "BOV": 625
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168566_13L88808Q1-419779727Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=95394228",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771071|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357878-7079634&type=Single"
+   },
+   "best": 825,
+   "bestBook": "MGM",
+   "bestImplied": 10.8,
+   "medianImplied": 13.3,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0041100": {
+   "name": "Josh Cameron",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 650,
+    "FD": 600,
+    "BOL": 550,
+    "BR": 650,
+    "MGM": 650,
+    "BOV": 625
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168581_13L88808Q11380693923Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=48741840",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771073|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357905-7079690&type=Single"
+   },
+   "best": 650,
+   "bestBook": "DK",
+   "bestImplied": 13.3,
+   "medianImplied": 13.6,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0036550": {
+   "name": "Rashod Bateman",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 900,
+    "FD": 950,
+    "BOL": 800,
+    "BR": 700,
+    "MGM": 825,
+    "BOV": 900
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168567_13L88808Q1-511742258Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=26812207",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400756874|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357920-7079718&type=Single"
+   },
+   "best": 950,
+   "bestBook": "FD",
+   "bestImplied": 9.5,
+   "medianImplied": 10.4,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0040238": {
+   "name": "LeQuint Allen Jr.",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 1000,
+    "FD": 1100,
+    "BOL": 1000,
+    "BR": 1150,
+    "MGM": 750,
+    "BOV": 1000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168584_13L88808Q1-2000471906Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=88265882",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771079|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357872-7079620&type=Single"
+   },
+   "best": 1150,
+   "bestBook": "BR",
+   "bestImplied": 8.0,
+   "medianImplied": 9.1,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0040981": {
+   "name": "Joe Fagnano",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 1400,
+    "FD": 1200,
+    "BOL": 1100,
+    "BR": 700,
+    "MGM": 1200,
+    "BOV": 1400
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168565_13L88808Q1-152408618Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=104573283",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400756864|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4361396-7085523&type=Single"
+   },
+   "best": 1400,
+   "bestBook": "DK",
+   "bestImplied": 6.7,
+   "medianImplied": 7.7,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0040887": {
+   "name": "Josh Cuevas",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 1800,
+    "FD": 2000,
+    "BOL": 1700,
+    "BR": 1400,
+    "MGM": 1200,
+    "BOV": 1800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168570_13L88808Q11714132096Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=95394746",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771067|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357869-7079614&type=Single"
+   },
+   "best": 2000,
+   "bestBook": "FD",
+   "bestImplied": 4.8,
+   "medianImplied": 5.4,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0041106": {
+   "name": "C.J. Williams",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 1900,
+    "FD": 1700,
+    "BOL": 1400,
+    "BR": 2000,
+    "BOV": 1900
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346579562_13L88808Q1-249028479Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=102534364",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771085|{wagerAmount}"
+   },
+   "best": 2000,
+   "bestBook": "BR",
+   "bestImplied": 4.8,
+   "medianImplied": 5.0,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0040879": {
+   "name": "Matthew Hibner",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 2000,
+    "FD": 1800,
+    "BOL": 1700,
+    "BR": 2500,
+    "MGM": 1650,
+    "BOV": 2000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168568_13L88808Q1-700661814Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=95394741",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762823|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357898-7079678&type=Single"
+   },
+   "best": 2500,
+   "bestBook": "BR",
+   "bestImplied": 3.8,
+   "medianImplied": 5.0,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0036590": {
+   "name": "Quintin Morris",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 2000,
+    "FD": 1700,
+    "BOL": 1400,
+    "BR": 2000,
+    "MGM": 2200,
+    "BOV": 2000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168585_13L88808Q1-1307850565Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=48246719",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400756876|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357884-7079646&type=Single"
+   },
+   "best": 2200,
+   "bestBook": "MGM",
+   "bestImplied": 4.3,
+   "medianImplied": 4.8,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0041084": {
+   "name": "Tanner Koziol",
+   "team": "JAX",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 2200,
+    "FD": 2200,
+    "BOL": 1900,
+    "BR": 2000,
+    "MGM": 1700,
+    "BOV": 2200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168587_13L88808Q12048334155Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=49913940",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771077|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357879-7079636&type=Single"
+   },
+   "best": 2200,
+   "bestBook": "DK",
+   "bestImplied": 4.3,
+   "medianImplied": 4.6,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0039792": {
+   "name": "Devontez Walker",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 2500,
+    "FD": 2200,
+    "BOL": 1900,
+    "BR": 2500,
+    "MGM": 2500,
+    "BOV": 2500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168569_13L88808Q1-1199795272Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=49913945",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771075|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357909-7079696&type=Single"
+   },
+   "best": 2500,
+   "bestBook": "DK",
+   "bestImplied": 3.8,
+   "medianImplied": 3.8,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0040075": {
+   "name": "LaJohntay Wester",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 2800,
+    "FD": 3000,
+    "BOL": 2400,
+    "BR": 2500,
+    "MGM": 3000,
+    "BOV": 2800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168572_13L88808Q1217894284Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=60604880",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762819|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357931-7079740&type=Single"
+   },
+   "best": 3000,
+   "bestBook": "FD",
+   "bestImplied": 3.2,
+   "medianImplied": 3.4,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0039796": {
+   "name": "Rasheen Ali",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 4000,
+    "FD": 3500,
+    "BOL": 3400,
+    "BR": 2000,
+    "MGM": 3000,
+    "BOV": 4000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346168573_13L88808Q11574112063Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=51122069",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400762809|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:48487-4357870-7079618&type=Single"
+   },
+   "best": 4000,
+   "bestBook": "DK",
+   "bestImplied": 2.4,
+   "medianImplied": 2.8,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  },
+  "00-0040876": {
+   "name": "Elijah Sarratt",
+   "team": "BAL",
+   "game": "JAX@BAL",
+   "books": {
+    "DK": 4500,
+    "FD": 3000,
+    "BOL": 1900,
+    "BR": 3300,
+    "BOV": 4000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA385020238%232346599633_13L88808Q1202378433Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.621857664&selectionId=72056133",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823877?coupon={pickType}|4400771069|{wagerAmount}"
+   },
+   "best": 4500,
+   "bestBook": "DK",
+   "bestImplied": 2.2,
+   "medianImplied": 2.9,
+   "fetchedAt": "2026-11-05T14:33:08+00:00"
+  }
+ },
+ "unmatched": [
+  {
+   "game": "JAX@BAL",
+   "name": "Travis Hunter"
+  },
+  {
+   "game": "JAX@BAL",
+   "name": "Nick Vannett"
+  }
+ ],
+ "dst": {
+  "JAX": {
+   "DK": 450,
+   "FD": 490,
+   "MGM": 450,
+   "BOV": 440
+  },
+  "BAL": {
+   "DK": 550,
+   "FD": 1200,
+   "MGM": 600,
+   "BOV": 525
+  }
+ }
+}

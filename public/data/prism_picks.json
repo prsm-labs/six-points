@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-05T11:02+00:00",
+ "generated_at": "2026-11-05T14:33+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1139,19 +1139,19 @@
       "team": "ARI",
       "opp": "SEA",
       "pos": "RB",
-      "est": 83.3,
+      "est": 80.4,
       "depth": "RB1",
       "game": "ARI-SEA",
       "stat": "YDS",
-      "line": 70,
-      "label": "70+ scrimmage yards",
-      "chance": 0.4476,
+      "line": 65,
+      "label": "65+ scrimmage yards",
+      "chance": 0.4746,
       "last": [
        8,
        2
       ],
-      "track": 0.462,
-      "trackN": 96
+      "track": 0.539,
+      "trackN": 90
      },
      {
       "player_id": "00-0036997",
@@ -1179,19 +1179,19 @@
       "team": "WAS",
       "opp": "LA",
       "pos": "RB",
-      "est": 63.0,
+      "est": 59.8,
       "depth": "RB1",
       "game": "LA-WAS",
       "stat": "YDS",
       "line": 60,
       "label": "60+ scrimmage yards",
-      "chance": 0.4115,
+      "chance": 0.3972,
       "last": [
        8,
        2
       ],
-      "track": 0.451,
-      "trackN": 96
+      "track": 0.439,
+      "trackN": 64
      },
      {
       "player_id": "00-0038597",
@@ -1199,7 +1199,7 @@
       "team": "CIN",
       "opp": "ATL",
       "pos": "RB",
-      "est": 80.0,
+      "est": 79.9,
       "depth": "RB1",
       "game": "ATL-CIN",
       "stat": "TD",
@@ -1241,13 +1241,13 @@
       "team": "CHI",
       "opp": "TB",
       "pos": "WR",
-      "est": 53.7,
+      "est": 53.9,
       "depth": "WR1",
       "game": "CHI-TB",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.2188,
+      "chance": 0.2201,
       "last": [
        8,
        0
@@ -1261,7 +1261,7 @@
       "team": "GB",
       "opp": "NE",
       "pos": "RB",
-      "est": 77.8,
+      "est": 77.7,
       "depth": "RB1",
       "game": "GB-NE",
       "stat": "YDS",
@@ -1301,7 +1301,7 @@
       "team": "CAR",
       "opp": "DEN",
       "pos": "RB",
-      "est": 99.9,
+      "est": 99.8,
       "depth": "RB1",
       "game": "CAR-DEN",
       "stat": "YDS",
@@ -1337,7 +1337,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-05T06:02-05:00"
+   "updated_at": "2026-11-05T09:33-05:00"
   }
  ]
 }

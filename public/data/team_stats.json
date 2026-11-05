@@ -1448,7 +1448,7 @@
       "coverage_tightness": {
         "cushion_allowed": 6.25,
         "cushion_allowed_rank": 15,
-        "plays": 146,
+        "plays": 147,
         "tag": null
       },
       "run_funnel": {
@@ -1777,9 +1777,9 @@
       "pressure_data_available": true,
       "coverage_is_prior_season": true,
       "coverage_tightness": {
-        "cushion_allowed": 6.69,
+        "cushion_allowed": 6.72,
         "cushion_allowed_rank": 6,
-        "plays": 154,
+        "plays": 155,
         "tag": "Loose Coverage"
       },
       "run_funnel": {
