@@ -55,8 +55,11 @@ function teamInput(team) {
   const names = lastNames(rows.map((r) => r.id))
   const qbRow = rows.filter((r) => r.pos === 'QB').sort((a, b) => (b.carries + b.targets) - (a.carries + a.targets))[0]
   const qb = qbRow ? { id: qbRow.id, name: names[qbRow.id].last, f: TP.qbs[qbRow.id] || { n: 0 } } : null
+  // 2026-11-05 (review: sim QBs ran 2.25x their real rushing yards, backs 13% short on carries): a QB's carry share counts his
+  // scrambles (and kneels), and the engine adds scrambles on its own -> his designed-run weight 0.6 -> 0.25. On the week-9 slate that
+  // gives QBs 2.9 carries / 19 yds a team-game and the rest 23.4 carries (2026 weeks 1-8: QBs 2.95 / 16.7 without kneels, others 23.2).
   let rushers = rows.filter((r) => r.carry_share > 0).map((r) => ({ id: r.id, name: names[r.id].last, pos: r.pos,
-    w: r.carry_share * (r.pos === 'QB' ? 0.6 : 1), ypc: r.yards_per_carry || 4.3 }))
+    w: r.carry_share * (r.pos === 'QB' ? 0.25 : 1), ypc: r.yards_per_carry || 4.3 }))
   let targets = rows.filter((r) => r.target_share > 0 && r.pos !== 'QB').map((r) => ({ id: r.id, name: names[r.id].last, pos: r.pos,
     w: r.target_share, catch: Math.max(0.3, Math.min(0.92, r.catch_rate || 0.65)), ypr: (r.yards_per_target || 7) / Math.max(0.3, r.catch_rate || 0.65) }))
   // player efficiency relative to the team's own mix, so the team factors keep the team's level

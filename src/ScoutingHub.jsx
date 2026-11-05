@@ -25,9 +25,22 @@ const VIEWS = [
   { key: 'ladder', label: '🪜 Game Ladder', Component: LadderTab },
   { key: 'redzone', label: '🔴 Red Zone', Component: RedZoneTab },
   { key: 'role', label: '🧩 Role Report', Component: RoleReportTab },
-  { key: 'fade', label: '🧊 Fade', Component: FadeLab },
-  { key: 'bounce', label: '📈 Bounce-back', Component: BounceLab },  // 2026-10-27: Fade's mirror
+  // 2026-11-05 (user: fewer views): 🧊 Fade + 📈 Bounce-back are one view, two pills -- both "his projection vs his recent games"
+  { key: 'move', label: '📉📈 Due to move', Component: DueToMove },
 ]
+
+function DueToMove() {
+  const [side, setSide] = useState('bounce')
+  return (
+    <>
+      <div className="pill-row">
+        <button type="button" className={`pill-btn ${side === 'bounce' ? 'active' : ''}`} onClick={() => setSide('bounce')}>📈 Bounce-back · above his recent games</button>
+        <button type="button" className={`pill-btn ${side === 'fade' ? 'active' : ''}`} onClick={() => setSide('fade')}>🧊 Fade · below his recent games</button>
+      </div>
+      {side === 'bounce' ? <BounceLab /> : <FadeLab />}
+    </>
+  )
+}
 
 export default function ScoutingHub() {
   const [view, setView] = useState('board')

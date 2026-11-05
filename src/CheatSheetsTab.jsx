@@ -17,6 +17,7 @@ import PrismPicks from './PrismPicks.jsx'
 import { useMasterSearch } from './masterFilter.js'
 import { useRadar } from './RadarLab.jsx'
 import { matchesSearch } from './teamSearch.js'
+import ShortList from './ShortList.jsx'
 
 // 📋 Cheat Sheets (Slap Shot's tabs/CheatSheetsTab.jsx, 2026-10-18 revamp): this week's quick reads -- top candidates
 // per prop, ours vs the book (context), and the defenses worth attacking -- with injury / roster status. Each list is graded
@@ -92,6 +93,9 @@ function QuickReads() {
   const [bounce, setBounce] = useState(null)
   useEffect(() => { fetch('/data/bounce.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).then(setBounce).catch(() => setBounce(null)) }, [slate?.week])
   const radar = useRadar(slate?.week)  // 2026-11-02 🔦 Under the radar (build_radar.py)
+  // 2026-11-05 ⚡ This week's short list: PRISM Pick, mid-range, under the radar, bounce-back, long shot (the top of each tested list)
+  const [pp, setPp] = useState(null)
+  useEffect(() => { fetch('/data/prism_picks.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).then(setPp).catch(() => setPp(null)) }, [slate?.week])
 
   const pool = useMemo(() => {
     if (!slate?.matchups) return []
@@ -113,6 +117,26 @@ function QuickReads() {
     .map((f) => ({ ...poolById.get(f.player_id), _bline: f.line, _best: f.est, _btrack: f.track }))
   const radarTop = (radar?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, 5)
     .map((f) => ({ ...poolById.get(f.player_id), _rchance: f.chance, _rhits: f.hits, _rn: f.n }))
+  const pc = (v) => (v == null ? '—' : `${Math.round(v * 100)}%`)
+  const vs = (m) => `${m.position} · ${m.team} vs ${m.opponent}`
+  const ppw = pp?.weeks?.find((w) => w.week === slate.week)
+  const ppItem = (arr, tag, cls) => (arr || []).filter((x) => poolById.has(x.player_id)).slice(0, 5).map((c) => {
+    const m = poolById.get(c.player_id)
+    return { key: `${cls}-${c.player_id}`, tag, tagCls: cls, name: c.name, team: vs(m), line: c.label, big: pc(c.track), bigSub: 'track record',
+      why: `Est. ${c.est} yds · ${c.stat && c.stat !== 'YDS' ? 'scored' : 'cleared'} it in ${c.last[1]} of his last ${c.last[0]}`, result: c.result,
+      onOpen: () => openPlayerSlide(m), action: <PickButton player={m} compact prop={c.label} /> }
+  })
+  const shortItems = [
+    ppItem(ppw?.picks, '💎 PRISM Pick', 'safe'),
+    ppItem(ppw?.tiers?.mid, '⚖️ Mid-range', 'mid'),
+    radarTop.map((r0) => ({ key: `radar-${r0.player_id}`, tag: '🔦 Under the radar', tagCls: 'radar', name: r0.player_name, team: vs(r0), line: 'Anytime TD',
+      big: pc(r0._rchance), bigSub: `his ${pc(r0._rhits / Math.max(1, r0._rn))}`, why: `scored in ${r0._rhits} of his last ${r0._rn}`,
+      onOpen: () => openPlayerSlide(r0), action: <PickButton player={r0} compact prop="td" /> })),
+    bounceTop.map((b0) => ({ key: `bounce-${b0.player_id}`, tag: '📈 Bounce-back', tagCls: 'edge', name: b0.player_name, team: vs(b0), line: `Over ${b0._bline} yds`,
+      big: pc(b0._btrack), bigSub: 'track record', why: `Est. ${b0._best} yds — projected well above his last 3`,
+      onOpen: () => openPlayerSlide(b0), action: <PickButton player={b0} compact prop="yds100" /> })),
+    ppItem(ppw?.tiers?.long, '🌠 Long shot', 'long'),
+  ]
   const priced = pool.filter((m) => m.edge != null)
   const bestValue = [...priced].filter((m) => m.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5)
   const overvalued = [...priced].filter((m) => m.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5)
@@ -139,6 +163,7 @@ function QuickReads() {
   return (
     <div>
       <SlateStatus data={slate} />
+      <ShortList items={shortItems} past={slate.week !== pp?.week && pp != null} sub="The top look from each tested list below — one player each. Tap a name for his card." />
       <PrismPicks slate={slate} notOut={notOut} />
       <div className="note">
         ℹ️ Lists use the grade model's chances (TD %, 2+ TD %, 100+ yds %). 🔥 = scored in his last 3 games and not a top-25%

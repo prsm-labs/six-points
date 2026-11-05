@@ -616,8 +616,34 @@ export default function BoxScoreTab() {
   // 2026-10-26 (user): on the strip's own week the header strip (▾ Expand for a full grid) picks the game -- no second set of cards
   const stripWeek = selectedWeek === (viewWeek() ?? schedule.latest_week)
 
+  // 2026-11-05 📺 Scores week rail (user: see this week plus past and future games in one place): five weeks around the shown one,
+  // each with its dates and how many games / finals; the Week dropdown below still jumps anywhere
+  const allWeeks = [...weekOptions].sort((a, b) => a - b)
+  const at = allWeeks.indexOf(selectedWeek)
+  const lo = Math.max(0, Math.min(at - 2, allWeeks.length - 5))
+  const railWeeks = allWeeks.slice(lo, lo + 5)
+  const wkInfo = (w) => {
+    const gs = schedule.games.filter((g) => g.week === w)
+    const days = gs.map((g) => g.gameday).filter(Boolean).sort()
+    const md = (d) => (d ? `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}` : '')
+    const fin = gs.filter((g) => g.home_score != null).length
+    return { n: gs.length, fin, range: days.length ? (days[0] === days[days.length - 1] ? md(days[0]) : `${md(days[0])}-${md(days[days.length - 1])}`) : '' }
+  }
+  const pickWeek = (w) => { setSelectedWeek(w); setSelectedGameId(null) }
   return (
     <div>
+      <div className="day-rail wk-rail" role="tablist" aria-label="Pick a week">
+        {railWeeks.map((w) => {
+          const x = wkInfo(w)
+          return (
+            <button key={w} role="tab" aria-selected={w === selectedWeek} className={`day-chip ${w === selectedWeek ? 'active' : ''}`} onClick={() => pickWeek(w)}>
+              <span className="dc-wd">{w === schedule.latest_week ? 'This wk' : `Wk ${w}`}</span>
+              <span className="dc-day">{x.range}</span>
+              <span className="dc-n">{x.fin === x.n && x.n ? `${x.n} final` : x.fin ? `${x.fin} of ${x.n} final` : `${x.n} games`}</span>
+            </button>
+          )
+        })}
+      </div>
       <div className="calc-block" style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, maxWidth: 'none', marginBottom: 12 }}>
         <label style={{ minWidth: 110 }}>
           Week

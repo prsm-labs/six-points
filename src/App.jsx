@@ -1,14 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
-import LiveTab from './LiveTab.jsx'
-import WeatherTab from './WeatherTab.jsx'
-import TDTracker from './TDTracker.jsx'
+import LiveTab, { showScoresView } from './LiveTab.jsx' // 2026-11-05: 📺 Scores
+import StatsHub from './StatsHub.jsx' // 2026-11-05: Stats + Splits + Primetime + Matchup Lookup
+import TeamsHub from './TeamsHub.jsx' // 2026-11-05: Rankings + Standings + Depth Charts
 import TDMarquee from './TDMarquee.jsx'
-import SplitsTab from './SplitsTab.jsx'
-import ScoutingTab from './ScoutingTab.jsx'
-import DepthChartTab from './DepthChartTab.jsx'
-import NFLTab from './NFLTab.jsx'
-import PrimetimeSplitsTab from './PrimetimeSplitsTab.jsx'
 import BreakoutWatchTab from './BreakoutWatchTab.jsx'
 import MyPicksTab from './MyPicksTab.jsx'
 import GradeModelSection from './GradeModelSection.jsx'
@@ -35,8 +30,6 @@ import FirstTDHub from './FirstTDHub.jsx'
 import { installColumnResize } from './columnResize.js'
 import TrackRecordCheatSheets from './TrackRecordCheatSheets.jsx'
 import TrackRecordPairs from './TrackRecordPairs.jsx'
-import RankingsTab from './RankingsTab.jsx'
-import StatsTab from './StatsTab.jsx'
 import './revamp.css'
 import WeekBar, { PastWeekGuard } from './WeekBar.jsx'
 import MasterFilter from './MasterFilter.jsx'
@@ -328,25 +321,21 @@ function WeekDrillDown({ rows }) {
 // Top 3 Tonight -> Top Picks (+ Breakout Watch), Goal Tracker -> TD Tracker, Projections -> Game Sim,
 // First Goal -> 1st TD (+ 👑 King of the End Zone in place of Ice Breaker), Matchup Lookup -> the old Scouting page.
 // NFL extras with no hockey twin stay at the end (standings, depth charts, weather, primetime splits).
+// 2026-11-05 (user: too many pages for a 5-10 minute visit): grouped menu -- Today / Research / Track Record / App. 📺 Scores (key 'live')
+// holds Box Scores + Schedule + So far + TD Tracker + Inactives + Heating Up + Weather; Splits + Primetime + Matchup Lookup fold into
+// 📊 Stats; Rankings + NFL standings + Depth Charts are 🏟️ Teams. Every old page is still there as a view.
 const TABS = [
-  { key: 'cheat', label: '📋 Cheat Sheets', Component: CheatSheetsTab },
-  { key: 'top', label: '🏆 Top Picks', Component: BreakoutWatchTab },
-  { key: 'mypicks', label: '⭐ My Picks', Component: MyPicksTab },
-  { key: 'live', label: '🔴 Live', Component: LiveTab },
-  { key: 'tdtracker', label: '🏈 TD Tracker', Component: TDTracker },
-  { key: 'scouting', label: '🎯 Scouting', Component: ScoutingHub },
-  { key: 'stats', label: '📊 Stats', Component: StatsTab },
-  { key: 'gamesim', label: '🔮 Game Sim', Component: GameSimTab },
-  { key: 'firsttd', label: '🥇 1st TD', Component: FirstTDHub },
-  { key: 'track', label: '📈 Track Record', Component: TrackRecord },
-  { key: 'splits', label: '📊 Splits', Component: SplitsTab },
-  { key: 'lookup', label: '🔍 Matchup Lookup', Component: ScoutingTab },
-  { key: 'rankings', label: '🏅 Rankings', Component: RankingsTab },
-  { key: 'nfl', label: '🏟️ NFL', Component: NFLTab },
-  { key: 'depthchart', label: '🧭 Depth Charts', Component: DepthChartTab },
-  { key: 'weather', label: '🌬️ Weather', Component: WeatherTab },
-  { key: 'primetime', label: '🌙 Primetime', Component: PrimetimeSplitsTab },
-  { key: 'about', label: '📌 About', Component: AboutTab },
+  { key: 'cheat', label: '📋 Cheat Sheets', Component: CheatSheetsTab, group: 'Today' },
+  { key: 'top', label: '🏆 Top Picks', Component: BreakoutWatchTab, group: 'Today' },
+  { key: 'mypicks', label: '⭐ My Picks', Component: MyPicksTab, group: 'Today' },
+  { key: 'live', label: '📺 Scores', Component: LiveTab, group: 'Today' },
+  { key: 'scouting', label: '🎯 Scouting', Component: ScoutingHub, group: 'Research' },
+  { key: 'stats', label: '📊 Stats', Component: StatsHub, group: 'Research' },
+  { key: 'gamesim', label: '🔮 Game Sim', Component: GameSimTab, group: 'Research' },
+  { key: 'firsttd', label: '🥇 1st TD', Component: FirstTDHub, group: 'Research' },
+  { key: 'teams', label: '🏟️ Teams', Component: TeamsHub, group: 'Research' },
+  { key: 'track', label: '📈 Track Record', Component: TrackRecord, group: 'Track Record' },
+  { key: 'about', label: '📌 About', Component: AboutTab, group: 'App' },
 ]
 
 export default function App() {
@@ -388,7 +377,7 @@ export default function App() {
       {/* 2026-11-02 (user): ☰ > 📦 Offline & data (save a time-stamped offline copy, download the numbers); banner while on the copy */}
       <div className="master-bar tm-row"><TabMenu tabs={TABS} tab={tab} setTab={setTab} footer={(close) => <OfflineMenuButton config={offlineConfig} onOpen={close} />} /><WeekBar /><MasterFilter /></div>
       <OfflineBanner />
-      <TDMarquee onClick={() => setTab('tdtracker')} />
+      <TDMarquee onClick={() => { showScoresView('tdtracker'); setTab('live') }} />
       <MatchupSelector key={`ms-${viewWeek || 'now'}`} />
       <LiveStatusRunner />
       <AlertsRunner />

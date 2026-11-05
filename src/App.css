@@ -857,3 +857,14 @@ th.sortable:hover {
   font-size: 0.85rem;
   color: var(--fg);
 }
+
+/* 2026-11-05 📺 Scores week rail (BoxScoreTab): five weeks around the shown one (same look as CourtIQ / Slap Shot's day rail) */
+.day-rail { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; margin: 4px 0 10px; }
+.day-chip { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 7px 2px; min-width: 0; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface, var(--card, transparent)); color: inherit; font: inherit; cursor: pointer; }
+.day-chip:hover { border-color: var(--accent); }
+.day-chip.active { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.day-chip .dc-wd { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.day-chip .dc-day { font-size: 12px; }
+.day-chip .dc-n { font-size: 10.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+@media (max-width: 420px) { .day-rail { gap: 3px; } .day-chip { padding: 6px 1px; } .day-chip .dc-wd { font-size: 10px; } }
