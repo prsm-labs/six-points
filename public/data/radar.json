@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T16:03+00:00",
+ "generated_at": "2026-11-06T20:07+00:00",
  "season": 2026,
  "week": 9,
  "liveFromWeek": 9,
@@ -1726,6 +1726,63 @@
    "replay": false,
    "picks": [
     {
+     "player_id": "00-0037263",
+     "name": "Tyler Allgeier",
+     "team": "ARI",
+     "opp": "SEA",
+     "pos": "RB",
+     "chance": 0.5627,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.3127,
+     "est": 105.4,
+     "recent": [
+      [
+       "2026-09-20",
+       "SEA",
+       0
+      ],
+      [
+       "2026-09-27",
+       "SF",
+       0
+      ],
+      [
+       "2026-10-04",
+       "NYG",
+       1
+      ],
+      [
+       "2026-10-11",
+       "DET",
+       0
+      ],
+      [
+       "2026-10-18",
+       "LA",
+       0
+      ],
+      [
+       "2026-10-25",
+       "DEN",
+       0
+      ],
+      [
+       "2026-11-01",
+       "DAL",
+       2
+      ]
+     ],
+     "why": [
+      "+17.3 touches a game from teammates who are out",
+      "2.3 red-zone touches a game",
+      "touches up: 13.4 lately vs 11.2",
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0041512",
      "name": "Jadarian Price",
      "team": "SEA",
@@ -1870,63 +1927,6 @@
      ],
      "why": [
       "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0037263",
-     "name": "Tyler Allgeier",
-     "team": "ARI",
-     "opp": "SEA",
-     "pos": "RB",
-     "chance": 0.4396,
-     "hits": 2,
-     "n": 8,
-     "own": 0.25,
-     "lift": 0.1896,
-     "est": 80.4,
-     "recent": [
-      [
-       "2026-09-20",
-       "SEA",
-       0
-      ],
-      [
-       "2026-09-27",
-       "SF",
-       0
-      ],
-      [
-       "2026-10-04",
-       "NYG",
-       1
-      ],
-      [
-       "2026-10-11",
-       "DET",
-       0
-      ],
-      [
-       "2026-10-18",
-       "LA",
-       0
-      ],
-      [
-       "2026-10-25",
-       "DEN",
-       0
-      ],
-      [
-       "2026-11-01",
-       "DAL",
-       2
-      ]
-     ],
-     "why": [
-      "+7.7 touches a game from teammates who are out",
-      "2.3 red-zone touches a game",
-      "touches up: 13.4 lately vs 11.2",
-      "scored in 2 of his last 8 games"
      ],
      "result": null
     },
@@ -2261,7 +2261,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-06T11:03-05:00"
+   "updated_at": "2026-11-06T15:07-05:00"
   }
  ]
 }

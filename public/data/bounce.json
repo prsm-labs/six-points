@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T16:03+00:00",
+ "generated_at": "2026-11-06T20:07+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -426,6 +426,37 @@
    "source": "live",
    "picks": [
     {
+     "player_id": "00-0041037",
+     "name": "Denzel Boston",
+     "team": "CLE",
+     "opp": "NO",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 26.3,
+     "est": 52.4,
+     "z": 3.6,
+     "games": [
+      59,
+      95,
+      41,
+      89,
+      46,
+      15,
+      27,
+      37
+     ],
+     "last": [
+      15,
+      27,
+      37
+     ],
+     "why": [
+      "26 a game lately vs 51 on the season"
+     ],
+     "track": 0.773,
+     "trackN": 367
+    },
+    {
      "player_id": "00-0037238",
      "name": "Drake London",
      "team": "ATL",
@@ -519,35 +550,6 @@
      "trackN": 707
     },
     {
-     "player_id": "00-0040129",
-     "name": "Emeka Egbuka",
-     "team": "TB",
-     "opp": "CHI",
-     "pos": "WR",
-     "depth": "WR1",
-     "line": 37.7,
-     "est": 56.2,
-     "z": 2.47,
-     "games": [
-      63,
-      13,
-      62,
-      13,
-      52,
-      48
-     ],
-     "last": [
-      13,
-      52,
-      48
-     ],
-     "why": [
-      "38 a game lately vs 42 on the season"
-     ],
-     "track": 0.659,
-     "trackN": 707
-    },
-    {
      "player_id": "00-0036158",
      "name": "J.K. Dobbins",
      "team": "DEN",
@@ -610,7 +612,7 @@
      "trackN": 707
     }
    ],
-   "updated_at": "2026-11-06T11:03-05:00"
+   "updated_at": "2026-11-06T15:07-05:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T16:02+00:00",
+ "generated_at": "2026-11-06T20:07+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1116,7 +1116,27 @@
   {
    "week": 9,
    "source": "live",
-   "picks": [],
+   "picks": [
+    {
+     "player_id": "00-0037263",
+     "name": "Tyler Allgeier",
+     "team": "ARI",
+     "opp": "SEA",
+     "pos": "RB",
+     "line": 50,
+     "label": "50+ scrimmage yards",
+     "chance": 0.7831,
+     "est": 105.4,
+     "last": [
+      8,
+      2
+     ],
+     "depth": "RB1",
+     "game": "ARI-SEA",
+     "track": 0.707,
+     "trackN": 43
+    }
+   ],
    "nextGame": {
     "teams": [
      "ATL",
@@ -1133,26 +1153,6 @@
    },
    "tiers": {
     "mid": [
-     {
-      "player_id": "00-0037263",
-      "name": "Tyler Allgeier",
-      "team": "ARI",
-      "opp": "SEA",
-      "pos": "RB",
-      "est": 80.4,
-      "depth": "RB1",
-      "game": "ARI-SEA",
-      "stat": "YDS",
-      "line": 65,
-      "label": "65+ scrimmage yards",
-      "chance": 0.4746,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.539,
-      "trackN": 90
-     },
      {
       "player_id": "00-0036997",
       "name": "Javonte Williams",
@@ -1192,6 +1192,26 @@
       ],
       "track": 0.451,
       "trackN": 96
+     },
+     {
+      "player_id": "00-0037256",
+      "name": "Rachaad White",
+      "team": "WAS",
+      "opp": "LA",
+      "pos": "RB",
+      "est": 59.8,
+      "depth": "RB1",
+      "game": "LA-WAS",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
+      "chance": 0.3972,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.439,
+      "trackN": 64
      },
      {
       "player_id": "00-0038597",
@@ -1235,26 +1255,6 @@
      }
     ],
     "long": [
-     {
-      "player_id": "00-0040129",
-      "name": "Emeka Egbuka",
-      "team": "TB",
-      "opp": "CHI",
-      "pos": "WR",
-      "est": 56.2,
-      "depth": "WR1",
-      "game": "CHI-TB",
-      "stat": "YDS",
-      "line": 65,
-      "label": "65+ scrimmage yards",
-      "chance": 0.2399,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.295,
-      "trackN": 141
-     },
      {
       "player_id": "00-0039919",
       "name": "Rome Odunze",
@@ -1316,6 +1316,26 @@
       "trackN": 67
      },
      {
+      "player_id": "00-0036555",
+      "name": "Chuba Hubbard",
+      "team": "CAR",
+      "opp": "DEN",
+      "pos": "RB",
+      "est": 99.8,
+      "depth": "RB1",
+      "game": "CAR-DEN",
+      "stat": "YDS",
+      "line": 130,
+      "label": "130+ scrimmage yards",
+      "chance": 0.1834,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.185,
+      "trackN": 67
+     },
+     {
       "player_id": "00-0039075",
       "name": "Puka Nacua",
       "team": "LA",
@@ -1337,7 +1357,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-06T11:02-05:00"
+   "updated_at": "2026-11-06T15:07-05:00"
   }
  ]
 }

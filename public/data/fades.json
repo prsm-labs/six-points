@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T16:03+00:00",
+ "generated_at": "2026-11-06T20:07+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1739,8 +1739,8 @@
      "pos": "WR",
      "depth": "WR2",
      "line": 82.7,
-     "est": 52.4,
-     "z": 4.18,
+     "est": 56.2,
+     "z": 3.53,
      "games": [
       30,
       103,
@@ -1939,28 +1939,6 @@
      "trackN": 616
     },
     {
-     "player_id": "00-0039798",
-     "name": "Isaiah Davis",
-     "team": "NYJ",
-     "opp": "KC",
-     "pos": "RB",
-     "depth": "RB3",
-     "line": 28.0,
-     "est": 17.4,
-     "z": 2.54,
-     "games": [
-      17,
-      26,
-      54,
-      15
-     ],
-     "why": [
-      "one big game (54) lifts his average -- 19 a game in the others"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
      "player_id": "00-0032764",
      "name": "Derrick Henry",
      "team": "BAL",
@@ -1983,28 +1961,6 @@
      "why": [
       "JAX takes away 5 yds for his role",
       "one big game (163) lifts his average -- 78 a game in the others"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
-     "player_id": "00-0039890",
-     "name": "Adonai Mitchell",
-     "team": "NYJ",
-     "opp": "KC",
-     "pos": "WR",
-     "depth": "WR3",
-     "line": 66.2,
-     "est": 49.3,
-     "z": 2.41,
-     "games": [
-      60,
-      63,
-      0,
-      142
-     ],
-     "why": [
-      "one big game (142) lifts his average -- 41 a game in the others"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2053,6 +2009,28 @@
      ],
      "why": [
       "one big game (78) lifts his average -- 33 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
+     "player_id": "00-0039798",
+     "name": "Isaiah Davis",
+     "team": "NYJ",
+     "opp": "KC",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 28.0,
+     "est": 18.2,
+     "z": 2.3,
+     "games": [
+      17,
+      26,
+      54,
+      15
+     ],
+     "why": [
+      "one big game (54) lifts his average -- 19 a game in the others"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2198,27 +2176,6 @@
      "trackN": 616
     },
     {
-     "player_id": "00-0038120",
-     "name": "Breece Hall",
-     "team": "NYJ",
-     "opp": "KC",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 88.3,
-     "est": 70.5,
-     "z": 2.12,
-     "games": [
-      118,
-      92,
-      55
-     ],
-     "why": [
-      "KC takes away 3 yds for his role"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
      "player_id": "00-0038134",
      "name": "Kenneth Walker III",
      "team": "KC",
@@ -2244,7 +2201,7 @@
      "trackN": 616
     }
    ],
-   "updated_at": "2026-11-06T11:03-05:00"
+   "updated_at": "2026-11-06T15:07-05:00"
   }
  ]
 }
