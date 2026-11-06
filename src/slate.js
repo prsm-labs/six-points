@@ -7,6 +7,7 @@ import { enrichSlate } from './slateCore.js'
 // feed the grade (user, 2026-10-18). See slateCore.js for m.book / m.edge / m.hotHand.
 // 2026-10-23: one cached slate per picked week (weekView.js serves a past week's file through fetch)
 import { viewWeek } from './weekView.js'
+import { doneActive, doneKeep, doneState } from './doneGames.js'
 const caches = {}
 
 async function fetchJson(url) {
@@ -18,11 +19,14 @@ async function fetchJson(url) {
   }
 }
 
-export function loadSlate() {
-  const k = viewWeek() ?? 'now'
+// 2026-11-05: { all: true } = every game, finished ones included (slideouts, My Picks, alerts); otherwise this week's
+// completed games are left out while 🏁 Hide completed games is on (doneGames.js) -- one cache per hidden set.
+export function loadSlate({ all = false } = {}) {
+  const live = viewWeek() == null
+  const k = `${viewWeek() ?? 'now'}|${all || !live || !doneActive() ? 'all' : doneState().key}|${doneKeep()}`
   if (caches[k]) return caches[k]
   caches[k] = (async () => {
-    const data = await fetchJson('/data/all_matchups_latest.json')
+    const data = await fetchJson(all ? '/data/all_matchups_latest.json?all=1' : '/data/all_matchups_latest.json')
     if (!data) return null
     const odds = await fetchJson(`/data/odds/${data.season}-wk${data.week}.json`)
     return { ...enrichSlate(data, odds), past: Boolean(data.past), replay: Boolean(data.replay) }
@@ -30,11 +34,11 @@ export function loadSlate() {
   return caches[k]
 }
 
-export function useSlate() {
+export function useSlate({ all = false } = {}) {
   const [slate, setSlate] = useState(null)
   useEffect(() => {
     let alive = true
-    loadSlate().then((s) => alive && setSlate(s || { matchups: [], not_playing: [], error: true }))
+    loadSlate({ all }).then((s) => alive && setSlate(s || { matchups: [], not_playing: [], error: true }))
     return () => { alive = false }
   }, [])
   return slate

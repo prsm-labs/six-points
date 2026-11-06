@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from 'react'
+import { hideDone } from './doneGames.js'
 
 // 📅 Week picker (2026-10-23, user: one date pick at the top that shows what a past week looked like and how it played
 // out, instead of ever-growing "past weeks" lists -- NFL weeks, with their dates). Six Points' pages each load the week's
@@ -92,9 +93,11 @@ window.fetch = async (input, init) => {
   const url = typeof input === 'string' ? input : input?.url || ''
   if (url.split('?')[0] === '/data/all_matchups_latest.json') {
     if (week != null) return respond(trimNoRole(await pastSlate(week)))
-    const r = await realFetch(input, init)
+    const r = await realFetch(url.split('?')[0], init)
     if (!r.ok) return r
-    return respond(trimNoRole(await r.json()))
+    // 2026-11-05 🏁 hide completed games (doneGames.js): this week only, unless the caller asks for ?all=1
+    const d = trimNoRole(await r.json())
+    return respond(/[?&]all=1/.test(url) ? d : hideDone(d))
   }
   if (week != null && url.startsWith('/data/')) {
     const path = url.split('?')[0]

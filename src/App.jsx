@@ -40,6 +40,11 @@ import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 import TabMenu from './TabMenu.jsx'
 import { OfflineBanner, OfflineMenuButton } from './Offline.jsx'
 import offlineConfig from './offlineConfig.js'
+import DoneToggle from './DoneToggle.jsx'
+import { doneActive, setDoneScope, useDoneOn, useDoneState } from './doneGames.js'
+
+// 2026-11-05 🏁 Hide completed games (doneGames.js): the pages that list projections
+const DONE_TABS = new Set(['cheat', 'scouting'])
 
 function parseCsv(text) {
   const [headerLine, ...lines] = text.trim().split(/\r?\n/)
@@ -344,6 +349,13 @@ export default function App() {
   useEffect(() => { if (tabReq) setTab(tabReq.tab) }, [tabReq])
   const [showOddsCalc, setShowOddsCalc] = useState(false)
   const Active = (TABS.find((t) => t.key === tab) || TABS[0]).Component
+  // 🏁 the page remounts (and re-reads the slate) when the hidden set changes
+  const { selectedMatchup: pickedGame } = useMatchup()
+  const keepTeams = pickedGame ? (pickedGame.games || [pickedGame]).flatMap((g) => [g.home, g.away]) : []
+  setDoneScope(DONE_TABS.has(tab), keepTeams)
+  const doneOn = useDoneOn()
+  const done = useDoneState()
+  const doneKey = !viewWeek && DONE_TABS.has(tab) && doneOn && doneActive() ? `${done.key}|${[...new Set(keepTeams)].sort().join(',')}` : 'all'
   // Drag-to-resize + ⚙️ column chooser on every table, app-wide (columnResize.js, Slap Shot's).
   useEffect(() => installColumnResize(), [])
 
@@ -382,9 +394,10 @@ export default function App() {
       <AlertToast />
       {/* 2026-10-22 (user: CourtIQ is cleaner): position filter sits under the tabs, not between the game cards and the tabs */}
       <PositionChips />
+      {!viewWeek && DONE_TABS.has(tab) && <DoneToggle />}
       <main>
         <PastWeekGuard key={`${tab}|${viewWeek || ''}`} past={Boolean(viewWeek)}>
-          <Active key={viewWeek || 'now'} />
+          <Active key={`${viewWeek || 'now'}|${doneKey}`} />
         </PastWeekGuard>
       </main>
       <PlayerSlideout />

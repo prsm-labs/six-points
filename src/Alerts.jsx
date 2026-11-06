@@ -30,7 +30,7 @@ async function getJson(proxyUrl, directUrl) {
 export function AlertsRunner() {
   // 2026-10-28 (3) saved filter alerts (⚙ Filters -> 🔔 Alert me, savedFilters.js): re-checked whenever this week's slate
   // loads or refreshes (not a past week picked in the week bar) -- one summary per week, then each newly matching player
-  const slate = useSlate()
+  const slate = useSlate({ all: true }) // 2026-11-05: finished games included (🏁 doneGames.js)
   const fctx = useFilterContext(slate)
   const saved = useSavedFilters()
   useEffect(() => {
@@ -46,7 +46,7 @@ export function AlertsRunner() {
   const poolRef = useRef({ byName: {} })
 
   useEffect(() => {
-    fetch('/data/all_matchups_latest.json')
+    fetch('/data/all_matchups_latest.json?all=1')
       .then((r) => (r.ok ? r.json() : null))
       .then((d) => {
         if (!d) return

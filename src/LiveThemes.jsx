@@ -67,7 +67,7 @@ function useWeek() {
     let alive = true, timer = null
     const ids = {}
     ;(async () => {
-      const [m, sched, teamStats, top, pp] = await Promise.all([getJson('/data/all_matchups_latest.json'), getJson('/data/season_schedule.json'),
+      const [m, sched, teamStats, top, pp] = await Promise.all([getJson('/data/all_matchups_latest.json?all=1'), getJson('/data/season_schedule.json'),
         getJson('/data/team_stats.json'), getJson('/data/top_picks/index.json'), getJson('/data/prism_picks.json')])
       if (!alive || !m || !sched) { if (alive) setState({ error: true }); return }
       const lock = top?.locks?.find((l) => l.season === m.season && l.week === m.week)

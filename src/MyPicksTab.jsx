@@ -28,7 +28,7 @@ function resultFor(pick, graded) {
 
 export default function MyPicksTab() {
   const picks = usePicks()
-  const slate = useSlate()
+  const slate = useSlate({ all: true }) // 2026-11-05: finished games included (🏁 doneGames.js)
   const [graded, setGraded] = useState({})
   const [confirmClear, setConfirmClear] = useState(false)
   // 2026-10-26 (user): 📡 Live = a box score of my picks vs our pre-game + live projections; By category = the old list

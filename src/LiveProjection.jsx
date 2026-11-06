@@ -21,7 +21,7 @@ function usePreGame(season, week) {
   useEffect(() => {
     if (cache[key]) { setD(cache[key]); return }
     let alive = true
-    Promise.all([getJson('/data/all_matchups_latest.json'), getJson('/data/game_sim_inputs.json')]).then(async ([m, s]) => {
+    Promise.all([getJson('/data/all_matchups_latest.json?all=1'), getJson('/data/game_sim_inputs.json')]).then(async ([m, s]) => {
       let out
       if (m && m.week === week && m.season === season) out = { rows: m.matchups, sim: s?.week === week ? s : null, source: 'slate' }
       else {

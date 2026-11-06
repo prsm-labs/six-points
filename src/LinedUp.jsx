@@ -10,7 +10,7 @@ import { closePlayerSlide } from './slideouts.js'
 // found nothing over our chance every season, so no new edge here; backups with none of it ran ~2 pts under (watch).
 const AVOID = new Set(['lowtotal', 'qbchange', 'wind', 'missedlast'])
 export default function LinedUp({ id }) {
-  const slate = useSlate()
+  const slate = useSlate({ all: true }) // 2026-11-05: finished games included (🏁 doneGames.js)
   const ctx = useFilterContext(slate)
   const keys = ctx.edges?.get(id) || []
   if (!keys.length) return null

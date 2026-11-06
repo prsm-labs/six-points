@@ -231,7 +231,7 @@ export default function PlayerSlideout() {
       fetch('/data/players.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/data/scheme_splits.json').then((r) => (r.ok ? r.json() : null)),
       fetch('/data/route_profiles.json').then((r) => (r.ok ? r.json() : null)),
-      loadSlate(), // 2026-10-18: the shared slate (book odds, edge, hot hand merged in)
+      loadSlate({ all: true }), // 2026-11-05 every game (finished ones too); 2026-10-18: the shared slate (book odds, edge, hot hand merged in)
     ]).then(([logs, directory, scheme, routes, latest]) => {
       // this week's grade-model row, so the header shows it (and picks save it) from any tab
       setWeekRow(latest?.matchups?.find((m) => m.player_id === player.player_id) || null)
