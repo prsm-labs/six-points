@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T00:07+00:00",
+ "generated_at": "2026-11-06T11:02+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1119,16 +1119,16 @@
    "picks": [],
    "nextGame": {
     "teams": [
-     "BAL",
-     "JAX"
+     "ATL",
+     "CIN"
     ],
-    "kickoff": "2026-11-05T20:15:00-05:00",
-    "label": "JAX @ BAL",
+    "kickoff": "2026-11-08T09:30:00-05:00",
+    "label": "CIN @ ATL",
     "closest": {
-     "name": "Justice Hill",
-     "team": "BAL",
-     "label": "35+ scrimmage yards",
-     "chance": 0.4888
+     "name": "Kyle Pitts",
+     "team": "ATL",
+     "label": "25+ scrimmage yards",
+     "chance": 0.5389
     }
    },
    "tiers": {
@@ -1337,7 +1337,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-05T19:07-05:00"
+   "updated_at": "2026-11-06T06:02-05:00"
   }
  ]
 }

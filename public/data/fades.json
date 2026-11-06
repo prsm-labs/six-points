@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T00:07+00:00",
+ "generated_at": "2026-11-06T11:02+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1844,30 +1844,6 @@
      "trackN": 513
     },
     {
-     "player_id": "00-0039338",
-     "name": "Brock Bowers",
-     "team": "LV",
-     "opp": "SF",
-     "pos": "TE",
-     "depth": "TE1",
-     "line": 91.2,
-     "est": 66.6,
-     "z": 3.01,
-     "games": [
-      116,
-      86,
-      110,
-      70,
-      73,
-      92
-     ],
-     "why": [
-      "his usage (9.3 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.816,
-     "trackN": 513
-    },
-    {
      "player_id": "00-0040172",
      "name": "Jordan Watkins",
      "team": "SF",
@@ -1884,6 +1860,30 @@
      ],
      "why": [
       "his usage (1.8 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
+     "player_id": "00-0039338",
+     "name": "Brock Bowers",
+     "team": "LV",
+     "opp": "SF",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 91.2,
+     "est": 67.6,
+     "z": 2.87,
+     "games": [
+      116,
+      86,
+      110,
+      70,
+      73,
+      92
+     ],
+     "why": [
+      "his usage (9.3 touches a game) projects below what he's averaged"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2244,7 +2244,7 @@
      "trackN": 616
     }
    ],
-   "updated_at": "2026-11-05T19:07-05:00"
+   "updated_at": "2026-11-06T06:02-05:00"
   }
  ]
 }
