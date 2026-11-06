@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-05T20:07+00:00",
+ "generated_at": "2026-11-06T00:07+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1174,24 +1174,24 @@
       "trackN": 96
      },
      {
-      "player_id": "00-0037256",
-      "name": "Rachaad White",
-      "team": "WAS",
-      "opp": "LA",
+      "player_id": "00-0036919",
+      "name": "Kenny Gainwell",
+      "team": "TB",
+      "opp": "CHI",
       "pos": "RB",
-      "est": 59.8,
-      "depth": "RB1",
-      "game": "LA-WAS",
+      "est": 50.8,
+      "depth": "RB2",
+      "game": "CHI-TB",
       "stat": "YDS",
-      "line": 60,
-      "label": "60+ scrimmage yards",
-      "chance": 0.3972,
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4115,
       "last": [
        8,
        2
       ],
-      "track": 0.439,
-      "trackN": 64
+      "track": 0.451,
+      "trackN": 96
      },
      {
       "player_id": "00-0038597",
@@ -1235,6 +1235,26 @@
      }
     ],
     "long": [
+     {
+      "player_id": "00-0040129",
+      "name": "Emeka Egbuka",
+      "team": "TB",
+      "opp": "CHI",
+      "pos": "WR",
+      "est": 56.2,
+      "depth": "WR1",
+      "game": "CHI-TB",
+      "stat": "YDS",
+      "line": 65,
+      "label": "65+ scrimmage yards",
+      "chance": 0.2399,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.295,
+      "trackN": 141
+     },
      {
       "player_id": "00-0039919",
       "name": "Rome Odunze",
@@ -1296,26 +1316,6 @@
       "trackN": 67
      },
      {
-      "player_id": "00-0036555",
-      "name": "Chuba Hubbard",
-      "team": "CAR",
-      "opp": "DEN",
-      "pos": "RB",
-      "est": 99.8,
-      "depth": "RB1",
-      "game": "CAR-DEN",
-      "stat": "YDS",
-      "line": 130,
-      "label": "130+ scrimmage yards",
-      "chance": 0.1834,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.185,
-      "trackN": 67
-     },
-     {
       "player_id": "00-0039075",
       "name": "Puka Nacua",
       "team": "LA",
@@ -1337,7 +1337,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-05T15:07-05:00"
+   "updated_at": "2026-11-05T19:07-05:00"
   }
  ]
 }

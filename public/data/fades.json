@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-05T20:07+00:00",
+ "generated_at": "2026-11-06T00:07+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1706,6 +1706,32 @@
    "source": "live",
    "fades": [
     {
+     "player_id": "00-0040719",
+     "name": "Bhayshul Tuten",
+     "team": "JAX",
+     "opp": "BAL",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 96.1,
+     "est": 58.4,
+     "z": 4.94,
+     "games": [
+      88,
+      62,
+      90,
+      91,
+      96,
+      87,
+      159
+     ],
+     "why": [
+      "BAL takes away 4 yds for his role",
+      "one big game (159) lifts his average -- 86 a game in the others"
+     ],
+     "track": 0.816,
+     "trackN": 513
+    },
+    {
      "player_id": "00-0041511",
      "name": "Omar Cooper Jr.",
      "team": "NYJ",
@@ -1755,8 +1781,8 @@
      "pos": "TE",
      "depth": "TE2",
      "line": 26.8,
-     "est": 14.1,
-     "z": 3.38,
+     "est": 14.5,
+     "z": 3.23,
      "games": [
       14,
       26,
@@ -1818,6 +1844,30 @@
      "trackN": 513
     },
     {
+     "player_id": "00-0039338",
+     "name": "Brock Bowers",
+     "team": "LV",
+     "opp": "SF",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 91.2,
+     "est": 66.6,
+     "z": 3.01,
+     "games": [
+      116,
+      86,
+      110,
+      70,
+      73,
+      92
+     ],
+     "why": [
+      "his usage (9.3 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.816,
+     "trackN": 513
+    },
+    {
      "player_id": "00-0040172",
      "name": "Jordan Watkins",
      "team": "SF",
@@ -1834,30 +1884,6 @@
      ],
      "why": [
       "his usage (1.8 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
-     "player_id": "00-0039338",
-     "name": "Brock Bowers",
-     "team": "LV",
-     "opp": "SF",
-     "pos": "TE",
-     "depth": "TE1",
-     "line": 91.2,
-     "est": 67.6,
-     "z": 2.87,
-     "games": [
-      116,
-      86,
-      110,
-      70,
-      73,
-      92
-     ],
-     "why": [
-      "his usage (9.3 touches a game) projects below what he's averaged"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2172,24 +2198,22 @@
      "trackN": 616
     },
     {
-     "player_id": "00-0035537",
-     "name": "Ty Johnson",
-     "team": "BUF",
-     "opp": "MIN",
+     "player_id": "00-0038120",
+     "name": "Breece Hall",
+     "team": "NYJ",
+     "opp": "KC",
      "pos": "RB",
-     "depth": "RB2",
-     "line": 36.8,
-     "est": 26.1,
-     "z": 2.09,
+     "depth": "RB1",
+     "line": 88.3,
+     "est": 70.5,
+     "z": 2.12,
      "games": [
-      50,
-      12,
-      72,
-      27,
-      23
+      118,
+      92,
+      55
      ],
      "why": [
-      "one big game (72) lifts his average -- 28 a game in the others"
+      "KC takes away 3 yds for his role"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2220,7 +2244,7 @@
      "trackN": 616
     }
    ],
-   "updated_at": "2026-11-05T15:07-05:00"
+   "updated_at": "2026-11-05T19:07-05:00"
   }
  ]
 }
