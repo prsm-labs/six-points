@@ -422,6 +422,8 @@ export default function PlayerSlideout() {
                     : gameLog)}
                   position={position}
                   initialCategory={defaultCategory(position, recentTargets)}
+                  trend={!chartGames && !oo.match}
+                  proj={{ scrim_yards: weekRow?.est_yards }}
                 />
               </div>
 
