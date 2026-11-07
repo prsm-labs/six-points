@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T20:07+00:00",
+ "generated_at": "2026-11-07T00:07+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -426,6 +426,36 @@
    "source": "live",
    "picks": [
     {
+     "player_id": "00-0034844",
+     "name": "Saquon Barkley",
+     "team": "PHI",
+     "opp": "NYG",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 45.0,
+     "est": 79.5,
+     "z": 3.87,
+     "games": [
+      80,
+      20,
+      80,
+      10,
+      71,
+      54
+     ],
+     "last": [
+      10,
+      71,
+      54
+     ],
+     "why": [
+      "role up: +19 yds (teammates out / snaps)",
+      "45 a game lately vs 52 on the season"
+     ],
+     "track": 0.773,
+     "trackN": 367
+    },
+    {
      "player_id": "00-0041037",
      "name": "Denzel Boston",
      "team": "CLE",
@@ -581,6 +611,36 @@
      "trackN": 707
     },
     {
+     "player_id": "00-0037256",
+     "name": "Rachaad White",
+     "team": "WAS",
+     "opp": "LA",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 45.7,
+     "est": 61.5,
+     "z": 2.02,
+     "games": [
+      27,
+      83,
+      41,
+      20,
+      57,
+      60
+     ],
+     "last": [
+      20,
+      57,
+      60
+     ],
+     "why": [
+      "role up: +7 yds (teammates out / snaps)",
+      "46 a game lately vs 48 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 707
+    },
+    {
      "player_id": "00-0038997",
      "name": "Josh Downs",
      "team": "IND",
@@ -612,7 +672,7 @@
      "trackN": 707
     }
    ],
-   "updated_at": "2026-11-06T15:07-05:00"
+   "updated_at": "2026-11-06T19:07-05:00"
   }
  ]
 }

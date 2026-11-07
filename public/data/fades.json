@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T20:07+00:00",
+ "generated_at": "2026-11-07T00:07+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1939,6 +1939,32 @@
      "trackN": 616
     },
     {
+     "player_id": "00-0038124",
+     "name": "Christian Watson",
+     "team": "GB",
+     "opp": "NE",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 88.5,
+     "est": 67.3,
+     "z": 2.58,
+     "games": [
+      147,
+      41,
+      96,
+      47,
+      143,
+      64,
+      57,
+      113
+     ],
+     "why": [
+      "one big game (147) lifts his average -- 80 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
      "player_id": "00-0032764",
      "name": "Derrick Henry",
      "team": "BAL",
@@ -2176,6 +2202,29 @@
      "trackN": 616
     },
     {
+     "player_id": "00-0035537",
+     "name": "Ty Johnson",
+     "team": "BUF",
+     "opp": "MIN",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 36.8,
+     "est": 26.1,
+     "z": 2.09,
+     "games": [
+      50,
+      12,
+      72,
+      27,
+      23
+     ],
+     "why": [
+      "one big game (72) lifts his average -- 28 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
      "player_id": "00-0038134",
      "name": "Kenneth Walker III",
      "team": "KC",
@@ -2201,7 +2250,7 @@
      "trackN": 616
     }
    ],
-   "updated_at": "2026-11-06T15:07-05:00"
+   "updated_at": "2026-11-06T19:07-05:00"
   }
  ]
 }

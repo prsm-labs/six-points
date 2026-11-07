@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T20:07+00:00",
+ "generated_at": "2026-11-07T00:07+00:00",
  "season": 2026,
  "week": 9,
  "liveFromWeek": 9,
@@ -1931,6 +1931,62 @@
      "result": null
     },
     {
+     "player_id": "00-0038559",
+     "name": "Michael Wilson",
+     "team": "ARI",
+     "opp": "SEA",
+     "pos": "WR",
+     "chance": 0.4273,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.1773,
+     "est": 74.0,
+     "recent": [
+      [
+       "2026-09-20",
+       "SEA",
+       0
+      ],
+      [
+       "2026-09-27",
+       "SF",
+       1
+      ],
+      [
+       "2026-10-04",
+       "NYG",
+       0
+      ],
+      [
+       "2026-10-11",
+       "DET",
+       0
+      ],
+      [
+       "2026-10-18",
+       "LA",
+       0
+      ],
+      [
+       "2026-10-25",
+       "DEN",
+       0
+      ],
+      [
+       "2026-11-01",
+       "DAL",
+       1
+      ]
+     ],
+     "why": [
+      "+2.7 touches a game from teammates who are out",
+      "1.8 red-zone touches a game",
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0038597",
      "name": "Chase Brown",
      "team": "CIN",
@@ -1983,6 +2039,61 @@
       "+1.1 touches a game from teammates who are out",
       "2.4 red-zone touches a game",
       "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0040867",
+     "name": "Makai Lemon",
+     "team": "PHI",
+     "opp": "NYG",
+     "pos": "WR",
+     "chance": 0.2795,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1545,
+     "est": 45.2,
+     "recent": [
+      [
+       "2026-09-20",
+       "TEN",
+       0
+      ],
+      [
+       "2026-09-28",
+       "CHI",
+       0
+      ],
+      [
+       "2026-10-04",
+       "LA",
+       0
+      ],
+      [
+       "2026-10-11",
+       "JAX",
+       0
+      ],
+      [
+       "2026-10-18",
+       "CAR",
+       0
+      ],
+      [
+       "2026-10-26",
+       "DAL",
+       1
+      ],
+      [
+       "2026-11-01",
+       "WAS",
+       0
+      ]
+     ],
+     "why": [
+      "+1.2 touches a game from teammates who are out",
+      "scored in 1 of his last 8 games"
      ],
      "result": null
     },
@@ -2148,120 +2259,9 @@
       "scored in 1 of his last 7 games"
      ],
      "result": null
-    },
-    {
-     "player_id": "00-0040124",
-     "name": "Tetairoa McMillan",
-     "team": "CAR",
-     "opp": "DEN",
-     "pos": "WR",
-     "chance": 0.2646,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1396,
-     "est": 67.3,
-     "recent": [
-      [
-       "2026-09-13",
-       "CHI",
-       0
-      ],
-      [
-       "2026-09-20",
-       "ATL",
-       0
-      ],
-      [
-       "2026-09-27",
-       "CLE",
-       0
-      ],
-      [
-       "2026-10-04",
-       "DET",
-       2
-      ],
-      [
-       "2026-10-18",
-       "PHI",
-       0
-      ],
-      [
-       "2026-10-25",
-       "TB",
-       0
-      ],
-      [
-       "2026-10-29",
-       "GB",
-       0
-      ]
-     ],
-     "why": [
-      "+1.6 touches a game from teammates who are out",
-      "1.1 red-zone touches a game",
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0039793",
-     "name": "AJ Barner",
-     "team": "SEA",
-     "opp": "ARI",
-     "pos": "TE",
-     "chance": 0.2588,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1338,
-     "est": 35.3,
-     "recent": [
-      [
-       "2026-09-20",
-       "ARI",
-       1
-      ],
-      [
-       "2026-09-27",
-       "WAS",
-       0
-      ],
-      [
-       "2026-10-04",
-       "LAC",
-       0
-      ],
-      [
-       "2026-10-11",
-       "SF",
-       0
-      ],
-      [
-       "2026-10-15",
-       "DEN",
-       0
-      ],
-      [
-       "2026-10-25",
-       "KC",
-       0
-      ],
-      [
-       "2026-11-02",
-       "CHI",
-       0
-      ]
-     ],
-     "why": [
-      "1.0 red-zone touches a game",
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
     }
    ],
-   "updated_at": "2026-11-06T15:07-05:00"
+   "updated_at": "2026-11-06T19:07-05:00"
   }
  ]
 }

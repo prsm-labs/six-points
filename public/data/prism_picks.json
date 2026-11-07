@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T20:07+00:00",
+ "generated_at": "2026-11-07T00:07+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1174,6 +1174,26 @@
       "trackN": 96
      },
      {
+      "player_id": "00-0037256",
+      "name": "Rachaad White",
+      "team": "WAS",
+      "opp": "LA",
+      "pos": "RB",
+      "est": 61.5,
+      "depth": "RB1",
+      "game": "LA-WAS",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.451,
+      "trackN": 96
+     },
+     {
       "player_id": "00-0036919",
       "name": "Kenny Gainwell",
       "team": "TB",
@@ -1194,23 +1214,23 @@
       "trackN": 96
      },
      {
-      "player_id": "00-0037256",
-      "name": "Rachaad White",
-      "team": "WAS",
-      "opp": "LA",
-      "pos": "RB",
-      "est": 59.8,
-      "depth": "RB1",
-      "game": "LA-WAS",
-      "stat": "YDS",
-      "line": 60,
-      "label": "60+ scrimmage yards",
-      "chance": 0.3972,
+      "player_id": "00-0038559",
+      "name": "Michael Wilson",
+      "team": "ARI",
+      "opp": "SEA",
+      "pos": "WR",
+      "est": 74.0,
+      "depth": "WR1",
+      "game": "ARI-SEA",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3778,
       "last": [
        8,
        2
       ],
-      "track": 0.439,
+      "track": 0.431,
       "trackN": 64
      },
      {
@@ -1231,26 +1251,6 @@
        2
       ],
       "track": 0.431,
-      "trackN": 64
-     },
-     {
-      "player_id": "00-0040784",
-      "name": "Quinshon Judkins",
-      "team": "CLE",
-      "opp": "NO",
-      "pos": "RB",
-      "est": 66.9,
-      "depth": "RB1",
-      "game": "CLE-NO",
-      "stat": "TD",
-      "line": 1,
-      "label": "Anytime TD",
-      "chance": 0.3514,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.419,
       "trackN": 64
      }
     ],
@@ -1296,6 +1296,26 @@
       "trackN": 141
      },
      {
+      "player_id": "00-0033280",
+      "name": "Christian McCaffrey",
+      "team": "SF",
+      "opp": "LV",
+      "pos": "RB",
+      "est": 95.0,
+      "depth": "RB1",
+      "game": "LV-SF",
+      "stat": "YDS",
+      "line": 120,
+      "label": "120+ scrimmage yards",
+      "chance": 0.214,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.288,
+      "trackN": 141
+     },
+     {
       "player_id": "00-0041547",
       "name": "KC Concepcion",
       "team": "CLE",
@@ -1316,38 +1336,18 @@
       "trackN": 67
      },
      {
-      "player_id": "00-0036555",
-      "name": "Chuba Hubbard",
-      "team": "CAR",
-      "opp": "DEN",
+      "player_id": "00-0034844",
+      "name": "Saquon Barkley",
+      "team": "PHI",
+      "opp": "NYG",
       "pos": "RB",
-      "est": 99.8,
+      "est": 79.5,
       "depth": "RB1",
-      "game": "CAR-DEN",
-      "stat": "YDS",
-      "line": 130,
-      "label": "130+ scrimmage yards",
-      "chance": 0.1834,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.185,
-      "trackN": 67
-     },
-     {
-      "player_id": "00-0039075",
-      "name": "Puka Nacua",
-      "team": "LA",
-      "opp": "WAS",
-      "pos": "WR",
-      "est": 77.0,
-      "depth": "WR1",
-      "game": "LA-WAS",
+      "game": "NYG-PHI",
       "stat": "TD2",
       "line": 2,
       "label": "2+ TDs",
-      "chance": 0.1035,
+      "chance": 0.1041,
       "last": [
        8,
        0
@@ -1357,7 +1357,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-06T15:07-05:00"
+   "updated_at": "2026-11-06T19:07-05:00"
   }
  ]
 }
