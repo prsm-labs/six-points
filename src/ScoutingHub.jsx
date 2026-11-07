@@ -11,6 +11,7 @@ import FadeLab from './FadeLab.jsx'
 import BounceLab from './BounceLab.jsx'
 import RiskSliderTab from './RiskSliderTab.jsx'
 import RadarLab from './RadarLab.jsx'
+import LongshotLab from './LongshotLab.jsx'
 
 // "Scouting" top-level tab (Slap Shot's tabs/MatchupsHubTab.jsx, 2026-10-18 revamp): All Matchups (the default
 // view) plus every lab, switched by a button row in the page instead of one top-level tab each.
@@ -19,6 +20,7 @@ const VIEWS = [
   { key: 'board', label: '🏈 All Matchups', Component: AllMatchupsTab },
   { key: 'risk', label: '🎚️ Risk Slider', Component: RiskSliderTab },  // 2026-10-27: safe -> long shot over every RB / WR / TE ladder
   { key: 'radar', label: '🔦 Under the radar', Component: RadarLab },  // 2026-11-02: quiet TD scorers the model likes
+  { key: 'longshot', label: '🎯 Long-shot creators', Component: LongshotLab },  // 2026-11-07: 12-30% TD chances ranked by recent red-zone touches
   { key: 'paydirt', label: '💰 Paydirt Lab', Component: PaydirtLab },
   { key: 'yardage', label: '💨 Yardage Lab', Component: YardageLab },
   { key: 'pairs', label: '🤝 Pairs', Component: PairsTab },
