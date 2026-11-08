@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T16:02+00:00",
+ "generated_at": "2026-11-08T11:08+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -487,6 +487,36 @@
      "trackN": 367
     },
     {
+     "player_id": "00-0033906",
+     "name": "Alvin Kamara",
+     "team": "NO",
+     "opp": "CLE",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 45.7,
+     "est": 76.8,
+     "z": 3.55,
+     "games": [
+      22,
+      41,
+      58,
+      6,
+      69,
+      62
+     ],
+     "last": [
+      6,
+      69,
+      62
+     ],
+     "why": [
+      "role up: +32 yds (teammates out / snaps)",
+      "46 a game lately vs 43 on the season"
+     ],
+     "track": 0.773,
+     "trackN": 367
+    },
+    {
      "player_id": "00-0037238",
      "name": "Drake London",
      "team": "ATL",
@@ -557,8 +587,8 @@
      "pos": "WR",
      "depth": "WR1",
      "line": 48.3,
-     "est": 69.4,
-     "z": 2.53,
+     "est": 72.5,
+     "z": 2.84,
      "games": [
       182,
       86,
@@ -574,6 +604,7 @@
       56
      ],
      "why": [
+      "role up: +3 yds (teammates out / snaps)",
       "48 a game lately vs 91 on the season"
      ],
      "track": 0.659,
@@ -672,7 +703,7 @@
      "trackN": 707
     }
    ],
-   "updated_at": "2026-11-07T11:02-05:00"
+   "updated_at": "2026-11-08T06:08-05:00"
   }
  ]
 }

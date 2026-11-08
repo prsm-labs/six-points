@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T16:02+00:00",
+ "generated_at": "2026-11-08T11:08+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1873,7 +1873,7 @@
      "team": "SF",
      "opp": "LV",
      "pos": "WR",
-     "depth": "WR4",
+     "depth": "WR3",
      "line": 46.0,
      "est": 29.9,
      "z": 2.94,
@@ -1909,31 +1909,6 @@
      ],
      "why": [
       "one big game (150) lifts his average -- 82 a game in the others"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
-     "player_id": "00-0037239",
-     "name": "Chris Olave",
-     "team": "NO",
-     "opp": "CLE",
-     "pos": "WR",
-     "depth": "WR1",
-     "line": 90.9,
-     "est": 69.4,
-     "z": 2.58,
-     "games": [
-      182,
-      86,
-      107,
-      116,
-      46,
-      43,
-      56
-     ],
-     "why": [
-      "one big game (182) lifts his average -- 76 a game in the others"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2176,6 +2151,31 @@
      "trackN": 616
     },
     {
+     "player_id": "00-0037239",
+     "name": "Chris Olave",
+     "team": "NO",
+     "opp": "CLE",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 90.9,
+     "est": 72.5,
+     "z": 2.16,
+     "games": [
+      182,
+      86,
+      107,
+      116,
+      46,
+      43,
+      56
+     ],
+     "why": [
+      "one big game (182) lifts his average -- 76 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
      "player_id": "00-0038543",
      "name": "Jaxon Smith-Njigba",
      "team": "SEA",
@@ -2197,29 +2197,6 @@
      ],
      "why": [
       "his usage (11.1 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
-     "player_id": "00-0035537",
-     "name": "Ty Johnson",
-     "team": "BUF",
-     "opp": "MIN",
-     "pos": "RB",
-     "depth": "RB2",
-     "line": 36.8,
-     "est": 26.1,
-     "z": 2.09,
-     "games": [
-      50,
-      12,
-      72,
-      27,
-      23
-     ],
-     "why": [
-      "one big game (72) lifts his average -- 28 a game in the others"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2250,7 +2227,7 @@
      "trackN": 616
     }
    ],
-   "updated_at": "2026-11-07T11:02-05:00"
+   "updated_at": "2026-11-08T06:08-05:00"
   }
  ]
 }

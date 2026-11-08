@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T16:02+00:00",
+ "generated_at": "2026-11-08T11:08+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1154,6 +1154,26 @@
    "tiers": {
     "mid": [
      {
+      "player_id": "00-0033906",
+      "name": "Alvin Kamara",
+      "team": "NO",
+      "opp": "CLE",
+      "pos": "RB",
+      "est": 76.8,
+      "depth": "RB1",
+      "game": "CLE-NO",
+      "stat": "YDS",
+      "line": 65,
+      "label": "65+ scrimmage yards",
+      "chance": 0.4476,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.462,
+      "trackN": 96
+     },
+     {
       "player_id": "00-0036997",
       "name": "Javonte Williams",
       "team": "DAL",
@@ -1185,26 +1205,6 @@
       "stat": "YDS",
       "line": 60,
       "label": "60+ scrimmage yards",
-      "chance": 0.4115,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.451,
-      "trackN": 96
-     },
-     {
-      "player_id": "00-0036919",
-      "name": "Kenny Gainwell",
-      "team": "TB",
-      "opp": "CHI",
-      "pos": "RB",
-      "est": 50.8,
-      "depth": "RB2",
-      "game": "CHI-TB",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
       "chance": 0.4115,
       "last": [
        8,
@@ -1357,7 +1357,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-07T11:02-05:00"
+   "updated_at": "2026-11-08T06:08-05:00"
   }
  ]
 }

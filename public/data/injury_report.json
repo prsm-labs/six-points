@@ -7568,7 +7568,7 @@
         "team": "ATL",
         "name": "Cameron Williams",
         "position": "T",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Ankle"
       },
       {
@@ -7612,6 +7612,48 @@
         "position": "RB",
         "status": "Questionable",
         "injury": "Neck"
+      },
+      {
+        "team": "BUF",
+        "name": "Dion Dawkins",
+        "position": "T",
+        "status": "Questionable",
+        "injury": "Rib"
+      },
+      {
+        "team": "BUF",
+        "name": "Greg Gaines",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Calf"
+      },
+      {
+        "team": "BUF",
+        "name": "Josh Palmer",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "BUF",
+        "name": "Alec Anderson",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "BUF",
+        "name": "Tyrell Shavers",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "BUF",
+        "name": "Jordan Hancock",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Hamstring"
       },
       {
         "team": "CAR",
@@ -7929,6 +7971,20 @@
         "injury": "Knee"
       },
       {
+        "team": "HOU",
+        "name": "David Montgomery",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Groin"
+      },
+      {
+        "team": "HOU",
+        "name": "Reed Blankenship",
+        "position": "S",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
         "team": "IND",
         "name": "Akeem Davis-Gaither",
         "position": "LB",
@@ -7953,7 +8009,7 @@
         "team": "IND",
         "name": "A.J. Haulcy",
         "position": "S",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Ankle"
       },
       {
@@ -8132,10 +8188,45 @@
         "injury": "Quadricep"
       },
       {
+        "team": "MIN",
+        "name": "Kyler Murray",
+        "position": "QB",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "MIN",
+        "name": "Jauan Jennings",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Calf"
+      },
+      {
+        "team": "MIN",
+        "name": "Theo Jackson",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Quadricep"
+      },
+      {
+        "team": "MIN",
+        "name": "Jay Ward",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "MIN",
+        "name": "Demond Claiborne",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
         "team": "NE",
         "name": "Greg Van Roten",
         "position": "G",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Hamstring"
       },
       {
@@ -8254,14 +8345,14 @@
         "team": "NYJ",
         "name": "Joseph Ossai",
         "position": "DE",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Ankle"
       },
       {
         "team": "NYJ",
         "name": "Nahshon Wright",
         "position": "CB",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Back"
       },
       {
@@ -8282,7 +8373,7 @@
         "team": "NYJ",
         "name": "VJ Payne",
         "position": "S",
-        "status": "Questionable",
+        "status": "Out",
         "injury": "Knee"
       },
       {

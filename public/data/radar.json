@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T16:03+00:00",
+ "generated_at": "2026-11-08T11:08+00:00",
  "season": 2026,
  "week": 9,
  "liveFromWeek": 9,
@@ -1932,6 +1932,62 @@
      "result": null
     },
     {
+     "player_id": "00-0033906",
+     "name": "Alvin Kamara",
+     "team": "NO",
+     "opp": "CLE",
+     "pos": "RB",
+     "chance": 0.4373,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.1873,
+     "est": 76.8,
+     "recent": [
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2026-09-20",
+       "BAL",
+       0
+      ],
+      [
+       "2026-09-27",
+       "LV",
+       0
+      ],
+      [
+       "2026-10-05",
+       "ATL",
+       2
+      ],
+      [
+       "2026-10-11",
+       "MIN",
+       0
+      ],
+      [
+       "2026-10-18",
+       "NYG",
+       1
+      ],
+      [
+       "2026-10-25",
+       "PIT",
+       0
+      ]
+     ],
+     "why": [
+      "+12.2 touches a game from teammates who are out",
+      "1.6 red-zone touches a game",
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0038559",
      "name": "Michael Wilson",
      "team": "ARI",
@@ -2205,64 +2261,9 @@
       "scored in 1 of his last 8 games"
      ],
      "result": null
-    },
-    {
-     "player_id": "00-0041052",
-     "name": "Kaelon Black",
-     "team": "SF",
-     "opp": "LV",
-     "pos": "RB",
-     "chance": 0.2828,
-     "hits": 1,
-     "n": 7,
-     "own": 0.1429,
-     "lift": 0.1399,
-     "est": 40.1,
-     "recent": [
-      [
-       "2026-09-10",
-       "LA",
-       0
-      ],
-      [
-       "2026-09-20",
-       "MIA",
-       0
-      ],
-      [
-       "2026-09-27",
-       "ARI",
-       0
-      ],
-      [
-       "2026-10-04",
-       "DEN",
-       0
-      ],
-      [
-       "2026-10-11",
-       "SEA",
-       0
-      ],
-      [
-       "2026-10-19",
-       "WAS",
-       0
-      ],
-      [
-       "2026-10-25",
-       "ATL",
-       1
-      ]
-     ],
-     "why": [
-      "1.7 red-zone touches a game",
-      "scored in 1 of his last 7 games"
-     ],
-     "result": null
     }
    ],
-   "updated_at": "2026-11-07T11:03-05:00"
+   "updated_at": "2026-11-08T06:08-05:00"
   }
  ]
 }
