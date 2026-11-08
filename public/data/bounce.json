@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T16:02+00:00",
+ "generated_at": "2026-11-08T16:51+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -426,6 +426,34 @@
    "source": "live",
    "picks": [
     {
+     "player_id": "00-0035250",
+     "name": "Devin Singletary",
+     "team": "NYG",
+     "opp": "PHI",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 32.3,
+     "est": 89.2,
+     "z": 6.02,
+     "games": [
+      38,
+      9,
+      33,
+      55
+     ],
+     "last": [
+      9,
+      33,
+      55
+     ],
+     "why": [
+      "role up: +56 yds (teammates out / snaps)",
+      "32 a game lately vs 34 on the season"
+     ],
+     "track": 0.773,
+     "trackN": 367
+    },
+    {
      "player_id": "00-0034844",
      "name": "Saquon Barkley",
      "team": "PHI",
@@ -618,8 +646,8 @@
      "pos": "RB",
      "depth": "RB2",
      "line": 27.3,
-     "est": 41.3,
-     "z": 2.17,
+     "est": 41.4,
+     "z": 2.19,
      "games": [
       36,
       36,
@@ -637,6 +665,38 @@
      ],
      "why": [
       "27 a game lately vs 42 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 707
+    },
+    {
+     "player_id": "00-0036358",
+     "name": "CeeDee Lamb",
+     "team": "DAL",
+     "opp": "IND",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 67.3,
+     "est": 87.8,
+     "z": 2.18,
+     "games": [
+      44,
+      153,
+      112,
+      183,
+      9,
+      70,
+      74,
+      58
+     ],
+     "last": [
+      70,
+      74,
+      58
+     ],
+     "why": [
+      "role up: +10 yds (teammates out / snaps)",
+      "67 a game lately vs 88 on the season"
      ],
      "track": 0.659,
      "trackN": 707
@@ -703,7 +763,7 @@
      "trackN": 707
     }
    ],
-   "updated_at": "2026-11-08T11:02-05:00"
+   "updated_at": "2026-11-08T11:51-05:00"
   }
  ]
 }

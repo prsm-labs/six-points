@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T16:02+00:00",
+ "generated_at": "2026-11-08T16:51+00:00",
  "season": 2026,
  "week": 9,
  "liveFromWeek": 10,
@@ -516,9 +516,9 @@
      "tch3": 5.5,
      "gp": 2,
      "rzSeason": 0.62,
-     "pct": 0.957,
+     "pct": 0.956,
      "rank": 5,
-     "of": 93,
+     "of": 91,
      "result": null
     },
     {
@@ -532,9 +532,9 @@
      "tch3": 6.0,
      "gp": 2,
      "rzSeason": 1.05,
-     "pct": 0.9355,
+     "pct": 0.9341,
      "rank": 7,
-     "of": 93,
+     "of": 91,
      "result": null
     },
     {
@@ -543,7 +543,7 @@
      "team": "NYJ",
      "opp": "KC",
      "pos": "TE",
-     "chance": 0.2355,
+     "chance": 0.2371,
      "rz3": 1.67,
      "tch3": 5.7,
      "gp": 3,
@@ -570,6 +570,22 @@
      "result": null
     },
     {
+     "player_id": "00-0036244",
+     "name": "Colby Parkinson",
+     "team": "LA",
+     "opp": "WAS",
+     "pos": "TE",
+     "chance": 0.1854,
+     "rz3": 1.5,
+     "tch3": 6.0,
+     "gp": 2,
+     "rzSeason": 1.3,
+     "pct": 0.8929,
+     "rank": 7,
+     "of": 56,
+     "result": null
+    },
+    {
      "player_id": "00-0036554",
      "name": "Nico Collins",
      "team": "HOU",
@@ -580,9 +596,9 @@
      "tch3": 5.5,
      "gp": 2,
      "rzSeason": 1.36,
-     "pct": 0.8925,
+     "pct": 0.8901,
      "rank": 11,
-     "of": 93,
+     "of": 91,
      "result": null
     },
     {
@@ -600,25 +616,9 @@
      "rank": 9,
      "of": 61,
      "result": null
-    },
-    {
-     "player_id": "00-0039410",
-     "name": "Ryan Flournoy",
-     "team": "DAL",
-     "opp": "IND",
-     "pos": "WR",
-     "chance": 0.2525,
-     "rz3": 1.33,
-     "tch3": 6.0,
-     "gp": 3,
-     "rzSeason": 0.96,
-     "pct": 0.8602,
-     "rank": 14,
-     "of": 93,
-     "result": null
     }
    ],
-   "updated_at": "2026-11-08T11:02-05:00"
+   "updated_at": "2026-11-08T11:51-05:00"
   }
  ]
 }

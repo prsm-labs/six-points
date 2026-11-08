@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T16:02+00:00",
+ "generated_at": "2026-11-08T16:51+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1706,6 +1706,31 @@
    "source": "live",
    "fades": [
     {
+     "player_id": "00-0039364",
+     "name": "Sione Vaki",
+     "team": "DET",
+     "opp": "MIA",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 25.4,
+     "est": 6.9,
+     "z": 7.05,
+     "games": [
+      18,
+      20,
+      37,
+      17,
+      11,
+      5,
+      70
+     ],
+     "why": [
+      "one big game (70) lifts his average -- 18 a game in the others"
+     ],
+     "track": 0.816,
+     "trackN": 513
+    },
+    {
      "player_id": "00-0040719",
      "name": "Bhayshul Tuten",
      "team": "JAX",
@@ -1732,27 +1757,6 @@
      "trackN": 513
     },
     {
-     "player_id": "00-0041511",
-     "name": "Omar Cooper Jr.",
-     "team": "NYJ",
-     "opp": "KC",
-     "pos": "WR",
-     "depth": "WR2",
-     "line": 82.7,
-     "est": 56.2,
-     "z": 3.53,
-     "games": [
-      30,
-      103,
-      115
-     ],
-     "why": [
-      "his usage (4.4 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.816,
-     "trackN": 513
-    },
-    {
      "player_id": "00-0040782",
      "name": "Isaiah Bond",
      "team": "CLE",
@@ -1769,6 +1773,27 @@
      ],
      "why": [
       "one big game (74) lifts his average -- 6 a game in the others"
+     ],
+     "track": 0.816,
+     "trackN": 513
+    },
+    {
+     "player_id": "00-0041511",
+     "name": "Omar Cooper Jr.",
+     "team": "NYJ",
+     "opp": "KC",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 82.7,
+     "est": 56.5,
+     "z": 3.48,
+     "games": [
+      30,
+      103,
+      115
+     ],
+     "why": [
+      "his usage (4.4 touches a game) projects below what he's averaged"
      ],
      "track": 0.816,
      "trackN": 513
@@ -1884,6 +1909,31 @@
      ],
      "why": [
       "his usage (1.8 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
+     "player_id": "00-0036963",
+     "name": "Amon-Ra St. Brown",
+     "team": "DET",
+     "opp": "MIA",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 82.9,
+     "est": 60.8,
+     "z": 2.83,
+     "games": [
+      67,
+      142,
+      19,
+      75,
+      69,
+      152,
+      56
+     ],
+     "why": [
+      "one big game (152) lifts his average -- 71 a game in the others"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2015,28 +2065,6 @@
      "trackN": 616
     },
     {
-     "player_id": "00-0039798",
-     "name": "Isaiah Davis",
-     "team": "NYJ",
-     "opp": "KC",
-     "pos": "RB",
-     "depth": "RB3",
-     "line": 28.0,
-     "est": 18.2,
-     "z": 2.3,
-     "games": [
-      17,
-      26,
-      54,
-      15
-     ],
-     "why": [
-      "one big game (54) lifts his average -- 19 a game in the others"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
      "player_id": "00-0036554",
      "name": "Nico Collins",
      "team": "HOU",
@@ -2055,6 +2083,28 @@
      ],
      "why": [
       "one big game (118) lifts his average -- 56 a game in the others"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
+     "player_id": "00-0039798",
+     "name": "Isaiah Davis",
+     "team": "NYJ",
+     "opp": "KC",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 28.0,
+     "est": 18.3,
+     "z": 2.27,
+     "games": [
+      17,
+      26,
+      54,
+      15
+     ],
+     "why": [
+      "one big game (54) lifts his average -- 19 a game in the others"
      ],
      "track": 0.729,
      "trackN": 616
@@ -2130,27 +2180,6 @@
      "trackN": 616
     },
     {
-     "player_id": "00-0041496",
-     "name": "Jonah Coleman",
-     "team": "DEN",
-     "opp": "CAR",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 77.0,
-     "est": 60.1,
-     "z": 2.18,
-     "games": [
-      58,
-      69,
-      104
-     ],
-     "why": [
-      "his usage (11.8 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.729,
-     "trackN": 616
-    },
-    {
      "player_id": "00-0037239",
      "name": "Chris Olave",
      "team": "NO",
@@ -2202,6 +2231,27 @@
      "trackN": 616
     },
     {
+     "player_id": "00-0041496",
+     "name": "Jonah Coleman",
+     "team": "DEN",
+     "opp": "CAR",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 77.0,
+     "est": 60.5,
+     "z": 2.12,
+     "games": [
+      58,
+      69,
+      104
+     ],
+     "why": [
+      "his usage (11.8 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.729,
+     "trackN": 616
+    },
+    {
      "player_id": "00-0038134",
      "name": "Kenneth Walker III",
      "team": "KC",
@@ -2227,7 +2277,7 @@
      "trackN": 616
     }
    ],
-   "updated_at": "2026-11-08T11:02-05:00"
+   "updated_at": "2026-11-08T11:51-05:00"
   }
  ]
 }
