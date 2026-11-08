@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T16:51+00:00",
+ "generated_at": "2026-11-08T20:06+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1158,28 +1158,18 @@
    ],
    "nextGame": {
     "teams": [
-     "CAR",
-     "CLE",
-     "DAL",
-     "DEN",
-     "DET",
-     "IND",
-     "KC",
-     "LA",
-     "MIA",
-     "NO",
-     "NYG",
-     "NYJ",
-     "PHI",
-     "WAS"
+     "HOU",
+     "LAC",
+     "LV",
+     "SF"
     ],
-    "kickoff": "2026-11-08T13:00:00-05:00",
-    "label": "DEN @ CAR",
+    "kickoff": "2026-11-08T16:05:00-05:00",
+    "label": "HOU @ LAC",
     "closest": {
-     "name": "Devin Singletary",
-     "team": "NYG",
-     "label": "40+ scrimmage yards",
-     "chance": 0.8341
+     "name": "Woody Marks",
+     "team": "HOU",
+     "label": "45+ scrimmage yards",
+     "chance": 0.6035
     }
    },
    "tiers": {
@@ -1287,6 +1277,26 @@
     ],
     "long": [
      {
+      "player_id": "00-0035700",
+      "name": "Josh Jacobs",
+      "team": "GB",
+      "opp": "NE",
+      "pos": "RB",
+      "est": 89.0,
+      "depth": "RB1",
+      "game": "GB-NE",
+      "stat": "YDS",
+      "line": 105,
+      "label": "105+ scrimmage yards",
+      "chance": 0.2399,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.295,
+      "trackN": 141
+     },
+     {
       "player_id": "00-0039919",
       "name": "Rome Odunze",
       "team": "CHI",
@@ -1304,26 +1314,6 @@
        0
       ],
       "track": 0.29,
-      "trackN": 141
-     },
-     {
-      "player_id": "00-0035700",
-      "name": "Josh Jacobs",
-      "team": "GB",
-      "opp": "NE",
-      "pos": "RB",
-      "est": 77.7,
-      "depth": "RB1",
-      "game": "GB-NE",
-      "stat": "YDS",
-      "line": 95,
-      "label": "95+ scrimmage yards",
-      "chance": 0.214,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.288,
       "trackN": 141
      },
      {
@@ -1388,7 +1378,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-08T11:51-05:00"
+   "updated_at": "2026-11-08T15:06-05:00"
   }
  ]
 }

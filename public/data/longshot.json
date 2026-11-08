@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T16:51+00:00",
+ "generated_at": "2026-11-08T20:06+00:00",
  "season": 2026,
  "week": 9,
  "liveFromWeek": 10,
@@ -500,9 +500,9 @@
      "tch3": 7.0,
      "gp": 2,
      "rzSeason": 0.88,
-     "pct": 0.9821,
+     "pct": 0.9815,
      "rank": 2,
-     "of": 56,
+     "of": 54,
      "result": null
     },
     {
@@ -511,14 +511,14 @@
      "team": "HOU",
      "opp": "LAC",
      "pos": "WR",
-     "chance": 0.2238,
+     "chance": 0.2237,
      "rz3": 2.0,
      "tch3": 5.5,
      "gp": 2,
      "rzSeason": 0.62,
-     "pct": 0.956,
+     "pct": 0.9556,
      "rank": 5,
-     "of": 91,
+     "of": 90,
      "result": null
     },
     {
@@ -532,9 +532,9 @@
      "tch3": 6.0,
      "gp": 2,
      "rzSeason": 1.05,
-     "pct": 0.9341,
+     "pct": 0.9333,
      "rank": 7,
-     "of": 91,
+     "of": 90,
      "result": null
     },
     {
@@ -591,14 +591,14 @@
      "team": "HOU",
      "opp": "LAC",
      "pos": "WR",
-     "chance": 0.2472,
+     "chance": 0.2435,
      "rz3": 1.5,
      "tch3": 5.5,
      "gp": 2,
      "rzSeason": 1.36,
-     "pct": 0.8901,
+     "pct": 0.8889,
      "rank": 11,
-     "of": 91,
+     "of": 90,
      "result": null
     },
     {
@@ -612,13 +612,13 @@
      "tch3": 14.0,
      "gp": 3,
      "rzSeason": 1.99,
-     "pct": 0.8689,
+     "pct": 0.8644,
      "rank": 9,
-     "of": 61,
+     "of": 59,
      "result": null
     }
    ],
-   "updated_at": "2026-11-08T11:51-05:00"
+   "updated_at": "2026-11-08T15:06-05:00"
   }
  ]
 }
