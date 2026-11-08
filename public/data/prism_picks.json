@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T11:08+00:00",
+ "generated_at": "2026-11-08T16:02+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1139,16 +1139,28 @@
    ],
    "nextGame": {
     "teams": [
-     "ATL",
-     "CIN"
+     "CAR",
+     "CLE",
+     "DAL",
+     "DEN",
+     "DET",
+     "IND",
+     "KC",
+     "LA",
+     "MIA",
+     "NO",
+     "NYG",
+     "NYJ",
+     "PHI",
+     "WAS"
     ],
-    "kickoff": "2026-11-08T09:30:00-05:00",
-    "label": "CIN @ ATL",
+    "kickoff": "2026-11-08T13:00:00-05:00",
+    "label": "DEN @ CAR",
     "closest": {
-     "name": "Kyle Pitts",
-     "team": "ATL",
-     "label": "25+ scrimmage yards",
-     "chance": 0.5389
+     "name": "Tyler Warren",
+     "team": "IND",
+     "label": "35+ scrimmage yards",
+     "chance": 0.6448
     }
    },
    "tiers": {
@@ -1357,7 +1369,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-08T06:08-05:00"
+   "updated_at": "2026-11-08T11:02-05:00"
   }
  ]
 }
