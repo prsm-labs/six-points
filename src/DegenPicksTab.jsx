@@ -69,7 +69,7 @@ function Board({ wk, slip }) {
           return (
             <div key={r.p.id} className="dp-row">
               <PlayerAvatar playerId={r.p.id} name={r.p.name} />
-              <div className="dp-who"><b>{r.p.name}</b><span className="dp-muted dp-small">{r.p.team} {r.p.pos} · cleared {hits}/{n} last {n}</span></div>
+              <div className="dp-who"><b>{r.p.name}</b><span className="dp-muted dp-small">{r.p.team} {r.p.pos}{r.p.pos === 'QB' ? ' · rushing / receiving TD (grade model)' : ` · cleared ${hits}/${n} last ${n}`}</span></div>
               <div className="dp-step">
                 <button type="button" aria-label="Lower the line" disabled={i <= 0} onClick={() => step(r, -1)}>−</button>
                 <b>{stat === 'TD' ? (T === 1 ? 'TD' : `${T}+`) : `${T}+`}</b>
@@ -250,7 +250,8 @@ export default function DegenPicksTab() {
       <div className="dp-note" style={{ marginTop: 12 }}>
         <b>How it works.</b> Everyone starts with {fmt(START)} free coins. Pick any line we price (anytime TD, 2+ TDs, scrimmage yards), add it to
         your slip and choose the coins. A hit returns your coins divided by our chance, so a 25% line returns 4x and a 75% line 1.33x; a miss
-        loses them. Parlays (2-6 legs, one per player) multiply the legs' chances (a TD and 100 yards on opposite sides of one game get the
+        loses them. Quarterbacks: each team's starter, anytime / 2+ TDs from the grade model (a TD he runs or catches; passing TDs don't
+        count), settled from ESPN's box score. Parlays (2-6 legs, one per player) multiply the legs' chances (a TD and 100 yards on opposite sides of one game get the
         +7% we measured). Picks lock at kickoff and settle once the game is graded (a few hours after it ends); if he doesn't play, the coins come
         back. If our chances are right, picks break even over time, so finishing ahead means your picks beat our numbers. Reset whenever you
         like. <b>Play coins only:</b> free, can't be bought, can't be cashed out or traded, no prizes. Saved in this browser.

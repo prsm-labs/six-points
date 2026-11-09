@@ -68,9 +68,17 @@ export function loadWeek() {
     if (!slate?.season || !slate?.week) return null
     const lines = await getJson(`/data/lines/${slate.season}-wk${slate.week}.json`)
     const games = (sched?.games || []).filter((g) => g.week === slate.week && (sched.season == null || sched.season === slate.season))
-      .map((g) => ({ gameId: g.game_id, away: g.away_team, home: g.home_team, kickoff: kickoffUTC(g.gameday, g.gametime), final: g.home_score != null }))
+      .map((g) => ({ gameId: g.game_id, day: g.gameday, away: g.away_team, home: g.home_team, kickoff: kickoffUTC(g.gameday, g.gametime), final: g.home_score != null }))
     const active = new Set((slate.matchups || []).map((m) => m.player_id))
-    return { season: slate.season, week: slate.week, key: `${slate.season}-wk${slate.week}`, games, lines, active }
+    // 2026-11-09 (user: Josh Allen wasn't an option for TDs): the line board prices RBs / WRs / TEs only (no QB yards projection), so each
+    // team's starting QB (its highest TD chance) gets the grade model's own anytime / 2+ TD chances -- the numbers the Cheat Sheets show.
+    // Settled from ESPN's box score (src 'espn'): the line file has no QB results.
+    const qb = {}
+    for (const m of slate.matchups || []) if (m.position === 'QB' && m.p_td != null && !(qb[m.team]?.p_td >= m.p_td)) qb[m.team] = m
+    const qbs = Object.values(qb).filter((m) => m.p_td >= 0.03).map((m) => ({ id: m.player_id, name: m.player_name, team: m.team, opp: m.opponent, pos: 'QB',
+      status: m.injury_status || m.status || null, n: 0, src: 'espn', lines: { TD: [[1, m.p_td, null]], ...(m.p_td2 != null ? { TD2: [[2, m.p_td2, null]] } : {}) } }))
+    const withQbs = lines ? { ...lines, players: [...(lines.players || []).filter((p) => p.pos !== 'QB'), ...qbs] } : null
+    return { season: slate.season, week: slate.week, key: `${slate.season}-wk${slate.week}`, games, lines: withQbs, active }
   })())
 }
 export function useWeek() {
@@ -92,7 +100,7 @@ export function ticket(wk, lp, stat, line, chance) {
   const g = gameOfTeam(wk, lp.team)
   if (!g || line == null || chance == null) return null
   return { date: wk.key, season: wk.season, week: wk.week, gameId: g.gameId, tip: g.kickoff, playerId: lp.id, name: lp.name, team: lp.team, opp: lp.opp,
-    stat, statLabel: STAT_LABEL[stat], line, chance }
+    stat, statLabel: STAT_LABEL[stat], line, chance, ...(lp.src === 'espn' ? { src: 'espn', day: g.day, home: g.home, away: g.away } : {}) }
 }
 
 // ---- parlay pricing ----------------------------------------------------------------------------------------------
@@ -143,7 +151,32 @@ export function cancelBet(id) {
 }
 export function resetCoins() { commit(fresh((state.run || 1) + 1, state.start || START)) }
 
-// ---- settling (from the graded line file) ------------------------------------------------------------------------
+// ---- settling (from the graded line file; QB legs from ESPN's box score) -------------------------------------------
+const normName = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\b(jr|sr|ii|iii|iv)\b\.?/g, '').replace(/[^a-z]/g, '')
+let teamsPromise = null
+const espnCache = {}
+async function espnTds(l) {
+  teamsPromise = teamsPromise || getJson('/data/team_stats.json')
+  const ts = (await teamsPromise) || {}
+  const ab = (t) => String(ts[t]?.espn_abbr || t).toUpperCase()
+  if (!l.day) return null
+  const sb = await getJson(`/api/scoreboard?dates=${l.day.replaceAll('-', '')}`)
+  const ev = (sb?.events || []).find((e) => { const cs = (e.competitions?.[0]?.competitors || []).map((c) => String(c.team?.abbreviation || '').toUpperCase()); return cs.includes(ab(l.home)) && cs.includes(ab(l.away)) })
+  if (!ev || ev.status?.type?.state !== 'post') return null
+  espnCache[ev.id] = espnCache[ev.id] || getJson(`/api/summary?event=${ev.id}&full=1`)
+  const s = await espnCache[ev.id]
+  const team = (s?.boxscore?.players || []).find((t) => String(t.team?.abbreviation || '').toUpperCase() === ab(l.team))
+  if (!team) return null
+  let seen = false, td = 0
+  for (const st of team.statistics || []) {
+    const a = (st.athletes || []).find((x) => normName(x.athlete?.displayName) === normName(l.name))
+    if (!a) continue
+    seen = true
+    const ix = (st.labels || []).indexOf('TD')
+    if ((st.name === 'rushing' || st.name === 'receiving') && ix >= 0) td += Number(a.stats?.[ix]) || 0
+  }
+  return seen ? { status: td >= l.line ? 'won' : 'lost', actual: td } : { status: 'void', actual: null }
+}
 function rollUp(b) {
   const legs = b.legs
   if (legs.some((l) => l.status === 'lost')) return { status: 'lost' }
@@ -168,6 +201,7 @@ export async function settleOpen() {
     const files = {}
     const results = new Map()
     for (const [id, i, l] of todo) {
+      if (l.src === 'espn') { const r = await espnTds(l); if (r) results.set(`${id}|${i}`, r); continue }
       if (!(l.date in files)) files[l.date] = await getJson(`/data/lines/${l.date}.json`)
       const f = files[l.date]
       if (!f || !(f.final_teams || []).includes(l.team)) continue
