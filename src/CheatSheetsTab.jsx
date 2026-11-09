@@ -131,17 +131,17 @@ function QuickReads() {
       why: `Est. ${c.est} yds · ${c.stat && c.stat !== 'YDS' ? 'scored' : 'cleared'} it in ${c.last[1]} of his last ${c.last[0]}`, result: c.result,
       onOpen: () => openPlayerSlide(m), action: <PickButton player={m} compact prop={c.label} /> }
   })
-  const shortItems = [
-    ppItem(ppw?.picks, '💎 PRISM Pick', 'safe'),
-    ppItem(ppw?.tiers?.mid, '⚖️ Mid-range', 'mid'),
-    radarTop.map((r0) => ({ key: `radar-${r0.player_id}`, tag: '🔦 Under the radar', tagCls: 'radar', name: r0.player_name, team: vs(r0), line: 'Anytime TD',
+  // 2026-11-09 🔎 This week's finds (user: reveal the edge in 2-3 clicks -- value lists only): Under the radar + Bounce-back (each beats the
+  // players' own rates; Long-shot creators beat our chance in only 2 of 3 seasons -> left out; PRISM Picks keep their own card). ShortList takes
+  // the first unseen player from each entry: 3 radar, 2 bounce-backs.
+  const radarRows = radarTop.map((r0) => ({ key: `radar-${r0.player_id}`, tag: '🔦 Under the radar', tagCls: 'radar', name: r0.player_name, team: vs(r0), line: 'Anytime TD',
       big: pc(r0._rchance), bigSub: `his ${pc(r0._rhits / Math.max(1, r0._rn))}`, why: `scored in ${r0._rhits} of his last ${r0._rn}`,
-      onOpen: () => openPlayerSlide(r0), action: <PickButton player={r0} compact prop="td" /> })),
-    bounceTop.map((b0) => ({ key: `bounce-${b0.player_id}`, tag: '📈 Bounce-back', tagCls: 'edge', name: b0.player_name, team: vs(b0), line: `Over ${b0._bline} yds`,
+      onOpen: () => openPlayerSlide(r0), action: <PickButton player={r0} compact prop="td" /> }))
+  const bounceRows = bounceTop.map((b0) => ({ key: `bounce-${b0.player_id}`, tag: '📈 Bounce-back', tagCls: 'edge', name: b0.player_name, team: vs(b0), line: `Over ${b0._bline} yds`,
       big: pc(b0._btrack), bigSub: 'track record', why: `Est. ${b0._best} yds — projected well above his last 3`,
-      onOpen: () => openPlayerSlide(b0), action: <PickButton player={b0} compact prop="yds100" /> })),
-    ppItem(ppw?.tiers?.long, '🌠 Long shot', 'long'),
-  ]
+      onOpen: () => openPlayerSlide(b0), action: <PickButton player={b0} compact prop="yds100" /> }))
+  void ppItem; void ppw
+  const shortItems = [radarRows, radarRows, radarRows, bounceRows, bounceRows]
   const priced = pool.filter((m) => m.edge != null)
   const bestValue = [...priced].filter((m) => m.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5)
   const overvalued = [...priced].filter((m) => m.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5)
@@ -168,7 +168,8 @@ function QuickReads() {
   return (
     <div>
       <SlateStatus data={slate} />
-      <ShortList items={shortItems} past={slate.week !== pp?.week && pp != null} sub="The top look from each tested list below — one player each. Tap a name for his card." />
+      <ShortList items={shortItems} past={slate.week !== pp?.week && pp != null} title="🔎 This week's finds"
+        sub={`Players our tested lists like that their own numbers don't show — not the obvious favorites. Record: 🔦 ${radar?.record?.all?.n ? `${radar.record.all.hits}/${radar.record.all.n} scored (said ${Math.round(radar.record.all.said * 100)}%, their own ${Math.round(radar.record.all.own * 100)}%)` : '—'} · 📈 ${bounce?.live?.n ? `${bounce.live.hits}/${bounce.live.n}` : '—'} finished above their recent average. Tap a name for his card.`} />
       <PrismPicks slate={slate} notOut={notOut} />
       <div className="note">
         ℹ️ Lists use the grade model's chances (TD %, 2+ TD %, 100+ yds %). 🔥 = scored in his last 3 games and not a top-25%
