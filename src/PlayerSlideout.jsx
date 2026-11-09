@@ -23,6 +23,7 @@ import HitRateCard from './HitRateCard.jsx'
 import Fold from './Fold.jsx'
 import { useHitGames } from './hitGames.js'
 import LinedUp from './LinedUp.jsx'
+import CoinLadder from './CoinLadder.jsx' // 2026-11-09 🪙 Degen Picks from the slideout
 
 // 2026-10-28 hit-rate card: the props a book posts for his position; default line = his average rounded (yards to 5)
 const HR = {
@@ -353,6 +354,7 @@ export default function PlayerSlideout() {
                     seasonLabels={['This season', '2025']} tierLabels={['🟢 Soft (10 softest)', 'Average', '🔴 Stingy (10 stingiest)']} />
                 </div>
               )}
+              <CoinLadder playerId={player.player_id} />
               <div className="slideout-section">
                 <h3>{player.season ? `${player.season} Season` : 'Season to date'}</h3>
                 <div className="stat-grid">

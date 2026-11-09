@@ -27,6 +27,8 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import ScoutingHub from './ScoutingHub.jsx'
 import CheatSheetsTab from './CheatSheetsTab.jsx'
 import AboutTab from './AboutTab.jsx'
+import DegenPicksTab from './DegenPicksTab.jsx' // 2026-11-09 🪙 play-money mini game (CourtIQ's)
+import { useCoinSettler, useSlip } from './coins.js'
 import FirstTDHub from './FirstTDHub.jsx'
 import { installColumnResize } from './columnResize.js'
 import TrackRecordCheatSheets from './TrackRecordCheatSheets.jsx'
@@ -337,6 +339,7 @@ const TABS = [
   { key: 'gamesim', label: '🔮 Game Sim', Component: GameSimTab, group: 'Research' },
   { key: 'firsttd', label: '🥇 1st TD', Component: FirstTDHub, group: 'Research' },
   { key: 'teams', label: '🏟️ Teams', Component: TeamsHub, group: 'Research' },
+  { key: 'coins', label: '🪙 Degen Picks', Component: DegenPicksTab, group: 'Research' },
   { key: 'track', label: '📈 Track Record', Component: TrackRecord, group: 'Track Record' },
   { key: 'about', label: '📌 About', Component: AboutTab, group: 'App' },
 ]
@@ -347,6 +350,8 @@ export default function App() {
   // 2026-10-23: a Schedule row / slideout matchup asks for the Live tab (nav.js openGame)
   const tabReq = tabRequest.use()
   useEffect(() => { if (tabReq) setTab(tabReq.tab) }, [tabReq])
+  useCoinSettler() // 🪙 Degen Picks: settles open picks from the graded line files
+  const slip = useSlip()
   const [showOddsCalc, setShowOddsCalc] = useState(false)
   const Active = (TABS.find((t) => t.key === tab) || TABS[0]).Component
   // 🏁 the page remounts (and re-reads the slate) when the hidden set changes
@@ -402,6 +407,8 @@ export default function App() {
       </main>
       <PlayerSlideout />
       <TeamSlideout />
+      {/* 2026-11-09: the Degen Picks slip follows you while you research (filled from the player slideout's 🪙 section) */}
+      {slip.length > 0 && tab !== 'coins' && <button type="button" className="dp-float" onClick={() => setTab('coins')}>🧾 Slip · {slip.length}</button>}
       {showOddsCalc && (
         <>
           <div className="slideout-backdrop" onClick={() => setShowOddsCalc(false)} />
