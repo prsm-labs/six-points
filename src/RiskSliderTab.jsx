@@ -13,8 +13,9 @@ import RiskBoard from './RiskBoard.jsx'
 // 🎚️ Risk slider (2026-10-27, user: a slider in Scouting from safe to long shot -- the player list shows the props in that chance
 // range, tap a player for his whole ladder; plus L7 green / red strips). Ladders from nfl_project/build_line_board.py: scrimmage
 // yards 10-150, anytime TD, 2+ TDs for RBs / WRs / TEs, each player's frozen at his kickoff and graded after.
-const STATS = [{ k: 'YDS', label: 'Scrim yds' }, { k: 'TD', label: 'Anytime TD' }, { k: 'TD2', label: '2+ TDs' }]
-const lineLabel = (st, T) => (st === 'YDS' ? `${T}+ yds` : st === 'TD' ? 'Anytime TD' : '2+ TDs')
+// 2026-11-09 (user): rushing / receiving yards ladders (RB rush, RB / WR / TE rec, starting QBs' rush) beside scrimmage yards
+const STATS = [{ k: 'YDS', label: 'Scrim yds' }, { k: 'RUSH', label: 'Rush yds' }, { k: 'REC', label: 'Rec yds' }, { k: 'TD', label: 'Anytime TD' }, { k: 'TD2', label: '2+ TDs' }]
+const lineLabel = (st, T) => (st === 'YDS' ? `${T}+ yds` : st === 'RUSH' ? `${T}+ rush yds` : st === 'REC' ? `${T}+ rec yds` : st === 'TD' ? 'Anytime TD' : '2+ TDs')
 
 export default function RiskSliderTab() {
   const slate = useSlate()
@@ -33,7 +34,7 @@ export default function RiskSliderTab() {
     return (week?.players || []).filter((p) => byId.has(p.id)).map((p) => {
       const m = byId.get(p.id)
       return {
-        id: p.id, n: p.n, lines: p.lines, recent: recentOf(p.recent), proj: { YDS: p.est }, actual: p.actual,
+        id: p.id, n: p.n, lines: p.lines, recent: recentOf(p.recent), proj: { YDS: p.pos === 'QB' ? null : p.est, RUSH: p.estRush ?? null, REC: p.estRec ?? null }, actual: p.actual,
         cell: (
           <span className="player-cell" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, cursor: 'pointer' }} onClick={() => openPlayerSlide(m)}>
             <PlayerAvatar playerId={p.id} name={p.name} />
@@ -51,7 +52,7 @@ export default function RiskSliderTab() {
     <div>
       <div className="section-head">
         <h2>🎚️ Risk Slider</h2>
-        <p className="meta-line">Week {slate.week} · every RB / WR / TE ladder, from safe to long shot</p>
+        <p className="meta-line">Week {slate.week} · every RB / WR / TE ladder (plus starting QBs' rushing yards), from safe to long shot</p>
       </div>
       <MatchupFilterNote />
       <ListFilters shown={players.length} total={(week.players || []).length} base={base} ctx={fctx} />

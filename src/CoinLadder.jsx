@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { betKey, gameOfTeam, isOpenPick, laddersOf, ticket, toggleSlip, useSlip, useWeek } from './coins.js'
+import { STAT_SHORT, betKey, gameOfTeam, isOpenPick, laddersOf, ticket, toggleSlip, useSlip, useWeek } from './coins.js'
 import { tabRequest } from './nav.js'
 import { closePlayerSlide } from './slideouts.js'
 import Fold from './Fold.jsx'
@@ -24,7 +24,7 @@ export default function CoinLadder({ playerId }) {
     <div className="slideout-section">
       <Fold more="Pick 🔻" less="Close 🔺" summary={<span>🪙 <b>Degen Picks</b> <span className="dp-muted dp-small">{!open ? '· his game has kicked off' : mine.length ? `· ${mine.length} of his on your slip` : '· add his lines to your slip'}</span></span>}>
         {open ? <>
-          <div className="cl-stats">{['TD', 'YDS'].filter((k) => lad[k]).map((k) => <button key={k} type="button" className={`pill-btn ${st === k ? 'active' : ''}`} onClick={() => setStat(k)}>{k === 'TD' ? 'TD' : 'Yards'}</button>)}</div>
+          <div className="cl-stats">{['TD', 'YDS', 'RUSH', 'REC'].filter((k) => lad[k]).map((k) => <button key={k} type="button" className={`pill-btn ${st === k ? 'active' : ''}`} onClick={() => setStat(k)}>{STAT_SHORT[k]}</button>)}</div>
           <div className="cl-chips">
             {ladder.map(([T, ch]) => {
               const t = ticket(wk, lp, st, T, ch)

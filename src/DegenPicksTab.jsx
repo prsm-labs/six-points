@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import {
-  START, STAKES, STATS, betKey, cancelBet, clampChance, gamblyLeg, isOpenPick, laddersOf, legLabel, parlayChance, parlayPayout,
+  START, STAKES, STATS, STAT_SHORT, STAT_LABEL, betKey, cancelBet, clampChance, gamblyLeg, isOpenPick, laddersOf, legLabel, parlayChance, parlayPayout,
   parlayProblem, payoutFor, placeBet, placeParlay, resetCoins, setSlip, summarize, ticket, useCoins, useSlip, useWeek,
 } from './coins.js'
 import { betText } from './gambly.js'
@@ -36,7 +36,7 @@ function Board({ wk, slip }) {
       .filter((p) => !q || p.name.toLowerCase().includes(q.toLowerCase()))
       .map((p) => ({ p, ladder: (laddersOf(p)[stat] || []).filter(([, ch]) => ch >= 0.03 && ch <= 0.97) }))
       .filter((r) => r.ladder.length)
-      .sort((x, y) => (stat === 'TD' ? y.ladder[0][1] - x.ladder[0][1] : (y.p.est ?? 0) - (x.p.est ?? 0)))
+      .sort((x, y) => { const e = (p) => (stat === 'RUSH' ? p.estRush ?? (p.pos === 'QB' ? p.est : 0) : stat === 'REC' ? p.estRec ?? 0 : p.est ?? 0); return stat === 'TD' ? y.ladder[0][1] - x.ladder[0][1] : e(y.p) - e(x.p) })
   }, [wk, game, stat, q])
   if (!games.length) return <div className="dp-note">Every game this week has kicked off. Picks for next week open when its slate posts.</div>
   if (!wk.lines) return <div className="dp-note">This week's lines aren't priced yet.</div>
@@ -52,11 +52,11 @@ function Board({ wk, slip }) {
         <select value={game.gameId} onChange={(e) => setGame(e.target.value)} aria-label="Game">
           {games.map((g) => <option key={g.gameId} value={g.gameId}>{g.away} @ {g.home} · {kickLabel(g.kickoff)}</option>)}
         </select>
-        <div className="dp-stats">{STATS.map(([k, l]) => <button key={k} type="button" className={`pill-btn ${stat === k ? 'active' : ''}`} onClick={() => setStat(k)}>{k === 'TD' ? 'TD' : 'Yards'}</button>)}</div>
+        <div className="dp-stats">{STATS.map(([k, l]) => <button key={k} type="button" className={`pill-btn ${stat === k ? 'active' : ''}`} onClick={() => setStat(k)}>{STAT_SHORT[k]}</button>)}</div>
         <input type="search" placeholder="Find a player" value={q} onChange={(e) => setQ(e.target.value)} />
       </div>
       <div className="dp-card dp-board">
-        {rows.length === 0 && <div className="dp-muted dp-small">No priced {stat === 'TD' ? 'touchdown' : 'yardage'} lines in this game{q ? ' for that name' : ''}.</div>}
+        {rows.length === 0 && <div className="dp-muted dp-small">No priced {STAT_LABEL[stat].toLowerCase()} lines in this game{q ? ' for that name' : ''}.</div>}
         {rows.map((r) => {
           const T = lineOf(r)
           const [, ch, hits] = r.ladder.find(([x]) => x === T)
@@ -69,7 +69,7 @@ function Board({ wk, slip }) {
           return (
             <div key={r.p.id} className="dp-row">
               <PlayerAvatar playerId={r.p.id} name={r.p.name} />
-              <div className="dp-who"><b>{r.p.name}</b><span className="dp-muted dp-small">{r.p.team} {r.p.pos}{r.p.pos === 'QB' ? ' · rushing / receiving TD (grade model)' : ` · cleared ${hits}/${n} last ${n}`}</span></div>
+              <div className="dp-who"><b>{r.p.name}</b><span className="dp-muted dp-small">{r.p.team} {r.p.pos}{r.p.pos === 'QB' && stat === 'TD' ? ' · rushing / receiving TD (grade model)' : ` · cleared ${hits}/${n} last ${n}`}</span></div>
               <div className="dp-step">
                 <button type="button" aria-label="Lower the line" disabled={i <= 0} onClick={() => step(r, -1)}>−</button>
                 <b>{stat === 'TD' ? (T === 1 ? 'TD' : `${T}+`) : `${T}+`}</b>
@@ -209,7 +209,7 @@ function Record({ coins }) {
             {s.won - s.said >= 1.5 ? 'Your picks are beating our numbers so far.' : s.said - s.won >= 1.5 ? 'Running behind our numbers so far.' : 'Right about where our numbers said.'}
             {s.done < 30 && ' Small sample: luck still swings this a lot.'}</div>
           {s.parlays > 0 && <div className="dp-small" style={{ marginTop: 4 }}>Parlays: <b>{s.parlaysWon} of {s.parlays}</b> hit; our chances said {s.parlaysSaid.toFixed(1)}.</div>}
-          {byStat.length > 1 && <div className="dp-bystat">{byStat.map(([k, n, w, said]) => <span key={k}><b>{k === 'TD' ? 'TD' : 'Yards'}</b> {w}/{n} <span className="dp-muted">said {said.toFixed(1)}</span></span>)}</div>}
+          {byStat.length > 1 && <div className="dp-bystat">{byStat.map(([k, n, w, said]) => <span key={k}><b>{STAT_SHORT[k]}</b> {w}/{n} <span className="dp-muted">said {said.toFixed(1)}</span></span>)}</div>}
         </div>
       ) : <div className="dp-muted dp-small">After 5 settled picks this shows how you're doing against our chances.</div>}
       <div className="dp-card"><b>Settled</b>{settled.length ? <div className="dp-tickets">{settled.map((b) => <SlipCard key={b.id} b={b} />)}</div> : <div className="dp-muted dp-small">Nothing settled yet.</div>}</div>
@@ -248,7 +248,7 @@ export default function DegenPicksTab() {
       {view === 'slips' && (open.length ? <div className="dp-tickets">{open.map((b) => <SlipCard key={b.id} b={b} />)}</div> : <div className="dp-muted">No open slips. Build one under 🎯 Make picks.</div>)}
       {view === 'record' && <Record coins={coins} />}
       <div className="dp-note" style={{ marginTop: 12 }}>
-        <b>How it works.</b> Everyone starts with {fmt(START)} free coins. Pick any line we price (anytime TD, 2+ TDs, scrimmage yards), add it to
+        <b>How it works.</b> Everyone starts with {fmt(START)} free coins. Pick any line we price (anytime TD, 2+ TDs, scrimmage, rushing or receiving yards; starting QBs' rushing yards), add it to
         your slip and choose the coins. A hit returns your coins divided by our chance, so a 25% line returns 4x and a 75% line 1.33x; a miss
         loses them. Quarterbacks: each team's starter, anytime / 2+ TDs from the grade model (a TD he runs or catches; passing TDs don't
         count), settled from ESPN's box score. Parlays (2-6 legs, one per player) multiply the legs' chances (a TD and 100 yards on opposite sides of one game get the

@@ -15,9 +15,11 @@ export const START = 1000
 export const SIGNUP_START = 10000 // signed-in accounts (login step, Operation Move E)
 export const STAKES = [10, 25, 50, 100, 250]
 export const MAX_LEGS = 6
-export const STATS = [['TD', 'Touchdowns'], ['YDS', 'Scrimmage yards']]
-export const STAT_LABEL = { TD: 'Touchdowns', YDS: 'Scrimmage yards' }
-export const legLabel = (l) => (l.stat === 'TD' ? (l.line === 1 ? 'Anytime TD' : `${l.line}+ TDs`) : `${l.line}+ yds`)
+// 2026-11-09 (user): separate rushing / receiving yards (RB rush, RB / WR / TE rec, starting-QB rush; line board 'split' ladders)
+export const STATS = [['TD', 'Touchdowns'], ['YDS', 'Scrimmage yards'], ['RUSH', 'Rushing yards'], ['REC', 'Receiving yards']]
+export const STAT_LABEL = Object.fromEntries(STATS)
+export const STAT_SHORT = { TD: 'TD', YDS: 'Scrim', RUSH: 'Rush', REC: 'Rec' }
+export const legLabel = (l) => (l.stat === 'TD' ? (l.line === 1 ? 'Anytime TD' : `${l.line}+ TDs`) : `${l.line}+ ${{ YDS: 'scrim', RUSH: 'rush', REC: 'rec' }[l.stat] || ''} yds`)
 export const clampChance = (c) => Math.min(0.97, Math.max(0.03, Number(c) || 0))
 const clampParlay = (c) => Math.min(0.97, Math.max(0.002, Number(c) || 0))
 export const payoutFor = (stake, chance) => Math.round(stake / clampChance(chance))
@@ -75,9 +77,15 @@ export function loadWeek() {
     // Settled from ESPN's box score (src 'espn'): the line file has no QB results.
     const qb = {}
     for (const m of slate.matchups || []) if (m.position === 'QB' && m.p_td != null && !(qb[m.team]?.p_td >= m.p_td)) qb[m.team] = m
-    const qbs = Object.values(qb).filter((m) => m.p_td >= 0.03).map((m) => ({ id: m.player_id, name: m.player_name, team: m.team, opp: m.opponent, pos: 'QB',
-      status: m.injury_status || m.status || null, n: 0, src: 'espn', lines: { TD: [[1, m.p_td, null]], ...(m.p_td2 != null ? { TD2: [[2, m.p_td2, null]] } : {}) } }))
-    const withQbs = lines ? { ...lines, players: [...(lines.players || []).filter((p) => p.pos !== 'QB'), ...qbs] } : null
+    // the line file has the starting QBs' rushing ladders (RUSH); their TD lines come from the slate (tdEspn: settled from ESPN)
+    const lineQb = new Map((lines?.players || []).filter((p) => p.pos === 'QB').map((p) => [p.id, p]))
+    const qbs = Object.values(qb).filter((m) => m.p_td >= 0.03).map((m) => {
+      const base = lineQb.get(m.player_id) || { id: m.player_id, name: m.player_name, team: m.team, opp: m.opponent, pos: 'QB', n: 0, lines: {} }
+      return { ...base, status: base.status || m.injury_status || m.status || null, tdEspn: true,
+        lines: { ...base.lines, TD: [[1, m.p_td, null]], ...(m.p_td2 != null ? { TD2: [[2, m.p_td2, null]] } : {}) } }
+    })
+    const qbIds = new Set(qbs.map((p) => p.id))
+    const withQbs = lines ? { ...lines, players: [...(lines.players || []).filter((p) => !qbIds.has(p.id)), ...qbs] } : null
     return { season: slate.season, week: slate.week, key: `${slate.season}-wk${slate.week}`, games, lines: withQbs, active }
   })())
 }
@@ -91,6 +99,8 @@ export function laddersOf(lp) {
   if (!lp?.lines) return {}
   const out = {}
   if (lp.lines.YDS?.length) out.YDS = lp.lines.YDS
+  if (lp.lines.RUSH?.length) out.RUSH = lp.lines.RUSH
+  if (lp.lines.REC?.length) out.REC = lp.lines.REC
   const td = [...(lp.lines.TD || []), ...(lp.lines.TD2 || [])]
   if (td.length) out.TD = td
   return out
@@ -100,7 +110,7 @@ export function ticket(wk, lp, stat, line, chance) {
   const g = gameOfTeam(wk, lp.team)
   if (!g || line == null || chance == null) return null
   return { date: wk.key, season: wk.season, week: wk.week, gameId: g.gameId, tip: g.kickoff, playerId: lp.id, name: lp.name, team: lp.team, opp: lp.opp,
-    stat, statLabel: STAT_LABEL[stat], line, chance, ...(lp.src === 'espn' ? { src: 'espn', day: g.day, home: g.home, away: g.away } : {}) }
+    stat, statLabel: STAT_LABEL[stat], line, chance, ...(lp.tdEspn && stat === 'TD' ? { src: 'espn', day: g.day, home: g.home, away: g.away } : {}) }
 }
 
 // ---- parlay pricing ----------------------------------------------------------------------------------------------
@@ -207,7 +217,8 @@ export async function settleOpen() {
       if (!f || !(f.final_teams || []).includes(l.team)) continue
       const lp = (f.players || []).find((x) => x.id === l.playerId)
       if (lp && lp.actual === undefined) continue // final, not graded yet
-      const v = lp?.actual ? (l.stat === 'TD' ? lp.actual.TD : lp.actual.YDS) : null
+      const v = lp?.actual ? lp.actual[l.stat] : null
+      if (lp?.actual && v === undefined) continue // graded before the split columns existed: wait for the next grade
       results.set(`${id}|${i}`, v == null ? { status: 'void', actual: null } : { status: v >= l.line ? 'won' : 'lost', actual: v })
     }
     if (!results.size) return
@@ -273,4 +284,4 @@ export const useSlip = () => useSyncExternalStore((f) => { slipSubs.add(f); retu
 export const toggleSlip = (t) => setSlip((cur) => (cur.some((x) => betKey(x) === betKey(t)) ? cur.filter((x) => betKey(x) !== betKey(t)) : [...cur, t]))
 
 // Gambly text, same wording as the app's other Gambly buttons (gambly.js)
-export const gamblyLeg = (l) => `${l.name}${l.team ? ` (${l.team})` : ''} — ${l.stat === 'TD' ? (l.line === 1 ? 'Anytime Touchdown Scorer' : `${l.line}+ Touchdowns`) : `${l.line}+ Rushing + Receiving Yards`}`
+export const gamblyLeg = (l) => `${l.name}${l.team ? ` (${l.team})` : ''} — ${l.stat === 'TD' ? (l.line === 1 ? 'Anytime Touchdown Scorer' : `${l.line}+ Touchdowns`) : `${l.line}+ ${{ YDS: 'Rushing + Receiving Yards', RUSH: 'Rushing Yards', REC: 'Receiving Yards' }[l.stat]}`}`

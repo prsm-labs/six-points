@@ -16,6 +16,7 @@ import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 import { useRecentById } from './lineBoard.js'
 import { HitStrip } from './RiskBoard.jsx'
 import { useLabBand } from './labBand.jsx'
+import { useLineWeek } from './lineBoard.js'
 
 export default function YardageLab() {
   const { rows, error, status } = useYardageSims()
@@ -66,7 +67,10 @@ function YardageTable({ rows }) {
   // 2026-11-03 📱 prop band on the phone cards (labBand.jsx): one scrimmage-yards line per card, − / + for the whole lab
   const band = useLabBand('YDS', slate)
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const banded = useMemo(() => filtered.map((p) => ({ ...p, _band: band.chance(p) })), [filtered, band.labLine, band.ready])
+  // 2026-11-09 (user: rush vs rec in the projections): Est. Yards split by his last-8 rush share (line board 'split', held out 2023-25)
+  const { week: lw } = useLineWeek(slate)
+  const splitById = useMemo(() => new Map((lw?.players || []).map((x) => [x.id, x])), [lw])
+  const banded = useMemo(() => filtered.map((p) => ({ ...p, _band: band.chance(p), _rush: splitById.get(p.player_id)?.estRush ?? null, _rec: splitById.get(p.player_id)?.estRec ?? null })), [filtered, band.labLine, band.ready, splitById])
   const { sorted, sortKey, sortDir, toggleSort } = useSort(banded, modeled ? 'line_pct' : 'sim_yard_pct', 'desc')
   // 2026-10-27 L7 strip (user): his last 7 games against the position's threshold (scrimmage yards; last season fills early weeks)
   const recentById = useRecentById(slate)
@@ -129,6 +133,8 @@ function YardageTable({ rows }) {
               <SortTh label="Touches/G" sortKeyName="touches_per_game" {...thProps} />
               <SortTh label="Yds/Touch" sortKeyName="ypt" {...thProps} />
               <SortTh label="Est. Yards" sortKeyName="est_yards" className="tc-prim" {...thProps} />
+              <SortTh label="Est. Rush" sortKeyName="_rush" {...thProps} />
+              <SortTh label="Est. Rec" sortKeyName="_rec" {...thProps} />
               <SortTh label="Threshold" sortKeyName="position" className="tc-more" {...thProps} />
               {modeled ? (
                 <>
@@ -171,6 +177,8 @@ function YardageTable({ rows }) {
                 <td>{Number(p.touches_per_game).toFixed(1)}</td>
                 <td>{Number(p.ypt).toFixed(1)}</td>
                 <td className="zone-score">{p.est_yards.toFixed(1)}</td>
+                <td>{p._rush != null ? p._rush.toFixed(1) : '—'}</td>
+                <td>{p._rec != null ? p._rec.toFixed(1) : '—'}</td>
                 <td className="tc-more">{thresholdFor(p.position)}+</td>
                 {modeled ? (
                   <>
