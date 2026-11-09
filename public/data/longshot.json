@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T20:06+00:00",
+ "generated_at": "2026-11-09T00:06+00:00",
  "season": 2026,
  "week": 9,
  "liveFromWeek": 10,
@@ -500,9 +500,9 @@
      "tch3": 7.0,
      "gp": 2,
      "rzSeason": 0.88,
-     "pct": 0.9815,
+     "pct": 0.9818,
      "rank": 2,
-     "of": 54,
+     "of": 55,
      "result": null
     },
     {
@@ -532,9 +532,9 @@
      "tch3": 6.0,
      "gp": 2,
      "rzSeason": 1.05,
-     "pct": 0.9333,
+     "pct": 0.9355,
      "rank": 7,
-     "of": 90,
+     "of": 93,
      "result": null
     },
     {
@@ -618,7 +618,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-08T15:06-05:00"
+   "updated_at": "2026-11-08T19:06-05:00"
   }
  ]
 }

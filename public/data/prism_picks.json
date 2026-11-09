@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T20:06+00:00",
+ "generated_at": "2026-11-09T00:05+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1158,18 +1158,16 @@
    ],
    "nextGame": {
     "teams": [
-     "HOU",
-     "LAC",
-     "LV",
-     "SF"
+     "CHI",
+     "TB"
     ],
-    "kickoff": "2026-11-08T16:05:00-05:00",
-    "label": "HOU @ LAC",
+    "kickoff": "2026-11-08T20:20:00-05:00",
+    "label": "TB @ CHI",
     "closest": {
-     "name": "Woody Marks",
-     "team": "HOU",
-     "label": "45+ scrimmage yards",
-     "chance": 0.6035
+     "name": "Kenny Gainwell",
+     "team": "TB",
+     "label": "30+ scrimmage yards",
+     "chance": 0.6708
     }
    },
    "tiers": {
@@ -1378,7 +1376,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-08T15:06-05:00"
+   "updated_at": "2026-11-08T19:05-05:00"
   }
  ]
 }
