@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T00:05+00:00",
+ "generated_at": "2026-11-09T11:01+00:00",
  "season": 2026,
  "week": 9,
  "rule": {
@@ -1158,16 +1158,16 @@
    ],
    "nextGame": {
     "teams": [
-     "CHI",
-     "TB"
+     "BUF",
+     "MIN"
     ],
-    "kickoff": "2026-11-08T20:20:00-05:00",
-    "label": "TB @ CHI",
+    "kickoff": "2026-11-09T20:15:00-05:00",
+    "label": "BUF @ MIN",
     "closest": {
-     "name": "Kenny Gainwell",
-     "team": "TB",
-     "label": "30+ scrimmage yards",
-     "chance": 0.6708
+     "name": "T.J. Hockenson",
+     "team": "MIN",
+     "label": "35+ scrimmage yards",
+     "chance": 0.5389
     }
    },
    "tiers": {
@@ -1376,7 +1376,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-08T19:05-05:00"
+   "updated_at": "2026-11-09T06:01-05:00"
   }
  ]
 }
