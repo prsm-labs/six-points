@@ -32,6 +32,7 @@ export const useDoneOn =() => useSyncExternalStore(sub, () => on, () => on)
 export const useDoneState = () => useSyncExternalStore(sub, () => state, () => state)
 
 let started = false
+let timer = null
 function start() {
   if (started) return
   started = true
@@ -65,7 +66,10 @@ function start() {
       const key = [...done].sort().join(',')
       if (key !== state.key || games.length !== state.games) { state = { done, games: games.length, final, key }; notify() }
     } catch { /* keep the last state */ }
-    setTimeout(poll, live ? 60_000 : 5 * 60_000)
+    timer = setTimeout(poll, live ? 60_000 : 5 * 60_000)
   }
   poll()
+  // 2026-11-08 (user: finished games' players still on Scouting): phones pause timers while the app is in the background, so
+  // coming back showed the game states from when it was left. Re-check right away when the page is shown again.
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') { clearTimeout(timer); poll() } })
 }
