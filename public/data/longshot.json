@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T20:48+00:00",
+ "generated_at": "2026-11-10T00:05+00:00",
  "season": 2026,
  "week": 9,
  "liveFromWeek": 10,
@@ -495,14 +495,14 @@
      "team": "BUF",
      "opp": "MIN",
      "pos": "TE",
-     "chance": 0.2766,
+     "chance": 0.2768,
      "rz3": 2.5,
      "tch3": 7.0,
      "gp": 2,
      "rzSeason": 0.88,
-     "pct": 0.9821,
+     "pct": 0.9818,
      "rank": 2,
-     "of": 56,
+     "of": 55,
      "result": null
     },
     {
@@ -527,14 +527,14 @@
      "team": "BUF",
      "opp": "MIN",
      "pos": "WR",
-     "chance": 0.2762,
+     "chance": 0.2764,
      "rz3": 1.5,
      "tch3": 6.0,
      "gp": 2,
      "rzSeason": 1.05,
-     "pct": 0.9355,
-     "rank": 7,
-     "of": 93,
+     "pct": 0.9451,
+     "rank": 6,
+     "of": 91,
      "result": null
     },
     {
@@ -618,7 +618,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-09T15:48-05:00"
+   "updated_at": "2026-11-09T19:05-05:00"
   }
  ]
 }
