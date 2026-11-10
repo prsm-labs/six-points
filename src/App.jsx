@@ -40,6 +40,7 @@ import { useViewWeek } from './weekView.js'
 import { tabRequest } from './nav.js'
 import { useMasterSearch, useMasterTeam } from './masterFilter.js'
 import TabMenu from './TabMenu.jsx'
+import DataStamp from './DataStamp.jsx'
 import { OfflineBanner, OfflineMenuButton } from './Offline.jsx'
 import offlineConfig from './offlineConfig.js'
 import DoneToggle from './DoneToggle.jsx'
@@ -405,6 +406,7 @@ export default function App() {
           <Active key={`${viewWeek || 'now'}|${doneKey}`} />
         </PastWeekGuard>
       </main>
+      <footer className="footer">Six Points · a PRISM Labs app · projections, not guarantees<DataStamp url="/data/all_matchups_latest.json?all=1" pick={(d) => d.generated_at} /></footer>
       <PlayerSlideout />
       <TeamSlideout />
       {/* 2026-11-09: the Degen Picks slip follows you while you research (filled from the player slideout's 🪙 section) */}
