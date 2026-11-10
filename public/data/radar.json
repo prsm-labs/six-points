@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-10T11:01+00:00",
+ "generated_at": "2026-11-10T16:02+00:00",
  "season": 2026,
- "week": 9,
+ "week": 10,
  "liveFromWeek": 9,
  "rule": {
   "stat": "TD",
@@ -89,16 +89,16 @@
  },
  "record": {
   "all": {
-   "n": 30,
-   "hits": 17,
-   "said": 0.3499,
-   "own": 0.1239
+   "n": 40,
+   "hits": 18,
+   "said": 0.3492,
+   "own": 0.1304
   },
   "live": {
-   "n": 0,
-   "hits": 0,
-   "said": null,
-   "own": null
+   "n": 10,
+   "hits": 1,
+   "said": 0.3471,
+   "own": 0.15
   }
  },
  "weeks": [
@@ -1780,7 +1780,8 @@
       "touches up: 13.4 lately vs 11.2",
       "scored in 2 of his last 8 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0041512",
@@ -1821,7 +1822,8 @@
       "1.3 red-zone touches a game",
       "scored in 0 of his last 4 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0039919",
@@ -1875,7 +1877,8 @@
      "why": [
       "scored in 0 of his last 8 games"
      ],
-     "result": null
+     "result": "hit",
+     "actual": 1
     },
     {
      "player_id": "00-0037238",
@@ -1929,7 +1932,8 @@
      "why": [
       "scored in 1 of his last 8 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0033906",
@@ -1985,7 +1989,8 @@
       "1.6 red-zone touches a game",
       "scored in 2 of his last 8 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0038559",
@@ -2041,7 +2046,8 @@
       "1.8 red-zone touches a game",
       "scored in 2 of his last 8 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0038597",
@@ -2097,7 +2103,8 @@
       "2.4 red-zone touches a game",
       "scored in 2 of his last 8 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0040867",
@@ -2152,7 +2159,8 @@
       "+1.2 touches a game from teammates who are out",
       "scored in 1 of his last 8 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0038997",
@@ -2206,7 +2214,8 @@
      "why": [
       "scored in 1 of his last 8 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0039894",
@@ -2260,10 +2269,565 @@
      "why": [
       "scored in 1 of his last 8 games"
      ],
-     "result": null
+     "result": "miss",
+     "actual": 0
     }
    ],
    "updated_at": "2026-11-10T06:01-05:00"
+  },
+  {
+   "week": 10,
+   "replay": false,
+   "picks": [
+    {
+     "player_id": "00-0038597",
+     "name": "Chase Brown",
+     "team": "CIN",
+     "opp": "PIT",
+     "pos": "RB",
+     "chance": 0.3444,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.2194,
+     "est": 76.3,
+     "recent": [
+      [
+       "2026-09-20",
+       "HOU",
+       0
+      ],
+      [
+       "2026-09-27",
+       "PIT",
+       0
+      ],
+      [
+       "2026-10-04",
+       "JAX",
+       0
+      ],
+      [
+       "2026-10-11",
+       "MIA",
+       0
+      ],
+      [
+       "2026-10-25",
+       "BAL",
+       0
+      ],
+      [
+       "2026-11-01",
+       "TEN",
+       0
+      ],
+      [
+       "2026-11-08",
+       "ATL",
+       0
+      ]
+     ],
+     "why": [
+      "2.3 red-zone touches a game",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0036139",
+     "name": "Rico Dowdle",
+     "team": "PIT",
+     "opp": "CIN",
+     "pos": "RB",
+     "chance": 0.314,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.189,
+     "est": 55.1,
+     "recent": [
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2026-09-13",
+       "ATL",
+       0
+      ],
+      [
+       "2026-09-20",
+       "NE",
+       0
+      ],
+      [
+       "2026-10-18",
+       "TB",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NO",
+       0
+      ],
+      [
+       "2026-11-01",
+       "CLE",
+       1
+      ]
+     ],
+     "why": [
+      "2.1 red-zone touches a game",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0037228",
+     "name": "Jaylen Warren",
+     "team": "PIT",
+     "opp": "CIN",
+     "pos": "RB",
+     "chance": 0.4346,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.1846,
+     "est": 109.7,
+     "recent": [
+      [
+       "2026-09-20",
+       "NE",
+       0
+      ],
+      [
+       "2026-09-27",
+       "CIN",
+       0
+      ],
+      [
+       "2026-10-01",
+       "CLE",
+       0
+      ],
+      [
+       "2026-10-11",
+       "IND",
+       2
+      ],
+      [
+       "2026-10-18",
+       "TB",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NO",
+       0
+      ],
+      [
+       "2026-11-01",
+       "CLE",
+       1
+      ]
+     ],
+     "why": [
+      "2.2 red-zone touches a game",
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0040583",
+     "name": "Woody Marks",
+     "team": "HOU",
+     "opp": "CLE",
+     "pos": "RB",
+     "chance": 0.423,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.173,
+     "est": 77.6,
+     "recent": [
+      [
+       "2026-09-20",
+       "CIN",
+       0
+      ],
+      [
+       "2026-09-27",
+       "IND",
+       1
+      ],
+      [
+       "2026-10-04",
+       "DAL",
+       1
+      ],
+      [
+       "2026-10-11",
+       "TEN",
+       0
+      ],
+      [
+       "2026-10-18",
+       "JAX",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NYG",
+       0
+      ],
+      [
+       "2026-11-08",
+       "LAC",
+       0
+      ]
+     ],
+     "why": [
+      "+3.0 touches a game from teammates who are out",
+      "2.5 red-zone touches a game",
+      "touches up: 17.1 lately vs 14.5",
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0037238",
+     "name": "Drake London",
+     "team": "ATL",
+     "opp": "KC",
+     "pos": "WR",
+     "chance": 0.2877,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1627,
+     "est": 66.6,
+     "recent": [
+      [
+       "2026-09-24",
+       "GB",
+       0
+      ],
+      [
+       "2026-10-05",
+       "NO",
+       0
+      ],
+      [
+       "2026-10-11",
+       "BAL",
+       0
+      ],
+      [
+       "2026-10-18",
+       "CHI",
+       0
+      ],
+      [
+       "2026-10-25",
+       "SF",
+       1
+      ],
+      [
+       "2026-11-01",
+       "TB",
+       0
+      ],
+      [
+       "2026-11-08",
+       "CIN",
+       0
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0035640",
+     "name": "DK Metcalf",
+     "team": "PIT",
+     "opp": "CIN",
+     "pos": "WR",
+     "chance": 0.2775,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1525,
+     "est": 49.4,
+     "recent": [
+      [
+       "2026-09-20",
+       "NE",
+       0
+      ],
+      [
+       "2026-09-27",
+       "CIN",
+       1
+      ],
+      [
+       "2026-10-01",
+       "CLE",
+       0
+      ],
+      [
+       "2026-10-11",
+       "IND",
+       0
+      ],
+      [
+       "2026-10-18",
+       "TB",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NO",
+       0
+      ],
+      [
+       "2026-11-01",
+       "CLE",
+       0
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0041052",
+     "name": "Kaelon Black",
+     "team": "SF",
+     "opp": "DAL",
+     "pos": "RB",
+     "chance": 0.2766,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1516,
+     "est": 42.6,
+     "recent": [
+      [
+       "2026-09-20",
+       "MIA",
+       0
+      ],
+      [
+       "2026-09-27",
+       "ARI",
+       0
+      ],
+      [
+       "2026-10-04",
+       "DEN",
+       0
+      ],
+      [
+       "2026-10-11",
+       "SEA",
+       0
+      ],
+      [
+       "2026-10-19",
+       "WAS",
+       0
+      ],
+      [
+       "2026-10-25",
+       "ATL",
+       1
+      ],
+      [
+       "2026-11-08",
+       "LV",
+       0
+      ]
+     ],
+     "why": [
+      "1.6 red-zone touches a game",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0034975",
+     "name": "Justice Hill",
+     "team": "BAL",
+     "opp": "LAC",
+     "pos": "RB",
+     "chance": 0.2742,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1492,
+     "est": 45.2,
+     "recent": [
+      [
+       "2026-09-27",
+       "DAL",
+       0
+      ],
+      [
+       "2026-10-04",
+       "TEN",
+       0
+      ],
+      [
+       "2026-10-11",
+       "ATL",
+       0
+      ],
+      [
+       "2026-10-18",
+       "CLE",
+       0
+      ],
+      [
+       "2026-10-25",
+       "CIN",
+       0
+      ],
+      [
+       "2026-11-01",
+       "BUF",
+       0
+      ],
+      [
+       "2026-11-05",
+       "JAX",
+       1
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0038997",
+     "name": "Josh Downs",
+     "team": "IND",
+     "opp": "MIA",
+     "pos": "WR",
+     "chance": 0.2644,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1394,
+     "est": 39.6,
+     "recent": [
+      [
+       "2026-09-27",
+       "HOU",
+       0
+      ],
+      [
+       "2026-10-04",
+       "WAS",
+       0
+      ],
+      [
+       "2026-10-11",
+       "PIT",
+       0
+      ],
+      [
+       "2026-10-18",
+       "TEN",
+       0
+      ],
+      [
+       "2026-10-25",
+       "MIN",
+       0
+      ],
+      [
+       "2026-11-01",
+       "JAX",
+       1
+      ],
+      [
+       "2026-11-08",
+       "DAL",
+       0
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0037261",
+     "name": "Khalil Shakir",
+     "team": "BUF",
+     "opp": "NYJ",
+     "pos": "WR",
+     "chance": 0.2588,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1338,
+     "est": 42.0,
+     "recent": [
+      [
+       "2026-09-17",
+       "DET",
+       0
+      ],
+      [
+       "2026-09-27",
+       "LAC",
+       0
+      ],
+      [
+       "2026-10-04",
+       "NE",
+       0
+      ],
+      [
+       "2026-10-12",
+       "LA",
+       0
+      ],
+      [
+       "2026-10-18",
+       "LV",
+       1
+      ],
+      [
+       "2026-11-01",
+       "BAL",
+       0
+      ],
+      [
+       "2026-11-09",
+       "MIN",
+       0
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    }
+   ],
+   "updated_at": "2026-11-10T11:02-05:00"
   }
  ]
 }

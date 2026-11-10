@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-10T11:01+00:00",
+ "generated_at": "2026-11-10T16:02+00:00",
  "season": 2026,
- "week": 9,
+ "week": 10,
  "rule": {
   "z": 2.0,
   "window": 3,
@@ -59,8 +59,8 @@
   "naive": "last 3 <= 75% of his season, no model -> 69% above"
  },
  "live": {
-  "n": 11,
-  "hits": 9,
+  "n": 22,
+  "hits": 17,
   "void": 0
  },
  "weeks": [
@@ -451,7 +451,9 @@
       "32 a game lately vs 34 on the season"
      ],
      "track": 0.773,
-     "trackN": 367
+     "trackN": 367,
+     "actual": 39,
+     "result": "hit"
     },
     {
      "player_id": "00-0034844",
@@ -481,7 +483,9 @@
       "45 a game lately vs 52 on the season"
      ],
      "track": 0.773,
-     "trackN": 367
+     "trackN": 367,
+     "actual": 22,
+     "result": "miss"
     },
     {
      "player_id": "00-0041037",
@@ -512,7 +516,9 @@
       "26 a game lately vs 51 on the season"
      ],
      "track": 0.773,
-     "trackN": 367
+     "trackN": 367,
+     "actual": 98,
+     "result": "hit"
     },
     {
      "player_id": "00-0033906",
@@ -542,7 +548,9 @@
       "46 a game lately vs 43 on the season"
      ],
      "track": 0.773,
-     "trackN": 367
+     "trackN": 367,
+     "actual": 49,
+     "result": "hit"
     },
     {
      "player_id": "00-0037238",
@@ -573,7 +581,9 @@
       "45 a game lately vs 78 on the season"
      ],
      "track": 0.773,
-     "trackN": 367
+     "trackN": 367,
+     "actual": 68,
+     "result": "hit"
     },
     {
      "player_id": "00-0038542",
@@ -605,7 +615,9 @@
       "79 a game lately vs 121 on the season"
      ],
      "track": 0.659,
-     "trackN": 707
+     "trackN": 707,
+     "actual": 147,
+     "result": "hit"
     },
     {
      "player_id": "00-0037239",
@@ -636,7 +648,9 @@
       "48 a game lately vs 91 on the season"
      ],
      "track": 0.659,
-     "trackN": 707
+     "trackN": 707,
+     "actual": 98,
+     "result": "hit"
     },
     {
      "player_id": "00-0036158",
@@ -667,7 +681,9 @@
       "27 a game lately vs 42 on the season"
      ],
      "track": 0.659,
-     "trackN": 707
+     "trackN": 707,
+     "actual": 22,
+     "result": "miss"
     },
     {
      "player_id": "00-0036358",
@@ -699,7 +715,9 @@
       "67 a game lately vs 88 on the season"
      ],
      "track": 0.659,
-     "trackN": 707
+     "trackN": 707,
+     "actual": 195,
+     "result": "hit"
     },
     {
      "player_id": "00-0037256",
@@ -729,7 +747,9 @@
       "46 a game lately vs 48 on the season"
      ],
      "track": 0.659,
-     "trackN": 707
+     "trackN": 707,
+     "actual": 69,
+     "result": "hit"
     },
     {
      "player_id": "00-0038997",
@@ -760,10 +780,143 @@
       "29 a game lately vs 42 on the season"
      ],
      "track": 0.659,
-     "trackN": 707
+     "trackN": 707,
+     "actual": 24,
+     "result": "miss"
     }
    ],
    "updated_at": "2026-11-10T06:01-05:00"
+  },
+  {
+   "week": 10,
+   "source": "live",
+   "picks": [
+    {
+     "player_id": "00-0033293",
+     "name": "Aaron Jones",
+     "team": "MIN",
+     "opp": "GB",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 29.0,
+     "est": 62.5,
+     "z": 4.24,
+     "games": [
+      40,
+      105,
+      92,
+      128,
+      117,
+      26,
+      40,
+      21
+     ],
+     "last": [
+      26,
+      40,
+      21
+     ],
+     "why": [
+      "29 a game lately vs 71 on the season"
+     ],
+     "track": 0.774,
+     "trackN": 372
+    },
+    {
+     "player_id": "00-0040142",
+     "name": "Kaleb Johnson",
+     "team": "GB",
+     "opp": "MIN",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 30.7,
+     "est": 48.5,
+     "z": 2.56,
+     "games": [
+      32,
+      16,
+      42,
+      26,
+      -2,
+      68
+     ],
+     "last": [
+      26,
+      -2,
+      68
+     ],
+     "why": [
+      "role up: +15 yds (teammates out / snaps)",
+      "31 a game lately vs 30 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 713
+    },
+    {
+     "player_id": "00-0039065",
+     "name": "Sam LaPorta",
+     "team": "DET",
+     "opp": "NE",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 28.3,
+     "est": 44.1,
+     "z": 2.37,
+     "games": [
+      48,
+      52,
+      44,
+      84,
+      88,
+      18,
+      35,
+      32
+     ],
+     "last": [
+      18,
+      35,
+      32
+     ],
+     "why": [
+      "28 a game lately vs 50 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 713
+    },
+    {
+     "player_id": "00-0037238",
+     "name": "Drake London",
+     "team": "ATL",
+     "opp": "KC",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 47.3,
+     "est": 66.6,
+     "z": 2.36,
+     "games": [
+      35,
+      49,
+      194,
+      96,
+      118,
+      62,
+      66,
+      8,
+      68
+     ],
+     "last": [
+      66,
+      8,
+      68
+     ],
+     "why": [
+      "47 a game lately vs 77 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 713
+    }
+   ],
+   "updated_at": "2026-11-10T11:02-05:00"
   }
  ]
 }

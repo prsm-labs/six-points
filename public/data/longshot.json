@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-10T11:01+00:00",
+ "generated_at": "2026-11-10T16:02+00:00",
  "season": 2026,
- "week": 9,
+ "week": 10,
  "liveFromWeek": 10,
  "rule": {
   "positions": [
@@ -48,9 +48,9 @@
  },
  "record": {
   "all": {
-   "n": 24,
-   "hits": 10,
-   "said": 0.2229
+   "n": 32,
+   "hits": 12,
+   "said": 0.2272
   },
   "live": {
    "n": 0,
@@ -503,7 +503,8 @@
      "pct": 0.9818,
      "rank": 2,
      "of": 55,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0038618",
@@ -519,7 +520,8 @@
      "pct": 0.9556,
      "rank": 5,
      "of": 90,
-     "result": null
+     "result": "hit",
+     "actual": 1
     },
     {
      "player_id": "00-0037261",
@@ -535,7 +537,8 @@
      "pct": 0.9451,
      "rank": 6,
      "of": 91,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0040736",
@@ -551,7 +554,8 @@
      "pct": 0.9286,
      "rank": 5,
      "of": 56,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0036970",
@@ -567,7 +571,8 @@
      "pct": 0.9107,
      "rank": 6,
      "of": 56,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0036244",
@@ -583,7 +588,8 @@
      "pct": 0.8929,
      "rank": 7,
      "of": 56,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0036554",
@@ -599,7 +605,8 @@
      "pct": 0.8889,
      "rank": 11,
      "of": 90,
-     "result": null
+     "result": "hit",
+     "actual": 1
     },
     {
      "player_id": "00-0040878",
@@ -615,10 +622,146 @@
      "pct": 0.8644,
      "rank": 9,
      "of": 59,
-     "result": null
+     "result": "miss",
+     "actual": 0
     }
    ],
    "updated_at": "2026-11-10T06:01-05:00"
+  },
+  {
+   "week": 10,
+   "replay": false,
+   "picks": [
+    {
+     "player_id": "00-0038117",
+     "name": "Wan'Dale Robinson",
+     "team": "TEN",
+     "opp": "JAX",
+     "pos": "WR",
+     "chance": 0.2436,
+     "rz3": 2.5,
+     "tch3": 6.5,
+     "gp": 2,
+     "rzSeason": 1.11,
+     "pct": 0.9787,
+     "rank": 3,
+     "of": 94,
+     "result": null
+    },
+    {
+     "player_id": "00-0038618",
+     "name": "Xavier Hutchinson",
+     "team": "HOU",
+     "opp": "CLE",
+     "pos": "WR",
+     "chance": 0.2449,
+     "rz3": 2.0,
+     "tch3": 6.5,
+     "gp": 2,
+     "rzSeason": 0.65,
+     "pct": 0.9681,
+     "rank": 4,
+     "of": 94,
+     "result": null
+    },
+    {
+     "player_id": "00-0039074",
+     "name": "Davis Allen",
+     "team": "LA",
+     "opp": "ARI",
+     "pos": "TE",
+     "chance": 0.2108,
+     "rz3": 1.5,
+     "tch3": 3.5,
+     "gp": 2,
+     "rzSeason": 0.5,
+     "pct": 0.9643,
+     "rank": 3,
+     "of": 56,
+     "result": null
+    },
+    {
+     "player_id": "00-0040736",
+     "name": "Mason Taylor",
+     "team": "NYJ",
+     "opp": "BUF",
+     "pos": "TE",
+     "chance": 0.1845,
+     "rz3": 1.33,
+     "tch3": 4.3,
+     "gp": 3,
+     "rzSeason": 0.83,
+     "pct": 0.9464,
+     "rank": 4,
+     "of": 56,
+     "result": null
+    },
+    {
+     "player_id": "00-0038996",
+     "name": "Tucker Kraft",
+     "team": "GB",
+     "opp": "MIN",
+     "pos": "TE",
+     "chance": 0.2887,
+     "rz3": 1.33,
+     "tch3": 5.7,
+     "gp": 3,
+     "rzSeason": 1.35,
+     "pct": 0.9286,
+     "rank": 5,
+     "of": 56,
+     "result": null
+    },
+    {
+     "player_id": "00-0041037",
+     "name": "Denzel Boston",
+     "team": "CLE",
+     "opp": "HOU",
+     "pos": "WR",
+     "chance": 0.2817,
+     "rz3": 1.67,
+     "tch3": 8.7,
+     "gp": 3,
+     "rzSeason": 1.03,
+     "pct": 0.9255,
+     "rank": 8,
+     "of": 94,
+     "result": null
+    },
+    {
+     "player_id": "00-0040878",
+     "name": "Mike Washington Jr.",
+     "team": "LV",
+     "opp": "SEA",
+     "pos": "RB",
+     "chance": 0.2264,
+     "rz3": 3.67,
+     "tch3": 12.7,
+     "gp": 3,
+     "rzSeason": 1.83,
+     "pct": 0.9,
+     "rank": 7,
+     "of": 60,
+     "result": null
+    },
+    {
+     "player_id": "00-0034827",
+     "name": "DJ Moore",
+     "team": "BUF",
+     "opp": "NYJ",
+     "pos": "WR",
+     "chance": 0.2941,
+     "rz3": 1.5,
+     "tch3": 7.0,
+     "gp": 2,
+     "rzSeason": 0.99,
+     "pct": 0.8936,
+     "rank": 11,
+     "of": 94,
+     "result": null
+    }
+   ],
+   "updated_at": "2026-11-10T11:02-05:00"
   }
  ]
 }
