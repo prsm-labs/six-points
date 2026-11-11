@@ -3,6 +3,7 @@ import { useSlate } from './slate.js'
 import { setListFilter, useFilterContext } from './listFilters.js'
 import { tabRequest } from './nav.js'
 import { closePlayerSlide } from './slideouts.js'
+import Fold from './Fold.jsx'
 
 // 2026-11-03 (user: write the narrative -- "look out for this player" -- and one tap for every player who looks like this;
 // CourtIQ's twin). Only the tested edges (edges.js) speak, each with its held-out number; nothing changes a grade or chance.
@@ -24,6 +25,8 @@ export default function LinedUp({ id }) {
   return (
     <div className="slideout-section lined-up">
       <h3 style={{ marginTop: 0 }}>🔗 Lined up this week</h3>
+      {/* 2026-11-11: the Quick read above carries these in one line each; the full notes + buttons fold here */}
+      <Fold summary={<span className="sub">{keys.map((k) => EDGES.find((x) => x.v === k)?.label).filter(Boolean).join(' · ')}</span>}>
       {keys.map((k) => {
         const e = EDGES.find((x) => x.v === k)
         if (!e) return null
@@ -37,6 +40,7 @@ export default function LinedUp({ id }) {
         )
       })}
       {keys.length > 1 && <button className="pill-btn lu-btn" onClick={() => likeThis(keys)}>🔎 Players with all {keys.length} of these</button>}
+      </Fold>
       <div className="sub">Context only — his chances already count this week's matchup; these spots beat (or missed) those chances in every season tested.</div>
     </div>
   )

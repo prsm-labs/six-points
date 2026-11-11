@@ -23,6 +23,18 @@ import HitRateCard from './HitRateCard.jsx'
 import Fold from './Fold.jsx'
 import { useHitGames } from './hitGames.js'
 import LinedUp from './LinedUp.jsx'
+import QuickRead from './QuickRead.jsx' // 2026-11-11 short "why" box (quickRead.js)
+import { quickReadNfl } from './quickRead.js'
+import { useSlate } from './slate.js'
+import { useFilterContext } from './listFilters.js'
+
+// 2026-11-11 (user: the matchup write-up read like a run-on sentence): Quick read, tested factors only
+function QuickReadBox({ m }) {
+  const slate = useSlate({ all: true })
+  const ctx = useFilterContext(slate)
+  const q = quickReadNfl(m, ctx.edges?.get(m.player_id) || [])
+  return q ? <QuickRead {...q} /> : null
+}
 import CoinLadder from './CoinLadder.jsx' // 2026-11-09 🪙 Degen Picks from the slideout
 
 // 2026-10-28 hit-rate card: the props a book posts for his position; default line = his average rounded (yards to 5)
@@ -320,6 +332,7 @@ export default function PlayerSlideout() {
           ) : (
             <>
               <ThisWeekCard t={thisWeek} m={weekRow} position={position} />
+              {weekRow && <QuickReadBox m={weekRow} />}
               <LinedUp id={player.player_id} />
               {weekRow && (
                 // This week (2026-10-18 revamp, Slap Shot's slideout): the model's chances, the matchup line,
