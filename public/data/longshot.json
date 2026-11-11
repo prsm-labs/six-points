@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T12:03+00:00",
+ "generated_at": "2026-11-11T16:02+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 10,
@@ -654,7 +654,7 @@
      "team": "HOU",
      "opp": "CLE",
      "pos": "WR",
-     "chance": 0.2449,
+     "chance": 0.2448,
      "rz3": 2.0,
      "tch3": 6.5,
      "gp": 2,
@@ -761,7 +761,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-11T07:03-05:00"
+   "updated_at": "2026-11-11T11:02-05:00"
   }
  ]
 }
