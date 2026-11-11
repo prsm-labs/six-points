@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T16:02+00:00",
+ "generated_at": "2026-11-11T12:03+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 10,
@@ -643,9 +643,9 @@
      "tch3": 6.5,
      "gp": 2,
      "rzSeason": 1.11,
-     "pct": 0.9787,
+     "pct": 0.9783,
      "rank": 3,
-     "of": 94,
+     "of": 92,
      "result": null
     },
     {
@@ -659,9 +659,9 @@
      "tch3": 6.5,
      "gp": 2,
      "rzSeason": 0.65,
-     "pct": 0.9681,
+     "pct": 0.9674,
      "rank": 4,
-     "of": 94,
+     "of": 92,
      "result": null
     },
     {
@@ -723,9 +723,9 @@
      "tch3": 8.7,
      "gp": 3,
      "rzSeason": 1.03,
-     "pct": 0.9255,
+     "pct": 0.9239,
      "rank": 8,
-     "of": 94,
+     "of": 92,
      "result": null
     },
     {
@@ -745,23 +745,23 @@
      "result": null
     },
     {
-     "player_id": "00-0034827",
-     "name": "DJ Moore",
-     "team": "BUF",
-     "opp": "NYJ",
-     "pos": "WR",
-     "chance": 0.2941,
-     "rz3": 1.5,
-     "tch3": 7.0,
+     "player_id": "00-0036040",
+     "name": "Juwan Johnson",
+     "team": "NO",
+     "opp": "CAR",
+     "pos": "TE",
+     "chance": 0.2123,
+     "rz3": 1.0,
+     "tch3": 2.5,
      "gp": 2,
-     "rzSeason": 0.99,
-     "pct": 0.8936,
-     "rank": 11,
-     "of": 94,
+     "rzSeason": 0.83,
+     "pct": 0.8929,
+     "rank": 7,
+     "of": 56,
      "result": null
     }
    ],
-   "updated_at": "2026-11-10T11:02-05:00"
+   "updated_at": "2026-11-11T07:03-05:00"
   }
  ]
 }

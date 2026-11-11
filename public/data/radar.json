@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T16:02+00:00",
+ "generated_at": "2026-11-11T12:03+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 9,
@@ -2719,60 +2719,6 @@
      "result": null
     },
     {
-     "player_id": "00-0038997",
-     "name": "Josh Downs",
-     "team": "IND",
-     "opp": "MIA",
-     "pos": "WR",
-     "chance": 0.2644,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1394,
-     "est": 39.6,
-     "recent": [
-      [
-       "2026-09-27",
-       "HOU",
-       0
-      ],
-      [
-       "2026-10-04",
-       "WAS",
-       0
-      ],
-      [
-       "2026-10-11",
-       "PIT",
-       0
-      ],
-      [
-       "2026-10-18",
-       "TEN",
-       0
-      ],
-      [
-       "2026-10-25",
-       "MIN",
-       0
-      ],
-      [
-       "2026-11-01",
-       "JAX",
-       1
-      ],
-      [
-       "2026-11-08",
-       "DAL",
-       0
-      ]
-     ],
-     "why": [
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
      "player_id": "00-0037261",
      "name": "Khalil Shakir",
      "team": "BUF",
@@ -2825,9 +2771,63 @@
       "scored in 1 of his last 8 games"
      ],
      "result": null
+    },
+    {
+     "player_id": "00-0041547",
+     "name": "KC Concepcion",
+     "team": "CLE",
+     "opp": "HOU",
+     "pos": "WR",
+     "chance": 0.2565,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1315,
+     "est": 57.2,
+     "recent": [
+      [
+       "2026-09-27",
+       "CAR",
+       0
+      ],
+      [
+       "2026-10-01",
+       "PIT",
+       0
+      ],
+      [
+       "2026-10-11",
+       "NYJ",
+       0
+      ],
+      [
+       "2026-10-18",
+       "BAL",
+       0
+      ],
+      [
+       "2026-10-25",
+       "TEN",
+       0
+      ],
+      [
+       "2026-11-01",
+       "PIT",
+       0
+      ],
+      [
+       "2026-11-08",
+       "NO",
+       1
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
     }
    ],
-   "updated_at": "2026-11-10T11:02-05:00"
+   "updated_at": "2026-11-11T07:03-05:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T16:02+00:00",
+ "generated_at": "2026-11-11T12:03+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -914,9 +914,42 @@
      ],
      "track": 0.659,
      "trackN": 713
+    },
+    {
+     "player_id": "00-0036223",
+     "name": "Jonathan Taylor",
+     "team": "IND",
+     "opp": "MIA",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 73.7,
+     "est": 95.7,
+     "z": 2.25,
+     "games": [
+      121,
+      132,
+      72,
+      97,
+      82,
+      151,
+      110,
+      47,
+      64
+     ],
+     "last": [
+      110,
+      47,
+      64
+     ],
+     "why": [
+      "role up: +6 yds (teammates out / snaps)",
+      "74 a game lately vs 97 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 713
     }
    ],
-   "updated_at": "2026-11-10T11:02-05:00"
+   "updated_at": "2026-11-11T07:03-05:00"
   }
  ]
 }

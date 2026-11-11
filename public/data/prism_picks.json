@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T16:02+00:00",
+ "generated_at": "2026-11-11T12:03+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1414,10 +1414,10 @@
     "kickoff": "2026-11-12T20:15:00-05:00",
     "label": "WAS @ NYG",
     "closest": {
-     "name": "Rachaad White",
-     "team": "WAS",
-     "label": "50+ scrimmage yards",
-     "chance": 0.4888
+     "name": "Devin Singletary",
+     "team": "NYG",
+     "label": "40+ scrimmage yards",
+     "chance": 0.5652
     }
    },
    "tiers": {
@@ -1443,6 +1443,26 @@
       "trackN": 90
      },
      {
+      "player_id": "00-0035250",
+      "name": "Devin Singletary",
+      "team": "NYG",
+      "opp": "WAS",
+      "pos": "RB",
+      "est": 54.9,
+      "depth": "RB2",
+      "game": "NYG-WAS",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4258,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.46,
+      "trackN": 99
+     },
+     {
       "player_id": "00-0036997",
       "name": "Javonte Williams",
       "team": "DAL",
@@ -1461,26 +1481,6 @@
       ],
       "track": 0.455,
       "trackN": 99
-     },
-     {
-      "player_id": "00-0036139",
-      "name": "Rico Dowdle",
-      "team": "PIT",
-      "opp": "CIN",
-      "pos": "RB",
-      "est": 55.1,
-      "depth": "RB2",
-      "game": "CIN-PIT",
-      "stat": "YDS",
-      "line": 60,
-      "label": "60+ scrimmage yards",
-      "chance": 0.3794,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.423,
-      "trackN": 66
      },
      {
       "player_id": "00-0037228",
@@ -1565,6 +1565,26 @@
       "trackN": 68
      },
      {
+      "player_id": "00-0032951",
+      "name": "Laquon Treadwell",
+      "team": "IND",
+      "opp": "MIA",
+      "pos": "WR",
+      "est": 29.8,
+      "depth": "WR1",
+      "game": "IND-MIA",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.1679,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.186,
+      "trackN": 68
+     },
+     {
       "player_id": "00-0040584",
       "name": "Gunnar Helm",
       "team": "TEN",
@@ -1582,26 +1602,6 @@
        0
       ],
       "track": 0.148,
-      "trackN": 42
-     },
-     {
-      "player_id": "00-0040727",
-      "name": "Tre Harris",
-      "team": "LAC",
-      "opp": "BAL",
-      "pos": "WR",
-      "est": 35.6,
-      "depth": "WR3",
-      "game": "BAL-LAC",
-      "stat": "TD",
-      "line": 1,
-      "label": "Anytime TD",
-      "chance": 0.1363,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.141,
       "trackN": 42
      },
      {
@@ -1626,7 +1626,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-10T11:02-05:00"
+   "updated_at": "2026-11-11T07:03-05:00"
   }
  ]
 }
