@@ -33,6 +33,8 @@ import FirstTDHub from './FirstTDHub.jsx'
 import { installColumnResize } from './columnResize.js'
 import TrackRecordCheatSheets from './TrackRecordCheatSheets.jsx'
 import TrackRecordPairs from './TrackRecordPairs.jsx'
+import RecordSummary from './RecordSummary.jsx'
+import { RANGES_WEEKS, useRecordLists } from './recordLists.js'
 import './revamp.css'
 import WeekBar, { PastWeekGuard } from './WeekBar.jsx'
 import MasterFilter from './MasterFilter.jsx'
@@ -104,13 +106,22 @@ function DataFreshnessBanner() {
 
 // Track Record (2026-10-18 revamp, Slap Shot's Track Record views): the original grade / tier record plus
 // 📋 Cheat Sheets (each week's lists graded vs expected, from the frozen pre-kickoff snapshots).
+// 2026-11-12 (user: simpler track records): one chart + three numbers first (each list's #1 a week graded vs our own chances), the
+// full records folded under it. Same RecordSummary as Slap Shot / CourtIQ; lists from recordLists.js.
 function TrackRecord() {
   const [view, setView] = useState('main')
-  return (
-    <div>
+  const rec = useRecordLists()
+  const full = (
+    <>
       <ViewPicker pillClass="pill-btn" rowClass="pill-row hub-row" label="Record" value={view} onChange={setView}
         options={[['main', '📈 Grades & tiers'], ['cheat', '📋 Cheat Sheets'], ['pairs', '🤝 Pairs']]} />
       {view === 'main' ? <TrackRecordMain /> : view === 'cheat' ? <TrackRecordCheatSheets /> : <TrackRecordPairs />}
+    </>
+  )
+  return (
+    <div>
+      {rec?.lists?.length ? <RecordSummary lists={rec.lists} liveSince={rec.liveSince} markers={rec.markers} modelCheck={rec.modelCheck}
+        fmtDay={rec.fmtDay} ranges={RANGES_WEEKS}>{full}</RecordSummary> : full}
     </div>
   )
 }

@@ -20,6 +20,7 @@ import { useRadar } from './RadarLab.jsx'
 import { useLongshot } from './LongshotLab.jsx'
 import { matchesSearch } from './teamSearch.js'
 import ShortList from './ShortList.jsx'
+import { PickCard } from './RecordSummary.jsx'
 
 // 📋 Cheat Sheets (Slap Shot's tabs/CheatSheetsTab.jsx, 2026-10-18 revamp): this week's quick reads -- top candidates
 // per prop, ours vs the book (context), and the defenses worth attacking -- with injury / roster status. Each list is graded
@@ -140,7 +141,16 @@ function QuickReads() {
   const bounceRows = bounceTop.map((b0) => ({ key: `bounce-${b0.player_id}`, tag: '📈 Bounce-back', tagCls: 'edge', name: b0.player_name, team: vs(b0), line: `Over ${b0._bline} yds`,
       big: pc(b0._btrack), bigSub: 'track record', why: `Est. ${b0._best} yds — projected well above his last 3`,
       onOpen: () => openPlayerSlide(b0), action: <PickButton player={b0} compact prop="yds100" /> }))
-  void ppItem; void ppw
+  void ppItem
+  // 2026-11-12 (user: a dead-simple "here's the pick"): this week's #1 PRISM Pick, its reasons, and the #1's record over the last 8 weeks vs our chances
+  const pick0 = ppw?.picks?.[0]
+  const graded0 = (pp?.weeks || []).slice(-8).map((w) => w.picks?.[0]).filter((c) => c && (c.result === 'hit' || c.result === 'miss'))
+  const pm = pick0 && poolById.get(pick0.player_id)
+  const weekPick = pick0 ? {
+    name: pick0.name, label: pick0.label, matchup: pm ? vs(pm) : `${pick0.team} vs ${pick0.opp}`, chance: pick0.chance, sub: 'our chance', result: pick0.result || null,
+    lines: [{ dir: 'info', text: `Est. ${pick0.est} yds${pick0.depth ? ` · ${pick0.depth}` : ''}` }, ...(pick0.last ? [{ dir: 'info', text: `Cleared it in ${pick0.last[1]} of his last ${pick0.last[0]}` }] : [])],
+    record: graded0.length ? `PRISM Picks #1, last ${graded0.length} weeks: ${graded0.filter((c) => c.result === 'hit').length} of ${graded0.length} hit (our chances said ${(graded0.reduce((s, c) => s + c.chance, 0)).toFixed(1)})` : '',
+    onOpen: () => pm && openPlayerSlide(pm), action: pm ? <PickButton player={pm} compact prop={pick0.label} /> : null } : null
   const shortItems = [radarRows, radarRows, radarRows, bounceRows, bounceRows]
   const priced = pool.filter((m) => m.edge != null)
   const bestValue = [...priced].filter((m) => m.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5)
@@ -168,6 +178,7 @@ function QuickReads() {
   return (
     <div>
       <SlateStatus data={slate} />
+      <PickCard title="This week's pick" pick={weekPick} />
       <ShortList items={shortItems} past={slate.week !== pp?.week && pp != null} title="🔎 This week's finds"
         sub={`Players our tested lists like that their own numbers don't show — not the obvious favorites. Record: 🔦 ${radar?.record?.all?.n ? `${radar.record.all.hits}/${radar.record.all.n} scored (said ${Math.round(radar.record.all.said * 100)}%, their own ${Math.round(radar.record.all.own * 100)}%)` : '—'} · 📈 ${bounce?.live?.n ? `${bounce.live.hits}/${bounce.live.n}` : '—'} finished above their recent average. Tap a name for his card.`} />
       <PrismPicks slate={slate} notOut={notOut} />
