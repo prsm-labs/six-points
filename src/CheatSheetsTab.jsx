@@ -20,8 +20,6 @@ import { useRadar } from './RadarLab.jsx'
 import { useLongshot } from './LongshotLab.jsx'
 import { matchesSearch } from './teamSearch.js'
 import ShortList from './ShortList.jsx'
-import Lenses from './Lenses.jsx' // 2026-11-12 🔭 This week's lenses
-import { useLensPool, useLenses } from './lensLists.jsx'
 
 // 📋 Cheat Sheets (Slap Shot's tabs/CheatSheetsTab.jsx, 2026-10-18 revamp): this week's quick reads -- top candidates
 // per prop, ours vs the book (context), and the defenses worth attacking -- with injury / roster status. Each list is graded
@@ -101,7 +99,6 @@ function QuickReads() {
   // 2026-11-05 ⚡ This week's short list: PRISM Pick, mid-range, under the radar, bounce-back, long shot (the top of each tested list)
   const [pp, setPp] = useState(null)
   useEffect(() => { fetch('/data/prism_picks.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null)).then(setPp).catch(() => setPp(null)) }, [slate?.week])
-  const lenses = useLenses(slate, useLensPool(slate))
 
   const pool = useMemo(() => {
     if (!slate?.matchups) return []
@@ -171,7 +168,6 @@ function QuickReads() {
   return (
     <div>
       <SlateStatus data={slate} />
-      <Lenses lenses={lenses} title="🔭 This week’s lenses" />
       <ShortList items={shortItems} past={slate.week !== pp?.week && pp != null} title="🔎 This week's finds"
         sub={`Players our tested lists like that their own numbers don't show — not the obvious favorites. Record: 🔦 ${radar?.record?.all?.n ? `${radar.record.all.hits}/${radar.record.all.n} scored (said ${Math.round(radar.record.all.said * 100)}%, their own ${Math.round(radar.record.all.own * 100)}%)` : '—'} · 📈 ${bounce?.live?.n ? `${bounce.live.hits}/${bounce.live.n}` : '—'} finished above their recent average. Tap a name for his card.`} />
       <PrismPicks slate={slate} notOut={notOut} />

@@ -16,7 +16,7 @@ export const TD_OPTIONS = [null, 10, 20, 30, 40]
 const LETTERS = ['A+', 'A', 'A-', 'B', 'C', 'D', 'F']
 const H2H_LETTERS = ['A+', 'A', 'B', 'C', 'D', 'F']
 
-const DEFAULTS = { minTd: null, tags: [], tagsNot: [], tagsMode: 'all', edge: [], edgeNot: [], edgeMode: 'all', top: [], prism: [], grades: [], h2h: [], venue: [], oppd: [], search: '' }
+const DEFAULTS = { minTd: null, tags: [], tagsNot: [], tagsMode: 'all', edge: [], edgeNot: [], edgeMode: 'all', top: [], prism: [], find: [], grades: [], h2h: [], venue: [], oppd: [], search: '' }
 let state = { ...DEFAULTS }
 const listeners = new Set()
 const notify = () => listeners.forEach((fn) => fn())
@@ -47,14 +47,15 @@ export function useFilterContext(slate) {
   useEffect(() => {
     let alive = true
     if (!week) return undefined
-    Promise.all([getJson('/data/top_picks/index.json'), getJson('/data/prism_picks.json'), getJson('/data/season_schedule.json')])
-      .then(async ([idx, pp, schedule]) => {
+    Promise.all([getJson('/data/top_picks/index.json'), getJson('/data/prism_picks.json'), getJson('/data/season_schedule.json'),
+      getJson('/data/radar.json'), getJson('/data/longshot.json'), getJson('/data/bounce.json')])
+      .then(async ([idx, pp, schedule, radar, longshot, bounce]) => {
         const l = idx?.locks?.find((x) => x.season === season && x.week === week)
         const lock = l ? await getJson(`/data/top_picks/${l.file}`) : null
-        if (alive) setSrc({ week, lock, pp, schedule })
+        if (alive) setSrc({ week, lock, pp, schedule, radar, longshot, bounce })
         // 2026-11-02 tested edges (edges.js): QB change needs the game logs, Windy the game-day weather -- loaded after the rest
         const [logs, wind] = await Promise.all([getJson('/data/player_game_logs.json'), slate?.past || slate?.replay ? {} : loadWind(schedule, week, getJson)])
-        if (alive) setSrc({ week, lock, pp, schedule, logs, wind })
+        if (alive) setSrc({ week, lock, pp, schedule, logs, wind, radar, longshot, bounce })
       })
     return () => { alive = false }
   }, [season, week])
@@ -62,13 +63,15 @@ export function useFilterContext(slate) {
     const picks = new Map()
     const rest = new Map()
     if (!slate?.matchups || !src || src.week !== week) return { picks, rest, edges: new Map() }
-    const add = (id, k, v) => { if (id == null) return; const e = picks.get(id) || { top: [], prism: [] }; if (!e[k].includes(v)) e[k].push(v); picks.set(id, e) }
+    const add = (id, k, v) => { if (id == null) return; const e = picks.get(id) || { top: [], prism: [], find: [] }; if (!e[k].includes(v)) e[k].push(v); picks.set(id, e) }
     const top = src.lock?.picks?.map((p) => ({ tier: p.tier, id: p.player?.player_id }))
       || (slate.past || slate.replay ? [] : topPicks(slate.matchups, { excludeTeams: startedTeams(src.schedule, week) }).map((t) => ({ tier: t.tier, id: t.m?.player_id })))
     for (const t of top) add(t.id, 'top', t.tier)
     const w = src.pp?.weeks?.find((x) => x.week === week)
     for (const c of w?.picks || []) add(c.player_id, 'prism', 'safe')
     for (const lv of ['mid', 'long']) for (const c of w?.tiers?.[lv] || []) add(c.player_id, 'prism', lv)
+    // 2026-11-12 tested lists for the one-tap buttons (ListFilters.jsx): this week's radar / long-shot creators / bounce-backs
+    for (const [k, d] of [['radar', src.radar], ['long', src.longshot], ['bounce', src.bounce]]) for (const f of d?.weeks?.find((x) => x.week === week)?.picks || []) add(f.player_id, 'find', k)
     const games = (src.schedule?.games || []).filter((g) => g.season == null || g.season === season)
     const day = (d) => Date.parse(`${d}T12:00:00Z`)
     for (const g of games.filter((x) => x.week === week)) {
@@ -112,6 +115,9 @@ export function buildGroups(ctx = {}) {
       hint: "Players listed on this week's Top Picks (one per tier, locked Sunday 11:50 AM ET)" },
     { key: 'prism', label: 'PRISM Picks', chip: 'PRISM', type: 'multi', get: (m) => picks?.get(m.player_id)?.prism || [],
       options: [{ v: 'safe', label: '💎 PRISM Pick' }, { v: 'mid', label: '⚖️ Mid-range' }, { v: 'long', label: '🌠 Long shot' }] },
+    { key: 'find', label: 'Tested lists', chip: '', type: 'multi', get: (m) => picks?.get(m.player_id)?.find || [],
+      options: [{ v: 'radar', label: '🔦 Under the radar' }, { v: 'long', label: '🎯 Long-shot creators' }, { v: 'bounce', label: '📈 Bounce-back' }],
+      hint: "This week's tested lists (the Cheat Sheets cards) — each graded weekly" },
     { key: 'tags', label: 'Tags', chip: '', type: 'tags', get: tagKeys, options: [
       { v: 'short', label: '🗓️ Short week', title: "5 or fewer days since his team's last game (Thursday after Sunday, etc.) — the NFL's back-to-back; context, not in the grade" },
       { v: 'bye', label: '😴 Off a bye', title: 'His team had a bye last week — context, not in the grade' },
