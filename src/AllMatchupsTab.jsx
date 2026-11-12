@@ -16,6 +16,8 @@ import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { HotHandTag, dvpRanks } from './revampUi.jsx'
 import { H2HBadge, H2H_NOTE, VENUE_NOTE, h2hFor, useH2H, venueFor } from './h2h.jsx'
 import { OppDefCell, OPP_DEF_NOTE } from './oppDef.jsx'
+import Lenses from './Lenses.jsx' // 2026-11-12 🔭 This week's lenses
+import { useLenses } from './lensLists.jsx'
 
 // All Matchups (Slap Shot's tabs/AllMatchupsTab.jsx, 2026-10-18 revamp): this week's slate ranked by the grade model,
 // one row per player with the defense he's facing, his recent form, the book's price and our edge. Matchup-first --
@@ -47,6 +49,7 @@ export default function AllMatchupsTab() {
   const shown = useMemo(() => (rows ? applyListFilters(base, f, fctx) : []).map((m) => ({ ...m, oppDefSoft: m.def_rank && m.def_n ? m.def_n + 1 - m.def_rank : null })), [rows, base, f, fctx])
   const { sorted, sortKey, sortDir, toggleSort } = useSort(shown, 'grade_score', 'desc')
   const th = { sortKey, sortDir, onSort: toggleSort }
+  const lenses = useLenses(slate, base)
 
   if (!slate) return <p className="empty-state">Loading this week's slate…</p>
   if (slate.error) return <p className="empty-state">No slate data yet — the Tuesday engine run writes it.</p>
@@ -68,6 +71,7 @@ export default function AllMatchupsTab() {
       </div>
       <SlateStatus data={slate} />
       <MatchupFilterNote />
+      <Lenses lenses={lenses} title="🔭 This week’s lenses" />
       <ListFilters shown={sorted.length} total={rows.length} base={base} ctx={fctx} />
       <div className="toolbar-row"><StatePicker /></div>
       <div className="table-wrap">
