@@ -4,6 +4,7 @@ import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import { usePaydirtSims, useYardageSims } from './useLabSims.js'
 import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
+import { LIST_MAX } from './listMax.js'
 
 // A small number of top-5-style ranked lists, each answering one narrow question fast --
 // opinionated, not exhaustive. Deliberately NOT a
@@ -83,19 +84,19 @@ export default function CheatSheetTab() {
     if (!paydirt.rows) return null
     const pool = selectedMatchup ? paydirt.rows.filter((p) => isInSelectedMatchup(selectedMatchup, p.team)) : paydirt.rows
     // Ranked by the grade model's TD % when present (Paydirt switched to it 2026-10-11)
-    return [...pool].sort((a, b) => (b.p_td ?? b.sim_td_pct / 100) - (a.p_td ?? a.sim_td_pct / 100)).slice(0, 5)
+    return [...pool].sort((a, b) => (b.p_td ?? b.sim_td_pct / 100) - (a.p_td ?? a.sim_td_pct / 100)).slice(0, LIST_MAX)
   }, [paydirt.rows, selectedMatchup])
 
   const yardageCandidates = useMemo(() => {
     if (!yardage.rows) return null
     const pool = selectedMatchup ? yardage.rows.filter((p) => isInSelectedMatchup(selectedMatchup, p.team)) : yardage.rows
-    return [...pool].sort((a, b) => b.sim_yard_pct - a.sim_yard_pct).slice(0, 5)
+    return [...pool].sort((a, b) => b.sim_yard_pct - a.sim_yard_pct).slice(0, LIST_MAX)
   }, [yardage.rows, selectedMatchup])
 
   const highFloor = useMemo(() => {
     if (!matchups) return null
     const pool = selectedMatchup ? matchups.matchups.filter((m) => isInSelectedMatchup(selectedMatchup, m.team)) : matchups.matchups
-    return [...pool].sort((a, b) => b.usage_sig - a.usage_sig).slice(0, 5)
+    return [...pool].sort((a, b) => b.usage_sig - a.usage_sig).slice(0, LIST_MAX)
   }, [matchups, selectedMatchup])
 
   const attackableDefenses = useMemo(() => {
@@ -106,7 +107,7 @@ export default function CheatSheetTab() {
       .map((abbr) => ({ abbr, stats: teamStats[abbr] }))
       .filter((t) => t.stats)
       .sort((a, b) => (b.stats.def_yards_allowed_rank || 0) - (a.stats.def_yards_allowed_rank || 0))
-      .slice(0, 5)
+      .slice(0, LIST_MAX)
   }, [matchups, teamStats, selectedMatchup])
 
   return (

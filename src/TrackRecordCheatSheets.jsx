@@ -65,7 +65,7 @@ export default function TrackRecordCheatSheets() {
       for (const L of LISTS) {
         let items = pool.filter((m) => m[L.p] != null && !Number.isNaN(Number(m[L.p])) && (!L.filter || L.filter(m)))
         if (L.key === 'td2' && !items.length) continue
-        items = [...items].sort((a, b) => (L.sort === 'edge' ? b.edge - a.edge : L.sort === 'edgeAsc' ? a.edge - b.edge : Number(b[L.p]) - Number(a[L.p]))).slice(0, 5)
+        items = [...items].sort((a, b) => (L.sort === 'edge' ? b.edge - a.edge : L.sort === 'edgeAsc' ? a.edge - b.edge : Number(b[L.p]) - Number(a[L.p]))).slice(0, 1) // 2026-11-12 (user): grade each list's #1 only
         if (!items.length) continue
         const graded = items.map((m) => {
           const o = out[`${season}-${week}-${m.player_id}`]
@@ -114,7 +114,7 @@ export default function TrackRecordCheatSheets() {
             <div className="tr-tile-num">{t.hits} <span className="meta-line small">of {t.n} hit</span></div>
             <div className="meta-line small" style={{ margin: 0 }}>
               expected {t.exp.toFixed(1)} ({t.exp ? (t.hits / t.exp).toFixed(2) : '—'}x){t.key === 'over' ? ` · our chances said ${t.ours.toFixed(1)}` : ''}
-              {' '}· {t.nWeeks} week{t.nWeeks === 1 ? '' : 's'} · all 5 hit {t.all5}x (expected {t.all5exp.toFixed(2)})
+              {' '}· {t.nWeeks} week{t.nWeeks === 1 ? '' : 's'} · each week's #1 only
             </div>
           </div>
         ))}

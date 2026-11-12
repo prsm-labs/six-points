@@ -6,6 +6,7 @@ import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import { useSlate } from './slate.js'
+import { LIST_MAX, rec1 } from './listMax.js'
 
 // 📈 Bounce-back (2026-10-27, user: "due for a boom" -- tested first; CourtIQ has the same tab). The mirror of 🧊 Fade:
 // nfl_project/build_bounce.py -> public/data/bounce.json. Est. Yards well ABOVE his last-3 average; held out 2023-25 he
@@ -41,7 +42,7 @@ export default function BounceLab() {
         📈 <b>Bounce-backs</b>: RBs / WRs / TEs whose Est. Yards this week sit well <b>above their last-3 average</b> — a cold
         stretch the model doesn't buy. A bounce-back hits when he finishes above that average. Backtest 2023-25, each season held
         out: <b>{pct(bt.hits / bt.n)}</b> of {bt.n} hit (every player: ~{pct(bt.baseline)})
-        {d.live?.n ? <> · this season {d.live.hits}/{d.live.n}</> : null}. They're <b>back to normal, not due to explode</b>: they
+        {(() => { const r = rec1(d.weeks, (w) => w.picks); return r.n ? <> · this season, each week's #1: {r.hits}/{r.n}</> : null })()}. They're <b>back to normal, not due to explode</b>: they
         beat Est. Yards itself only {pct(bt.beatEst)} of the time. Picks freeze at kickoff. Not a lock.
       </p>
       {/* 2026-11-05: position comes from the app-wide Position dropdown under the game strip (this page's own copy removed) */}
@@ -61,7 +62,7 @@ export default function BounceLab() {
               <th>Result</th>
             </tr></thead>
             <tbody>
-              {sorted.map((f) => {
+              {sorted.slice(0, LIST_MAX).map((f) => {
                 const m = byId.get(f.player_id)
                 return (
                   <tr key={f.player_id}>

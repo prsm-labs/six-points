@@ -6,6 +6,7 @@ import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import { useSlate } from './slate.js'
+import { LIST_MAX, rec1 } from './listMax.js'
 
 // 🔦 Under the radar (2026-11-02, user: Gibbs is the obvious TD every week and priced like it -- find the guy nobody is talking
 // about whose numbers say he's primed). nfl_project/build_radar.py -> public/data/radar.json. RBs / WRs / TEs who scored in
@@ -39,7 +40,7 @@ export default function RadarLab() {
   if (d === undefined) return <p className="empty-state">Loading...</p>
   if (!d) return <p className="empty-state">No under-the-radar data yet.</p>
   const bt = d.backtest
-  const rec = d.record
+  const rec = { all: rec1(d.weeks, (w) => w.picks), live: rec1((d.weeks || []).filter((w) => w.week >= d.liveFromWeek), (w) => w.picks) } // 2026-11-12: each week's #1 only
   const past = d.weeks.filter((w) => w.week < d.week && w.picks.some((f) => f.result))
   return (
     <div>
@@ -70,7 +71,7 @@ export default function RadarLab() {
               <th>Result</th>
             </tr></thead>
             <tbody>
-              {sorted.map((f) => {
+              {sorted.slice(0, LIST_MAX).map((f) => {
                 const m = byId.get(f.player_id)
                 return (
                   <tr key={f.player_id}>

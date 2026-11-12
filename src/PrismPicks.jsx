@@ -3,6 +3,7 @@ import ViewPicker from './ViewPicker.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import { openPlayerSlide } from './slideouts.js'
 import PickButton from './PickButton.jsx'
+import { LIST_MAX, rec1 } from './listMax.js'
 
 // 💎 PRISM Picks (2026-10-20, nfl_project/build_prism_picks.py -> public/data/prism_picks.json): this week's few props with
 // the highest tested hit rates that aren't the obvious ones (lines a player clears every week are left out). The big number
@@ -29,9 +30,10 @@ export default function PrismPicks({ slate, notOut }) {
   if (!d) return null
   const wk = d.weeks.find((w) => w.week === d.week)
   const byId = new Map((slate?.matchups || []).map((m) => [m.player_id, m]))
-  const list = (w) => (level === 'safe' ? w?.picks : w?.tiers?.[level]) || []
+  const list = (w) => ((level === 'safe' ? w?.picks : w?.tiers?.[level]) || []).slice(0, LIST_MAX) // 2026-11-12: 3 max
+  const r1 = rec1(d.weeks, list) // graded = each week's #1 only
   const picks = list(wk)
-  const count = (k) => (k === 'safe' ? wk?.picks : wk?.tiers?.[k])?.length || 0
+  const count = (k) => Math.min(LIST_MAX, (k === 'safe' ? wk?.picks : wk?.tiers?.[k])?.length || 0)
   const tier = level === 'safe' ? null : d.tiers?.[level]
   const L = LEVELS.find((x) => x.key === level)
   // 2026-10-23: only last week here -- any week is one pick away in the 📅 week picker at the top
@@ -86,7 +88,7 @@ export default function PrismPicks({ slate, notOut }) {
       {tier && (
         <div className="prism-foot meta-line small">
           Track record: {bt.hits} of {bt.n} hit ({share(bt.hits, bt.n)}, the model said {pct(bt.said)}) over {bt.weeks} weeks, 2023-25, held out
-          {tier.live.n ? ` · this season: ${tier.live.hits} of ${tier.live.n} (${share(tier.live.hits, tier.live.n)})` : ' · live record starts this week'}.
+          {r1.n ? ` · this season, each week's #1: ${r1.hits} of ${r1.n} (${share(r1.hits, r1.n)})` : ' · live record starts this week'}.
           {' '}On those same lines the players' own last-8 rate was {Math.round(bt.own * 1000) / 10}%{level === 'long' ? ' — lines they had not cleared once lately, and still about 1 in 4 came in' : ''}.
           {' '}Rule: scrimmage-yard lines ({tier.rule.min_line.YDS}+ yds), an anytime TD or 2+ TDs that he cleared in {pct(tier.rule.real)} or fewer of his last {d.rule.last_n} games, where the model gives him {pct(tier.rule.floor)} to {pct(tier.rule.cap)}
           {level === 'long' ? ', ranked by how far the model sits above his own recent rate' : ', highest chance first'}; one per player, {d.rule.per_game} per game, {tier.rule.stat_cap} per prop type, top {d.rule.picks} a week, nobody in two levels. The chance is calibrated on held-out games against how often he cleared the line lately. NFL samples are small ({bt.n} backtest picks), so the big number is the track record. A pick freezes at its kickoff; open slots refill daily.
@@ -94,7 +96,7 @@ export default function PrismPicks({ slate, notOut }) {
       )}
       {!tier && !d.paused && <div className="prism-foot meta-line small">
         Track record: {bt.hits} of {bt.n} hit ({share(bt.hits, bt.n)}) over {bt.weeks} weeks, 2023-25, held out
-        {d.live.n ? ` · this season: ${d.live.hits} of ${d.live.n} (${share(d.live.hits, d.live.n)})` : ''}.
+        {r1.n ? ` · this season, each week's #1: ${r1.hits} of ${r1.n} (${share(r1.hits, r1.n)})` : ''}.
         Rule: real scrimmage-yard lines — ones he cleared in {pct(d.rule.real)} or fewer of his last {d.rule.last_n} games, {d.rule.min_line}+ yds — at a {pct(d.rule.floor)}+ chance; one per player, {d.rule.per_game} per game, top {d.rule.picks} a week, and the next game to kick off always gets its best one. By season: {Object.entries(bt.seasons || {}).map(([s, [n, h]]) => `${s} ${share(h, n)}`).join(' · ')}. Anytime TD never clears the bar (top TD chances sit near 60%). A pick freezes at its kickoff; open slots refill daily until the last game starts.
       </div>}
       {past.length > 0 && (

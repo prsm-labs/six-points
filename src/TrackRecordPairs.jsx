@@ -29,7 +29,7 @@ export default function TrackRecordPairs() {
     const rows = []
     for (const lk of locks) {
       for (const [b, list] of Object.entries(lk.boards || {})) {
-        for (const pr of list) {
+        for (const pr of list.slice(0, 1)) { // 2026-11-12 (user): grade each board's #1 pair only
           const legs = pr.legs.map((l) => {
             const o = out.get(`${lk.season}-${lk.week}-${l.player_id}`)
             if (!o) return { ...l, status: 'pending' }

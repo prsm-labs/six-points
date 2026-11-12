@@ -21,6 +21,7 @@ import { useLongshot } from './LongshotLab.jsx'
 import { matchesSearch } from './teamSearch.js'
 import ShortList from './ShortList.jsx'
 import { PickCard } from './RecordSummary.jsx'
+import { LIST_MAX, rec1 } from './listMax.js'
 
 // 📋 Cheat Sheets (Slap Shot's tabs/CheatSheetsTab.jsx, 2026-10-18 revamp): this week's quick reads -- top candidates
 // per prop, ours vs the book (context), and the defenses worth attacking -- with injury / roster status. Each list is graded
@@ -111,22 +112,22 @@ function QuickReads() {
   }, [slate, position, selectedMatchup, statusFilter, notOut])
 
   if (!slate) return <p className="empty-state">Loading…</p>
-  const top = (key, n = 5, filter = () => true) => [...pool].filter(filter).sort((a, b) => (b[key] ?? 0) - (a[key] ?? 0)).slice(0, n)
+  const top = (key, n = LIST_MAX, filter = () => true) => [...pool].filter(filter).sort((a, b) => (b[key] ?? 0) - (a[key] ?? 0)).slice(0, n)
   const tdC = top('p_td')
   const td2C = top('p_td2')
   const ydsC = top('p_100')
-  const hot = top('p_td', 5, (m) => m.hotHand)
+  const hot = top('p_td', LIST_MAX, (m) => m.hotHand)
   const poolById = new Map(pool.map((m) => [m.player_id, m]))
-  const bounceTop = (bounce?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, 5)
+  const bounceTop = (bounce?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, LIST_MAX)
     .map((f) => ({ ...poolById.get(f.player_id), _bline: f.line, _best: f.est, _btrack: f.track }))
-  const radarTop = (radar?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, 5)
+  const radarTop = (radar?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, LIST_MAX)
     .map((f) => ({ ...poolById.get(f.player_id), _rchance: f.chance, _rhits: f.hits, _rn: f.n }))
-  const longTop = (longshot?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, 5)
+  const longTop = (longshot?.weeks?.find((w) => w.week === slate.week)?.picks || []).filter((f) => poolById.has(f.player_id)).slice(0, LIST_MAX)
     .map((f) => ({ ...poolById.get(f.player_id), _lchance: f.chance, _lrz: f.rz3, _lrank: f.rank, _lof: f.of }))
   const pc = (v) => (v == null ? '—' : `${Math.round(v * 100)}%`)
   const vs = (m) => `${m.position} · ${m.team} vs ${m.opponent}`
   const ppw = pp?.weeks?.find((w) => w.week === slate.week)
-  const ppItem = (arr, tag, cls) => (arr || []).filter((x) => poolById.has(x.player_id)).slice(0, 5).map((c) => {
+  const ppItem = (arr, tag, cls) => (arr || []).filter((x) => poolById.has(x.player_id)).slice(0, LIST_MAX).map((c) => {
     const m = poolById.get(c.player_id)
     return { key: `${cls}-${c.player_id}`, tag, tagCls: cls, name: c.name, team: vs(m), line: c.label, big: pc(c.track), bigSub: 'track record',
       why: `Est. ${c.est} yds · ${c.stat && c.stat !== 'YDS' ? 'scored' : 'cleared'} it in ${c.last[1]} of his last ${c.last[0]}`, result: c.result,
@@ -151,10 +152,11 @@ function QuickReads() {
     lines: [{ dir: 'info', text: `Est. ${pick0.est} yds${pick0.depth ? ` · ${pick0.depth}` : ''}` }, ...(pick0.last ? [{ dir: 'info', text: `Cleared it in ${pick0.last[1]} of his last ${pick0.last[0]}` }] : [])],
     record: graded0.length ? `PRISM Picks #1, last ${graded0.length} weeks: ${graded0.filter((c) => c.result === 'hit').length} of ${graded0.length} hit (our chances said ${(graded0.reduce((s, c) => s + c.chance, 0)).toFixed(1)})` : '',
     onOpen: () => pm && openPlayerSlide(pm), action: pm ? <PickButton player={pm} compact prop={pick0.label} /> : null } : null
-  const shortItems = [radarRows, radarRows, radarRows, bounceRows, bounceRows]
+  const shortItems = [radarRows, bounceRows] // 2026-11-12 (user): one per list, 3 max
+  const rr = rec1(radar?.weeks, (w) => w.picks), bl1 = rec1(bounce?.weeks, (w) => w.picks) // records = each week's #1 only
   const priced = pool.filter((m) => m.edge != null)
-  const bestValue = [...priced].filter((m) => m.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, 5)
-  const overvalued = [...priced].filter((m) => m.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, 5)
+  const bestValue = [...priced].filter((m) => m.edge >= VALUE_EDGE).sort((a, b) => b.edge - a.edge).slice(0, LIST_MAX)
+  const overvalued = [...priced].filter((m) => m.edge < 0).sort((a, b) => a.edge - b.edge).slice(0, LIST_MAX)
   const edgeRow = (m) => (
     <span title={`${edgeText(m)}\n${booksText(m.book)}`} className="edge-stack">
       <span className={edgeClass(m.edge)}>mkt {m.market}%</span>
@@ -171,7 +173,7 @@ function QuickReads() {
       if (!d.best || (m.p_td ?? 0) > (d.best.p_td ?? 0)) d.best = m
       by.set(m.opponent, d)
     }
-    return [...by.values()].sort((a, b) => a.rank - b.rank).slice(0, 8)
+    return [...by.values()].sort((a, b) => a.rank - b.rank).slice(0, LIST_MAX)
   })()
   const priceCount = priced.length
 
@@ -180,7 +182,7 @@ function QuickReads() {
       <SlateStatus data={slate} />
       <PickCard title="This week's pick" pick={weekPick} />
       <ShortList items={shortItems} past={slate.week !== pp?.week && pp != null} title="🔎 This week's finds"
-        sub={`Players our tested lists like that their own numbers don't show — not the obvious favorites. Record: 🔦 ${radar?.record?.all?.n ? `${radar.record.all.hits}/${radar.record.all.n} scored (said ${Math.round(radar.record.all.said * 100)}%, their own ${Math.round(radar.record.all.own * 100)}%)` : '—'} · 📈 ${bounce?.live?.n ? `${bounce.live.hits}/${bounce.live.n}` : '—'} finished above their recent average. Tap a name for his card.`} />
+        sub={`Players our tested lists like that their own numbers don't show — not the obvious favorites. Record, each week's #1: 🔦 ${rr.n ? `${rr.hits}/${rr.n} scored (said ${Math.round(rr.said * 100)}%, their own ${Math.round(rr.own * 100)}%)` : '—'} · 📈 ${bl1.n ? `${bl1.hits}/${bl1.n}` : '—'} finished above their recent average. Tap a name for his card.`} />
       <PrismPicks slate={slate} notOut={notOut} />
       <div className="note">
         ℹ️ Lists use the grade model's chances (TD %, 2+ TD %, 100+ yds %). 🔥 = scored in his last 3 games and not a top-25%
@@ -195,13 +197,13 @@ function QuickReads() {
       </div>
       <MatchupFilterNote />
       <div className="grid-cards">
-        <ListCard title="🏈 TD Candidates" sub="Top 5 by chance to score a TD" items={tdC} renderRow={(m) => fmtPct(m.p_td, 1)} />
+        <ListCard title="🏈 TD Candidates" sub="Top 3 by chance to score a TD" items={tdC} renderRow={(m) => fmtPct(m.p_td, 1)} />
         <ListCard title="🔦 Under the radar" sub={`Scored in 2 or fewer of his last 8, 20%+ TD chance this week — ranked by how far this week beats his usual. Backtest: ${radar?.backtest ? Math.round((radar.backtest.hits / radar.backtest.n) * 100) : 33}% scored vs their own ${radar?.backtest ? Math.round(radar.backtest.own * 100) : 11}% · Scouting → Under the radar`} items={radarTop}
           renderRow={(m) => <span className="edge-stack"><b>{fmtPct(m._rchance, 0)}</b><span className="meta-line small">scored {m._rhits} of last {m._rn}</span></span>} />
         <ListCard title="🎯 Long-shot creators" sub={`12-30% TD chance, ranked by red-zone touches a game over the last 3 weeks vs his position. Backtest: ${longshot?.backtest ? Math.round((longshot.backtest.hits / longshot.backtest.n) * 100) : 28}% scored (said ${longshot?.backtest ? Math.round(longshot.backtest.said * 100) : 25}%) · Scouting → Long-shot creators`} items={longTop}
           renderRow={(m) => <span className="edge-stack"><b>{fmtPct(m._lchance, 0)}</b><span className="meta-line small">{m._lrz.toFixed(1)} RZ/g · #{m._lrank} of {m._lof}</span></span>} />
-        <ListCard title="🏈🏈 2+ TD Candidates" sub="Top 5 by chance of 2+ TDs" items={td2C} prop="td2" renderRow={(m) => fmtPct(m.p_td2, 1)} />
-        <ListCard title="💨 100+ Yard Candidates" sub="Top 5 by chance of 100+ scrimmage yards · defense tag = yards allowed to his position" items={ydsC} prop="yds100" defTag="yds" renderRow={(m) => fmtPct(m.p_100, 1)} />
+        <ListCard title="🏈🏈 2+ TD Candidates" sub="Top 3 by chance of 2+ TDs" items={td2C} prop="td2" renderRow={(m) => fmtPct(m.p_td2, 1)} />
+        <ListCard title="💨 100+ Yard Candidates" sub="Top 3 by chance of 100+ scrimmage yards · defense tag = yards allowed to his position" items={ydsC} prop="yds100" defTag="yds" renderRow={(m) => fmtPct(m.p_100, 1)} />
         <ListCard title="📈 Bounce-backs" sub={`Est. Yards well above his last 3 games: ${bounce?.backtest ? Math.round((bounce.backtest.hits / bounce.backtest.n) * 100) : 70}% of past bounce-backs finished above that average (back to his level, not past it)`} items={bounceTop} prop="bounce" defTag="yds"
           renderRow={(m) => <span className="edge-stack"><b>{fmtPct(m._btrack, 0)}</b><span className="meta-line small">over {m._bline.toFixed(0)} yds · est {m._best.toFixed(0)}</span></span>} />
         <ListCard title="🔥 Hot Hands" sub="Scored in the last 3 games, outside the week's top 25% — the group that beat the model" items={hot} renderRow={(m) => fmtPct(m.p_td, 1)} />

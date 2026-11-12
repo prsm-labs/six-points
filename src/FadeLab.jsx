@@ -6,6 +6,7 @@ import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { setPosition, usePosition } from './positionFilter.js'
 import { useSlate } from './slate.js'
+import { LIST_MAX, rec1 } from './listMax.js'
 
 // 🧊 Fade (2026-10-21, user: players running above their usual, or in a bad matchup -- tested first; CourtIQ has the
 // same tab). nfl_project/build_fades.py -> public/data/fades.json. Fading a player because he's been HOT lost in the
@@ -41,7 +42,7 @@ export default function FadeLab() {
         🧊 <b>Fades</b>: RBs / WRs / TEs whose Est. Yards this week sit well <b>below their season average</b> (scrimmage yards
         per game this season, 3+ games). A fade hits when he finishes under that average. Backtest 2023-25, each season held out:{' '}
         <b>{pct(bt.hits / bt.n)}</b> of {bt.n} fades hit (every player: ~{pct(bt.baseline)})
-        {d.live?.n ? <> · this season {d.live.hits}/{d.live.n}</> : null}. Fading a player just because his last 3 games were big{' '}
+        {(() => { const r = rec1(d.weeks, (w) => w.fades); return r.n ? <> · this season, each week's #1: {r.hits}/{r.n}</> : null })()}. Fading a player just because his last 3 games were big{' '}
         <b>lost</b> in the same test ({bt.naive}), so a hot streak alone never puts him here. Fades freeze at kickoff. Not a lock.
       </p>
       {/* 2026-11-05: position comes from the app-wide Position dropdown under the game strip (this page's own copy removed) */}
@@ -61,7 +62,7 @@ export default function FadeLab() {
               <th>Result</th>
             </tr></thead>
             <tbody>
-              {sorted.map((f) => {
+              {sorted.slice(0, LIST_MAX).map((f) => {
                 const m = byId.get(f.player_id)
                 return (
                   <tr key={f.player_id}>

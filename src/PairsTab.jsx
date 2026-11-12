@@ -13,6 +13,7 @@ import { BOOK_NAMES, fmtAmerican, multiBetUrl, useBetState } from './bookOdds.js
 import { fmtPct, GradeBadge, LiveStatusTag } from './gradeUi.jsx'
 import { HotHandTag } from './revampUi.jsx'
 import PairsPage from './PairsPage.jsx'
+import { LIST_MAX } from './listMax.js'
 
 // 🤝 Pairs (Slap Shot's tabs/PairsTab.jsx, 2026-10-18 revamp): auto-built 2-leg parlays (pairs.js), ★ best pairs,
 // profit-boost math on book parlay prices, Gambly per pair, and a 👀 blind-spot strip. Locked at the Sunday lock
@@ -101,7 +102,7 @@ function LiveBoard() {
   const started = useMemo(() => startedTeams(sched, slate?.week), [sched, slate?.week])
   const pairs = useMemo(() => (slate?.matchups ? buildPairs(slate.matchups, { mode, prop, boost, level }) : []), [slate, mode, prop, boost, level])
   const shown = stars ? pairs.filter((p) => p.starRank && p.starRank <= stars).sort((a, b) => a.starRank - b.starRank) : pairs
-  const blind = useMemo(() => (slate?.matchups ? notInPairs(slate.matchups, pairs).slice(0, 12) : []), [slate, pairs])
+  const blind = useMemo(() => (slate?.matchups ? notInPairs(slate.matchups, pairs).slice(0, LIST_MAX) : []), [slate, pairs])
   if (!slate) return <p className="empty-state">Loading…</p>
   const modeInfo = MODES.find((m) => m.key === mode)
   // all = the original boards; safe / mid / long = <level>:<mode> (no prop boards per level -- live only)

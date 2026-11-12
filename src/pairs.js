@@ -28,7 +28,7 @@ export const LEVELS = [
   { key: 'long', label: '🌠 Long shot', min: 0.03, max: 0.1, blurb: 'Both-hit 3-10% — the stars-align pairs (about +900 to +3200 fair)' },
 ]
 export const LEVEL_KEYS = LEVELS.map((l) => l.key)
-export const MAX_PAIRS = 10
+export const MAX_PAIRS = 3 // 2026-11-12 (user): 3 max in any list
 const LEGS_PER_PROP = 40
 const MAX_PER_PLAYER = { balanced: 1, default: 2 }
 
@@ -46,7 +46,7 @@ export const MODES = [
   { key: 'stacks', label: '🔗 Same game', blurb: 'Both legs in one game — teammates or opponents (TD + 100 yds across a game is the one real link: +7%)' },
 ]
 export const MODE_KEYS = MODES.map((m) => m.key)
-export const STAR_TOP = 5
+export const STAR_TOP = 3
 export const PROP_FILTERS = [
   { key: null, label: 'All props' },
   { key: 'td', label: '🏈 TD pairs' },

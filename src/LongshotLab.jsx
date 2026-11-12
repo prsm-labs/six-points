@@ -6,6 +6,7 @@ import { useMatchup, isInSelectedMatchup } from './MatchupContext.jsx'
 import MatchupFilterNote from './MatchupFilterNote.jsx'
 import { usePosition } from './positionFilter.js'
 import { useSlate } from './slate.js'
+import { LIST_MAX, rec1 } from './listMax.js'
 
 // 🎯 Long-shot creators (2026-11-07, user: Slap Shot's list, for Six Points). nfl_project/build_longshot.py -> public/data/longshot.json.
 // RBs / WRs / TEs with a 12-30% TD chance this week, ranked by red-zone touches a game over the last 3 weeks (carries + targets inside
@@ -41,7 +42,7 @@ export default function LongshotLab() {
   if (d === undefined) return <p className="empty-state">Loading...</p>
   if (!d) return <p className="empty-state">No long-shot data yet.</p>
   const bt = d.backtest
-  const rec = d.record
+  const rec = { all: rec1(d.weeks, (w) => w.picks), live: rec1((d.weeks || []).filter((w) => w.week >= d.liveFromWeek), (w) => w.picks) } // 2026-11-12: each week's #1 only
   const past = d.weeks.filter((w) => w.week < d.week && w.picks.some((f) => f.result))
   return (
     <div>
@@ -71,7 +72,7 @@ export default function LongshotLab() {
               <th>Result</th>
             </tr></thead>
             <tbody>
-              {sorted.map((f) => {
+              {sorted.slice(0, LIST_MAX).map((f) => {
                 const m = byId.get(f.player_id)
                 return (
                   <tr key={f.player_id}>
