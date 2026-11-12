@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T16:02+00:00",
+ "generated_at": "2026-11-12T15:24+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -2496,28 +2496,6 @@
      "trackN": 630
     },
     {
-     "player_id": "00-0041511",
-     "name": "Omar Cooper Jr.",
-     "team": "NYJ",
-     "opp": "BUF",
-     "pos": "WR",
-     "depth": "WR2",
-     "line": 76.5,
-     "est": 57.4,
-     "z": 2.52,
-     "games": [
-      30,
-      103,
-      115,
-      58
-     ],
-     "why": [
-      "his usage (5.1 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.723,
-     "trackN": 630
-    },
-    {
      "player_id": "00-0040556",
      "name": "Corey Kiner",
      "team": "NE",
@@ -2549,7 +2527,7 @@
      "team": "SF",
      "opp": "DAL",
      "pos": "WR",
-     "depth": "WR4",
+     "depth": "WR5",
      "line": 56.0,
      "est": 40.6,
      "z": 2.42,
@@ -2614,32 +2592,6 @@
      ],
      "why": [
       "one big game (95) lifts his average -- 37 a game in the others"
-     ],
-     "track": 0.723,
-     "trackN": 630
-    },
-    {
-     "player_id": "00-0040719",
-     "name": "Bhayshul Tuten",
-     "team": "JAX",
-     "opp": "TEN",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 87.8,
-     "est": 69.8,
-     "z": 2.15,
-     "games": [
-      88,
-      62,
-      90,
-      91,
-      96,
-      87,
-      159,
-      29
-     ],
-     "why": [
-      "one big game (159) lifts his average -- 78 a game in the others"
      ],
      "track": 0.723,
      "trackN": 630
@@ -2745,7 +2697,7 @@
      "trackN": 630
     }
    ],
-   "updated_at": "2026-11-11T11:02-05:00"
+   "updated_at": "2026-11-12T10:24-05:00"
   }
  ]
 }

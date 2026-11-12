@@ -291,7 +291,7 @@
       },
       {
         "team": "NO",
-        "name": "Audric Estim\u00e9",
+        "name": "Audric Estime",
         "position": "RB",
         "status": "Out",
         "injury": "Thigh"
@@ -8564,6 +8564,50 @@
         "position": "DT",
         "status": "Questionable",
         "injury": "Pectoral"
+      }
+    ],
+    "10": [
+      {
+        "team": "NE",
+        "name": "Carlton Davis III",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "NE",
+        "name": "Ben Brown",
+        "position": "C",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "NE",
+        "name": "TreVeyon Henderson",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Illness"
+      },
+      {
+        "team": "NYG",
+        "name": "Malik Harrison",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Groin"
+      },
+      {
+        "team": "WAS",
+        "name": "Lucas Patrick",
+        "position": "C",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "WAS",
+        "name": "Colson Yankoff",
+        "position": "TE",
+        "status": "Out",
+        "injury": "Knee"
       }
     ]
   }

@@ -1,0 +1,704 @@
+{
+ "_meta": {
+  "season": 2026,
+  "week": 10,
+  "market": "player_anytime_td",
+  "source": "The Odds API (region us)",
+  "fetches": [
+   {
+    "at": "2026-11-12T15:23:57+00:00",
+    "games": [
+     "WAS@NYG"
+    ],
+    "creditsLeft": 403
+   }
+  ],
+  "updated": "2026-11-12T15:23:57+00:00",
+  "creditsLeft": 403
+ },
+ "games": {
+  "WAS@NYG": {
+   "fetchedAt": "2026-11-12T15:23:57+00:00",
+   "eventId": "74d39e19225caf211ad2c8eb4110179f",
+   "players": 28,
+   "books": [
+    "BOL",
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  }
+ },
+ "players": {
+  "00-0040715": {
+   "name": "Cam Skattebo",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 125,
+    "FD": 125,
+    "BOL": 110,
+    "BR": 112,
+    "MGM": 105,
+    "BOV": 125
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394453_13L88808Q1-477446093Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=78488478",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378222|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4481000-7329005&type=Single"
+   },
+   "best": 125,
+   "bestBook": "DK",
+   "bestImplied": 44.4,
+   "medianImplied": 45.8,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0039337": {
+   "name": "Malik Nabers",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 175,
+    "FD": 170,
+    "BOL": 150,
+    "BR": 163,
+    "MGM": 165,
+    "BOV": 175
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394452_13L88808Q1-1380864812Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=48141819",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410392935|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480969-7328945&type=Single"
+   },
+   "best": 175,
+   "bestBook": "DK",
+   "bestImplied": 36.4,
+   "medianImplied": 37.4,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0037256": {
+   "name": "Rachaad White",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 175,
+    "FD": 180,
+    "BOL": 170,
+    "BR": 188,
+    "MGM": 150,
+    "BOV": 175
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394465_13L88808Q1968442089Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=43162275",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369536|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480976-7328961&type=Single"
+   },
+   "best": 188,
+   "bestBook": "BR",
+   "bestImplied": 34.7,
+   "medianImplied": 36.4,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0037838": {
+   "name": "Isaiah Likely",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 195,
+    "FD": 195,
+    "BOL": 190,
+    "BR": 210,
+    "MGM": 200,
+    "BOV": 195
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394454_13L88808Q1-1809117535Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=42088280",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369522|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480995-7328995&type=Single"
+   },
+   "best": 210,
+   "bestBook": "BR",
+   "bestImplied": 32.3,
+   "medianImplied": 33.9,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0031588": {
+   "name": "Stefon Diggs",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 245,
+    "FD": 240,
+    "BOL": 230,
+    "BR": 240,
+    "MGM": 250,
+    "BOV": 245
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394468_13L88808Q1622596392Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=10288139",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369530|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480933-7328873&type=Single"
+   },
+   "best": 250,
+   "bestBook": "MGM",
+   "bestImplied": 28.6,
+   "medianImplied": 29.2,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0039910": {
+   "name": "Jayden Daniels",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 265,
+    "FD": 280,
+    "BOL": 250,
+    "BR": 255,
+    "MGM": 250,
+    "BOV": 265
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394467_13L88808Q1111756323Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=27531331",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369524|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4481004-7329013&type=Single"
+   },
+   "best": 280,
+   "bestBook": "FD",
+   "bestImplied": 26.3,
+   "medianImplied": 27.8,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0035250": {
+   "name": "Devin Singletary",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 270,
+    "FD": 270,
+    "BOL": 250,
+    "BR": 215,
+    "MGM": 270,
+    "BOV": 255
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394400_13L88808Q11930260006Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=16469282",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369504|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4481020-7329047&type=Single"
+   },
+   "best": 270,
+   "bestBook": "DK",
+   "bestImplied": 27.0,
+   "medianImplied": 27.6,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0033699": {
+   "name": "Austin Ekeler",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 340,
+    "FD": 340,
+    "BOL": 300,
+    "BR": 340,
+    "MGM": 250,
+    "BOV": 340
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394466_13L88808Q1468752164Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=14807208",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369526|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480914-7328837&type=Single"
+   },
+   "best": 340,
+   "bestBook": "DK",
+   "bestImplied": 22.7,
+   "medianImplied": 22.7,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0037742": {
+   "name": "Treylon Burks",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 360,
+    "FD": 350,
+    "BOL": 350,
+    "BR": 295,
+    "MGM": 400,
+    "BOV": 360
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357423649_13L88808Q1557870560Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=43162247",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378210|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480955-7328917&type=Single"
+   },
+   "best": 400,
+   "bestBook": "MGM",
+   "bestImplied": 20.0,
+   "medianImplied": 22.0,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0037809": {
+   "name": "Chig Okonkwo",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 370,
+    "FD": 380,
+    "BOL": 350,
+    "BR": 310,
+    "MGM": 320,
+    "BOV": 370
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394469_13L88808Q1-1369631226Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=44578689",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369502|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4481014-7329035&type=Single"
+   },
+   "best": 380,
+   "bestBook": "FD",
+   "bestImplied": 20.8,
+   "medianImplied": 21.7,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0041040": {
+   "name": "Antonio Williams",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 390,
+    "FD": 410,
+    "BOL": 350,
+    "BR": 310,
+    "MGM": 320,
+    "BOV": 390
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394471_13L88808Q1-908966819Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=38063388",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378212|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4481015-7329037&type=Single"
+   },
+   "best": 410,
+   "bestBook": "FD",
+   "bestImplied": 19.6,
+   "medianImplied": 21.3,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0039923": {
+   "name": "J.J. McCarthy",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 450,
+    "FD": 470,
+    "BOL": 400,
+    "BR": 460,
+    "MGM": 525,
+    "BOV": 440
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394455_13L88808Q1-934817688Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=103924255",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378220|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480978-7328963&type=Single"
+   },
+   "best": 525,
+   "bestBook": "MGM",
+   "bestImplied": 16.0,
+   "medianImplied": 18.0,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0041042": {
+   "name": "Malachi Fields",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 475,
+    "FD": 460,
+    "BOL": 450,
+    "BR": 440,
+    "MGM": 390,
+    "BOV": 460
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394456_13L88808Q1-1087231219Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=50050430",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378214|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4481006-7329015&type=Single"
+   },
+   "best": 475,
+   "bestBook": "DK",
+   "bestImplied": 17.4,
+   "medianImplied": 18.0,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0036309": {
+   "name": "Darnell Mooney",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 800,
+    "FD": 800,
+    "BOL": 750,
+    "BR": 800,
+    "MGM": 700,
+    "BOV": 800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394457_13L88808Q1-1932900501Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=35951219",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369510|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480932-7328869&type=Single"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 11.1,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0039847": {
+   "name": "Theo Johnson",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 800,
+    "FD": 900,
+    "BOL": 800,
+    "BR": 900,
+    "MGM": 900,
+    "BOV": 800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394460_13L88808Q1-534343686Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=42217326",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378206|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480983-7328979&type=Single"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 10.6,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0036415": {
+   "name": "Van Jefferson",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 800,
+    "FD": 850,
+    "BOL": 800,
+    "BR": 600,
+    "MGM": 950,
+    "BOV": 800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394470_13L88808Q1-115201972Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=28236253",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378208|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4481025-7329057&type=Single"
+   },
+   "best": 950,
+   "bestBook": "MGM",
+   "bestImplied": 9.5,
+   "medianImplied": 11.1,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0039355": {
+   "name": "Luke McCaffrey",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 1400,
+    "FD": 1300,
+    "BOL": 1100,
+    "BR": 1150,
+    "BOV": 1400
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394472_13L88808Q1-35451127Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=60048951",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378226|{wagerAmount}"
+   },
+   "best": 1400,
+   "bestBook": "DK",
+   "bestImplied": 6.7,
+   "medianImplied": 7.1,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0036628": {
+   "name": "John Bates",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 1600,
+    "FD": 1500,
+    "BOL": 1400,
+    "BR": 1800,
+    "MGM": 2000,
+    "BOV": 1600
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394473_13L88808Q1711352811Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=40855952",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369520|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480962-7328931&type=Single"
+   },
+   "best": 2000,
+   "bestBook": "MGM",
+   "bestImplied": 4.8,
+   "medianImplied": 5.9,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0038576": {
+   "name": "Charlie Jones",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 1700,
+    "FD": 1900,
+    "BOL": 1700,
+    "BR": 2000,
+    "MGM": 1400,
+    "BOV": 1700
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394463_13L88808Q1-4878925Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=42218096",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369508|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480937-7328879&type=Single"
+   },
+   "best": 2000,
+   "bestBook": "BR",
+   "bestImplied": 4.8,
+   "medianImplied": 5.6,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0041376": {
+   "name": "Gregory Desrosiers",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 2000,
+    "FD": 2000,
+    "BOL": 1400,
+    "BR": 1200,
+    "MGM": 1750,
+    "BOV": 2000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394459_13L88808Q1-327489758Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=104768218",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410392927|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480959-7328925&type=Single"
+   },
+   "best": 2000,
+   "bestBook": "DK",
+   "bestImplied": 4.8,
+   "medianImplied": 5.1,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0038938": {
+   "name": "Jalin Hyatt",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 2000,
+    "FD": 2000,
+    "BOL": 1700,
+    "BR": 2000,
+    "MGM": 2000,
+    "BOV": 2000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394462_13L88808Q1-363001497Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=42198633",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369518|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480929-7328865&type=Single"
+   },
+   "best": 2000,
+   "bestBook": "DK",
+   "bestImplied": 4.8,
+   "medianImplied": 4.8,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0039912": {
+   "name": "Ben Sinnott",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 2200,
+    "FD": 2500,
+    "BOL": 1900,
+    "BR": 2900,
+    "MGM": 2000,
+    "BOV": 2200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394474_13L88808Q11678347508Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=48308856",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378218|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480941-7328889&type=Single"
+   },
+   "best": 2900,
+   "bestBook": "BR",
+   "bestImplied": 3.3,
+   "medianImplied": 4.3,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0041178": {
+   "name": "Robert Henry Jr.",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 2200,
+    "FD": 2000,
+    "BOL": 1900,
+    "BR": 2500,
+    "MGM": 1600,
+    "BOV": 2200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357413044_13L88808Q11598677241Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=104748221",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369528|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480964-7328935&type=Single"
+   },
+   "best": 2500,
+   "bestBook": "BR",
+   "bestImplied": 3.8,
+   "medianImplied": 4.6,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0033376": {
+   "name": "Patrick Ricard",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 2800,
+    "FD": 3000,
+    "BOL": 2400,
+    "BR": 2500,
+    "MGM": 3300,
+    "BOV": 2800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394458_13L88808Q1143314200Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=20539688",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369512|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4480944-7328897&type=Single"
+   },
+   "best": 3300,
+   "bestBook": "MGM",
+   "bestImplied": 2.9,
+   "medianImplied": 3.4,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0031484": {
+   "name": "Chris Manhertz",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 3000,
+    "FD": 3500,
+    "BOL": 2400,
+    "BR": 3000,
+    "MGM": 3000,
+    "BOV": 2800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394461_13L88808Q1344152428Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=14787109",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410369516|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44040-4481012-7329033&type=Single"
+   },
+   "best": 3500,
+   "bestBook": "FD",
+   "bestImplied": 2.8,
+   "medianImplied": 3.2,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0040225": {
+   "name": "Thomas Fidone II",
+   "team": "NYG",
+   "game": "WAS@NYG",
+   "books": {
+    "DK": 4000,
+    "FD": 3500,
+    "BOL": 2400,
+    "BR": 3000,
+    "BOV": 4000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA387480437%232357394464_13L88808Q1-572107068Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.623932204&selectionId=80634163",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410378216|{wagerAmount}"
+   },
+   "best": 4000,
+   "bestBook": "DK",
+   "bestImplied": 2.4,
+   "medianImplied": 2.8,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0039686": {
+   "name": "Colson Yankoff",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "BOL": 2400,
+    "BR": 2400
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410392919|{wagerAmount}"
+   },
+   "best": 2400,
+   "bestBook": "BOL",
+   "bestImplied": 4.0,
+   "medianImplied": 4.0,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  },
+  "00-0041176": {
+   "name": "Jaden Bradley",
+   "team": "WAS",
+   "game": "WAS@NYG",
+   "books": {
+    "BR": 1200
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028823932?coupon={pickType}|4410392929|{wagerAmount}"
+   },
+   "best": 1200,
+   "bestBook": "BR",
+   "bestImplied": 7.7,
+   "medianImplied": 7.7,
+   "fetchedAt": "2026-11-12T15:23:57+00:00"
+  }
+ },
+ "unmatched": [],
+ "dst": {
+  "NYG": {
+   "DK": 475,
+   "FD": 800,
+   "MGM": 475,
+   "BOV": 460
+  },
+  "WAS": {
+   "DK": 500,
+   "FD": 800,
+   "MGM": 525,
+   "BOV": 500
+  }
+ }
+}

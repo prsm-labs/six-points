@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T16:02+00:00",
+ "generated_at": "2026-11-12T15:24+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 10,
@@ -643,9 +643,9 @@
      "tch3": 6.5,
      "gp": 2,
      "rzSeason": 1.11,
-     "pct": 0.9783,
-     "rank": 3,
-     "of": 92,
+     "pct": 0.989,
+     "rank": 2,
+     "of": 91,
      "result": null
     },
     {
@@ -659,25 +659,9 @@
      "tch3": 6.5,
      "gp": 2,
      "rzSeason": 0.65,
-     "pct": 0.9674,
-     "rank": 4,
-     "of": 92,
-     "result": null
-    },
-    {
-     "player_id": "00-0039074",
-     "name": "Davis Allen",
-     "team": "LA",
-     "opp": "ARI",
-     "pos": "TE",
-     "chance": 0.2108,
-     "rz3": 1.5,
-     "tch3": 3.5,
-     "gp": 2,
-     "rzSeason": 0.5,
-     "pct": 0.9643,
+     "pct": 0.978,
      "rank": 3,
-     "of": 56,
+     "of": 91,
      "result": null
     },
     {
@@ -702,7 +686,7 @@
      "team": "GB",
      "opp": "MIN",
      "pos": "TE",
-     "chance": 0.2887,
+     "chance": 0.2839,
      "rz3": 1.33,
      "tch3": 5.7,
      "gp": 3,
@@ -713,19 +697,19 @@
      "result": null
     },
     {
-     "player_id": "00-0041037",
-     "name": "Denzel Boston",
-     "team": "CLE",
-     "opp": "HOU",
+     "player_id": "00-0034827",
+     "name": "DJ Moore",
+     "team": "BUF",
+     "opp": "NYJ",
      "pos": "WR",
-     "chance": 0.2817,
-     "rz3": 1.67,
-     "tch3": 8.7,
-     "gp": 3,
-     "rzSeason": 1.03,
-     "pct": 0.9239,
-     "rank": 8,
-     "of": 92,
+     "chance": 0.2941,
+     "rz3": 1.5,
+     "tch3": 7.0,
+     "gp": 2,
+     "rzSeason": 0.99,
+     "pct": 0.9011,
+     "rank": 10,
+     "of": 91,
      "result": null
     },
     {
@@ -739,9 +723,9 @@
      "tch3": 12.7,
      "gp": 3,
      "rzSeason": 1.83,
-     "pct": 0.9,
+     "pct": 0.8966,
      "rank": 7,
-     "of": 60,
+     "of": 58,
      "result": null
     },
     {
@@ -759,9 +743,25 @@
      "rank": 7,
      "of": 56,
      "result": null
+    },
+    {
+     "player_id": "00-0040870",
+     "name": "Ja'Kobi Lane",
+     "team": "BAL",
+     "opp": "LAC",
+     "pos": "WR",
+     "chance": 0.1606,
+     "rz3": 1.5,
+     "tch3": 3.0,
+     "gp": 2,
+     "rzSeason": 0.92,
+     "pct": 0.8901,
+     "rank": 11,
+     "of": 91,
+     "result": null
     }
    ],
-   "updated_at": "2026-11-11T11:02-05:00"
+   "updated_at": "2026-11-12T10:24-05:00"
   }
  ]
 }

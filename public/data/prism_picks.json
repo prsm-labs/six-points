@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-11T16:02+00:00",
+ "generated_at": "2026-11-12T15:24+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1405,7 +1405,27 @@
   {
    "week": 10,
    "source": "live",
-   "picks": [],
+   "picks": [
+    {
+     "player_id": "00-0040142",
+     "name": "Kaleb Johnson",
+     "team": "GB",
+     "opp": "MIN",
+     "pos": "RB",
+     "line": 25,
+     "label": "25+ scrimmage yards",
+     "chance": 0.7831,
+     "est": 54.0,
+     "last": [
+      8,
+      4
+     ],
+     "depth": "RB3",
+     "game": "GB-MIN",
+     "track": 0.694,
+     "trackN": 44
+    }
+   ],
    "nextGame": {
     "teams": [
      "NYG",
@@ -1503,23 +1523,23 @@
       "trackN": 66
      },
      {
-      "player_id": "00-0040583",
-      "name": "Woody Marks",
-      "team": "HOU",
-      "opp": "CLE",
+      "player_id": "00-0040122",
+      "name": "Ashton Jeanty",
+      "team": "LV",
+      "opp": "SEA",
       "pos": "RB",
-      "est": 77.6,
+      "est": 69.1,
       "depth": "RB1",
-      "game": "CLE-HOU",
+      "game": "LV-SEA",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.3775,
+      "chance": 0.3514,
       "last": [
        8,
        2
       ],
-      "track": 0.422,
+      "track": 0.411,
       "trackN": 66
      }
     ],
@@ -1570,13 +1590,13 @@
       "team": "IND",
       "opp": "MIA",
       "pos": "WR",
-      "est": 29.8,
+      "est": 29.6,
       "depth": "WR1",
       "game": "IND-MIA",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.1679,
+      "chance": 0.1672,
       "last": [
        8,
        0
@@ -1626,7 +1646,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-11T11:02-05:00"
+   "updated_at": "2026-11-12T10:24-05:00"
   }
  ]
 }
