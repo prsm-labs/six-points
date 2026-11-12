@@ -8,6 +8,7 @@ import ViewPicker from './ViewPicker.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import GamblyButton from './GamblyButton.jsx'
 import { useViewWeek } from './weekView.js'
+import { isSelectedGame, useMatchup } from './MatchupContext.jsx'
 import './Coins.css'
 
 // 🪙 Degen Picks (2026-11-09, user: CourtIQ's play-money mini game in Six Points). One page: make picks (game / TD or yards / line − / +),
@@ -24,21 +25,26 @@ const OWN = (ladder) => { const ok = ladder.filter(([, ch]) => ch >= 0.5); retur
 function Board({ wk, slip }) {
   const coins = useCoins()
   const games = (wk.games || []).filter((g) => isOpenPick(g.kickoff)).sort((a, b) => (a.kickoff || '').localeCompare(b.kickoff || ''))
-  const [gameSel, setGame] = useState(null)
-  const game = games.find((g) => g.gameId === gameSel) || games[0]
+  // 2026-11-12 (user): follows the header matchup cards like every other page -- all open games by default, any picked card(s) narrow it.
+  const { selectedMatchup } = useMatchup()
+  const scope = games.filter((g) => isSelectedGame(selectedMatchup, g.home, g.away))
+  const teamSet = new Set(scope.flatMap((g) => [g.away, g.home]))
+  const opp = Object.fromEntries(scope.flatMap((g) => [[g.away, `@ ${g.home}`], [g.home, `vs ${g.away}`]]))
+  const [shown, setShown] = useState(40)
   const [stat, setStat] = useState('TD')
   const [q, setQ] = useState('')
   const [lines, setLines] = useState({})
   const rows = useMemo(() => {
-    if (!game) return []
+    if (!scope.length) return []
     return (wk.lines?.players || [])
-      .filter((p) => (p.team === game.away || p.team === game.home) && wk.active.has(p.id) && !SKIP.has(p.status))
+      .filter((p) => teamSet.has(p.team) && wk.active.has(p.id) && !SKIP.has(p.status))
       .filter((p) => !q || p.name.toLowerCase().includes(q.toLowerCase()))
       .map((p) => ({ p, ladder: (laddersOf(p)[stat] || []).filter(([, ch]) => ch >= 0.03 && ch <= 0.97) }))
       .filter((r) => r.ladder.length)
       .sort((x, y) => { const e = (p) => (stat === 'RUSH' ? p.estRush ?? (p.pos === 'QB' ? p.est : 0) : stat === 'REC' ? p.estRec ?? 0 : p.est ?? 0); return stat === 'TD' ? y.ladder[0][1] - x.ladder[0][1] : e(y.p) - e(x.p) })
-  }, [wk, game, stat, q])
+  }, [wk, scope.map((g) => g.gameId).join(), stat, q])
   if (!games.length) return <div className="dp-note">Every game this week has kicked off. Picks for next week open when its slate posts.</div>
+  if (!scope.length) return <div className="dp-note">The game(s) picked in the matchup cards have kicked off. Clear the pick (All games) to see the rest of the week.</div>
   if (!wk.lines) return <div className="dp-note">This week's lines aren't priced yet.</div>
   const keyOf = (p) => `${p.id}|${stat}`
   const lineOf = (r) => { const want = lines[keyOf(r.p)]; return r.ladder.some(([T]) => T === want) ? want : OWN(r.ladder) }
@@ -49,15 +55,12 @@ function Board({ wk, slip }) {
   return (
     <>
       <div className="dp-controls">
-        <select value={game.gameId} onChange={(e) => setGame(e.target.value)} aria-label="Game">
-          {games.map((g) => <option key={g.gameId} value={g.gameId}>{g.away} @ {g.home} · {kickLabel(g.kickoff)}</option>)}
-        </select>
         <div className="dp-stats">{STATS.map(([k, l]) => <button key={k} type="button" className={`pill-btn ${stat === k ? 'active' : ''}`} onClick={() => setStat(k)}>{STAT_SHORT[k]}</button>)}</div>
         <input type="search" placeholder="Find a player" value={q} onChange={(e) => setQ(e.target.value)} />
       </div>
       <div className="dp-card dp-board">
-        {rows.length === 0 && <div className="dp-muted dp-small">No priced {STAT_LABEL[stat].toLowerCase()} lines in this game{q ? ' for that name' : ''}.</div>}
-        {rows.map((r) => {
+        {rows.length === 0 && <div className="dp-muted dp-small">No priced {STAT_LABEL[stat].toLowerCase()} lines in {scope.length === 1 ? 'this game' : 'these games'}{q ? ' for that name' : ''}.</div>}
+        {rows.slice(0, shown).map((r) => {
           const T = lineOf(r)
           const [, ch, hits] = r.ladder.find(([x]) => x === T)
           const n = stat === 'TD' ? r.p.nTd ?? r.p.n : r.p.n
@@ -69,7 +72,7 @@ function Board({ wk, slip }) {
           return (
             <div key={r.p.id} className="dp-row">
               <PlayerAvatar playerId={r.p.id} name={r.p.name} />
-              <div className="dp-who"><b>{r.p.name}</b><span className="dp-muted dp-small">{r.p.team} {r.p.pos}{r.p.pos === 'QB' && stat === 'TD' ? ' · rushing / receiving TD (grade model)' : ` · cleared ${hits}/${n} last ${n}`}</span></div>
+              <div className="dp-who"><b>{r.p.name}</b><span className="dp-muted dp-small">{r.p.team} {opp[r.p.team]} · {r.p.pos}{r.p.pos === 'QB' && stat === 'TD' ? ' · rushing / receiving TD (grade model)' : ` · cleared ${hits}/${n} last ${n}`}</span></div>
               <div className="dp-step">
                 <button type="button" aria-label="Lower the line" disabled={i <= 0} onClick={() => step(r, -1)}>−</button>
                 <b>{stat === 'TD' ? (T === 1 ? 'TD' : `${T}+`) : `${T}+`}</b>
@@ -81,6 +84,7 @@ function Board({ wk, slip }) {
             </div>
           )
         })}
+        {rows.length > shown && <button type="button" className="pill-btn" onClick={() => setShown(shown + 40)}>Show {Math.min(40, rows.length - shown)} more of {rows.length - shown}</button>}
       </div>
       <div className="dp-muted dp-small">Lines and chances are the Risk Slider's (each player's ladder, calibrated with his own recent hit rate). Tap any player elsewhere in the app for the same lines in his slideout.</div>
     </>
