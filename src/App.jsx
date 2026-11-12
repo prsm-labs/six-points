@@ -121,7 +121,7 @@ function TrackRecord() {
   return (
     <div>
       {rec?.lists?.length ? <RecordSummary lists={rec.lists} liveSince={rec.liveSince} markers={rec.markers} modelCheck={rec.modelCheck}
-        fmtDay={rec.fmtDay} ranges={RANGES_WEEKS}>{full}</RecordSummary> : full}
+        fmtDay={rec.fmtDay} ranges={RANGES_WEEKS} xLabel="Week">{full}</RecordSummary> : full}
     </div>
   )
 }
