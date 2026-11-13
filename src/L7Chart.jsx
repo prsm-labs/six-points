@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { PickLine, rolling, TrendKey, TrendProj, TrendSeg } from './Trend.jsx'
+import StatGrid from './StatGrid.jsx'
 
 // Per PROMPT_SixPoints_PlayerTeamSlideouts.md §4: pill-toggle row switches the active stat
 // category, 7 bars scaled to that category's
@@ -67,73 +66,25 @@ function hitRateClass(pct) {
   return 'hit-rate-low'
 }
 
-// trend (2026-11-07): last-5 rolling average through the bars; proj = { category: this week's projection } (dashed line).
-// PlayerSlideout passes them on the Last 7 view only.
-// pick (2026-11-13, user): { cat, line, unit } from the Hit rates card -- that category moves first, switches on and uses the picked line
+// 2026-11-13 (user: CourtIQ's layout -- one small chart per prop, not one chart with buttons): every category for his position
+// gets its own chart (StatGrid.jsx, same file as Slap Shot); the stat picked in the Hit rates card comes first on the picked
+// line, else initialCategory. trend: last-5 average through the bars; proj = { category: this week's projection } (dashed).
+// pick = { cat, line } from the Hit rates card.
+const NAMES = { any_td: 'TDs', pass_yards: 'Pass yards', pass_td: 'Pass TDs', rush_yards: 'Rush yards', receptions: 'Catches', rec_yards: 'Rec yards',
+  scrim_yards: 'Scrim yards', def_tkl: 'Tackles', def_sk: 'Sacks', def_qbh: 'QB hits', def_tfl: 'TFL', def_pd: 'Passes def.', def_int: 'INTs' }
 export default function L7Chart({ gameLog, position, initialCategory, trend = false, proj = null, pick = null }) {
-  const availableCategories = Object.entries(CATEGORIES).filter(([, c]) =>
-    c.positions.includes(position)
-  )
-  const pc = pick && availableCategories.some(([k]) => k === pick.cat) ? pick.cat : null
-  const [category, setCategory] = useState(pc || initialCategory || availableCategories[0]?.[0])
-  useEffect(() => { if (pc) setCategory(pc) }, [pc, pick?.line])
-  const shown = pc ? [availableCategories.find(([k]) => k === pc), ...availableCategories.filter(([k]) => k !== pc)] : availableCategories
-
   const games = gameLog.slice(-7)
   if (games.length === 0) {
     return <p className="empty-state">No games logged yet this season.</p>
   }
-
-  const cat = CATEGORIES[category]
-  const mine = pc != null && category === pc
-  const th = mine ? pick.line : cat.threshold
-  const values = games.map(cat.getValue)
-  const max = Math.max(...values, th)
-  const hits = values.filter((v) => v >= th).length
-  const pct = Math.round((hits / games.length) * 100)
-  const pj = trend && proj?.[category] != null ? proj[category] : null
-  const top = Math.max(max, pj || 0) // bars and lines share one scale
-  const tr = trend ? rolling(gameLog.map(cat.getValue), gameLog.map((g) => g.today)).slice(-games.length).map((v) => (v == null ? null : (v / top) * 100)) : []
-
+  let charts = Object.entries(CATEGORIES).filter(([, c]) => c.positions.includes(position))
+    .map(([k, c]) => ({ k, label: NAMES[k] || c.label, get: (g) => c.getValue(g) ?? 0, line: c.threshold, proj: proj?.[k] ?? null }))
+  const first = pick && charts.find((c) => c.k === pick.cat) ? pick.cat : initialCategory
+  const pc = charts.find((c) => c.k === first)
+  if (pc) charts = [pick && pick.cat === pc.k ? { ...pc, line: pick.line, mine: true } : pc, ...charts.filter((c) => c !== pc)]
   return (
-    <div className={`l7-chart ${mine ? 'chart-mine' : ''}`}>
-      <div className="sub-tabs l7-pills">
-        {shown.map(([key, c]) => (
-          <button key={key} className={category === key ? 'active' : ''} onClick={() => setCategory(key)}>
-            {key === pc ? `🎯 ${pick.line}+ ${pick.unit}` : c.label}
-          </button>
-        ))}
-      </div>
-      <div className={`l7-hit-rate ${hitRateClass(pct)}`}>
-        {hits} of {games.length} &middot; {pct}%
-      </div>
-      <div className="l7-bars">
-        {games.map((g, i) => {
-          const value = cat.getValue(g)
-          const isHit = value >= th
-          const heightPct = Math.max(4, Math.round((value / top) * 100))
-          return (
-            <div className={`l7-bar-col ${g.today ? 'l7-today' : ''} ${g.live ? 'l7-live' : ''}`} key={i} title={`${value} (${g.home_or_away === '@' ? '@' : 'vs'} ${g.opponent}, Wk ${g.week}${g.season ? ` ${g.season}` : ''}${g.today ? (g.live ? ', live' : ', this week') : ''})`}>
-              <div className="l7-bar-track" style={{ position: 'relative' }}>
-                <TrendSeg y={tr[i]} next={tr[i + 1]} gap={6} title={tr[i] != null ? `Last-5 average: ${((tr[i] / 100) * top).toFixed(1)}` : undefined} />
-                <PickLine y={mine ? (th / top) * 100 : null} gap={6} title={mine ? `Your hit-rate line: ${th}+` : undefined} />
-                <TrendProj y={pj != null ? (pj / top) * 100 : null} gap={6} title={pj != null ? `This week's projection: ${pj.toFixed(1)}` : undefined} />
-                <div
-                  className={`l7-bar ${isHit ? 'l7-bar-hit' : 'l7-bar-miss'}`}
-                  style={{ height: `${heightPct}%` }}
-                />
-              </div>
-              <div className="l7-bar-value">{value}</div>
-              <div className="l7-bar-label">
-                {g.today && g.live ? 'LIVE' : <>{g.home_or_away}{g.opponent}</>}
-              </div>
-              {!g.today && barDate(g) && <div className="l7-bar-sub">{barDate(g)}</div>}
-              <div className="l7-bar-sub">{secondaryStat(category, g)}</div>
-            </div>
-          )
-        })}
-      </div>
-      {(trend || mine) && <TrendKey proj={trend && pj != null} projLabel="this week's projection" pick={mine ? 'your hit-rate line' : null} />}
-    </div>
+    <StatGrid charts={charts} games={games} all={gameLog} trend={trend} projLabel="this week's projection"
+      labels={(g) => [g.today ? (g.live ? 'LIVE' : 'This wk') : barDate(g), `${g.home_or_away === '@' ? '@' : 'vs'}${g.opponent}`]}
+      sub={(k, g) => (g.today && g.live ? null : secondaryStat(k, g))} />
   )
 }
