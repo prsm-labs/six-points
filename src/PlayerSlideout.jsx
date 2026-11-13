@@ -47,6 +47,8 @@ const HR = {
   TD: { k: 'TD', label: 'TD', unit: 'TD', step: 1, min: 1, def: 1 },
 }
 const HR_BY_POS = { QB: ['PYDS', 'RYDS'], RB: ['RYDS', 'SCRIM', 'RECYDS', 'REC', 'TD'], WR: ['RECYDS', 'REC', 'TD'], TE: ['RECYDS', 'REC', 'TD'] }
+// 2026-11-13 (user): Hit rates stat -> chart category
+const HR_CAT = { PYDS: 'pass_yards', RYDS: 'rush_yards', RECYDS: 'rec_yards', SCRIM: 'scrim_yards', REC: 'receptions', TD: 'any_td' }
 const HR_REST = [{ label: 'Short week', test: (r) => r <= 4 }, { label: 'Normal week', test: (r) => r >= 5 && r <= 8 }, { label: 'Off a bye', test: (r) => r >= 9 }]
 
 // 2026-10-20 live slideout: this week's line while his game is on (25 s refresh) and after it ends, next to the
@@ -218,6 +220,7 @@ export default function PlayerSlideout() {
   const [routeProfiles, setRouteProfiles] = useState(null)
   const [weekRow, setWeekRow] = useState(null)
   const [chartMode, setChartMode] = useState('l7')
+  const [hrPick, setHrPick] = useState(null) // 2026-11-13 Hit rates stat + line -> chart
   const h2hData = useH2H()
   // 2026-10-26 (user): defenders open their own body (DefenseSlideout.jsx) instead of an empty offensive one
   const defData = useDefense()
@@ -364,10 +367,35 @@ export default function PlayerSlideout() {
                   <h3>Hit rates</h3>
                   <HitRateCard games={hit.games} ready={hit.ready} stats={HR_BY_POS[position].map((k) => HR[k])} opp={weekRow?.opponent || player.opponent}
                     rest={HR_REST} played={{ label: 'Snaps', unit: '% snaps', round: (m) => Math.round(m / 5) * 5 }}
-                    seasonLabels={['This season', '2025']} tierLabels={['🟢 Soft (10 softest)', 'Average', '🔴 Stingy (10 stingiest)']} />
+                    seasonLabels={['This season', '2025']} tierLabels={['🟢 Soft (10 softest)', 'Average', '🔴 Stingy (10 stingiest)']} onPick={setHrPick} />
                 </div>
               )}
               <CoinLadder playerId={player.player_id} />
+              <div className="slideout-section">
+                {onoffData?.team === onoffTeam && <OnOffPicker d={onoffData} playerId={player.player_id} position={position} sel={sel} setSel={setSel} how={how} setHow={setHow} />}
+                <h3>{oo.match ? `${how === 'with' ? 'With' : 'Without'} teammates` : chartGames ? (chartMode === 'h2h' ? `H2H vs ${weekRow.opponent}` : `${vLabel} games`) : 'Last 7 Games'}</h3>
+                {!oo.match && (h2h || venue) && (
+                  <div className="pill-row" style={{ marginBottom: 6 }}>
+                    <button className={`pill-btn ${!chartGames ? 'active' : ''}`} onClick={() => setChartMode('l7')}>Last 7</button>
+                    {h2h && <button className={`pill-btn ${chartMode === 'h2h' && chartGames ? 'active' : ''}`} onClick={() => setChartMode('h2h')}>🆚 H2H vs {weekRow.opponent} ({h2h.n})</button>}
+                    {venue && <button className={`pill-btn ${chartMode === 'venue' && chartGames ? 'active' : ''}`} onClick={() => setChartMode('venue')}>{vLabel} (this week)</button>}
+                  </div>
+                )}
+                {oo.match && !oo.match.length && <p className="meta-line small">No games match that pick.</p>}
+                {chartGames && !oo.match && <p className="meta-line small">{chartMode === 'h2h' ? `Last ${chartGames.length} of ${h2h.n} games vs ${weekRow.opponent} since 2022` : `Last ${chartGames.length} of his ${venue.n} ${venue.side === 'home' ? 'home' : 'road'} games, last season + this`} (oldest → newest). Context only.</p>}
+                <L7Chart
+                  key={oo.match ? `onoff-${how}-${sel.join('-')}` : chartGames ? chartMode : 'l7'}
+                  gameLog={chartGames || (thisWeek?.started && thisWeek.line
+                    ? [...gameLog.filter((g) => g.week !== thisWeek.game.week), { ...thisWeek.line, week: thisWeek.game.week, opponent: thisWeek.game.home_team === (weekRow?.team || player.team) ? thisWeek.game.away_team : thisWeek.game.home_team, home_or_away: thisWeek.game.home_team === (weekRow?.team || player.team) ? 'vs' : '@', today: true, live: thisWeek.live }]
+                    : gameLog)}
+                  position={position}
+                  initialCategory={defaultCategory(position, recentTargets)}
+                  trend={!chartGames && !oo.match}
+                  proj={{ scrim_yards: weekRow?.est_yards }}
+                  pick={hrPick && HR_CAT[hrPick.k] ? { cat: HR_CAT[hrPick.k], line: hrPick.line, unit: hrPick.unit } : null}
+                />
+              </div>
+
               <div className="slideout-section">
                 <h3>{player.season ? `${player.season} Season` : 'Season to date'}</h3>
                 <div className="stat-grid">
@@ -417,30 +445,6 @@ export default function PlayerSlideout() {
                 profile={routeProfiles?.players?.[player.player_id]}
                 position={position}
               />
-
-              <div className="slideout-section">
-                {onoffData?.team === onoffTeam && <OnOffPicker d={onoffData} playerId={player.player_id} position={position} sel={sel} setSel={setSel} how={how} setHow={setHow} />}
-                <h3>{oo.match ? `${how === 'with' ? 'With' : 'Without'} teammates` : chartGames ? (chartMode === 'h2h' ? `H2H vs ${weekRow.opponent}` : `${vLabel} games`) : 'Last 7 Games'}</h3>
-                {!oo.match && (h2h || venue) && (
-                  <div className="pill-row" style={{ marginBottom: 6 }}>
-                    <button className={`pill-btn ${!chartGames ? 'active' : ''}`} onClick={() => setChartMode('l7')}>Last 7</button>
-                    {h2h && <button className={`pill-btn ${chartMode === 'h2h' && chartGames ? 'active' : ''}`} onClick={() => setChartMode('h2h')}>🆚 H2H vs {weekRow.opponent} ({h2h.n})</button>}
-                    {venue && <button className={`pill-btn ${chartMode === 'venue' && chartGames ? 'active' : ''}`} onClick={() => setChartMode('venue')}>{vLabel} (this week)</button>}
-                  </div>
-                )}
-                {oo.match && !oo.match.length && <p className="meta-line small">No games match that pick.</p>}
-                {chartGames && !oo.match && <p className="meta-line small">{chartMode === 'h2h' ? `Last ${chartGames.length} of ${h2h.n} games vs ${weekRow.opponent} since 2022` : `Last ${chartGames.length} of his ${venue.n} ${venue.side === 'home' ? 'home' : 'road'} games, last season + this`} (oldest → newest). Context only.</p>}
-                <L7Chart
-                  key={oo.match ? `onoff-${how}-${sel.join('-')}` : chartGames ? chartMode : 'l7'}
-                  gameLog={chartGames || (thisWeek?.started && thisWeek.line
-                    ? [...gameLog.filter((g) => g.week !== thisWeek.game.week), { ...thisWeek.line, week: thisWeek.game.week, opponent: thisWeek.game.home_team === (weekRow?.team || player.team) ? thisWeek.game.away_team : thisWeek.game.home_team, home_or_away: thisWeek.game.home_team === (weekRow?.team || player.team) ? 'vs' : '@', today: true, live: thisWeek.live }]
-                    : gameLog)}
-                  position={position}
-                  initialCategory={defaultCategory(position, recentTargets)}
-                  trend={!chartGames && !oo.match}
-                  proj={{ scrim_yards: weekRow?.est_yards }}
-                />
-              </div>
 
               <div className="slideout-section">
                 <h3>Recent Game Log</h3>

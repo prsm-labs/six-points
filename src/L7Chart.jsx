@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { rolling, TrendKey, TrendProj, TrendSeg } from './Trend.jsx'
+import { useEffect, useState } from 'react'
+import { PickLine, rolling, TrendKey, TrendProj, TrendSeg } from './Trend.jsx'
 
 // Per PROMPT_SixPoints_PlayerTeamSlideouts.md §4: pill-toggle row switches the active stat
 // category, 7 bars scaled to that category's
@@ -69,11 +69,15 @@ function hitRateClass(pct) {
 
 // trend (2026-11-07): last-5 rolling average through the bars; proj = { category: this week's projection } (dashed line).
 // PlayerSlideout passes them on the Last 7 view only.
-export default function L7Chart({ gameLog, position, initialCategory, trend = false, proj = null }) {
+// pick (2026-11-13, user): { cat, line, unit } from the Hit rates card -- that category moves first, switches on and uses the picked line
+export default function L7Chart({ gameLog, position, initialCategory, trend = false, proj = null, pick = null }) {
   const availableCategories = Object.entries(CATEGORIES).filter(([, c]) =>
     c.positions.includes(position)
   )
-  const [category, setCategory] = useState(initialCategory || availableCategories[0]?.[0])
+  const pc = pick && availableCategories.some(([k]) => k === pick.cat) ? pick.cat : null
+  const [category, setCategory] = useState(pc || initialCategory || availableCategories[0]?.[0])
+  useEffect(() => { if (pc) setCategory(pc) }, [pc, pick?.line])
+  const shown = pc ? [availableCategories.find(([k]) => k === pc), ...availableCategories.filter(([k]) => k !== pc)] : availableCategories
 
   const games = gameLog.slice(-7)
   if (games.length === 0) {
@@ -81,20 +85,22 @@ export default function L7Chart({ gameLog, position, initialCategory, trend = fa
   }
 
   const cat = CATEGORIES[category]
+  const mine = pc != null && category === pc
+  const th = mine ? pick.line : cat.threshold
   const values = games.map(cat.getValue)
-  const max = Math.max(...values, cat.threshold)
-  const hits = values.filter((v) => v >= cat.threshold).length
+  const max = Math.max(...values, th)
+  const hits = values.filter((v) => v >= th).length
   const pct = Math.round((hits / games.length) * 100)
   const pj = trend && proj?.[category] != null ? proj[category] : null
   const top = Math.max(max, pj || 0) // bars and lines share one scale
   const tr = trend ? rolling(gameLog.map(cat.getValue), gameLog.map((g) => g.today)).slice(-games.length).map((v) => (v == null ? null : (v / top) * 100)) : []
 
   return (
-    <div className="l7-chart">
+    <div className={`l7-chart ${mine ? 'chart-mine' : ''}`}>
       <div className="sub-tabs l7-pills">
-        {availableCategories.map(([key, c]) => (
+        {shown.map(([key, c]) => (
           <button key={key} className={category === key ? 'active' : ''} onClick={() => setCategory(key)}>
-            {c.label}
+            {key === pc ? `🎯 ${pick.line}+ ${pick.unit}` : c.label}
           </button>
         ))}
       </div>
@@ -104,12 +110,13 @@ export default function L7Chart({ gameLog, position, initialCategory, trend = fa
       <div className="l7-bars">
         {games.map((g, i) => {
           const value = cat.getValue(g)
-          const isHit = value >= cat.threshold
+          const isHit = value >= th
           const heightPct = Math.max(4, Math.round((value / top) * 100))
           return (
             <div className={`l7-bar-col ${g.today ? 'l7-today' : ''} ${g.live ? 'l7-live' : ''}`} key={i} title={`${value} (${g.home_or_away === '@' ? '@' : 'vs'} ${g.opponent}, Wk ${g.week}${g.season ? ` ${g.season}` : ''}${g.today ? (g.live ? ', live' : ', this week') : ''})`}>
               <div className="l7-bar-track" style={{ position: 'relative' }}>
                 <TrendSeg y={tr[i]} next={tr[i + 1]} gap={6} title={tr[i] != null ? `Last-5 average: ${((tr[i] / 100) * top).toFixed(1)}` : undefined} />
+                <PickLine y={mine ? (th / top) * 100 : null} gap={6} title={mine ? `Your hit-rate line: ${th}+` : undefined} />
                 <TrendProj y={pj != null ? (pj / top) * 100 : null} gap={6} title={pj != null ? `This week's projection: ${pj.toFixed(1)}` : undefined} />
                 <div
                   className={`l7-bar ${isHit ? 'l7-bar-hit' : 'l7-bar-miss'}`}
@@ -126,7 +133,7 @@ export default function L7Chart({ gameLog, position, initialCategory, trend = fa
           )
         })}
       </div>
-      {trend && <TrendKey proj={pj != null} projLabel="this week's projection" />}
+      {(trend || mine) && <TrendKey proj={trend && pj != null} projLabel="this week's projection" pick={mine ? 'your hit-rate line' : null} />}
     </div>
   )
 }
