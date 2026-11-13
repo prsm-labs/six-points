@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T00:06+00:00",
+ "generated_at": "2026-11-13T12:02+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1408,16 +1408,16 @@
    "picks": [],
    "nextGame": {
     "teams": [
-     "NYG",
-     "WAS"
+     "DET",
+     "NE"
     ],
-    "kickoff": "2026-11-12T20:15:00-05:00",
-    "label": "WAS @ NYG",
+    "kickoff": "2026-11-15T09:30:00-05:00",
+    "label": "NE @ DET",
     "closest": {
-     "name": "Rachaad White",
-     "team": "WAS",
-     "label": "50+ scrimmage yards",
-     "chance": 0.5111
+     "name": "Eli Raridon",
+     "team": "NE",
+     "label": "25+ scrimmage yards",
+     "chance": 0.4832
     }
    },
    "tiers": {
@@ -1626,7 +1626,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-12T19:06-05:00"
+   "updated_at": "2026-11-13T07:02-05:00"
   }
  ]
 }

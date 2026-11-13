@@ -8568,6 +8568,27 @@
     ],
     "10": [
       {
+        "team": "DET",
+        "name": "D.J. Reed",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Hip"
+      },
+      {
+        "team": "DET",
+        "name": "Cade Mays",
+        "position": "C",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DET",
+        "name": "Kerby Joseph",
+        "position": "S",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
         "team": "NE",
         "name": "Carlton Davis III",
         "position": "CB",
