@@ -22,7 +22,7 @@ import { useSort, SortTh } from './useSort.jsx'
 import { PlayerAvatar } from './PlayerDirectory.jsx'
 import PlayerSlideout from './PlayerSlideout.jsx'
 import TeamSlideout from './TeamSlideout.jsx'
-import OddsCalculator from './OddsCalculator.jsx'
+import OddsCalc from './OddsCalc.jsx' // 2026-11-13: shared calculator (Going Yard's math); OddsCalculator.jsx left on disk
 import { openPlayerSlide, openTeamSlide } from './slideouts.js'
 import ScoutingHub from './ScoutingHub.jsx'
 import CheatSheetsTab from './CheatSheetsTab.jsx'
@@ -364,7 +364,6 @@ export default function App() {
   useEffect(() => { if (tabReq) setTab(tabReq.tab) }, [tabReq])
   useCoinSettler() // 🪙 Degen Picks: settles open picks from the graded line files
   const slip = useSlip()
-  const [showOddsCalc, setShowOddsCalc] = useState(false)
   const Active = (TABS.find((t) => t.key === tab) || TABS[0]).Component
   // 🏁 the page remounts (and re-reads the slate) when the hidden set changes
   const { selectedMatchup: pickedGame } = useMatchup()
@@ -382,14 +381,8 @@ export default function App() {
         <div className="header-row">
           {/* 2026-10-23 new logo (six laces): dark tile, accent tile in light mode */}<picture><source media="(prefers-color-scheme: light)" srcSet="/logo-accent.svg" /><img src="/logo-dark.svg" alt="Six Points" className="logo" /></picture>
           <h1 title="NFL touchdown intelligence, weekly cadence, real backtests only.">Six Points</h1>
-          <button
-            className="odds-calc-toggle"
-            onClick={() => setShowOddsCalc(true)}
-            title="Odds Calculator"
-            aria-label="Open Odds Calculator"
-          >
-            🧮
-          </button>
+          {/* 2026-11-13 (user): 🧮 odds calculator + bankroll basics, Going Yard's math */}
+          <OddsCalc />
           <AlertBell />
           {/* 2026-10-25 (user): app refresh button -- reloads the page with fresh data */}
           <AppRefresh />
@@ -422,25 +415,6 @@ export default function App() {
       <TeamSlideout />
       {/* 2026-11-09: the Degen Picks slip follows you while you research (filled from the player slideout's 🪙 section) */}
       {slip.length > 0 && tab !== 'coins' && <button type="button" className="dp-float" onClick={() => setTab('coins')}>🧾 Slip · {slip.length}</button>}
-      {showOddsCalc && (
-        <>
-          <div className="slideout-backdrop" onClick={() => setShowOddsCalc(false)} />
-          <div className="slideout-panel">
-            <div className="slideout-header">
-              <div className="slideout-header-info">
-                <h2>🧮 Odds Calculator</h2>
-                <div className="sub">Sport-agnostic American-odds math -- Manual, Parlay, Round Robin</div>
-              </div>
-              <button className="slideout-close" onClick={() => setShowOddsCalc(false)} aria-label="Close">
-                &times;
-              </button>
-            </div>
-            <div className="slideout-body">
-              <OddsCalculator />
-            </div>
-          </div>
-        </>
-      )}
     </div>
   )
 }
