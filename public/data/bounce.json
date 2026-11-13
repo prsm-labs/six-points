@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T20:07+00:00",
+ "generated_at": "2026-11-13T00:06+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -830,8 +830,8 @@
      "pos": "RB",
      "depth": "RB3",
      "line": 30.7,
-     "est": 54.0,
-     "z": 3.18,
+     "est": 48.5,
+     "z": 2.56,
      "games": [
       32,
       16,
@@ -846,11 +846,11 @@
       68
      ],
      "why": [
-      "role up: +21 yds (teammates out / snaps)",
+      "role up: +15 yds (teammates out / snaps)",
       "31 a game lately vs 30 on the season"
      ],
-     "track": 0.774,
-     "trackN": 372
+     "track": 0.659,
+     "trackN": 713
     },
     {
      "player_id": "00-0039065",
@@ -949,7 +949,7 @@
      "trackN": 713
     }
    ],
-   "updated_at": "2026-11-12T15:07-05:00"
+   "updated_at": "2026-11-12T19:06-05:00"
   }
  ]
 }

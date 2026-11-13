@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T20:07+00:00",
+ "generated_at": "2026-11-13T00:07+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 9,
@@ -2509,7 +2509,7 @@
      "n": 8,
      "own": 0.125,
      "lift": 0.1525,
-     "est": 49.5,
+     "est": 49.4,
      "recent": [
       [
        "2026-09-20",
@@ -2662,57 +2662,55 @@
      "result": null
     },
     {
-     "player_id": "00-0040142",
-     "name": "Kaleb Johnson",
-     "team": "GB",
-     "opp": "MIN",
-     "pos": "RB",
-     "chance": 0.2669,
+     "player_id": "00-0039894",
+     "name": "Xavier Worthy",
+     "team": "KC",
+     "opp": "ATL",
+     "pos": "WR",
+     "chance": 0.2628,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.1419,
-     "est": 54.0,
+     "lift": 0.1378,
+     "est": 39.3,
      "recent": [
       [
-       "2025",
-       "",
-       0
-      ],
-      [
        "2026-09-20",
-       "NYJ",
-       0
+       "IND",
+       1
       ],
       [
-       "2026-09-24",
-       "ATL",
+       "2026-09-27",
+       "MIA",
        0
       ],
       [
        "2026-10-04",
-       "TB",
-       0
-      ],
-      [
-       "2026-10-11",
-       "CHI",
+       "LV",
        0
       ],
       [
        "2026-10-18",
-       "DAL",
+       "LAC",
+       0
+      ],
+      [
+       "2026-10-25",
+       "SEA",
+       0
+      ],
+      [
+       "2026-11-01",
+       "DEN",
        0
       ],
       [
        "2026-11-08",
-       "NE",
-       1
+       "NYJ",
+       0
       ]
      ],
      "why": [
-      "+8.0 touches a game from teammates who are out",
-      "touches up: 7.7 lately vs 5.6",
       "scored in 1 of his last 8 games"
      ],
      "result": null
@@ -2826,7 +2824,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-12T15:07-05:00"
+   "updated_at": "2026-11-12T19:07-05:00"
   }
  ]
 }

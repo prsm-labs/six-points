@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-12T20:07+00:00",
+ "generated_at": "2026-11-13T00:06+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1405,27 +1405,7 @@
   {
    "week": 10,
    "source": "live",
-   "picks": [
-    {
-     "player_id": "00-0040142",
-     "name": "Kaleb Johnson",
-     "team": "GB",
-     "opp": "MIN",
-     "pos": "RB",
-     "line": 25,
-     "label": "25+ scrimmage yards",
-     "chance": 0.7831,
-     "est": 54.0,
-     "last": [
-      8,
-      4
-     ],
-     "depth": "RB3",
-     "game": "GB-MIN",
-     "track": 0.694,
-     "trackN": 44
-    }
-   ],
+   "picks": [],
    "nextGame": {
     "teams": [
      "NYG",
@@ -1434,10 +1414,10 @@
     "kickoff": "2026-11-12T20:15:00-05:00",
     "label": "WAS @ NYG",
     "closest": {
-     "name": "Devin Singletary",
-     "team": "NYG",
-     "label": "40+ scrimmage yards",
-     "chance": 0.5652
+     "name": "Rachaad White",
+     "team": "WAS",
+     "label": "50+ scrimmage yards",
+     "chance": 0.5111
     }
    },
    "tiers": {
@@ -1463,26 +1443,6 @@
       "trackN": 90
      },
      {
-      "player_id": "00-0035250",
-      "name": "Devin Singletary",
-      "team": "NYG",
-      "opp": "WAS",
-      "pos": "RB",
-      "est": 54.9,
-      "depth": "RB2",
-      "game": "NYG-WAS",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
-      "chance": 0.4258,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.46,
-      "trackN": 99
-     },
-     {
       "player_id": "00-0036997",
       "name": "Javonte Williams",
       "team": "DAL",
@@ -1494,6 +1454,26 @@
       "stat": "YDS",
       "line": 105,
       "label": "105+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.455,
+      "trackN": 99
+     },
+     {
+      "player_id": "00-0040128",
+      "name": "Tyler Warren",
+      "team": "IND",
+      "opp": "MIA",
+      "pos": "TE",
+      "est": 53.9,
+      "depth": "TE1",
+      "game": "IND-MIA",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
       "chance": 0.4115,
       "last": [
        8,
@@ -1565,23 +1545,23 @@
       "trackN": 68
      },
      {
-      "player_id": "00-0040198",
-      "name": "Ollie Gordon II",
-      "team": "MIA",
-      "opp": "IND",
+      "player_id": "00-0039811",
+      "name": "MarShawn Lloyd",
+      "team": "GB",
+      "opp": "MIN",
       "pos": "RB",
-      "est": 77.7,
-      "depth": "RB1",
-      "game": "IND-MIA",
+      "est": 38.8,
+      "depth": "RB2",
+      "game": "GB-MIN",
       "stat": "YDS",
-      "line": 105,
-      "label": "105+ scrimmage yards",
-      "chance": 0.168,
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.1834,
       "last": [
        8,
        0
       ],
-      "track": 0.186,
+      "track": 0.193,
       "trackN": 68
      },
      {
@@ -1646,7 +1626,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-12T15:07-05:00"
+   "updated_at": "2026-11-12T19:06-05:00"
   }
  ]
 }
