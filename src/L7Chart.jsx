@@ -73,7 +73,7 @@ function hitRateClass(pct) {
 const NAMES = { any_td: 'TDs', pass_yards: 'Pass yards', pass_td: 'Pass TDs', rush_yards: 'Rush yards', receptions: 'Catches', rec_yards: 'Rec yards',
   scrim_yards: 'Scrim yards', def_tkl: 'Tackles', def_sk: 'Sacks', def_qbh: 'QB hits', def_tfl: 'TFL', def_pd: 'Passes def.', def_int: 'INTs' }
 export default function L7Chart({ gameLog, position, initialCategory, trend = false, proj = null, pick = null }) {
-  const games = gameLog.slice(-7)
+  const games = gameLog.slice(-10) // 2026-11-13 (user): last 10, like CourtIQ
   if (games.length === 0) {
     return <p className="empty-state">No games logged yet this season.</p>
   }

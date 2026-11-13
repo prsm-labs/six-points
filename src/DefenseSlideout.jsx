@@ -137,7 +137,7 @@ export default function DefenseBody({ player, entry, d, thisWeek }) {
       </div>
 
       <div className="slideout-section">
-        <h3>{live ? 'Last 7 Games (this game live)' : 'Last 7 Games'}</h3>
+        <h3>{live ? 'Last 10 Games (this game live)' : 'Last 10 Games'}</h3>
         <L7Chart key={group} gameLog={chartGames} position="DEF" initialCategory={DEFAULT_CAT[group]} />
       </div>
 

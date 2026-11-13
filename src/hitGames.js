@@ -45,6 +45,10 @@ function rowsFor(S, id, which) {
       date: d, season: which, opp, home: r[pix.ha] === 'vs', played: r[pix.snap] == null ? null : v('snap'),
       v: { PYDS: v('pyds'), RYDS: v('ryds'), RECYDS: v('recyds'), SCRIM: v('scrim'), REC: v('rec'), TD: v('td') },
       afterLoss: prev ? prev.lost : null, rest: prev ? Math.round(day(d) - day(prev.d)) - 1 : null, tier: tier[opp] || {},
+      // 2026-11-13: the same game in the slideout chart's game-log shape (last season's games fill the Last 10 charts)
+      log: { prev: which === 'prev', week: v('w'), season: S.season, game_date: d, opponent: opp, home_or_away: r[pix.ha] === 'vs' ? 'vs' : '@', snap_pct: v('snap'),
+        pass_att: v('att'), pass_yards: v('pyds'), pass_td: v('ptd'), rush_att: v('car'), rush_yards: v('ryds'), targets: v('tgt'),
+        receptions: v('rec'), rec_yards: v('recyds'), any_td: v('td') },
     }
   })
 }

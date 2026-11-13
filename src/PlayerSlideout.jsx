@@ -88,7 +88,7 @@ function ThisWeekCard({ t, m, position }) {
           {tds > 0 ? ' · ✓ scored' : ''}
         </p>
       )}
-      <p className="meta-line small">{t.live ? 'Live from ESPN — updates every 25 seconds.' : 'Final line.'} This game is the outlined last bar on the Last 7 chart.</p>
+      <p className="meta-line small">{t.live ? 'Live from ESPN — updates every 25 seconds.' : 'Final line.'} This game is the outlined last bar on the Last 10 charts.</p>
     </div>
   )
 }
@@ -270,6 +270,9 @@ export default function PlayerSlideout() {
   const vLabel = venue?.side === 'home' ? '🏠 Home' : '✈️ Road'
   const onoffTeam = weekRow?.team || player.team
   const oo = onOffGames(onoffData?.team === onoffTeam ? onoffData : null, player.player_id, sel, how)
+  // 2026-11-13 (user: last 10 in the charts, like CourtIQ): this season's log, topped up with last season's games (Hit rates data)
+  const chartLog = !gameLog || gameLog.length >= 10 ? gameLog
+    : [...(hit.games || []).filter((g) => g.season === 'prev' && g.log).map((g) => g.log).sort((a, b) => (a.game_date < b.game_date ? -1 : 1)), ...gameLog]
   const chartGames = oo.match ? oo.match : chartMode === 'h2h' && h2h ? h2h.games : chartMode === 'venue' && venue ? venue.games : null
 
   const name = player.player_name || directoryEntry?.name || defEntry?.name || ''
@@ -373,10 +376,10 @@ export default function PlayerSlideout() {
               <CoinLadder playerId={player.player_id} />
               <div className="slideout-section">
                 {onoffData?.team === onoffTeam && <OnOffPicker d={onoffData} playerId={player.player_id} position={position} sel={sel} setSel={setSel} how={how} setHow={setHow} />}
-                <h3>{oo.match ? `${how === 'with' ? 'With' : 'Without'} teammates` : chartGames ? (chartMode === 'h2h' ? `H2H vs ${weekRow.opponent}` : `${vLabel} games`) : 'Last 7 Games'}</h3>
+                <h3>{oo.match ? `${how === 'with' ? 'With' : 'Without'} teammates` : chartGames ? (chartMode === 'h2h' ? `H2H vs ${weekRow.opponent}` : `${vLabel} games`) : 'Last 10 Games'}</h3>
                 {!oo.match && (h2h || venue) && (
                   <div className="pill-row" style={{ marginBottom: 6 }}>
-                    <button className={`pill-btn ${!chartGames ? 'active' : ''}`} onClick={() => setChartMode('l7')}>Last 7</button>
+                    <button className={`pill-btn ${!chartGames ? 'active' : ''}`} onClick={() => setChartMode('l7')}>Last 10</button>
                     {h2h && <button className={`pill-btn ${chartMode === 'h2h' && chartGames ? 'active' : ''}`} onClick={() => setChartMode('h2h')}>🆚 H2H vs {weekRow.opponent} ({h2h.n})</button>}
                     {venue && <button className={`pill-btn ${chartMode === 'venue' && chartGames ? 'active' : ''}`} onClick={() => setChartMode('venue')}>{vLabel} (this week)</button>}
                   </div>
@@ -386,8 +389,8 @@ export default function PlayerSlideout() {
                 <L7Chart
                   key={oo.match ? `onoff-${how}-${sel.join('-')}` : chartGames ? chartMode : 'l7'}
                   gameLog={chartGames || (thisWeek?.started && thisWeek.line
-                    ? [...gameLog.filter((g) => g.week !== thisWeek.game.week), { ...thisWeek.line, week: thisWeek.game.week, opponent: thisWeek.game.home_team === (weekRow?.team || player.team) ? thisWeek.game.away_team : thisWeek.game.home_team, home_or_away: thisWeek.game.home_team === (weekRow?.team || player.team) ? 'vs' : '@', today: true, live: thisWeek.live }]
-                    : gameLog)}
+                    ? [...chartLog.filter((g) => g.prev || g.week !== thisWeek.game.week), { ...thisWeek.line, week: thisWeek.game.week, opponent: thisWeek.game.home_team === (weekRow?.team || player.team) ? thisWeek.game.away_team : thisWeek.game.home_team, home_or_away: thisWeek.game.home_team === (weekRow?.team || player.team) ? 'vs' : '@', today: true, live: thisWeek.live }]
+                    : chartLog)}
                   position={position}
                   initialCategory={defaultCategory(position, recentTargets)}
                   trend={!chartGames && !oo.match}
