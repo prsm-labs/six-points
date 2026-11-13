@@ -302,6 +302,18 @@ export default function PlayerSlideout() {
                 {' '}<BreakoutBadge m={weekRow} /> <HotHandTag m={weekRow} /> <LiveStatusTag m={weekRow} />
               </div>
             )}
+            {!isDef && (weekRow || player.player_id) && (
+              <div style={{ margin: '4px 0' }}><PickButton player={weekRow || player} /></div>
+            )}
+          </div>
+          <button className="slideout-close" onClick={closePlayerSlide} aria-label="Close">
+            &times;
+          </button>
+        </div>
+
+        <div className="slideout-body">
+          {/* 2026-11-13 (user: CourtIQ's slideout flow): role notes, H2H / home-road and the ESPN link sit at the top of the body */}
+          <div className="slideout-notes">
             {/* 2026-10-22 early-season role check (nfl_project/build_role_check.py) */}
             {weekRow?.roleFlag === 'backup' && <div className="sub slideout-grade" title="Kept out of Top Picks and PRISM Picks">🪑? ESPN's depth chart has him {weekRow.depth_label}, below the role his usage projects, with {weekRow.teamGp} game{weekRow.teamGp === 1 ? '' : 's'} for {weekRow.team} — treat this week's numbers as an upper bound.</div>}
             {weekRow?.starterBack && <div className="sub slideout-grade" title="Kept out of Top Picks and PRISM Picks">🔙 {weekRow.starterBack.name} is back{weekRow.starterBack.q ? ' (Questionable)' : ''} after missing {weekRow.starterBack.out} game{weekRow.starterBack.out === 1 ? '' : 's'}. {weekRow.player_name} averaged {weekRow.starterBack.tch_out} touches a game while he was out{weekRow.starterBack.tch_with != null ? ` vs ${weekRow.starterBack.tch_with} with him` : ''} — proceed with caution. In 2023-25, backup RBs in this spot cleared 25 yards 71% of the time vs 90% for other RBs with the same projection.</div>}
@@ -316,21 +328,12 @@ export default function PlayerSlideout() {
                 </Fold>
               </div>
             )}
-            {!isDef && (weekRow || player.player_id) && (
-              <div style={{ margin: '4px 0' }}><PickButton player={weekRow || player} /></div>
-            )}
             {statsUrl && (
               <a href={statsUrl} target="_blank" rel="noopener noreferrer" className="external-link">
                 View on ESPN &rarr;
               </a>
             )}
           </div>
-          <button className="slideout-close" onClick={closePlayerSlide} aria-label="Close">
-            &times;
-          </button>
-        </div>
-
-        <div className="slideout-body">
           {!gameLog ? (
             <p className="empty-state">Loading...</p>
           ) : isDef ? (
