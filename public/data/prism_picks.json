@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T16:02+00:00",
+ "generated_at": "2026-11-13T20:06+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1468,7 +1468,7 @@
       "team": "IND",
       "opp": "MIA",
       "pos": "TE",
-      "est": 53.9,
+      "est": 55.4,
       "depth": "TE1",
       "game": "IND-MIA",
       "stat": "YDS",
@@ -1570,18 +1570,18 @@
       "team": "IND",
       "opp": "MIA",
       "pos": "WR",
-      "est": 29.6,
+      "est": 29.9,
       "depth": "WR1",
       "game": "IND-MIA",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.1672,
+      "chance": 0.1683,
       "last": [
        8,
        0
       ],
-      "track": 0.186,
+      "track": 0.187,
       "trackN": 68
      },
      {
@@ -1590,7 +1590,7 @@
       "team": "TEN",
       "opp": "JAX",
       "pos": "TE",
-      "est": 29.8,
+      "est": 31.7,
       "depth": "TE1",
       "game": "JAX-TEN",
       "stat": "TD",
@@ -1626,7 +1626,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-13T11:02-05:00"
+   "updated_at": "2026-11-13T15:06-05:00"
   }
  ]
 }
