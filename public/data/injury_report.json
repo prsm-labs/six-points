@@ -8590,6 +8590,20 @@
       },
       {
         "team": "NE",
+        "name": "Greg Van Roten",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "NE",
+        "name": "Kevin Byard",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Chest"
+      },
+      {
+        "team": "NE",
         "name": "Carlton Davis III",
         "position": "CB",
         "status": "Out",
@@ -8597,10 +8611,59 @@
       },
       {
         "team": "NE",
+        "name": "A.J. Brown",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "NE",
+        "name": "Reggie Gilliam",
+        "position": "FB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "NE",
+        "name": "Rhamondre Stevenson",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "NE",
+        "name": "Brenden Schooler",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "NE",
         "name": "Ben Brown",
         "position": "C",
         "status": "Out",
         "injury": "Knee"
+      },
+      {
+        "team": "NE",
+        "name": "Cameron Latu",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Back"
+      },
+      {
+        "team": "NE",
+        "name": "Charles Woods",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "NE",
+        "name": "Walter Rouse",
+        "position": "T",
+        "status": "Questionable",
+        "injury": "Concussion"
       },
       {
         "team": "NE",
