@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T20:06+00:00",
+ "generated_at": "2026-11-14T00:06+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -799,8 +799,8 @@
      "pos": "RB",
      "depth": "RB2",
      "line": 29.0,
-     "est": 62.5,
-     "z": 4.24,
+     "est": 64.1,
+     "z": 4.38,
      "games": [
       40,
       105,
@@ -947,9 +947,40 @@
      ],
      "track": 0.659,
      "trackN": 713
+    },
+    {
+     "player_id": "00-0036322",
+     "name": "Justin Jefferson",
+     "team": "MIN",
+     "opp": "GB",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 45.0,
+     "est": 61.4,
+     "z": 2.09,
+     "games": [
+      92,
+      55,
+      32,
+      68,
+      44,
+      33,
+      58
+     ],
+     "last": [
+      44,
+      33,
+      58
+     ],
+     "why": [
+      "role up: +7 yds (teammates out / snaps)",
+      "45 a game lately vs 55 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 713
     }
    ],
-   "updated_at": "2026-11-13T15:06-05:00"
+   "updated_at": "2026-11-13T19:06-05:00"
   }
  ]
 }

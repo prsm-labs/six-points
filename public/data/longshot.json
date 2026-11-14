@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T20:06+00:00",
+ "generated_at": "2026-11-14T00:07+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 10,
@@ -643,9 +643,9 @@
      "tch3": 6.5,
      "gp": 2,
      "rzSeason": 1.11,
-     "pct": 0.989,
+     "pct": 0.9886,
      "rank": 2,
-     "of": 91,
+     "of": 88,
      "result": null
     },
     {
@@ -654,14 +654,14 @@
      "team": "HOU",
      "opp": "CLE",
      "pos": "WR",
-     "chance": 0.2464,
+     "chance": 0.2698,
      "rz3": 2.0,
      "tch3": 6.5,
      "gp": 2,
      "rzSeason": 0.65,
-     "pct": 0.978,
+     "pct": 0.9773,
      "rank": 3,
-     "of": 91,
+     "of": 88,
      "result": null
     },
     {
@@ -675,9 +675,9 @@
      "tch3": 4.3,
      "gp": 3,
      "rzSeason": 0.83,
-     "pct": 0.9464,
+     "pct": 0.9455,
      "rank": 4,
-     "of": 56,
+     "of": 55,
      "result": null
     },
     {
@@ -686,30 +686,14 @@
      "team": "GB",
      "opp": "MIN",
      "pos": "TE",
-     "chance": 0.2887,
+     "chance": 0.2886,
      "rz3": 1.33,
      "tch3": 5.7,
      "gp": 3,
      "rzSeason": 1.35,
-     "pct": 0.9286,
+     "pct": 0.9273,
      "rank": 5,
-     "of": 56,
-     "result": null
-    },
-    {
-     "player_id": "00-0034827",
-     "name": "DJ Moore",
-     "team": "BUF",
-     "opp": "NYJ",
-     "pos": "WR",
-     "chance": 0.2941,
-     "rz3": 1.5,
-     "tch3": 7.0,
-     "gp": 2,
-     "rzSeason": 0.99,
-     "pct": 0.9011,
-     "rank": 10,
-     "of": 91,
+     "of": 55,
      "result": null
     },
     {
@@ -729,6 +713,22 @@
      "result": null
     },
     {
+     "player_id": "00-0034827",
+     "name": "DJ Moore",
+     "team": "BUF",
+     "opp": "NYJ",
+     "pos": "WR",
+     "chance": 0.2941,
+     "rz3": 1.5,
+     "tch3": 7.0,
+     "gp": 2,
+     "rzSeason": 0.99,
+     "pct": 0.8977,
+     "rank": 10,
+     "of": 88,
+     "result": null
+    },
+    {
      "player_id": "00-0036040",
      "name": "Juwan Johnson",
      "team": "NO",
@@ -739,9 +739,9 @@
      "tch3": 2.5,
      "gp": 2,
      "rzSeason": 0.83,
-     "pct": 0.8929,
+     "pct": 0.8909,
      "rank": 7,
-     "of": 56,
+     "of": 55,
      "result": null
     },
     {
@@ -755,13 +755,13 @@
      "tch3": 3.0,
      "gp": 2,
      "rzSeason": 0.92,
-     "pct": 0.8901,
+     "pct": 0.8864,
      "rank": 11,
-     "of": 91,
+     "of": 88,
      "result": null
     }
    ],
-   "updated_at": "2026-11-13T15:06-05:00"
+   "updated_at": "2026-11-13T19:07-05:00"
   }
  ]
 }

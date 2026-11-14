@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-13T20:06+00:00",
+ "generated_at": "2026-11-14T00:06+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1448,18 +1448,18 @@
       "team": "DAL",
       "opp": "SF",
       "pos": "RB",
-      "est": 110.2,
+      "est": 110.8,
       "depth": "RB1",
       "game": "DAL-SF",
       "stat": "YDS",
       "line": 105,
       "label": "105+ scrimmage yards",
-      "chance": 0.4115,
+      "chance": 0.4258,
       "last": [
        8,
        2
       ],
-      "track": 0.455,
+      "track": 0.46,
       "trackN": 99
      },
      {
@@ -1503,23 +1503,23 @@
       "trackN": 66
      },
      {
-      "player_id": "00-0040122",
-      "name": "Ashton Jeanty",
-      "team": "LV",
-      "opp": "SEA",
+      "player_id": "00-0040583",
+      "name": "Woody Marks",
+      "team": "HOU",
+      "opp": "CLE",
       "pos": "RB",
-      "est": 69.1,
+      "est": 78.8,
       "depth": "RB1",
-      "game": "LV-SEA",
+      "game": "CLE-HOU",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.3514,
+      "chance": 0.3768,
       "last": [
        8,
        2
       ],
-      "track": 0.411,
+      "track": 0.422,
       "trackN": 66
      }
     ],
@@ -1626,7 +1626,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-13T15:06-05:00"
+   "updated_at": "2026-11-13T19:06-05:00"
   }
  ]
 }
