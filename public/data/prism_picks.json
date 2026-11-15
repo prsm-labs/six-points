@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T12:02+00:00",
+ "generated_at": "2026-11-15T16:01+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1428,16 +1428,28 @@
    ],
    "nextGame": {
     "teams": [
-     "DET",
-     "NE"
+     "ATL",
+     "BUF",
+     "CAR",
+     "CLE",
+     "GB",
+     "HOU",
+     "IND",
+     "JAX",
+     "KC",
+     "MIA",
+     "MIN",
+     "NO",
+     "NYJ",
+     "TEN"
     ],
-    "kickoff": "2026-11-15T09:30:00-05:00",
-    "label": "NE @ DET",
+    "kickoff": "2026-11-15T13:00:00-05:00",
+    "label": "KC @ ATL",
     "closest": {
-     "name": "Eli Raridon",
-     "team": "NE",
-     "label": "25+ scrimmage yards",
-     "chance": 0.4832
+     "name": "Tyler Warren",
+     "team": "IND",
+     "label": "35+ scrimmage yards",
+     "chance": 0.7147
     }
    },
    "tiers": {
@@ -1448,7 +1460,7 @@
       "team": "ARI",
       "opp": "LA",
       "pos": "RB",
-      "est": 66.8,
+      "est": 66.7,
       "depth": "RB1",
       "game": "ARI-LA",
       "stat": "YDS",
@@ -1523,27 +1535,47 @@
       "trackN": 66
      },
      {
+      "player_id": "00-0040122",
+      "name": "Ashton Jeanty",
+      "team": "LV",
+      "opp": "SEA",
+      "pos": "RB",
+      "est": 69.1,
+      "depth": "RB1",
+      "game": "LV-SEA",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3514,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.411,
+      "trackN": 66
+     }
+    ],
+    "long": [
+     {
       "player_id": "00-0040583",
       "name": "Woody Marks",
       "team": "HOU",
       "opp": "CLE",
       "pos": "RB",
-      "est": 83.9,
+      "est": 70.7,
       "depth": "RB1",
       "game": "CLE-HOU",
-      "stat": "TD",
-      "line": 1,
-      "label": "Anytime TD",
-      "chance": 0.3779,
+      "stat": "YDS",
+      "line": 90,
+      "label": "90+ scrimmage yards",
+      "chance": 0.214,
       "last": [
        8,
-       2
+       0
       ],
-      "track": 0.422,
-      "trackN": 66
-     }
-    ],
-    "long": [
+      "track": 0.29,
+      "trackN": 144
+     },
      {
       "player_id": "00-0036555",
       "name": "Chuba Hubbard",
@@ -1556,26 +1588,6 @@
       "stat": "YDS",
       "line": 130,
       "label": "130+ scrimmage yards",
-      "chance": 0.1834,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.193,
-      "trackN": 68
-     },
-     {
-      "player_id": "00-0039811",
-      "name": "MarShawn Lloyd",
-      "team": "GB",
-      "opp": "MIN",
-      "pos": "RB",
-      "est": 38.8,
-      "depth": "RB2",
-      "game": "GB-MIN",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
       "chance": 0.1834,
       "last": [
        8,
@@ -1630,13 +1642,13 @@
       "team": "ARI",
       "opp": "LA",
       "pos": "TE",
-      "est": 73.1,
+      "est": 72.0,
       "depth": "TE1",
       "game": "ARI-LA",
       "stat": "TD2",
       "line": 2,
       "label": "2+ TDs",
-      "chance": 0.1036,
+      "chance": 0.1035,
       "last": [
        8,
        0
@@ -1646,7 +1658,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-15T07:02-05:00"
+   "updated_at": "2026-11-15T11:01-05:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T12:02+00:00",
+ "generated_at": "2026-11-15T16:01+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -799,7 +799,7 @@
      "pos": "RB",
      "depth": "RB2",
      "line": 29.0,
-     "est": 64.1,
+     "est": 64.0,
      "z": 4.38,
      "games": [
       40,
@@ -821,36 +821,6 @@
      ],
      "track": 0.774,
      "trackN": 372
-    },
-    {
-     "player_id": "00-0040142",
-     "name": "Kaleb Johnson",
-     "team": "GB",
-     "opp": "MIN",
-     "pos": "RB",
-     "depth": "RB3",
-     "line": 30.7,
-     "est": 48.5,
-     "z": 2.56,
-     "games": [
-      32,
-      16,
-      42,
-      26,
-      -2,
-      68
-     ],
-     "last": [
-      26,
-      -2,
-      68
-     ],
-     "why": [
-      "role up: +15 yds (teammates out / snaps)",
-      "31 a game lately vs 30 on the season"
-     ],
-     "track": 0.659,
-     "trackN": 713
     },
     {
      "player_id": "00-0039065",
@@ -949,6 +919,36 @@
      "trackN": 713
     },
     {
+     "player_id": "00-0040142",
+     "name": "Kaleb Johnson",
+     "team": "GB",
+     "opp": "MIN",
+     "pos": "RB",
+     "depth": "RB4",
+     "line": 30.7,
+     "est": 46.3,
+     "z": 2.3,
+     "games": [
+      32,
+      16,
+      42,
+      26,
+      -2,
+      68
+     ],
+     "last": [
+      26,
+      -2,
+      68
+     ],
+     "why": [
+      "role up: +13 yds (teammates out / snaps)",
+      "31 a game lately vs 30 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 713
+    },
+    {
      "player_id": "00-0036322",
      "name": "Justin Jefferson",
      "team": "MIN",
@@ -956,8 +956,8 @@
      "pos": "WR",
      "depth": "WR1",
      "line": 45.0,
-     "est": 61.4,
-     "z": 2.09,
+     "est": 61.1,
+     "z": 2.06,
      "games": [
       92,
       55,
@@ -980,7 +980,7 @@
      "trackN": 713
     }
    ],
-   "updated_at": "2026-11-15T07:02-05:00"
+   "updated_at": "2026-11-15T11:01-05:00"
   }
  ]
 }

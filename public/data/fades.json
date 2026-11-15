@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T12:02+00:00",
+ "generated_at": "2026-11-15T16:01+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -2454,7 +2454,7 @@
      "team": "CAR",
      "opp": "NO",
      "pos": "WR",
-     "depth": "WR4",
+     "depth": "WR5",
      "line": 25.2,
      "est": 15.0,
      "z": 2.63,
@@ -2542,6 +2542,30 @@
      ],
      "why": [
       "his usage (2.0 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.723,
+     "trackN": 630
+    },
+    {
+     "player_id": "00-0036554",
+     "name": "Nico Collins",
+     "team": "HOU",
+     "opp": "CLE",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 66.0,
+     "est": 49.5,
+     "z": 2.35,
+     "games": [
+      82,
+      118,
+      56,
+      79,
+      6,
+      55
+     ],
+     "why": [
+      "one big game (118) lifts his average -- 56 a game in the others"
      ],
      "track": 0.723,
      "trackN": 630
@@ -2651,25 +2675,28 @@
      "trackN": 630
     },
     {
-     "player_id": "00-0036554",
-     "name": "Nico Collins",
-     "team": "HOU",
-     "opp": "CLE",
+     "player_id": "00-0038124",
+     "name": "Christian Watson",
+     "team": "GB",
+     "opp": "MIN",
      "pos": "WR",
      "depth": "WR1",
-     "line": 66.0,
-     "est": 51.2,
-     "z": 2.07,
+     "line": 97.7,
+     "est": 79.7,
+     "z": 2.01,
      "games": [
-      82,
-      118,
-      56,
-      79,
-      6,
-      55
+      147,
+      41,
+      96,
+      47,
+      143,
+      64,
+      57,
+      113,
+      171
      ],
      "why": [
-      "one big game (118) lifts his average -- 56 a game in the others"
+      "one big game (171) lifts his average -- 88 a game in the others"
      ],
      "track": 0.723,
      "trackN": 630
@@ -2723,7 +2750,7 @@
      "trackN": 630
     }
    ],
-   "updated_at": "2026-11-15T07:02-05:00"
+   "updated_at": "2026-11-15T11:01-05:00"
   }
  ]
 }

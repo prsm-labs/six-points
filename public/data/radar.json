@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T12:02+00:00",
+ "generated_at": "2026-11-15T16:02+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 9,
@@ -2445,63 +2445,6 @@
      "result": null
     },
     {
-     "player_id": "00-0040583",
-     "name": "Woody Marks",
-     "team": "HOU",
-     "opp": "CLE",
-     "pos": "RB",
-     "chance": 0.4288,
-     "hits": 2,
-     "n": 8,
-     "own": 0.25,
-     "lift": 0.1788,
-     "est": 83.9,
-     "recent": [
-      [
-       "2026-09-20",
-       "CIN",
-       0
-      ],
-      [
-       "2026-09-27",
-       "IND",
-       1
-      ],
-      [
-       "2026-10-04",
-       "DAL",
-       1
-      ],
-      [
-       "2026-10-11",
-       "TEN",
-       0
-      ],
-      [
-       "2026-10-18",
-       "JAX",
-       0
-      ],
-      [
-       "2026-10-25",
-       "NYG",
-       0
-      ],
-      [
-       "2026-11-08",
-       "LAC",
-       0
-      ]
-     ],
-     "why": [
-      "+5.3 touches a game from teammates who are out",
-      "2.5 red-zone touches a game",
-      "touches up: 17.1 lately vs 14.5",
-      "scored in 2 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
      "player_id": "00-0037238",
      "name": "Drake London",
      "team": "ATL",
@@ -2825,9 +2768,63 @@
       "scored in 1 of his last 8 games"
      ],
      "result": null
+    },
+    {
+     "player_id": "00-0041547",
+     "name": "KC Concepcion",
+     "team": "CLE",
+     "opp": "HOU",
+     "pos": "WR",
+     "chance": 0.2565,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1315,
+     "est": 57.2,
+     "recent": [
+      [
+       "2026-09-27",
+       "CAR",
+       0
+      ],
+      [
+       "2026-10-01",
+       "PIT",
+       0
+      ],
+      [
+       "2026-10-11",
+       "NYJ",
+       0
+      ],
+      [
+       "2026-10-18",
+       "BAL",
+       0
+      ],
+      [
+       "2026-10-25",
+       "TEN",
+       0
+      ],
+      [
+       "2026-11-01",
+       "PIT",
+       0
+      ],
+      [
+       "2026-11-08",
+       "NO",
+       1
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
     }
    ],
-   "updated_at": "2026-11-15T07:02-05:00"
+   "updated_at": "2026-11-15T11:02-05:00"
   }
  ]
 }
