@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T16:51+00:00",
+ "generated_at": "2026-11-15T20:06+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -2450,8 +2450,8 @@
      "pos": "TE",
      "depth": "TE1",
      "line": 94.3,
-     "est": 70.0,
-     "z": 2.9,
+     "est": 70.7,
+     "z": 2.81,
      "games": [
       116,
       86,
@@ -2617,28 +2617,6 @@
      "trackN": 630
     },
     {
-     "player_id": "00-0040172",
-     "name": "Jordan Watkins",
-     "team": "SF",
-     "opp": "DAL",
-     "pos": "WR",
-     "depth": "WR5",
-     "line": 56.0,
-     "est": 40.7,
-     "z": 2.4,
-     "games": [
-      60,
-      22,
-      56,
-      86
-     ],
-     "why": [
-      "his usage (2.0 touches a game) projects below what he's averaged"
-     ],
-     "track": 0.723,
-     "trackN": 630
-    },
-    {
      "player_id": "00-0036554",
      "name": "Nico Collins",
      "team": "HOU",
@@ -2658,6 +2636,28 @@
      ],
      "why": [
       "one big game (118) lifts his average -- 56 a game in the others"
+     ],
+     "track": 0.723,
+     "trackN": 630
+    },
+    {
+     "player_id": "00-0040172",
+     "name": "Jordan Watkins",
+     "team": "SF",
+     "opp": "DAL",
+     "pos": "WR",
+     "depth": "WR5",
+     "line": 56.0,
+     "est": 41.9,
+     "z": 2.18,
+     "games": [
+      60,
+      22,
+      56,
+      86
+     ],
+     "why": [
+      "his usage (2.0 touches a game) projects below what he's averaged"
      ],
      "track": 0.723,
      "trackN": 630
@@ -2815,7 +2815,7 @@
      "trackN": 630
     }
    ],
-   "updated_at": "2026-11-15T11:51-05:00"
+   "updated_at": "2026-11-15T15:06-05:00"
   }
  ]
 }

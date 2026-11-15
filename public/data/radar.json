@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T16:51+00:00",
+ "generated_at": "2026-11-15T20:06+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 9,
@@ -2336,6 +2336,52 @@
      "result": null
     },
     {
+     "player_id": "00-0041512",
+     "name": "Jadarian Price",
+     "team": "SEA",
+     "opp": "LV",
+     "pos": "RB",
+     "chance": 0.2392,
+     "hits": 0,
+     "n": 5,
+     "own": 0.0,
+     "lift": 0.2392,
+     "est": 52.9,
+     "recent": [
+      [
+       "2026-09-09",
+       "NE",
+       0
+      ],
+      [
+       "2026-09-20",
+       "ARI",
+       0
+      ],
+      [
+       "2026-09-27",
+       "WAS",
+       0
+      ],
+      [
+       "2026-11-02",
+       "CHI",
+       0
+      ],
+      [
+       "2026-11-08",
+       "ARI",
+       0
+      ]
+     ],
+     "why": [
+      "+9.8 touches a game from teammates who are out",
+      "1.2 red-zone touches a game",
+      "scored in 0 of his last 5 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0038597",
      "name": "Chase Brown",
      "team": "CIN",
@@ -2555,6 +2601,61 @@
      "result": null
     },
     {
+     "player_id": "00-0041052",
+     "name": "Kaelon Black",
+     "team": "SF",
+     "opp": "DAL",
+     "pos": "RB",
+     "chance": 0.2779,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1529,
+     "est": 42.8,
+     "recent": [
+      [
+       "2026-09-20",
+       "MIA",
+       0
+      ],
+      [
+       "2026-09-27",
+       "ARI",
+       0
+      ],
+      [
+       "2026-10-04",
+       "DEN",
+       0
+      ],
+      [
+       "2026-10-11",
+       "SEA",
+       0
+      ],
+      [
+       "2026-10-19",
+       "WAS",
+       0
+      ],
+      [
+       "2026-10-25",
+       "ATL",
+       1
+      ],
+      [
+       "2026-11-08",
+       "LV",
+       0
+      ]
+     ],
+     "why": [
+      "1.6 red-zone touches a game",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0035640",
      "name": "DK Metcalf",
      "team": "PIT",
@@ -2601,115 +2702,6 @@
        "2026-11-01",
        "CLE",
        0
-      ]
-     ],
-     "why": [
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0041052",
-     "name": "Kaelon Black",
-     "team": "SF",
-     "opp": "DAL",
-     "pos": "RB",
-     "chance": 0.2768,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1518,
-     "est": 42.6,
-     "recent": [
-      [
-       "2026-09-20",
-       "MIA",
-       0
-      ],
-      [
-       "2026-09-27",
-       "ARI",
-       0
-      ],
-      [
-       "2026-10-04",
-       "DEN",
-       0
-      ],
-      [
-       "2026-10-11",
-       "SEA",
-       0
-      ],
-      [
-       "2026-10-19",
-       "WAS",
-       0
-      ],
-      [
-       "2026-10-25",
-       "ATL",
-       1
-      ],
-      [
-       "2026-11-08",
-       "LV",
-       0
-      ]
-     ],
-     "why": [
-      "1.6 red-zone touches a game",
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0034975",
-     "name": "Justice Hill",
-     "team": "BAL",
-     "opp": "LAC",
-     "pos": "RB",
-     "chance": 0.2742,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1492,
-     "est": 45.2,
-     "recent": [
-      [
-       "2026-09-27",
-       "DAL",
-       0
-      ],
-      [
-       "2026-10-04",
-       "TEN",
-       0
-      ],
-      [
-       "2026-10-11",
-       "ATL",
-       0
-      ],
-      [
-       "2026-10-18",
-       "CLE",
-       0
-      ],
-      [
-       "2026-10-25",
-       "CIN",
-       0
-      ],
-      [
-       "2026-11-01",
-       "BUF",
-       0
-      ],
-      [
-       "2026-11-05",
-       "JAX",
-       1
       ]
      ],
      "why": [
@@ -2826,7 +2818,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-15T11:51-05:00"
+   "updated_at": "2026-11-15T15:06-05:00"
   }
  ]
 }

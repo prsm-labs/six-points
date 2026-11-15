@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T16:51+00:00",
+ "generated_at": "2026-11-15T20:06+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 10,
@@ -665,6 +665,22 @@
      "result": null
     },
     {
+     "player_id": "00-0039074",
+     "name": "Davis Allen",
+     "team": "LA",
+     "opp": "ARI",
+     "pos": "TE",
+     "chance": 0.179,
+     "rz3": 1.5,
+     "tch3": 3.5,
+     "gp": 2,
+     "rzSeason": 0.5,
+     "pct": 0.9636,
+     "rank": 3,
+     "of": 55,
+     "result": null
+    },
+    {
      "player_id": "00-0040736",
      "name": "Mason Taylor",
      "team": "NYJ",
@@ -729,22 +745,6 @@
      "result": null
     },
     {
-     "player_id": "00-0040878",
-     "name": "Mike Washington Jr.",
-     "team": "LV",
-     "opp": "SEA",
-     "pos": "RB",
-     "chance": 0.2264,
-     "rz3": 3.67,
-     "tch3": 12.7,
-     "gp": 3,
-     "rzSeason": 1.83,
-     "pct": 0.8966,
-     "rank": 7,
-     "of": 58,
-     "result": null
-    },
-    {
      "player_id": "00-0034827",
      "name": "DJ Moore",
      "team": "BUF",
@@ -761,7 +761,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-15T11:51-05:00"
+   "updated_at": "2026-11-15T15:06-05:00"
   }
  ]
 }
