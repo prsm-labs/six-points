@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T16:02+00:00",
+ "generated_at": "2026-11-15T16:51+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 10,
@@ -643,9 +643,9 @@
      "tch3": 6.5,
      "gp": 2,
      "rzSeason": 1.11,
-     "pct": 0.9886,
+     "pct": 0.9884,
      "rank": 2,
-     "of": 88,
+     "of": 86,
      "result": null
     },
     {
@@ -659,9 +659,9 @@
      "tch3": 6.5,
      "gp": 2,
      "rzSeason": 0.65,
-     "pct": 0.9773,
+     "pct": 0.9767,
      "rank": 3,
-     "of": 88,
+     "of": 86,
      "result": null
     },
     {
@@ -681,12 +681,28 @@
      "result": null
     },
     {
+     "player_id": "00-0041037",
+     "name": "Denzel Boston",
+     "team": "CLE",
+     "opp": "HOU",
+     "pos": "WR",
+     "chance": 0.2434,
+     "rz3": 1.67,
+     "tch3": 8.7,
+     "gp": 3,
+     "rzSeason": 1.03,
+     "pct": 0.9302,
+     "rank": 7,
+     "of": 86,
+     "result": null
+    },
+    {
      "player_id": "00-0038996",
      "name": "Tucker Kraft",
      "team": "GB",
      "opp": "MIN",
      "pos": "TE",
-     "chance": 0.29,
+     "chance": 0.2824,
      "rz3": 1.33,
      "tch3": 5.7,
      "gp": 3,
@@ -694,6 +710,22 @@
      "pct": 0.9273,
      "rank": 5,
      "of": 55,
+     "result": null
+    },
+    {
+     "player_id": "00-0037740",
+     "name": "Garrett Wilson",
+     "team": "NYJ",
+     "opp": "BUF",
+     "pos": "WR",
+     "chance": 0.2597,
+     "rz3": 1.5,
+     "tch3": 7.5,
+     "gp": 2,
+     "rzSeason": 0.82,
+     "pct": 0.907,
+     "rank": 9,
+     "of": 86,
      "result": null
     },
     {
@@ -707,9 +739,9 @@
      "tch3": 12.7,
      "gp": 3,
      "rzSeason": 1.83,
-     "pct": 0.8983,
+     "pct": 0.8966,
      "rank": 7,
-     "of": 59,
+     "of": 58,
      "result": null
     },
     {
@@ -723,45 +755,13 @@
      "tch3": 7.0,
      "gp": 2,
      "rzSeason": 0.99,
-     "pct": 0.8977,
+     "pct": 0.8953,
      "rank": 10,
-     "of": 88,
-     "result": null
-    },
-    {
-     "player_id": "00-0036040",
-     "name": "Juwan Johnson",
-     "team": "NO",
-     "opp": "CAR",
-     "pos": "TE",
-     "chance": 0.2123,
-     "rz3": 1.0,
-     "tch3": 2.5,
-     "gp": 2,
-     "rzSeason": 0.83,
-     "pct": 0.8909,
-     "rank": 7,
-     "of": 55,
-     "result": null
-    },
-    {
-     "player_id": "00-0040870",
-     "name": "Ja'Kobi Lane",
-     "team": "BAL",
-     "opp": "LAC",
-     "pos": "WR",
-     "chance": 0.1606,
-     "rz3": 1.5,
-     "tch3": 3.0,
-     "gp": 2,
-     "rzSeason": 0.92,
-     "pct": 0.8864,
-     "rank": 11,
-     "of": 88,
+     "of": 86,
      "result": null
     }
    ],
-   "updated_at": "2026-11-15T11:02-05:00"
+   "updated_at": "2026-11-15T11:51-05:00"
   }
  ]
 }

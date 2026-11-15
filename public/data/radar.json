@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T16:02+00:00",
+ "generated_at": "2026-11-15T16:51+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 9,
@@ -2280,6 +2280,62 @@
    "replay": false,
    "picks": [
     {
+     "player_id": "00-0041013",
+     "name": "Emmett Johnson",
+     "team": "KC",
+     "opp": "ATL",
+     "pos": "RB",
+     "chance": 0.4912,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.2412,
+     "est": 90.4,
+     "recent": [
+      [
+       "2026-09-20",
+       "IND",
+       0
+      ],
+      [
+       "2026-09-27",
+       "MIA",
+       0
+      ],
+      [
+       "2026-10-04",
+       "LV",
+       0
+      ],
+      [
+       "2026-10-18",
+       "LAC",
+       0
+      ],
+      [
+       "2026-10-25",
+       "SEA",
+       0
+      ],
+      [
+       "2026-11-01",
+       "DEN",
+       1
+      ],
+      [
+       "2026-11-08",
+       "NYJ",
+       1
+      ]
+     ],
+     "why": [
+      "+22.1 touches a game from teammates who are out",
+      "1.1 red-zone touches a game",
+      "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0038597",
      "name": "Chase Brown",
      "team": "CIN",
@@ -2662,51 +2718,51 @@
      "result": null
     },
     {
-     "player_id": "00-0039894",
-     "name": "Xavier Worthy",
-     "team": "KC",
-     "opp": "ATL",
+     "player_id": "00-0039880",
+     "name": "Malik Washington",
+     "team": "MIA",
+     "opp": "IND",
      "pos": "WR",
-     "chance": 0.2632,
+     "chance": 0.2618,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.1382,
-     "est": 42.8,
+     "lift": 0.1368,
+     "est": 47.0,
      "recent": [
       [
        "2026-09-20",
-       "IND",
-       1
+       "SF",
+       0
       ],
       [
        "2026-09-27",
-       "MIA",
+       "KC",
        0
       ],
       [
        "2026-10-04",
-       "LV",
+       "MIN",
        0
       ],
       [
-       "2026-10-18",
-       "LAC",
+       "2026-10-11",
+       "CIN",
        0
       ],
       [
        "2026-10-25",
-       "SEA",
+       "NYJ",
        0
       ],
       [
        "2026-11-01",
-       "DEN",
-       0
+       "NE",
+       1
       ],
       [
        "2026-11-08",
-       "NYJ",
+       "DET",
        0
       ]
      ],
@@ -2768,63 +2824,9 @@
       "scored in 1 of his last 8 games"
      ],
      "result": null
-    },
-    {
-     "player_id": "00-0041547",
-     "name": "KC Concepcion",
-     "team": "CLE",
-     "opp": "HOU",
-     "pos": "WR",
-     "chance": 0.2565,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1315,
-     "est": 57.2,
-     "recent": [
-      [
-       "2026-09-27",
-       "CAR",
-       0
-      ],
-      [
-       "2026-10-01",
-       "PIT",
-       0
-      ],
-      [
-       "2026-10-11",
-       "NYJ",
-       0
-      ],
-      [
-       "2026-10-18",
-       "BAL",
-       0
-      ],
-      [
-       "2026-10-25",
-       "TEN",
-       0
-      ],
-      [
-       "2026-11-01",
-       "PIT",
-       0
-      ],
-      [
-       "2026-11-08",
-       "NO",
-       1
-      ]
-     ],
-     "why": [
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
     }
    ],
-   "updated_at": "2026-11-15T11:02-05:00"
+   "updated_at": "2026-11-15T11:51-05:00"
   }
  ]
 }

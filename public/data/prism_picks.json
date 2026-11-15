@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T16:01+00:00",
+ "generated_at": "2026-11-15T16:51+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1407,6 +1407,25 @@
    "source": "live",
    "picks": [
     {
+     "player_id": "00-0041013",
+     "name": "Emmett Johnson",
+     "team": "KC",
+     "opp": "ATL",
+     "pos": "RB",
+     "line": 30,
+     "label": "30+ scrimmage yards",
+     "chance": 0.9871,
+     "est": 90.4,
+     "last": [
+      8,
+      4
+     ],
+     "depth": "RB2",
+     "game": "ATL-KC",
+     "track": 0.85,
+     "trackN": 49
+    },
+    {
      "player_id": "00-0040128",
      "name": "Tyler Warren",
      "team": "IND",
@@ -1446,10 +1465,10 @@
     "kickoff": "2026-11-15T13:00:00-05:00",
     "label": "KC @ ATL",
     "closest": {
-     "name": "Tyler Warren",
-     "team": "IND",
-     "label": "35+ scrimmage yards",
-     "chance": 0.7147
+     "name": "Emmett Johnson",
+     "team": "KC",
+     "label": "30+ scrimmage yards",
+     "chance": 0.9871
     }
    },
    "tiers": {
@@ -1475,26 +1494,6 @@
       "trackN": 90
      },
      {
-      "player_id": "00-0041013",
-      "name": "Emmett Johnson",
-      "team": "KC",
-      "opp": "ATL",
-      "pos": "RB",
-      "est": 57.5,
-      "depth": "RB2",
-      "game": "ATL-KC",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
-      "chance": 0.4476,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.466,
-      "trackN": 99
-     },
-     {
       "player_id": "00-0036997",
       "name": "Javonte Williams",
       "team": "DAL",
@@ -1513,6 +1512,26 @@
       ],
       "track": 0.46,
       "trackN": 99
+     },
+     {
+      "player_id": "00-0036139",
+      "name": "Rico Dowdle",
+      "team": "PIT",
+      "opp": "CIN",
+      "pos": "RB",
+      "est": 55.1,
+      "depth": "RB2",
+      "game": "CIN-PIT",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
+      "chance": 0.3794,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.423,
+      "trackN": 66
      },
      {
       "player_id": "00-0037228",
@@ -1577,24 +1596,24 @@
       "trackN": 144
      },
      {
-      "player_id": "00-0036555",
-      "name": "Chuba Hubbard",
-      "team": "CAR",
-      "opp": "NO",
+      "player_id": "00-0039811",
+      "name": "MarShawn Lloyd",
+      "team": "GB",
+      "opp": "MIN",
       "pos": "RB",
-      "est": 99.9,
-      "depth": "RB1",
-      "game": "CAR-NO",
+      "est": 43.8,
+      "depth": "RB2",
+      "game": "GB-MIN",
       "stat": "YDS",
-      "line": 130,
-      "label": "130+ scrimmage yards",
-      "chance": 0.1834,
+      "line": 55,
+      "label": "55+ scrimmage yards",
+      "chance": 0.214,
       "last": [
        8,
        0
       ],
-      "track": 0.193,
-      "trackN": 68
+      "track": 0.29,
+      "trackN": 144
      },
      {
       "player_id": "00-0032951",
@@ -1658,7 +1677,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-15T11:01-05:00"
+   "updated_at": "2026-11-15T11:51-05:00"
   }
  ]
 }

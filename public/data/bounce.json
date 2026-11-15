@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T16:01+00:00",
+ "generated_at": "2026-11-15T16:51+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -799,8 +799,8 @@
      "pos": "RB",
      "depth": "RB2",
      "line": 29.0,
-     "est": 64.0,
-     "z": 4.38,
+     "est": 65.8,
+     "z": 4.54,
      "games": [
       40,
       105,
@@ -817,10 +817,104 @@
       21
      ],
      "why": [
+      "role up: +3 yds (teammates out / snaps)",
       "29 a game lately vs 71 on the season"
      ],
      "track": 0.774,
      "trackN": 372
+    },
+    {
+     "player_id": "00-0040142",
+     "name": "Kaleb Johnson",
+     "team": "GB",
+     "opp": "MIN",
+     "pos": "RB",
+     "depth": "RB4",
+     "line": 30.7,
+     "est": 57.0,
+     "z": 3.49,
+     "games": [
+      32,
+      16,
+      42,
+      26,
+      -2,
+      68
+     ],
+     "last": [
+      26,
+      -2,
+      68
+     ],
+     "why": [
+      "role up: +24 yds (teammates out / snaps)",
+      "31 a game lately vs 30 on the season"
+     ],
+     "track": 0.774,
+     "trackN": 372
+    },
+    {
+     "player_id": "00-0036322",
+     "name": "Justin Jefferson",
+     "team": "MIN",
+     "opp": "GB",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 45.0,
+     "est": 69.5,
+     "z": 2.94,
+     "games": [
+      92,
+      55,
+      32,
+      68,
+      44,
+      33,
+      58
+     ],
+     "last": [
+      44,
+      33,
+      58
+     ],
+     "why": [
+      "role up: +15 yds (teammates out / snaps)",
+      "45 a game lately vs 55 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 713
+    },
+    {
+     "player_id": "00-0041013",
+     "name": "Emmett Johnson",
+     "team": "KC",
+     "opp": "ATL",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 64.7,
+     "est": 90.4,
+     "z": 2.71,
+     "games": [
+      68,
+      35,
+      17,
+      10,
+      24,
+      17,
+      143,
+      34
+     ],
+     "last": [
+      17,
+      143,
+      34
+     ],
+     "why": [
+      "role up: +57 yds (teammates out / snaps)",
+      "65 a game lately vs 44 on the season"
+     ],
+     "track": 0.659,
+     "trackN": 713
     },
     {
      "player_id": "00-0039065",
@@ -919,68 +1013,39 @@
      "trackN": 713
     },
     {
-     "player_id": "00-0040142",
-     "name": "Kaleb Johnson",
-     "team": "GB",
-     "opp": "MIN",
-     "pos": "RB",
-     "depth": "RB4",
-     "line": 30.7,
-     "est": 46.3,
-     "z": 2.3,
-     "games": [
-      32,
-      16,
-      42,
-      26,
-      -2,
-      68
-     ],
-     "last": [
-      26,
-      -2,
-      68
-     ],
-     "why": [
-      "role up: +13 yds (teammates out / snaps)",
-      "31 a game lately vs 30 on the season"
-     ],
-     "track": 0.659,
-     "trackN": 713
-    },
-    {
-     "player_id": "00-0036322",
-     "name": "Justin Jefferson",
-     "team": "MIN",
-     "opp": "GB",
+     "player_id": "00-0039880",
+     "name": "Malik Washington",
+     "team": "MIA",
+     "opp": "IND",
      "pos": "WR",
      "depth": "WR1",
-     "line": 45.0,
-     "est": 61.1,
-     "z": 2.06,
+     "line": 32.0,
+     "est": 47.0,
+     "z": 2.19,
      "games": [
-      92,
-      55,
-      32,
-      68,
-      44,
-      33,
-      58
+      53,
+      47,
+      61,
+      70,
+      61,
+      35,
+      40,
+      21
      ],
      "last": [
-      44,
-      33,
-      58
+      35,
+      40,
+      21
      ],
      "why": [
-      "role up: +7 yds (teammates out / snaps)",
-      "45 a game lately vs 55 on the season"
+      "role up: +3 yds (teammates out / snaps)",
+      "32 a game lately vs 48 on the season"
      ],
      "track": 0.659,
      "trackN": 713
     }
    ],
-   "updated_at": "2026-11-15T11:01-05:00"
+   "updated_at": "2026-11-15T11:51-05:00"
   }
  ]
 }
