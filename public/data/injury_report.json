@@ -8666,6 +8666,20 @@
         "injury": "Hamstring"
       },
       {
+        "team": "BAL",
+        "name": "Jaylinn Hawkins",
+        "position": "S",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "BAL",
+        "name": "Adam Randall",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Neck"
+      },
+      {
         "team": "BUF",
         "name": "Sam Franklin Jr.",
         "position": "S",
@@ -9087,13 +9101,6 @@
       },
       {
         "team": "IND",
-        "name": "Arden Key",
-        "position": "DE",
-        "status": "Questionable",
-        "injury": "Hamstring"
-      },
-      {
-        "team": "IND",
         "name": "Jerry Tillery",
         "position": "DT",
         "status": "Out",
@@ -9245,6 +9252,76 @@
         "position": "TE",
         "status": "Out",
         "injury": "Ankle"
+      },
+      {
+        "team": "LAC",
+        "name": "Denzel Perryman",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Pectoral"
+      },
+      {
+        "team": "LAC",
+        "name": "David Njoku",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Fibula"
+      },
+      {
+        "team": "LAC",
+        "name": "Trey Pipkins",
+        "position": "T",
+        "status": "Questionable",
+        "injury": "Not injury related - personal matter"
+      },
+      {
+        "team": "LAC",
+        "name": "Kayode Awosika",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Fibula"
+      },
+      {
+        "team": "LAC",
+        "name": "Kendall Williamson",
+        "position": "S",
+        "status": "Out",
+        "injury": "Calf"
+      },
+      {
+        "team": "LAC",
+        "name": "Justin Eboigbe",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "LAC",
+        "name": "Ladd McConkey",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Back"
+      },
+      {
+        "team": "LAC",
+        "name": "Isas Waxter",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "LAC",
+        "name": "Branson Taylor",
+        "position": "G",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "LAC",
+        "name": "Brenen Thompson",
+        "position": "WR",
+        "status": "Doubtful",
+        "injury": "Hamstring"
       },
       {
         "team": "LV",

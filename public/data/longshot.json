@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T16:02+00:00",
+ "generated_at": "2026-11-15T12:02+00:00",
  "season": 2026,
  "week": 10,
  "liveFromWeek": 10,
@@ -654,7 +654,7 @@
      "team": "HOU",
      "opp": "CLE",
      "pos": "WR",
-     "chance": 0.2698,
+     "chance": 0.269,
      "rz3": 2.0,
      "tch3": 6.5,
      "gp": 2,
@@ -686,7 +686,7 @@
      "team": "GB",
      "opp": "MIN",
      "pos": "TE",
-     "chance": 0.2886,
+     "chance": 0.2889,
      "rz3": 1.33,
      "tch3": 5.7,
      "gp": 3,
@@ -707,9 +707,9 @@
      "tch3": 12.7,
      "gp": 3,
      "rzSeason": 1.83,
-     "pct": 0.9,
+     "pct": 0.8983,
      "rank": 7,
-     "of": 60,
+     "of": 59,
      "result": null
     },
     {
@@ -761,7 +761,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-14T11:02-05:00"
+   "updated_at": "2026-11-15T07:02-05:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T16:02+00:00",
+ "generated_at": "2026-11-15T12:02+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1405,7 +1405,27 @@
   {
    "week": 10,
    "source": "live",
-   "picks": [],
+   "picks": [
+    {
+     "player_id": "00-0040128",
+     "name": "Tyler Warren",
+     "team": "IND",
+     "opp": "MIA",
+     "pos": "TE",
+     "line": 35,
+     "label": "35+ scrimmage yards",
+     "chance": 0.7147,
+     "est": 59.4,
+     "last": [
+      8,
+      4
+     ],
+     "depth": "TE1",
+     "game": "IND-MIA",
+     "track": 0.659,
+     "trackN": 28
+    }
+   ],
    "nextGame": {
     "teams": [
      "DET",
@@ -1443,6 +1463,26 @@
       "trackN": 90
      },
      {
+      "player_id": "00-0041013",
+      "name": "Emmett Johnson",
+      "team": "KC",
+      "opp": "ATL",
+      "pos": "RB",
+      "est": 57.5,
+      "depth": "RB2",
+      "game": "ATL-KC",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4476,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.466,
+      "trackN": 99
+     },
+     {
       "player_id": "00-0036997",
       "name": "Javonte Williams",
       "team": "DAL",
@@ -1460,26 +1500,6 @@
        2
       ],
       "track": 0.46,
-      "trackN": 99
-     },
-     {
-      "player_id": "00-0040128",
-      "name": "Tyler Warren",
-      "team": "IND",
-      "opp": "MIA",
-      "pos": "TE",
-      "est": 55.4,
-      "depth": "TE1",
-      "game": "IND-MIA",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
-      "chance": 0.4115,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.455,
       "trackN": 99
      },
      {
@@ -1508,13 +1528,13 @@
       "team": "HOU",
       "opp": "CLE",
       "pos": "RB",
-      "est": 78.8,
+      "est": 83.9,
       "depth": "RB1",
       "game": "CLE-HOU",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.3768,
+      "chance": 0.3779,
       "last": [
        8,
        2
@@ -1570,18 +1590,18 @@
       "team": "IND",
       "opp": "MIA",
       "pos": "WR",
-      "est": 29.9,
+      "est": 30.6,
       "depth": "WR1",
       "game": "IND-MIA",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.1683,
+      "chance": 0.1734,
       "last": [
        8,
        0
       ],
-      "track": 0.187,
+      "track": 0.189,
       "trackN": 68
      },
      {
@@ -1590,7 +1610,7 @@
       "team": "TEN",
       "opp": "JAX",
       "pos": "TE",
-      "est": 31.7,
+      "est": 32.0,
       "depth": "TE1",
       "game": "JAX-TEN",
       "stat": "TD",
@@ -1626,7 +1646,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-14T11:02-05:00"
+   "updated_at": "2026-11-15T07:02-05:00"
   }
  ]
 }
