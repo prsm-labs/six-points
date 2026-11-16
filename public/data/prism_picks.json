@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T00:05+00:00",
+ "generated_at": "2026-11-16T12:01+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1447,16 +1447,16 @@
    ],
    "nextGame": {
     "teams": [
-     "CIN",
-     "PIT"
+     "BAL",
+     "LAC"
     ],
-    "kickoff": "2026-11-15T20:20:00-05:00",
-    "label": "PIT @ CIN",
+    "kickoff": "2026-11-16T20:15:00-05:00",
+    "label": "LAC @ BAL",
     "closest": {
-     "name": "Darnell Washington",
-     "team": "PIT",
-     "label": "25+ scrimmage yards",
-     "chance": 0.5389
+     "name": "Justice Hill",
+     "team": "BAL",
+     "label": "35+ scrimmage yards",
+     "chance": 0.545
     }
    },
    "tiers": {
@@ -1665,7 +1665,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-15T19:05-05:00"
+   "updated_at": "2026-11-16T07:01-05:00"
   }
  ]
 }
