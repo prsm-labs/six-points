@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-15T20:06+00:00",
+ "generated_at": "2026-11-16T00:05+00:00",
  "season": 2026,
  "week": 10,
  "rule": {
@@ -1447,18 +1447,16 @@
    ],
    "nextGame": {
     "teams": [
-     "ARI",
-     "LA",
-     "LV",
-     "SEA"
+     "CIN",
+     "PIT"
     ],
-    "kickoff": "2026-11-15T16:05:00-05:00",
-    "label": "LA @ ARI",
+    "kickoff": "2026-11-15T20:20:00-05:00",
+    "label": "PIT @ CIN",
     "closest": {
-     "name": "Tyler Higbee",
-     "team": "LA",
+     "name": "Darnell Washington",
+     "team": "PIT",
      "label": "25+ scrimmage yards",
-     "chance": 0.6448
+     "chance": 0.5389
     }
    },
    "tiers": {
@@ -1667,7 +1665,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-15T15:06-05:00"
+   "updated_at": "2026-11-15T19:05-05:00"
   }
  ]
 }
