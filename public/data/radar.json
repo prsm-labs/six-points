@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T12:02+00:00",
+ "generated_at": "2026-11-17T16:02+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 9,
@@ -3214,62 +3214,8 @@
       ]
      ],
      "why": [
-      "+2.6 touches a game from teammates who are out",
+      "+2.4 touches a game from teammates who are out",
       "2.1 red-zone touches a game",
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0040867",
-     "name": "Makai Lemon",
-     "team": "PHI",
-     "opp": "PIT",
-     "pos": "WR",
-     "chance": 0.2624,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1374,
-     "est": 46.0,
-     "recent": [
-      [
-       "2026-09-28",
-       "CHI",
-       0
-      ],
-      [
-       "2026-10-04",
-       "LA",
-       0
-      ],
-      [
-       "2026-10-11",
-       "JAX",
-       0
-      ],
-      [
-       "2026-10-18",
-       "CAR",
-       0
-      ],
-      [
-       "2026-10-26",
-       "DAL",
-       1
-      ],
-      [
-       "2026-11-01",
-       "WAS",
-       0
-      ],
-      [
-       "2026-11-08",
-       "NYG",
-       0
-      ]
-     ],
-     "why": [
       "scored in 1 of his last 8 games"
      ],
      "result": null
@@ -3380,13 +3326,67 @@
       ]
      ],
      "why": [
-      "+1.9 touches a game from teammates who are out",
+      "+1.1 touches a game from teammates who are out",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0038935",
+     "name": "Brenton Strange",
+     "team": "JAX",
+     "opp": "NYG",
+     "pos": "TE",
+     "chance": 0.2452,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1202,
+     "est": 31.3,
+     "recent": [
+      [
+       "2026-09-27",
+       "NE",
+       0
+      ],
+      [
+       "2026-10-04",
+       "CIN",
+       0
+      ],
+      [
+       "2026-10-11",
+       "PHI",
+       0
+      ],
+      [
+       "2026-10-18",
+       "HOU",
+       0
+      ],
+      [
+       "2026-11-01",
+       "IND",
+       0
+      ],
+      [
+       "2026-11-05",
+       "BAL",
+       0
+      ],
+      [
+       "2026-11-15",
+       "TEN",
+       1
+      ]
+     ],
+     "why": [
       "scored in 1 of his last 8 games"
      ],
      "result": null
     }
    ],
-   "updated_at": "2026-11-17T07:02-05:00"
+   "updated_at": "2026-11-17T11:02-05:00"
   }
  ]
 }

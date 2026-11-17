@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T12:02+00:00",
+ "generated_at": "2026-11-17T16:02+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1706,51 +1706,11 @@
      "name": "Tyler Warren",
      "team": "IND",
      "label": "35+ scrimmage yards",
-     "chance": 0.6448
+     "chance": 0.6098
     }
    },
    "tiers": {
     "mid": [
-     {
-      "player_id": "00-0041013",
-      "name": "Emmett Johnson",
-      "team": "KC",
-      "opp": "ARI",
-      "pos": "RB",
-      "est": 57.1,
-      "depth": "RB2",
-      "game": "ARI-KC",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
-      "chance": 0.4476,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.461,
-      "trackN": 100
-     },
-     {
-      "player_id": "00-0040128",
-      "name": "Tyler Warren",
-      "team": "IND",
-      "opp": "HOU",
-      "pos": "TE",
-      "est": 52.4,
-      "depth": "TE1",
-      "game": "HOU-IND",
-      "stat": "YDS",
-      "line": 50,
-      "label": "50+ scrimmage yards",
-      "chance": 0.4115,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.449,
-      "trackN": 100
-     },
      {
       "player_id": "00-0037263",
       "name": "Tyler Allgeier",
@@ -1770,6 +1730,46 @@
       ],
       "track": 0.448,
       "trackN": 100
+     },
+     {
+      "player_id": "00-0040128",
+      "name": "Tyler Warren",
+      "team": "IND",
+      "opp": "HOU",
+      "pos": "TE",
+      "est": 48.2,
+      "depth": "TE1",
+      "game": "HOU-IND",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.3794,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.408,
+      "trackN": 69
+     },
+     {
+      "player_id": "00-0034975",
+      "name": "Justice Hill",
+      "team": "BAL",
+      "opp": "CAR",
+      "pos": "RB",
+      "est": 46.9,
+      "depth": "RB2",
+      "game": "BAL-CAR",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.3794,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.408,
+      "trackN": 69
      },
      {
       "player_id": "00-0037228",
@@ -1899,7 +1899,7 @@
       "team": "TEN",
       "opp": "DAL",
       "pos": "TE",
-      "est": 34.7,
+      "est": 32.9,
       "depth": "TE1",
       "game": "DAL-TEN",
       "stat": "TD",
@@ -1915,7 +1915,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-17T07:02-05:00"
+   "updated_at": "2026-11-17T11:02-05:00"
   }
  ]
 }

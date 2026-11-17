@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T12:02+00:00",
+ "generated_at": "2026-11-17T16:02+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 10,
@@ -788,7 +788,7 @@
      "rzSeason": 0.62,
      "pct": 1.0,
      "rank": 1,
-     "of": 47,
+     "of": 48,
      "result": null
     },
     {
@@ -802,9 +802,9 @@
      "tch3": 5.0,
      "gp": 3,
      "rzSeason": 0.72,
-     "pct": 0.939,
+     "pct": 0.9398,
      "rank": 6,
-     "of": 82,
+     "of": 83,
      "result": null
     },
     {
@@ -818,9 +818,9 @@
      "tch3": 3.0,
      "gp": 2,
      "rzSeason": 0.7,
-     "pct": 0.9362,
+     "pct": 0.9375,
      "rank": 4,
-     "of": 47,
+     "of": 48,
      "result": null
     },
     {
@@ -834,9 +834,9 @@
      "tch3": 5.3,
      "gp": 3,
      "rzSeason": 0.88,
-     "pct": 0.9268,
+     "pct": 0.9277,
      "rank": 7,
-     "of": 82,
+     "of": 83,
      "result": null
     },
     {
@@ -850,9 +850,9 @@
      "tch3": 5.3,
      "gp": 3,
      "rzSeason": 0.96,
-     "pct": 0.9149,
+     "pct": 0.9167,
      "rank": 5,
-     "of": 47,
+     "of": 48,
      "result": null
     },
     {
@@ -866,9 +866,9 @@
      "tch3": 8.5,
      "gp": 2,
      "rzSeason": 1.11,
-     "pct": 0.8936,
+     "pct": 0.8958,
      "rank": 6,
-     "of": 47,
+     "of": 48,
      "result": null
     },
     {
@@ -882,9 +882,9 @@
      "tch3": 5.0,
      "gp": 3,
      "rzSeason": 1.16,
-     "pct": 0.8723,
+     "pct": 0.875,
      "rank": 7,
-     "of": 47,
+     "of": 48,
      "result": null
     },
     {
@@ -898,13 +898,13 @@
      "tch3": 5.5,
      "gp": 2,
      "rzSeason": 0.52,
-     "pct": 0.8659,
+     "pct": 0.8675,
      "rank": 12,
-     "of": 82,
+     "of": 83,
      "result": null
     }
    ],
-   "updated_at": "2026-11-17T07:02-05:00"
+   "updated_at": "2026-11-17T11:02-05:00"
   }
  ]
 }
