@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-17T00:05+00:00",
+ "generated_at": "2026-11-17T12:02+00:00",
  "season": 2026,
- "week": 10,
+ "week": 11,
  "rule": {
   "floor": 0.7,
   "last_max": 0.75,
@@ -148,7 +148,7 @@
     ]
    },
    "live": {
-    "n": 20,
+    "n": 25,
     "hits": 13,
     "void": 0
    }
@@ -224,18 +224,18 @@
     ]
    },
    "live": {
-    "n": 20,
-    "hits": 4,
+    "n": 25,
+    "hits": 5,
     "void": 0
    }
   }
  },
  "paused": null,
  "live": {
-  "n": 9,
-  "hits": 7,
+  "n": 11,
+  "hits": 8,
   "void": 0,
-  "weeks": 4
+  "weeks": 5
  },
  "weeks": [
   {
@@ -1423,7 +1423,9 @@
      "depth": "RB2",
      "game": "ATL-KC",
      "track": 0.85,
-     "trackN": 49
+     "trackN": 49,
+     "actual": 171,
+     "result": "hit"
     },
     {
      "player_id": "00-0040128",
@@ -1442,7 +1444,9 @@
      "depth": "TE1",
      "game": "IND-MIA",
      "track": 0.659,
-     "trackN": 28
+     "trackN": 28,
+     "actual": 4,
+     "result": "miss"
     }
    ],
    "nextGame": {
@@ -1479,7 +1483,9 @@
        1
       ],
       "track": 0.534,
-      "trackN": 90
+      "trackN": 90,
+      "actual": 14,
+      "result": "miss"
      },
      {
       "player_id": "00-0036997",
@@ -1499,7 +1505,9 @@
        2
       ],
       "track": 0.46,
-      "trackN": 99
+      "trackN": 99,
+      "actual": 67,
+      "result": "miss"
      },
      {
       "player_id": "00-0036139",
@@ -1519,7 +1527,9 @@
        2
       ],
       "track": 0.423,
-      "trackN": 66
+      "trackN": 66,
+      "actual": 34,
+      "result": "miss"
      },
      {
       "player_id": "00-0037228",
@@ -1539,7 +1549,9 @@
        2
       ],
       "track": 0.422,
-      "trackN": 66
+      "trackN": 66,
+      "actual": 0,
+      "result": "miss"
      },
      {
       "player_id": "00-0040122",
@@ -1559,7 +1571,9 @@
        2
       ],
       "track": 0.411,
-      "trackN": 66
+      "trackN": 66,
+      "actual": 0,
+      "result": "miss"
      }
     ],
     "long": [
@@ -1581,7 +1595,9 @@
        0
       ],
       "track": 0.29,
-      "trackN": 144
+      "trackN": 144,
+      "actual": 65,
+      "result": "miss"
      },
      {
       "player_id": "00-0039811",
@@ -1601,7 +1617,9 @@
        0
       ],
       "track": 0.29,
-      "trackN": 144
+      "trackN": 144,
+      "actual": 39,
+      "result": "miss"
      },
      {
       "player_id": "00-0032951",
@@ -1621,7 +1639,9 @@
        0
       ],
       "track": 0.189,
-      "trackN": 68
+      "trackN": 68,
+      "actual": 1,
+      "result": "hit"
      },
      {
       "player_id": "00-0040584",
@@ -1641,7 +1661,9 @@
        0
       ],
       "track": 0.148,
-      "trackN": 42
+      "trackN": 42,
+      "actual": 0,
+      "result": "miss"
      },
      {
       "player_id": "00-0037744",
@@ -1661,11 +1683,239 @@
        0
       ],
       "track": 0.122,
-      "trackN": 42
+      "trackN": 42,
+      "actual": 0,
+      "result": "miss"
      }
     ]
    },
    "updated_at": "2026-11-16T19:05-05:00"
+  },
+  {
+   "week": 11,
+   "source": "live",
+   "picks": [],
+   "nextGame": {
+    "teams": [
+     "HOU",
+     "IND"
+    ],
+    "kickoff": "2026-11-19T20:15:00-05:00",
+    "label": "IND @ HOU",
+    "closest": {
+     "name": "Tyler Warren",
+     "team": "IND",
+     "label": "35+ scrimmage yards",
+     "chance": 0.6448
+    }
+   },
+   "tiers": {
+    "mid": [
+     {
+      "player_id": "00-0041013",
+      "name": "Emmett Johnson",
+      "team": "KC",
+      "opp": "ARI",
+      "pos": "RB",
+      "est": 57.1,
+      "depth": "RB2",
+      "game": "ARI-KC",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4476,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.461,
+      "trackN": 100
+     },
+     {
+      "player_id": "00-0040128",
+      "name": "Tyler Warren",
+      "team": "IND",
+      "opp": "HOU",
+      "pos": "TE",
+      "est": 52.4,
+      "depth": "TE1",
+      "game": "HOU-IND",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.449,
+      "trackN": 100
+     },
+     {
+      "player_id": "00-0037263",
+      "name": "Tyler Allgeier",
+      "team": "ARI",
+      "opp": "KC",
+      "pos": "RB",
+      "est": 58.6,
+      "depth": "RB1",
+      "game": "ARI-KC",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4064,
+      "last": [
+       8,
+       1
+      ],
+      "track": 0.448,
+      "trackN": 100
+     },
+     {
+      "player_id": "00-0037228",
+      "name": "Jaylen Warren",
+      "team": "PIT",
+      "opp": "PHI",
+      "pos": "RB",
+      "est": 91.7,
+      "depth": "RB1",
+      "game": "PHI-PIT",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.377,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.407,
+      "trackN": 69
+     },
+     {
+      "player_id": "00-0038597",
+      "name": "Chase Brown",
+      "team": "CIN",
+      "opp": "WAS",
+      "pos": "RB",
+      "est": 79.1,
+      "depth": "RB1",
+      "game": "CIN-WAS",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.366,
+      "last": [
+       8,
+       1
+      ],
+      "track": 0.403,
+      "trackN": 69
+     }
+    ],
+    "long": [
+     {
+      "player_id": "00-0038129",
+      "name": "Cade Otton",
+      "team": "TB",
+      "opp": "DET",
+      "pos": "TE",
+      "est": 40.5,
+      "depth": "TE1",
+      "game": "DET-TB",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.2325,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.292,
+      "trackN": 146
+     },
+     {
+      "player_id": "00-0036275",
+      "name": "D'Andre Swift",
+      "team": "CHI",
+      "opp": "NO",
+      "pos": "RB",
+      "est": 79.3,
+      "depth": "RB1",
+      "game": "CHI-NO",
+      "stat": "YDS",
+      "line": 100,
+      "label": "100+ scrimmage yards",
+      "chance": 0.214,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.287,
+      "trackN": 146
+     },
+     {
+      "player_id": "00-0037248",
+      "name": "James Cook",
+      "team": "BUF",
+      "opp": "MIA",
+      "pos": "RB",
+      "est": 106.8,
+      "depth": "RB1",
+      "game": "BUF-MIA",
+      "stat": "TD2",
+      "line": 2,
+      "label": "2+ TDs",
+      "chance": 0.1996,
+      "last": [
+       8,
+       1
+      ],
+      "track": 0.208,
+      "trackN": 69
+     },
+     {
+      "player_id": "00-0034348",
+      "name": "Courtland Sutton",
+      "team": "DEN",
+      "opp": "LV",
+      "pos": "WR",
+      "est": 38.1,
+      "depth": "WR2",
+      "game": "DEN-LV",
+      "stat": "YDS",
+      "line": 55,
+      "label": "55+ scrimmage yards",
+      "chance": 0.168,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.194,
+      "trackN": 69
+     },
+     {
+      "player_id": "00-0040584",
+      "name": "Gunnar Helm",
+      "team": "TEN",
+      "opp": "DAL",
+      "pos": "TE",
+      "est": 34.7,
+      "depth": "TE1",
+      "game": "DAL-TEN",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.1571,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.189,
+      "trackN": 69
+     }
+    ]
+   },
+   "updated_at": "2026-11-17T07:02-05:00"
   }
  ]
 }

@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-17T00:06+00:00",
+ "generated_at": "2026-11-17T12:02+00:00",
  "season": 2026,
- "week": 10,
+ "week": 11,
  "liveFromWeek": 10,
  "rule": {
   "positions": [
@@ -48,14 +48,14 @@
  },
  "record": {
   "all": {
-   "n": 32,
-   "hits": 12,
-   "said": 0.2272
+   "n": 40,
+   "hits": 15,
+   "said": 0.2305
   },
   "live": {
-   "n": 0,
-   "hits": 0,
-   "said": null
+   "n": 8,
+   "hits": 3,
+   "said": 0.2438
   }
  },
  "weeks": [
@@ -646,7 +646,8 @@
      "pct": 0.9884,
      "rank": 2,
      "of": 86,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0038618",
@@ -662,7 +663,8 @@
      "pct": 0.9767,
      "rank": 3,
      "of": 86,
-     "result": null
+     "result": "hit",
+     "actual": 1
     },
     {
      "player_id": "00-0039074",
@@ -678,7 +680,8 @@
      "pct": 0.9636,
      "rank": 3,
      "of": 55,
-     "result": null
+     "result": "hit",
+     "actual": 1
     },
     {
      "player_id": "00-0040736",
@@ -694,7 +697,8 @@
      "pct": 0.9455,
      "rank": 4,
      "of": 55,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0041037",
@@ -710,7 +714,8 @@
      "pct": 0.9302,
      "rank": 7,
      "of": 86,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0038996",
@@ -726,7 +731,8 @@
      "pct": 0.9273,
      "rank": 5,
      "of": 55,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0037740",
@@ -742,7 +748,8 @@
      "pct": 0.907,
      "rank": 9,
      "of": 86,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0034827",
@@ -758,10 +765,146 @@
      "pct": 0.8953,
      "rank": 10,
      "of": 86,
-     "result": null
+     "result": "hit",
+     "actual": 1
     }
    ],
    "updated_at": "2026-11-16T19:06-05:00"
+  },
+  {
+   "week": 11,
+   "replay": false,
+   "picks": [
+    {
+     "player_id": "00-0037005",
+     "name": "Tommy Tremble",
+     "team": "CAR",
+     "opp": "BAL",
+     "pos": "TE",
+     "chance": 0.1901,
+     "rz3": 1.67,
+     "tch3": 4.7,
+     "gp": 3,
+     "rzSeason": 0.62,
+     "pct": 1.0,
+     "rank": 1,
+     "of": 47,
+     "result": null
+    },
+    {
+     "player_id": "00-0039894",
+     "name": "Xavier Worthy",
+     "team": "KC",
+     "opp": "ARI",
+     "pos": "WR",
+     "chance": 0.2471,
+     "rz3": 1.33,
+     "tch3": 5.0,
+     "gp": 3,
+     "rzSeason": 0.72,
+     "pct": 0.939,
+     "rank": 6,
+     "of": 82,
+     "result": null
+    },
+    {
+     "player_id": "00-0036894",
+     "name": "Pat Freiermuth",
+     "team": "PIT",
+     "opp": "PHI",
+     "pos": "TE",
+     "chance": 0.2167,
+     "rz3": 1.0,
+     "tch3": 3.0,
+     "gp": 2,
+     "rzSeason": 0.7,
+     "pct": 0.9362,
+     "rank": 4,
+     "of": 47,
+     "result": null
+    },
+    {
+     "player_id": "00-0039491",
+     "name": "Jalen Coker",
+     "team": "CAR",
+     "opp": "BAL",
+     "pos": "WR",
+     "chance": 0.283,
+     "rz3": 1.33,
+     "tch3": 5.3,
+     "gp": 3,
+     "rzSeason": 0.88,
+     "pct": 0.9268,
+     "rank": 7,
+     "of": 82,
+     "result": null
+    },
+    {
+     "player_id": "00-0034753",
+     "name": "Mark Andrews",
+     "team": "BAL",
+     "opp": "CAR",
+     "pos": "TE",
+     "chance": 0.1699,
+     "rz3": 1.0,
+     "tch3": 5.3,
+     "gp": 3,
+     "rzSeason": 0.96,
+     "pct": 0.9149,
+     "rank": 5,
+     "of": 47,
+     "result": null
+    },
+    {
+     "player_id": "00-0037838",
+     "name": "Isaiah Likely",
+     "team": "NYG",
+     "opp": "JAX",
+     "pos": "TE",
+     "chance": 0.2956,
+     "rz3": 1.0,
+     "tch3": 8.5,
+     "gp": 2,
+     "rzSeason": 1.11,
+     "pct": 0.8936,
+     "rank": 6,
+     "of": 47,
+     "result": null
+    },
+    {
+     "player_id": "00-0039065",
+     "name": "Sam LaPorta",
+     "team": "DET",
+     "opp": "TB",
+     "pos": "TE",
+     "chance": 0.2867,
+     "rz3": 1.0,
+     "tch3": 5.0,
+     "gp": 3,
+     "rzSeason": 1.16,
+     "pct": 0.8723,
+     "rank": 7,
+     "of": 47,
+     "result": null
+    },
+    {
+     "player_id": "00-0032464",
+     "name": "Kalif Raymond",
+     "team": "CHI",
+     "opp": "NO",
+     "pos": "WR",
+     "chance": 0.1788,
+     "rz3": 1.0,
+     "tch3": 5.5,
+     "gp": 2,
+     "rzSeason": 0.52,
+     "pct": 0.8659,
+     "rank": 12,
+     "of": 82,
+     "result": null
+    }
+   ],
+   "updated_at": "2026-11-17T07:02-05:00"
   }
  ]
 }
