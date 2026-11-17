@@ -45,7 +45,7 @@ export default function MyPicksTab() {
       .catch(() => {})
   }, [])
 
-  const live = useMemo(() => new Map([...(slate?.matchups || []), ...(slate?.not_playing || [])].map((m) => [m.player_id, m])), [slate])
+  const live = useMemo(() => new Map([...(slate?.not_playing || []), ...(slate?.matchups || [])].map((m) => [m.player_id, m])) /* 2026-11-17: slate row wins (traded players keep an old-team not_playing row) */, [slate])
   const list = useMemo(() => Object.values(picks).sort((a, b) => (a.added_at || '').localeCompare(b.added_at || '')), [picks])
 
   function exportCsv() {

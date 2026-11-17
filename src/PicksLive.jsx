@@ -87,7 +87,7 @@ export default function PicksLive({ slate, picks }) {
     for (const [playerId, info] of Object.entries(directory)) { const mm = info.stats_url?.match(/\/id\/(\d+)\//); if (mm) map.set(playerId, mm[1]) }
     return map
   }, [directory])
-  const byId = useMemo(() => new Map([...(slate?.matchups || []), ...(slate?.not_playing || [])].map((m) => [m.player_id, m])), [slate])
+  const byId = useMemo(() => new Map([...(slate?.not_playing || []), ...(slate?.matchups || [])].map((m) => [m.player_id, m])) /* 2026-11-17: slate row wins (traded players keep an old-team not_playing row) */, [slate])
   const mine = picks.map((k) => ({ k, m: byId.get(k.player_id) })).filter((x) => x.m && x.m.week === slate.week)
   const off = picks.length - mine.length
   const teams = useMemo(() => new Set(mine.map((x) => x.m.team)), [mine.map((x) => x.m.team).join(',')]) // eslint-disable-line react-hooks/exhaustive-deps
