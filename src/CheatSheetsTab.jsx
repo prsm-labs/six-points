@@ -173,15 +173,21 @@ function QuickReads() {
   )
   // 🔓 defenses to attack (Slap Shot's "Most Attackable Goalies"): opponents ranked by TDs allowed (the defense factor
   // inside the grade), with the best TD chance among the players facing them
+  // 2026-11-18 (user: the same defense topped this every week -- MIN vs LV isn't worth a look when MIN's offense can't score): ranked by the
+  // engine's own team_td_proj = league TDs a game x this OFFENSE x this DEFENSE (not Vegas). Held out 2023-25, top 3 a week by it scored
+  // 3.00 / 3.20 / 2.98 TDs vs defense alone 2.53 / 2.78 / 2.86 (all teams 2.20 / 2.38 / 2.37); live 2026 wks 2-9 3.21 vs 2.92 (avg 2.47).
   const defenses = (() => {
     const by = new Map()
     for (const m of pool) {
-      if (!m.def_rank) continue
-      const d = by.get(m.opponent) || { team: m.opponent, attackedBy: m.team, rank: m.def_rank, of: m.def_n, idx: m.def_td_idx, tier: m.def_tier, best: null }
+      if (m.team_td_proj == null || m.def_td_idx == null) continue
+      const d = by.get(m.team) || { team: m.opponent, attackedBy: m.team, proj: m.team_td_proj, idx: m.def_td_idx, tier: m.def_tier, best: null }
       if (!d.best || (m.p_td ?? 0) > (d.best.p_td ?? 0)) d.best = m
-      by.set(m.opponent, d)
+      by.set(m.team, d)
     }
-    return [...by.values()].sort((a, b) => a.rank - b.rank).slice(0, LIST_MAX)
+    const all = [...by.values()]
+    const base = all.reduce((s, d) => s + d.proj / d.idx, 0) / Math.max(1, all.length) // this week's average offense, defense taken out
+    all.forEach((d) => { d.off = d.proj / d.idx / base })
+    return all.sort((a, b) => b.proj - a.proj).slice(0, LIST_MAX)
   })()
   const priceCount = priced.length
 
@@ -224,16 +230,16 @@ function QuickReads() {
           </>
         )}
         <div className="card cheat-list">
-          <div className="cheat-list-title">🔓 Most Attackable Defenses This Week</div>
-          <div className="meta-line small">Ranked by TDs allowed (shrunk toward last season) — the defense factor inside every grade</div>
+          <div className="cheat-list-title">🔓 Best Matchups to Attack This Week</div>
+          <div className="meta-line small">Offense vs defense: ranked by the TDs we project for the offense against this defense (both sides, not Vegas). Tested 2023-25: the top 3 a week scored ~3.0 TDs vs ~2.7 picking by the defense alone (avg team 2.3)</div>
           {defenses.map((d) => (
             <div key={d.team} className="cheat-row" onClick={() => openTeamSlide({ team: d.team, context: 'defense' })}>
               <div className="cheat-row-main">
-                <span className="meta-line small">#{d.rank}</span>
+                <span className="meta-line small"><b>{d.proj.toFixed(1)}</b> TDs</span>
                 <div>
-                  <div>{d.team} defense {d.tier === 'soft' ? '▲' : ''} <span className="meta-line small">· target {d.attackedBy}</span></div>
+                  <div>{d.attackedBy} offense vs {d.team} defense {d.tier === 'soft' ? '▲' : ''}</div>
                   <div className="meta-line small" style={{ margin: 0 }}>
-                    allows {d.idx != null ? `${Math.round((d.idx - 1) * 100) >= 0 ? '+' : ''}${Math.round((d.idx - 1) * 100)}% TDs vs average` : '—'}
+                    offense {`${Math.round((d.off - 1) * 100) >= 0 ? '+' : ''}${Math.round((d.off - 1) * 100)}%`} · defense allows {`${Math.round((d.idx - 1) * 100) >= 0 ? '+' : ''}${Math.round((d.idx - 1) * 100)}%`} TDs vs average
                     {d.best ? ` · best look: ${d.best.player_name} ${fmtPct(d.best.p_td)}` : ''}
                   </div>
                 </div>
