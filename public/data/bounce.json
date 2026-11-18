@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T16:02+00:00",
+ "generated_at": "2026-11-18T12:02+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1075,8 +1075,8 @@
      "pos": "WR",
      "depth": "WR1",
      "line": 32.3,
-     "est": 58.6,
-     "z": 3.43,
+     "est": 59.6,
+     "z": 3.53,
      "games": [
       150,
       104,
@@ -1098,6 +1098,37 @@
      ],
      "track": 0.775,
      "trackN": 374
+    },
+    {
+     "player_id": "00-0034844",
+     "name": "Saquon Barkley",
+     "team": "PHI",
+     "opp": "PIT",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 49.0,
+     "est": 71.8,
+     "z": 2.69,
+     "games": [
+      80,
+      20,
+      80,
+      10,
+      71,
+      54,
+      22
+     ],
+     "last": [
+      71,
+      54,
+      22
+     ],
+     "why": [
+      "role up: +17 yds (teammates out / snaps)",
+      "49 a game lately vs 48 on the season"
+     ],
+     "track": 0.661,
+     "trackN": 719
     },
     {
      "player_id": "00-0033293",
@@ -1132,6 +1163,34 @@
      "trackN": 719
     },
     {
+     "player_id": "00-0035685",
+     "name": "David Montgomery",
+     "team": "HOU",
+     "opp": "IND",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 27.7,
+     "est": 45.2,
+     "z": 2.61,
+     "games": [
+      79,
+      24,
+      48,
+      24,
+      11
+     ],
+     "last": [
+      48,
+      24,
+      11
+     ],
+     "why": [
+      "28 a game lately vs 37 on the season"
+     ],
+     "track": 0.661,
+     "trackN": 719
+    },
+    {
      "player_id": "00-0032764",
      "name": "Derrick Henry",
      "team": "BAL",
@@ -1139,8 +1198,8 @@
      "pos": "RB",
      "depth": "RB1",
      "line": 45.7,
-     "est": 66.6,
-     "z": 2.57,
+     "est": 66.8,
+     "z": 2.59,
      "games": [
       163,
       87,
@@ -1160,34 +1219,6 @@
      ],
      "why": [
       "46 a game lately vs 78 on the season"
-     ],
-     "track": 0.661,
-     "trackN": 719
-    },
-    {
-     "player_id": "00-0035685",
-     "name": "David Montgomery",
-     "team": "HOU",
-     "opp": "IND",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 27.7,
-     "est": 44.6,
-     "z": 2.54,
-     "games": [
-      79,
-      24,
-      48,
-      24,
-      11
-     ],
-     "last": [
-      48,
-      24,
-      11
-     ],
-     "why": [
-      "28 a game lately vs 37 on the season"
      ],
      "track": 0.661,
      "trackN": 719
@@ -1256,9 +1287,42 @@
      ],
      "track": 0.661,
      "trackN": 719
+    },
+    {
+     "player_id": "00-0036275",
+     "name": "D'Andre Swift",
+     "team": "CHI",
+     "opp": "NO",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 66.7,
+     "est": 85.4,
+     "z": 2.03,
+     "games": [
+      134,
+      99,
+      88,
+      74,
+      73,
+      70,
+      90,
+      79,
+      31
+     ],
+     "last": [
+      90,
+      79,
+      31
+     ],
+     "why": [
+      "role up: +6 yds (teammates out / snaps)",
+      "67 a game lately vs 82 on the season"
+     ],
+     "track": 0.661,
+     "trackN": 719
     }
    ],
-   "updated_at": "2026-11-17T11:02-05:00"
+   "updated_at": "2026-11-18T07:02-05:00"
   }
  ]
 }

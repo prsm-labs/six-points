@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T16:02+00:00",
+ "generated_at": "2026-11-18T12:02+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 9,
@@ -2950,11 +2950,11 @@
      "team": "CHI",
      "opp": "NO",
      "pos": "WR",
-     "chance": 0.3403,
+     "chance": 0.3402,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.2153,
+     "lift": 0.2152,
      "est": 56.7,
      "recent": [
       [
@@ -3059,12 +3059,12 @@
      "team": "BAL",
      "opp": "CAR",
      "pos": "RB",
-     "chance": 0.2952,
+     "chance": 0.2978,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.1702,
-     "est": 46.9,
+     "lift": 0.1728,
+     "est": 47.4,
      "recent": [
       [
        "2026-10-04",
@@ -3170,12 +3170,12 @@
      "team": "HOU",
      "opp": "IND",
      "pos": "RB",
-     "chance": 0.2781,
+     "chance": 0.2759,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.1531,
-     "est": 44.6,
+     "lift": 0.1509,
+     "est": 45.2,
      "recent": [
       [
        "2025",
@@ -3214,8 +3214,61 @@
       ]
      ],
      "why": [
-      "+2.4 touches a game from teammates who are out",
       "2.1 red-zone touches a game",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0039880",
+     "name": "Malik Washington",
+     "team": "MIA",
+     "opp": "BUF",
+     "pos": "WR",
+     "chance": 0.2521,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1271,
+     "est": 44.7,
+     "recent": [
+      [
+       "2026-09-27",
+       "KC",
+       0
+      ],
+      [
+       "2026-10-04",
+       "MIN",
+       0
+      ],
+      [
+       "2026-10-11",
+       "CIN",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NYJ",
+       0
+      ],
+      [
+       "2026-11-01",
+       "NE",
+       1
+      ],
+      [
+       "2026-11-08",
+       "DET",
+       0
+      ],
+      [
+       "2026-11-15",
+       "IND",
+       0
+      ]
+     ],
+     "why": [
       "scored in 1 of his last 8 games"
      ],
      "result": null
@@ -3277,61 +3330,6 @@
      "result": null
     },
     {
-     "player_id": "00-0039880",
-     "name": "Malik Washington",
-     "team": "MIA",
-     "opp": "BUF",
-     "pos": "WR",
-     "chance": 0.2511,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1261,
-     "est": 44.2,
-     "recent": [
-      [
-       "2026-09-27",
-       "KC",
-       0
-      ],
-      [
-       "2026-10-04",
-       "MIN",
-       0
-      ],
-      [
-       "2026-10-11",
-       "CIN",
-       0
-      ],
-      [
-       "2026-10-25",
-       "NYJ",
-       0
-      ],
-      [
-       "2026-11-01",
-       "NE",
-       1
-      ],
-      [
-       "2026-11-08",
-       "DET",
-       0
-      ],
-      [
-       "2026-11-15",
-       "IND",
-       0
-      ]
-     ],
-     "why": [
-      "+1.1 touches a game from teammates who are out",
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
      "player_id": "00-0038935",
      "name": "Brenton Strange",
      "team": "JAX",
@@ -3386,7 +3384,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-17T11:02-05:00"
+   "updated_at": "2026-11-18T07:02-05:00"
   }
  ]
 }

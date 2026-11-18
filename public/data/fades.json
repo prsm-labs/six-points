@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T16:02+00:00",
+ "generated_at": "2026-11-18T12:02+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -2891,8 +2891,8 @@
      "pos": "TE",
      "depth": "TE2",
      "line": 28.5,
-     "est": 14.4,
-     "z": 3.72,
+     "est": 14.6,
+     "z": 3.64,
      "games": [
       14,
       26,
@@ -2936,8 +2936,8 @@
      "pos": "WR",
      "depth": "WR1",
      "line": 82.1,
-     "est": 58.6,
-     "z": 3.07,
+     "est": 59.6,
+     "z": 2.92,
      "games": [
       150,
       104,
@@ -2952,8 +2952,8 @@
      "why": [
       "one big game (150) lifts his average -- 74 a game in the others"
      ],
-     "track": 0.814,
-     "trackN": 520
+     "track": 0.718,
+     "trackN": 644
     },
     {
      "player_id": "00-0038977",
@@ -2963,8 +2963,8 @@
      "pos": "WR",
      "depth": "WR3",
      "line": 57.0,
-     "est": 39.0,
-     "z": 2.88,
+     "est": 39.5,
+     "z": 2.78,
      "games": [
       45,
       105,
@@ -3129,29 +3129,6 @@
      "trackN": 644
     },
     {
-     "player_id": "00-0039021",
-     "name": "Roschon Johnson",
-     "team": "CHI",
-     "opp": "NO",
-     "pos": "RB",
-     "depth": "RB3",
-     "line": 35.4,
-     "est": 24.0,
-     "z": 2.33,
-     "games": [
-      23,
-      40,
-      73,
-      13,
-      28
-     ],
-     "why": [
-      "one big game (73) lifts his average -- 26 a game in the others"
-     ],
-     "track": 0.718,
-     "trackN": 644
-    },
-    {
      "player_id": "00-0038120",
      "name": "Breece Hall",
      "team": "NYJ",
@@ -3202,30 +3179,6 @@
      "trackN": 644
     },
     {
-     "player_id": "00-0037157",
-     "name": "Bam Knight",
-     "team": "ARI",
-     "opp": "KC",
-     "pos": "RB",
-     "depth": "RB2",
-     "line": 37.3,
-     "est": 26.4,
-     "z": 2.13,
-     "games": [
-      24,
-      8,
-      98,
-      57,
-      18,
-      19
-     ],
-     "why": [
-      "one big game (98) lifts his average -- 25 a game in the others"
-     ],
-     "track": 0.718,
-     "trackN": 644
-    },
-    {
      "player_id": "00-0039337",
      "name": "Malik Nabers",
      "team": "NYG",
@@ -3248,6 +3201,30 @@
      ],
      "why": [
       "one big game (165) lifts his average -- 66 a game in the others"
+     ],
+     "track": 0.718,
+     "trackN": 644
+    },
+    {
+     "player_id": "00-0037157",
+     "name": "Bam Knight",
+     "team": "ARI",
+     "opp": "KC",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 37.3,
+     "est": 26.6,
+     "z": 2.08,
+     "games": [
+      24,
+      8,
+      98,
+      57,
+      18,
+      19
+     ],
+     "why": [
+      "one big game (98) lifts his average -- 25 a game in the others"
      ],
      "track": 0.718,
      "trackN": 644
@@ -3280,7 +3257,7 @@
      "trackN": 644
     }
    ],
-   "updated_at": "2026-11-17T11:02-05:00"
+   "updated_at": "2026-11-18T07:02-05:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-17T16:02+00:00",
+ "generated_at": "2026-11-18T12:02+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 10,
@@ -802,9 +802,9 @@
      "tch3": 5.0,
      "gp": 3,
      "rzSeason": 0.72,
-     "pct": 0.9398,
+     "pct": 0.939,
      "rank": 6,
-     "of": 83,
+     "of": 82,
      "result": null
     },
     {
@@ -834,9 +834,9 @@
      "tch3": 5.3,
      "gp": 3,
      "rzSeason": 0.88,
-     "pct": 0.9277,
+     "pct": 0.9268,
      "rank": 7,
-     "of": 83,
+     "of": 82,
      "result": null
     },
     {
@@ -845,7 +845,7 @@
      "team": "BAL",
      "opp": "CAR",
      "pos": "TE",
-     "chance": 0.1699,
+     "chance": 0.1745,
      "rz3": 1.0,
      "tch3": 5.3,
      "gp": 3,
@@ -872,6 +872,22 @@
      "result": null
     },
     {
+     "player_id": "00-0032464",
+     "name": "Kalif Raymond",
+     "team": "CHI",
+     "opp": "NO",
+     "pos": "WR",
+     "chance": 0.1758,
+     "rz3": 1.0,
+     "tch3": 5.5,
+     "gp": 2,
+     "rzSeason": 0.52,
+     "pct": 0.878,
+     "rank": 11,
+     "of": 82,
+     "result": null
+    },
+    {
      "player_id": "00-0039065",
      "name": "Sam LaPorta",
      "team": "DET",
@@ -886,25 +902,9 @@
      "rank": 7,
      "of": 48,
      "result": null
-    },
-    {
-     "player_id": "00-0032464",
-     "name": "Kalif Raymond",
-     "team": "CHI",
-     "opp": "NO",
-     "pos": "WR",
-     "chance": 0.1788,
-     "rz3": 1.0,
-     "tch3": 5.5,
-     "gp": 2,
-     "rzSeason": 0.52,
-     "pct": 0.8675,
-     "rank": 12,
-     "of": 83,
-     "result": null
     }
    ],
-   "updated_at": "2026-11-17T11:02-05:00"
+   "updated_at": "2026-11-18T07:02-05:00"
   }
  ]
 }
