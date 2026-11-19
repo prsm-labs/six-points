@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T16:01+00:00",
+ "generated_at": "2026-11-19T12:02+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1694,7 +1694,27 @@
   {
    "week": 11,
    "source": "live",
-   "picks": [],
+   "picks": [
+    {
+     "player_id": "00-0035685",
+     "name": "David Montgomery",
+     "team": "HOU",
+     "opp": "IND",
+     "pos": "RB",
+     "line": 35,
+     "label": "35+ scrimmage yards",
+     "chance": 0.7321,
+     "est": 68.6,
+     "last": [
+      8,
+      4
+     ],
+     "depth": "RB1",
+     "game": "HOU-IND",
+     "track": 0.657,
+     "trackN": 29
+    }
+   ],
    "nextGame": {
     "teams": [
      "HOU",
@@ -1703,14 +1723,34 @@
     "kickoff": "2026-11-19T20:15:00-05:00",
     "label": "IND @ HOU",
     "closest": {
-     "name": "Tyler Warren",
-     "team": "IND",
+     "name": "David Montgomery",
+     "team": "HOU",
      "label": "35+ scrimmage yards",
-     "chance": 0.6098
+     "chance": 0.7321
     }
    },
    "tiers": {
     "mid": [
+     {
+      "player_id": "00-0040128",
+      "name": "Tyler Warren",
+      "team": "IND",
+      "opp": "HOU",
+      "pos": "TE",
+      "est": 52.4,
+      "depth": "TE1",
+      "game": "HOU-IND",
+      "stat": "YDS",
+      "line": 50,
+      "label": "50+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.449,
+      "trackN": 100
+     },
      {
       "player_id": "00-0037263",
       "name": "Tyler Allgeier",
@@ -1732,6 +1772,26 @@
       "trackN": 100
      },
      {
+      "player_id": "00-0040236",
+      "name": "Kyle Monangai",
+      "team": "CHI",
+      "opp": "NO",
+      "pos": "RB",
+      "est": 70.4,
+      "depth": "RB2",
+      "game": "CHI-NO",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3895,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.412,
+      "trackN": 69
+     },
+     {
       "player_id": "00-0034844",
       "name": "Saquon Barkley",
       "team": "PHI",
@@ -1743,26 +1803,6 @@
       "stat": "YDS",
       "line": 75,
       "label": "75+ scrimmage yards",
-      "chance": 0.3794,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.408,
-      "trackN": 69
-     },
-     {
-      "player_id": "00-0035261",
-      "name": "Tony Pollard",
-      "team": "TEN",
-      "opp": "DAL",
-      "pos": "RB",
-      "est": 94.0,
-      "depth": "RB1",
-      "game": "DAL-TEN",
-      "stat": "YDS",
-      "line": 100,
-      "label": "100+ scrimmage yards",
       "chance": 0.3794,
       "last": [
        8,
@@ -1789,26 +1829,6 @@
        2
       ],
       "track": 0.407,
-      "trackN": 69
-     },
-     {
-      "player_id": "00-0038597",
-      "name": "Chase Brown",
-      "team": "CIN",
-      "opp": "WAS",
-      "pos": "RB",
-      "est": 79.1,
-      "depth": "RB1",
-      "game": "CIN-WAS",
-      "stat": "TD",
-      "line": 1,
-      "label": "Anytime TD",
-      "chance": 0.366,
-      "last": [
-       8,
-       1
-      ],
-      "track": 0.403,
       "trackN": 69
      }
     ],
@@ -1874,6 +1894,26 @@
       "trackN": 69
      },
      {
+      "player_id": "00-0038597",
+      "name": "Chase Brown",
+      "team": "CIN",
+      "opp": "WAS",
+      "pos": "RB",
+      "est": 79.1,
+      "depth": "RB1",
+      "game": "CIN-WAS",
+      "stat": "YDS",
+      "line": 105,
+      "label": "105+ scrimmage yards",
+      "chance": 0.1834,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.201,
+      "trackN": 69
+     },
+     {
       "player_id": "00-0040584",
       "name": "Gunnar Helm",
       "team": "TEN",
@@ -1892,30 +1932,10 @@
       ],
       "track": 0.194,
       "trackN": 69
-     },
-     {
-      "player_id": "00-0034348",
-      "name": "Courtland Sutton",
-      "team": "DEN",
-      "opp": "LV",
-      "pos": "WR",
-      "est": 38.1,
-      "depth": "WR2",
-      "game": "DEN-LV",
-      "stat": "YDS",
-      "line": 55,
-      "label": "55+ scrimmage yards",
-      "chance": 0.168,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.194,
-      "trackN": 69
      }
     ]
    },
-   "updated_at": "2026-11-18T11:01-05:00"
+   "updated_at": "2026-11-19T07:02-05:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T16:01+00:00",
+ "generated_at": "2026-11-19T12:02+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -2956,27 +2956,6 @@
      "trackN": 644
     },
     {
-     "player_id": "00-0038977",
-     "name": "Tank Dell",
-     "team": "HOU",
-     "opp": "IND",
-     "pos": "WR",
-     "depth": "WR3",
-     "line": 57.0,
-     "est": 39.5,
-     "z": 2.78,
-     "games": [
-      45,
-      105,
-      21
-     ],
-     "why": [
-      "one big game (105) lifts his average -- 33 a game in the others"
-     ],
-     "track": 0.718,
-     "trackN": 644
-    },
-    {
      "player_id": "00-0040172",
      "name": "Jordan Watkins",
      "team": "SF",
@@ -3077,28 +3056,44 @@
      "trackN": 644
     },
     {
-     "player_id": "00-0038933",
-     "name": "Dalton Kincaid",
-     "team": "BUF",
-     "opp": "MIA",
-     "pos": "TE",
-     "depth": "TE1",
-     "line": 54.1,
-     "est": 38.7,
+     "player_id": "00-0038977",
+     "name": "Tank Dell",
+     "team": "HOU",
+     "opp": "IND",
+     "pos": "WR",
+     "depth": "WR3",
+     "line": 57.0,
+     "est": 41.1,
      "z": 2.48,
      "games": [
-      130,
-      95,
-      38,
-      7,
-      7,
-      38,
-      86,
-      28,
-      58
+      45,
+      105,
+      21
      ],
      "why": [
-      "one big game (130) lifts his average -- 45 a game in the others"
+      "one big game (105) lifts his average -- 33 a game in the others"
+     ],
+     "track": 0.718,
+     "trackN": 644
+    },
+    {
+     "player_id": "00-0040236",
+     "name": "Kyle Monangai",
+     "team": "CHI",
+     "opp": "NO",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 90.8,
+     "est": 70.4,
+     "z": 2.43,
+     "games": [
+      124,
+      58,
+      31,
+      150
+     ],
+     "why": [
+      "one big game (150) lifts his average -- 71 a game in the others"
      ],
      "track": 0.718,
      "trackN": 644
@@ -3257,7 +3252,7 @@
      "trackN": 644
     }
    ],
-   "updated_at": "2026-11-18T11:01-05:00"
+   "updated_at": "2026-11-19T07:02-05:00"
   }
  ]
 }

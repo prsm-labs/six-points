@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T16:01+00:00",
+ "generated_at": "2026-11-19T12:02+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1068,6 +1068,35 @@
    "source": "live",
    "picks": [
     {
+     "player_id": "00-0035685",
+     "name": "David Montgomery",
+     "team": "HOU",
+     "opp": "IND",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 27.7,
+     "est": 68.6,
+     "z": 4.94,
+     "games": [
+      79,
+      24,
+      48,
+      24,
+      11
+     ],
+     "last": [
+      48,
+      24,
+      11
+     ],
+     "why": [
+      "role up: +24 yds (teammates out / snaps)",
+      "28 a game lately vs 37 on the season"
+     ],
+     "track": 0.775,
+     "trackN": 374
+    },
+    {
      "player_id": "00-0039064",
      "name": "Zay Flowers",
      "team": "BAL",
@@ -1158,34 +1187,6 @@
      ],
      "why": [
       "39 a game lately vs 69 on the season"
-     ],
-     "track": 0.661,
-     "trackN": 719
-    },
-    {
-     "player_id": "00-0035685",
-     "name": "David Montgomery",
-     "team": "HOU",
-     "opp": "IND",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 27.7,
-     "est": 45.2,
-     "z": 2.61,
-     "games": [
-      79,
-      24,
-      48,
-      24,
-      11
-     ],
-     "last": [
-      48,
-      24,
-      11
-     ],
-     "why": [
-      "28 a game lately vs 37 on the season"
      ],
      "track": 0.661,
      "trackN": 719
@@ -1322,7 +1323,7 @@
      "trackN": 719
     }
    ],
-   "updated_at": "2026-11-18T11:01-05:00"
+   "updated_at": "2026-11-19T07:02-05:00"
   }
  ]
 }

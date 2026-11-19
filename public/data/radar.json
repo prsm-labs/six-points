@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T16:01+00:00",
+ "generated_at": "2026-11-19T12:02+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 9,
@@ -2891,6 +2891,62 @@
      "result": null
     },
     {
+     "player_id": "00-0035685",
+     "name": "David Montgomery",
+     "team": "HOU",
+     "opp": "IND",
+     "pos": "RB",
+     "chance": 0.3579,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.2329,
+     "est": 68.6,
+     "recent": [
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2026-09-13",
+       "BUF",
+       3
+      ],
+      [
+       "2026-09-20",
+       "CIN",
+       0
+      ],
+      [
+       "2026-09-27",
+       "IND",
+       0
+      ],
+      [
+       "2026-10-04",
+       "DAL",
+       0
+      ],
+      [
+       "2026-10-11",
+       "TEN",
+       0
+      ]
+     ],
+     "why": [
+      "+9.2 touches a game from teammates who are out",
+      "2.1 red-zone touches a game",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0038129",
      "name": "Cade Otton",
      "team": "TB",
@@ -2995,6 +3051,62 @@
      ],
      "why": [
       "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0040236",
+     "name": "Kyle Monangai",
+     "team": "CHI",
+     "opp": "NO",
+     "pos": "RB",
+     "chance": 0.4521,
+     "hits": 2,
+     "n": 8,
+     "own": 0.25,
+     "lift": 0.2021,
+     "est": 70.4,
+     "recent": [
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2026-09-13",
+       "CAR",
+       1
+      ],
+      [
+       "2026-09-20",
+       "MIN",
+       0
+      ],
+      [
+       "2026-09-28",
+       "PHI",
+       0
+      ],
+      [
+       "2026-10-04",
+       "NYJ",
+       2
+      ]
+     ],
+     "why": [
+      "+1.9 touches a game from teammates who are out",
+      "3.3 red-zone touches a game",
+      "scored in 2 of his last 8 games"
      ],
      "result": null
     },
@@ -3165,61 +3277,6 @@
      "result": null
     },
     {
-     "player_id": "00-0035685",
-     "name": "David Montgomery",
-     "team": "HOU",
-     "opp": "IND",
-     "pos": "RB",
-     "chance": 0.2759,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1509,
-     "est": 45.2,
-     "recent": [
-      [
-       "2025",
-       "",
-       0
-      ],
-      [
-       "2025",
-       "",
-       0
-      ],
-      [
-       "2026-09-13",
-       "BUF",
-       3
-      ],
-      [
-       "2026-09-20",
-       "CIN",
-       0
-      ],
-      [
-       "2026-09-27",
-       "IND",
-       0
-      ],
-      [
-       "2026-10-04",
-       "DAL",
-       0
-      ],
-      [
-       "2026-10-11",
-       "TEN",
-       0
-      ]
-     ],
-     "why": [
-      "2.1 red-zone touches a game",
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
      "player_id": "00-0039880",
      "name": "Malik Washington",
      "team": "MIA",
@@ -3328,63 +3385,9 @@
       "scored in 1 of his last 8 games"
      ],
      "result": null
-    },
-    {
-     "player_id": "00-0038935",
-     "name": "Brenton Strange",
-     "team": "JAX",
-     "opp": "NYG",
-     "pos": "TE",
-     "chance": 0.2452,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1202,
-     "est": 31.3,
-     "recent": [
-      [
-       "2026-09-27",
-       "NE",
-       0
-      ],
-      [
-       "2026-10-04",
-       "CIN",
-       0
-      ],
-      [
-       "2026-10-11",
-       "PHI",
-       0
-      ],
-      [
-       "2026-10-18",
-       "HOU",
-       0
-      ],
-      [
-       "2026-11-01",
-       "IND",
-       0
-      ],
-      [
-       "2026-11-05",
-       "BAL",
-       0
-      ],
-      [
-       "2026-11-15",
-       "TEN",
-       1
-      ]
-     ],
-     "why": [
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
     }
    ],
-   "updated_at": "2026-11-18T11:01-05:00"
+   "updated_at": "2026-11-19T07:02-05:00"
   }
  ]
 }

@@ -9764,6 +9764,120 @@
         "status": "Out",
         "injury": "Knee"
       }
+    ],
+    "11": [
+      {
+        "team": "HOU",
+        "name": "Danielle Hunter",
+        "position": "DE",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "HOU",
+        "name": "Wyatt Teller",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Back"
+      },
+      {
+        "team": "HOU",
+        "name": "Brevin Jordan",
+        "position": "TE",
+        "status": "Out",
+        "injury": "Foot"
+      },
+      {
+        "team": "HOU",
+        "name": "Jacob Hummel",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Groin"
+      },
+      {
+        "team": "HOU",
+        "name": "Marvin Harrison Jr.",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "HOU",
+        "name": "Jaylin Smith",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "HOU",
+        "name": "Woody Marks",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "IND",
+        "name": "Luke Rhodes",
+        "position": "LS",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "IND",
+        "name": "Charvarius Ward",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "IND",
+        "name": "Jerry Tillery",
+        "position": "DT",
+        "status": "Out",
+        "injury": "Calf"
+      },
+      {
+        "team": "IND",
+        "name": "Charlie Heck",
+        "position": "T",
+        "status": "Questionable",
+        "injury": "Not injury related - personal matter"
+      },
+      {
+        "team": "IND",
+        "name": "Sauce Gardner",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Calf"
+      },
+      {
+        "team": "IND",
+        "name": "Bernhard Raimann",
+        "position": "T",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "IND",
+        "name": "Will Mallory",
+        "position": "TE",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "IND",
+        "name": "Anthony Gould",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Toe"
+      },
+      {
+        "team": "IND",
+        "name": "Jalen Travis",
+        "position": "T",
+        "status": "Out",
+        "injury": "Knee"
+      }
     ]
   }
 }

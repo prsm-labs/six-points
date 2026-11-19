@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T16:01+00:00",
+ "generated_at": "2026-11-19T12:02+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 10,
@@ -776,22 +776,6 @@
    "replay": false,
    "picks": [
     {
-     "player_id": "00-0037005",
-     "name": "Tommy Tremble",
-     "team": "CAR",
-     "opp": "BAL",
-     "pos": "TE",
-     "chance": 0.1901,
-     "rz3": 1.67,
-     "tch3": 4.7,
-     "gp": 3,
-     "rzSeason": 0.62,
-     "pct": 1.0,
-     "rank": 1,
-     "of": 48,
-     "result": null
-    },
-    {
      "player_id": "00-0039894",
      "name": "Xavier Worthy",
      "team": "KC",
@@ -902,9 +886,25 @@
      "rank": 7,
      "of": 48,
      "result": null
+    },
+    {
+     "player_id": "00-0038618",
+     "name": "Xavier Hutchinson",
+     "team": "HOU",
+     "opp": "IND",
+     "pos": "WR",
+     "chance": 0.2718,
+     "rz3": 1.0,
+     "tch3": 7.0,
+     "gp": 2,
+     "rzSeason": 0.68,
+     "pct": 0.8537,
+     "rank": 13,
+     "of": 82,
+     "result": null
     }
    ],
-   "updated_at": "2026-11-18T11:01-05:00"
+   "updated_at": "2026-11-19T07:02-05:00"
   }
  ]
 }
