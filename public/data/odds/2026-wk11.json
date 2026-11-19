@@ -1,0 +1,680 @@
+{
+ "_meta": {
+  "season": 2026,
+  "week": 11,
+  "market": "player_anytime_td",
+  "source": "The Odds API (region us)",
+  "fetches": [
+   {
+    "at": "2026-11-19T16:02:12+00:00",
+    "games": [
+     "IND@HOU"
+    ],
+    "creditsLeft": 336
+   }
+  ],
+  "updated": "2026-11-19T16:02:12+00:00",
+  "creditsLeft": 336
+ },
+ "games": {
+  "IND@HOU": {
+   "fetchedAt": "2026-11-19T16:02:12+00:00",
+   "eventId": "66f9e83cf025d58acee12bce18661fb3",
+   "players": 27,
+   "books": [
+    "BOL",
+    "BOV",
+    "BR",
+    "DK",
+    "FD",
+    "MGM"
+   ]
+  }
+ },
+ "players": {
+  "00-0035685": {
+   "name": "David Montgomery",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": -130,
+    "FD": -125,
+    "BOL": -143,
+    "BR": -125,
+    "MGM": -125,
+    "BOV": -132
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290730_13L88808Q1-311451763Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=16579799",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017591|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587044-7556543&type=Single"
+   },
+   "best": -125,
+   "bestBook": "FD",
+   "bestImplied": 55.6,
+   "medianImplied": 56.0,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0036554": {
+   "name": "Nico Collins",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 105,
+    "FD": 105,
+    "BOL": 100,
+    "BR": -103,
+    "MGM": 105,
+    "BOV": 105
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290727_13L88808Q11759839095Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=26919599",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420037872|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587092-7556639&type=Single"
+   },
+   "best": 105,
+   "bestBook": "DK",
+   "bestImplied": 48.8,
+   "medianImplied": 48.8,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0036223": {
+   "name": "Jonathan Taylor",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 130,
+    "FD": 120,
+    "BOL": 120,
+    "BR": 100,
+    "MGM": 120,
+    "BOV": 130
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290741_13L88808Q1-1720506042Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=16195884",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017623|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587062-7556581&type=Single"
+   },
+   "best": 130,
+   "bestBook": "DK",
+   "bestImplied": 43.5,
+   "medianImplied": 45.5,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0034383": {
+   "name": "Dalton Schultz",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 185,
+    "FD": 195,
+    "BOL": 180,
+    "BR": 205,
+    "MGM": 200,
+    "BOV": 185
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290731_13L88808Q12038958166Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=10680465",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420037880|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587067-7556589&type=Single"
+   },
+   "best": 205,
+   "bestBook": "BR",
+   "bestImplied": 32.8,
+   "medianImplied": 34.5,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0038618": {
+   "name": "Xavier Hutchinson",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 250,
+    "FD": 250,
+    "BOL": 230,
+    "BR": 260,
+    "MGM": 240,
+    "BOV": 250
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290733_13L88808Q1-1444150535Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=37579239",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017677|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587036-7556527&type=Single"
+   },
+   "best": 260,
+   "bestBook": "BR",
+   "bestImplied": 27.8,
+   "medianImplied": 28.6,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0038977": {
+   "name": "Tank Dell",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 280,
+    "FD": 300,
+    "BOL": 280,
+    "BR": 295,
+    "MGM": 230,
+    "BOV": 280
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290732_13L88808Q11057552796Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=59506276",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017686|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587072-7556595&type=Single"
+   },
+   "best": 300,
+   "bestBook": "FD",
+   "bestImplied": 25.0,
+   "medianImplied": 26.3,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0038608": {
+   "name": "Kayshon Boutte",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 320,
+    "FD": 340,
+    "BOL": 300,
+    "BR": 325,
+    "MGM": 340,
+    "BOV": 320
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290734_13L88808Q1401138925Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=42323731",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017681|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587024-7556503&type=Single"
+   },
+   "best": 340,
+   "bestBook": "FD",
+   "bestImplied": 22.7,
+   "medianImplied": 23.7,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0038705": {
+   "name": "Emari Demercado",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 350,
+    "FD": 320,
+    "BOL": 300,
+    "BR": 300,
+    "MGM": 333,
+    "BOV": 350
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290728_13L88808Q1-1148361646Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=48141496",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017617|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587022-7556499&type=Single"
+   },
+   "best": 350,
+   "bestBook": "DK",
+   "bestImplied": 22.2,
+   "medianImplied": 23.5,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0040128": {
+   "name": "Tyler Warren",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 350,
+    "FD": 320,
+    "BOL": 300,
+    "BR": 390,
+    "MGM": 310,
+    "BOV": 350
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290742_13L88808Q1-297522584Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=60010430",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017625|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587068-7556605&type=Single"
+   },
+   "best": 390,
+   "bestBook": "BR",
+   "bestImplied": 20.4,
+   "medianImplied": 23.0,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0041125": {
+   "name": "Seth McGowan",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 370,
+    "FD": 390,
+    "BOL": 350,
+    "BR": 340,
+    "MGM": 340,
+    "BOV": 370
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290744_13L88808Q1-348566577Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=36929268",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017675|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587065-7556585&type=Single"
+   },
+   "best": 390,
+   "bestBook": "FD",
+   "bestImplied": 20.4,
+   "medianImplied": 21.7,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0039163": {
+   "name": "C.J. Stroud",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 425,
+    "FD": 430,
+    "BOL": 400,
+    "BR": 425,
+    "MGM": 425,
+    "BOV": 420
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290737_13L88808Q1242387080Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=55432689",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420037877|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587091-7556633&type=Single"
+   },
+   "best": 430,
+   "bestBook": "FD",
+   "bestImplied": 18.9,
+   "medianImplied": 19.0,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0032951": {
+   "name": "Laquon Treadwell",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 475,
+    "FD": 500,
+    "BOL": 450,
+    "BR": 550,
+    "MGM": 500,
+    "BOV": 460
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290743_13L88808Q11289716993Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=11151038",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017613|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587061-7556577&type=Single"
+   },
+   "best": 550,
+   "bestBook": "BR",
+   "bestImplied": 15.4,
+   "medianImplied": 17.0,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0034981": {
+   "name": "Foster Moreau",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 500,
+    "FD": 500,
+    "BOL": 450,
+    "BR": 500,
+    "MGM": 500,
+    "BOV": 500
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290735_13L88808Q1-1461677560Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=23736044",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4419998813|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587030-7556515&type=Single"
+   },
+   "best": 500,
+   "bestBook": "DK",
+   "bestImplied": 16.7,
+   "medianImplied": 16.7,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0041132": {
+   "name": "Deion Burks",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 750,
+    "FD": 750,
+    "BOL": 750,
+    "BR": 800,
+    "MGM": 750,
+    "BOV": 725
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290745_13L88808Q11658952185Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=42200553",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017607|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587018-7556491&type=Single"
+   },
+   "best": 800,
+   "bestBook": "BR",
+   "bestImplied": 11.1,
+   "medianImplied": 11.8,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0035710": {
+   "name": "Daniel Jones",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 800,
+    "FD": 800,
+    "BOL": 750,
+    "BR": 800,
+    "MGM": 750,
+    "BOV": 800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290746_13L88808Q1-1969802282Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=16544531",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017603|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587046-7556547&type=Single"
+   },
+   "best": 800,
+   "bestBook": "DK",
+   "bestImplied": 11.1,
+   "medianImplied": 11.1,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0039816": {
+   "name": "Anthony Gould",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 850,
+    "FD": 900,
+    "BOL": 800,
+    "BR": 700,
+    "MGM": 650,
+    "BOV": 825
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290752_13L88808Q1-542658616Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=48711970",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420037876|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587089-7556631&type=Single"
+   },
+   "best": 900,
+   "bestBook": "FD",
+   "bestImplied": 10.0,
+   "medianImplied": 11.0,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0035021": {
+   "name": "Ashton Dulin",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 1000,
+    "FD": 1000,
+    "BOL": 1000,
+    "BR": 540,
+    "MGM": 850,
+    "BOV": 1000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290748_13L88808Q1942374795Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=26556679",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4419998821|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587048-7556551&type=Single"
+   },
+   "best": 1000,
+   "bestBook": "DK",
+   "bestImplied": 9.1,
+   "medianImplied": 9.1,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0039359": {
+   "name": "Cade Stover",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 1200,
+    "FD": 1000,
+    "BOL": 1000,
+    "BR": 1200,
+    "MGM": 950,
+    "BOV": 1200
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290740_13L88808Q1611489861Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=42217796",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4421439322|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587032-7556519&type=Single"
+   },
+   "best": 1200,
+   "bestBook": "DK",
+   "bestImplied": 7.7,
+   "medianImplied": 8.4,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0041472": {
+   "name": "Marlin Klein",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 1300,
+    "FD": 1200,
+    "BOL": 1100,
+    "BR": 1500,
+    "MGM": 1450,
+    "BOV": 1300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290738_13L88808Q1-1683593135Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=95394740",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4419998817|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4629392-7643706&type=Single"
+   },
+   "best": 1500,
+   "bestBook": "BR",
+   "bestImplied": 6.2,
+   "medianImplied": 7.1,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0037292": {
+   "name": "Andrew Ogletree",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 1300,
+    "FD": 1600,
+    "BOL": 1300,
+    "BR": 3300,
+    "MGM": 1500,
+    "BOV": 1300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290747_13L88808Q11956512748Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=60885112",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017661|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587075-7556603&type=Single"
+   },
+   "best": 3300,
+   "bestBook": "BR",
+   "bestImplied": 2.9,
+   "medianImplied": 6.7,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0040179": {
+   "name": "DJ Giddens",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 3000,
+    "FD": 3500,
+    "BOL": 2900,
+    "BR": 2900,
+    "MGM": 3500,
+    "BOV": 2800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290751_13L88808Q11622227504Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=48308862",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017601|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587059-7556573&type=Single"
+   },
+   "best": 3500,
+   "bestBook": "FD",
+   "bestImplied": 2.8,
+   "medianImplied": 3.3,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0036182": {
+   "name": "Nick Westbrook-Ikhine",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 3000,
+    "FD": 2000,
+    "BOL": 1900,
+    "BR": 2500,
+    "MGM": 1850,
+    "BOV": 2800
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367592530_13L88808Q1-1506220356Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=41139682",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017659|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587066-7556587&type=Single"
+   },
+   "best": 3000,
+   "bestBook": "DK",
+   "bestImplied": 3.2,
+   "medianImplied": 4.3,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0038519": {
+   "name": "Nikko Remigio",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 3500,
+    "FD": 3500,
+    "BOL": 2400,
+    "BR": 950,
+    "MGM": 1300,
+    "BOV": 3300
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290739_13L88808Q11489584874Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=48502406",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4419998815|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587055-7556565&type=Single"
+   },
+   "best": 3500,
+   "bestBook": "DK",
+   "bestImplied": 2.8,
+   "medianImplied": 3.5,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0033439": {
+   "name": "Pharaoh Brown",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "DK": 4500,
+    "FD": 3300,
+    "BOL": 2400,
+    "BR": 4000,
+    "MGM": 3300,
+    "BOV": 4000
+   },
+   "links": {
+    "DK": "https://sportsbook.draftkings.com/?outcomes=0QA389630297%232367290749_13L88808Q12039949580Q20",
+    "FD": "https://sportsbook.fanduel.com/addToBetslip?marketId=42.625840218&selectionId=21336036",
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017595|{wagerAmount}",
+    "MGM": "https://sports.{state}.betmgm.com/en/sports?options=6:44039-4587038-7556531&type=Single"
+   },
+   "best": 4500,
+   "bestBook": "DK",
+   "bestImplied": 2.2,
+   "medianImplied": 2.7,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0038394": {
+   "name": "Will Mallory",
+   "team": "IND",
+   "game": "IND@HOU",
+   "books": {
+    "BR": 2500
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4419998819|{wagerAmount}"
+   },
+   "best": 2500,
+   "bestBook": "BR",
+   "bestImplied": 3.8,
+   "medianImplied": 3.8,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0033854": {
+   "name": "Dare Ogunbowale",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "BR": 800
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017593|{wagerAmount}"
+   },
+   "best": 800,
+   "bestBook": "BR",
+   "bestImplied": 11.1,
+   "medianImplied": 11.1,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  },
+  "00-0036556": {
+   "name": "Brevin Jordan",
+   "team": "HOU",
+   "game": "IND@HOU",
+   "books": {
+    "BR": 1500
+   },
+   "links": {
+    "BR": "https://{state}.betrivers.com/?page=sportsbook#event/1028824801?coupon={pickType}|4420017608|{wagerAmount}"
+   },
+   "best": 1500,
+   "bestBook": "BR",
+   "bestImplied": 6.2,
+   "medianImplied": 6.2,
+   "fetchedAt": "2026-11-19T16:02:12+00:00"
+  }
+ },
+ "unmatched": [
+  {
+   "game": "IND@HOU",
+   "name": "Quez Watkins"
+  }
+ ],
+ "dst": {
+  "HOU": {
+   "DK": 400,
+   "FD": 550,
+   "MGM": 360,
+   "BOV": 400
+  },
+  "IND": {
+   "DK": 600,
+   "FD": 950,
+   "MGM": 700,
+   "BOV": 600
+  }
+ }
+}
