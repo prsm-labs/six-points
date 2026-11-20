@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T12:02+00:00",
+ "generated_at": "2026-11-20T16:02+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 9,
@@ -3276,6 +3276,60 @@
      "result": null
     },
     {
+     "player_id": "00-0039890",
+     "name": "Adonai Mitchell",
+     "team": "NYJ",
+     "opp": "LAC",
+     "pos": "WR",
+     "chance": 0.258,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.133,
+     "est": 53.0,
+     "recent": [
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2026-09-13",
+       "TEN",
+       0
+      ],
+      [
+       "2026-09-20",
+       "GB",
+       0
+      ],
+      [
+       "2026-10-25",
+       "MIA",
+       0
+      ],
+      [
+       "2026-11-01",
+       "LV",
+       1
+      ],
+      [
+       "2026-11-08",
+       "KC",
+       0
+      ],
+      [
+       "2026-11-15",
+       "BUF",
+       0
+      ]
+     ],
+     "why": [
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0039880",
      "name": "Malik Washington",
      "team": "MIA",
@@ -3328,65 +3382,9 @@
       "scored in 1 of his last 8 games"
      ],
      "result": null
-    },
-    {
-     "player_id": "00-0036919",
-     "name": "Kenny Gainwell",
-     "team": "TB",
-     "opp": "DET",
-     "pos": "RB",
-     "chance": 0.2511,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1261,
-     "est": 53.3,
-     "recent": [
-      [
-       "2026-09-27",
-       "MIN",
-       0
-      ],
-      [
-       "2026-10-04",
-       "GB",
-       1
-      ],
-      [
-       "2026-10-08",
-       "DAL",
-       0
-      ],
-      [
-       "2026-10-18",
-       "PIT",
-       0
-      ],
-      [
-       "2026-10-25",
-       "CAR",
-       0
-      ],
-      [
-       "2026-11-01",
-       "ATL",
-       0
-      ],
-      [
-       "2026-11-08",
-       "CHI",
-       0
-      ]
-     ],
-     "why": [
-      "1.5 red-zone touches a game",
-      "touches up: 12.8 lately vs 10.0",
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
     }
    ],
-   "updated_at": "2026-11-20T07:02-05:00"
+   "updated_at": "2026-11-20T11:02-05:00"
   }
  ]
 }
