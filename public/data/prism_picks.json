@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T00:06+00:00",
+ "generated_at": "2026-11-20T12:02+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1717,16 +1717,28 @@
    ],
    "nextGame": {
     "teams": [
-     "HOU",
-     "IND"
+     "ARI",
+     "BAL",
+     "BUF",
+     "CAR",
+     "CHI",
+     "DAL",
+     "DET",
+     "JAX",
+     "KC",
+     "MIA",
+     "NO",
+     "NYG",
+     "TB",
+     "TEN"
     ],
-    "kickoff": "2026-11-19T20:15:00-05:00",
-    "label": "IND @ HOU",
+    "kickoff": "2026-11-22T13:00:00-05:00",
+    "label": "MIA @ BUF",
     "closest": {
-     "name": "David Montgomery",
-     "team": "HOU",
-     "label": "35+ scrimmage yards",
-     "chance": 0.7321
+     "name": "Kenny Gainwell",
+     "team": "TB",
+     "label": "30+ scrimmage yards",
+     "chance": 0.6708
     }
    },
    "tiers": {
@@ -1935,7 +1947,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-19T19:06-05:00"
+   "updated_at": "2026-11-20T07:02-05:00"
   }
  ]
 }
