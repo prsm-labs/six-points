@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T20:06+00:00",
+ "generated_at": "2026-11-20T00:06+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -3029,33 +3029,6 @@
      "trackN": 644
     },
     {
-     "player_id": "00-0037228",
-     "name": "Jaylen Warren",
-     "team": "PIT",
-     "opp": "PHI",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 115.4,
-     "est": 91.7,
-     "z": 2.48,
-     "games": [
-      73,
-      77,
-      176,
-      126,
-      188,
-      78,
-      137,
-      143,
-      41
-     ],
-     "why": [
-      "one big game (188) lifts his average -- 106 a game in the others"
-     ],
-     "track": 0.718,
-     "trackN": 644
-    },
-    {
      "player_id": "00-0038977",
      "name": "Tank Dell",
      "team": "HOU",
@@ -3119,6 +3092,33 @@
      ],
      "why": [
       "one big game (67) lifts his average -- 20 a game in the others"
+     ],
+     "track": 0.718,
+     "trackN": 644
+    },
+    {
+     "player_id": "00-0037228",
+     "name": "Jaylen Warren",
+     "team": "PIT",
+     "opp": "PHI",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 115.4,
+     "est": 92.9,
+     "z": 2.34,
+     "games": [
+      73,
+      77,
+      176,
+      126,
+      188,
+      78,
+      137,
+      143,
+      41
+     ],
+     "why": [
+      "one big game (188) lifts his average -- 106 a game in the others"
      ],
      "track": 0.718,
      "trackN": 644
@@ -3252,7 +3252,7 @@
      "trackN": 644
     }
    ],
-   "updated_at": "2026-11-19T15:06-05:00"
+   "updated_at": "2026-11-19T19:06-05:00"
   }
  ]
 }

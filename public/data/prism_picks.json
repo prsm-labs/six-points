@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T20:06+00:00",
+ "generated_at": "2026-11-20T00:06+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1817,18 +1817,18 @@
       "team": "PIT",
       "opp": "PHI",
       "pos": "RB",
-      "est": 91.7,
+      "est": 92.9,
       "depth": "RB1",
       "game": "PHI-PIT",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.377,
+      "chance": 0.3772,
       "last": [
        8,
        2
       ],
-      "track": 0.407,
+      "track": 0.408,
       "trackN": 69
      }
     ],
@@ -1935,7 +1935,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-19T15:06-05:00"
+   "updated_at": "2026-11-19T19:06-05:00"
   }
  ]
 }

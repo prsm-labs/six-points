@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T20:07+00:00",
+ "generated_at": "2026-11-20T00:07+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 9,
@@ -3111,61 +3111,6 @@
      "result": null
     },
     {
-     "player_id": "00-0036139",
-     "name": "Rico Dowdle",
-     "team": "PIT",
-     "opp": "PHI",
-     "pos": "RB",
-     "chance": 0.2978,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1728,
-     "est": 45.6,
-     "recent": [
-      [
-       "2025",
-       "",
-       0
-      ],
-      [
-       "2026-09-13",
-       "ATL",
-       0
-      ],
-      [
-       "2026-09-20",
-       "NE",
-       0
-      ],
-      [
-       "2026-10-18",
-       "TB",
-       0
-      ],
-      [
-       "2026-10-25",
-       "NO",
-       0
-      ],
-      [
-       "2026-11-01",
-       "CLE",
-       1
-      ],
-      [
-       "2026-11-15",
-       "CIN",
-       0
-      ]
-     ],
-     "why": [
-      "2.0 red-zone touches a game",
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
      "player_id": "00-0034975",
      "name": "Justice Hill",
      "team": "BAL",
@@ -3221,17 +3166,72 @@
      "result": null
     },
     {
+     "player_id": "00-0036139",
+     "name": "Rico Dowdle",
+     "team": "PIT",
+     "opp": "PHI",
+     "pos": "RB",
+     "chance": 0.2972,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1722,
+     "est": 46.1,
+     "recent": [
+      [
+       "2025",
+       "",
+       0
+      ],
+      [
+       "2026-09-13",
+       "ATL",
+       0
+      ],
+      [
+       "2026-09-20",
+       "NE",
+       0
+      ],
+      [
+       "2026-10-18",
+       "TB",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NO",
+       0
+      ],
+      [
+       "2026-11-01",
+       "CLE",
+       1
+      ],
+      [
+       "2026-11-15",
+       "CIN",
+       0
+      ]
+     ],
+     "why": [
+      "2.0 red-zone touches a game",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0037228",
      "name": "Jaylen Warren",
      "team": "PIT",
      "opp": "PHI",
      "pos": "RB",
-     "chance": 0.4147,
+     "chance": 0.4178,
      "hits": 2,
      "n": 8,
      "own": 0.25,
-     "lift": 0.1647,
-     "est": 91.7,
+     "lift": 0.1678,
+     "est": 92.9,
      "recent": [
       [
        "2026-09-27",
@@ -3270,7 +3270,6 @@
       ]
      ],
      "why": [
-      "+1.2 touches a game from teammates who are out",
       "2.0 red-zone touches a game",
       "scored in 2 of his last 8 games"
      ],
@@ -3387,7 +3386,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-19T15:07-05:00"
+   "updated_at": "2026-11-19T19:07-05:00"
   }
  ]
 }

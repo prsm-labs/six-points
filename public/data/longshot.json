@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T20:07+00:00",
+ "generated_at": "2026-11-20T00:07+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 10,
@@ -797,7 +797,7 @@
      "team": "PIT",
      "opp": "PHI",
      "pos": "TE",
-     "chance": 0.2167,
+     "chance": 0.224,
      "rz3": 1.0,
      "tch3": 3.0,
      "gp": 2,
@@ -904,7 +904,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-19T15:07-05:00"
+   "updated_at": "2026-11-19T19:07-05:00"
   }
  ]
 }
