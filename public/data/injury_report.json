@@ -9767,6 +9767,279 @@
     ],
     "11": [
       {
+        "team": "ARI",
+        "name": "Zachary Carter",
+        "position": "DT",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "ARI",
+        "name": "Jon Gaines II",
+        "position": "G",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "ARI",
+        "name": "Carson Beck",
+        "position": "QB",
+        "status": "Questionable",
+        "injury": "Back"
+      },
+      {
+        "team": "BAL",
+        "name": "Marlon Humphrey",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Not injury related - personal matter"
+      },
+      {
+        "team": "BAL",
+        "name": "Nnamdi Madubuike",
+        "position": "DT",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "BAL",
+        "name": "Jaylinn Hawkins",
+        "position": "S",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "BUF",
+        "name": "Damar Hamlin",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Toe"
+      },
+      {
+        "team": "BUF",
+        "name": "Christian Benford",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Groin"
+      },
+      {
+        "team": "BUF",
+        "name": "Dorian Williams",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Calf"
+      },
+      {
+        "team": "BUF",
+        "name": "Dalton Kincaid",
+        "position": "TE",
+        "status": "Doubtful",
+        "injury": "Thumb"
+      },
+      {
+        "team": "BUF",
+        "name": "Jackson Hawes",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "BUF",
+        "name": "T.J. Sanders",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "CAR",
+        "name": "Darren Waller",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "CAR",
+        "name": "Mike Jackson",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Groin"
+      },
+      {
+        "team": "CAR",
+        "name": "Bobby Okereke",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Foot"
+      },
+      {
+        "team": "CAR",
+        "name": "Isaiah Simmons",
+        "position": "S",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "CAR",
+        "name": "Brady Christensen",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "CAR",
+        "name": "Tommy Tremble",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "CAR",
+        "name": "Jonathon Brooks",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Groin"
+      },
+      {
+        "team": "CHI",
+        "name": "Kyler Gordon",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "CHI",
+        "name": "Zavion Thomas",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DAL",
+        "name": "P.J. Locke",
+        "position": "S",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "DAL",
+        "name": "Jalen Thompson",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "DAL",
+        "name": "DaRon Bland",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DAL",
+        "name": "Jake Ferguson",
+        "position": "TE",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "DAL",
+        "name": "Luke Schoonmaker",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Illness"
+      },
+      {
+        "team": "DAL",
+        "name": "Jonathan Mingo",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DAL",
+        "name": "Tyler Booker",
+        "position": "G",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DAL",
+        "name": "Jaishawn Barham",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Hip"
+      },
+      {
+        "team": "DAL",
+        "name": "Devin Moore",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Hip"
+      },
+      {
+        "team": "DEN",
+        "name": "Brandon Jones",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "DEN",
+        "name": "Caleb Lohner",
+        "position": "TE",
+        "status": "Out",
+        "injury": "Foot"
+      },
+      {
+        "team": "DET",
+        "name": "D.J. Reed",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Hip"
+      },
+      {
+        "team": "DET",
+        "name": "Joe Bachie",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "DET",
+        "name": "Khalil Dorsey",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DET",
+        "name": "Cade Mays",
+        "position": "C",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DET",
+        "name": "Tyler Lacy",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "DET",
+        "name": "Sione Vaki",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DET",
+        "name": "Ennis Rakestraw Jr.",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
         "team": "HOU",
         "name": "Danielle Hunter",
         "position": "DE",
@@ -9870,6 +10143,538 @@
         "position": "T",
         "status": "Out",
         "injury": "Knee"
+      },
+      {
+        "team": "JAX",
+        "name": "Matt Dickerson",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Neck"
+      },
+      {
+        "team": "JAX",
+        "name": "Robert Hainsey",
+        "position": "C",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "JAX",
+        "name": "BJ Green II",
+        "position": "DE",
+        "status": "Out",
+        "injury": "Forearm"
+      },
+      {
+        "team": "JAX",
+        "name": "Danny Striggow",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Concussion"
+      },
+      {
+        "team": "KC",
+        "name": "Jaylon Moore",
+        "position": "T",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "KC",
+        "name": "Trey Smith",
+        "position": "G",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "KC",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Groin"
+      },
+      {
+        "team": "KC",
+        "name": "Omarr Norman-Lott",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "KC",
+        "name": "Peter Woods",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Neck"
+      },
+      {
+        "team": "LAC",
+        "name": "Trey Pipkins",
+        "position": "T",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "LAC",
+        "name": "Charlie Kolar",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Concussion"
+      },
+      {
+        "team": "LAC",
+        "name": "Kendall Williamson",
+        "position": "S",
+        "status": "Out",
+        "injury": "Calf"
+      },
+      {
+        "team": "LAC",
+        "name": "Daiyan Henley",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "LAC",
+        "name": "Tarheeb Still",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "LAC",
+        "name": "Ladd McConkey",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Back"
+      },
+      {
+        "team": "LAC",
+        "name": "Isas Waxter",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "LAC",
+        "name": "Rodney Shelley",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "LAC",
+        "name": "Brenen Thompson",
+        "position": "WR",
+        "status": "Doubtful",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "LV",
+        "name": "Foley Fatukasi",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Toe"
+      },
+      {
+        "team": "LV",
+        "name": "Matt Gay",
+        "position": "K",
+        "status": "Questionable",
+        "injury": "Hip"
+      },
+      {
+        "team": "LV",
+        "name": "Brock Bowers",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "LV",
+        "name": "Tonka Hemingway",
+        "position": "DT",
+        "status": "Out",
+        "injury": "Stinger"
+      },
+      {
+        "team": "MIA",
+        "name": "Bradley Pinion",
+        "position": "P",
+        "status": "Out",
+        "injury": "Groin"
+      },
+      {
+        "team": "MIA",
+        "name": "Aaron Brewer",
+        "position": "C",
+        "status": "Questionable",
+        "injury": "Concussion"
+      },
+      {
+        "team": "MIA",
+        "name": "Darrell Baker Jr.",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "MIA",
+        "name": "Jared Wayne",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Quadricep"
+      },
+      {
+        "team": "MIA",
+        "name": "Jaylin Simpson",
+        "position": "CB",
+        "status": "Doubtful",
+        "injury": "Knee"
+      },
+      {
+        "team": "MIA",
+        "name": "Marcellas Dial Jr.",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Toe"
+      },
+      {
+        "team": "MIA",
+        "name": "Dante Trader Jr.",
+        "position": "S",
+        "status": "Doubtful",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "MIN",
+        "name": "Kyler Murray",
+        "position": "QB",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "MIN",
+        "name": "Isaiah Rodgers",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Quadricep"
+      },
+      {
+        "team": "MIN",
+        "name": "Jay Ward",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "MIN",
+        "name": "Jordan Addison",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Thumb"
+      },
+      {
+        "team": "NO",
+        "name": "Justin Reid",
+        "position": "S",
+        "status": "Out",
+        "injury": "Not injury related - personal matter"
+      },
+      {
+        "team": "NO",
+        "name": "Erik McCoy",
+        "position": "C",
+        "status": "Out",
+        "injury": "Biceps"
+      },
+      {
+        "team": "NO",
+        "name": "Pete Werner",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "NO",
+        "name": "Martin Emerson",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "NO",
+        "name": "Asim Richards",
+        "position": "T",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "NO",
+        "name": "Taliese Fuaga",
+        "position": "T",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "NO",
+        "name": "Decamerion Richardson",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Thigh"
+      },
+      {
+        "team": "NYJ",
+        "name": "David Onyemata",
+        "position": "DT",
+        "status": "Out",
+        "injury": "Abdomen"
+      },
+      {
+        "team": "NYJ",
+        "name": "Harrison Phillips",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "NYJ",
+        "name": "Joseph Ossai",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Foot"
+      },
+      {
+        "team": "NYJ",
+        "name": "Dylan Parham",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "NYJ",
+        "name": "Trevin Wallace",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Groin"
+      },
+      {
+        "team": "NYJ",
+        "name": "Isaiah Williams",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Ribs"
+      },
+      {
+        "team": "NYJ",
+        "name": "Omar Cooper Jr.",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "PHI",
+        "name": "Zack Baun",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Back"
+      },
+      {
+        "team": "PHI",
+        "name": "Dontayvion Wicks",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "PHI",
+        "name": "Will Shipley",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Foot"
+      },
+      {
+        "team": "PHI",
+        "name": "Smael Mondon Jr.",
+        "position": "LB",
+        "status": "Doubtful",
+        "injury": "Ankle"
+      },
+      {
+        "team": "PIT",
+        "name": "DeShon Elliott",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "PIT",
+        "name": "Michael Pittman",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Foot"
+      },
+      {
+        "team": "PIT",
+        "name": "Patrick Queen",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Hand"
+      },
+      {
+        "team": "PIT",
+        "name": "Nick Herbig",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Hip"
+      },
+      {
+        "team": "PIT",
+        "name": "Roman Wilson",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Hand"
+      },
+      {
+        "team": "PIT",
+        "name": "Gennings Dunker",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "SF",
+        "name": "Mike Evans",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Achilles"
+      },
+      {
+        "team": "SF",
+        "name": "Dre Greenlaw",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Neck"
+      },
+      {
+        "team": "SF",
+        "name": "Luke Gifford",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Chest"
+      },
+      {
+        "team": "SF",
+        "name": "Khalid Kareem",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "SF",
+        "name": "Nate Hobbs",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Groin"
+      },
+      {
+        "team": "SF",
+        "name": "Mac Jones",
+        "position": "QB",
+        "status": "Questionable",
+        "injury": "Illness"
+      },
+      {
+        "team": "SF",
+        "name": "Upton Stout",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "SF",
+        "name": "Jordan James",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Calf"
+      },
+      {
+        "team": "SF",
+        "name": "C.J. West",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "TB",
+        "name": "Baker Mayfield",
+        "position": "QB",
+        "status": "Questionable",
+        "injury": "Foot"
+      },
+      {
+        "team": "TB",
+        "name": "Antoine Winfield Jr.",
+        "position": "S",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "TB",
+        "name": "Josh Hayes",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "TB",
+        "name": "Yaya Diaby",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "TEN",
+        "name": "Tony Adams",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Concussion"
+      },
+      {
+        "team": "TEN",
+        "name": "Tyjae Spears",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "TEN",
+        "name": "Micah Robinson",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Hip"
+      },
+      {
+        "team": "TEN",
+        "name": "Fernando Carmona",
+        "position": "G",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "TEN",
+        "name": "Carnell Tate",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "TEN",
+        "name": "Anthony Hill Jr.",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Neck"
       }
     ]
   }
