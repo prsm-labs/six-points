@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T20:06+00:00",
+ "generated_at": "2026-11-21T00:06+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1713,6 +1713,25 @@
      "game": "HOU-IND",
      "track": 0.657,
      "trackN": 29
+    },
+    {
+     "player_id": "00-0041013",
+     "name": "Emmett Johnson",
+     "team": "KC",
+     "opp": "ARI",
+     "pos": "RB",
+     "line": 30,
+     "label": "30+ scrimmage yards",
+     "chance": 0.7321,
+     "est": 60.8,
+     "last": [
+      8,
+      4
+     ],
+     "depth": "RB2",
+     "game": "ARI-KC",
+     "track": 0.657,
+     "trackN": 29
     }
    ],
    "nextGame": {
@@ -1735,10 +1754,10 @@
     "kickoff": "2026-11-22T13:00:00-05:00",
     "label": "MIA @ BUF",
     "closest": {
-     "name": "Kenny Gainwell",
-     "team": "TB",
+     "name": "Emmett Johnson",
+     "team": "KC",
      "label": "30+ scrimmage yards",
-     "chance": 0.6708
+     "chance": 0.7321
     }
    },
    "tiers": {
@@ -1947,7 +1966,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-20T15:06-05:00"
+   "updated_at": "2026-11-20T19:06-05:00"
   }
  ]
 }

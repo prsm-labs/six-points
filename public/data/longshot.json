@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T20:07+00:00",
+ "generated_at": "2026-11-21T00:07+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 10,
@@ -840,6 +840,22 @@
      "result": null
     },
     {
+     "player_id": "00-0037838",
+     "name": "Isaiah Likely",
+     "team": "NYG",
+     "opp": "JAX",
+     "pos": "TE",
+     "chance": 0.2956,
+     "rz3": 1.0,
+     "tch3": 8.5,
+     "gp": 2,
+     "rzSeason": 1.11,
+     "pct": 0.8958,
+     "rank": 6,
+     "of": 48,
+     "result": null
+    },
+    {
      "player_id": "00-0032464",
      "name": "Kalif Raymond",
      "team": "CHI",
@@ -886,25 +902,9 @@
      "rank": 13,
      "of": 82,
      "result": null
-    },
-    {
-     "player_id": "00-0040669",
-     "name": "Isaac TeSlaa",
-     "team": "DET",
-     "opp": "TB",
-     "pos": "WR",
-     "chance": 0.168,
-     "rz3": 1.0,
-     "tch3": 3.5,
-     "gp": 2,
-     "rzSeason": 0.83,
-     "pct": 0.8395,
-     "rank": 14,
-     "of": 81,
-     "result": null
     }
    ],
-   "updated_at": "2026-11-20T15:07-05:00"
+   "updated_at": "2026-11-20T19:07-05:00"
   }
  ]
 }
