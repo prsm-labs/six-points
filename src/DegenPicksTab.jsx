@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import {
-  START, STAKES, STATS, STAT_SHORT, STAT_LABEL, betKey, cancelBet, clampChance, gamblyLeg, isOpenPick, laddersOf, legLabel, parlayChance, parlayPayout,
-  parlayProblem, payoutFor, placeBet, placeParlay, resetCoins, setSlip, summarize, ticket, useCoins, useSlip, useWeek,
+  START, STAKES, STATS, STAT_SHORT, STAT_LABEL, betKey, cancelBet, clampChance, gameOfTeam, gamblyLeg, isOpenPick, laddersOf, legLabel, parlayChance, parlayPayout,
+  parlayProblem, payoutFor, placeBet, placeParlay, resetCoins, reuseLegs, reuseNote, setSlip, summarize, ticket, useCoins, useSlip, useWeek,
 } from './coins.js'
 import { betText } from './gambly.js'
 import ViewPicker from './ViewPicker.jsx'
@@ -91,10 +91,9 @@ function Board({ wk, slip }) {
   )
 }
 
-function Slip({ slip }) {
+function Slip({ slip, mode, setMode, notice }) {
   const coins = useCoins()
   const [stake, setStake] = useState(25)
-  const [mode, setMode] = useState('single')
   const [msg, setMsg] = useState(null)
   if (!slip.length) return null
   const parlay = mode === 'parlay' && slip.length > 1
@@ -114,6 +113,7 @@ function Slip({ slip }) {
   return (
     <div className="dp-slip">
       <div className="dp-slip-head"><b>🧾 Slip · {slip.length}</b><span className="coin-bal">{fmt(coins.balance)} coins</span><button type="button" className="dp-link" onClick={() => setSlip([])}>clear</button></div>
+      {notice && <div className="dp-small dp-notice">{notice}</div>}
       {slip.length > 1 && (
         <div className="dp-mode">
           <button type="button" className={`pill-btn ${!parlay ? 'active' : ''}`} onClick={() => setMode('single')}>Singles</button>
@@ -146,7 +146,18 @@ function Slip({ slip }) {
 
 const legMark = (l) => (l.status === 'won' ? '✅' : l.status === 'lost' ? '❌' : l.status === 'void' ? '➖' : '⏳')
 const stamp = (b) => (b.status === 'open' ? (isOpenPick(b.tip) ? `kicks ${kickLabel(b.tip)}` : 'in play') : b.status === 'void' ? 'void' : b.status === 'won' ? 'hit' : 'miss')
-function SlipCard({ b }) {
+// 🔁 Reuse (2026-11-21, user): put this slip's picks back on a new slip at the current chances.
+function ReuseBtn({ b, reuse }) {
+  if (!reuse) return null
+  const n = reuse.count(b), all = b.type === 'parlay' ? b.legs.length : 1
+  return (
+    <button type="button" className="dp-reuse" disabled={!n} onClick={() => reuse.go(b)}
+      title={n ? `Add ${n === all ? (all === 1 ? 'this pick' : 'these legs') : `${n} of ${all} legs`} to a new slip at the current chances` : reuse.why}>
+      🔁 Reuse{n && n < all ? ` ${n}/${all}` : ''}
+    </button>
+  )
+}
+function SlipCard({ b, reuse }) {
   const open = b.status === 'open'
   const delta = b.status === 'won' ? b.payout - b.stake : b.status === 'lost' ? -b.stake : 0
   const par = b.type === 'parlay'
@@ -173,6 +184,7 @@ function SlipCard({ b }) {
           : <span className="dp-muted dp-small">settles with the next data update after the final</span>)
           : b.status === 'void' ? <span className="dp-muted dp-small">{par ? 'no legs played' : "didn't play"} · coins back</span>
           : <><span className="dp-small">{par ? (b.status === 'won' ? 'Every leg hit' : 'A leg missed') : `Finished with ${b.actual}${b.stat === 'YDS' ? ' yds' : b.actual === 1 ? ' TD' : ' TDs'}`}</span><b className={delta >= 0 ? 'coin-good' : 'coin-bad'}>{signed(delta)}</b></>}
+        <ReuseBtn b={b} reuse={reuse} />
       </div>
     </div>
   )
@@ -196,7 +208,7 @@ function BalanceLine({ coins }) {
   )
 }
 
-function Record({ coins }) {
+function Record({ coins, reuse }) {
   const [confirm, setConfirm] = useState(false)
   const s = summarize(coins)
   const start = coins.start || START
@@ -216,7 +228,7 @@ function Record({ coins }) {
           {byStat.length > 1 && <div className="dp-bystat">{byStat.map(([k, n, w, said]) => <span key={k}><b>{STAT_SHORT[k]}</b> {w}/{n} <span className="dp-muted">said {said.toFixed(1)}</span></span>)}</div>}
         </div>
       ) : <div className="dp-muted dp-small">After 5 settled picks this shows how you're doing against our chances.</div>}
-      <div className="dp-card"><b>Settled</b>{settled.length ? <div className="dp-tickets">{settled.map((b) => <SlipCard key={b.id} b={b} />)}</div> : <div className="dp-muted dp-small">Nothing settled yet.</div>}</div>
+      <div className="dp-card"><b>Settled</b>{settled.length ? <div className="dp-tickets">{settled.map((b) => <SlipCard key={b.id} b={b} reuse={reuse} />)}</div> : <div className="dp-muted dp-small">Nothing settled yet.</div>}</div>
       <div className="dp-card dp-reset">
         <span className="dp-small">Run #{coins.run || 1} · started {new Date(coins.startedAt).toLocaleDateString([], { month: 'short', day: 'numeric' })} with {fmt(start)} coins</span>
         <button type="button" className={`pill-btn ${confirm ? 'active' : ''}`} onClick={reset}>{confirm ? `Tap again: back to ${fmt(start)}, all slips cleared` : '↺ Reset coins'}</button>
@@ -233,6 +245,31 @@ export default function DegenPicksTab() {
   const s = summarize(coins)
   const [view, setView] = useState('pick')
   const open = coins.bets.filter((b) => b.status === 'open').sort((a, b) => (a.tip || '').localeCompare(b.tip || ''))
+  const [mode, setMode] = useState('single')
+  const [notice, setNotice] = useState(null)
+  // 🔁 Reuse (2026-11-21, user): any placed slip (open or settled) back on a NEW slip -- same players / stats / lines, priced now.
+  const find = (l) => {
+    if (!wk || viewWeek || !wk.lines) return null
+    const p = (wk.lines.players || []).find((x) => x.id === l.playerId)
+    if (!p || !wk.active.has(p.id) || SKIP.has(p.status)) return null
+    const g = gameOfTeam(wk, p.team)
+    if (!g || !isOpenPick(g.kickoff)) return null
+    return { ladder: (laddersOf(p)[l.stat] || []).filter(([, ch]) => ch >= 0.03 && ch <= 0.97), make: (T, ch) => ticket(wk, p, l.stat, T, ch) }
+  }
+  const reuse = {
+    why: 'No open game this week for these players',
+    count: (b) => reuseLegs(b, find).tickets.length,
+    go: (b) => {
+      const r = reuseLegs(b, find)
+      if (!r.tickets.length) return
+      const replaced = slip.length
+      setSlip(r.tickets)
+      setMode(b.type === 'parlay' && r.tickets.length > 1 ? 'parlay' : 'single')
+      setNotice(reuseNote(r, replaced, 'this week'))
+      setTimeout(() => setNotice(null), 8000)
+      setView('pick')
+    },
+  }
   return (
     <div className="coins-page">
       <h2 className="dp-title">🪙 Degen Picks</h2>
@@ -248,9 +285,9 @@ export default function DegenPicksTab() {
       <ViewPicker pillClass="pill-btn" value={view} onChange={setView} options={[['pick', '🎯 Make picks'], ['slips', `🧾 My slips${open.length ? ` (${open.length})` : ''}`], ['record', '📈 Track record']]} />
       {view === 'pick' && (wk === undefined ? <div className="dp-muted">Loading this week…</div> : !wk ? <div className="dp-note">This week's slate isn't posted yet.</div>
         : viewWeek ? <div className="dp-note">Picks are made on this week's slate. Switch the week back to the current one to make picks.</div>
-        : <><Board wk={wk} slip={slip} /><Slip slip={slip} /></>)}
-      {view === 'slips' && (open.length ? <div className="dp-tickets">{open.map((b) => <SlipCard key={b.id} b={b} />)}</div> : <div className="dp-muted">No open slips. Build one under 🎯 Make picks.</div>)}
-      {view === 'record' && <Record coins={coins} />}
+        : <><Board wk={wk} slip={slip} /><Slip slip={slip} mode={mode} setMode={setMode} notice={notice} /></>)}
+      {view === 'slips' && (open.length ? <div className="dp-tickets">{open.map((b) => <SlipCard key={b.id} b={b} reuse={reuse} />)}</div> : <div className="dp-muted">No open slips. Build one under 🎯 Make picks.</div>)}
+      {view === 'record' && <Record coins={coins} reuse={reuse} />}
       <div className="dp-note" style={{ marginTop: 12 }}>
         <b>How it works.</b> Everyone starts with {fmt(START)} free coins. Pick any line we price (anytime TD, 2+ TDs, scrimmage, rushing or receiving yards; starting QBs' rushing yards), add it to
         your slip and choose the coins. A hit returns your coins divided by our chance, so a 25% line returns 4x and a 75% line 1.33x; a miss
