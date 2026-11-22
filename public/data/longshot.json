@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:51+00:00",
+ "generated_at": "2026-11-22T20:06+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 10,
@@ -776,6 +776,22 @@
    "replay": false,
    "picks": [
     {
+     "player_id": "00-0036894",
+     "name": "Pat Freiermuth",
+     "team": "PIT",
+     "opp": "PHI",
+     "pos": "TE",
+     "chance": 0.2254,
+     "rz3": 1.0,
+     "tch3": 3.0,
+     "gp": 2,
+     "rzSeason": 0.7,
+     "pct": 0.9565,
+     "rank": 3,
+     "of": 46,
+     "result": null
+    },
+    {
      "player_id": "00-0039894",
      "name": "Xavier Worthy",
      "team": "KC",
@@ -789,22 +805,6 @@
      "pct": 0.9383,
      "rank": 6,
      "of": 81,
-     "result": null
-    },
-    {
-     "player_id": "00-0036894",
-     "name": "Pat Freiermuth",
-     "team": "PIT",
-     "opp": "PHI",
-     "pos": "TE",
-     "chance": 0.2254,
-     "rz3": 1.0,
-     "tch3": 3.0,
-     "gp": 2,
-     "rzSeason": 0.7,
-     "pct": 0.9362,
-     "rank": 4,
-     "of": 47,
      "result": null
     },
     {
@@ -904,7 +904,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-22T11:51-05:00"
+   "updated_at": "2026-11-22T15:06-05:00"
   }
  ]
 }

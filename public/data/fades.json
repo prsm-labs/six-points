@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:51+00:00",
+ "generated_at": "2026-11-22T20:06+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -2911,6 +2911,30 @@
      "trackN": 520
     },
     {
+     "player_id": "00-0039915",
+     "name": "Ladd McConkey",
+     "team": "LAC",
+     "opp": "NYJ",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 47.7,
+     "est": 28.5,
+     "z": 3.59,
+     "games": [
+      82,
+      35,
+      66,
+      0,
+      17,
+      86
+     ],
+     "why": [
+      "one big game (86) lifts his average -- 40 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 520
+    },
+    {
      "player_id": "00-0038951",
      "name": "Sean Tucker",
      "team": "TB",
@@ -3279,7 +3303,7 @@
      "trackN": 644
     }
    ],
-   "updated_at": "2026-11-22T11:51-05:00"
+   "updated_at": "2026-11-22T15:06-05:00"
   }
  ]
 }

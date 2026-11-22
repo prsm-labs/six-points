@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:51+00:00",
+ "generated_at": "2026-11-22T20:06+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1188,6 +1188,40 @@
      "trackN": 719
     },
     {
+     "player_id": "00-0040122",
+     "name": "Ashton Jeanty",
+     "team": "LV",
+     "opp": "DEN",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 52.3,
+     "est": 75.6,
+     "z": 2.68,
+     "games": [
+      147,
+      63,
+      93,
+      126,
+      77,
+      58,
+      76,
+      73,
+      20,
+      64
+     ],
+     "last": [
+      73,
+      20,
+      64
+     ],
+     "why": [
+      "role up: +5 yds (teammates out / snaps)",
+      "52 a game lately vs 80 on the season"
+     ],
+     "track": 0.661,
+     "trackN": 719
+    },
+    {
      "player_id": "00-0033293",
      "name": "Aaron Jones",
      "team": "MIN",
@@ -1285,39 +1319,6 @@
      "trackN": 719
     },
     {
-     "player_id": "00-0040122",
-     "name": "Ashton Jeanty",
-     "team": "LV",
-     "opp": "DEN",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 52.3,
-     "est": 70.2,
-     "z": 2.13,
-     "games": [
-      147,
-      63,
-      93,
-      126,
-      77,
-      58,
-      76,
-      73,
-      20,
-      64
-     ],
-     "last": [
-      73,
-      20,
-      64
-     ],
-     "why": [
-      "52 a game lately vs 80 on the season"
-     ],
-     "track": 0.661,
-     "trackN": 719
-    },
-    {
      "player_id": "00-0036275",
      "name": "D'Andre Swift",
      "team": "CHI",
@@ -1351,7 +1352,7 @@
      "trackN": 719
     }
    ],
-   "updated_at": "2026-11-22T11:51-05:00"
+   "updated_at": "2026-11-22T15:06-05:00"
   }
  ]
 }
