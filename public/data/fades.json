@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:01+00:00",
+ "generated_at": "2026-11-22T16:51+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -2862,6 +2862,33 @@
    "source": "live",
    "fades": [
     {
+     "player_id": "00-0039364",
+     "name": "Sione Vaki",
+     "team": "DET",
+     "opp": "TB",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 27.1,
+     "est": 9.9,
+     "z": 5.47,
+     "games": [
+      18,
+      20,
+      37,
+      17,
+      11,
+      5,
+      70,
+      21,
+      45
+     ],
+     "why": [
+      "one big game (70) lifts his average -- 22 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 520
+    },
+    {
      "player_id": "00-0039798",
      "name": "Isaiah Davis",
      "team": "NYJ",
@@ -2879,30 +2906,6 @@
      ],
      "why": [
       "one big game (54) lifts his average -- 19 a game in the others"
-     ],
-     "track": 0.814,
-     "trackN": 520
-    },
-    {
-     "player_id": "00-0040887",
-     "name": "Josh Cuevas",
-     "team": "BAL",
-     "opp": "CAR",
-     "pos": "TE",
-     "depth": "TE2",
-     "line": 28.5,
-     "est": 14.6,
-     "z": 3.64,
-     "games": [
-      14,
-      26,
-      44,
-      35,
-      15,
-      37
-     ],
-     "why": [
-      "his usage (3.1 touches a game) projects below what he's averaged"
      ],
      "track": 0.814,
      "trackN": 520
@@ -2929,6 +2932,30 @@
      "trackN": 520
     },
     {
+     "player_id": "00-0040887",
+     "name": "Josh Cuevas",
+     "team": "BAL",
+     "opp": "CAR",
+     "pos": "TE",
+     "depth": "TE2",
+     "line": 28.5,
+     "est": 14.9,
+     "z": 3.52,
+     "games": [
+      14,
+      26,
+      44,
+      35,
+      15,
+      37
+     ],
+     "why": [
+      "his usage (3.1 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.814,
+     "trackN": 520
+    },
+    {
      "player_id": "00-0039064",
      "name": "Zay Flowers",
      "team": "BAL",
@@ -2936,8 +2963,8 @@
      "pos": "WR",
      "depth": "WR1",
      "line": 82.1,
-     "est": 59.6,
-     "z": 2.92,
+     "est": 59.7,
+     "z": 2.9,
      "games": [
       150,
       104,
@@ -3072,6 +3099,33 @@
      "trackN": 644
     },
     {
+     "player_id": "00-0031610",
+     "name": "Darren Waller",
+     "team": "CAR",
+     "opp": "BAL",
+     "pos": "TE",
+     "depth": "TE2",
+     "line": 35.9,
+     "est": 24.1,
+     "z": 2.4,
+     "games": [
+      28,
+      33,
+      51,
+      36,
+      0,
+      50,
+      11,
+      90,
+      24
+     ],
+     "why": [
+      "one big game (90) lifts his average -- 29 a game in the others"
+     ],
+     "track": 0.718,
+     "trackN": 644
+    },
+    {
      "player_id": "00-0041100",
      "name": "Josh Cameron",
      "team": "JAX",
@@ -3104,8 +3158,8 @@
      "pos": "RB",
      "depth": "RB1",
      "line": 115.4,
-     "est": 92.9,
-     "z": 2.34,
+     "est": 93.0,
+     "z": 2.33,
      "games": [
       73,
       77,
@@ -3223,36 +3277,9 @@
      ],
      "track": 0.718,
      "trackN": 644
-    },
-    {
-     "player_id": "00-0037239",
-     "name": "Chris Olave",
-     "team": "NO",
-     "opp": "CHI",
-     "pos": "WR",
-     "depth": "WR1",
-     "line": 84.9,
-     "est": 68.2,
-     "z": 2.02,
-     "games": [
-      182,
-      86,
-      107,
-      116,
-      46,
-      43,
-      56,
-      98,
-      30
-     ],
-     "why": [
-      "one big game (182) lifts his average -- 73 a game in the others"
-     ],
-     "track": 0.718,
-     "trackN": 644
     }
    ],
-   "updated_at": "2026-11-22T11:01-05:00"
+   "updated_at": "2026-11-22T11:51-05:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:02+00:00",
+ "generated_at": "2026-11-22T16:51+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 9,
@@ -3116,11 +3116,11 @@
      "team": "BAL",
      "opp": "CAR",
      "pos": "RB",
-     "chance": 0.2978,
+     "chance": 0.2979,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.1728,
+     "lift": 0.1729,
      "est": 47.4,
      "recent": [
       [
@@ -3171,12 +3171,12 @@
      "team": "PIT",
      "opp": "PHI",
      "pos": "RB",
-     "chance": 0.2972,
+     "chance": 0.2974,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.1722,
-     "est": 46.1,
+     "lift": 0.1724,
+     "est": 46.2,
      "recent": [
       [
        "2025",
@@ -3226,12 +3226,12 @@
      "team": "PIT",
      "opp": "PHI",
      "pos": "RB",
-     "chance": 0.4178,
+     "chance": 0.4187,
      "hits": 2,
      "n": 8,
      "own": 0.25,
-     "lift": 0.1678,
-     "est": 92.9,
+     "lift": 0.1687,
+     "est": 93.0,
      "recent": [
       [
        "2026-09-27",
@@ -3272,6 +3272,61 @@
      "why": [
       "2.0 red-zone touches a game",
       "scored in 2 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
+     "player_id": "00-0041438",
+     "name": "Carnell Tate",
+     "team": "TEN",
+     "opp": "DAL",
+     "pos": "WR",
+     "chance": 0.2871,
+     "hits": 1,
+     "n": 7,
+     "own": 0.1429,
+     "lift": 0.1442,
+     "est": 46.4,
+     "recent": [
+      [
+       "2026-09-13",
+       "NYJ",
+       0
+      ],
+      [
+       "2026-09-20",
+       "PHI",
+       0
+      ],
+      [
+       "2026-09-27",
+       "NYG",
+       0
+      ],
+      [
+       "2026-10-04",
+       "BAL",
+       0
+      ],
+      [
+       "2026-10-11",
+       "HOU",
+       0
+      ],
+      [
+       "2026-10-18",
+       "IND",
+       1
+      ],
+      [
+       "2026-10-25",
+       "CLE",
+       0
+      ]
+     ],
+     "why": [
+      "+1.4 touches a game from teammates who are out",
+      "scored in 1 of his last 7 games"
      ],
      "result": null
     },
@@ -3328,63 +3383,9 @@
       "scored in 1 of his last 8 games"
      ],
      "result": null
-    },
-    {
-     "player_id": "00-0039880",
-     "name": "Malik Washington",
-     "team": "MIA",
-     "opp": "BUF",
-     "pos": "WR",
-     "chance": 0.2524,
-     "hits": 1,
-     "n": 8,
-     "own": 0.125,
-     "lift": 0.1274,
-     "est": 44.8,
-     "recent": [
-      [
-       "2026-09-27",
-       "KC",
-       0
-      ],
-      [
-       "2026-10-04",
-       "MIN",
-       0
-      ],
-      [
-       "2026-10-11",
-       "CIN",
-       0
-      ],
-      [
-       "2026-10-25",
-       "NYJ",
-       0
-      ],
-      [
-       "2026-11-01",
-       "NE",
-       1
-      ],
-      [
-       "2026-11-08",
-       "DET",
-       0
-      ],
-      [
-       "2026-11-15",
-       "IND",
-       0
-      ]
-     ],
-     "why": [
-      "scored in 1 of his last 8 games"
-     ],
-     "result": null
     }
    ],
-   "updated_at": "2026-11-22T11:02-05:00"
+   "updated_at": "2026-11-22T11:51-05:00"
   }
  ]
 }

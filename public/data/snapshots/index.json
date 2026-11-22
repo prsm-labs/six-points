@@ -34,6 +34,13 @@
    "file": "2026-wk10.json",
    "backfilled": false,
    "snapshot_at": "2026-11-15T16:51:36.370Z"
+  },
+  {
+   "season": 2026,
+   "week": 11,
+   "file": "2026-wk11.json",
+   "backfilled": false,
+   "snapshot_at": "2026-11-22T16:51:38.482Z"
   }
  ]
 }

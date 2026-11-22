@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:02+00:00",
+ "generated_at": "2026-11-22T16:51+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 10,
@@ -797,14 +797,14 @@
      "team": "PIT",
      "opp": "PHI",
      "pos": "TE",
-     "chance": 0.224,
+     "chance": 0.2254,
      "rz3": 1.0,
      "tch3": 3.0,
      "gp": 2,
      "rzSeason": 0.7,
-     "pct": 0.9375,
+     "pct": 0.9362,
      "rank": 4,
-     "of": 48,
+     "of": 47,
      "result": null
     },
     {
@@ -829,14 +829,14 @@
      "team": "BAL",
      "opp": "CAR",
      "pos": "TE",
-     "chance": 0.1745,
+     "chance": 0.1748,
      "rz3": 1.0,
      "tch3": 5.3,
      "gp": 3,
      "rzSeason": 0.96,
-     "pct": 0.9167,
+     "pct": 0.9149,
      "rank": 5,
-     "of": 48,
+     "of": 47,
      "result": null
     },
     {
@@ -850,9 +850,9 @@
      "tch3": 8.5,
      "gp": 2,
      "rzSeason": 1.11,
-     "pct": 0.8958,
+     "pct": 0.8936,
      "rank": 6,
-     "of": 48,
+     "of": 47,
      "result": null
     },
     {
@@ -882,9 +882,9 @@
      "tch3": 5.0,
      "gp": 3,
      "rzSeason": 1.16,
-     "pct": 0.875,
+     "pct": 0.8723,
      "rank": 7,
-     "of": 48,
+     "of": 47,
      "result": null
     },
     {
@@ -904,7 +904,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-22T11:02-05:00"
+   "updated_at": "2026-11-22T11:51-05:00"
   }
  ]
 }
