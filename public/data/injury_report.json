@@ -9914,6 +9914,69 @@
         "injury": "Ankle"
       },
       {
+        "team": "CIN",
+        "name": "Jalen Davis",
+        "position": "CB",
+        "status": "Doubtful",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "CIN",
+        "name": "Oren Burks",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Groin"
+      },
+      {
+        "team": "CIN",
+        "name": "Dalton Risner",
+        "position": "G",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "CIN",
+        "name": "Kyle Dugger",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Quadricep"
+      },
+      {
+        "team": "CIN",
+        "name": "Daxton Hill",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Illness"
+      },
+      {
+        "team": "CIN",
+        "name": "Andrei Iosivas",
+        "position": "WR",
+        "status": "Doubtful",
+        "injury": "Thumb"
+      },
+      {
+        "team": "CIN",
+        "name": "Swayze Bozeman",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Forearm"
+      },
+      {
+        "team": "CIN",
+        "name": "Dylan Fairchild",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Oblique"
+      },
+      {
+        "team": "CIN",
+        "name": "Brian Parker II",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
         "team": "DAL",
         "name": "P.J. Locke",
         "position": "S",
@@ -10675,6 +10738,34 @@
         "position": "LB",
         "status": "Questionable",
         "injury": "Neck"
+      },
+      {
+        "team": "WAS",
+        "name": "Lucas Patrick",
+        "position": "C",
+        "status": "Questionable",
+        "injury": "Concussion"
+      },
+      {
+        "team": "WAS",
+        "name": "Amik Robertson",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "WAS",
+        "name": "Rachaad White",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Heel"
+      },
+      {
+        "team": "WAS",
+        "name": "Jacory Croskey-Merritt",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Groin"
       }
     ]
   }

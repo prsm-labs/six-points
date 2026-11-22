@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T16:02+00:00",
+ "generated_at": "2026-11-22T12:02+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1783,6 +1783,26 @@
       "trackN": 100
      },
      {
+      "player_id": "00-0035261",
+      "name": "Tony Pollard",
+      "team": "TEN",
+      "opp": "DAL",
+      "pos": "RB",
+      "est": 102.4,
+      "depth": "RB1",
+      "game": "DAL-TEN",
+      "stat": "YDS",
+      "line": 100,
+      "label": "100+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.449,
+      "trackN": 100
+     },
+     {
       "player_id": "00-0037263",
       "name": "Tyler Allgeier",
       "team": "ARI",
@@ -1823,26 +1843,6 @@
       "trackN": 69
      },
      {
-      "player_id": "00-0034844",
-      "name": "Saquon Barkley",
-      "team": "PHI",
-      "opp": "PIT",
-      "pos": "RB",
-      "est": 71.8,
-      "depth": "RB1",
-      "game": "PHI-PIT",
-      "stat": "YDS",
-      "line": 75,
-      "label": "75+ scrimmage yards",
-      "chance": 0.3794,
-      "last": [
-       8,
-       2
-      ],
-      "track": 0.408,
-      "trackN": 69
-     },
-     {
       "player_id": "00-0037228",
       "name": "Jaylen Warren",
       "team": "PIT",
@@ -1864,6 +1864,26 @@
      }
     ],
     "long": [
+     {
+      "player_id": "00-0034844",
+      "name": "Saquon Barkley",
+      "team": "PHI",
+      "opp": "PIT",
+      "pos": "RB",
+      "est": 71.8,
+      "depth": "RB1",
+      "game": "PHI-PIT",
+      "stat": "YDS",
+      "line": 85,
+      "label": "85+ scrimmage yards",
+      "chance": 0.2399,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.294,
+      "trackN": 146
+     },
      {
       "player_id": "00-0036275",
       "name": "D'Andre Swift",
@@ -1925,48 +1945,28 @@
       "trackN": 69
      },
      {
-      "player_id": "00-0038597",
-      "name": "Chase Brown",
-      "team": "CIN",
-      "opp": "WAS",
-      "pos": "RB",
-      "est": 79.1,
-      "depth": "RB1",
-      "game": "CIN-WAS",
-      "stat": "YDS",
-      "line": 105,
-      "label": "105+ scrimmage yards",
-      "chance": 0.1834,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.201,
-      "trackN": 69
-     },
-     {
       "player_id": "00-0040584",
       "name": "Gunnar Helm",
       "team": "TEN",
       "opp": "DAL",
       "pos": "TE",
-      "est": 34.2,
+      "est": 34.8,
       "depth": "TE1",
       "game": "DAL-TEN",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.1687,
+      "chance": 0.174,
       "last": [
        8,
        0
       ],
-      "track": 0.194,
+      "track": 0.197,
       "trackN": 69
      }
     ]
    },
-   "updated_at": "2026-11-21T11:02-05:00"
+   "updated_at": "2026-11-22T07:02-05:00"
   }
  ]
 }
