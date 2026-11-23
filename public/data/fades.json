@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T20:06+00:00",
+ "generated_at": "2026-11-23T00:05+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -2889,6 +2889,30 @@
      "trackN": 520
     },
     {
+     "player_id": "00-0031408",
+     "name": "Mike Evans",
+     "team": "SF",
+     "opp": "MIN",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 70.0,
+     "est": 39.0,
+     "z": 4.96,
+     "games": [
+      49,
+      54,
+      34,
+      76,
+      113,
+      94
+     ],
+     "why": [
+      "one big game (113) lifts his average -- 61 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 520
+    },
+    {
      "player_id": "00-0039798",
      "name": "Isaiah Davis",
      "team": "NYJ",
@@ -3303,7 +3327,7 @@
      "trackN": 644
     }
    ],
-   "updated_at": "2026-11-22T15:06-05:00"
+   "updated_at": "2026-11-22T19:05-05:00"
   }
  ]
 }

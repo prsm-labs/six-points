@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T20:06+00:00",
+ "generated_at": "2026-11-23T00:05+00:00",
  "season": 2026,
  "week": 11,
  "rule": {
@@ -1736,16 +1736,16 @@
    ],
    "nextGame": {
     "teams": [
-     "LAC",
-     "NYJ"
+     "MIN",
+     "SF"
     ],
-    "kickoff": "2026-11-22T16:05:00-05:00",
-    "label": "NYJ @ LAC",
+    "kickoff": "2026-11-22T20:20:00-05:00",
+    "label": "MIN @ SF",
     "closest": {
-     "name": "Omarion Hampton",
-     "team": "LAC",
-     "label": "55+ scrimmage yards",
-     "chance": 0.4888
+     "name": "T.J. Hockenson",
+     "team": "MIN",
+     "label": "35+ scrimmage yards",
+     "chance": 0.5389
     }
    },
    "tiers": {
@@ -1954,7 +1954,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-22T15:06-05:00"
+   "updated_at": "2026-11-22T19:05-05:00"
   }
  ]
 }
