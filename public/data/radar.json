@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T20:05+00:00",
+ "generated_at": "2026-11-24T00:06+00:00",
  "season": 2026,
  "week": 11,
  "liveFromWeek": 9,
@@ -2884,7 +2884,7 @@
       ]
      ],
      "why": [
-      "+1.0 touches a game from teammates who are out",
+      "+1.1 touches a game from teammates who are out",
       "2.3 red-zone touches a game",
       "scored in 1 of his last 8 games"
      ],
@@ -3385,7 +3385,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-23T15:05-05:00"
+   "updated_at": "2026-11-23T19:06-05:00"
   }
  ]
 }
