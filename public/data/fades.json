@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T12:02+00:00",
+ "generated_at": "2026-11-24T16:02+00:00",
  "season": 2026,
  "week": 12,
  "rule": {
@@ -3379,8 +3379,8 @@
      "pos": "WR",
      "depth": "WR3",
      "line": 30.7,
-     "est": 10.9,
-     "z": 5.99,
+     "est": 11.1,
+     "z": 5.87,
      "games": [
       16,
       28,
@@ -3820,33 +3820,9 @@
      ],
      "track": 0.716,
      "trackN": 657
-    },
-    {
-     "player_id": "00-0035021",
-     "name": "Ashton Dulin",
-     "team": "IND",
-     "opp": "NYG",
-     "pos": "WR",
-     "depth": "WR4",
-     "line": 25.0,
-     "est": 16.8,
-     "z": 2.0,
-     "games": [
-      0,
-      29,
-      3,
-      58,
-      30,
-      30
-     ],
-     "why": [
-      "one big game (58) lifts his average -- 18 a game in the others"
-     ],
-     "track": 0.716,
-     "trackN": 657
     }
    ],
-   "updated_at": "2026-11-24T07:02-05:00"
+   "updated_at": "2026-11-24T11:02-05:00"
   }
  ]
 }
