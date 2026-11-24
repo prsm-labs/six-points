@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-24T00:06+00:00",
+ "generated_at": "2026-11-24T12:02+00:00",
  "season": 2026,
- "week": 11,
+ "week": 12,
  "liveFromWeek": 10,
  "rule": {
   "positions": [
@@ -48,14 +48,14 @@
  },
  "record": {
   "all": {
-   "n": 40,
-   "hits": 15,
-   "said": 0.2305
+   "n": 48,
+   "hits": 16,
+   "said": 0.2329
   },
   "live": {
-   "n": 8,
-   "hits": 3,
-   "said": 0.2438
+   "n": 16,
+   "hits": 4,
+   "said": 0.2444
   }
  },
  "weeks": [
@@ -789,7 +789,8 @@
      "pct": 0.9565,
      "rank": 3,
      "of": 46,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0039894",
@@ -805,7 +806,8 @@
      "pct": 0.9383,
      "rank": 6,
      "of": 81,
-     "result": null
+     "result": "hit",
+     "actual": 1
     },
     {
      "player_id": "00-0039491",
@@ -821,7 +823,8 @@
      "pct": 0.9259,
      "rank": 7,
      "of": 81,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0034753",
@@ -837,7 +840,8 @@
      "pct": 0.9149,
      "rank": 5,
      "of": 47,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0037838",
@@ -853,7 +857,8 @@
      "pct": 0.8936,
      "rank": 6,
      "of": 47,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0032464",
@@ -869,7 +874,8 @@
      "pct": 0.8765,
      "rank": 11,
      "of": 81,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0039065",
@@ -885,7 +891,8 @@
      "pct": 0.8723,
      "rank": 7,
      "of": 47,
-     "result": null
+     "result": "miss",
+     "actual": 0
     },
     {
      "player_id": "00-0038618",
@@ -901,10 +908,146 @@
      "pct": 0.8537,
      "rank": 13,
      "of": 82,
-     "result": null
+     "result": "miss",
+     "actual": 0
     }
    ],
    "updated_at": "2026-11-23T19:06-05:00"
+  },
+  {
+   "week": 12,
+   "replay": false,
+   "picks": [
+    {
+     "player_id": "00-0037005",
+     "name": "Tommy Tremble",
+     "team": "CAR",
+     "opp": "TB",
+     "pos": "TE",
+     "chance": 0.18,
+     "rz3": 1.67,
+     "tch3": 4.0,
+     "gp": 3,
+     "rzSeason": 0.58,
+     "pct": 0.9846,
+     "rank": 2,
+     "of": 65,
+     "result": null
+    },
+    {
+     "player_id": "00-0034960",
+     "name": "Jakobi Meyers",
+     "team": "JAX",
+     "opp": "TEN",
+     "pos": "WR",
+     "chance": 0.293,
+     "rz3": 2.0,
+     "tch3": 7.7,
+     "gp": 3,
+     "rzSeason": 1.27,
+     "pct": 0.9735,
+     "rank": 4,
+     "of": 113,
+     "result": null
+    },
+    {
+     "player_id": "00-0038129",
+     "name": "Cade Otton",
+     "team": "TB",
+     "opp": "CAR",
+     "pos": "TE",
+     "chance": 0.2855,
+     "rz3": 1.5,
+     "tch3": 5.5,
+     "gp": 2,
+     "rzSeason": 0.58,
+     "pct": 0.9692,
+     "rank": 3,
+     "of": 65,
+     "result": null
+    },
+    {
+     "player_id": "00-0033110",
+     "name": "Tyler Higbee",
+     "team": "LA",
+     "opp": "GB",
+     "pos": "TE",
+     "chance": 0.2537,
+     "rz3": 1.5,
+     "tch3": 4.5,
+     "gp": 2,
+     "rzSeason": 0.7,
+     "pct": 0.9538,
+     "rank": 4,
+     "of": 65,
+     "result": null
+    },
+    {
+     "player_id": "00-0036244",
+     "name": "Colby Parkinson",
+     "team": "LA",
+     "opp": "GB",
+     "pos": "TE",
+     "chance": 0.1679,
+     "rz3": 1.5,
+     "tch3": 3.0,
+     "gp": 2,
+     "rzSeason": 1.32,
+     "pct": 0.9231,
+     "rank": 6,
+     "of": 65,
+     "result": null
+    },
+    {
+     "player_id": "00-0041489",
+     "name": "Germie Bernard",
+     "team": "PIT",
+     "opp": "DEN",
+     "pos": "WR",
+     "chance": 0.1962,
+     "rz3": 1.5,
+     "tch3": 7.0,
+     "gp": 2,
+     "rzSeason": 0.95,
+     "pct": 0.9115,
+     "rank": 11,
+     "of": 113,
+     "result": null
+    },
+    {
+     "player_id": "00-0036422",
+     "name": "Adam Trautman",
+     "team": "DEN",
+     "opp": "PIT",
+     "pos": "TE",
+     "chance": 0.1212,
+     "rz3": 1.0,
+     "tch3": 2.0,
+     "gp": 2,
+     "rzSeason": 0.2,
+     "pct": 0.9077,
+     "rank": 7,
+     "of": 65,
+     "result": null
+    },
+    {
+     "player_id": "00-0039491",
+     "name": "Jalen Coker",
+     "team": "CAR",
+     "opp": "TB",
+     "pos": "WR",
+     "chance": 0.2476,
+     "rz3": 1.33,
+     "tch3": 6.0,
+     "gp": 3,
+     "rzSeason": 0.89,
+     "pct": 0.9027,
+     "rank": 12,
+     "of": 113,
+     "result": null
+    }
+   ],
+   "updated_at": "2026-11-24T07:02-05:00"
   }
  ]
 }

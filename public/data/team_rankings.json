@@ -1,7 +1,7 @@
 {
  "season": 2026,
- "through_week": 10,
- "generated_at": "2026-11-17T11:01:22.748223+00:00",
+ "through_week": 11,
+ "generated_at": "2026-11-24T11:01:24.387213+00:00",
  "n_teams": 32,
  "categories": [
   {
@@ -85,113 +85,113 @@
  ],
  "teams": {
   "ARI": {
-   "games": 10,
+   "games": 11,
    "off": {
     "points": {
-     "v": 18.4,
+     "v": 17.4,
      "rank": 29
     },
     "tds": {
-     "v": 1.7,
-     "rank": 28
+     "v": 1.64,
+     "rank": 29
     },
     "yds": {
-     "v": 314.9,
-     "rank": 25
-    },
-    "pass_yds": {
-     "v": 218.8,
-     "rank": 22
-    },
-    "rush_yds": {
-     "v": 96.1,
-     "rank": 25
-    },
-    "qb_rush": {
-     "v": 9.5,
+     "v": 307.2,
      "rank": 26
     },
-    "rb_yds": {
-     "v": 103.9,
+    "pass_yds": {
+     "v": 213.0,
+     "rank": 23
+    },
+    "rush_yds": {
+     "v": 94.2,
      "rank": 27
     },
-    "wr_yds": {
-     "v": 113.3,
+    "qb_rush": {
+     "v": 9.1,
+     "rank": 25
+    },
+    "rb_yds": {
+     "v": 100.6,
      "rank": 28
     },
+    "wr_yds": {
+     "v": 109.9,
+     "rank": 30
+    },
     "te_yds": {
-     "v": 84.2,
-     "rank": 2
+     "v": 82.8,
+     "rank": 3
     },
     "rz_trips": {
-     "v": 3.4,
-     "rank": 14
+     "v": 3.18,
+     "rank": 16
     },
     "epa": {
-     "v": -0.053,
-     "rank": 24
+     "v": -0.052,
+     "rank": 25
     },
     "success": {
-     "v": 0.431,
-     "rank": 13
+     "v": 0.427,
+     "rank": 19
     },
     "explosive": {
-     "v": 2.6,
-     "rank": 30
+     "v": 2.45,
+     "rank": 31
     }
    },
    "def": {
     "points": {
-     "v": 28.9,
+     "v": 29.4,
      "rank": 31
     },
     "tds": {
-     "v": 3.3,
-     "rank": 30
+     "v": 3.36,
+     "rank": 31
     },
     "yds": {
-     "v": 363.2,
-     "rank": 21
+     "v": 370.5,
+     "rank": 26
     },
     "pass_yds": {
-     "v": 232.5,
-     "rank": 13
+     "v": 240.8,
+     "rank": 19
     },
     "rush_yds": {
-     "v": 130.7,
+     "v": 129.7,
      "rank": 27
     },
     "qb_rush": {
-     "v": 17.9,
-     "rank": 20
+     "v": 16.3,
+     "rank": 16
     },
     "rb_yds": {
-     "v": 143.1,
+     "v": 144.5,
      "rank": 26
     },
     "wr_yds": {
-     "v": 141.1,
-     "rank": 11
-    },
-    "te_yds": {
-     "v": 50.3,
+     "v": 145.6,
      "rank": 14
     },
+    "te_yds": {
+     "v": 54.4,
+     "rank": 19
+    },
     "rz_trips": {
-     "v": 3.6,
+     "v": 3.73,
      "rank": 24
     },
     "epa": {
-     "v": 0.092,
+     "v": 0.115,
      "rank": 31
     },
     "success": {
-     "v": 0.445,
+     "v": 0.459,
      "rank": 24
     },
     "explosive": {
-     "v": 3.4,
-     "rank": 13
+     "v": 3.45,
+     "rank": 15
     }
    }
   },
@@ -200,15 +200,15 @@
    "off": {
     "points": {
      "v": 20.1,
-     "rank": 24
+     "rank": 23
     },
     "tds": {
      "v": 2.1,
-     "rank": 22
+     "rank": 20
     },
     "yds": {
      "v": 339.4,
-     "rank": 21
+     "rank": 20
     },
     "pass_yds": {
      "v": 205.2,
@@ -216,7 +216,7 @@
     },
     "rush_yds": {
      "v": 134.2,
-     "rank": 7
+     "rank": 6
     },
     "qb_rush": {
      "v": 13.7,
@@ -224,7 +224,7 @@
     },
     "rb_yds": {
      "v": 149.3,
-     "rank": 8
+     "rank": 7
     },
     "wr_yds": {
      "v": 135.6,
@@ -236,29 +236,29 @@
     },
     "rz_trips": {
      "v": 3.1,
-     "rank": 19
+     "rank": 17
     },
     "epa": {
-     "v": -0.08,
+     "v": -0.073,
      "rank": 27
     },
     "success": {
-     "v": 0.421,
-     "rank": 16
+     "v": 0.43,
+     "rank": 17
     },
     "explosive": {
      "v": 3.9,
-     "rank": 11
+     "rank": 10
     }
    },
    "def": {
     "points": {
      "v": 25.8,
-     "rank": 23
+     "rank": 24
     },
     "tds": {
      "v": 2.9,
-     "rank": 27
+     "rank": 25
     },
     "yds": {
      "v": 372.2,
@@ -266,11 +266,11 @@
     },
     "pass_yds": {
      "v": 251.9,
-     "rank": 24
+     "rank": 28
     },
     "rush_yds": {
      "v": 120.3,
-     "rank": 18
+     "rank": 20
     },
     "qb_rush": {
      "v": 8.0,
@@ -278,11 +278,11 @@
     },
     "rb_yds": {
      "v": 143.7,
-     "rank": 27
+     "rank": 25
     },
     "wr_yds": {
      "v": 164.9,
-     "rank": 26
+     "rank": 28
     },
     "te_yds": {
      "v": 51.0,
@@ -290,14 +290,14 @@
     },
     "rz_trips": {
      "v": 3.6,
-     "rank": 24
+     "rank": 23
     },
     "epa": {
-     "v": 0.029,
-     "rank": 20
+     "v": 0.037,
+     "rank": 21
     },
     "success": {
-     "v": 0.443,
+     "v": 0.458,
      "rank": 23
     },
     "explosive": {
@@ -307,557 +307,557 @@
    }
   },
   "BAL": {
-   "games": 10,
+   "games": 11,
    "off": {
     "points": {
-     "v": 20.9,
-     "rank": 22
+     "v": 22.0,
+     "rank": 19
     },
     "tds": {
-     "v": 2.3,
+     "v": 2.36,
      "rank": 18
     },
     "yds": {
-     "v": 344.6,
-     "rank": 16
+     "v": 352.6,
+     "rank": 14
     },
     "pass_yds": {
-     "v": 218.2,
-     "rank": 23
+     "v": 223.5,
+     "rank": 22
     },
     "rush_yds": {
-     "v": 126.4,
+     "v": 129.2,
      "rank": 9
     },
     "qb_rush": {
-     "v": 24.6,
-     "rank": 8
+     "v": 23.0,
+     "rank": 9
     },
     "rb_yds": {
-     "v": 119.7,
-     "rank": 18
+     "v": 127.6,
+     "rank": 13
     },
     "wr_yds": {
-     "v": 138.3,
+     "v": 143.7,
      "rank": 17
     },
     "te_yds": {
-     "v": 56.9,
-     "rank": 13
+     "v": 54.8,
+     "rank": 16
     },
     "rz_trips": {
      "v": 3.0,
-     "rank": 20
+     "rank": 21
     },
     "epa": {
-     "v": -0.004,
-     "rank": 15
+     "v": 0.001,
+     "rank": 16
     },
     "success": {
-     "v": 0.44,
-     "rank": 12
+     "v": 0.456,
+     "rank": 11
     },
     "explosive": {
-     "v": 3.2,
-     "rank": 22
+     "v": 3.36,
+     "rank": 19
     }
    },
    "def": {
     "points": {
-     "v": 25.9,
-     "rank": 24
+     "v": 26.7,
+     "rank": 26
     },
     "tds": {
-     "v": 2.6,
-     "rank": 15
+     "v": 2.73,
+     "rank": 20
     },
     "yds": {
-     "v": 336.9,
-     "rank": 11
+     "v": 342.9,
+     "rank": 15
     },
     "pass_yds": {
-     "v": 230.6,
-     "rank": 12
-    },
-    "rush_yds": {
-     "v": 106.3,
+     "v": 232.7,
      "rank": 13
     },
+    "rush_yds": {
+     "v": 110.2,
+     "rank": 14
+    },
     "qb_rush": {
-     "v": 20.4,
-     "rank": 25
+     "v": 18.5,
+     "rank": 23
     },
     "rb_yds": {
-     "v": 101.2,
-     "rank": 4
+     "v": 106.2,
+     "rank": 5
     },
     "wr_yds": {
-     "v": 164.5,
+     "v": 162.5,
      "rank": 25
     },
     "te_yds": {
-     "v": 49.3,
-     "rank": 12
+     "v": 54.3,
+     "rank": 18
     },
     "rz_trips": {
-     "v": 3.5,
-     "rank": 17
+     "v": 3.73,
+     "rank": 24
     },
     "epa": {
-     "v": 0.019,
-     "rank": 19
+     "v": 0.027,
+     "rank": 18
     },
     "success": {
-     "v": 0.442,
-     "rank": 21
+     "v": 0.454,
+     "rank": 22
     },
     "explosive": {
-     "v": 3.4,
-     "rank": 13
+     "v": 3.55,
+     "rank": 18
     }
    }
   },
   "BUF": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 31.9,
-     "rank": 1
-    },
-    "tds": {
-     "v": 3.67,
+     "v": 31.3,
      "rank": 2
     },
+    "tds": {
+     "v": 3.5,
+     "rank": 3
+    },
     "yds": {
-     "v": 401.4,
-     "rank": 4
+     "v": 404.3,
+     "rank": 3
     },
     "pass_yds": {
-     "v": 247.0,
-     "rank": 14
+     "v": 255.7,
+     "rank": 11
     },
     "rush_yds": {
-     "v": 154.4,
+     "v": 148.6,
      "rank": 2
     },
     "qb_rush": {
-     "v": 33.3,
-     "rank": 2
+     "v": 30.0,
+     "rank": 3
     },
     "rb_yds": {
-     "v": 155.7,
-     "rank": 6
+     "v": 155.9,
+     "rank": 5
     },
     "wr_yds": {
-     "v": 136.7,
-     "rank": 19
+     "v": 143.9,
+     "rank": 16
     },
     "te_yds": {
-     "v": 68.1,
+     "v": 67.4,
      "rank": 6
     },
     "rz_trips": {
-     "v": 4.11,
-     "rank": 2
+     "v": 4.2,
+     "rank": 1
     },
     "epa": {
-     "v": 0.135,
-     "rank": 4
+     "v": 0.13,
+     "rank": 5
     },
     "success": {
-     "v": 0.476,
-     "rank": 6
+     "v": 0.481,
+     "rank": 7
     },
     "explosive": {
-     "v": 4.89,
+     "v": 4.9,
      "rank": 1
     }
    },
    "def": {
     "points": {
-     "v": 22.1,
-     "rank": 15
+     "v": 20.8,
+     "rank": 9
     },
     "tds": {
-     "v": 2.44,
-     "rank": 13
+     "v": 2.2,
+     "rank": 10
     },
     "yds": {
-     "v": 350.2,
-     "rank": 17
+     "v": 335.3,
+     "rank": 11
     },
     "pass_yds": {
-     "v": 256.3,
-     "rank": 26
+     "v": 240.9,
+     "rank": 20
     },
     "rush_yds": {
-     "v": 93.9,
+     "v": 94.4,
      "rank": 8
     },
     "qb_rush": {
-     "v": 13.9,
-     "rank": 12
+     "v": 13.4,
+     "rank": 10
     },
     "rb_yds": {
-     "v": 122.4,
-     "rank": 17
+     "v": 118.6,
+     "rank": 15
     },
     "wr_yds": {
-     "v": 151.0,
-     "rank": 19
+     "v": 144.4,
+     "rank": 13
     },
     "te_yds": {
-     "v": 61.1,
-     "rank": 25
+     "v": 56.2,
+     "rank": 22
     },
     "rz_trips": {
-     "v": 3.56,
-     "rank": 20
+     "v": 3.3,
+     "rank": 16
     },
     "epa": {
-     "v": -0.01,
-     "rank": 12
+     "v": -0.03,
+     "rank": 9
     },
     "success": {
-     "v": 0.439,
-     "rank": 19
+     "v": 0.44,
+     "rank": 17
     },
     "explosive": {
-     "v": 3.78,
+     "v": 3.6,
      "rank": 19
     }
    }
   },
   "CAR": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 24.3,
-     "rank": 12
-    },
-    "tds": {
-     "v": 2.78,
+     "v": 25.4,
      "rank": 10
     },
+    "tds": {
+     "v": 2.9,
+     "rank": 9
+    },
     "yds": {
-     "v": 373.4,
+     "v": 376.4,
      "rank": 9
     },
     "pass_yds": {
-     "v": 271.6,
+     "v": 269.8,
      "rank": 6
     },
     "rush_yds": {
-     "v": 101.9,
-     "rank": 22
+     "v": 106.6,
+     "rank": 21
     },
     "qb_rush": {
-     "v": 10.3,
+     "v": 9.3,
      "rank": 24
     },
     "rb_yds": {
-     "v": 126.9,
-     "rank": 13
+     "v": 129.8,
+     "rank": 11
     },
     "wr_yds": {
-     "v": 158.6,
-     "rank": 10
+     "v": 157.0,
+     "rank": 12
     },
     "te_yds": {
-     "v": 77.4,
+     "v": 80.1,
      "rank": 4
     },
     "rz_trips": {
-     "v": 3.56,
-     "rank": 11
+     "v": 3.8,
+     "rank": 8
     },
     "epa": {
-     "v": 0.029,
-     "rank": 11
+     "v": 0.034,
+     "rank": 10
     },
     "success": {
-     "v": 0.416,
-     "rank": 22
+     "v": 0.433,
+     "rank": 15
     },
     "explosive": {
-     "v": 4.0,
-     "rank": 7
+     "v": 4.1,
+     "rank": 8
     }
    },
    "def": {
     "points": {
-     "v": 26.2,
-     "rank": 25
+     "v": 26.9,
+     "rank": 27
     },
     "tds": {
      "v": 3.0,
-     "rank": 28
+     "rank": 27
     },
     "yds": {
-     "v": 342.6,
-     "rank": 13
+     "v": 351.6,
+     "rank": 18
     },
     "pass_yds": {
-     "v": 217.9,
-     "rank": 7
-    },
-    "rush_yds": {
-     "v": 124.7,
-     "rank": 22
-    },
-    "qb_rush": {
-     "v": 19.7,
-     "rank": 24
-    },
-    "rb_yds": {
-     "v": 129.3,
-     "rank": 21
-    },
-    "wr_yds": {
-     "v": 143.2,
-     "rank": 14
-    },
-    "te_yds": {
-     "v": 45.2,
+     "v": 223.7,
      "rank": 8
     },
+    "rush_yds": {
+     "v": 127.9,
+     "rank": 25
+    },
+    "qb_rush": {
+     "v": 18.4,
+     "rank": 21
+    },
+    "rb_yds": {
+     "v": 137.1,
+     "rank": 23
+    },
+    "wr_yds": {
+     "v": 148.7,
+     "rank": 18
+    },
+    "te_yds": {
+     "v": 44.1,
+     "rank": 6
+    },
     "rz_trips": {
-     "v": 2.89,
-     "rank": 9
+     "v": 2.9,
+     "rank": 11
     },
     "epa": {
-     "v": 0.007,
-     "rank": 17
+     "v": 0.015,
+     "rank": 16
     },
     "success": {
-     "v": 0.425,
-     "rank": 12
+     "v": 0.431,
+     "rank": 13
     },
     "explosive": {
-     "v": 2.56,
-     "rank": 3
+     "v": 2.8,
+     "rank": 5
     }
    }
   },
   "CHI": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 26.8,
-     "rank": 7
+     "v": 26.2,
+     "rank": 8
     },
     "tds": {
-     "v": 3.0,
+     "v": 2.9,
      "rank": 9
     },
     "yds": {
-     "v": 400.0,
-     "rank": 5
+     "v": 392.9,
+     "rank": 6
     },
     "pass_yds": {
-     "v": 256.7,
-     "rank": 10
+     "v": 249.1,
+     "rank": 13
     },
     "rush_yds": {
-     "v": 143.3,
-     "rank": 4
+     "v": 143.8,
+     "rank": 3
     },
     "qb_rush": {
-     "v": 20.6,
-     "rank": 14
+     "v": 19.8,
+     "rank": 13
     },
     "rb_yds": {
-     "v": 144.8,
+     "v": 141.3,
      "rank": 9
     },
     "wr_yds": {
-     "v": 168.6,
-     "rank": 6
+     "v": 164.2,
+     "rank": 7
     },
     "te_yds": {
-     "v": 56.2,
-     "rank": 14
+     "v": 55.4,
+     "rank": 15
     },
     "rz_trips": {
-     "v": 4.11,
-     "rank": 2
+     "v": 4.0,
+     "rank": 3
     },
     "epa": {
-     "v": 0.039,
-     "rank": 10
+     "v": 0.026,
+     "rank": 11
     },
     "success": {
-     "v": 0.47,
-     "rank": 9
+     "v": 0.46,
+     "rank": 10
     },
     "explosive": {
-     "v": 4.56,
+     "v": 4.3,
      "rank": 3
     }
    },
    "def": {
     "points": {
-     "v": 20.4,
-     "rank": 8
+     "v": 19.7,
+     "rank": 6
     },
     "tds": {
-     "v": 2.33,
-     "rank": 12
+     "v": 2.2,
+     "rank": 10
     },
     "yds": {
-     "v": 326.9,
-     "rank": 8
+     "v": 328.4,
+     "rank": 9
     },
     "pass_yds": {
-     "v": 235.6,
+     "v": 234.2,
      "rank": 14
     },
     "rush_yds": {
-     "v": 91.3,
-     "rank": 5
+     "v": 94.2,
+     "rank": 6
     },
     "qb_rush": {
-     "v": 13.1,
-     "rank": 9
+     "v": 15.2,
+     "rank": 13
     },
     "rb_yds": {
-     "v": 115.3,
+     "v": 113.3,
      "rank": 11
     },
     "wr_yds": {
-     "v": 147.4,
-     "rank": 16
+     "v": 151.1,
+     "rank": 20
     },
     "te_yds": {
-     "v": 49.3,
-     "rank": 13
+     "v": 46.9,
+     "rank": 11
     },
     "rz_trips": {
-     "v": 2.78,
+     "v": 2.7,
      "rank": 8
     },
     "epa": {
-     "v": -0.023,
-     "rank": 8
+     "v": -0.041,
+     "rank": 7
     },
     "success": {
-     "v": 0.408,
-     "rank": 6
+     "v": 0.414,
+     "rank": 7
     },
     "explosive": {
-     "v": 3.56,
-     "rank": 18
+     "v": 3.5,
+     "rank": 16
     }
    }
   },
   "CIN": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 30.9,
-     "rank": 3
+     "v": 29.8,
+     "rank": 4
     },
     "tds": {
-     "v": 3.67,
-     "rank": 2
+     "v": 3.5,
+     "rank": 3
     },
     "yds": {
-     "v": 395.9,
+     "v": 389.5,
      "rank": 7
     },
     "pass_yds": {
-     "v": 310.6,
+     "v": 309.5,
      "rank": 1
     },
     "rush_yds": {
-     "v": 85.3,
+     "v": 80.0,
      "rank": 30
     },
     "qb_rush": {
-     "v": 10.0,
-     "rank": 25
+     "v": 9.0,
+     "rank": 26
     },
     "rb_yds": {
-     "v": 110.3,
-     "rank": 21
+     "v": 112.6,
+     "rank": 20
     },
     "wr_yds": {
-     "v": 225.8,
-     "rank": 1
+     "v": 211.2,
+     "rank": 2
     },
     "te_yds": {
-     "v": 46.9,
-     "rank": 21
+     "v": 54.1,
+     "rank": 17
     },
     "rz_trips": {
-     "v": 4.22,
-     "rank": 1
+     "v": 4.0,
+     "rank": 3
     },
     "epa": {
-     "v": 0.158,
+     "v": 0.149,
      "rank": 2
     },
     "success": {
-     "v": 0.506,
-     "rank": 2
+     "v": 0.511,
+     "rank": 3
     },
     "explosive": {
-     "v": 3.56,
-     "rank": 16
+     "v": 3.5,
+     "rank": 17
     }
    },
    "def": {
     "points": {
-     "v": 21.4,
-     "rank": 10
+     "v": 21.5,
+     "rank": 13
     },
     "tds": {
-     "v": 2.11,
+     "v": 2.0,
      "rank": 8
     },
     "yds": {
-     "v": 361.7,
-     "rank": 20
+     "v": 369.4,
+     "rank": 24
     },
     "pass_yds": {
-     "v": 237.1,
-     "rank": 16
-    },
-    "rush_yds": {
-     "v": 124.6,
+     "v": 242.3,
      "rank": 21
     },
+    "rush_yds": {
+     "v": 127.1,
+     "rank": 24
+    },
     "qb_rush": {
-     "v": 28.9,
-     "rank": 31
+     "v": 31.5,
+     "rank": 32
     },
     "rb_yds": {
      "v": 120.6,
-     "rank": 16
+     "rank": 17
     },
     "wr_yds": {
-     "v": 128.3,
+     "v": 135.2,
      "rank": 8
     },
     "te_yds": {
-     "v": 76.1,
-     "rank": 30
+     "v": 75.1,
+     "rank": 31
     },
     "rz_trips": {
-     "v": 3.56,
+     "v": 3.5,
      "rank": 20
     },
     "epa": {
-     "v": 0.004,
-     "rank": 15
+     "v": 0.016,
+     "rank": 17
     },
     "success": {
-     "v": 0.44,
-     "rank": 20
+     "v": 0.461,
+     "rank": 26
     },
     "explosive": {
-     "v": 4.44,
-     "rank": 30
+     "v": 4.6,
+     "rank": 32
     }
    }
   },
@@ -870,15 +870,15 @@
     },
     "tds": {
      "v": 1.8,
-     "rank": 26
+     "rank": 27
     },
     "yds": {
      "v": 340.1,
-     "rank": 20
+     "rank": 19
     },
     "pass_yds": {
      "v": 241.7,
-     "rank": 16
+     "rank": 15
     },
     "rush_yds": {
      "v": 98.4,
@@ -886,15 +886,15 @@
     },
     "qb_rush": {
      "v": 30.3,
-     "rank": 3
+     "rank": 2
     },
     "rb_yds": {
      "v": 104.7,
-     "rank": 26
+     "rank": 25
     },
     "wr_yds": {
      "v": 141.6,
-     "rank": 16
+     "rank": 18
     },
     "te_yds": {
      "v": 59.2,
@@ -905,42 +905,42 @@
      "rank": 26
     },
     "epa": {
-     "v": -0.05,
-     "rank": 23
+     "v": -0.051,
+     "rank": 24
     },
     "success": {
-     "v": 0.413,
-     "rank": 24
+     "v": 0.419,
+     "rank": 22
     },
     "explosive": {
      "v": 3.7,
-     "rank": 14
+     "rank": 13
     }
    },
    "def": {
     "points": {
      "v": 22.0,
-     "rank": 13
+     "rank": 14
     },
     "tds": {
      "v": 2.3,
-     "rank": 11
+     "rank": 12
     },
     "yds": {
      "v": 346.2,
-     "rank": 15
+     "rank": 16
     },
     "pass_yds": {
      "v": 219.3,
-     "rank": 8
+     "rank": 6
     },
     "rush_yds": {
      "v": 126.9,
-     "rank": 26
+     "rank": 23
     },
     "qb_rush": {
      "v": 14.6,
-     "rank": 13
+     "rank": 12
     },
     "rb_yds": {
      "v": 129.3,
@@ -948,11 +948,11 @@
     },
     "wr_yds": {
      "v": 146.5,
-     "rank": 15
+     "rank": 16
     },
     "te_yds": {
      "v": 53.1,
-     "rank": 19
+     "rank": 17
     },
     "rz_trips": {
      "v": 3.2,
@@ -960,68 +960,290 @@
     },
     "epa": {
      "v": -0.013,
-     "rank": 10
+     "rank": 14
     },
     "success": {
-     "v": 0.411,
-     "rank": 10
+     "v": 0.421,
+     "rank": 9
     },
     "explosive": {
      "v": 3.5,
-     "rank": 17
+     "rank": 16
     }
    }
   },
   "DAL": {
-   "games": 10,
+   "games": 11,
    "off": {
     "points": {
-     "v": 28.6,
-     "rank": 5
+     "v": 30.6,
+     "rank": 3
     },
     "tds": {
-     "v": 3.2,
-     "rank": 7
+     "v": 3.55,
+     "rank": 2
     },
     "yds": {
-     "v": 375.5,
+     "v": 385.1,
      "rank": 8
     },
     "pass_yds": {
-     "v": 272.4,
-     "rank": 5
+     "v": 277.2,
+     "rank": 3
     },
     "rush_yds": {
-     "v": 103.1,
-     "rank": 21
+     "v": 107.9,
+     "rank": 20
     },
     "qb_rush": {
-     "v": 11.2,
-     "rank": 22
+     "v": 11.1,
+     "rank": 21
     },
     "rb_yds": {
-     "v": 107.6,
-     "rank": 22
+     "v": 109.5,
+     "rank": 21
     },
     "wr_yds": {
-     "v": 222.2,
-     "rank": 2
+     "v": 224.3,
+     "rank": 1
     },
     "te_yds": {
-     "v": 33.4,
-     "rank": 28
+     "v": 35.0,
+     "rank": 26
+    },
+    "rz_trips": {
+     "v": 4.18,
+     "rank": 2
+    },
+    "epa": {
+     "v": 0.127,
+     "rank": 6
+    },
+    "success": {
+     "v": 0.498,
+     "rank": 5
+    },
+    "explosive": {
+     "v": 3.82,
+     "rank": 12
+    }
+   },
+   "def": {
+    "points": {
+     "v": 28.4,
+     "rank": 29
+    },
+    "tds": {
+     "v": 3.27,
+     "rank": 30
+    },
+    "yds": {
+     "v": 404.2,
+     "rank": 31
+    },
+    "pass_yds": {
+     "v": 251.8,
+     "rank": 27
+    },
+    "rush_yds": {
+     "v": 152.4,
+     "rank": 32
+    },
+    "qb_rush": {
+     "v": 25.0,
+     "rank": 30
+    },
+    "rb_yds": {
+     "v": 150.3,
+     "rank": 30
+    },
+    "wr_yds": {
+     "v": 163.8,
+     "rank": 27
+    },
+    "te_yds": {
+     "v": 49.5,
+     "rank": 14
     },
     "rz_trips": {
      "v": 4.0,
-     "rank": 5
+     "rank": 29
     },
     "epa": {
-     "v": 0.097,
-     "rank": 7
+     "v": 0.114,
+     "rank": 30
     },
     "success": {
-     "v": 0.471,
+     "v": 0.486,
+     "rank": 28
+    },
+    "explosive": {
+     "v": 4.55,
+     "rank": 31
+    }
+   }
+  },
+  "DEN": {
+   "games": 10,
+   "off": {
+    "points": {
+     "v": 23.6,
+     "rank": 13
+    },
+    "tds": {
+     "v": 2.4,
+     "rank": 16
+    },
+    "yds": {
+     "v": 292.2,
+     "rank": 30
+    },
+    "pass_yds": {
+     "v": 195.5,
+     "rank": 26
+    },
+    "rush_yds": {
+     "v": 96.7,
+     "rank": 25
+    },
+    "qb_rush": {
+     "v": 13.2,
+     "rank": 18
+    },
+    "rb_yds": {
+     "v": 121.7,
+     "rank": 19
+    },
+    "wr_yds": {
+     "v": 113.6,
+     "rank": 29
+    },
+    "te_yds": {
+     "v": 34.6,
+     "rank": 27
+    },
+    "rz_trips": {
+     "v": 3.1,
+     "rank": 17
+    },
+    "epa": {
+     "v": 0.008,
+     "rank": 15
+    },
+    "success": {
+     "v": 0.403,
+     "rank": 29
+    },
+    "explosive": {
+     "v": 2.6,
+     "rank": 30
+    }
+   },
+   "def": {
+    "points": {
+     "v": 21.0,
+     "rank": 11
+    },
+    "tds": {
+     "v": 2.3,
+     "rank": 12
+    },
+    "yds": {
+     "v": 378.4,
+     "rank": 29
+    },
+    "pass_yds": {
+     "v": 251.6,
+     "rank": 26
+    },
+    "rush_yds": {
+     "v": 126.8,
+     "rank": 22
+    },
+    "qb_rush": {
+     "v": 20.7,
+     "rank": 27
+    },
+    "rb_yds": {
+     "v": 149.3,
+     "rank": 29
+    },
+    "wr_yds": {
+     "v": 132.0,
+     "rank": 7
+    },
+    "te_yds": {
+     "v": 70.2,
+     "rank": 29
+    },
+    "rz_trips": {
+     "v": 3.2,
+     "rank": 14
+    },
+    "epa": {
+     "v": 0.004,
+     "rank": 15
+    },
+    "success": {
+     "v": 0.418,
      "rank": 8
+    },
+    "explosive": {
+     "v": 3.8,
+     "rank": 21
+    }
+   }
+  },
+  "DET": {
+   "games": 10,
+   "off": {
+    "points": {
+     "v": 28.8,
+     "rank": 5
+    },
+    "tds": {
+     "v": 3.4,
+     "rank": 5
+    },
+    "yds": {
+     "v": 406.7,
+     "rank": 1
+    },
+    "pass_yds": {
+     "v": 273.4,
+     "rank": 4
+    },
+    "rush_yds": {
+     "v": 133.3,
+     "rank": 8
+    },
+    "qb_rush": {
+     "v": 4.4,
+     "rank": 30
+    },
+    "rb_yds": {
+     "v": 175.2,
+     "rank": 1
+    },
+    "wr_yds": {
+     "v": 164.4,
+     "rank": 6
+    },
+    "te_yds": {
+     "v": 59.8,
+     "rank": 10
+    },
+    "rz_trips": {
+     "v": 4.0,
+     "rank": 3
+    },
+    "epa": {
+     "v": 0.136,
+     "rank": 4
+    },
+    "success": {
+     "v": 0.511,
+     "rank": 2
     },
     "explosive": {
      "v": 3.6,
@@ -1030,278 +1252,56 @@
    },
    "def": {
     "points": {
-     "v": 28.2,
-     "rank": 30
-    },
-    "tds": {
-     "v": 3.3,
-     "rank": 30
-    },
-    "yds": {
-     "v": 407.2,
-     "rank": 32
-    },
-    "pass_yds": {
-     "v": 252.2,
-     "rank": 25
-    },
-    "rush_yds": {
-     "v": 155.0,
-     "rank": 32
-    },
-    "qb_rush": {
-     "v": 27.2,
-     "rank": 30
-    },
-    "rb_yds": {
-     "v": 153.2,
-     "rank": 30
-    },
-    "wr_yds": {
-     "v": 157.5,
-     "rank": 22
-    },
-    "te_yds": {
-     "v": 52.6,
-     "rank": 18
-    },
-    "rz_trips": {
-     "v": 3.9,
-     "rank": 29
-    },
-    "epa": {
-     "v": 0.119,
-     "rank": 32
-    },
-    "success": {
-     "v": 0.467,
-     "rank": 29
-    },
-    "explosive": {
-     "v": 4.7,
-     "rank": 32
-    }
-   }
-  },
-  "DEN": {
-   "games": 9,
-   "off": {
-    "points": {
      "v": 22.0,
-     "rank": 19
-    },
-    "tds": {
-     "v": 2.22,
-     "rank": 19
-    },
-    "yds": {
-     "v": 284.7,
-     "rank": 31
-    },
-    "pass_yds": {
-     "v": 192.2,
-     "rank": 27
-    },
-    "rush_yds": {
-     "v": 92.4,
-     "rank": 26
-    },
-    "qb_rush": {
-     "v": 13.9,
-     "rank": 16
-    },
-    "rb_yds": {
-     "v": 120.2,
-     "rank": 17
-    },
-    "wr_yds": {
-     "v": 111.9,
-     "rank": 29
-    },
-    "te_yds": {
-     "v": 29.8,
-     "rank": 29
-    },
-    "rz_trips": {
-     "v": 2.89,
-     "rank": 22
-    },
-    "epa": {
-     "v": -0.004,
-     "rank": 16
-    },
-    "success": {
-     "v": 0.393,
-     "rank": 28
-    },
-    "explosive": {
-     "v": 2.44,
-     "rank": 31
-    }
-   },
-   "def": {
-    "points": {
-     "v": 20.7,
-     "rank": 9
-    },
-    "tds": {
-     "v": 2.22,
-     "rank": 9
-    },
-    "yds": {
-     "v": 374.9,
-     "rank": 28
-    },
-    "pass_yds": {
-     "v": 249.9,
-     "rank": 23
-    },
-    "rush_yds": {
-     "v": 125.0,
-     "rank": 24
-    },
-    "qb_rush": {
-     "v": 20.6,
-     "rank": 26
-    },
-    "rb_yds": {
-     "v": 142.4,
-     "rank": 25
-    },
-    "wr_yds": {
-     "v": 129.6,
-     "rank": 9
-    },
-    "te_yds": {
-     "v": 75.4,
-     "rank": 29
-    },
-    "rz_trips": {
-     "v": 3.22,
-     "rank": 15
-    },
-    "epa": {
-     "v": 0.002,
      "rank": 14
     },
-    "success": {
-     "v": 0.41,
-     "rank": 7
-    },
-    "explosive": {
-     "v": 3.89,
-     "rank": 20
-    }
-   }
-  },
-  "DET": {
-   "games": 9,
-   "off": {
-    "points": {
-     "v": 28.6,
-     "rank": 6
-    },
     "tds": {
-     "v": 3.33,
-     "rank": 4
-    },
-    "yds": {
-     "v": 408.6,
-     "rank": 1
-    },
-    "pass_yds": {
-     "v": 272.8,
-     "rank": 4
-    },
-    "rush_yds": {
-     "v": 135.8,
-     "rank": 6
-    },
-    "qb_rush": {
-     "v": 3.3,
-     "rank": 32
-    },
-    "rb_yds": {
-     "v": 180.9,
-     "rank": 1
-    },
-    "wr_yds": {
-     "v": 168.2,
-     "rank": 7
-    },
-    "te_yds": {
-     "v": 52.9,
-     "rank": 17
-    },
-    "rz_trips": {
-     "v": 4.11,
-     "rank": 2
-    },
-    "epa": {
-     "v": 0.107,
-     "rank": 6
-    },
-    "success": {
-     "v": 0.488,
-     "rank": 3
-    },
-    "explosive": {
-     "v": 3.56,
-     "rank": 16
-    }
-   },
-   "def": {
-    "points": {
-     "v": 22.1,
-     "rank": 15
-    },
-    "tds": {
-     "v": 2.78,
+     "v": 2.8,
      "rank": 22
     },
     "yds": {
-     "v": 357.4,
+     "v": 352.4,
      "rank": 19
     },
     "pass_yds": {
-     "v": 266.0,
-     "rank": 31
+     "v": 258.1,
+     "rank": 30
     },
     "rush_yds": {
-     "v": 91.4,
-     "rank": 6
+     "v": 94.3,
+     "rank": 7
     },
     "qb_rush": {
-     "v": 21.3,
-     "rank": 27
+     "v": 22.8,
+     "rank": 29
     },
     "rb_yds": {
-     "v": 95.3,
-     "rank": 1
+     "v": 101.7,
+     "rank": 4
     },
     "wr_yds": {
-     "v": 155.7,
-     "rank": 20
+     "v": 150.5,
+     "rank": 19
     },
     "te_yds": {
-     "v": 81.3,
-     "rank": 32
+     "v": 74.0,
+     "rank": 30
     },
     "rz_trips": {
-     "v": 3.44,
-     "rank": 16
+     "v": 3.4,
+     "rank": 17
     },
     "epa": {
-     "v": 0.041,
+     "v": 0.05,
      "rank": 24
     },
     "success": {
-     "v": 0.436,
-     "rank": 15
+     "v": 0.454,
+     "rank": 21
     },
     "explosive": {
-     "v": 4.67,
-     "rank": 31
+     "v": 4.4,
+     "rank": 29
     }
    }
   },
@@ -1310,15 +1310,15 @@
    "off": {
     "points": {
      "v": 22.6,
-     "rank": 13
+     "rank": 14
     },
     "tds": {
      "v": 2.6,
-     "rank": 12
+     "rank": 13
     },
     "yds": {
      "v": 352.7,
-     "rank": 14
+     "rank": 13
     },
     "pass_yds": {
      "v": 284.1,
@@ -1330,7 +1330,7 @@
     },
     "qb_rush": {
      "v": 3.7,
-     "rank": 30
+     "rank": 31
     },
     "rb_yds": {
      "v": 85.1,
@@ -1342,19 +1342,19 @@
     },
     "te_yds": {
      "v": 49.8,
-     "rank": 18
+     "rank": 19
     },
     "rz_trips": {
      "v": 3.6,
      "rank": 10
     },
     "epa": {
-     "v": 0.012,
+     "v": 0.013,
      "rank": 14
     },
     "success": {
-     "v": 0.406,
-     "rank": 26
+     "v": 0.411,
+     "rank": 27
     },
     "explosive": {
      "v": 4.7,
@@ -1364,11 +1364,11 @@
    "def": {
     "points": {
      "v": 22.1,
-     "rank": 14
+     "rank": 16
     },
     "tds": {
      "v": 2.7,
-     "rank": 19
+     "rank": 18
     },
     "yds": {
      "v": 341.1,
@@ -1376,11 +1376,11 @@
     },
     "pass_yds": {
      "v": 229.4,
-     "rank": 11
+     "rank": 10
     },
     "rush_yds": {
      "v": 111.7,
-     "rank": 15
+     "rank": 16
     },
     "qb_rush": {
      "v": 12.6,
@@ -1388,11 +1388,11 @@
     },
     "rb_yds": {
      "v": 126.2,
-     "rank": 18
+     "rank": 19
     },
     "wr_yds": {
      "v": 155.8,
-     "rank": 21
+     "rank": 23
     },
     "te_yds": {
      "v": 41.2,
@@ -1400,463 +1400,463 @@
     },
     "rz_trips": {
      "v": 3.8,
-     "rank": 27
+     "rank": 26
     },
     "epa": {
-     "v": -0.039,
-     "rank": 7
+     "v": -0.033,
+     "rank": 8
     },
     "success": {
-     "v": 0.438,
-     "rank": 18
+     "v": 0.451,
+     "rank": 19
     },
     "explosive": {
      "v": 3.0,
-     "rank": 8
+     "rank": 9
     }
    }
   },
   "HOU": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
      "v": 25.9,
      "rank": 9
     },
     "tds": {
-     "v": 2.78,
-     "rank": 10
+     "v": 2.8,
+     "rank": 11
     },
     "yds": {
      "v": 362.0,
      "rank": 12
     },
     "pass_yds": {
-     "v": 274.3,
-     "rank": 3
+     "v": 266.3,
+     "rank": 7
     },
     "rush_yds": {
-     "v": 87.7,
-     "rank": 29
+     "v": 95.7,
+     "rank": 26
     },
     "qb_rush": {
-     "v": 13.6,
-     "rank": 18
+     "v": 15.0,
+     "rank": 16
     },
     "rb_yds": {
-     "v": 88.6,
+     "v": 95.0,
      "rank": 30
     },
     "wr_yds": {
-     "v": 196.3,
+     "v": 190.5,
      "rank": 4
     },
     "te_yds": {
-     "v": 54.7,
-     "rank": 16
+     "v": 53.5,
+     "rank": 18
     },
     "rz_trips": {
-     "v": 3.78,
-     "rank": 8
+     "v": 3.6,
+     "rank": 10
     },
     "epa": {
-     "v": 0.048,
+     "v": 0.052,
      "rank": 9
     },
     "success": {
-     "v": 0.418,
-     "rank": 19
+     "v": 0.427,
+     "rank": 18
     },
     "explosive": {
-     "v": 4.0,
-     "rank": 7
+     "v": 3.9,
+     "rank": 10
     }
    },
    "def": {
     "points": {
-     "v": 24.3,
-     "rank": 18
+     "v": 22.2,
+     "rank": 17
     },
     "tds": {
-     "v": 2.67,
-     "rank": 16
+     "v": 2.4,
+     "rank": 14
     },
     "yds": {
-     "v": 366.1,
-     "rank": 25
+     "v": 347.7,
+     "rank": 17
     },
     "pass_yds": {
-     "v": 263.1,
-     "rank": 30
+     "v": 251.2,
+     "rank": 25
     },
     "rush_yds": {
-     "v": 103.0,
-     "rank": 11
+     "v": 96.5,
+     "rank": 10
     },
     "qb_rush": {
-     "v": 12.4,
+     "v": 11.7,
      "rank": 7
     },
     "rb_yds": {
-     "v": 116.9,
-     "rank": 12
-    },
-    "wr_yds": {
-     "v": 176.4,
-     "rank": 30
-    },
-    "te_yds": {
-     "v": 51.2,
-     "rank": 16
-    },
-    "rz_trips": {
-     "v": 3.0,
-     "rank": 12
-    },
-    "epa": {
-     "v": 0.006,
-     "rank": 16
-    },
-    "success": {
-     "v": 0.41,
+     "v": 110.3,
      "rank": 8
     },
-    "explosive": {
-     "v": 4.33,
+    "wr_yds": {
+     "v": 169.2,
      "rank": 29
+    },
+    "te_yds": {
+     "v": 48.3,
+     "rank": 13
+    },
+    "rz_trips": {
+     "v": 2.8,
+     "rank": 10
+    },
+    "epa": {
+     "v": -0.015,
+     "rank": 12
+    },
+    "success": {
+     "v": 0.409,
+     "rank": 5
+    },
+    "explosive": {
+     "v": 4.3,
+     "rank": 28
     }
    }
   },
   "IND": {
-   "games": 10,
+   "games": 11,
    "off": {
     "points": {
-     "v": 20.8,
-     "rank": 23
+     "v": 19.2,
+     "rank": 26
     },
     "tds": {
-     "v": 1.9,
-     "rank": 24
+     "v": 1.73,
+     "rank": 28
     },
     "yds": {
-     "v": 305.5,
-     "rank": 27
+     "v": 294.3,
+     "rank": 29
     },
     "pass_yds": {
-     "v": 183.8,
+     "v": 180.2,
      "rank": 30
     },
     "rush_yds": {
-     "v": 121.7,
-     "rank": 10
+     "v": 114.1,
+     "rank": 15
     },
     "qb_rush": {
-     "v": 10.7,
+     "v": 10.2,
      "rank": 23
     },
     "rb_yds": {
-     "v": 131.6,
-     "rank": 11
+     "v": 124.3,
+     "rank": 16
     },
     "wr_yds": {
-     "v": 123.4,
-     "rank": 25
+     "v": 121.6,
+     "rank": 26
     },
     "te_yds": {
-     "v": 35.5,
-     "rank": 26
+     "v": 34.3,
+     "rank": 28
     },
     "rz_trips": {
-     "v": 2.6,
-     "rank": 26
+     "v": 2.45,
+     "rank": 29
     },
     "epa": {
-     "v": -0.106,
-     "rank": 30
+     "v": -0.114,
+     "rank": 31
     },
     "success": {
-     "v": 0.424,
-     "rank": 15
+     "v": 0.413,
+     "rank": 26
     },
     "explosive": {
-     "v": 2.7,
-     "rank": 28
+     "v": 2.82,
+     "rank": 26
     }
    },
    "def": {
     "points": {
-     "v": 27.1,
-     "rank": 29
+     "v": 27.0,
+     "rank": 28
     },
     "tds": {
-     "v": 2.7,
-     "rank": 19
+     "v": 2.73,
+     "rank": 20
     },
     "yds": {
-     "v": 370.8,
-     "rank": 26
+     "v": 370.0,
+     "rank": 25
     },
     "pass_yds": {
-     "v": 238.8,
-     "rank": 18
+     "v": 234.7,
+     "rank": 15
     },
     "rush_yds": {
-     "v": 132.0,
+     "v": 135.3,
      "rank": 29
     },
     "qb_rush": {
-     "v": 19.2,
-     "rank": 23
+     "v": 20.0,
+     "rank": 25
     },
     "rb_yds": {
-     "v": 150.7,
-     "rank": 29
+     "v": 150.9,
+     "rank": 31
     },
     "wr_yds": {
-     "v": 149.0,
+     "v": 148.0,
      "rank": 17
     },
     "te_yds": {
-     "v": 45.7,
-     "rank": 9
+     "v": 45.5,
+     "rank": 10
     },
     "rz_trips": {
-     "v": 2.6,
-     "rank": 7
+     "v": 2.55,
+     "rank": 4
     },
     "epa": {
-     "v": 0.038,
+     "v": 0.047,
      "rank": 23
     },
     "success": {
-     "v": 0.418,
+     "v": 0.429,
      "rank": 11
     },
     "explosive": {
-     "v": 4.1,
-     "rank": 24
+     "v": 4.0,
+     "rank": 23
     }
    }
   },
   "JAX": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 29.9,
-     "rank": 4
+     "v": 28.7,
+     "rank": 6
     },
     "tds": {
-     "v": 3.33,
-     "rank": 4
+     "v": 3.1,
+     "rank": 7
     },
     "yds": {
-     "v": 373.2,
+     "v": 373.8,
      "rank": 10
     },
     "pass_yds": {
-     "v": 254.7,
-     "rank": 11
+     "v": 259.3,
+     "rank": 10
     },
     "rush_yds": {
-     "v": 118.6,
-     "rank": 12
+     "v": 114.5,
+     "rank": 14
     },
     "qb_rush": {
-     "v": 12.2,
+     "v": 11.8,
      "rank": 20
     },
     "rb_yds": {
-     "v": 131.6,
+     "v": 127.7,
      "rank": 12
     },
     "wr_yds": {
-     "v": 154.3,
-     "rank": 12
+     "v": 163.9,
+     "rank": 9
     },
     "te_yds": {
-     "v": 62.1,
-     "rank": 8
+     "v": 57.5,
+     "rank": 13
     },
     "rz_trips": {
-     "v": 3.22,
-     "rank": 16
+     "v": 3.4,
+     "rank": 13
     },
     "epa": {
-     "v": 0.141,
-     "rank": 3
-    },
-    "success": {
-     "v": 0.476,
+     "v": 0.116,
      "rank": 7
     },
+    "success": {
+     "v": 0.477,
+     "rank": 8
+    },
     "explosive": {
-     "v": 4.11,
-     "rank": 6
+     "v": 4.3,
+     "rank": 3
     }
    },
    "def": {
     "points": {
-     "v": 16.0,
-     "rank": 2
+     "v": 16.7,
+     "rank": 3
     },
     "tds": {
-     "v": 1.67,
+     "v": 1.7,
      "rank": 4
     },
     "yds": {
-     "v": 329.1,
-     "rank": 9
-    },
-    "pass_yds": {
-     "v": 237.6,
-     "rank": 17
-    },
-    "rush_yds": {
-     "v": 91.6,
+     "v": 321.7,
      "rank": 7
     },
-    "qb_rush": {
-     "v": 16.1,
-     "rank": 16
+    "pass_yds": {
+     "v": 231.1,
+     "rank": 11
     },
-    "rb_yds": {
-     "v": 103.8,
+    "rush_yds": {
+     "v": 90.6,
      "rank": 5
     },
+    "qb_rush": {
+     "v": 18.8,
+     "rank": 24
+    },
+    "rb_yds": {
+     "v": 99.2,
+     "rank": 3
+    },
     "wr_yds": {
-     "v": 170.2,
-     "rank": 28
+     "v": 162.2,
+     "rank": 24
     },
     "te_yds": {
-     "v": 31.0,
+     "v": 34.3,
      "rank": 1
     },
     "rz_trips": {
-     "v": 2.56,
+     "v": 2.6,
      "rank": 5
     },
     "epa": {
-     "v": -0.091,
-     "rank": 4
+     "v": -0.099,
+     "rank": 1
     },
     "success": {
-     "v": 0.411,
-     "rank": 9
+     "v": 0.41,
+     "rank": 6
     },
     "explosive": {
-     "v": 2.89,
-     "rank": 7
+     "v": 2.8,
+     "rank": 5
     }
    }
   },
   "KC": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 26.3,
-     "rank": 8
+     "v": 27.1,
+     "rank": 7
     },
     "tds": {
-     "v": 3.22,
+     "v": 3.3,
      "rank": 6
     },
     "yds": {
-     "v": 402.0,
-     "rank": 3
+     "v": 406.2,
+     "rank": 2
     },
     "pass_yds": {
-     "v": 265.0,
-     "rank": 7
+     "v": 270.9,
+     "rank": 5
     },
     "rush_yds": {
-     "v": 137.0,
+     "v": 135.3,
      "rank": 5
     },
     "qb_rush": {
-     "v": 12.0,
-     "rank": 21
+     "v": 10.8,
+     "rank": 22
     },
     "rb_yds": {
-     "v": 176.9,
+     "v": 175.0,
      "rank": 2
     },
     "wr_yds": {
-     "v": 129.1,
-     "rank": 23
+     "v": 135.3,
+     "rank": 21
     },
     "te_yds": {
-     "v": 82.2,
-     "rank": 3
+     "v": 83.5,
+     "rank": 2
     },
     "rz_trips": {
-     "v": 3.67,
-     "rank": 9
+     "v": 3.8,
+     "rank": 8
     },
     "epa": {
-     "v": 0.124,
-     "rank": 5
+     "v": 0.14,
+     "rank": 3
     },
     "success": {
-     "v": 0.484,
-     "rank": 4
+     "v": 0.494,
+     "rank": 6
     },
     "explosive": {
      "v": 4.0,
-     "rank": 7
+     "rank": 9
     }
    },
    "def": {
     "points": {
-     "v": 17.3,
-     "rank": 3
-    },
-    "tds": {
-     "v": 1.44,
+     "v": 16.3,
      "rank": 2
     },
+    "tds": {
+     "v": 1.4,
+     "rank": 1
+    },
     "yds": {
-     "v": 325.8,
-     "rank": 7
+     "v": 316.2,
+     "rank": 4
     },
     "pass_yds": {
-     "v": 227.8,
-     "rank": 10
-    },
-    "rush_yds": {
-     "v": 98.0,
-     "rank": 10
-    },
-    "qb_rush": {
-     "v": 17.1,
-     "rank": 17
-    },
-    "rb_yds": {
-     "v": 112.2,
+     "v": 220.5,
      "rank": 7
     },
+    "rush_yds": {
+     "v": 95.7,
+     "rank": 9
+    },
+    "qb_rush": {
+     "v": 15.9,
+     "rank": 14
+    },
+    "rb_yds": {
+     "v": 107.8,
+     "rank": 6
+    },
     "wr_yds": {
-     "v": 124.4,
-     "rank": 5
+     "v": 119.6,
+     "rank": 4
     },
     "te_yds": {
-     "v": 64.1,
+     "v": 64.6,
      "rank": 27
     },
     "rz_trips": {
-     "v": 2.89,
-     "rank": 9
+     "v": 2.7,
+     "rank": 8
     },
     "epa": {
-     "v": -0.081,
-     "rank": 6
-    },
-    "success": {
-     "v": 0.396,
+     "v": -0.082,
      "rank": 3
     },
+    "success": {
+     "v": 0.4,
+     "rank": 4
+    },
     "explosive": {
-     "v": 3.11,
-     "rank": 9
+     "v": 2.9,
+     "rank": 7
     }
    }
   },
@@ -1865,15 +1865,15 @@
    "off": {
     "points": {
      "v": 24.8,
-     "rank": 11
+     "rank": 12
     },
     "tds": {
      "v": 3.1,
-     "rank": 8
+     "rank": 7
     },
     "yds": {
      "v": 397.6,
-     "rank": 6
+     "rank": 5
     },
     "pass_yds": {
      "v": 263.6,
@@ -1881,11 +1881,11 @@
     },
     "rush_yds": {
      "v": 134.0,
-     "rank": 8
+     "rank": 7
     },
     "qb_rush": {
      "v": 3.6,
-     "rank": 31
+     "rank": 32
     },
     "rb_yds": {
      "v": 165.3,
@@ -1893,27 +1893,27 @@
     },
     "wr_yds": {
      "v": 164.2,
-     "rank": 8
+     "rank": 7
     },
     "te_yds": {
      "v": 60.4,
-     "rank": 10
+     "rank": 9
     },
     "rz_trips": {
      "v": 4.0,
-     "rank": 5
+     "rank": 3
     },
     "epa": {
-     "v": 0.071,
+     "v": 0.083,
      "rank": 8
     },
     "success": {
-     "v": 0.48,
-     "rank": 5
+     "v": 0.503,
+     "rank": 4
     },
     "explosive": {
      "v": 3.3,
-     "rank": 19
+     "rank": 20
     }
    },
    "def": {
@@ -1923,7 +1923,7 @@
     },
     "tds": {
      "v": 1.5,
-     "rank": 3
+     "rank": 2
     },
     "yds": {
      "v": 295.8,
@@ -1931,11 +1931,11 @@
     },
     "pass_yds": {
      "v": 199.0,
-     "rank": 4
+     "rank": 3
     },
     "rush_yds": {
      "v": 96.8,
-     "rank": 9
+     "rank": 11
     },
     "qb_rush": {
      "v": 21.6,
@@ -1943,7 +1943,7 @@
     },
     "rb_yds": {
      "v": 113.1,
-     "rank": 9
+     "rank": 10
     },
     "wr_yds": {
      "v": 111.3,
@@ -1951,298 +1951,409 @@
     },
     "te_yds": {
      "v": 47.1,
-     "rank": 10
+     "rank": 12
     },
     "rz_trips": {
      "v": 2.9,
      "rank": 11
     },
     "epa": {
-     "v": -0.112,
-     "rank": 3
+     "v": -0.096,
+     "rank": 2
     },
     "success": {
      "v": 0.397,
-     "rank": 4
+     "rank": 3
     },
     "explosive": {
      "v": 2.7,
-     "rank": 5
+     "rank": 3
     }
    }
   },
   "LAC": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 16.0,
-     "rank": 32
+     "v": 16.8,
+     "rank": 30
     },
     "tds": {
-     "v": 1.44,
-     "rank": 32
+     "v": 1.6,
+     "rank": 30
     },
     "yds": {
-     "v": 313.3,
-     "rank": 26
-    },
-    "pass_yds": {
-     "v": 193.8,
+     "v": 310.9,
      "rank": 25
     },
+    "pass_yds": {
+     "v": 187.5,
+     "rank": 29
+    },
     "rush_yds": {
-     "v": 119.6,
-     "rank": 11
+     "v": 123.4,
+     "rank": 10
     },
     "qb_rush": {
-     "v": 26.8,
+     "v": 27.3,
      "rank": 4
     },
     "rb_yds": {
-     "v": 121.0,
-     "rank": 16
+     "v": 124.2,
+     "rank": 17
     },
     "wr_yds": {
-     "v": 119.4,
-     "rank": 26
+     "v": 114.9,
+     "rank": 28
     },
     "te_yds": {
-     "v": 44.2,
+     "v": 42.7,
      "rank": 23
     },
     "rz_trips": {
-     "v": 2.33,
-     "rank": 32
+     "v": 2.4,
+     "rank": 30
     },
     "epa": {
-     "v": -0.176,
+     "v": -0.135,
      "rank": 32
     },
     "success": {
-     "v": 0.35,
-     "rank": 32
+     "v": 0.391,
+     "rank": 30
     },
     "explosive": {
-     "v": 2.89,
-     "rank": 25
+     "v": 2.8,
+     "rank": 27
     }
    },
    "def": {
     "points": {
      "v": 26.6,
-     "rank": 27
+     "rank": 25
     },
     "tds": {
-     "v": 2.89,
-     "rank": 24
+     "v": 2.9,
+     "rank": 25
     },
     "yds": {
-     "v": 354.6,
-     "rank": 18
-    },
-    "pass_yds": {
-     "v": 242.8,
+     "v": 353.2,
      "rank": 20
     },
-    "rush_yds": {
-     "v": 111.8,
+    "pass_yds": {
+     "v": 236.1,
      "rank": 16
     },
+    "rush_yds": {
+     "v": 117.1,
+     "rank": 17
+    },
     "qb_rush": {
-     "v": 11.4,
+     "v": 10.7,
      "rank": 6
     },
     "rb_yds": {
-     "v": 119.3,
-     "rank": 14
+     "v": 125.8,
+     "rank": 18
     },
     "wr_yds": {
-     "v": 160.0,
-     "rank": 24
+     "v": 153.8,
+     "rank": 22
     },
     "te_yds": {
-     "v": 58.7,
+     "v": 58.3,
      "rank": 24
     },
     "rz_trips": {
-     "v": 3.89,
-     "rank": 28
+     "v": 3.9,
+     "rank": 27
     },
     "epa": {
-     "v": 0.009,
-     "rank": 18
+     "v": 0.045,
+     "rank": 22
     },
     "success": {
-     "v": 0.437,
-     "rank": 16
+     "v": 0.451,
+     "rank": 18
     },
     "explosive": {
-     "v": 3.44,
-     "rank": 15
+     "v": 3.3,
+     "rank": 11
     }
    }
   },
   "LV": {
-   "games": 10,
+   "games": 11,
    "off": {
     "points": {
-     "v": 25.1,
-     "rank": 10
+     "v": 25.0,
+     "rank": 11
     },
     "tds": {
-     "v": 2.6,
+     "v": 2.64,
      "rank": 12
     },
     "yds": {
-     "v": 326.4,
-     "rank": 23
+     "v": 334.0,
+     "rank": 22
     },
     "pass_yds": {
-     "v": 254.4,
+     "v": 255.5,
      "rank": 12
     },
     "rush_yds": {
-     "v": 72.0,
+     "v": 78.5,
      "rank": 31
     },
     "qb_rush": {
-     "v": 4.5,
+     "v": 6.1,
      "rank": 29
     },
     "rb_yds": {
-     "v": 116.0,
-     "rank": 19
+     "v": 124.6,
+     "rank": 15
     },
     "wr_yds": {
-     "v": 91.6,
+     "v": 97.3,
      "rank": 32
     },
     "te_yds": {
-     "v": 115.3,
+     "v": 106.9,
      "rank": 1
     },
     "rz_trips": {
-     "v": 4.0,
-     "rank": 5
+     "v": 3.91,
+     "rank": 7
     },
     "epa": {
-     "v": -0.023,
-     "rank": 21
+     "v": -0.006,
+     "rank": 19
     },
     "success": {
-     "v": 0.416,
-     "rank": 21
+     "v": 0.424,
+     "rank": 20
     },
     "explosive": {
-     "v": 3.5,
+     "v": 3.45,
      "rank": 18
     }
    },
    "def": {
     "points": {
-     "v": 28.9,
-     "rank": 31
+     "v": 29.7,
+     "rank": 32
     },
     "tds": {
-     "v": 3.5,
+     "v": 3.55,
      "rank": 32
     },
     "yds": {
-     "v": 400.6,
+     "v": 396.9,
      "rank": 30
     },
     "pass_yds": {
-     "v": 247.8,
-     "rank": 21
+     "v": 245.7,
+     "rank": 23
     },
     "rush_yds": {
-     "v": 152.8,
+     "v": 151.2,
      "rank": 31
     },
     "qb_rush": {
-     "v": 17.8,
-     "rank": 19
+     "v": 16.8,
+     "rank": 17
     },
     "rb_yds": {
-     "v": 160.2,
+     "v": 157.9,
      "rank": 32
     },
     "wr_yds": {
-     "v": 166.0,
-     "rank": 27
+     "v": 162.6,
+     "rank": 26
     },
     "te_yds": {
-     "v": 52.3,
-     "rank": 17
+     "v": 54.6,
+     "rank": 20
     },
     "rz_trips": {
-     "v": 4.0,
+     "v": 4.09,
      "rank": 30
     },
     "epa": {
-     "v": 0.087,
-     "rank": 30
+     "v": 0.096,
+     "rank": 29
     },
     "success": {
-     "v": 0.48,
+     "v": 0.507,
      "rank": 32
     },
     "explosive": {
-     "v": 4.1,
-     "rank": 24
+     "v": 4.09,
+     "rank": 26
     }
    }
   },
   "MIA": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 16.4,
-     "rank": 30
+     "v": 15.7,
+     "rank": 32
     },
     "tds": {
-     "v": 1.67,
-     "rank": 30
+     "v": 1.5,
+     "rank": 31
     },
     "yds": {
-     "v": 300.6,
-     "rank": 28
+     "v": 290.6,
+     "rank": 31
     },
     "pass_yds": {
-     "v": 187.2,
-     "rank": 29
+     "v": 178.7,
+     "rank": 31
     },
     "rush_yds": {
-     "v": 113.3,
-     "rank": 18
+     "v": 111.9,
+     "rank": 17
     },
     "qb_rush": {
-     "v": 26.4,
-     "rank": 5
+     "v": 24.7,
+     "rank": 7
     },
     "rb_yds": {
-     "v": 101.1,
+     "v": 99.4,
      "rank": 29
     },
     "wr_yds": {
-     "v": 130.4,
-     "rank": 22
+     "v": 125.9,
+     "rank": 24
     },
     "te_yds": {
-     "v": 33.9,
-     "rank": 27
+     "v": 31.7,
+     "rank": 29
     },
     "rz_trips": {
-     "v": 2.44,
-     "rank": 30
+     "v": 2.3,
+     "rank": 31
     },
     "epa": {
-     "v": -0.062,
-     "rank": 25
+     "v": -0.079,
+     "rank": 28
     },
     "success": {
-     "v": 0.381,
+     "v": 0.374,
+     "rank": 31
+    },
+    "explosive": {
+     "v": 2.9,
+     "rank": 24
+    }
+   },
+   "def": {
+    "points": {
+     "v": 25.0,
+     "rank": 21
+    },
+    "tds": {
+     "v": 2.6,
+     "rank": 17
+    },
+    "yds": {
+     "v": 342.4,
+     "rank": 14
+    },
+    "pass_yds": {
+     "v": 223.9,
+     "rank": 9
+    },
+    "rush_yds": {
+     "v": 118.5,
+     "rank": 19
+    },
+    "qb_rush": {
+     "v": 9.1,
+     "rank": 3
+    },
+    "rb_yds": {
+     "v": 145.8,
+     "rank": 27
+    },
+    "wr_yds": {
+     "v": 128.2,
+     "rank": 5
+    },
+    "te_yds": {
+     "v": 58.2,
+     "rank": 23
+    },
+    "rz_trips": {
+     "v": 3.9,
+     "rank": 27
+    },
+    "epa": {
+     "v": 0.069,
+     "rank": 27
+    },
+    "success": {
+     "v": 0.486,
      "rank": 29
+    },
+    "explosive": {
+     "v": 3.3,
+     "rank": 11
+    }
+   }
+  },
+  "MIN": {
+   "games": 10,
+   "off": {
+    "points": {
+     "v": 18.6,
+     "rank": 28
+    },
+    "tds": {
+     "v": 1.5,
+     "rank": 31
+    },
+    "yds": {
+     "v": 296.9,
+     "rank": 28
+    },
+    "pass_yds": {
+     "v": 190.8,
+     "rank": 27
+    },
+    "rush_yds": {
+     "v": 106.1,
+     "rank": 22
+    },
+    "qb_rush": {
+     "v": 19.8,
+     "rank": 13
+    },
+    "rb_yds": {
+     "v": 103.3,
+     "rank": 26
+    },
+    "wr_yds": {
+     "v": 116.7,
+     "rank": 27
+    },
+    "te_yds": {
+     "v": 56.5,
+     "rank": 14
+    },
+    "rz_trips": {
+     "v": 2.6,
+     "rank": 26
+    },
+    "epa": {
+     "v": -0.091,
+     "rank": 29
+    },
+    "success": {
+     "v": 0.405,
+     "rank": 28
     },
     "explosive": {
      "v": 3.0,
@@ -2251,166 +2362,55 @@
    },
    "def": {
     "points": {
-     "v": 24.9,
-     "rank": 21
-    },
-    "tds": {
-     "v": 2.67,
-     "rank": 16
-    },
-    "yds": {
-     "v": 332.7,
-     "rank": 10
-    },
-    "pass_yds": {
-     "v": 211.7,
-     "rank": 6
-    },
-    "rush_yds": {
-     "v": 121.0,
-     "rank": 19
-    },
-    "qb_rush": {
-     "v": 10.1,
-     "rank": 4
-    },
-    "rb_yds": {
-     "v": 144.4,
-     "rank": 28
-    },
-    "wr_yds": {
-     "v": 119.2,
-     "rank": 3
-    },
-    "te_yds": {
-     "v": 57.9,
-     "rank": 22
-    },
-    "rz_trips": {
-     "v": 3.78,
-     "rank": 26
-    },
-    "epa": {
-     "v": 0.067,
-     "rank": 27
-    },
-    "success": {
-     "v": 0.472,
-     "rank": 31
-    },
-    "explosive": {
-     "v": 3.11,
-     "rank": 9
-    }
-   }
-  },
-  "MIN": {
-   "games": 9,
-   "off": {
-    "points": {
-     "v": 19.6,
-     "rank": 25
-    },
-    "tds": {
-     "v": 1.56,
-     "rank": 31
-    },
-    "yds": {
-     "v": 292.9,
-     "rank": 29
-    },
-    "pass_yds": {
-     "v": 182.7,
-     "rank": 31
-    },
-    "rush_yds": {
-     "v": 110.2,
-     "rank": 19
-    },
-    "qb_rush": {
-     "v": 22.0,
-     "rank": 12
-    },
-    "rb_yds": {
-     "v": 104.8,
-     "rank": 25
-    },
-    "wr_yds": {
-     "v": 109.4,
-     "rank": 30
-    },
-    "te_yds": {
-     "v": 56.1,
-     "rank": 15
-    },
-    "rz_trips": {
-     "v": 2.56,
-     "rank": 28
-    },
-    "epa": {
-     "v": -0.1,
-     "rank": 29
-    },
-    "success": {
-     "v": 0.376,
-     "rank": 30
-    },
-    "explosive": {
-     "v": 2.89,
-     "rank": 25
-    }
-   },
-   "def": {
-    "points": {
-     "v": 14.0,
+     "v": 16.1,
      "rank": 1
     },
     "tds": {
-     "v": 1.22,
-     "rank": 1
+     "v": 1.5,
+     "rank": 2
     },
     "yds": {
-     "v": 303.3,
+     "v": 308.1,
      "rank": 3
     },
     "pass_yds": {
-     "v": 190.9,
+     "v": 197.8,
      "rank": 2
     },
     "rush_yds": {
-     "v": 112.4,
-     "rank": 17
+     "v": 110.3,
+     "rank": 15
     },
     "qb_rush": {
-     "v": 11.0,
+     "v": 9.9,
      "rank": 5
     },
     "rb_yds": {
-     "v": 120.0,
-     "rank": 15
+     "v": 117.7,
+     "rank": 14
     },
     "wr_yds": {
-     "v": 125.0,
+     "v": 131.1,
      "rank": 6
     },
     "te_yds": {
-     "v": 43.9,
-     "rank": 6
+     "v": 43.6,
+     "rank": 5
     },
     "rz_trips": {
-     "v": 2.22,
-     "rank": 2
+     "v": 2.4,
+     "rank": 3
     },
     "epa": {
-     "v": -0.128,
-     "rank": 1
+     "v": -0.077,
+     "rank": 6
     },
     "success": {
-     "v": 0.385,
+     "v": 0.393,
      "rank": 2
     },
     "explosive": {
-     "v": 2.44,
+     "v": 2.5,
      "rank": 2
     }
    }
@@ -2424,7 +2424,7 @@
     },
     "tds": {
      "v": 2.6,
-     "rank": 12
+     "rank": 13
     },
     "yds": {
      "v": 363.1,
@@ -2432,19 +2432,19 @@
     },
     "pass_yds": {
      "v": 247.8,
-     "rank": 13
+     "rank": 14
     },
     "rush_yds": {
      "v": 115.3,
-     "rank": 16
+     "rank": 13
     },
     "qb_rush": {
      "v": 26.4,
-     "rank": 6
+     "rank": 5
     },
     "rb_yds": {
      "v": 122.3,
-     "rank": 15
+     "rank": 18
     },
     "wr_yds": {
      "v": 151.0,
@@ -2452,45 +2452,45 @@
     },
     "te_yds": {
      "v": 61.4,
-     "rank": 9
+     "rank": 8
     },
     "rz_trips": {
      "v": 2.8,
-     "rank": 23
+     "rank": 25
     },
     "epa": {
-     "v": 0.016,
-     "rank": 13
+     "v": 0.019,
+     "rank": 12
     },
     "success": {
-     "v": 0.444,
-     "rank": 11
+     "v": 0.453,
+     "rank": 12
     },
     "explosive": {
      "v": 4.3,
-     "rank": 5
+     "rank": 3
     }
    },
    "def": {
     "points": {
      "v": 24.2,
-     "rank": 17
+     "rank": 19
     },
     "tds": {
      "v": 2.7,
-     "rank": 19
+     "rank": 18
     },
     "yds": {
      "v": 363.2,
-     "rank": 21
+     "rank": 23
     },
     "pass_yds": {
      "v": 256.6,
-     "rank": 27
+     "rank": 29
     },
     "rush_yds": {
      "v": 106.6,
-     "rank": 14
+     "rank": 13
     },
     "qb_rush": {
      "v": 9.1,
@@ -2498,27 +2498,27 @@
     },
     "rb_yds": {
      "v": 131.8,
-     "rank": 22
+     "rank": 21
     },
     "wr_yds": {
      "v": 174.4,
-     "rank": 29
+     "rank": 30
     },
     "te_yds": {
      "v": 44.7,
-     "rank": 7
+     "rank": 8
     },
     "rz_trips": {
      "v": 3.5,
-     "rank": 17
+     "rank": 20
     },
     "epa": {
-     "v": 0.06,
+     "v": 0.057,
      "rank": 25
     },
     "success": {
-     "v": 0.445,
-     "rank": 25
+     "v": 0.452,
+     "rank": 20
     },
     "explosive": {
      "v": 3.9,
@@ -2527,557 +2527,557 @@
    }
   },
   "NO": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 22.4,
-     "rank": 15
+     "v": 21.5,
+     "rank": 21
     },
     "tds": {
-     "v": 2.56,
-     "rank": 15
+     "v": 2.4,
+     "rank": 16
     },
     "yds": {
-     "v": 331.9,
-     "rank": 22
+     "v": 332.9,
+     "rank": 23
     },
     "pass_yds": {
-     "v": 241.4,
-     "rank": 17
+     "v": 239.5,
+     "rank": 16
     },
     "rush_yds": {
-     "v": 90.4,
-     "rank": 27
-    },
-    "qb_rush": {
-     "v": 21.1,
-     "rank": 13
-    },
-    "rb_yds": {
-     "v": 101.6,
+     "v": 93.4,
      "rank": 28
     },
+    "qb_rush": {
+     "v": 22.4,
+     "rank": 11
+    },
+    "rb_yds": {
+     "v": 100.9,
+     "rank": 27
+    },
     "wr_yds": {
-     "v": 161.3,
-     "rank": 9
+     "v": 163.6,
+     "rank": 10
     },
     "te_yds": {
-     "v": 48.1,
-     "rank": 20
+     "v": 45.8,
+     "rank": 21
     },
     "rz_trips": {
-     "v": 3.44,
-     "rank": 12
+     "v": 3.3,
+     "rank": 14
     },
     "epa": {
-     "v": -0.041,
+     "v": -0.04,
      "rank": 22
     },
     "success": {
-     "v": 0.408,
-     "rank": 25
+     "v": 0.423,
+     "rank": 21
     },
     "explosive": {
-     "v": 2.78,
+     "v": 2.8,
      "rank": 27
     }
    },
    "def": {
     "points": {
-     "v": 26.2,
-     "rank": 25
+     "v": 25.7,
+     "rank": 23
     },
     "tds": {
-     "v": 2.89,
-     "rank": 24
+     "v": 2.8,
+     "rank": 22
     },
     "yds": {
-     "v": 380.4,
-     "rank": 29
+     "v": 375.3,
+     "rank": 28
     },
     "pass_yds": {
-     "v": 249.4,
+     "v": 242.6,
      "rank": 22
     },
     "rush_yds": {
-     "v": 131.0,
+     "v": 132.7,
      "rank": 28
     },
     "qb_rush": {
-     "v": 18.2,
-     "rank": 21
+     "v": 17.7,
+     "rank": 19
     },
     "rb_yds": {
-     "v": 153.6,
-     "rank": 31
-    },
-    "wr_yds": {
-     "v": 141.1,
-     "rank": 12
-    },
-    "te_yds": {
-     "v": 65.9,
+     "v": 149.2,
      "rank": 28
     },
+    "wr_yds": {
+     "v": 139.5,
+     "rank": 11
+    },
+    "te_yds": {
+     "v": 64.1,
+     "rank": 26
+    },
     "rz_trips": {
-     "v": 4.22,
-     "rank": 32
+     "v": 4.1,
+     "rank": 31
     },
     "epa": {
-     "v": 0.034,
-     "rank": 21
+     "v": 0.032,
+     "rank": 19
     },
     "success": {
-     "v": 0.454,
-     "rank": 26
+     "v": 0.459,
+     "rank": 25
     },
     "explosive": {
-     "v": 4.22,
-     "rank": 26
+     "v": 4.0,
+     "rank": 23
     }
    }
   },
   "NYG": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
      "v": 22.6,
      "rank": 14
     },
     "tds": {
-     "v": 2.33,
-     "rank": 17
+     "v": 2.3,
+     "rank": 19
     },
     "yds": {
-     "v": 357.3,
-     "rank": 13
-    },
-    "pass_yds": {
-     "v": 243.7,
-     "rank": 15
-    },
-    "rush_yds": {
-     "v": 113.7,
+     "v": 347.1,
      "rank": 17
     },
+    "pass_yds": {
+     "v": 236.6,
+     "rank": 17
+    },
+    "rush_yds": {
+     "v": 110.5,
+     "rank": 19
+    },
     "qb_rush": {
-     "v": 23.4,
-     "rank": 9
+     "v": 25.4,
+     "rank": 6
     },
     "rb_yds": {
-     "v": 114.1,
-     "rank": 20
+     "v": 108.5,
+     "rank": 22
     },
     "wr_yds": {
-     "v": 142.6,
-     "rank": 15
+     "v": 137.3,
+     "rank": 19
     },
     "te_yds": {
-     "v": 74.1,
+     "v": 73.1,
      "rank": 5
     },
     "rz_trips": {
-     "v": 3.11,
+     "v": 3.1,
      "rank": 17
     },
     "epa": {
-     "v": 0.017,
-     "rank": 12
+     "v": -0.001,
+     "rank": 17
     },
     "success": {
-     "v": 0.416,
+     "v": 0.418,
      "rank": 23
     },
     "explosive": {
-     "v": 3.89,
-     "rank": 12
+     "v": 3.7,
+     "rank": 13
     }
    },
    "def": {
     "points": {
-     "v": 21.8,
-     "rank": 11
+     "v": 21.4,
+     "rank": 12
     },
     "tds": {
-     "v": 2.67,
+     "v": 2.5,
      "rank": 16
     },
     "yds": {
-     "v": 318.2,
-     "rank": 5
-    },
-    "pass_yds": {
-     "v": 195.9,
-     "rank": 3
-    },
-    "rush_yds": {
-     "v": 122.3,
-     "rank": 20
-    },
-    "qb_rush": {
-     "v": 30.1,
-     "rank": 32
-    },
-    "rb_yds": {
-     "v": 112.3,
+     "v": 324.3,
      "rank": 8
     },
+    "pass_yds": {
+     "v": 206.4,
+     "rank": 5
+    },
+    "rush_yds": {
+     "v": 117.9,
+     "rank": 18
+    },
+    "qb_rush": {
+     "v": 27.9,
+     "rank": 31
+    },
+    "rb_yds": {
+     "v": 110.4,
+     "rank": 9
+    },
     "wr_yds": {
-     "v": 126.6,
-     "rank": 7
+     "v": 138.9,
+     "rank": 10
     },
     "te_yds": {
-     "v": 47.7,
-     "rank": 11
+     "v": 44.5,
+     "rank": 7
     },
     "rz_trips": {
-     "v": 2.33,
-     "rank": 3
+     "v": 2.6,
+     "rank": 5
     },
     "epa": {
-     "v": -0.003,
+     "v": -0.014,
      "rank": 13
     },
     "success": {
-     "v": 0.428,
-     "rank": 13
+     "v": 0.429,
+     "rank": 12
     },
     "explosive": {
-     "v": 3.11,
-     "rank": 9
+     "v": 3.4,
+     "rank": 13
     }
    }
   },
   "NYJ": {
-   "games": 10,
+   "games": 11,
    "off": {
     "points": {
-     "v": 19.4,
-     "rank": 26
+     "v": 20.1,
+     "rank": 24
     },
     "tds": {
-     "v": 1.7,
-     "rank": 28
+     "v": 1.82,
+     "rank": 26
     },
     "yds": {
-     "v": 342.6,
-     "rank": 17
-    },
-    "pass_yds": {
-     "v": 236.3,
+     "v": 342.5,
      "rank": 18
     },
-    "rush_yds": {
-     "v": 106.3,
+    "pass_yds": {
+     "v": 230.8,
      "rank": 20
     },
+    "rush_yds": {
+     "v": 111.6,
+     "rank": 18
+    },
     "qb_rush": {
-     "v": 8.7,
+     "v": 8.3,
      "rank": 27
     },
     "rb_yds": {
-     "v": 131.9,
+     "v": 136.6,
      "rank": 10
     },
     "wr_yds": {
-     "v": 150.0,
-     "rank": 14
+     "v": 145.3,
+     "rank": 15
     },
     "te_yds": {
-     "v": 49.2,
-     "rank": 19
+     "v": 49.7,
+     "rank": 20
     },
     "rz_trips": {
-     "v": 2.8,
+     "v": 2.91,
      "rank": 23
     },
     "epa": {
-     "v": -0.009,
-     "rank": 17
+     "v": 0.015,
+     "rank": 13
     },
     "success": {
-     "v": 0.45,
-     "rank": 10
+     "v": 0.471,
+     "rank": 9
     },
     "explosive": {
-     "v": 3.3,
-     "rank": 19
+     "v": 3.18,
+     "rank": 22
     }
    },
    "def": {
     "points": {
-     "v": 25.4,
+     "v": 25.3,
      "rank": 22
     },
     "tds": {
      "v": 3.0,
-     "rank": 28
+     "rank": 27
     },
     "yds": {
-     "v": 347.2,
-     "rank": 16
+     "v": 341.9,
+     "rank": 13
     },
     "pass_yds": {
-     "v": 210.5,
-     "rank": 5
+     "v": 203.3,
+     "rank": 4
     },
     "rush_yds": {
-     "v": 136.7,
+     "v": 138.6,
      "rank": 30
     },
     "qb_rush": {
-     "v": 15.6,
-     "rank": 14
+     "v": 17.1,
+     "rank": 18
     },
     "rb_yds": {
-     "v": 141.8,
+     "v": 142.8,
      "rank": 24
     },
     "wr_yds": {
-     "v": 121.3,
-     "rank": 4
+     "v": 117.0,
+     "rank": 3
     },
     "te_yds": {
-     "v": 63.2,
-     "rank": 26
+     "v": 60.1,
+     "rank": 25
     },
     "rz_trips": {
-     "v": 3.5,
-     "rank": 17
+     "v": 3.45,
+     "rank": 19
     },
     "epa": {
-     "v": 0.066,
-     "rank": 26
-    },
-    "success": {
-     "v": 0.466,
+     "v": 0.073,
      "rank": 28
     },
+    "success": {
+     "v": 0.489,
+     "rank": 30
+    },
     "explosive": {
-     "v": 3.2,
-     "rank": 12
+     "v": 3.09,
+     "rank": 10
     }
    }
   },
   "PHI": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 16.4,
-     "rank": 30
+     "v": 16.7,
+     "rank": 31
     },
     "tds": {
-     "v": 2.0,
-     "rank": 23
+     "v": 1.9,
+     "rank": 24
     },
     "yds": {
-     "v": 282.1,
+     "v": 277.4,
      "rank": 32
     },
     "pass_yds": {
-     "v": 193.3,
-     "rank": 26
-    },
-    "rush_yds": {
-     "v": 88.8,
+     "v": 188.1,
      "rank": 28
     },
+    "rush_yds": {
+     "v": 89.3,
+     "rank": 29
+    },
     "qb_rush": {
-     "v": 22.1,
-     "rank": 11
+     "v": 20.9,
+     "rank": 12
     },
     "rb_yds": {
-     "v": 82.9,
+     "v": 83.0,
      "rank": 32
     },
     "wr_yds": {
-     "v": 131.8,
-     "rank": 21
+     "v": 128.9,
+     "rank": 23
     },
     "te_yds": {
-     "v": 44.3,
+     "v": 43.7,
      "rank": 22
     },
     "rz_trips": {
-     "v": 2.44,
-     "rank": 30
+     "v": 2.3,
+     "rank": 31
     },
     "epa": {
-     "v": -0.106,
-     "rank": 31
+     "v": -0.108,
+     "rank": 30
     },
     "success": {
-     "v": 0.357,
-     "rank": 31
+     "v": 0.356,
+     "rank": 32
     },
     "explosive": {
-     "v": 2.11,
+     "v": 2.2,
      "rank": 32
     }
    },
    "def": {
     "points": {
-     "v": 24.6,
-     "rank": 19
+     "v": 23.7,
+     "rank": 18
     },
     "tds": {
-     "v": 2.56,
+     "v": 2.4,
      "rank": 14
     },
     "yds": {
-     "v": 365.7,
-     "rank": 24
+     "v": 359.1,
+     "rank": 21
     },
     "pass_yds": {
-     "v": 238.9,
-     "rank": 19
+     "v": 237.7,
+     "rank": 17
     },
     "rush_yds": {
-     "v": 126.8,
-     "rank": 25
+     "v": 121.4,
+     "rank": 21
     },
     "qb_rush": {
-     "v": 17.2,
-     "rank": 18
+     "v": 18.4,
+     "rank": 21
     },
     "rb_yds": {
-     "v": 126.3,
-     "rank": 19
+     "v": 120.0,
+     "rank": 16
     },
     "wr_yds": {
-     "v": 177.6,
-     "rank": 31
+     "v": 174.4,
+     "rank": 30
     },
     "te_yds": {
-     "v": 42.9,
-     "rank": 5
+     "v": 44.7,
+     "rank": 8
     },
     "rz_trips": {
-     "v": 3.56,
+     "v": 3.5,
      "rank": 20
     },
     "epa": {
-     "v": 0.078,
-     "rank": 28
+     "v": 0.059,
+     "rank": 26
     },
     "success": {
-     "v": 0.437,
-     "rank": 17
+     "v": 0.434,
+     "rank": 15
     },
     "explosive": {
-     "v": 3.89,
+     "v": 3.7,
      "rank": 20
     }
    }
   },
   "PIT": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 22.0,
-     "rank": 19
+     "v": 21.4,
+     "rank": 22
     },
     "tds": {
-     "v": 2.11,
-     "rank": 21
+     "v": 2.0,
+     "rank": 22
     },
     "yds": {
-     "v": 341.3,
-     "rank": 19
+     "v": 337.2,
+     "rank": 21
     },
     "pass_yds": {
-     "v": 224.0,
+     "v": 224.3,
      "rank": 21
     },
     "rush_yds": {
-     "v": 117.3,
-     "rank": 14
+     "v": 112.9,
+     "rank": 16
     },
     "qb_rush": {
-     "v": 4.8,
+     "v": 7.2,
      "rank": 28
     },
     "rb_yds": {
-     "v": 155.0,
-     "rank": 7
+     "v": 145.8,
+     "rank": 8
     },
     "wr_yds": {
-     "v": 119.2,
-     "rank": 27
+     "v": 121.9,
+     "rank": 25
     },
     "te_yds": {
-     "v": 59.0,
-     "rank": 12
+     "v": 59.2,
+     "rank": 11
     },
     "rz_trips": {
-     "v": 3.11,
+     "v": 3.1,
      "rank": 17
     },
     "epa": {
-     "v": -0.011,
-     "rank": 18
+     "v": -0.018,
+     "rank": 21
     },
     "success": {
-     "v": 0.42,
-     "rank": 17
+     "v": 0.417,
+     "rank": 24
     },
     "explosive": {
-     "v": 3.78,
-     "rank": 13
+     "v": 3.6,
+     "rank": 15
     }
    },
    "def": {
     "points": {
-     "v": 20.2,
+     "v": 20.1,
      "rank": 7
     },
     "tds": {
-     "v": 1.78,
-     "rank": 7
+     "v": 1.7,
+     "rank": 4
     },
     "yds": {
-     "v": 344.4,
-     "rank": 14
+     "v": 333.5,
+     "rank": 10
     },
     "pass_yds": {
-     "v": 260.6,
-     "rank": 29
+     "v": 248.6,
+     "rank": 24
     },
     "rush_yds": {
-     "v": 83.9,
+     "v": 84.9,
      "rank": 3
     },
     "qb_rush": {
-     "v": 13.1,
+     "v": 12.8,
      "rank": 9
     },
     "rb_yds": {
-     "v": 118.8,
-     "rank": 13
+     "v": 115.3,
+     "rank": 12
     },
     "wr_yds": {
-     "v": 158.3,
-     "rank": 23
+     "v": 152.8,
+     "rank": 21
     },
     "te_yds": {
-     "v": 53.8,
-     "rank": 20
+     "v": 52.2,
+     "rank": 16
     },
     "rz_trips": {
-     "v": 2.44,
-     "rank": 4
+     "v": 2.3,
+     "rank": 2
     },
     "epa": {
-     "v": -0.012,
+     "v": -0.025,
      "rank": 11
     },
     "success": {
-     "v": 0.435,
-     "rank": 14
+     "v": 0.429,
+     "rank": 10
     },
     "explosive": {
-     "v": 4.22,
-     "rank": 26
+     "v": 4.1,
+     "rank": 27
     }
    }
   },
@@ -3086,23 +3086,23 @@
    "off": {
     "points": {
      "v": 22.3,
-     "rank": 17
+     "rank": 16
     },
     "tds": {
      "v": 2.5,
-     "rank": 16
+     "rank": 15
     },
     "yds": {
      "v": 348.4,
-     "rank": 15
+     "rank": 16
     },
     "pass_yds": {
      "v": 232.9,
-     "rank": 19
+     "rank": 18
     },
     "rush_yds": {
      "v": 115.5,
-     "rank": 15
+     "rank": 12
     },
     "qb_rush": {
      "v": 12.9,
@@ -3122,19 +3122,19 @@
     },
     "rz_trips": {
      "v": 3.0,
-     "rank": 20
+     "rank": 21
     },
     "epa": {
-     "v": -0.015,
+     "v": -0.013,
      "rank": 20
     },
     "success": {
-     "v": 0.419,
-     "rank": 18
+     "v": 0.437,
+     "rank": 14
     },
     "explosive": {
      "v": 3.3,
-     "rank": 19
+     "rank": 20
     }
    },
    "def": {
@@ -3144,7 +3144,7 @@
     },
     "tds": {
      "v": 1.7,
-     "rank": 6
+     "rank": 4
     },
     "yds": {
      "v": 253.5,
@@ -3164,7 +3164,7 @@
     },
     "rb_yds": {
      "v": 97.0,
-     "rank": 3
+     "rank": 1
     },
     "wr_yds": {
      "v": 93.6,
@@ -3179,11 +3179,11 @@
      "rank": 1
     },
     "epa": {
-     "v": -0.082,
+     "v": -0.078,
      "rank": 5
     },
     "success": {
-     "v": 0.381,
+     "v": 0.383,
      "rank": 1
     },
     "explosive": {
@@ -3193,446 +3193,446 @@
    }
   },
   "SF": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 31.2,
-     "rank": 2
+     "v": 31.6,
+     "rank": 1
     },
     "tds": {
-     "v": 3.89,
+     "v": 3.9,
      "rank": 1
     },
     "yds": {
-     "v": 408.3,
-     "rank": 2
+     "v": 402.6,
+     "rank": 4
     },
     "pass_yds": {
-     "v": 263.2,
+     "v": 262.9,
      "rank": 9
     },
     "rush_yds": {
-     "v": 145.1,
-     "rank": 3
-    },
-    "qb_rush": {
-     "v": 25.2,
-     "rank": 7
-    },
-    "rb_yds": {
-     "v": 160.7,
+     "v": 139.7,
      "rank": 4
     },
+    "qb_rush": {
+     "v": 22.7,
+     "rank": 10
+    },
+    "rb_yds": {
+     "v": 154.3,
+     "rank": 6
+    },
     "wr_yds": {
-     "v": 129.1,
-     "rank": 23
+     "v": 134.8,
+     "rank": 22
     },
     "te_yds": {
-     "v": 65.6,
+     "v": 63.1,
      "rank": 7
     },
     "rz_trips": {
-     "v": 3.44,
+     "v": 3.5,
      "rank": 12
     },
     "epa": {
-     "v": 0.195,
+     "v": 0.209,
      "rank": 1
     },
     "success": {
-     "v": 0.525,
+     "v": 0.536,
      "rank": 1
     },
     "explosive": {
-     "v": 4.33,
-     "rank": 4
+     "v": 4.2,
+     "rank": 6
     }
    },
    "def": {
     "points": {
-     "v": 21.8,
-     "rank": 11
+     "v": 20.6,
+     "rank": 8
     },
     "tds": {
-     "v": 2.22,
+     "v": 2.1,
      "rank": 9
     },
     "yds": {
-     "v": 319.4,
+     "v": 320.8,
      "rank": 6
     },
     "pass_yds": {
-     "v": 236.2,
-     "rank": 15
+     "v": 239.0,
+     "rank": 18
     },
     "rush_yds": {
-     "v": 83.2,
-     "rank": 2
+     "v": 81.8,
+     "rank": 1
     },
     "qb_rush": {
-     "v": 6.1,
+     "v": 5.5,
      "rank": 1
     },
     "rb_yds": {
-     "v": 111.0,
-     "rank": 6
+     "v": 108.9,
+     "rank": 7
     },
     "wr_yds": {
-     "v": 142.1,
-     "rank": 13
+     "v": 146.1,
+     "rank": 15
     },
     "te_yds": {
-     "v": 54.6,
+     "v": 55.1,
      "rank": 21
     },
     "rz_trips": {
-     "v": 3.11,
+     "v": 3.1,
      "rank": 13
     },
     "epa": {
-     "v": -0.018,
-     "rank": 9
+     "v": -0.028,
+     "rank": 10
     },
     "success": {
-     "v": 0.443,
-     "rank": 22
+     "v": 0.44,
+     "rank": 16
     },
     "explosive": {
-     "v": 2.56,
+     "v": 2.7,
      "rank": 3
     }
    }
   },
   "TB": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 22.4,
-     "rank": 15
+     "v": 22.3,
+     "rank": 16
     },
     "tds": {
-     "v": 1.89,
-     "rank": 25
+     "v": 2.0,
+     "rank": 22
     },
     "yds": {
-     "v": 322.8,
+     "v": 321.2,
      "rank": 24
     },
     "pass_yds": {
-     "v": 158.1,
+     "v": 161.0,
      "rank": 32
     },
     "rush_yds": {
-     "v": 164.7,
+     "v": 160.2,
      "rank": 1
     },
     "qb_rush": {
-     "v": 23.3,
-     "rank": 10
+     "v": 24.6,
+     "rank": 8
     },
     "rb_yds": {
-     "v": 159.7,
-     "rank": 5
+     "v": 159.6,
+     "rank": 4
     },
     "wr_yds": {
-     "v": 106.9,
+     "v": 106.6,
      "rank": 31
     },
     "te_yds": {
-     "v": 26.3,
+     "v": 24.5,
      "rank": 32
     },
     "rz_trips": {
-     "v": 3.33,
-     "rank": 15
+     "v": 3.3,
+     "rank": 14
     },
     "epa": {
-     "v": -0.081,
-     "rank": 28
+     "v": -0.066,
+     "rank": 26
     },
     "success": {
-     "v": 0.405,
-     "rank": 27
+     "v": 0.416,
+     "rank": 25
     },
     "explosive": {
-     "v": 3.0,
-     "rank": 23
+     "v": 2.9,
+     "rank": 24
     }
    },
    "def": {
     "points": {
-     "v": 19.8,
-     "rank": 6
+     "v": 20.9,
+     "rank": 10
     },
     "tds": {
-     "v": 1.67,
-     "rank": 4
+     "v": 1.9,
+     "rank": 7
     },
     "yds": {
-     "v": 308.0,
+     "v": 316.2,
      "rank": 4
     },
     "pass_yds": {
-     "v": 226.7,
-     "rank": 9
+     "v": 231.9,
+     "rank": 12
     },
     "rush_yds": {
-     "v": 81.3,
-     "rank": 1
+     "v": 84.3,
+     "rank": 2
     },
     "qb_rush": {
-     "v": 13.4,
+     "v": 13.5,
      "rank": 11
     },
     "rb_yds": {
-     "v": 95.6,
+     "v": 98.4,
      "rank": 2
     },
     "wr_yds": {
-     "v": 139.1,
-     "rank": 10
+     "v": 138.2,
+     "rank": 9
     },
     "te_yds": {
-     "v": 58.4,
-     "rank": 23
+     "v": 64.8,
+     "rank": 28
     },
     "rz_trips": {
-     "v": 2.56,
+     "v": 2.6,
      "rank": 5
     },
     "epa": {
-     "v": -0.123,
-     "rank": 2
+     "v": -0.081,
+     "rank": 4
     },
     "success": {
-     "v": 0.4,
-     "rank": 5
+     "v": 0.433,
+     "rank": 14
     },
     "explosive": {
-     "v": 2.78,
-     "rank": 6
+     "v": 2.9,
+     "rank": 7
     }
    }
   },
   "TEN": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
-     "v": 18.6,
-     "rank": 28
+     "v": 19.7,
+     "rank": 25
     },
     "tds": {
-     "v": 1.78,
-     "rank": 27
+     "v": 1.9,
+     "rank": 24
     },
     "yds": {
-     "v": 290.7,
-     "rank": 30
+     "v": 299.0,
+     "rank": 27
     },
     "pass_yds": {
-     "v": 190.4,
-     "rank": 28
+     "v": 196.2,
+     "rank": 25
     },
     "rush_yds": {
-     "v": 100.2,
+     "v": 102.8,
      "rank": 23
     },
     "qb_rush": {
-     "v": 16.9,
+     "v": 15.5,
      "rank": 15
     },
     "rb_yds": {
-     "v": 106.9,
+     "v": 108.3,
      "rank": 23
     },
     "wr_yds": {
-     "v": 137.4,
-     "rank": 18
+     "v": 146.4,
+     "rank": 14
     },
     "te_yds": {
-     "v": 28.8,
+     "v": 27.8,
      "rank": 30
     },
     "rz_trips": {
-     "v": 2.67,
-     "rank": 25
+     "v": 2.9,
+     "rank": 24
     },
     "epa": {
-     "v": -0.064,
-     "rank": 26
+     "v": -0.05,
+     "rank": 23
     },
     "success": {
-     "v": 0.417,
-     "rank": 20
+     "v": 0.45,
+     "rank": 13
     },
     "explosive": {
-     "v": 2.67,
+     "v": 2.7,
      "rank": 29
     }
    },
    "def": {
     "points": {
-     "v": 26.6,
-     "rank": 27
+     "v": 29.0,
+     "rank": 30
     },
     "tds": {
-     "v": 2.78,
-     "rank": 22
+     "v": 3.2,
+     "rank": 29
     },
     "yds": {
-     "v": 406.4,
-     "rank": 31
+     "v": 413.9,
+     "rank": 32
     },
     "pass_yds": {
-     "v": 281.6,
+     "v": 285.9,
      "rank": 32
     },
     "rush_yds": {
-     "v": 124.9,
-     "rank": 23
+     "v": 128.0,
+     "rank": 26
     },
     "qb_rush": {
-     "v": 19.1,
-     "rank": 22
+     "v": 18.2,
+     "rank": 20
     },
     "rb_yds": {
-     "v": 133.0,
-     "rank": 23
+     "v": 132.5,
+     "rank": 22
     },
     "wr_yds": {
-     "v": 204.6,
+     "v": 208.6,
      "rank": 32
     },
     "te_yds": {
-     "v": 41.3,
+     "v": 42.3,
      "rank": 3
     },
     "rz_trips": {
-     "v": 4.0,
-     "rank": 30
+     "v": 4.2,
+     "rank": 32
     },
     "epa": {
-     "v": 0.087,
-     "rank": 29
+     "v": 0.121,
+     "rank": 32
     },
     "success": {
-     "v": 0.47,
-     "rank": 30
+     "v": 0.498,
+     "rank": 31
     },
     "explosive": {
-     "v": 4.22,
-     "rank": 26
+     "v": 4.4,
+     "rank": 29
     }
    }
   },
   "WAS": {
-   "games": 9,
+   "games": 10,
    "off": {
     "points": {
      "v": 21.8,
-     "rank": 21
-    },
-    "tds": {
-     "v": 2.22,
-     "rank": 19
-    },
-    "yds": {
-     "v": 342.4,
-     "rank": 18
-    },
-    "pass_yds": {
-     "v": 225.0,
      "rank": 20
     },
+    "tds": {
+     "v": 2.1,
+     "rank": 20
+    },
+    "yds": {
+     "v": 352.1,
+     "rank": 15
+    },
+    "pass_yds": {
+     "v": 231.4,
+     "rank": 19
+    },
     "rush_yds": {
-     "v": 117.4,
-     "rank": 13
+     "v": 120.7,
+     "rank": 11
     },
     "qb_rush": {
-     "v": 39.0,
+     "v": 40.6,
      "rank": 1
     },
     "rb_yds": {
-     "v": 106.8,
+     "v": 108.2,
      "rank": 24
     },
     "wr_yds": {
-     "v": 155.2,
+     "v": 159.4,
      "rank": 11
     },
     "te_yds": {
-     "v": 40.0,
+     "v": 42.6,
      "rank": 24
     },
     "rz_trips": {
-     "v": 2.56,
-     "rank": 28
+     "v": 2.6,
+     "rank": 26
     },
     "epa": {
-     "v": -0.012,
-     "rank": 19
+     "v": -0.004,
+     "rank": 18
     },
     "success": {
-     "v": 0.424,
-     "rank": 14
+     "v": 0.43,
+     "rank": 16
     },
     "explosive": {
-     "v": 4.0,
-     "rank": 7
+     "v": 4.2,
+     "rank": 6
     }
    },
    "def": {
     "points": {
-     "v": 24.8,
+     "v": 24.3,
      "rank": 20
     },
     "tds": {
-     "v": 2.89,
-     "rank": 24
+     "v": 2.8,
+     "rank": 22
     },
     "yds": {
-     "v": 364.7,
-     "rank": 23
+     "v": 361.4,
+     "rank": 22
     },
     "pass_yds": {
-     "v": 260.1,
-     "rank": 28
+     "v": 264.1,
+     "rank": 31
     },
     "rush_yds": {
-     "v": 104.6,
+     "v": 97.3,
      "rank": 12
     },
     "qb_rush": {
-     "v": 22.7,
-     "rank": 29
+     "v": 20.4,
+     "rank": 26
     },
     "rb_yds": {
-     "v": 114.1,
-     "rank": 10
+     "v": 116.0,
+     "rank": 13
     },
     "wr_yds": {
-     "v": 149.2,
-     "rank": 18
+     "v": 142.3,
+     "rank": 12
     },
     "te_yds": {
-     "v": 76.1,
-     "rank": 30
+     "v": 80.4,
+     "rank": 32
     },
     "rz_trips": {
-     "v": 3.56,
-     "rank": 20
+     "v": 3.4,
+     "rank": 17
     },
     "epa": {
-     "v": 0.034,
-     "rank": 22
+     "v": 0.035,
+     "rank": 20
     },
     "success": {
-     "v": 0.458,
+     "v": 0.469,
      "rank": 27
     },
     "explosive": {
-     "v": 3.44,
-     "rank": 15
+     "v": 3.4,
+     "rank": 13
     }
    }
   }

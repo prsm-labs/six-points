@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-24T00:05+00:00",
+ "generated_at": "2026-11-24T12:02+00:00",
  "season": 2026,
- "week": 11,
+ "week": 12,
  "rule": {
   "floor": 0.7,
   "last_max": 0.75,
@@ -148,8 +148,8 @@
     ]
    },
    "live": {
-    "n": 25,
-    "hits": 13,
+    "n": 30,
+    "hits": 14,
     "void": 0
    }
   },
@@ -224,7 +224,7 @@
     ]
    },
    "live": {
-    "n": 25,
+    "n": 30,
     "hits": 5,
     "void": 0
    }
@@ -232,10 +232,10 @@
  },
  "paused": null,
  "live": {
-  "n": 11,
-  "hits": 8,
+  "n": 13,
+  "hits": 10,
   "void": 0,
-  "weeks": 5
+  "weeks": 6
  },
  "weeks": [
   {
@@ -1712,7 +1712,9 @@
      "depth": "RB1",
      "game": "HOU-IND",
      "track": 0.657,
-     "trackN": 29
+     "trackN": 29,
+     "actual": 124,
+     "result": "hit"
     },
     {
      "player_id": "00-0041013",
@@ -1731,7 +1733,9 @@
      "depth": "RB2",
      "game": "ARI-KC",
      "track": 0.657,
-     "trackN": 29
+     "trackN": 29,
+     "actual": 143,
+     "result": "hit"
     }
    ],
    "nextGame": {
@@ -1768,7 +1772,9 @@
        2
       ],
       "track": 0.449,
-      "trackN": 100
+      "trackN": 100,
+      "actual": 22,
+      "result": "miss"
      },
      {
       "player_id": "00-0035261",
@@ -1788,7 +1794,9 @@
        2
       ],
       "track": 0.449,
-      "trackN": 100
+      "trackN": 100,
+      "actual": 110,
+      "result": "hit"
      },
      {
       "player_id": "00-0037263",
@@ -1808,7 +1816,9 @@
        1
       ],
       "track": 0.448,
-      "trackN": 100
+      "trackN": 100,
+      "actual": 23,
+      "result": "miss"
      },
      {
       "player_id": "00-0040236",
@@ -1828,7 +1838,9 @@
        2
       ],
       "track": 0.412,
-      "trackN": 69
+      "trackN": 69,
+      "actual": 0,
+      "result": "miss"
      },
      {
       "player_id": "00-0037228",
@@ -1848,7 +1860,9 @@
        2
       ],
       "track": 0.408,
-      "trackN": 69
+      "trackN": 69,
+      "actual": 0,
+      "result": "miss"
      }
     ],
     "long": [
@@ -1870,7 +1884,9 @@
        0
       ],
       "track": 0.294,
-      "trackN": 146
+      "trackN": 146,
+      "actual": 59,
+      "result": "miss"
      },
      {
       "player_id": "00-0034844",
@@ -1890,7 +1906,9 @@
        0
       ],
       "track": 0.294,
-      "trackN": 146
+      "trackN": 146,
+      "actual": 75,
+      "result": "miss"
      },
      {
       "player_id": "00-0038129",
@@ -1910,7 +1928,9 @@
        0
       ],
       "track": 0.292,
-      "trackN": 146
+      "trackN": 146,
+      "actual": 0,
+      "result": "miss"
      },
      {
       "player_id": "00-0037248",
@@ -1930,7 +1950,9 @@
        1
       ],
       "track": 0.205,
-      "trackN": 69
+      "trackN": 69,
+      "actual": 1,
+      "result": "miss"
      },
      {
       "player_id": "00-0040584",
@@ -1950,11 +1972,239 @@
        0
       ],
       "track": 0.196,
-      "trackN": 69
+      "trackN": 69,
+      "actual": 0,
+      "result": "miss"
      }
     ]
    },
    "updated_at": "2026-11-23T19:05-05:00"
+  },
+  {
+   "week": 12,
+   "source": "live",
+   "picks": [],
+   "nextGame": {
+    "teams": [
+     "GB",
+     "LA"
+    ],
+    "kickoff": "2026-11-25T20:00:00-05:00",
+    "label": "GB @ LA",
+    "closest": {
+     "name": "Tyler Higbee",
+     "team": "LA",
+     "label": "25+ scrimmage yards",
+     "chance": 0.6797
+    }
+   },
+   "tiers": {
+    "mid": [
+     {
+      "player_id": "00-0035685",
+      "name": "David Montgomery",
+      "team": "HOU",
+      "opp": "BAL",
+      "pos": "RB",
+      "est": 67.1,
+      "depth": "RB1",
+      "game": "BAL-HOU",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
+      "chance": 0.4258,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.45,
+      "trackN": 103
+     },
+     {
+      "player_id": "00-0037256",
+      "name": "Rachaad White",
+      "team": "WAS",
+      "opp": "ARI",
+      "pos": "RB",
+      "est": 71.9,
+      "depth": "RB1",
+      "game": "ARI-WAS",
+      "stat": "YDS",
+      "line": 65,
+      "label": "65+ scrimmage yards",
+      "chance": 0.4258,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.45,
+      "trackN": 103
+     },
+     {
+      "player_id": "00-0040122",
+      "name": "Ashton Jeanty",
+      "team": "LV",
+      "opp": "CLE",
+      "pos": "RB",
+      "est": 80.1,
+      "depth": "RB1",
+      "game": "CLE-LV",
+      "stat": "YDS",
+      "line": 80,
+      "label": "80+ scrimmage yards",
+      "chance": 0.4115,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.446,
+      "trackN": 103
+     },
+     {
+      "player_id": "00-0038597",
+      "name": "Chase Brown",
+      "team": "CIN",
+      "opp": "NO",
+      "pos": "RB",
+      "est": 76.2,
+      "depth": "RB1",
+      "game": "CIN-NO",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3657,
+      "last": [
+       8,
+       1
+      ],
+      "track": 0.394,
+      "trackN": 71
+     },
+     {
+      "player_id": "00-0037228",
+      "name": "Jaylen Warren",
+      "team": "PIT",
+      "opp": "DEN",
+      "pos": "RB",
+      "est": 82.6,
+      "depth": "RB1",
+      "game": "DEN-PIT",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.3514,
+      "last": [
+       8,
+       2
+      ],
+      "track": 0.389,
+      "trackN": 71
+     }
+    ],
+    "long": [
+     {
+      "player_id": "00-0033699",
+      "name": "Austin Ekeler",
+      "team": "WAS",
+      "opp": "ARI",
+      "pos": "RB",
+      "est": 50.6,
+      "depth": "RB2",
+      "game": "ARI-WAS",
+      "stat": "YDS",
+      "line": 60,
+      "label": "60+ scrimmage yards",
+      "chance": 0.2399,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.288,
+      "trackN": 149
+     },
+     {
+      "player_id": "00-0038129",
+      "name": "Cade Otton",
+      "team": "TB",
+      "opp": "CAR",
+      "pos": "TE",
+      "est": 35.7,
+      "depth": "TE1",
+      "game": "CAR-TB",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.2249,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.284,
+      "trackN": 149
+     },
+     {
+      "player_id": "00-0040162",
+      "name": "Dylan Sampson",
+      "team": "CLE",
+      "opp": "LV",
+      "pos": "RB",
+      "est": 56.0,
+      "depth": "RB2",
+      "game": "CLE-LV",
+      "stat": "TD",
+      "line": 1,
+      "label": "Anytime TD",
+      "chance": 0.1818,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.195,
+      "trackN": 71
+     },
+     {
+      "player_id": "00-0036322",
+      "name": "Justin Jefferson",
+      "team": "MIN",
+      "opp": "ATL",
+      "pos": "WR",
+      "est": 63.7,
+      "depth": "WR1",
+      "game": "ATL-MIN",
+      "stat": "YDS",
+      "line": 90,
+      "label": "90+ scrimmage yards",
+      "chance": 0.168,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.189,
+      "trackN": 71
+     },
+     {
+      "player_id": "00-0039738",
+      "name": "Blake Corum",
+      "team": "LA",
+      "opp": "GB",
+      "pos": "RB",
+      "est": 58.8,
+      "depth": "RB2",
+      "game": "GB-LA",
+      "stat": "TD2",
+      "line": 2,
+      "label": "2+ TDs",
+      "chance": 0.104,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.118,
+      "trackN": 44
+     }
+    ]
+   },
+   "updated_at": "2026-11-24T07:02-05:00"
   }
  ]
 }

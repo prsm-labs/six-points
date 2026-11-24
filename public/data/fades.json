@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-24T00:05+00:00",
+ "generated_at": "2026-11-24T12:02+00:00",
  "season": 2026,
- "week": 11,
+ "week": 12,
  "rule": {
   "z": 2.0,
   "min_games": 3,
@@ -57,9 +57,9 @@
   "naive": "last 3 games 125%+ of season avg -> 56% under it"
  },
  "live": {
-  "n": 97,
-  "hits": 64,
-  "void": 13
+  "n": 114,
+  "hits": 75,
+  "void": 15
  },
  "weeks": [
   {
@@ -2886,7 +2886,9 @@
       "one big game (70) lifts his average -- 22 a game in the others"
      ],
      "track": 0.814,
-     "trackN": 520
+     "trackN": 520,
+     "actual": 6,
+     "result": "hit"
     },
     {
      "player_id": "00-0031408",
@@ -2910,7 +2912,9 @@
       "one big game (113) lifts his average -- 61 a game in the others"
      ],
      "track": 0.814,
-     "trackN": 520
+     "trackN": 520,
+     "actual": 109,
+     "result": "miss"
     },
     {
      "player_id": "00-0039798",
@@ -2932,7 +2936,9 @@
       "one big game (54) lifts his average -- 19 a game in the others"
      ],
      "track": 0.814,
-     "trackN": 520
+     "trackN": 520,
+     "result": "void",
+     "actual": null
     },
     {
      "player_id": "00-0039915",
@@ -2956,7 +2962,9 @@
       "one big game (86) lifts his average -- 40 a game in the others"
      ],
      "track": 0.814,
-     "trackN": 520
+     "trackN": 520,
+     "actual": 37,
+     "result": "hit"
     },
     {
      "player_id": "00-0038951",
@@ -2977,7 +2985,9 @@
       "one big game (52) lifts his average -- 14 a game in the others"
      ],
      "track": 0.814,
-     "trackN": 520
+     "trackN": 520,
+     "result": "void",
+     "actual": null
     },
     {
      "player_id": "00-0040887",
@@ -3001,7 +3011,9 @@
       "his usage (3.1 touches a game) projects below what he's averaged"
      ],
      "track": 0.814,
-     "trackN": 520
+     "trackN": 520,
+     "actual": 8,
+     "result": "hit"
     },
     {
      "player_id": "00-0039064",
@@ -3028,7 +3040,9 @@
       "one big game (150) lifts his average -- 74 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 84,
+     "result": "miss"
     },
     {
      "player_id": "00-0040172",
@@ -3051,7 +3065,9 @@
       "his usage (2.1 touches a game) projects below what he's averaged"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 19,
+     "result": "hit"
     },
     {
      "player_id": "00-0038840",
@@ -3074,7 +3090,9 @@
       "one big game (83) lifts his average -- 11 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 6,
+     "result": "hit"
     },
     {
      "player_id": "00-0039139",
@@ -3101,7 +3119,9 @@
       "one big game (252) lifts his average -- 140 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 118,
+     "result": "hit"
     },
     {
      "player_id": "00-0038977",
@@ -3122,7 +3142,9 @@
       "one big game (105) lifts his average -- 33 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 27,
+     "result": "hit"
     },
     {
      "player_id": "00-0040236",
@@ -3144,7 +3166,9 @@
       "one big game (150) lifts his average -- 71 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 18,
+     "result": "hit"
     },
     {
      "player_id": "00-0031610",
@@ -3171,7 +3195,9 @@
       "one big game (90) lifts his average -- 29 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 42,
+     "result": "miss"
     },
     {
      "player_id": "00-0041100",
@@ -3196,7 +3222,9 @@
       "one big game (67) lifts his average -- 20 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 44,
+     "result": "miss"
     },
     {
      "player_id": "00-0037228",
@@ -3223,7 +3251,9 @@
       "one big game (188) lifts his average -- 106 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 29,
+     "result": "hit"
     },
     {
      "player_id": "00-0038120",
@@ -3246,7 +3276,9 @@
       "LAC takes away 3 yds for his role"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 100,
+     "result": "miss"
     },
     {
      "player_id": "00-0036410",
@@ -3273,7 +3305,9 @@
       "one big game (157) lifts his average -- 83 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 43,
+     "result": "hit"
     },
     {
      "player_id": "00-0039337",
@@ -3300,7 +3334,9 @@
       "one big game (165) lifts his average -- 66 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 55,
+     "result": "hit"
     },
     {
      "player_id": "00-0037157",
@@ -3324,10 +3360,493 @@
       "one big game (98) lifts his average -- 25 a game in the others"
      ],
      "track": 0.718,
-     "trackN": 644
+     "trackN": 644,
+     "actual": 45,
+     "result": "miss"
     }
    ],
    "updated_at": "2026-11-23T19:05-05:00"
+  },
+  {
+   "week": 12,
+   "source": "live",
+   "fades": [
+    {
+     "player_id": "00-0039816",
+     "name": "Anthony Gould",
+     "team": "IND",
+     "opp": "NYG",
+     "pos": "WR",
+     "depth": "WR3",
+     "line": 30.7,
+     "est": 10.9,
+     "z": 5.99,
+     "games": [
+      16,
+      28,
+      48
+     ],
+     "why": [
+      "his usage (1.1 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.814,
+     "trackN": 524
+    },
+    {
+     "player_id": "00-0040236",
+     "name": "Kyle Monangai",
+     "team": "CHI",
+     "opp": "DET",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 76.2,
+     "est": 49.2,
+     "z": 3.85,
+     "games": [
+      124,
+      58,
+      31,
+      150,
+      18
+     ],
+     "why": [
+      "one big game (150) lifts his average -- 58 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 524
+    },
+    {
+     "player_id": "00-0040782",
+     "name": "Isaiah Bond",
+     "team": "CLE",
+     "opp": "LV",
+     "pos": "WR",
+     "depth": "WR6",
+     "line": 28.7,
+     "est": 14.6,
+     "z": 3.68,
+     "games": [
+      10,
+      2,
+      74
+     ],
+     "why": [
+      "one big game (74) lifts his average -- 6 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 524
+    },
+    {
+     "player_id": "00-0041051",
+     "name": "Zavion Thomas",
+     "team": "CHI",
+     "opp": "DET",
+     "pos": "WR",
+     "depth": "WR4",
+     "line": 25.2,
+     "est": 12.9,
+     "z": 3.42,
+     "games": [
+      1,
+      22,
+      25,
+      4,
+      13,
+      86
+     ],
+     "why": [
+      "one big game (86) lifts his average -- 13 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 524
+    },
+    {
+     "player_id": "00-0038951",
+     "name": "Sean Tucker",
+     "team": "TB",
+     "opp": "CAR",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 26.7,
+     "est": 14.4,
+     "z": 3.23,
+     "games": [
+      10,
+      18,
+      52
+     ],
+     "why": [
+      "one big game (52) lifts his average -- 14 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 524
+    },
+    {
+     "player_id": "00-0040887",
+     "name": "Josh Cuevas",
+     "team": "BAL",
+     "opp": "HOU",
+     "pos": "TE",
+     "depth": "TE3",
+     "line": 25.6,
+     "est": 13.8,
+     "z": 3.17,
+     "games": [
+      14,
+      26,
+      44,
+      35,
+      15,
+      37,
+      8
+     ],
+     "why": [
+      "one big game (44) lifts his average -- 22 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 524
+    },
+    {
+     "player_id": "00-0038543",
+     "name": "Jaxon Smith-Njigba",
+     "team": "SEA",
+     "opp": "SF",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 123.6,
+     "est": 94.9,
+     "z": 2.95,
+     "games": [
+      122,
+      155,
+      128,
+      76,
+      118,
+      134,
+      163,
+      118,
+      51,
+      171
+     ],
+     "why": [
+      "his usage (10.9 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0036410",
+     "name": "Tee Higgins",
+     "team": "CIN",
+     "opp": "NO",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 86.7,
+     "est": 63.5,
+     "z": 2.91,
+     "games": [
+      59,
+      95,
+      90,
+      157,
+      22,
+      148,
+      155,
+      32,
+      66,
+      43
+     ],
+     "why": [
+      "one big game (157) lifts his average -- 79 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0039798",
+     "name": "Isaiah Davis",
+     "team": "NYJ",
+     "opp": "MIA",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 28.0,
+     "est": 16.8,
+     "z": 2.73,
+     "games": [
+      17,
+      26,
+      54,
+      15
+     ],
+     "why": [
+      "one big game (54) lifts his average -- 19 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0037228",
+     "name": "Jaylen Warren",
+     "team": "PIT",
+     "opp": "DEN",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 106.8,
+     "est": 82.6,
+     "z": 2.66,
+     "games": [
+      73,
+      77,
+      176,
+      126,
+      188,
+      78,
+      137,
+      143,
+      41,
+      29
+     ],
+     "why": [
+      "one big game (188) lifts his average -- 98 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0040172",
+     "name": "Jordan Watkins",
+     "team": "SF",
+     "opp": "SEA",
+     "pos": "WR",
+     "depth": "WR4",
+     "line": 48.7,
+     "est": 34.1,
+     "z": 2.49,
+     "games": [
+      60,
+      22,
+      56,
+      86,
+      49,
+      19
+     ],
+     "why": [
+      "one big game (86) lifts his average -- 41 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0038124",
+     "name": "Christian Watson",
+     "team": "GB",
+     "opp": "LA",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 91.6,
+     "est": 70.9,
+     "z": 2.46,
+     "games": [
+      147,
+      41,
+      96,
+      47,
+      143,
+      64,
+      57,
+      113,
+      171,
+      37
+     ],
+     "why": [
+      "one big game (171) lifts his average -- 83 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0038797",
+     "name": "Emanuel Wilson",
+     "team": "SEA",
+     "opp": "SF",
+     "pos": "RB",
+     "depth": "RB3",
+     "line": 66.9,
+     "est": 50.5,
+     "z": 2.3,
+     "games": [
+      3,
+      92,
+      14,
+      120,
+      72,
+      52,
+      115
+     ],
+     "why": [
+      "SF takes away 3 yds for his role",
+      "one big game (120) lifts his average -- 58 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0038977",
+     "name": "Tank Dell",
+     "team": "HOU",
+     "opp": "BAL",
+     "pos": "WR",
+     "depth": "WR4",
+     "line": 49.5,
+     "est": 36.1,
+     "z": 2.23,
+     "games": [
+      45,
+      105,
+      21,
+      27
+     ],
+     "why": [
+      "one big game (105) lifts his average -- 31 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0031408",
+     "name": "Mike Evans",
+     "team": "SF",
+     "opp": "SEA",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 75.6,
+     "est": 58.6,
+     "z": 2.22,
+     "games": [
+      49,
+      54,
+      34,
+      76,
+      113,
+      94,
+      109
+     ],
+     "why": [
+      "his usage (7.5 touches a game) projects below what he's averaged"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0039139",
+     "name": "Jahmyr Gibbs",
+     "team": "DET",
+     "opp": "CHI",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 149.3,
+     "est": 124.8,
+     "z": 2.19,
+     "games": [
+      186,
+      113,
+      164,
+      68,
+      207,
+      143,
+      168,
+      74,
+      252,
+      118
+     ],
+     "why": [
+      "one big game (252) lifts his average -- 138 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0040735",
+     "name": "Luther Burden III",
+     "team": "CHI",
+     "opp": "DET",
+     "pos": "WR",
+     "depth": "WR1",
+     "line": 68.6,
+     "est": 53.3,
+     "z": 2.1,
+     "games": [
+      65,
+      32,
+      68,
+      74,
+      49,
+      95,
+      137,
+      56,
+      97,
+      13
+     ],
+     "why": [
+      "one big game (137) lifts his average -- 61 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0037248",
+     "name": "James Cook",
+     "team": "BUF",
+     "opp": "KC",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 117.3,
+     "est": 97.5,
+     "z": 2.01,
+     "games": [
+      69,
+      139,
+      154,
+      83,
+      118,
+      153,
+      101,
+      107,
+      157,
+      92
+     ],
+     "why": [
+      "KC takes away 6 yds for his role"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0035021",
+     "name": "Ashton Dulin",
+     "team": "IND",
+     "opp": "NYG",
+     "pos": "WR",
+     "depth": "WR4",
+     "line": 25.0,
+     "est": 16.8,
+     "z": 2.0,
+     "games": [
+      0,
+      29,
+      3,
+      58,
+      30,
+      30
+     ],
+     "why": [
+      "one big game (58) lifts his average -- 18 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    }
+   ],
+   "updated_at": "2026-11-24T07:02-05:00"
   }
  ]
 }
