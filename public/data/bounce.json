@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T16:02+00:00",
+ "generated_at": "2026-11-25T12:03+00:00",
  "season": 2026,
  "week": 12,
  "rule": {
@@ -1419,8 +1419,8 @@
      "pos": "RB",
      "depth": "RB1",
      "line": 27.7,
-     "est": 50.4,
-     "z": 3.2,
+     "est": 50.6,
+     "z": 3.22,
      "games": [
       70,
       19,
@@ -1479,6 +1479,41 @@
      "trackN": 376
     },
     {
+     "player_id": "00-0037744",
+     "name": "Trey McBride",
+     "team": "ARI",
+     "opp": "WAS",
+     "pos": "TE",
+     "depth": "TE1",
+     "line": 49.7,
+     "est": 74.2,
+     "z": 2.85,
+     "games": [
+      95,
+      41,
+      75,
+      31,
+      66,
+      53,
+      111,
+      72,
+      54,
+      37,
+      58
+     ],
+     "last": [
+      54,
+      37,
+      58
+     ],
+     "why": [
+      "role up: +14 yds (teammates out / snaps)",
+      "50 a game lately vs 63 on the season"
+     ],
+     "track": 0.663,
+     "trackN": 726
+    },
+    {
      "player_id": "00-0039491",
      "name": "Jalen Coker",
      "team": "CAR",
@@ -1506,41 +1541,6 @@
      ],
      "why": [
       "25 a game lately vs 49 on the season"
-     ],
-     "track": 0.663,
-     "trackN": 726
-    },
-    {
-     "player_id": "00-0037744",
-     "name": "Trey McBride",
-     "team": "ARI",
-     "opp": "WAS",
-     "pos": "TE",
-     "depth": "TE1",
-     "line": 49.7,
-     "est": 72.8,
-     "z": 2.71,
-     "games": [
-      95,
-      41,
-      75,
-      31,
-      66,
-      53,
-      111,
-      72,
-      54,
-      37,
-      58
-     ],
-     "last": [
-      54,
-      37,
-      58
-     ],
-     "why": [
-      "role up: +13 yds (teammates out / snaps)",
-      "50 a game lately vs 63 on the season"
      ],
      "track": 0.663,
      "trackN": 726
@@ -1579,6 +1579,39 @@
      "trackN": 726
     },
     {
+     "player_id": "00-0041489",
+     "name": "Germie Bernard",
+     "team": "PIT",
+     "opp": "DEN",
+     "pos": "WR",
+     "depth": "WR2",
+     "line": 26.7,
+     "est": 42.9,
+     "z": 2.48,
+     "games": [
+      35,
+      14,
+      11,
+      84,
+      87,
+      27,
+      30,
+      10,
+      40
+     ],
+     "last": [
+      30,
+      10,
+      40
+     ],
+     "why": [
+      "role up: +4 yds (teammates out / snaps)",
+      "27 a game lately vs 38 on the season"
+     ],
+     "track": 0.663,
+     "trackN": 726
+    },
+    {
      "player_id": "00-0039890",
      "name": "Adonai Mitchell",
      "team": "NYJ",
@@ -1586,8 +1619,8 @@
      "pos": "WR",
      "depth": "WR2",
      "line": 29.7,
-     "est": 44.1,
-     "z": 2.17,
+     "est": 44.9,
+     "z": 2.27,
      "games": [
       60,
       63,
@@ -1640,9 +1673,43 @@
      ],
      "track": 0.663,
      "trackN": 726
+    },
+    {
+     "player_id": "00-0036275",
+     "name": "D'Andre Swift",
+     "team": "CHI",
+     "opp": "DET",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 56.3,
+     "est": 73.5,
+     "z": 2.0,
+     "games": [
+      134,
+      99,
+      88,
+      74,
+      73,
+      70,
+      90,
+      79,
+      31,
+      59
+     ],
+     "last": [
+      79,
+      31,
+      59
+     ],
+     "why": [
+      "role up: +7 yds (teammates out / snaps)",
+      "56 a game lately vs 80 on the season"
+     ],
+     "track": 0.663,
+     "trackN": 726
     }
    ],
-   "updated_at": "2026-11-24T11:02-05:00"
+   "updated_at": "2026-11-25T07:03-05:00"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T16:02+00:00",
+ "generated_at": "2026-11-25T12:02+00:00",
  "season": 2026,
  "week": 12,
  "rule": {
@@ -3393,29 +3393,6 @@
      "trackN": 524
     },
     {
-     "player_id": "00-0040236",
-     "name": "Kyle Monangai",
-     "team": "CHI",
-     "opp": "DET",
-     "pos": "RB",
-     "depth": "RB2",
-     "line": 76.2,
-     "est": 49.2,
-     "z": 3.85,
-     "games": [
-      124,
-      58,
-      31,
-      150,
-      18
-     ],
-     "why": [
-      "one big game (150) lifts his average -- 58 a game in the others"
-     ],
-     "track": 0.814,
-     "trackN": 524
-    },
-    {
      "player_id": "00-0040782",
      "name": "Isaiah Bond",
      "team": "CLE",
@@ -3489,8 +3466,8 @@
      "pos": "TE",
      "depth": "TE3",
      "line": 25.6,
-     "est": 13.8,
-     "z": 3.17,
+     "est": 14.0,
+     "z": 3.09,
      "games": [
       14,
       26,
@@ -3502,6 +3479,29 @@
      ],
      "why": [
       "one big game (44) lifts his average -- 22 a game in the others"
+     ],
+     "track": 0.814,
+     "trackN": 524
+    },
+    {
+     "player_id": "00-0040236",
+     "name": "Kyle Monangai",
+     "team": "CHI",
+     "opp": "DET",
+     "pos": "RB",
+     "depth": "RB2",
+     "line": 76.2,
+     "est": 54.1,
+     "z": 3.0,
+     "games": [
+      124,
+      58,
+      31,
+      150,
+      18
+     ],
+     "why": [
+      "one big game (150) lifts his average -- 58 a game in the others"
      ],
      "track": 0.814,
      "trackN": 524
@@ -3570,8 +3570,8 @@
      "pos": "RB",
      "depth": "RB3",
      "line": 28.0,
-     "est": 16.8,
-     "z": 2.73,
+     "est": 17.0,
+     "z": 2.67,
      "games": [
       17,
       26,
@@ -3580,34 +3580,6 @@
      ],
      "why": [
       "one big game (54) lifts his average -- 19 a game in the others"
-     ],
-     "track": 0.716,
-     "trackN": 657
-    },
-    {
-     "player_id": "00-0037228",
-     "name": "Jaylen Warren",
-     "team": "PIT",
-     "opp": "DEN",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 106.8,
-     "est": 82.6,
-     "z": 2.66,
-     "games": [
-      73,
-      77,
-      176,
-      126,
-      188,
-      78,
-      137,
-      143,
-      41,
-      29
-     ],
-     "why": [
-      "one big game (188) lifts his average -- 98 a game in the others"
      ],
      "track": 0.716,
      "trackN": 657
@@ -3660,6 +3632,34 @@
      ],
      "why": [
       "one big game (171) lifts his average -- 83 a game in the others"
+     ],
+     "track": 0.716,
+     "trackN": 657
+    },
+    {
+     "player_id": "00-0037228",
+     "name": "Jaylen Warren",
+     "team": "PIT",
+     "opp": "DEN",
+     "pos": "RB",
+     "depth": "RB1",
+     "line": 106.8,
+     "est": 85.0,
+     "z": 2.36,
+     "games": [
+      73,
+      77,
+      176,
+      126,
+      188,
+      78,
+      137,
+      143,
+      41,
+      29
+     ],
+     "why": [
+      "one big game (188) lifts his average -- 98 a game in the others"
      ],
      "track": 0.716,
      "trackN": 657
@@ -3822,7 +3822,7 @@
      "trackN": 657
     }
    ],
-   "updated_at": "2026-11-24T11:02-05:00"
+   "updated_at": "2026-11-25T07:02-05:00"
   }
  ]
 }

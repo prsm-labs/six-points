@@ -10767,6 +10767,85 @@
         "status": "Questionable",
         "injury": "Groin"
       }
+    ],
+    "12": [
+      {
+        "team": "GB",
+        "name": "Kevin Zeitler",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Triceps"
+      },
+      {
+        "team": "GB",
+        "name": "Zaire Franklin",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Shin"
+      },
+      {
+        "team": "GB",
+        "name": "Josh Jacobs",
+        "position": "RB",
+        "status": "Questionable",
+        "injury": "Finger"
+      },
+      {
+        "team": "GB",
+        "name": "Micah Parsons",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Knee"
+      },
+      {
+        "team": "GB",
+        "name": "Sean Rhyan",
+        "position": "C",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "GB",
+        "name": "Bo Melton",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Thigh"
+      },
+      {
+        "team": "GB",
+        "name": "Skyy Moore",
+        "position": "WR",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "GB",
+        "name": "Travis Glover",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "LA",
+        "name": "Coleman Shelton",
+        "position": "C",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "LA",
+        "name": "Steve Avila",
+        "position": "G",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "LA",
+        "name": "Terrance Ferguson",
+        "position": "TE",
+        "status": "Out",
+        "injury": "Ankle"
+      }
     ]
   }
 }

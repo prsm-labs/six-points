@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T16:02+00:00",
+ "generated_at": "2026-11-25T12:03+00:00",
  "season": 2026,
  "week": 12,
  "liveFromWeek": 9,
@@ -3517,11 +3517,11 @@
      "team": "CHI",
      "opp": "DET",
      "pos": "WR",
-     "chance": 0.3404,
+     "chance": 0.3403,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.2154,
+     "lift": 0.2153,
      "est": 53.7,
      "recent": [
       [
@@ -3619,62 +3619,6 @@
       "2.3 red-zone touches a game",
       "touches up: 17.9 lately vs 13.8",
       "scored in 1 of his last 8 games"
-     ],
-     "result": null
-    },
-    {
-     "player_id": "00-0033699",
-     "name": "Austin Ekeler",
-     "team": "WAS",
-     "opp": "ARI",
-     "pos": "RB",
-     "chance": 0.2068,
-     "hits": 0,
-     "n": 8,
-     "own": 0.0,
-     "lift": 0.2068,
-     "est": 50.6,
-     "recent": [
-      [
-       "2026-10-04",
-       "IND",
-       0
-      ],
-      [
-       "2026-10-11",
-       "NYG",
-       0
-      ],
-      [
-       "2026-10-19",
-       "SF",
-       0
-      ],
-      [
-       "2026-11-01",
-       "PHI",
-       0
-      ],
-      [
-       "2026-11-08",
-       "LA",
-       0
-      ],
-      [
-       "2026-11-12",
-       "NYG",
-       0
-      ],
-      [
-       "2026-11-23",
-       "CIN",
-       0
-      ]
-     ],
-     "why": [
-      "+5.3 touches a game from teammates who are out",
-      "1.3 red-zone touches a game",
-      "scored in 0 of his last 8 games"
      ],
      "result": null
     },
@@ -3844,6 +3788,61 @@
      "result": null
     },
     {
+     "player_id": "00-0036139",
+     "name": "Rico Dowdle",
+     "team": "PIT",
+     "opp": "DEN",
+     "pos": "RB",
+     "chance": 0.2683,
+     "hits": 1,
+     "n": 8,
+     "own": 0.125,
+     "lift": 0.1433,
+     "est": 44.9,
+     "recent": [
+      [
+       "2026-09-13",
+       "ATL",
+       0
+      ],
+      [
+       "2026-09-20",
+       "NE",
+       0
+      ],
+      [
+       "2026-10-18",
+       "TB",
+       0
+      ],
+      [
+       "2026-10-25",
+       "NO",
+       0
+      ],
+      [
+       "2026-11-01",
+       "CLE",
+       1
+      ],
+      [
+       "2026-11-15",
+       "CIN",
+       0
+      ],
+      [
+       "2026-11-22",
+       "PHI",
+       0
+      ]
+     ],
+     "why": [
+      "1.8 red-zone touches a game",
+      "scored in 1 of his last 8 games"
+     ],
+     "result": null
+    },
+    {
      "player_id": "00-0037238",
      "name": "Drake London",
      "team": "ATL",
@@ -3952,7 +3951,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-24T11:02-05:00"
+   "updated_at": "2026-11-25T07:03-05:00"
   }
  ]
 }

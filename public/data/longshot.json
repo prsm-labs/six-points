@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T16:02+00:00",
+ "generated_at": "2026-11-25T12:03+00:00",
  "season": 2026,
  "week": 12,
  "liveFromWeek": 10,
@@ -945,9 +945,9 @@
      "tch3": 7.7,
      "gp": 3,
      "rzSeason": 1.27,
-     "pct": 0.9735,
+     "pct": 0.9732,
      "rank": 4,
-     "of": 113,
+     "of": 112,
      "result": null
     },
     {
@@ -1004,30 +1004,14 @@
      "team": "PIT",
      "opp": "DEN",
      "pos": "WR",
-     "chance": 0.1962,
+     "chance": 0.2288,
      "rz3": 1.5,
      "tch3": 7.0,
      "gp": 2,
      "rzSeason": 0.95,
-     "pct": 0.9115,
+     "pct": 0.9107,
      "rank": 11,
-     "of": 113,
-     "result": null
-    },
-    {
-     "player_id": "00-0036422",
-     "name": "Adam Trautman",
-     "team": "DEN",
-     "opp": "PIT",
-     "pos": "TE",
-     "chance": 0.1212,
-     "rz3": 1.0,
-     "tch3": 2.0,
-     "gp": 2,
-     "rzSeason": 0.2,
-     "pct": 0.9077,
-     "rank": 7,
-     "of": 65,
+     "of": 112,
      "result": null
     },
     {
@@ -1041,13 +1025,29 @@
      "tch3": 6.0,
      "gp": 3,
      "rzSeason": 0.89,
-     "pct": 0.9027,
+     "pct": 0.9018,
      "rank": 12,
-     "of": 113,
+     "of": 112,
+     "result": null
+    },
+    {
+     "player_id": "00-0039410",
+     "name": "Ryan Flournoy",
+     "team": "DAL",
+     "opp": "PHI",
+     "pos": "WR",
+     "chance": 0.2533,
+     "rz3": 1.33,
+     "tch3": 3.7,
+     "gp": 3,
+     "rzSeason": 1.01,
+     "pct": 0.8929,
+     "rank": 13,
+     "of": 112,
      "result": null
     }
    ],
-   "updated_at": "2026-11-24T11:02-05:00"
+   "updated_at": "2026-11-25T07:03-05:00"
   }
  ]
 }
