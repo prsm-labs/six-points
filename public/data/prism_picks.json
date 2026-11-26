@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T16:02+00:00",
+ "generated_at": "2026-11-26T20:10+00:00",
  "season": 2026,
  "week": 12,
  "rule": {
@@ -2006,16 +2006,16 @@
    ],
    "nextGame": {
     "teams": [
-     "CHI",
-     "DET"
+     "DAL",
+     "PHI"
     ],
-    "kickoff": "2026-11-26T13:00:00-05:00",
-    "label": "CHI @ DET",
+    "kickoff": "2026-11-26T16:30:00-05:00",
+    "label": "PHI @ DAL",
     "closest": {
-     "name": "Sam LaPorta",
-     "team": "DET",
-     "label": "40+ scrimmage yards",
-     "chance": 0.4832
+     "name": "Javonte Williams",
+     "team": "DAL",
+     "label": "75+ scrimmage yards",
+     "chance": 0.5111
     }
    },
    "tiers": {
@@ -2106,13 +2106,13 @@
       "team": "PIT",
       "opp": "DEN",
       "pos": "RB",
-      "est": 85.0,
+      "est": 85.1,
       "depth": "RB1",
       "game": "DEN-PIT",
       "stat": "TD",
       "line": 1,
       "label": "Anytime TD",
-      "chance": 0.3637,
+      "chance": 0.3644,
       "last": [
        8,
        2
@@ -2224,7 +2224,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-26T11:02-05:00"
+   "updated_at": "2026-11-26T15:10-05:00"
   }
  ]
 }

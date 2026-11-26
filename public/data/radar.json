@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T16:02+00:00",
+ "generated_at": "2026-11-26T20:10+00:00",
  "season": 2026,
  "week": 12,
  "liveFromWeek": 9,
@@ -3738,11 +3738,11 @@
      "team": "PIT",
      "opp": "DEN",
      "pos": "RB",
-     "chance": 0.2683,
+     "chance": 0.2687,
      "hits": 1,
      "n": 8,
      "own": 0.125,
-     "lift": 0.1433,
+     "lift": 0.1437,
      "est": 44.9,
      "recent": [
       [
@@ -3950,7 +3950,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-26T11:02-05:00"
+   "updated_at": "2026-11-26T15:10-05:00"
   }
  ]
 }

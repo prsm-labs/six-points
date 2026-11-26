@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T16:02+00:00",
+ "generated_at": "2026-11-26T20:10+00:00",
  "season": 2026,
  "week": 12,
  "liveFromWeek": 10,
@@ -929,9 +929,9 @@
      "tch3": 4.0,
      "gp": 3,
      "rzSeason": 0.58,
-     "pct": 0.9846,
+     "pct": 0.9844,
      "rank": 2,
-     "of": 65,
+     "of": 64,
      "result": null
     },
     {
@@ -945,9 +945,9 @@
      "tch3": 5.5,
      "gp": 2,
      "rzSeason": 0.58,
-     "pct": 0.9692,
+     "pct": 0.9688,
      "rank": 3,
-     "of": 65,
+     "of": 64,
      "result": null
     },
     {
@@ -988,7 +988,7 @@
      "team": "PIT",
      "opp": "DEN",
      "pos": "WR",
-     "chance": 0.2288,
+     "chance": 0.2298,
      "rz3": 1.5,
      "tch3": 7.0,
      "gp": 2,
@@ -1047,7 +1047,7 @@
      "result": null
     }
    ],
-   "updated_at": "2026-11-26T11:02-05:00"
+   "updated_at": "2026-11-26T15:10-05:00"
   }
  ]
 }
