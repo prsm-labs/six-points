@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T16:02+00:00",
+ "generated_at": "2026-11-26T12:03+00:00",
  "season": 2026,
  "week": 12,
  "liveFromWeek": 10,
@@ -935,22 +935,6 @@
      "result": null
     },
     {
-     "player_id": "00-0034960",
-     "name": "Jakobi Meyers",
-     "team": "JAX",
-     "opp": "TEN",
-     "pos": "WR",
-     "chance": 0.293,
-     "rz3": 2.0,
-     "tch3": 7.7,
-     "gp": 3,
-     "rzSeason": 1.27,
-     "pct": 0.9732,
-     "rank": 4,
-     "of": 112,
-     "result": null
-    },
-    {
      "player_id": "00-0038129",
      "name": "Cade Otton",
      "team": "TB",
@@ -1036,7 +1020,7 @@
      "team": "DAL",
      "opp": "PHI",
      "pos": "WR",
-     "chance": 0.2533,
+     "chance": 0.256,
      "rz3": 1.33,
      "tch3": 3.7,
      "gp": 3,
@@ -1045,9 +1029,25 @@
      "rank": 13,
      "of": 112,
      "result": null
+    },
+    {
+     "player_id": "00-0034827",
+     "name": "DJ Moore",
+     "team": "BUF",
+     "opp": "KC",
+     "pos": "WR",
+     "chance": 0.2802,
+     "rz3": 1.33,
+     "tch3": 7.7,
+     "gp": 3,
+     "rzSeason": 1.18,
+     "pct": 0.8839,
+     "rank": 14,
+     "of": 112,
+     "result": null
     }
    ],
-   "updated_at": "2026-11-25T11:02-05:00"
+   "updated_at": "2026-11-26T07:03-05:00"
   }
  ]
 }

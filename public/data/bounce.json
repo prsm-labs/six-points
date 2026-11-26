@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T16:02+00:00",
+ "generated_at": "2026-11-26T12:02+00:00",
  "season": 2026,
  "week": 12,
  "rule": {
@@ -1673,43 +1673,9 @@
      ],
      "track": 0.663,
      "trackN": 726
-    },
-    {
-     "player_id": "00-0036275",
-     "name": "D'Andre Swift",
-     "team": "CHI",
-     "opp": "DET",
-     "pos": "RB",
-     "depth": "RB1",
-     "line": 56.3,
-     "est": 73.5,
-     "z": 2.0,
-     "games": [
-      134,
-      99,
-      88,
-      74,
-      73,
-      70,
-      90,
-      79,
-      31,
-      59
-     ],
-     "last": [
-      79,
-      31,
-      59
-     ],
-     "why": [
-      "role up: +7 yds (teammates out / snaps)",
-      "56 a game lately vs 80 on the season"
-     ],
-     "track": 0.663,
-     "trackN": 726
     }
    ],
-   "updated_at": "2026-11-25T11:02-05:00"
+   "updated_at": "2026-11-26T07:02-05:00"
   }
  ]
 }

@@ -10770,6 +10770,160 @@
     ],
     "12": [
       {
+        "team": "BUF",
+        "name": "Christian Benford",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Groin"
+      },
+      {
+        "team": "BUF",
+        "name": "O'Cyrus Torrence",
+        "position": "G",
+        "status": "Questionable",
+        "injury": "Ankle"
+      },
+      {
+        "team": "BUF",
+        "name": "Dorian Williams",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Calf"
+      },
+      {
+        "team": "BUF",
+        "name": "Dalton Kincaid",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Thumb"
+      },
+      {
+        "team": "BUF",
+        "name": "T.J. Sanders",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "CHI",
+        "name": "Elijah Hicks",
+        "position": "S",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "CHI",
+        "name": "D'Marco Jackson",
+        "position": "LB",
+        "status": "Questionable",
+        "injury": "Elbow"
+      },
+      {
+        "team": "CHI",
+        "name": "Kyler Gordon",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "CHI",
+        "name": "Roschon Johnson",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "CHI",
+        "name": "Tyrique Stevenson",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Groin"
+      },
+      {
+        "team": "DAL",
+        "name": "P.J. Locke",
+        "position": "S",
+        "status": "Out",
+        "injury": "Concussion"
+      },
+      {
+        "team": "DAL",
+        "name": "Jalen Thompson",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "DAL",
+        "name": "Jake Ferguson",
+        "position": "TE",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "DAL",
+        "name": "Jonathan Mingo",
+        "position": "WR",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DAL",
+        "name": "Tyler Booker",
+        "position": "G",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "DAL",
+        "name": "Devin Moore",
+        "position": "CB",
+        "status": "Questionable",
+        "injury": "Hip"
+      },
+      {
+        "team": "DEN",
+        "name": "Taylor Rapp",
+        "position": "S",
+        "status": "Out",
+        "injury": "Quadricep"
+      },
+      {
+        "team": "DEN",
+        "name": "Sai'vion Jones",
+        "position": "DE",
+        "status": "Out",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "DET",
+        "name": "Chuck Clark",
+        "position": "S",
+        "status": "Questionable",
+        "injury": "Hamstring"
+      },
+      {
+        "team": "DET",
+        "name": "DJ Wonnum",
+        "position": "DE",
+        "status": "Questionable",
+        "injury": "Back"
+      },
+      {
+        "team": "DET",
+        "name": "Ennis Rakestraw Jr.",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Shoulder"
+      },
+      {
+        "team": "DET",
+        "name": "Skyler Gill-Howard",
+        "position": "DT",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
         "team": "GB",
         "name": "Kevin Zeitler",
         "position": "G",
@@ -10826,6 +10980,41 @@
         "injury": "Shoulder"
       },
       {
+        "team": "KC",
+        "name": "Jaylon Moore",
+        "position": "T",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "KC",
+        "name": "Noah Gray",
+        "position": "TE",
+        "status": "Questionable",
+        "injury": "Rib"
+      },
+      {
+        "team": "KC",
+        "name": "Kenneth Walker III",
+        "position": "RB",
+        "status": "Out",
+        "injury": "Groin"
+      },
+      {
+        "team": "KC",
+        "name": "Omarr Norman-Lott",
+        "position": "DT",
+        "status": "Out",
+        "injury": "Knee"
+      },
+      {
+        "team": "KC",
+        "name": "Peter Woods",
+        "position": "DT",
+        "status": "Questionable",
+        "injury": "Neck"
+      },
+      {
         "team": "LA",
         "name": "Coleman Shelton",
         "position": "C",
@@ -10845,6 +11034,20 @@
         "position": "TE",
         "status": "Out",
         "injury": "Ankle"
+      },
+      {
+        "team": "PHI",
+        "name": "Jonathan Jones",
+        "position": "CB",
+        "status": "Out",
+        "injury": "Ankle"
+      },
+      {
+        "team": "PHI",
+        "name": "Arnold Ebiketie",
+        "position": "LB",
+        "status": "Out",
+        "injury": "Oblique"
       }
     ]
   }

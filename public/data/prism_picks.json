@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T16:02+00:00",
+ "generated_at": "2026-11-26T12:02+00:00",
  "season": 2026,
  "week": 12,
  "rule": {
@@ -1983,19 +1983,39 @@
   {
    "week": 12,
    "source": "live",
-   "picks": [],
+   "picks": [
+    {
+     "player_id": "00-0041013",
+     "name": "Emmett Johnson",
+     "team": "KC",
+     "opp": "BUF",
+     "pos": "RB",
+     "line": 30,
+     "label": "30+ scrimmage yards",
+     "chance": 0.8341,
+     "est": 69.3,
+     "last": [
+      8,
+      4
+     ],
+     "depth": "RB2",
+     "game": "BUF-KC",
+     "track": 0.758,
+     "trackN": 13
+    }
+   ],
    "nextGame": {
     "teams": [
-     "GB",
-     "LA"
+     "CHI",
+     "DET"
     ],
-    "kickoff": "2026-11-25T20:00:00-05:00",
-    "label": "GB @ LA",
+    "kickoff": "2026-11-26T13:00:00-05:00",
+    "label": "CHI @ DET",
     "closest": {
-     "name": "Tyler Higbee",
-     "team": "LA",
-     "label": "25+ scrimmage yards",
-     "chance": 0.6797
+     "name": "Sam LaPorta",
+     "team": "DET",
+     "label": "40+ scrimmage yards",
+     "chance": 0.4832
     }
    },
    "tiers": {
@@ -2041,17 +2061,17 @@
       "trackN": 103
      },
      {
-      "player_id": "00-0036997",
-      "name": "Javonte Williams",
-      "team": "DAL",
-      "opp": "PHI",
-      "pos": "RB",
-      "est": 97.1,
-      "depth": "RB1",
-      "game": "DAL-PHI",
+      "player_id": "00-0037744",
+      "name": "Trey McBride",
+      "team": "ARI",
+      "opp": "WAS",
+      "pos": "TE",
+      "est": 74.2,
+      "depth": "TE1",
+      "game": "ARI-WAS",
       "stat": "YDS",
-      "line": 95,
-      "label": "95+ scrimmage yards",
+      "line": 70,
+      "label": "70+ scrimmage yards",
       "chance": 0.4115,
       "last": [
        8,
@@ -2123,26 +2143,6 @@
       "trackN": 149
      },
      {
-      "player_id": "00-0036275",
-      "name": "D'Andre Swift",
-      "team": "CHI",
-      "opp": "DET",
-      "pos": "RB",
-      "est": 73.5,
-      "depth": "RB1",
-      "game": "CHI-DET",
-      "stat": "YDS",
-      "line": 95,
-      "label": "95+ scrimmage yards",
-      "chance": 0.1834,
-      "last": [
-       8,
-       0
-      ],
-      "track": 0.195,
-      "trackN": 71
-     },
-     {
       "player_id": "00-0040162",
       "name": "Dylan Sampson",
       "team": "CLE",
@@ -2183,6 +2183,26 @@
       "trackN": 71
      },
      {
+      "player_id": "00-0036322",
+      "name": "Justin Jefferson",
+      "team": "MIN",
+      "opp": "ATL",
+      "pos": "WR",
+      "est": 63.7,
+      "depth": "WR1",
+      "game": "ATL-MIN",
+      "stat": "YDS",
+      "line": 90,
+      "label": "90+ scrimmage yards",
+      "chance": 0.168,
+      "last": [
+       8,
+       0
+      ],
+      "track": 0.189,
+      "trackN": 71
+     },
+     {
       "player_id": "00-0039738",
       "name": "Blake Corum",
       "team": "LA",
@@ -2204,7 +2224,7 @@
      }
     ]
    },
-   "updated_at": "2026-11-25T11:02-05:00"
+   "updated_at": "2026-11-26T07:02-05:00"
   }
  ]
 }
